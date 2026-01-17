@@ -163,9 +163,13 @@ async function streamChat({
   }
 }
 
+const levels = ["All", "A1", "A2", "B1", "B2", "C1"] as const;
+type LevelFilter = typeof levels[number];
+
 export default function Conversation() {
   const navigate = useNavigate();
   const [selectedScenario, setSelectedScenario] = useState<string | null>(null);
+  const [selectedLevel, setSelectedLevel] = useState<LevelFilter>("All");
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isRecording, setIsRecording] = useState(false);
@@ -174,6 +178,10 @@ export default function Conversation() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const recognitionRef = useRef<SpeechRecognition | null>(null);
   const confidenceScoresRef = useRef<number[]>([]);
+
+  const filteredScenarios = selectedLevel === "All" 
+    ? scenarios 
+    : scenarios.filter(s => s.level === selectedLevel);
 
   const getPronunciationFeedback = (score: number) => {
     if (score >= 0.9) return { label: "Excellent!", color: "text-green-500", emoji: "🌟" };
@@ -573,10 +581,31 @@ export default function Conversation() {
           </div>
         </div>
 
+        {/* Level Filter */}
+        <div className="mb-6">
+          <h2 className="font-display font-semibold text-lg mb-3">Filtrar por nivel</h2>
+          <div className="flex flex-wrap gap-2">
+            {levels.map((level) => (
+              <Button
+                key={level}
+                variant={selectedLevel === level ? "default" : "outline"}
+                size="sm"
+                onClick={() => setSelectedLevel(level)}
+                className="min-w-[60px]"
+              >
+                {level === "All" ? "Todos" : level}
+              </Button>
+            ))}
+          </div>
+          <p className="text-sm text-muted-foreground mt-2">
+            {filteredScenarios.length} escenario{filteredScenarios.length !== 1 ? 's' : ''} disponible{filteredScenarios.length !== 1 ? 's' : ''}
+          </p>
+        </div>
+
         {/* Scenario Selection */}
         <h2 className="font-display font-semibold text-lg mb-4">Elige un escenario</h2>
-        <div className="grid sm:grid-cols-2 gap-4">
-          {scenarios.map((scenario) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {filteredScenarios.map((scenario) => (
             <Card
               key={scenario.id}
               className="group cursor-pointer hover:shadow-lg transition-all duration-300"
