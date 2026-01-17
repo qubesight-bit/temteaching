@@ -722,55 +722,113 @@ export const curriculumData: LevelCurriculum[] = [
   {
     level: "B1",
     title: "Intermedio",
-    description: "Comunicación independiente en situaciones variadas",
-    targetVocabulary: "2,000-2,500 palabras",
-    estimatedHours: 350,
+    description: "Usuario independiente: piensas en inglés, explicas por qué, no solo qué",
+    targetVocabulary: "2,500-3,000 palabras",
+    estimatedHours: 400,
     categories: [
       {
         id: "b1-vocabulary",
         title: "Vocabulario",
         icon: "📚",
-        description: "Vocabulario para temas más abstractos",
+        description: "De palabras cotidianas a vocabulario abstracto y temático",
         skills: [
           {
             id: "b1-vocab-1",
-            title: "Trabajo y educación",
-            description: "Jobs, education, career",
+            title: "Trabajo y estudios",
+            description: "Work, studies, career vocabulary",
             completed: false,
             subSkills: [
               { id: "b1-v1-1", title: "Vocabulario de oficina", completed: false },
               { id: "b1-v1-2", title: "Sistema educativo", completed: false },
               { id: "b1-v1-3", title: "Entrevistas de trabajo", completed: false },
+              { id: "b1-v1-4", title: "Profesiones y carreras", completed: false },
             ]
           },
           {
             id: "b1-vocab-2",
-            title: "Sentimientos y emociones",
-            description: "Feelings, emotions, moods",
+            title: "Educación y aprendizaje",
+            description: "Education, learning, academic vocabulary",
             completed: false,
             subSkills: [
-              { id: "b1-v2-1", title: "Emociones positivas", completed: false },
-              { id: "b1-v2-2", title: "Emociones negativas", completed: false },
+              { id: "b1-v2-1", title: "Materias y cursos", completed: false },
+              { id: "b1-v2-2", title: "Exámenes y evaluaciones", completed: false },
+              { id: "b1-v2-3", title: "Habilidades de estudio", completed: false },
             ]
           },
           {
             id: "b1-vocab-3",
             title: "Tecnología y medios",
-            description: "Technology, media, internet",
+            description: "Technology, media, internet vocabulary",
             completed: false,
             subSkills: [
               { id: "b1-v3-1", title: "Dispositivos tecnológicos", completed: false },
               { id: "b1-v3-2", title: "Redes sociales", completed: false },
+              { id: "b1-v3-3", title: "Vocabulario de internet", completed: false },
             ]
           },
           {
             id: "b1-vocab-4",
+            title: "Cultura y tradiciones",
+            description: "Culture, traditions, customs",
+            completed: false,
+            subSkills: [
+              { id: "b1-v4-1", title: "Festividades", completed: false },
+              { id: "b1-v4-2", title: "Costumbres culturales", completed: false },
+            ]
+          },
+          {
+            id: "b1-vocab-5",
+            title: "Salud y estilo de vida",
+            description: "Health, lifestyle, wellbeing",
+            completed: false,
+            subSkills: [
+              { id: "b1-v5-1", title: "Hábitos saludables", completed: false },
+              { id: "b1-v5-2", title: "Ejercicio y dieta", completed: false },
+              { id: "b1-v5-3", title: "Bienestar mental", completed: false },
+            ]
+          },
+          {
+            id: "b1-vocab-6",
             title: "Medio ambiente",
             description: "Environment, nature, climate",
             completed: false,
             subSkills: [
-              { id: "b1-v4-1", title: "Problemas ambientales", completed: false },
-              { id: "b1-v4-2", title: "Soluciones ecológicas", completed: false },
+              { id: "b1-v6-1", title: "Problemas ambientales", completed: false },
+              { id: "b1-v6-2", title: "Soluciones ecológicas", completed: false },
+              { id: "b1-v6-3", title: "Reciclaje y sostenibilidad", completed: false },
+            ]
+          },
+          {
+            id: "b1-vocab-7",
+            title: "Sentimientos y opiniones",
+            description: "Feelings, opinions, reasons",
+            completed: false,
+            subSkills: [
+              { id: "b1-v7-1", title: "Emociones complejas", completed: false },
+              { id: "b1-v7-2", title: "Expresar razones", completed: false },
+              { id: "b1-v7-3", title: "Matices de opinión", completed: false },
+            ]
+          },
+          {
+            id: "b1-vocab-8",
+            title: "Phrasal verbs comunes",
+            description: "Common phrasal verbs",
+            completed: false,
+            subSkills: [
+              { id: "b1-v8-1", title: "Get up, turn on, look for", completed: false },
+              { id: "b1-v8-2", title: "Put off, give up, take up", completed: false },
+              { id: "b1-v8-3", title: "Find out, work out, figure out", completed: false },
+            ]
+          },
+          {
+            id: "b1-vocab-9",
+            title: "Colocaciones",
+            description: "Common collocations",
+            completed: false,
+            subSkills: [
+              { id: "b1-v9-1", title: "Make a decision, take a break", completed: false },
+              { id: "b1-v9-2", title: "Do homework, make progress", completed: false },
+              { id: "b1-v9-3", title: "Have a meeting, give advice", completed: false },
             ]
           },
         ]
@@ -779,66 +837,120 @@ export const curriculumData: LevelCurriculum[] = [
         id: "b1-grammar",
         title: "Gramática",
         icon: "🧩",
-        description: "Estructuras más complejas",
+        description: "De precisión simple a flexibilidad y control de tiempos",
         skills: [
           {
             id: "b1-gram-1",
-            title: "Past Continuous",
-            description: "Actions in progress in the past",
+            title: "Present Simple vs Present Continuous",
+            description: "Distinguishing habitual vs current actions",
             completed: false,
             subSkills: [
-              { id: "b1-g1-1", title: "Was/Were + -ing", completed: false },
-              { id: "b1-g1-2", title: "When + While", completed: false },
+              { id: "b1-g1-1", title: "Hábitos vs acciones ahora", completed: false },
+              { id: "b1-g1-2", title: "Stative verbs", completed: false },
+              { id: "b1-g1-3", title: "Always + continuous (queja)", completed: false },
             ]
           },
           {
             id: "b1-gram-2",
-            title: "Present Perfect Continuous",
-            description: "Duration of recent actions",
+            title: "Past Simple vs Present Perfect",
+            description: "Finished past vs connection to present",
             completed: false,
             subSkills: [
-              { id: "b1-g2-1", title: "Have been + -ing", completed: false },
-              { id: "b1-g2-2", title: "For/Since", completed: false },
+              { id: "b1-g2-1", title: "Tiempo específico vs no específico", completed: false },
+              { id: "b1-g2-2", title: "Just, already, yet", completed: false },
+              { id: "b1-g2-3", title: "For y Since", completed: false },
+              { id: "b1-g2-4", title: "Ever y Never", completed: false },
             ]
           },
           {
             id: "b1-gram-3",
-            title: "First y Second Conditional",
-            description: "Real and hypothetical situations",
+            title: "Future forms",
+            description: "Will, going to, present continuous for future",
             completed: false,
             subSkills: [
-              { id: "b1-g3-1", title: "If + presente, will", completed: false },
-              { id: "b1-g3-2", title: "If + pasado, would", completed: false },
+              { id: "b1-g3-1", title: "Will para decisiones espontáneas", completed: false },
+              { id: "b1-g3-2", title: "Going to para planes", completed: false },
+              { id: "b1-g3-3", title: "Present continuous para arreglos", completed: false },
+              { id: "b1-g3-4", title: "Predicciones con will vs going to", completed: false },
             ]
           },
           {
             id: "b1-gram-4",
-            title: "Voz Pasiva",
-            description: "Passive voice in present and past",
+            title: "First Conditional",
+            description: "Real future possibilities",
             completed: false,
             subSkills: [
-              { id: "b1-g4-1", title: "Pasiva en presente", completed: false },
-              { id: "b1-g4-2", title: "Pasiva en pasado", completed: false },
+              { id: "b1-g4-1", title: "If + presente, will + base", completed: false },
+              { id: "b1-g4-2", title: "Unless, as long as, provided", completed: false },
+              { id: "b1-g4-3", title: "Variaciones: might, can, should", completed: false },
             ]
           },
           {
             id: "b1-gram-5",
-            title: "Reported Speech (básico)",
-            description: "Reporting what others said",
+            title: "Second Conditional (básico)",
+            description: "Hypothetical present/future",
             completed: false,
             subSkills: [
-              { id: "b1-g5-1", title: "Said/Told + cambios", completed: false },
-              { id: "b1-g5-2", title: "Preguntas indirectas", completed: false },
+              { id: "b1-g5-1", title: "If + past simple, would + base", completed: false },
+              { id: "b1-g5-2", title: "If I were you...", completed: false },
+              { id: "b1-g5-3", title: "Situaciones imaginarias", completed: false },
             ]
           },
           {
             id: "b1-gram-6",
-            title: "Relative Clauses",
-            description: "Who, which, that, where",
+            title: "Voz Pasiva (básica)",
+            description: "Passive voice in present and past",
             completed: false,
             subSkills: [
-              { id: "b1-g6-1", title: "Defining relatives", completed: false },
-              { id: "b1-g6-2", title: "Non-defining relatives", completed: false },
+              { id: "b1-g6-1", title: "Pasiva en presente simple", completed: false },
+              { id: "b1-g6-2", title: "Pasiva en pasado simple", completed: false },
+              { id: "b1-g6-3", title: "By + agente", completed: false },
+            ]
+          },
+          {
+            id: "b1-gram-7",
+            title: "Relative Clauses",
+            description: "Who, which, that, where, when",
+            completed: false,
+            subSkills: [
+              { id: "b1-g7-1", title: "Who para personas", completed: false },
+              { id: "b1-g7-2", title: "Which para cosas", completed: false },
+              { id: "b1-g7-3", title: "That (defining clauses)", completed: false },
+              { id: "b1-g7-4", title: "Where, when, whose", completed: false },
+            ]
+          },
+          {
+            id: "b1-gram-8",
+            title: "Comparativos y modificadores",
+            description: "Advanced comparisons",
+            completed: false,
+            subSkills: [
+              { id: "b1-g8-1", title: "Much better, a bit harder", completed: false },
+              { id: "b1-g8-2", title: "As...as comparisons", completed: false },
+              { id: "b1-g8-3", title: "The more...the more", completed: false },
+            ]
+          },
+          {
+            id: "b1-gram-9",
+            title: "Modal Verbs",
+            description: "Might, should, have to, must",
+            completed: false,
+            subSkills: [
+              { id: "b1-g9-1", title: "Might para posibilidad", completed: false },
+              { id: "b1-g9-2", title: "Should para consejos", completed: false },
+              { id: "b1-g9-3", title: "Have to vs Must", completed: false },
+              { id: "b1-g9-4", title: "Don't have to vs Mustn't", completed: false },
+            ]
+          },
+          {
+            id: "b1-gram-10",
+            title: "Conectores",
+            description: "Linking words and discourse markers",
+            completed: false,
+            subSkills: [
+              { id: "b1-g10-1", title: "Because, although, however", completed: false },
+              { id: "b1-g10-2", title: "So, therefore, as a result", completed: false },
+              { id: "b1-g10-3", title: "On the other hand, nevertheless", completed: false },
             ]
           },
         ]
@@ -847,36 +959,70 @@ export const curriculumData: LevelCurriculum[] = [
         id: "b1-speaking",
         title: "Expresión Oral",
         icon: "🗣️",
-        description: "Conversaciones más largas y fluidas",
+        description: "De intercambios cortos a discurso extendido e independiente",
         skills: [
           {
             id: "b1-speak-1",
-            title: "Dar opiniones",
-            description: "I think, in my opinion, I believe",
+            title: "Describir experiencias",
+            description: "Describe experiences, events, goals",
             completed: false,
             subSkills: [
-              { id: "b1-s1-1", title: "Expresar opiniones", completed: false },
-              { id: "b1-s1-2", title: "Estar de acuerdo/desacuerdo", completed: false },
+              { id: "b1-s1-1", title: "Narrar experiencias pasadas", completed: false },
+              { id: "b1-s1-2", title: "Describir eventos en detalle", completed: false },
+              { id: "b1-s1-3", title: "Hablar de metas y planes", completed: false },
             ]
           },
           {
             id: "b1-speak-2",
-            title: "Narrar historias",
-            description: "Telling stories, sequencing events",
+            title: "Explicar opiniones con razones",
+            description: "I think... because...",
             completed: false,
             subSkills: [
-              { id: "b1-s2-1", title: "Conectores de secuencia", completed: false },
-              { id: "b1-s2-2", title: "Descripciones detalladas", completed: false },
+              { id: "b1-s2-1", title: "Expresar opiniones", completed: false },
+              { id: "b1-s2-2", title: "Dar razones y ejemplos", completed: false },
+              { id: "b1-s2-3", title: "Estar de acuerdo/desacuerdo", completed: false },
             ]
           },
           {
             id: "b1-speak-3",
-            title: "Hablar de planes y sueños",
-            description: "Future plans, hopes, ambitions",
+            title: "Narrar historias",
+            description: "Tell a story with sequence",
             completed: false,
             subSkills: [
-              { id: "b1-s3-1", title: "Planes futuros", completed: false },
-              { id: "b1-s3-2", title: "Sueños y ambiciones", completed: false },
+              { id: "b1-s3-1", title: "First, then, after that, finally", completed: false },
+              { id: "b1-s3-2", title: "Mantener interés del oyente", completed: false },
+              { id: "b1-s3-3", title: "Agregar detalles relevantes", completed: false },
+            ]
+          },
+          {
+            id: "b1-speak-4",
+            title: "Comparar y elegir",
+            description: "Compare options and make choices",
+            completed: false,
+            subSkills: [
+              { id: "b1-s4-1", title: "Comparar dos opciones", completed: false },
+              { id: "b1-s4-2", title: "Explicar preferencias", completed: false },
+            ]
+          },
+          {
+            id: "b1-speak-5",
+            title: "Manejar situaciones inesperadas",
+            description: "Handle unexpected situations while traveling",
+            completed: false,
+            subSkills: [
+              { id: "b1-s5-1", title: "Problemas en viajes", completed: false },
+              { id: "b1-s5-2", title: "Quejas y soluciones", completed: false },
+            ]
+          },
+          {
+            id: "b1-speak-6",
+            title: "Participar en discusiones",
+            description: "Participate in discussions (slow but clear)",
+            completed: false,
+            subSkills: [
+              { id: "b1-s6-1", title: "Tomar turnos naturalmente", completed: false },
+              { id: "b1-s6-2", title: "Hacer preguntas de seguimiento", completed: false },
+              { id: "b1-s6-3", title: "Auto-corregirse cuando sea necesario", completed: false },
             ]
           },
         ]
@@ -885,25 +1031,56 @@ export const curriculumData: LevelCurriculum[] = [
         id: "b1-listening",
         title: "Comprensión Auditiva",
         icon: "👂",
-        description: "Entender programas y conversaciones estándar",
+        description: "De inglés de clase a inglés auténtico del mundo real",
         skills: [
           {
             id: "b1-list-1",
-            title: "Conversaciones a velocidad normal",
-            description: "Native speed with clear accent",
+            title: "Ideas principales de conversaciones",
+            description: "Understand main ideas of conversations",
             completed: false,
             subSkills: [
-              { id: "b1-l1-1", title: "Podcasts sencillos", completed: false },
-              { id: "b1-l1-2", title: "Programas de radio", completed: false },
+              { id: "b1-l1-1", title: "Captar el tema general", completed: false },
+              { id: "b1-l1-2", title: "Identificar puntos clave", completed: false },
             ]
           },
           {
             id: "b1-list-2",
-            title: "Noticias simplificadas",
-            description: "News in clear, standard language",
+            title: "Radio y podcasts",
+            description: "Radio programs and podcasts (slow, clear)",
             completed: false,
             subSkills: [
-              { id: "b1-l2-1", title: "Noticias VOA", completed: false },
+              { id: "b1-l2-1", title: "Podcasts para aprendices", completed: false },
+              { id: "b1-l2-2", title: "Programas de radio claros", completed: false },
+            ]
+          },
+          {
+            id: "b1-list-3",
+            title: "Programas de TV",
+            description: "TV shows with familiar topics",
+            completed: false,
+            subSkills: [
+              { id: "b1-l3-1", title: "Series con temas cotidianos", completed: false },
+              { id: "b1-l3-2", title: "Documentales sencillos", completed: false },
+            ]
+          },
+          {
+            id: "b1-list-4",
+            title: "Instrucciones y explicaciones",
+            description: "Understand instructions and explanations",
+            completed: false,
+            subSkills: [
+              { id: "b1-l4-1", title: "Instrucciones paso a paso", completed: false },
+              { id: "b1-l4-2", title: "Explicaciones técnicas simples", completed: false },
+            ]
+          },
+          {
+            id: "b1-list-5",
+            title: "Diferentes acentos",
+            description: "Basic exposure to different accents",
+            completed: false,
+            subSkills: [
+              { id: "b1-l5-1", title: "Americano vs Británico", completed: false },
+              { id: "b1-l5-2", title: "Otros acentos (básico)", completed: false },
             ]
           },
         ]
@@ -912,25 +1089,58 @@ export const curriculumData: LevelCurriculum[] = [
         id: "b1-reading",
         title: "Comprensión Lectora",
         icon: "📖",
-        description: "Textos más largos sobre temas familiares",
+        description: "De textos cortos a textos multi-párrafo",
         skills: [
           {
             id: "b1-read-1",
-            title: "Artículos de revista",
-            description: "Magazine articles, blog posts",
+            title: "Artículos y blogs",
+            description: "Articles and blog posts",
             completed: false,
             subSkills: [
-              { id: "b1-r1-1", title: "Artículos de interés", completed: false },
+              { id: "b1-r1-1", title: "Artículos de revistas", completed: false },
               { id: "b1-r1-2", title: "Blogs personales", completed: false },
+              { id: "b1-r1-3", title: "Artículos de noticias simples", completed: false },
             ]
           },
           {
             id: "b1-read-2",
-            title: "Cartas y emails formales",
-            description: "Formal correspondence",
+            title: "Noticias simplificadas",
+            description: "News stories (simplified)",
             completed: false,
             subSkills: [
-              { id: "b1-r2-1", title: "Emails de trabajo", completed: false },
+              { id: "b1-r2-1", title: "VOA Learning English", completed: false },
+              { id: "b1-r2-2", title: "News in Levels", completed: false },
+            ]
+          },
+          {
+            id: "b1-read-3",
+            title: "Instrucciones y manuales",
+            description: "Instructions and manuals",
+            completed: false,
+            subSkills: [
+              { id: "b1-r3-1", title: "Manuales de usuario", completed: false },
+              { id: "b1-r3-2", title: "Instrucciones de software", completed: false },
+            ]
+          },
+          {
+            id: "b1-read-4",
+            title: "Emails personales y semi-formales",
+            description: "Personal and semi-formal emails",
+            completed: false,
+            subSkills: [
+              { id: "b1-r4-1", title: "Emails de amigos", completed: false },
+              { id: "b1-r4-2", title: "Emails de trabajo básicos", completed: false },
+            ]
+          },
+          {
+            id: "b1-read-5",
+            title: "Técnicas de lectura",
+            description: "Skimming, scanning, inferring",
+            completed: false,
+            subSkills: [
+              { id: "b1-r5-1", title: "Skimming (idea general)", completed: false },
+              { id: "b1-r5-2", title: "Scanning (info específica)", completed: false },
+              { id: "b1-r5-3", title: "Inferir significado del contexto", completed: false },
             ]
           },
         ]
@@ -939,26 +1149,131 @@ export const curriculumData: LevelCurriculum[] = [
         id: "b1-writing",
         title: "Expresión Escrita",
         icon: "✍️",
-        description: "Textos más elaborados y estructurados",
+        description: "De párrafos cortos a textos conectados y estructurados",
         skills: [
           {
             id: "b1-write-1",
-            title: "Ensayos de opinión",
-            description: "Opinion essays with arguments",
+            title: "Emails formales e informales",
+            description: "Formal and informal emails",
             completed: false,
             subSkills: [
-              { id: "b1-w1-1", title: "Estructura de ensayo", completed: false },
-              { id: "b1-w1-2", title: "Conectores de argumento", completed: false },
+              { id: "b1-w1-1", title: "Saludos y despedidas apropiados", completed: false },
+              { id: "b1-w1-2", title: "Registro formal vs informal", completed: false },
+              { id: "b1-w1-3", title: "Estructura clara", completed: false },
             ]
           },
           {
             id: "b1-write-2",
-            title: "Emails formales",
-            description: "Formal emails, complaints",
+            title: "Párrafos de opinión",
+            description: "Opinion paragraphs with reasons",
             completed: false,
             subSkills: [
-              { id: "b1-w2-1", title: "Emails de trabajo", completed: false },
-              { id: "b1-w2-2", title: "Cartas de queja", completed: false },
+              { id: "b1-w2-1", title: "Expresar opinión claramente", completed: false },
+              { id: "b1-w2-2", title: "Apoyar con razones", completed: false },
+              { id: "b1-w2-3", title: "Dar ejemplos", completed: false },
+            ]
+          },
+          {
+            id: "b1-write-3",
+            title: "Descripciones de experiencias",
+            description: "Descriptions of experiences",
+            completed: false,
+            subSkills: [
+              { id: "b1-w3-1", title: "Describir eventos pasados", completed: false },
+              { id: "b1-w3-2", title: "Incluir emociones y reacciones", completed: false },
+            ]
+          },
+          {
+            id: "b1-write-4",
+            title: "Ensayos cortos",
+            description: "Short essays (100-180 words)",
+            completed: false,
+            subSkills: [
+              { id: "b1-w4-1", title: "Introducción clara", completed: false },
+              { id: "b1-w4-2", title: "Desarrollo con argumentos", completed: false },
+              { id: "b1-w4-3", title: "Conclusión coherente", completed: false },
+            ]
+          },
+          {
+            id: "b1-write-5",
+            title: "Conectar ideas",
+            description: "Using linking words effectively",
+            completed: false,
+            subSkills: [
+              { id: "b1-w5-1", title: "Conectores de adición", completed: false },
+              { id: "b1-w5-2", title: "Conectores de contraste", completed: false },
+              { id: "b1-w5-3", title: "Conectores de causa/efecto", completed: false },
+            ]
+          },
+        ]
+      },
+      {
+        id: "b1-strategy",
+        title: "Estrategias de Comunicación",
+        icon: "🧭",
+        description: "Competencia estratégica crítica para B1",
+        skills: [
+          {
+            id: "b1-strat-1",
+            title: "Parafrasear",
+            description: "Paraphrasing when you don't know a word",
+            completed: false,
+            subSkills: [
+              { id: "b1-st1-1", title: "Describir con otras palabras", completed: false },
+              { id: "b1-st1-2", title: "Usar sinónimos simples", completed: false },
+            ]
+          },
+          {
+            id: "b1-strat-2",
+            title: "Pedir clarificación educadamente",
+            description: "Asking for clarification politely",
+            completed: false,
+            subSkills: [
+              { id: "b1-st2-1", title: "Could you repeat that?", completed: false },
+              { id: "b1-st2-2", title: "What do you mean by...?", completed: false },
+              { id: "b1-st2-3", title: "Could you explain that?", completed: false },
+            ]
+          },
+          {
+            id: "b1-strat-3",
+            title: "Manejar conversaciones",
+            description: "Managing conversations (turn-taking)",
+            completed: false,
+            subSkills: [
+              { id: "b1-st3-1", title: "Tomar turnos naturalmente", completed: false },
+              { id: "b1-st3-2", title: "Interrumpir educadamente", completed: false },
+              { id: "b1-st3-3", title: "Cambiar de tema", completed: false },
+            ]
+          },
+          {
+            id: "b1-strat-4",
+            title: "Reparar malentendidos",
+            description: "Repairing communication breakdowns",
+            completed: false,
+            subSkills: [
+              { id: "b1-st4-1", title: "Reconocer malentendidos", completed: false },
+              { id: "b1-st4-2", title: "Aclarar lo que quisiste decir", completed: false },
+            ]
+          },
+          {
+            id: "b1-strat-5",
+            title: "Usar contexto",
+            description: "Using context to guess meaning",
+            completed: false,
+            subSkills: [
+              { id: "b1-st5-1", title: "Adivinar palabras nuevas", completed: false },
+              { id: "b1-st5-2", title: "Usar pistas del contexto", completed: false },
+            ]
+          },
+          {
+            id: "b1-strat-6",
+            title: "Auto-gestión del aprendizaje",
+            description: "Self-management and self-correction",
+            completed: false,
+            subSkills: [
+              { id: "b1-st6-1", title: "Auto-corregirse", completed: false },
+              { id: "b1-st6-2", title: "Usar notas y esquemas al hablar", completed: false },
+              { id: "b1-st6-3", title: "Identificar áreas de mejora", completed: false },
             ]
           },
         ]
