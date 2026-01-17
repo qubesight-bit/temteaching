@@ -24,8 +24,8 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 
-type SupportedLevel = "A1" | "A2" | "B1" | "B2" | "C1";
-const levels: SupportedLevel[] = ["A1", "A2", "B1", "B2", "C1"];
+type SupportedLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
+const levels: SupportedLevel[] = ["A1", "A2", "B1", "B2", "C1", "C2"];
 
 const levelConfig: Record<SupportedLevel, { label: string; icon: React.ElementType; color: string; bgColor: string }> = {
   A1: { label: "Novato", icon: Shield, color: "text-level-a1", bgColor: "bg-level-a1/10" },
@@ -33,6 +33,7 @@ const levelConfig: Record<SupportedLevel, { label: string; icon: React.ElementTy
   B1: { label: "Aventurero", icon: Trophy, color: "text-level-b1", bgColor: "bg-level-b1/10" },
   B2: { label: "Guerrero", icon: Sparkles, color: "text-level-b2", bgColor: "bg-level-b2/10" },
   C1: { label: "Maestro", icon: Crown, color: "text-level-c1", bgColor: "bg-level-c1/10" },
+  C2: { label: "Leyenda", icon: Crown, color: "text-level-c2", bgColor: "bg-level-c2/10" },
 };
 
 const categoryIcons: Record<string, string> = {
@@ -66,7 +67,7 @@ export function TopicsSidebar() {
     const groups: Record<string, { level: SupportedLevel; category: string; icon: string; skills: typeof filteredData[0]["categories"][0]["skills"] }[]> = {};
     
     filteredData.forEach(levelData => {
-      // Skip C2 as it's not in our supported levels
+      // Validate that level is supported
       if (!levels.includes(levelData.level as SupportedLevel)) return;
       
       levelData.categories.forEach(category => {
