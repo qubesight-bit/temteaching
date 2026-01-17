@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { ArrowLeft, Send, Sparkles, Mic, MicOff, Volume2, Loader2, History } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
+import { ChatFeedback } from "@/components/ChatFeedback";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -521,7 +522,11 @@ export default function Conversation() {
                             : "bg-primary text-white rounded-tr-sm"
                         )}
                       >
-                        <p className="whitespace-pre-wrap">{message.content}</p>
+                        {message.role === "assistant" ? (
+                          <ChatFeedback content={message.content} />
+                        ) : (
+                          <p className="whitespace-pre-wrap">{message.content}</p>
+                        )}
                         {message.role === "assistant" && (
                           <Button
                             variant="ghost"
