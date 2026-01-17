@@ -136,7 +136,11 @@ export default function ConversationHistory() {
         ) : (
           <div className="space-y-4">
             {conversations.map((conversation) => (
-              <Card key={conversation.id} className="hover:shadow-md transition-shadow">
+              <Card 
+                key={conversation.id} 
+                className="hover:shadow-md transition-shadow cursor-pointer"
+                onClick={() => navigate(`/conversation/history/${conversation.id}`)}
+              >
                 <CardContent className="p-4">
                   <div className="flex items-center justify-between">
                     <div className="flex-1">
@@ -162,7 +166,10 @@ export default function ConversationHistory() {
                       variant="ghost"
                       size="icon"
                       className="text-muted-foreground hover:text-destructive"
-                      onClick={() => deleteConversation(conversation.id)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        deleteConversation(conversation.id);
+                      }}
                     >
                       <Trash2 className="w-4 h-4" />
                     </Button>
