@@ -1283,44 +1283,114 @@ export const curriculumData: LevelCurriculum[] = [
   {
     level: "B2",
     title: "Intermedio Alto",
-    description: "Comunicación fluida y espontánea en la mayoría de situaciones",
+    description: "De usuario independiente a comunicador competente y seguro",
     targetVocabulary: "4,000-5,000 palabras",
     estimatedHours: 500,
     categories: [
       {
         id: "b2-vocabulary",
-        title: "Vocabulario",
+        title: "Vocabulario Avanzado",
         icon: "📚",
-        description: "Vocabulario especializado y matizado",
+        description: "Expresión precisa y matizada",
         skills: [
           {
             id: "b2-vocab-1",
-            title: "Vocabulario académico",
-            description: "Academic and formal vocabulary",
+            title: "Conceptos abstractos",
+            description: "Freedom, responsibility, impact, justice",
             completed: false,
             subSkills: [
-              { id: "b2-v1-1", title: "Términos de investigación", completed: false },
-              { id: "b2-v1-2", title: "Vocabulario de presentaciones", completed: false },
+              { id: "b2-v1-1", title: "Libertad y derechos", completed: false },
+              { id: "b2-v1-2", title: "Responsabilidad y consecuencias", completed: false },
+              { id: "b2-v1-3", title: "Impacto y efectos", completed: false },
             ]
           },
           {
             id: "b2-vocab-2",
-            title: "Expresiones idiomáticas",
-            description: "Common idioms and phrases",
+            title: "Trabajo y negocios",
+            description: "Business, corporate, professional vocabulary",
             completed: false,
             subSkills: [
-              { id: "b2-v2-1", title: "Idioms de negocios", completed: false },
-              { id: "b2-v2-2", title: "Expresiones coloquiales", completed: false },
+              { id: "b2-v2-1", title: "Terminología corporativa", completed: false },
+              { id: "b2-v2-2", title: "Reuniones y negociaciones", completed: false },
+              { id: "b2-v2-3", title: "Recursos humanos", completed: false },
             ]
           },
           {
             id: "b2-vocab-3",
-            title: "Phrasal verbs avanzados",
-            description: "Complex phrasal verbs",
+            title: "Temas académicos",
+            description: "Academic vocabulary for study and research",
             completed: false,
             subSkills: [
-              { id: "b2-v3-1", title: "Phrasal verbs separables", completed: false },
-              { id: "b2-v3-2", title: "Phrasal verbs inseparables", completed: false },
+              { id: "b2-v3-1", title: "Investigación y metodología", completed: false },
+              { id: "b2-v3-2", title: "Análisis y evaluación", completed: false },
+              { id: "b2-v3-3", title: "Hipótesis y teorías", completed: false },
+            ]
+          },
+          {
+            id: "b2-vocab-4",
+            title: "Temas sociales y culturales",
+            description: "Social issues, culture, media",
+            completed: false,
+            subSkills: [
+              { id: "b2-v4-1", title: "Problemas sociales actuales", completed: false },
+              { id: "b2-v4-2", title: "Diversidad cultural", completed: false },
+              { id: "b2-v4-3", title: "Medios de comunicación", completed: false },
+            ]
+          },
+          {
+            id: "b2-vocab-5",
+            title: "Emociones y actitudes",
+            description: "Frustrated vs annoyed, nuanced emotions",
+            completed: false,
+            subSkills: [
+              { id: "b2-v5-1", title: "Emociones sutiles (frustrated vs annoyed)", completed: false },
+              { id: "b2-v5-2", title: "Actitudes y perspectivas", completed: false },
+              { id: "b2-v5-3", title: "Estados de ánimo complejos", completed: false },
+            ]
+          },
+          {
+            id: "b2-vocab-6",
+            title: "Lenguaje idiomático",
+            description: "Common idioms and expressions",
+            completed: false,
+            subSkills: [
+              { id: "b2-v6-1", title: "Idioms de negocios", completed: false },
+              { id: "b2-v6-2", title: "Idioms de la vida diaria", completed: false },
+              { id: "b2-v6-3", title: "Expresiones coloquiales", completed: false },
+            ]
+          },
+          {
+            id: "b2-vocab-7",
+            title: "Phrasal verbs avanzados",
+            description: "Carry out, put off, bring up, come across",
+            completed: false,
+            subSkills: [
+              { id: "b2-v7-1", title: "Phrasal verbs de negocios", completed: false },
+              { id: "b2-v7-2", title: "Phrasal verbs separables", completed: false },
+              { id: "b2-v7-3", title: "Phrasal verbs inseparables", completed: false },
+              { id: "b2-v7-4", title: "Phrasal verbs con múltiples significados", completed: false },
+            ]
+          },
+          {
+            id: "b2-vocab-8",
+            title: "Colocaciones avanzadas",
+            description: "Highly recommended, strong argument, make a decision",
+            completed: false,
+            subSkills: [
+              { id: "b2-v8-1", title: "Colocaciones con adverbios", completed: false },
+              { id: "b2-v8-2", title: "Colocaciones con adjetivos", completed: false },
+              { id: "b2-v8-3", title: "Colocaciones verbo + sustantivo", completed: false },
+            ]
+          },
+          {
+            id: "b2-vocab-9",
+            title: "Formación de palabras",
+            description: "Word families: noun-verb-adjective",
+            completed: false,
+            subSkills: [
+              { id: "b2-v9-1", title: "Prefijos comunes", completed: false },
+              { id: "b2-v9-2", title: "Sufijos comunes", completed: false },
+              { id: "b2-v9-3", title: "Familias de palabras", completed: false },
             ]
           },
         ]
@@ -1329,46 +1399,125 @@ export const curriculumData: LevelCurriculum[] = [
         id: "b2-grammar",
         title: "Gramática",
         icon: "🧩",
-        description: "Dominio de estructuras complejas",
+        description: "Rango y control gramatical - flexibilidad natural",
         skills: [
           {
             id: "b2-gram-1",
-            title: "Third Conditional",
-            description: "Hypothetical past situations",
+            title: "Dominio de todos los tiempos",
+            description: "All major tenses with accuracy",
             completed: false,
             subSkills: [
-              { id: "b2-g1-1", title: "If + had + participio", completed: false },
-              { id: "b2-g1-2", title: "Mixed conditionals", completed: false },
+              { id: "b2-g1-1", title: "Tiempos presentes con precisión", completed: false },
+              { id: "b2-g1-2", title: "Tiempos pasados con precisión", completed: false },
+              { id: "b2-g1-3", title: "Tiempos futuros con precisión", completed: false },
             ]
           },
           {
             id: "b2-gram-2",
-            title: "Reported Speech completo",
-            description: "All forms of reported speech",
+            title: "Present Perfect vs Past Simple",
+            description: "Fully mastered distinction",
             completed: false,
             subSkills: [
-              { id: "b2-g2-1", title: "Cambios de tiempo verbal", completed: false },
-              { id: "b2-g2-2", title: "Reporting verbs variados", completed: false },
+              { id: "b2-g2-1", title: "Cuándo usar cada tiempo", completed: false },
+              { id: "b2-g2-2", title: "Marcadores temporales", completed: false },
+              { id: "b2-g2-3", title: "Casos ambiguos", completed: false },
             ]
           },
           {
             id: "b2-gram-3",
-            title: "Pasiva avanzada",
-            description: "Passive in all tenses, impersonal passive",
+            title: "Formas de futuro",
+            description: "Future for prediction and intention",
             completed: false,
             subSkills: [
-              { id: "b2-g3-1", title: "Pasiva con modales", completed: false },
-              { id: "b2-g3-2", title: "It is said that...", completed: false },
+              { id: "b2-g3-1", title: "Will vs Going to (dominio)", completed: false },
+              { id: "b2-g3-2", title: "Future Continuous", completed: false },
+              { id: "b2-g3-3", title: "Future Perfect", completed: false },
             ]
           },
           {
             id: "b2-gram-4",
-            title: "Inversiones",
-            description: "Inverted structures for emphasis",
+            title: "Condicionales 0-3",
+            description: "All conditional types mastered",
             completed: false,
             subSkills: [
-              { id: "b2-g4-1", title: "Never have I...", completed: false },
-              { id: "b2-g4-2", title: "Not only... but also", completed: false },
+              { id: "b2-g4-1", title: "Zero y First conditional", completed: false },
+              { id: "b2-g4-2", title: "Second conditional", completed: false },
+              { id: "b2-g4-3", title: "Third conditional", completed: false },
+            ]
+          },
+          {
+            id: "b2-gram-5",
+            title: "Mixed Conditionals",
+            description: "Basic mixed conditional structures",
+            completed: false,
+            subSkills: [
+              { id: "b2-g5-1", title: "Pasado irreal → presente resultado", completed: false },
+              { id: "b2-g5-2", title: "Presente irreal → pasado resultado", completed: false },
+            ]
+          },
+          {
+            id: "b2-gram-6",
+            title: "Voz pasiva avanzada",
+            description: "Passive voice in multiple tenses",
+            completed: false,
+            subSkills: [
+              { id: "b2-g6-1", title: "Pasiva en todos los tiempos", completed: false },
+              { id: "b2-g6-2", title: "Pasiva con modales", completed: false },
+              { id: "b2-g6-3", title: "Pasiva impersonal (It is said...)", completed: false },
+            ]
+          },
+          {
+            id: "b2-gram-7",
+            title: "Oraciones de relativo",
+            description: "Defining and non-defining relative clauses",
+            completed: false,
+            subSkills: [
+              { id: "b2-g7-1", title: "Who, which, that", completed: false },
+              { id: "b2-g7-2", title: "Whose, where, when", completed: false },
+              { id: "b2-g7-3", title: "Non-defining clauses (con comas)", completed: false },
+            ]
+          },
+          {
+            id: "b2-gram-8",
+            title: "Reported Speech",
+            description: "All forms of reported speech",
+            completed: false,
+            subSkills: [
+              { id: "b2-g8-1", title: "Cambios de tiempo verbal", completed: false },
+              { id: "b2-g8-2", title: "Cambios de pronombres y tiempo", completed: false },
+              { id: "b2-g8-3", title: "Reporting verbs variados", completed: false },
+            ]
+          },
+          {
+            id: "b2-gram-9",
+            title: "Modales para deducción",
+            description: "Might have, must be, could have",
+            completed: false,
+            subSkills: [
+              { id: "b2-g9-1", title: "Must/Can't para certeza", completed: false },
+              { id: "b2-g9-2", title: "Might/Could para posibilidad", completed: false },
+              { id: "b2-g9-3", title: "Modales perfectos (must have been)", completed: false },
+            ]
+          },
+          {
+            id: "b2-gram-10",
+            title: "Estructuras complejas",
+            description: "Complex sentence structures",
+            completed: false,
+            subSkills: [
+              { id: "b2-g10-1", title: "Oraciones compuestas", completed: false },
+              { id: "b2-g10-2", title: "Oraciones subordinadas múltiples", completed: false },
+            ]
+          },
+          {
+            id: "b2-gram-11",
+            title: "Inversiones para énfasis",
+            description: "Not only..., Had I known..., Never have I...",
+            completed: false,
+            subSkills: [
+              { id: "b2-g11-1", title: "Not only... but also", completed: false },
+              { id: "b2-g11-2", title: "Never/Rarely/Seldom + inversión", completed: false },
+              { id: "b2-g11-3", title: "Had I known...", completed: false },
             ]
           },
         ]
@@ -1377,26 +1526,94 @@ export const curriculumData: LevelCurriculum[] = [
         id: "b2-speaking",
         title: "Expresión Oral",
         icon: "🗣️",
-        description: "Comunicación fluida y detallada",
+        description: "Interacción fluida y segura - conversación natural",
         skills: [
           {
             id: "b2-speak-1",
-            title: "Debates y argumentación",
-            description: "Presenting and defending viewpoints",
+            title: "Expresar y defender opiniones",
+            description: "Clearly expressing and defending viewpoints",
             completed: false,
             subSkills: [
-              { id: "b2-s1-1", title: "Estructurar argumentos", completed: false },
-              { id: "b2-s1-2", title: "Refutar puntos de vista", completed: false },
+              { id: "b2-s1-1", title: "Presentar tu punto de vista", completed: false },
+              { id: "b2-s1-2", title: "Dar razones y ejemplos", completed: false },
+              { id: "b2-s1-3", title: "Defender tu posición", completed: false },
             ]
           },
           {
             id: "b2-speak-2",
-            title: "Presentaciones formales",
-            description: "Giving structured presentations",
+            title: "Desarrollar argumentos",
+            description: "Developing arguments with examples",
             completed: false,
             subSkills: [
-              { id: "b2-s2-1", title: "Introducción y conclusión", completed: false },
-              { id: "b2-s2-2", title: "Manejar preguntas", completed: false },
+              { id: "b2-s2-1", title: "Estructurar argumentos lógicamente", completed: false },
+              { id: "b2-s2-2", title: "Usar ejemplos relevantes", completed: false },
+              { id: "b2-s2-3", title: "Contraargumentar efectivamente", completed: false },
+            ]
+          },
+          {
+            id: "b2-speak-3",
+            title: "Participar en debates",
+            description: "Active participation in discussions and debates",
+            completed: false,
+            subSkills: [
+              { id: "b2-s3-1", title: "Escuchar y responder a otros", completed: false },
+              { id: "b2-s3-2", title: "Expresar acuerdo/desacuerdo educado", completed: false },
+              { id: "b2-s3-3", title: "Moderar y facilitar discusiones", completed: false },
+            ]
+          },
+          {
+            id: "b2-speak-4",
+            title: "Fluidez con mínima duda",
+            description: "Speaking fluently with minimal hesitation",
+            completed: false,
+            subSkills: [
+              { id: "b2-s4-1", title: "Hablar sin pausas largas", completed: false },
+              { id: "b2-s4-2", title: "Usar fillers naturalmente", completed: false },
+              { id: "b2-s4-3", title: "Mantener el ritmo de conversación", completed: false },
+            ]
+          },
+          {
+            id: "b2-speak-5",
+            title: "Ajustar registro",
+            description: "Adjusting register (formal vs informal)",
+            completed: false,
+            subSkills: [
+              { id: "b2-s5-1", title: "Lenguaje formal para trabajo", completed: false },
+              { id: "b2-s5-2", title: "Lenguaje informal con amigos", completed: false },
+              { id: "b2-s5-3", title: "Cambiar registro según contexto", completed: false },
+            ]
+          },
+          {
+            id: "b2-speak-6",
+            title: "Marcadores del discurso",
+            description: "Using fillers and discourse markers naturally",
+            completed: false,
+            subSkills: [
+              { id: "b2-s6-1", title: "Well, Actually, Basically", completed: false },
+              { id: "b2-s6-2", title: "To be honest, In my opinion", completed: false },
+              { id: "b2-s6-3", title: "Having said that, On the other hand", completed: false },
+            ]
+          },
+          {
+            id: "b2-speak-7",
+            title: "Gestionar turnos e interrupciones",
+            description: "Managing turn-taking and interruptions",
+            completed: false,
+            subSkills: [
+              { id: "b2-s7-1", title: "Interrumpir educadamente", completed: false },
+              { id: "b2-s7-2", title: "Ceder el turno naturalmente", completed: false },
+              { id: "b2-s7-3", title: "Retomar el turno", completed: false },
+            ]
+          },
+          {
+            id: "b2-speak-8",
+            title: "Clarificar y reformular",
+            description: "Clarifying, reformulating, and emphasizing",
+            completed: false,
+            subSkills: [
+              { id: "b2-s8-1", title: "What I mean is...", completed: false },
+              { id: "b2-s8-2", title: "Let me put it another way", completed: false },
+              { id: "b2-s8-3", title: "The point I'm trying to make is...", completed: false },
             ]
           },
         ]
@@ -1405,16 +1622,60 @@ export const curriculumData: LevelCurriculum[] = [
         id: "b2-listening",
         title: "Comprensión Auditiva",
         icon: "👂",
-        description: "Entender prácticamente todo el habla estándar",
+        description: "Entender inglés natural a velocidad normal",
         skills: [
           {
             id: "b2-list-1",
             title: "Series y películas",
-            description: "Understanding films and TV shows",
+            description: "TV shows and films with limited subtitles",
             completed: false,
             subSkills: [
-              { id: "b2-l1-1", title: "Sin subtítulos", completed: false },
-              { id: "b2-l1-2", title: "Acentos variados", completed: false },
+              { id: "b2-l1-1", title: "Películas sin subtítulos", completed: false },
+              { id: "b2-l1-2", title: "Series de TV complejas", completed: false },
+              { id: "b2-l1-3", title: "Documentales", completed: false },
+            ]
+          },
+          {
+            id: "b2-list-2",
+            title: "Podcasts y entrevistas",
+            description: "Podcasts and interviews on various topics",
+            completed: false,
+            subSkills: [
+              { id: "b2-l2-1", title: "Podcasts de noticias", completed: false },
+              { id: "b2-l2-2", title: "Entrevistas con nativos", completed: false },
+              { id: "b2-l2-3", title: "Debates y discusiones", completed: false },
+            ]
+          },
+          {
+            id: "b2-list-3",
+            title: "Discusiones grupales",
+            description: "Understanding group discussions",
+            completed: false,
+            subSkills: [
+              { id: "b2-l3-1", title: "Seguir múltiples hablantes", completed: false },
+              { id: "b2-l3-2", title: "Identificar opiniones diferentes", completed: false },
+            ]
+          },
+          {
+            id: "b2-list-4",
+            title: "Acentos variados",
+            description: "Different accents (US, UK, Australian, etc.)",
+            completed: false,
+            subSkills: [
+              { id: "b2-l4-1", title: "Acento americano", completed: false },
+              { id: "b2-l4-2", title: "Acento británico", completed: false },
+              { id: "b2-l4-3", title: "Otros acentos (australiano, irlandés)", completed: false },
+            ]
+          },
+          {
+            id: "b2-list-5",
+            title: "Significado implícito",
+            description: "Understanding implied meaning and attitude",
+            completed: false,
+            subSkills: [
+              { id: "b2-l5-1", title: "Detectar sarcasmo e ironía", completed: false },
+              { id: "b2-l5-2", title: "Entender actitudes del hablante", completed: false },
+              { id: "b2-l5-3", title: "Inferir lo no dicho", completed: false },
             ]
           },
         ]
@@ -1423,25 +1684,71 @@ export const curriculumData: LevelCurriculum[] = [
         id: "b2-reading",
         title: "Comprensión Lectora",
         icon: "📖",
-        description: "Textos complejos sobre temas variados",
+        description: "Textos complejos y abstractos - argumentación y análisis",
         skills: [
           {
             id: "b2-read-1",
-            title: "Literatura contemporánea",
-            description: "Modern novels and short stories",
+            title: "Artículos de opinión",
+            description: "Opinion articles and editorials",
             completed: false,
             subSkills: [
-              { id: "b2-r1-1", title: "Novelas adaptadas", completed: false },
-              { id: "b2-r1-2", title: "Cuentos cortos", completed: false },
+              { id: "b2-r1-1", title: "Identificar la tesis principal", completed: false },
+              { id: "b2-r1-2", title: "Reconocer argumentos y evidencia", completed: false },
+              { id: "b2-r1-3", title: "Evaluar la posición del autor", completed: false },
             ]
           },
           {
             id: "b2-read-2",
-            title: "Artículos especializados",
-            description: "In-depth articles on various topics",
+            title: "Informes y ensayos",
+            description: "Reports and essays",
             completed: false,
             subSkills: [
-              { id: "b2-r2-1", title: "Artículos científicos", completed: false },
+              { id: "b2-r2-1", title: "Estructura de informes", completed: false },
+              { id: "b2-r2-2", title: "Análisis de datos presentados", completed: false },
+              { id: "b2-r2-3", title: "Conclusiones y recomendaciones", completed: false },
+            ]
+          },
+          {
+            id: "b2-read-3",
+            title: "Noticias y editoriales",
+            description: "News stories and editorials",
+            completed: false,
+            subSkills: [
+              { id: "b2-r3-1", title: "Diferenciar hechos de opiniones", completed: false },
+              { id: "b2-r3-2", title: "Sesgo en medios", completed: false },
+            ]
+          },
+          {
+            id: "b2-read-4",
+            title: "Textos académicos o semi-técnicos",
+            description: "Academic or semi-technical texts",
+            completed: false,
+            subSkills: [
+              { id: "b2-r4-1", title: "Vocabulario especializado", completed: false },
+              { id: "b2-r4-2", title: "Estructura académica", completed: false },
+              { id: "b2-r4-3", title: "Referencias y citas", completed: false },
+            ]
+          },
+          {
+            id: "b2-read-5",
+            title: "Emails y documentos extensos",
+            description: "Long emails and documents",
+            completed: false,
+            subSkills: [
+              { id: "b2-r5-1", title: "Correspondencia formal extensa", completed: false },
+              { id: "b2-r5-2", title: "Manuales y guías", completed: false },
+            ]
+          },
+          {
+            id: "b2-read-6",
+            title: "Habilidades de lectura avanzada",
+            description: "Advanced reading skills",
+            completed: false,
+            subSkills: [
+              { id: "b2-r6-1", title: "Identificar estructura argumentativa", completed: false },
+              { id: "b2-r6-2", title: "Entender significado implícito", completed: false },
+              { id: "b2-r6-3", title: "Evaluar puntos de vista", completed: false },
+              { id: "b2-r6-4", title: "Inferir del contexto", completed: false },
             ]
           },
         ]
@@ -1450,16 +1757,164 @@ export const curriculumData: LevelCurriculum[] = [
         id: "b2-writing",
         title: "Expresión Escrita",
         icon: "✍️",
-        description: "Escritura clara y detallada",
+        description: "Escritura coherente y estructurada - argumentación clara",
         skills: [
           {
             id: "b2-write-1",
-            title: "Informes y propuestas",
-            description: "Reports, proposals, reviews",
+            title: "Ensayos con argumentos claros",
+            description: "Essays with clear arguments",
             completed: false,
             subSkills: [
-              { id: "b2-w1-1", title: "Estructura de informe", completed: false },
-              { id: "b2-w1-2", title: "Propuestas formales", completed: false },
+              { id: "b2-w1-1", title: "Introducción con tesis", completed: false },
+              { id: "b2-w1-2", title: "Párrafos de desarrollo", completed: false },
+              { id: "b2-w1-3", title: "Conclusión efectiva", completed: false },
+            ]
+          },
+          {
+            id: "b2-write-2",
+            title: "Informes y propuestas",
+            description: "Reports and proposals",
+            completed: false,
+            subSkills: [
+              { id: "b2-w2-1", title: "Formato de informe formal", completed: false },
+              { id: "b2-w2-2", title: "Recomendaciones claras", completed: false },
+              { id: "b2-w2-3", title: "Propuestas de acción", completed: false },
+            ]
+          },
+          {
+            id: "b2-write-3",
+            title: "Emails formales e informales",
+            description: "Formal and informal emails",
+            completed: false,
+            subSkills: [
+              { id: "b2-w3-1", title: "Registro apropiado", completed: false },
+              { id: "b2-w3-2", title: "Fórmulas de cortesía", completed: false },
+              { id: "b2-w3-3", title: "Estructura clara", completed: false },
+            ]
+          },
+          {
+            id: "b2-write-4",
+            title: "Reseñas",
+            description: "Reviews (films, books, places)",
+            completed: false,
+            subSkills: [
+              { id: "b2-w4-1", title: "Reseñas de películas/libros", completed: false },
+              { id: "b2-w4-2", title: "Reseñas de lugares/restaurantes", completed: false },
+              { id: "b2-w4-3", title: "Opiniones equilibradas", completed: false },
+            ]
+          },
+          {
+            id: "b2-write-5",
+            title: "Artículos de opinión",
+            description: "Articles expressing opinions",
+            completed: false,
+            subSkills: [
+              { id: "b2-w5-1", title: "Titular y enganche", completed: false },
+              { id: "b2-w5-2", title: "Desarrollar argumentos", completed: false },
+              { id: "b2-w5-3", title: "Conclusión impactante", completed: false },
+            ]
+          },
+          {
+            id: "b2-write-6",
+            title: "Cohesión y coherencia",
+            description: "Focus on cohesion and coherence",
+            completed: false,
+            subSkills: [
+              { id: "b2-w6-1", title: "Conectores variados", completed: false },
+              { id: "b2-w6-2", title: "Referencia y sustitución", completed: false },
+              { id: "b2-w6-3", title: "Unidad de párrafo", completed: false },
+            ]
+          },
+          {
+            id: "b2-write-7",
+            title: "Precisión gramatical",
+            description: "Accurate grammar in writing",
+            completed: false,
+            subSkills: [
+              { id: "b2-w7-1", title: "Gramática correcta", completed: false },
+              { id: "b2-w7-2", title: "Puntuación apropiada", completed: false },
+            ]
+          },
+          {
+            id: "b2-write-8",
+            title: "Tono y registro",
+            description: "Appropriate tone and register",
+            completed: false,
+            subSkills: [
+              { id: "b2-w8-1", title: "Adaptar el tono al lector", completed: false },
+              { id: "b2-w8-2", title: "Mantener consistencia de registro", completed: false },
+            ]
+          },
+        ]
+      },
+      {
+        id: "b2-strategy",
+        title: "Competencia Discursiva y Pragmática",
+        icon: "🧭",
+        description: "Control del discurso - esencial a nivel B2",
+        skills: [
+          {
+            id: "b2-strat-1",
+            title: "Parafrasear con precisión",
+            description: "Paraphrasing precisely",
+            completed: false,
+            subSkills: [
+              { id: "b2-st1-1", title: "Reformular ideas complejas", completed: false },
+              { id: "b2-st1-2", title: "Usar sinónimos efectivamente", completed: false },
+            ]
+          },
+          {
+            id: "b2-strat-2",
+            title: "Matizar opiniones",
+            description: "Hedging opinions (It seems that..., I tend to think...)",
+            completed: false,
+            subSkills: [
+              { id: "b2-st2-1", title: "It seems that, It appears", completed: false },
+              { id: "b2-st2-2", title: "I tend to think, I would argue", completed: false },
+              { id: "b2-st2-3", title: "To some extent, In a way", completed: false },
+            ]
+          },
+          {
+            id: "b2-strat-3",
+            title: "Gestionar desacuerdos",
+            description: "Managing disagreement politely",
+            completed: false,
+            subSkills: [
+              { id: "b2-st3-1", title: "I see your point, but...", completed: false },
+              { id: "b2-st3-2", title: "I'm not sure I agree entirely", completed: false },
+              { id: "b2-st3-3", title: "That's a valid point, however...", completed: false },
+            ]
+          },
+          {
+            id: "b2-strat-4",
+            title: "Reparar malentendidos",
+            description: "Repairing misunderstandings smoothly",
+            completed: false,
+            subSkills: [
+              { id: "b2-st4-1", title: "Reconocer el malentendido", completed: false },
+              { id: "b2-st4-2", title: "Aclarar tu intención", completed: false },
+              { id: "b2-st4-3", title: "Confirmar la comprensión", completed: false },
+            ]
+          },
+          {
+            id: "b2-strat-5",
+            title: "Usar énfasis y matices",
+            description: "Using emphasis and nuance",
+            completed: false,
+            subSkills: [
+              { id: "b2-st5-1", title: "Palabras de énfasis (absolutely, definitely)", completed: false },
+              { id: "b2-st5-2", title: "Estructuras enfáticas (What I want is...)", completed: false },
+            ]
+          },
+          {
+            id: "b2-strat-6",
+            title: "Estructurar respuestas largas",
+            description: "Structuring long spoken responses",
+            completed: false,
+            subSkills: [
+              { id: "b2-st6-1", title: "Firstly, Secondly, Finally", completed: false },
+              { id: "b2-st6-2", title: "To begin with, Moving on to", completed: false },
+              { id: "b2-st6-3", title: "In conclusion, To sum up", completed: false },
             ]
           },
         ]
