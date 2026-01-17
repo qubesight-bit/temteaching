@@ -4,9 +4,11 @@ import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ArrowLeft, Send, Sparkles, Mic, MicOff, Volume2, Loader2 } from "lucide-react";
+import { ArrowLeft, Send, Sparkles, Mic, MicOff, Volume2, Loader2, History } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
+import { useAuth } from "@/contexts/AuthContext";
+import { supabase } from "@/integrations/supabase/client";
 
 // Type declarations for Web Speech API
 interface SpeechRecognitionEvent extends Event {
@@ -168,6 +170,7 @@ type LevelFilter = typeof levels[number];
 
 export default function Conversation() {
   const navigate = useNavigate();
+  const { user } = useAuth();
   const [selectedScenario, setSelectedScenario] = useState<string | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<LevelFilter>("All");
   const [messages, setMessages] = useState<Message[]>([]);
@@ -175,6 +178,7 @@ export default function Conversation() {
   const [isRecording, setIsRecording] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [lastPronunciationScore, setLastPronunciationScore] = useState<number | null>(null);
+  const [currentConversationId, setCurrentConversationId] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const recognitionRef = useRef<SpeechRecognition | null>(null);
   const confidenceScoresRef = useRef<number[]>([]);
@@ -275,6 +279,29 @@ export default function Conversation() {
   const handleStartScenario = async (scenarioId: string) => {
     setSelectedScenario(scenarioId);
     setIsLoading(true);
+    setCurrentConversationId(null);
+    
+    const scenario = scenarios.find(s => s.id === scenarioId);
+    
+    // Create conversation in database if user is logged in
+    if (user && scenario) {
+      try {
+        const { data, error } = await supabase
+          .from('conversations')
+          .insert({
+            user_id: user.id,
+            scenario_id: scenarioId,
+            scenario_title: scenario.title,
+          })
+          .select()
+          .single();
+        
+        if (error) throw error;
+        setCurrentConversationId(data.id);
+      } catch (error) {
+        console.error('Error creating conversation:', error);
+      }
+    }
     
     // Get initial greeting from AI
     const initialMessages: Message[] = [];
@@ -294,8 +321,28 @@ export default function Conversation() {
           content: assistantContent,
         }]);
       },
-      onDone: () => {
+      onDone: async () => {
         setIsLoading(false);
+        // Save assistant greeting to database
+        if (currentConversationId || (user && assistantContent)) {
+          // Need to get the conversation ID after it's set
+          setTimeout(async () => {
+            const convId = currentConversationId;
+            if (convId) {
+              try {
+                await supabase
+                  .from('conversation_messages')
+                  .insert({
+                    conversation_id: convId,
+                    role: 'assistant',
+                    content: assistantContent,
+                  });
+              } catch (error) {
+                console.error('Error saving greeting:', error);
+              }
+            }
+          }, 100);
+        }
       },
       onError: (error) => {
         setIsLoading(false);
@@ -320,6 +367,23 @@ export default function Conversation() {
     });
   };
 
+  const saveMessageToDatabase = async (role: 'user' | 'assistant', content: string, pronunciationScore?: number) => {
+    if (!currentConversationId) return;
+    
+    try {
+      await supabase
+        .from('conversation_messages')
+        .insert({
+          conversation_id: currentConversationId,
+          role,
+          content,
+          pronunciation_score: pronunciationScore || null,
+        });
+    } catch (error) {
+      console.error('Error saving message:', error);
+    }
+  };
+
   const handleSend = async () => {
     if (!input.trim() || !selectedScenario || isLoading) return;
 
@@ -335,10 +399,14 @@ export default function Conversation() {
 
     const newMessages = [...messages, userMessage];
     setMessages(newMessages);
+    const userInput = input;
     setInput("");
     setLastPronunciationScore(null);
     confidenceScoresRef.current = [];
     setIsLoading(true);
+
+    // Save user message to database
+    saveMessageToDatabase('user', userInput, pronunciationScore !== null ? pronunciationScore : undefined);
 
     let assistantContent = "";
     
@@ -359,6 +427,10 @@ export default function Conversation() {
       },
       onDone: () => {
         setIsLoading(false);
+        // Save assistant response to database
+        if (assistantContent) {
+          saveMessageToDatabase('assistant', assistantContent);
+        }
       },
       onError: (error) => {
         setIsLoading(false);
@@ -566,18 +638,30 @@ export default function Conversation() {
             Volver al Dashboard
           </Button>
           
-          <div className="flex items-center gap-4">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-info flex items-center justify-center">
-              <Sparkles className="w-8 h-8 text-white" />
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-info flex items-center justify-center">
+                <Sparkles className="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <h1 className="font-display font-bold text-3xl text-foreground">
+                  Conversación con IA
+                </h1>
+                <p className="text-muted-foreground">
+                  Practica con tu tutor virtual 24/7 con corrección instantánea impulsada por IA
+                </p>
+              </div>
             </div>
-            <div>
-              <h1 className="font-display font-bold text-3xl text-foreground">
-                Conversación con IA
-              </h1>
-              <p className="text-muted-foreground">
-                Practica con tu tutor virtual 24/7 con corrección instantánea impulsada por IA
-              </p>
-            </div>
+            {user && (
+              <Button
+                variant="outline"
+                onClick={() => navigate('/conversation/history')}
+                className="gap-2"
+              >
+                <History className="w-4 h-4" />
+                Historial
+              </Button>
+            )}
           </div>
         </div>
 
@@ -637,6 +721,25 @@ export default function Conversation() {
             </Card>
           ))}
         </div>
+
+        {/* Login prompt for saving history */}
+        {!user && (
+          <Card className="mt-8 border-primary/20 bg-primary/5">
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="font-display font-semibold mb-1">💾 Guarda tu progreso</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Inicia sesión para guardar tus conversaciones y ver tu historial de práctica
+                  </p>
+                </div>
+                <Button onClick={() => navigate('/auth')}>
+                  Crear cuenta gratis
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        )}
 
         {/* Tips */}
         <Card className="mt-8">

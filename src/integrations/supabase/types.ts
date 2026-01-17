@@ -14,7 +14,101 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      conversation_messages: {
+        Row: {
+          content: string
+          conversation_id: string
+          created_at: string
+          id: string
+          pronunciation_score: number | null
+          role: string
+        }
+        Insert: {
+          content: string
+          conversation_id: string
+          created_at?: string
+          id?: string
+          pronunciation_score?: number | null
+          role: string
+        }
+        Update: {
+          content?: string
+          conversation_id?: string
+          created_at?: string
+          id?: string
+          pronunciation_score?: number | null
+          role?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "conversation_messages_conversation_id_fkey"
+            columns: ["conversation_id"]
+            isOneToOne: false
+            referencedRelation: "conversations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      conversations: {
+        Row: {
+          avg_pronunciation_score: number | null
+          ended_at: string | null
+          id: string
+          message_count: number | null
+          scenario_id: string
+          scenario_title: string
+          started_at: string
+          user_id: string
+        }
+        Insert: {
+          avg_pronunciation_score?: number | null
+          ended_at?: string | null
+          id?: string
+          message_count?: number | null
+          scenario_id: string
+          scenario_title: string
+          started_at?: string
+          user_id: string
+        }
+        Update: {
+          avg_pronunciation_score?: number | null
+          ended_at?: string | null
+          id?: string
+          message_count?: number | null
+          scenario_id?: string
+          scenario_title?: string
+          started_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          current_level: string | null
+          display_name: string | null
+          id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          current_level?: string | null
+          display_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          current_level?: string | null
+          display_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

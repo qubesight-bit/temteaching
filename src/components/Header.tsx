@@ -1,6 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { Bell, Menu, Settings, User } from "lucide-react";
+import { Bell, Menu, Settings, User, LogOut } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const navItems = [
   { label: 'Dashboard', path: '/' },
@@ -13,6 +21,12 @@ const navItems = [
 export function Header() {
   const navigate = useNavigate();
   const location = useLocation();
+  const { user, signOut } = useAuth();
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate('/');
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-xl">
@@ -61,9 +75,44 @@ export function Header() {
           <Button variant="ghost" size="icon" onClick={() => navigate("/settings")}>
             <Settings className="w-5 h-5" />
           </Button>
-          <div className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center ml-2 cursor-pointer hover:bg-secondary/80">
-            <User className="w-5 h-5 text-muted-foreground" />
-          </div>
+          
+          {user ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center ml-2 cursor-pointer hover:bg-primary/20 transition-colors">
+                  <span className="text-primary font-medium text-sm">
+                    {user.email?.charAt(0).toUpperCase()}
+                  </span>
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56">
+                <div className="px-2 py-1.5">
+                  <p className="text-sm font-medium">{user.email}</p>
+                </div>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={() => navigate('/conversation/history')}>
+                  Historial de conversaciones
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => navigate('/settings')}>
+                  Configuración
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={handleSignOut} className="text-destructive">
+                  <LogOut className="w-4 h-4 mr-2" />
+                  Cerrar sesión
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            <Button
+              variant="default"
+              size="sm"
+              onClick={() => navigate('/auth')}
+              className="ml-2"
+            >
+              Iniciar sesión
+            </Button>
+          )}
         </div>
       </div>
     </header>
