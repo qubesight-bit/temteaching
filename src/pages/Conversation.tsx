@@ -39,6 +39,7 @@ interface Message {
   id: string;
   role: "user" | "assistant";
   content: string;
+  pronunciationScore?: number;
 }
 
 const scenarios = [
@@ -161,8 +162,18 @@ export default function Conversation() {
   const [input, setInput] = useState("");
   const [isRecording, setIsRecording] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [lastPronunciationScore, setLastPronunciationScore] = useState<number | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const recognitionRef = useRef<SpeechRecognition | null>(null);
+  const confidenceScoresRef = useRef<number[]>([]);
+
+  const getPronunciationFeedback = (score: number) => {
+    if (score >= 0.9) return { label: "Excellent!", color: "text-green-500", emoji: "🌟" };
+    if (score >= 0.75) return { label: "Great!", color: "text-emerald-500", emoji: "👍" };
+    if (score >= 0.6) return { label: "Good", color: "text-yellow-500", emoji: "👌" };
+    if (score >= 0.4) return { label: "Keep practicing", color: "text-orange-500", emoji: "💪" };
+    return { label: "Try again", color: "text-red-500", emoji: "🔄" };
+  };
 
   // Initialize speech recognition
   useEffect(() => {
@@ -174,10 +185,18 @@ export default function Conversation() {
       recognition.lang = 'en-US';
 
       recognition.onresult = (event) => {
-        const transcript = Array.from(event.results)
-          .map(result => result[0].transcript)
-          .join('');
+        const results = Array.from(event.results);
+        const transcript = results.map(result => result[0].transcript).join('');
         setInput(transcript);
+        
+        // Collect confidence scores from final results
+        const finalResults = results.filter(result => result.isFinal);
+        if (finalResults.length > 0) {
+          const scores = finalResults.map(result => result[0].confidence);
+          confidenceScoresRef.current = scores;
+          const avgScore = scores.reduce((a, b) => a + b, 0) / scores.length;
+          setLastPronunciationScore(avgScore);
+        }
       };
 
       recognition.onerror = (event) => {
@@ -288,15 +307,21 @@ export default function Conversation() {
   const handleSend = async () => {
     if (!input.trim() || !selectedScenario || isLoading) return;
 
+    // Capture pronunciation score before clearing
+    const pronunciationScore = lastPronunciationScore;
+    
     const userMessage: Message = {
       id: Date.now().toString(),
       role: "user",
       content: input,
+      pronunciationScore: pronunciationScore !== null ? pronunciationScore : undefined,
     };
 
     const newMessages = [...messages, userMessage];
     setMessages(newMessages);
     setInput("");
+    setLastPronunciationScore(null);
+    confidenceScoresRef.current = [];
     setIsLoading(true);
 
     let assistantContent = "";
@@ -420,6 +445,22 @@ export default function Conversation() {
                           </Button>
                         )}
                       </div>
+                      
+                      {/* Pronunciation Score Badge */}
+                      {message.role === "user" && message.pronunciationScore !== undefined && (
+                        <div className="flex justify-end">
+                          <div className={cn(
+                            "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-background border",
+                            getPronunciationFeedback(message.pronunciationScore).color
+                          )}>
+                            <span>{getPronunciationFeedback(message.pronunciationScore).emoji}</span>
+                            <span>Pronunciation: {Math.round(message.pronunciationScore * 100)}%</span>
+                            <span className="text-muted-foreground">
+                              ({getPronunciationFeedback(message.pronunciationScore).label})
+                            </span>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -440,6 +481,22 @@ export default function Conversation() {
             </CardContent>
           </Card>
 
+          {/* Pronunciation Score Preview */}
+          {lastPronunciationScore !== null && input && (
+            <div className="mt-4 flex justify-center">
+              <div className={cn(
+                "inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-secondary border",
+                getPronunciationFeedback(lastPronunciationScore).color
+              )}>
+                <span className="text-lg">{getPronunciationFeedback(lastPronunciationScore).emoji}</span>
+                <span>Pronunciation Score: {Math.round(lastPronunciationScore * 100)}%</span>
+                <span className="text-muted-foreground">
+                  - {getPronunciationFeedback(lastPronunciationScore).label}
+                </span>
+              </div>
+            </div>
+          )}
+
           {/* Input */}
           <div className="mt-4 flex gap-2">
             <Button
@@ -451,7 +508,7 @@ export default function Conversation() {
               {isRecording ? <MicOff className="w-5 h-5" /> : <Mic className="w-5 h-5" />}
             </Button>
             <Input
-              placeholder="Escribe tu mensaje en inglés..."
+              placeholder={isRecording ? "🎤 Listening... speak in English" : "Escribe tu mensaje en inglés..."}
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
