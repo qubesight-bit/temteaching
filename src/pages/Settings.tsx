@@ -6,14 +6,12 @@ import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { ArrowLeft, User, Bell, Clock, Volume2, Palette, RotateCcw, Key, Eye, EyeOff } from "lucide-react";
+import { ArrowLeft, User, Bell, Clock, Volume2, Palette, RotateCcw } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 
 export default function Settings() {
   const navigate = useNavigate();
-  const [showApiKey, setShowApiKey] = useState(false);
   const [settings, setSettings] = useState(() => {
     const saved = localStorage.getItem('settings');
     return saved ? JSON.parse(saved) : {
@@ -23,7 +21,6 @@ export default function Settings() {
       reminderTime: "09:00",
       theme: "system",
       level: "A2",
-      openaiApiKey: "",
     };
   });
 
@@ -43,7 +40,6 @@ export default function Settings() {
       reminderTime: "09:00",
       theme: "system",
       level: "A2",
-      openaiApiKey: settings.openaiApiKey, // Keep API key
     };
     setSettings(defaultSettings);
     toast({
@@ -229,46 +225,6 @@ export default function Settings() {
                     <SelectItem value="system">Sistema</SelectItem>
                   </SelectContent>
               </Select>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* OpenAI API Key Section */}
-        <Card className="mb-6">
-          <CardContent className="p-6">
-            <div className="flex items-center gap-3 mb-6">
-              <Key className="w-5 h-5 text-primary" />
-              <h2 className="font-display font-semibold text-lg">API de OpenAI</h2>
-            </div>
-            
-            <div className="space-y-4">
-              <div>
-                <Label>Clave API de OpenAI</Label>
-                <p className="text-sm text-muted-foreground mb-2">
-                  Añade tu clave API de OpenAI para habilitar conversaciones avanzadas con IA
-                </p>
-                <div className="relative">
-                  <Input
-                    type={showApiKey ? "text" : "password"}
-                    placeholder="sk-..."
-                    value={settings.openaiApiKey}
-                    onChange={(e) => setSettings((prev: typeof settings) => ({ ...prev, openaiApiKey: e.target.value }))}
-                    className="pr-10"
-                  />
-                  <Button
-                    type="button"
-                    variant="ghost"
-                    size="icon"
-                    className="absolute right-0 top-0 h-full"
-                    onClick={() => setShowApiKey(!showApiKey)}
-                  >
-                    {showApiKey ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                  </Button>
-                </div>
-                <p className="text-xs text-muted-foreground mt-2">
-                  Tu clave se guarda localmente en tu navegador y nunca se comparte.
-                </p>
-              </div>
             </div>
           </CardContent>
         </Card>

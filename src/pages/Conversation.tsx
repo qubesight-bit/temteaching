@@ -4,18 +4,14 @@ import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ArrowLeft, Send, Sparkles, Mic, MicOff, Volume2 } from "lucide-react";
+import { ArrowLeft, Send, Sparkles, Mic, MicOff, Volume2, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { toast } from "@/hooks/use-toast";
 
 interface Message {
   id: string;
   role: "user" | "assistant";
   content: string;
-  correction?: {
-    original: string;
-    corrected: string;
-    explanation: string;
-  };
 }
 
 const scenarios = [
@@ -25,37 +21,111 @@ const scenarios = [
   { id: "debate", title: "Debate académico", description: "Argumentación avanzada", icon: "🎓", level: "B2" },
 ];
 
-const aiResponses: Record<string, { greeting: string; corrections: Record<string, { corrected: string; explanation: string }> }> = {
-  cafe: {
-    greeting: "Welcome to English Café! ☕ I'll be your waiter today. What can I get for you?",
-    corrections: {
-      "i want coffee": { corrected: "I would like a coffee, please.", explanation: "'I would like' es más educado que 'I want' cuando ordenas algo." },
-      "i want a coffee": { corrected: "I would like a coffee, please.", explanation: "'I would like' es más educado que 'I want' cuando ordenas algo." },
-      "give me": { corrected: "Could I have...", explanation: "'Could I have' es más cortés que 'give me'." },
+const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/conversation-chat`;
+
+async function streamChat({
+  messages,
+  scenario,
+  userLevel,
+  onDelta,
+  onDone,
+  onError,
+}: {
+  messages: { role: "user" | "assistant"; content: string }[];
+  scenario: string;
+  userLevel: string;
+  onDelta: (deltaText: string) => void;
+  onDone: () => void;
+  onError: (error: string) => void;
+}) {
+  try {
+    const resp = await fetch(CHAT_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
+      },
+      body: JSON.stringify({ messages, scenario, userLevel }),
+    });
+
+    if (!resp.ok) {
+      const errorData = await resp.json().catch(() => ({ error: "Failed to start stream" }));
+      if (resp.status === 429) {
+        onError("Rate limit exceeded. Please wait a moment and try again.");
+        return;
+      }
+      if (resp.status === 402) {
+        onError("AI credits exhausted. Please try again later.");
+        return;
+      }
+      onError(errorData.error || "Failed to get AI response");
+      return;
     }
-  },
-  travel: {
-    greeting: "Good morning! Welcome to the check-in desk. May I see your passport and boarding pass, please?",
-    corrections: {
-      "where is": { corrected: "Where is...?", explanation: "Recuerda usar entonación ascendente para preguntas." },
-      "i go to": { corrected: "I'm going to / I'm flying to", explanation: "Usa Present Continuous para viajes planeados." },
+
+    if (!resp.body) {
+      onError("No response body");
+      return;
     }
-  },
-  work: {
-    greeting: "Good morning, everyone. Let's begin our weekly meeting. Would you like to start with your project update?",
-    corrections: {
-      "i think we must": { corrected: "I think we should / I suggest we", explanation: "'Should' es más adecuado para sugerencias profesionales." },
-      "we can maybe": { corrected: "We could perhaps / We might consider", explanation: "Usa modales más formales en reuniones de trabajo." },
+
+    const reader = resp.body.getReader();
+    const decoder = new TextDecoder();
+    let textBuffer = "";
+    let streamDone = false;
+
+    while (!streamDone) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      textBuffer += decoder.decode(value, { stream: true });
+
+      let newlineIndex: number;
+      while ((newlineIndex = textBuffer.indexOf("\n")) !== -1) {
+        let line = textBuffer.slice(0, newlineIndex);
+        textBuffer = textBuffer.slice(newlineIndex + 1);
+
+        if (line.endsWith("\r")) line = line.slice(0, -1);
+        if (line.startsWith(":") || line.trim() === "") continue;
+        if (!line.startsWith("data: ")) continue;
+
+        const jsonStr = line.slice(6).trim();
+        if (jsonStr === "[DONE]") {
+          streamDone = true;
+          break;
+        }
+
+        try {
+          const parsed = JSON.parse(jsonStr);
+          const content = parsed.choices?.[0]?.delta?.content as string | undefined;
+          if (content) onDelta(content);
+        } catch {
+          textBuffer = line + "\n" + textBuffer;
+          break;
+        }
+      }
     }
-  },
-  debate: {
-    greeting: "Today's topic is: 'Should social media be regulated by governments?' What's your opening argument?",
-    corrections: {
-      "i think is": { corrected: "I think it is / I believe", explanation: "No olvides el sujeto 'it' en inglés." },
-      "is obvious that": { corrected: "It is obvious that / Evidently", explanation: "El sujeto 'it' es necesario en estructuras impersonales." },
+
+    // Final flush
+    if (textBuffer.trim()) {
+      for (let raw of textBuffer.split("\n")) {
+        if (!raw) continue;
+        if (raw.endsWith("\r")) raw = raw.slice(0, -1);
+        if (raw.startsWith(":") || raw.trim() === "") continue;
+        if (!raw.startsWith("data: ")) continue;
+        const jsonStr = raw.slice(6).trim();
+        if (jsonStr === "[DONE]") continue;
+        try {
+          const parsed = JSON.parse(jsonStr);
+          const content = parsed.choices?.[0]?.delta?.content as string | undefined;
+          if (content) onDelta(content);
+        } catch { /* ignore */ }
+      }
     }
-  },
-};
+
+    onDone();
+  } catch (error) {
+    console.error("Stream error:", error);
+    onError(error instanceof Error ? error.message : "Connection error");
+  }
+}
 
 export default function Conversation() {
   const navigate = useNavigate();
@@ -63,6 +133,7 @@ export default function Conversation() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isRecording, setIsRecording] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -73,71 +144,106 @@ export default function Conversation() {
     scrollToBottom();
   }, [messages]);
 
-  const handleStartScenario = (scenarioId: string) => {
-    setSelectedScenario(scenarioId);
-    const scenario = aiResponses[scenarioId];
-    setMessages([
-      {
-        id: "1",
-        role: "assistant",
-        content: scenario.greeting,
-      },
-    ]);
-  };
-
-  const checkForCorrections = (text: string, scenarioId: string) => {
-    const scenario = aiResponses[scenarioId];
-    const lowerText = text.toLowerCase();
-    
-    for (const [trigger, correction] of Object.entries(scenario.corrections)) {
-      if (lowerText.includes(trigger)) {
-        return {
-          original: text,
-          corrected: correction.corrected,
-          explanation: correction.explanation,
-        };
-      }
+  const getUserLevel = () => {
+    const saved = localStorage.getItem('settings');
+    if (saved) {
+      const settings = JSON.parse(saved);
+      return settings.level || "A2";
     }
-    return null;
+    return "A2";
   };
 
-  const generateAIResponse = (userMessage: string) => {
-    const responses = [
-      "That's a great point! Could you tell me more about that?",
-      "Interesting! How would you handle a situation where...?",
-      "I see. And what about...?",
-      "Perfect! Your English is improving. Let's try something more challenging.",
-      "Good job! Remember to use the present perfect when talking about experiences.",
-    ];
-    return responses[Math.floor(Math.random() * responses.length)];
-  };
-
-  const handleSend = () => {
-    if (!input.trim() || !selectedScenario) return;
-
-    const correction = checkForCorrections(input, selectedScenario);
+  const handleStartScenario = async (scenarioId: string) => {
+    setSelectedScenario(scenarioId);
+    setIsLoading(true);
     
+    // Get initial greeting from AI
+    const initialMessages: Message[] = [];
+    setMessages(initialMessages);
+    
+    let assistantContent = "";
+    
+    await streamChat({
+      messages: [],
+      scenario: scenarioId,
+      userLevel: getUserLevel(),
+      onDelta: (chunk) => {
+        assistantContent += chunk;
+        setMessages([{
+          id: "greeting",
+          role: "assistant",
+          content: assistantContent,
+        }]);
+      },
+      onDone: () => {
+        setIsLoading(false);
+      },
+      onError: (error) => {
+        setIsLoading(false);
+        toast({
+          title: "Error",
+          description: error,
+          variant: "destructive",
+        });
+        // Fallback greeting
+        const fallbackGreetings: Record<string, string> = {
+          cafe: "Welcome to English Café! ☕ I'll be your waiter today. What can I get for you?",
+          travel: "Good morning! Welcome to the check-in desk. May I see your passport and boarding pass, please?",
+          work: "Good morning, everyone. Let's begin our weekly meeting. Would you like to start with your project update?",
+          debate: "Today's topic is: 'Should social media be regulated by governments?' What's your opening argument?",
+        };
+        setMessages([{
+          id: "greeting",
+          role: "assistant",
+          content: fallbackGreetings[scenarioId] || "Hello! Let's practice English together.",
+        }]);
+      },
+    });
+  };
+
+  const handleSend = async () => {
+    if (!input.trim() || !selectedScenario || isLoading) return;
+
     const userMessage: Message = {
       id: Date.now().toString(),
       role: "user",
       content: input,
-      correction: correction || undefined,
     };
 
-    setMessages(prev => [...prev, userMessage]);
+    const newMessages = [...messages, userMessage];
+    setMessages(newMessages);
     setInput("");
+    setIsLoading(true);
 
-    // Simulate AI response
-    setTimeout(() => {
-      const aiMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        role: "assistant",
-        content: correction 
-          ? `💡 Good try! A more natural way to say that would be: "${correction.corrected}"\n\n${generateAIResponse(input)}`
-          : generateAIResponse(input),
-      };
-      setMessages(prev => [...prev, aiMessage]);
-    }, 1000);
+    let assistantContent = "";
+    
+    await streamChat({
+      messages: newMessages.map(m => ({ role: m.role, content: m.content })),
+      scenario: selectedScenario,
+      userLevel: getUserLevel(),
+      onDelta: (chunk) => {
+        assistantContent += chunk;
+        setMessages([
+          ...newMessages,
+          {
+            id: (Date.now() + 1).toString(),
+            role: "assistant",
+            content: assistantContent,
+          },
+        ]);
+      },
+      onDone: () => {
+        setIsLoading(false);
+      },
+      onError: (error) => {
+        setIsLoading(false);
+        toast({
+          title: "Error",
+          description: error,
+          variant: "destructive",
+        });
+      },
+    });
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -148,7 +254,9 @@ export default function Conversation() {
   };
 
   const speakText = (text: string) => {
-    const utterance = new SpeechSynthesisUtterance(text);
+    // Remove markdown formatting for speech
+    const cleanText = text.replace(/\*\*.*?\*\*/g, '').replace(/💡.*$/gm, '');
+    const utterance = new SpeechSynthesisUtterance(cleanText);
     utterance.lang = 'en-US';
     speechSynthesis.speak(utterance);
   };
@@ -181,7 +289,7 @@ export default function Conversation() {
               </div>
               <div>
                 <h2 className="font-display font-semibold">{scenario?.title}</h2>
-                <p className="text-sm text-muted-foreground">AI Tutor · {scenario?.level}</p>
+                <p className="text-sm text-muted-foreground">AI Tutor · {scenario?.level} · Powered by AI</p>
               </div>
             </div>
           </div>
@@ -228,21 +336,21 @@ export default function Conversation() {
                           </Button>
                         )}
                       </div>
-                      
-                      {message.correction && (
-                        <div className="bg-warning/10 border border-warning/20 rounded-xl p-3 text-left">
-                          <p className="text-sm font-medium text-warning mb-1">💡 Sugerencia:</p>
-                          <p className="text-sm">
-                            <span className="line-through text-muted-foreground">{message.correction.original}</span>
-                            {" → "}
-                            <span className="text-success font-medium">{message.correction.corrected}</span>
-                          </p>
-                          <p className="text-xs text-muted-foreground mt-1">{message.correction.explanation}</p>
-                        </div>
-                      )}
                     </div>
                   </div>
                 ))}
+                
+                {isLoading && messages.length === 0 && (
+                  <div className="flex gap-3">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-info flex items-center justify-center flex-shrink-0">
+                      <Loader2 className="w-4 h-4 text-white animate-spin" />
+                    </div>
+                    <div className="bg-secondary rounded-2xl rounded-tl-sm p-4">
+                      <p className="text-muted-foreground">Thinking...</p>
+                    </div>
+                  </div>
+                )}
+                
                 <div ref={messagesEndRef} />
               </div>
             </CardContent>
@@ -264,9 +372,19 @@ export default function Conversation() {
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
               className="flex-1"
+              disabled={isLoading}
             />
-            <Button variant="hero" size="icon" onClick={handleSend} disabled={!input.trim()}>
-              <Send className="w-5 h-5" />
+            <Button 
+              variant="hero" 
+              size="icon" 
+              onClick={handleSend} 
+              disabled={!input.trim() || isLoading}
+            >
+              {isLoading ? (
+                <Loader2 className="w-5 h-5 animate-spin" />
+              ) : (
+                <Send className="w-5 h-5" />
+              )}
             </Button>
           </div>
         </main>
@@ -300,7 +418,7 @@ export default function Conversation() {
                 Conversación con IA
               </h1>
               <p className="text-muted-foreground">
-                Practica con tu tutor virtual 24/7 con corrección instantánea
+                Practica con tu tutor virtual 24/7 con corrección instantánea impulsada por IA
               </p>
             </div>
           </div>
@@ -348,9 +466,10 @@ export default function Conversation() {
             <h3 className="font-display font-semibold mb-4">💡 Consejos para practicar</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>• Intenta escribir oraciones completas, no solo palabras sueltas</li>
-              <li>• No te preocupes por los errores, el tutor te corregirá amablemente</li>
+              <li>• No te preocupes por los errores, el tutor IA te corregirá amablemente</li>
               <li>• Usa el botón de audio para escuchar la pronunciación correcta</li>
               <li>• Practica al menos 10 minutos al día para mejorar tu fluidez</li>
+              <li>• La IA se adapta a tu nivel configurado en Ajustes</li>
             </ul>
           </CardContent>
         </Card>
