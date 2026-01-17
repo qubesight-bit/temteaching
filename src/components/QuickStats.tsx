@@ -31,23 +31,22 @@ export function QuickStats() {
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
       <StatItem
         icon={<Clock className="w-5 h-5 text-info" />}
-        value="12.5h"
+        value="0h"
         label="Esta semana"
-        trend="+2.3h"
       />
       <StatItem
         icon={<BookOpen className="w-5 h-5 text-success" />}
-        value="156"
+        value="0"
         label="Lecciones completadas"
       />
       <StatItem
         icon={<Brain className="w-5 h-5 text-primary" />}
-        value="847"
+        value="0"
         label="Palabras aprendidas"
       />
       <StatItem
         icon={<Zap className="w-5 h-5 text-warning" />}
-        value="89%"
+        value="0%"
         label="Precisión promedio"
       />
     </div>

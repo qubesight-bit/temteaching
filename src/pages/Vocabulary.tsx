@@ -237,7 +237,7 @@ export default function Vocabulary() {
           <CardContent className="p-6">
             <div className="grid grid-cols-3 gap-6 text-center">
               <div>
-                <p className="text-3xl font-display font-bold text-foreground">847</p>
+                <p className="text-3xl font-display font-bold text-foreground">0</p>
                 <p className="text-sm text-muted-foreground">Palabras aprendidas</p>
               </div>
               <div>
@@ -245,7 +245,7 @@ export default function Vocabulary() {
                 <p className="text-sm text-muted-foreground">Categorías</p>
               </div>
               <div>
-                <p className="text-3xl font-display font-bold text-success">62%</p>
+                <p className="text-3xl font-display font-bold text-success">0%</p>
                 <p className="text-sm text-muted-foreground">Progreso total</p>
               </div>
             </div>

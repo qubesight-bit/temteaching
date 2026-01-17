@@ -26,9 +26,9 @@ interface TestQuestion {
 }
 
 const availableTests: Test[] = [
-  { id: "a1-grammar", title: "Test de Gramática A1", description: "Presente simple, pronombres, artículos", level: "A1", questions: 15, duration: 10, completed: true, score: 87 },
-  { id: "a1-vocab", title: "Test de Vocabulario A1", description: "Familia, comida, colores, números", level: "A1", questions: 20, duration: 12, completed: true, score: 95 },
-  { id: "a2-grammar", title: "Test de Gramática A2", description: "Pasado simple, futuro, comparativos", level: "A2", questions: 20, duration: 15, completed: true, score: 78 },
+  { id: "a1-grammar", title: "Test de Gramática A1", description: "Presente simple, pronombres, artículos", level: "A1", questions: 15, duration: 10, completed: false },
+  { id: "a1-vocab", title: "Test de Vocabulario A1", description: "Familia, comida, colores, números", level: "A1", questions: 20, duration: 12, completed: false },
+  { id: "a2-grammar", title: "Test de Gramática A2", description: "Pasado simple, futuro, comparativos", level: "A2", questions: 20, duration: 15, completed: false },
   { id: "a2-vocab", title: "Test de Vocabulario A2", description: "Viajes, trabajo, salud", level: "A2", questions: 25, duration: 15, completed: false },
   { id: "a2-placement", title: "Test de Nivel A2", description: "Evaluación completa del nivel A2", level: "A2", questions: 40, duration: 30, completed: false },
   { id: "b1-grammar", title: "Test de Gramática B1", description: "Present perfect, condicionales, pasiva", level: "B1", questions: 25, duration: 20, completed: false },
@@ -322,15 +322,15 @@ export default function Tests() {
           <CardContent className="p-6">
             <div className="grid grid-cols-3 gap-6 text-center">
               <div>
-                <p className="text-3xl font-display font-bold text-foreground">3</p>
+                <p className="text-3xl font-display font-bold text-foreground">0</p>
                 <p className="text-sm text-muted-foreground">Tests completados</p>
               </div>
               <div>
-                <p className="text-3xl font-display font-bold text-success">87%</p>
+                <p className="text-3xl font-display font-bold text-success">0%</p>
                 <p className="text-sm text-muted-foreground">Promedio</p>
               </div>
               <div>
-                <p className="text-3xl font-display font-bold text-primary">5</p>
+                <p className="text-3xl font-display font-bold text-primary">8</p>
                 <p className="text-sm text-muted-foreground">Tests pendientes</p>
               </div>
             </div>

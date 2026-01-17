@@ -77,9 +77,9 @@ export default function Grammar() {
           <CardContent className="p-6">
             <div className="flex items-center justify-between mb-4">
               <h3 className="font-semibold">Progreso general</h3>
-              <span className="text-sm text-muted-foreground">45% completado</span>
+              <span className="text-sm text-muted-foreground">0% completado</span>
             </div>
-            <Progress value={45} className="h-3" />
+            <Progress value={0} className="h-3" />
           </CardContent>
         </Card>
 
