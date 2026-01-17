@@ -100,12 +100,8 @@ export function TopicsSidebar() {
   };
 
   const handleTopicClick = (level: SupportedLevel, categoryId: string, skillId: string) => {
-    const type = categoryId.includes("grammar") ? "grammar" : 
-                 categoryId.includes("vocab") ? "vocabulary" :
-                 categoryId.includes("speak") ? "speaking" :
-                 categoryId.includes("listen") ? "listening" :
-                 categoryId.includes("read") ? "reading" : "writing";
-    navigate(`/lesson/${type}/${categoryId}/${skillId}`);
+    // Navigate to the new skill lesson page with level, category and skill
+    navigate(`/skill/${level}/${categoryId}/${skillId}`);
   };
 
   const handleLevelSelect = (level: SupportedLevel | "ALL") => {
