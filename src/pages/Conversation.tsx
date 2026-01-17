@@ -8,6 +8,7 @@ import { ArrowLeft, Send, Sparkles, Mic, MicOff, Volume2, Loader2, History } fro
 import { cn } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
 import { ChatFeedback } from "@/components/ChatFeedback";
+import { GrammarTips } from "@/components/GrammarTips";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -669,6 +670,9 @@ export default function Conversation() {
             )}
           </div>
         </div>
+
+        {/* Grammar Tips based on history */}
+        <GrammarTips />
 
         {/* Level Filter */}
         <div className="mb-6">
