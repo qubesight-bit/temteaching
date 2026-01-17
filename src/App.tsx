@@ -8,6 +8,7 @@ import { GamificationProvider } from "@/hooks/useGamification";
 import { AdaptiveLearningProvider } from "@/hooks/useAdaptiveLearning";
 import { AuthProvider } from "@/contexts/AuthContext";
 import Index from "./pages/Index";
+import Curriculum from "./pages/Curriculum";
 import Grammar from "./pages/Grammar";
 import Vocabulary from "./pages/Vocabulary";
 import Practice from "./pages/Practice";
@@ -36,6 +37,7 @@ const App = () => (
               <BrowserRouter>
                 <Routes>
                   <Route path="/" element={<Index />} />
+                  <Route path="/curriculum" element={<Curriculum />} />
                   <Route path="/auth" element={<Auth />} />
                   <Route path="/grammar" element={<Grammar />} />
                   <Route path="/vocabulary" element={<Vocabulary />} />

@@ -6,9 +6,17 @@ import { TodayLesson } from "@/components/TodayLesson";
 import { ModuleCard } from "@/components/ModuleCard";
 import { DailyGoalWidget } from "@/components/DailyGoalWidget";
 import { AITutorPreview } from "@/components/AITutorPreview";
-import { BookOpen, MessageSquare, PenTool, GraduationCap, Lightbulb } from "lucide-react";
+import { BookOpen, MessageSquare, PenTool, GraduationCap, Lightbulb, Map } from "lucide-react";
 
 const modules = [
+  {
+    title: "Currículo CEFR",
+    description: "Tu ruta completa de aprendizaje con todas las habilidades por nivel",
+    icon: Map,
+    progress: 0,
+    color: "bg-primary",
+    path: "/curriculum",
+  },
   {
     title: "Gramática",
     description: "19 categorías completas desde tiempos verbales hasta estructuras complejas",
@@ -30,7 +38,7 @@ const modules = [
     description: "Ejercicios interactivos adaptados a tu nivel actual",
     icon: PenTool,
     progress: 0,
-    color: "bg-primary",
+    color: "bg-level-a1",
     path: "/practice",
   },
   {
