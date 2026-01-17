@@ -82,6 +82,56 @@ export type Database = {
         }
         Relationships: []
       }
+      learning_errors: {
+        Row: {
+          conversation_id: string | null
+          correct_response: string
+          created_at: string
+          error_type: string
+          id: string
+          level: string
+          phase: string
+          question_text: string
+          recommendation: string | null
+          user_id: string
+          user_response: string
+        }
+        Insert: {
+          conversation_id?: string | null
+          correct_response: string
+          created_at?: string
+          error_type: string
+          id?: string
+          level: string
+          phase: string
+          question_text: string
+          recommendation?: string | null
+          user_id: string
+          user_response: string
+        }
+        Update: {
+          conversation_id?: string | null
+          correct_response?: string
+          created_at?: string
+          error_type?: string
+          id?: string
+          level?: string
+          phase?: string
+          question_text?: string
+          recommendation?: string | null
+          user_id?: string
+          user_response?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "learning_errors_conversation_id_fkey"
+            columns: ["conversation_id"]
+            isOneToOne: false
+            referencedRelation: "conversations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           created_at: string
