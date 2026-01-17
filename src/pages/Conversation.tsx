@@ -44,9 +44,17 @@ interface Message {
 
 const scenarios = [
   { id: "cafe", title: "En el café", description: "Practica ordenar en una cafetería", icon: "☕", level: "A1" },
+  { id: "restaurant", title: "En el restaurante", description: "Reservas y pedidos de comida", icon: "🍽️", level: "A1" },
+  { id: "shopping", title: "De compras", description: "Comprar ropa y preguntar precios", icon: "🛍️", level: "A1" },
   { id: "travel", title: "En el aeropuerto", description: "Vocabulario de viajes", icon: "✈️", level: "A2" },
+  { id: "hotel", title: "En el hotel", description: "Check-in y servicios del hotel", icon: "🏨", level: "A2" },
+  { id: "doctor", title: "En el médico", description: "Describir síntomas y entender indicaciones", icon: "🏥", level: "B1" },
   { id: "work", title: "Reunión de trabajo", description: "Inglés profesional", icon: "💼", level: "B1" },
+  { id: "interview", title: "Entrevista de trabajo", description: "Responder preguntas y presentarte", icon: "👔", level: "B1" },
+  { id: "bank", title: "En el banco", description: "Abrir cuentas y transacciones", icon: "🏦", level: "B2" },
   { id: "debate", title: "Debate académico", description: "Argumentación avanzada", icon: "🎓", level: "B2" },
+  { id: "networking", title: "Evento de networking", description: "Conversación profesional informal", icon: "🤝", level: "B2" },
+  { id: "negotiation", title: "Negociación comercial", description: "Cerrar acuerdos y negociar términos", icon: "📊", level: "C1" },
 ];
 
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/conversation-chat`;
