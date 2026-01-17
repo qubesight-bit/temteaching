@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageCircle, Mic, Sparkles } from "lucide-react";
 
 export function AITutorPreview() {
+  const navigate = useNavigate();
+
   return (
     <Card variant="elevated" className="overflow-hidden relative">
       {/* Gradient background */}
@@ -53,11 +56,20 @@ export function AITutorPreview() {
             
             {/* Actions */}
             <div className="flex gap-3">
-              <Button variant="hero" size="lg" className="flex-1">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="flex-1"
+                onClick={() => navigate('/conversation')}
+              >
                 <MessageCircle className="w-5 h-5" />
                 Iniciar chat
               </Button>
-              <Button variant="heroOutline" size="lg">
+              <Button 
+                variant="heroOutline" 
+                size="lg"
+                onClick={() => navigate('/conversation')}
+              >
                 <Mic className="w-5 h-5" />
                 Voz
               </Button>
