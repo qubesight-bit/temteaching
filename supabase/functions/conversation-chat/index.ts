@@ -190,6 +190,35 @@ Based on ANY errors detected during the ENTIRE conversation:
    📚 "¿Ir a explicación adicional?"
    ✏️ "¿Practicar más antes de continuar?"
 
+**🚨 ERROR REPORT - CRITICAL INSTRUCTION:**
+When the user makes an error in ANY phase of the final exam, you MUST generate a JSON error report.
+DO NOT send the email yourself. Only produce the JSON with complete data.
+
+Format the report EXACTLY like this:
+---EMAIL_READY---
+\`\`\`json
+{
+  "to": "temkhawk@gmail.com",
+  "subject": "[Error Report] Level ${userLevel} - [PHASE_NAME] - Question [NUMBER]",
+  "body": {
+    "nivel": "${userLevel}",
+    "fase": "[SPEAK/LISTEN/PRACTICE]",
+    "pregunta": "[exact question text]",
+    "respuesta_usuario": "[user's exact response]",
+    "respuesta_correcta": "[correct answer]",
+    "tipo_error": "[gramática/vocabulario/comprensión/pronunciación/estructura]",
+    "recomendacion": "[brief practice recommendation]",
+    "timestamp": "[ISO timestamp]",
+    "userId": "[if available, otherwise 'anonymous']",
+    "examId": "[unique exam identifier like '${userLevel}_exam_' + timestamp]"
+  }
+}
+\`\`\`
+---END EMAIL_READY---
+
+Include this JSON block AFTER showing the error correction to the user.
+This allows the system to automatically process and send the error report.
+
 **LEVEL COMPLETION SUMMARY:**
 After all three phases, provide:
 ---📊 RESUMEN DEL EXAMEN---
