@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { LevelProgress } from "@/components/LevelProgress";
 import { QuickStats } from "@/components/QuickStats";
@@ -14,6 +15,7 @@ const modules = [
     icon: BookOpen,
     progress: 45,
     color: "bg-level-b1",
+    path: "/grammar",
   },
   {
     title: "Vocabulario",
@@ -21,6 +23,7 @@ const modules = [
     icon: Lightbulb,
     progress: 62,
     color: "bg-level-a2",
+    path: "/vocabulary",
   },
   {
     title: "Práctica",
@@ -28,6 +31,7 @@ const modules = [
     icon: PenTool,
     progress: 38,
     color: "bg-primary",
+    path: "/practice",
   },
   {
     title: "Conversación",
@@ -35,6 +39,7 @@ const modules = [
     icon: MessageSquare,
     progress: 25,
     color: "bg-accent",
+    path: "/conversation",
   },
   {
     title: "Tests",
@@ -42,10 +47,12 @@ const modules = [
     icon: GraduationCap,
     progress: 15,
     color: "bg-level-c1",
+    path: "/tests",
   },
 ];
 
 const Index = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -103,6 +110,7 @@ const Index = () => {
                     icon={module.icon}
                     progress={module.progress}
                     color={module.color}
+                    onClick={() => navigate(module.path)}
                   />
                 ))}
               </div>
