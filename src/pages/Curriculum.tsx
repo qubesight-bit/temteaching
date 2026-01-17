@@ -24,6 +24,7 @@ const levelColors: Record<CEFRLevel, string> = {
   B1: "level-b1",
   B2: "level-b2",
   C1: "level-c1",
+  C2: "level-c2",
 };
 
 const levelTextColors: Record<CEFRLevel, string> = {
@@ -32,6 +33,7 @@ const levelTextColors: Record<CEFRLevel, string> = {
   B1: "level-b1-text",
   B2: "level-b2-text",
   C1: "level-c1-text",
+  C2: "level-c2-text",
 };
 
 export default function Curriculum() {

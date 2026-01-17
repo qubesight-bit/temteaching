@@ -1,4 +1,4 @@
-export type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1";
+export type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
 export interface Skill {
   id: string;
@@ -2596,6 +2596,563 @@ export const curriculumData: LevelCurriculum[] = [
               { id: "c1-st6-1", title: "Auto-evaluación durante el habla", completed: false },
               { id: "c1-st6-2", title: "Corrección inmediata de errores", completed: false },
               { id: "c1-st6-3", title: "Mantener coherencia general", completed: false },
+            ]
+          },
+        ]
+      },
+    ]
+  },
+  {
+    level: "C2",
+    title: "Maestría",
+    description: "Dominio casi nativo del idioma con precisión, fluidez y sutileza en todos los contextos académicos, profesionales y sociales",
+    targetVocabulary: "10,000-15,000+ palabras (uso activo)",
+    estimatedHours: 800,
+    categories: [
+      {
+        id: "c2-vocabulary",
+        title: "Dominio Léxico Nativo",
+        icon: "📚",
+        description: "Vocabulario extenso con matices sutiles, registro impecable y expresión idiomática natural",
+        skills: [
+          {
+            id: "c2-vocab-1",
+            title: "Distinción léxica de precisión nativa",
+            description: "Native-level lexical precision",
+            completed: false,
+            subSkills: [
+              { id: "c2-v1-1", title: "Matices entre sinónimos cercanos", completed: false },
+              { id: "c2-v1-2", title: "Vocabulario de campos especializados múltiples", completed: false },
+              { id: "c2-v1-3", title: "Arcaísmos y neologismos en contexto", completed: false },
+              { id: "c2-v1-4", title: "Variaciones dialectales (UK, US, AU)", completed: false },
+            ]
+          },
+          {
+            id: "c2-vocab-2",
+            title: "Expresión idiomática avanzada",
+            description: "Advanced idiomatic expression",
+            completed: false,
+            subSkills: [
+              { id: "c2-v2-1", title: "Modismos literarios y cultos", completed: false },
+              { id: "c2-v2-2", title: "Expresiones coloquiales actuales", completed: false },
+              { id: "c2-v2-3", title: "Proverbios y refranes en contexto", completed: false },
+              { id: "c2-v2-4", title: "Slang apropiado por contexto", completed: false },
+            ]
+          },
+          {
+            id: "c2-vocab-3",
+            title: "Vocabulario académico especializado",
+            description: "Specialized academic vocabulary",
+            completed: false,
+            subSkills: [
+              { id: "c2-v3-1", title: "Terminología de investigación avanzada", completed: false },
+              { id: "c2-v3-2", title: "Léxico filosófico y abstracto", completed: false },
+              { id: "c2-v3-3", title: "Vocabulario técnico interdisciplinario", completed: false },
+              { id: "c2-v3-4", title: "Lenguaje de publicación académica", completed: false },
+            ]
+          },
+          {
+            id: "c2-vocab-4",
+            title: "Recursos retóricos y literarios",
+            description: "Rhetorical and literary devices",
+            completed: false,
+            subSkills: [
+              { id: "c2-v4-1", title: "Aliteración, asonancia, onomatopeya", completed: false },
+              { id: "c2-v4-2", title: "Metonimia y sinécdoque", completed: false },
+              { id: "c2-v4-3", title: "Hipérbole y litotes", completed: false },
+              { id: "c2-v4-4", title: "Oxímoron y paradoja", completed: false },
+            ]
+          },
+          {
+            id: "c2-vocab-5",
+            title: "Control total de registro y tono",
+            description: "Complete register and tone control",
+            completed: false,
+            subSkills: [
+              { id: "c2-v5-1", title: "Cambio fluido entre registros", completed: false },
+              { id: "c2-v5-2", title: "Tono apropiado para cada género", completed: false },
+              { id: "c2-v5-3", title: "Humor sofisticado y wit", completed: false },
+              { id: "c2-v5-4", title: "Ironía y sarcasmo calibrado", completed: false },
+            ]
+          },
+          {
+            id: "c2-vocab-6",
+            title: "Vocabulario de áreas profesionales",
+            description: "Professional domain vocabulary",
+            completed: false,
+            subSkills: [
+              { id: "c2-v6-1", title: "Legal y contractual", completed: false },
+              { id: "c2-v6-2", title: "Médico y científico", completed: false },
+              { id: "c2-v6-3", title: "Financiero y económico", completed: false },
+              { id: "c2-v6-4", title: "Diplomático y político", completed: false },
+            ]
+          },
+        ]
+      },
+      {
+        id: "c2-grammar",
+        title: "Gramática: Precisión y Estilo Nativo",
+        icon: "🧩",
+        description: "Control gramatical impecable con variación estilística y creatividad lingüística",
+        skills: [
+          {
+            id: "c2-gram-1",
+            title: "Estructuras gramaticales raras y literarias",
+            description: "Rare and literary grammatical structures",
+            completed: false,
+            subSkills: [
+              { id: "c2-g1-1", title: "Subjuntivo en todos sus usos", completed: false },
+              { id: "c2-g1-2", title: "Inversión estilística compleja", completed: false },
+              { id: "c2-g1-3", title: "Estructuras arcaicas con propósito", completed: false },
+              { id: "c2-g1-4", title: "Oraciones parentéticas y digresiones controladas", completed: false },
+            ]
+          },
+          {
+            id: "c2-gram-2",
+            title: "Manipulación del tiempo narrativo",
+            description: "Narrative time manipulation",
+            completed: false,
+            subSkills: [
+              { id: "c2-g2-1", title: "Presente histórico efectivo", completed: false },
+              { id: "c2-g2-2", title: "Flashbacks y flash-forwards gramaticales", completed: false },
+              { id: "c2-g2-3", title: "Aspecto perfectivo vs imperfectivo sutil", completed: false },
+              { id: "c2-g2-4", title: "Futuro en el pasado complejo", completed: false },
+            ]
+          },
+          {
+            id: "c2-gram-3",
+            title: "Modalidad avanzada",
+            description: "Advanced modality",
+            completed: false,
+            subSkills: [
+              { id: "c2-g3-1", title: "Grados sutiles de certeza y probabilidad", completed: false },
+              { id: "c2-g3-2", title: "Modales perfectos en contextos complejos", completed: false },
+              { id: "c2-g3-3", title: "Expresión de arrepentimiento y especulación", completed: false },
+              { id: "c2-g3-4", title: "Obligación y permiso con matices", completed: false },
+            ]
+          },
+          {
+            id: "c2-gram-4",
+            title: "Cohesión textual avanzada",
+            description: "Advanced textual cohesion",
+            completed: false,
+            subSkills: [
+              { id: "c2-g4-1", title: "Cadenas de referencia complejas", completed: false },
+              { id: "c2-g4-2", title: "Elipsis sofisticada", completed: false },
+              { id: "c2-g4-3", title: "Conectores de discurso para argumentación", completed: false },
+              { id: "c2-g4-4", title: "Tema y rema para énfasis", completed: false },
+            ]
+          },
+          {
+            id: "c2-gram-5",
+            title: "Variación sintáctica para efecto",
+            description: "Syntactic variation for effect",
+            completed: false,
+            subSkills: [
+              { id: "c2-g5-1", title: "Oraciones periódicas vs sueltas", completed: false },
+              { id: "c2-g5-2", title: "Paralelismo y antítesis", completed: false },
+              { id: "c2-g5-3", title: "Variación de longitud estratégica", completed: false },
+              { id: "c2-g5-4", title: "Fragmentos y oraciones menores con propósito", completed: false },
+            ]
+          },
+          {
+            id: "c2-gram-6",
+            title: "Errores cero en contextos formales",
+            description: "Error-free formal writing",
+            completed: false,
+            subSkills: [
+              { id: "c2-g6-1", title: "Concordancia perfecta en estructuras complejas", completed: false },
+              { id: "c2-g6-2", title: "Puntuación impecable", completed: false },
+              { id: "c2-g6-3", title: "Uso correcto de artículos en todos los casos", completed: false },
+              { id: "c2-g6-4", title: "Preposiciones en expresiones fijas", completed: false },
+            ]
+          },
+        ]
+      },
+      {
+        id: "c2-speaking",
+        title: "Expresión Oral: Fluidez Nativa",
+        icon: "🗣️",
+        description: "Comunicación oral indistinguible de un hablante nativo educado",
+        skills: [
+          {
+            id: "c2-speak-1",
+            title: "Fluidez y espontaneidad total",
+            description: "Complete fluency and spontaneity",
+            completed: false,
+            subSkills: [
+              { id: "c2-s1-1", title: "Hablar sobre cualquier tema sin preparación", completed: false },
+              { id: "c2-s1-2", title: "Reformular ideas instantáneamente", completed: false },
+              { id: "c2-s1-3", title: "Cambiar de tema fluidamente", completed: false },
+              { id: "c2-s1-4", title: "Manejar interrupciones sin perder hilo", completed: false },
+            ]
+          },
+          {
+            id: "c2-speak-2",
+            title: "Oratoria y presentación avanzada",
+            description: "Advanced oratory and presentation",
+            completed: false,
+            subSkills: [
+              { id: "c2-s2-1", title: "Discursos formales persuasivos", completed: false },
+              { id: "c2-s2-2", title: "Presentaciones académicas de alto nivel", completed: false },
+              { id: "c2-s2-3", title: "Storytelling profesional", completed: false },
+              { id: "c2-s2-4", title: "Manejo de Q&A hostiles", completed: false },
+            ]
+          },
+          {
+            id: "c2-speak-3",
+            title: "Humor y wit sofisticado",
+            description: "Sophisticated humor and wit",
+            completed: false,
+            subSkills: [
+              { id: "c2-s3-1", title: "Juegos de palabras y puns", completed: false },
+              { id: "c2-s3-2", title: "Humor cultural y referencias", completed: false },
+              { id: "c2-s3-3", title: "Timing cómico", completed: false },
+              { id: "c2-s3-4", title: "Auto-deprecating humor apropiado", completed: false },
+            ]
+          },
+          {
+            id: "c2-speak-4",
+            title: "Negociación y diplomacia de alto nivel",
+            description: "High-level negotiation and diplomacy",
+            completed: false,
+            subSkills: [
+              { id: "c2-s4-1", title: "Negociaciones complejas multipartitas", completed: false },
+              { id: "c2-s4-2", title: "Mediación y resolución de conflictos", completed: false },
+              { id: "c2-s4-3", title: "Comunicación de crisis", completed: false },
+              { id: "c2-s4-4", title: "Lenguaje diplomático preciso", completed: false },
+            ]
+          },
+          {
+            id: "c2-speak-5",
+            title: "Prosodia y entonación nativa",
+            description: "Native prosody and intonation",
+            completed: false,
+            subSkills: [
+              { id: "c2-s5-1", title: "Entonación para énfasis y actitud", completed: false },
+              { id: "c2-s5-2", title: "Ritmo y pausas estratégicas", completed: false },
+              { id: "c2-s5-3", title: "Reducción y linking naturales", completed: false },
+              { id: "c2-s5-4", title: "Patrones de estrés en palabras complejas", completed: false },
+            ]
+          },
+          {
+            id: "c2-speak-6",
+            title: "Argumentación filosófica y abstracta",
+            description: "Philosophical and abstract argumentation",
+            completed: false,
+            subSkills: [
+              { id: "c2-s6-1", title: "Debatir conceptos abstractos", completed: false },
+              { id: "c2-s6-2", title: "Explorar hipótesis complejas oralmente", completed: false },
+              { id: "c2-s6-3", title: "Sintetizar múltiples perspectivas", completed: false },
+              { id: "c2-s6-4", title: "Comunicar ideas originales claramente", completed: false },
+            ]
+          },
+        ]
+      },
+      {
+        id: "c2-listening",
+        title: "Comprensión Auditiva: Sin Esfuerzo",
+        icon: "👂",
+        description: "Comprensión completa de cualquier tipo de inglés hablado",
+        skills: [
+          {
+            id: "c2-list-1",
+            title: "Cualquier variedad del inglés",
+            description: "Any variety of English",
+            completed: false,
+            subSkills: [
+              { id: "c2-l1-1", title: "Acentos regionales británicos", completed: false },
+              { id: "c2-l1-2", title: "Acentos regionales americanos", completed: false },
+              { id: "c2-l1-3", title: "Inglés australiano, sudafricano, indio", completed: false },
+              { id: "c2-l1-4", title: "Inglés no nativo con acentos fuertes", completed: false },
+            ]
+          },
+          {
+            id: "c2-list-2",
+            title: "Contenido especializado complejo",
+            description: "Complex specialized content",
+            completed: false,
+            subSkills: [
+              { id: "c2-l2-1", title: "Conferencias académicas especializadas", completed: false },
+              { id: "c2-l2-2", title: "Debates legales y parlamentarios", completed: false },
+              { id: "c2-l2-3", title: "Discusiones científicas técnicas", completed: false },
+              { id: "c2-l2-4", title: "Análisis financiero y económico", completed: false },
+            ]
+          },
+          {
+            id: "c2-list-3",
+            title: "Significado implícito y subtexto",
+            description: "Implicit meaning and subtext",
+            completed: false,
+            subSkills: [
+              { id: "c2-l3-1", title: "Detectar agendas ocultas", completed: false },
+              { id: "c2-l3-2", title: "Entender lo no dicho", completed: false },
+              { id: "c2-l3-3", title: "Interpretar evasiones y ambigüedades", completed: false },
+              { id: "c2-l3-4", title: "Captar dobles sentidos", completed: false },
+            ]
+          },
+          {
+            id: "c2-list-4",
+            title: "Medios y entretenimiento sin límites",
+            description: "Unrestricted media and entertainment",
+            completed: false,
+            subSkills: [
+              { id: "c2-l4-1", title: "Stand-up comedy con referencias culturales", completed: false },
+              { id: "c2-l4-2", title: "Películas clásicas y contemporáneas", completed: false },
+              { id: "c2-l4-3", title: "Radio en vivo y podcasts especializados", completed: false },
+              { id: "c2-l4-4", title: "Teatro y performance en vivo", completed: false },
+            ]
+          },
+          {
+            id: "c2-list-5",
+            title: "Comprensión de matices culturales",
+            description: "Understanding cultural nuances",
+            completed: false,
+            subSkills: [
+              { id: "c2-l5-1", title: "Referencias históricas y literarias", completed: false },
+              { id: "c2-l5-2", title: "Alusiones a cultura pop", completed: false },
+              { id: "c2-l5-3", title: "Humor específico cultural", completed: false },
+              { id: "c2-l5-4", title: "Tabúes y sensibilidades sociales", completed: false },
+            ]
+          },
+        ]
+      },
+      {
+        id: "c2-reading",
+        title: "Lectura: Comprensión Total",
+        icon: "📖",
+        description: "Lectura de cualquier texto con comprensión completa y apreciación estilística",
+        skills: [
+          {
+            id: "c2-read-1",
+            title: "Literatura clásica y contemporánea",
+            description: "Classic and contemporary literature",
+            completed: false,
+            subSkills: [
+              { id: "c2-r1-1", title: "Shakespeare y literatura isabelina", completed: false },
+              { id: "c2-r1-2", title: "Literatura victoriana", completed: false },
+              { id: "c2-r1-3", title: "Modernismo (Joyce, Woolf, Eliot)", completed: false },
+              { id: "c2-r1-4", title: "Literatura contemporánea premiada", completed: false },
+            ]
+          },
+          {
+            id: "c2-read-2",
+            title: "Textos académicos de investigación",
+            description: "Academic research texts",
+            completed: false,
+            subSkills: [
+              { id: "c2-r2-1", title: "Papers de journals prestigiosos", completed: false },
+              { id: "c2-r2-2", title: "Meta-análisis y revisiones sistemáticas", completed: false },
+              { id: "c2-r2-3", title: "Tesis doctorales", completed: false },
+              { id: "c2-r2-4", title: "Monografías especializadas", completed: false },
+            ]
+          },
+          {
+            id: "c2-read-3",
+            title: "Documentos legales y técnicos",
+            description: "Legal and technical documents",
+            completed: false,
+            subSkills: [
+              { id: "c2-r3-1", title: "Contratos y acuerdos legales", completed: false },
+              { id: "c2-r3-2", title: "Patentes y documentos técnicos", completed: false },
+              { id: "c2-r3-3", title: "Legislación y jurisprudencia", completed: false },
+              { id: "c2-r3-4", title: "Políticas y regulaciones", completed: false },
+            ]
+          },
+          {
+            id: "c2-read-4",
+            title: "Análisis literario y crítico",
+            description: "Literary and critical analysis",
+            completed: false,
+            subSkills: [
+              { id: "c2-r4-1", title: "Identificar técnicas narrativas", completed: false },
+              { id: "c2-r4-2", title: "Analizar simbolismo y temas", completed: false },
+              { id: "c2-r4-3", title: "Evaluar estilo del autor", completed: false },
+              { id: "c2-r4-4", title: "Contextualizar históricamente", completed: false },
+            ]
+          },
+          {
+            id: "c2-read-5",
+            title: "Lectura rápida con retención total",
+            description: "Speed reading with full retention",
+            completed: false,
+            subSkills: [
+              { id: "c2-r5-1", title: "Escaneo eficiente de documentos largos", completed: false },
+              { id: "c2-r5-2", title: "Identificación rápida de información clave", completed: false },
+              { id: "c2-r5-3", title: "Síntesis de múltiples fuentes simultáneas", completed: false },
+              { id: "c2-r5-4", title: "Toma de notas mientras se lee", completed: false },
+            ]
+          },
+          {
+            id: "c2-read-6",
+            title: "Apreciación estilística",
+            description: "Stylistic appreciation",
+            completed: false,
+            subSkills: [
+              { id: "c2-r6-1", title: "Reconocer voces autorales únicas", completed: false },
+              { id: "c2-r6-2", title: "Apreciar innovaciones lingüísticas", completed: false },
+              { id: "c2-r6-3", title: "Disfrutar juegos de palabras y humor textual", completed: false },
+              { id: "c2-r6-4", title: "Evaluar calidad de traducción", completed: false },
+            ]
+          },
+        ]
+      },
+      {
+        id: "c2-writing",
+        title: "Escritura: Excelencia Profesional",
+        icon: "✍️",
+        description: "Producción escrita de calidad publicable en cualquier género",
+        skills: [
+          {
+            id: "c2-write-1",
+            title: "Escritura académica de publicación",
+            description: "Publication-quality academic writing",
+            completed: false,
+            subSkills: [
+              { id: "c2-w1-1", title: "Artículos para journals revisados por pares", completed: false },
+              { id: "c2-w1-2", title: "Capítulos de libros académicos", completed: false },
+              { id: "c2-w1-3", title: "Grant proposals y solicitudes", completed: false },
+              { id: "c2-w1-4", title: "Abstracts y conference papers", completed: false },
+            ]
+          },
+          {
+            id: "c2-write-2",
+            title: "Escritura profesional ejecutiva",
+            description: "Executive professional writing",
+            completed: false,
+            subSkills: [
+              { id: "c2-w2-1", title: "Informes para directivos", completed: false },
+              { id: "c2-w2-2", title: "Comunicaciones corporativas", completed: false },
+              { id: "c2-w2-3", title: "Documentos estratégicos", completed: false },
+              { id: "c2-w2-4", title: "Correspondencia de alto nivel", completed: false },
+            ]
+          },
+          {
+            id: "c2-write-3",
+            title: "Escritura creativa",
+            description: "Creative writing",
+            completed: false,
+            subSkills: [
+              { id: "c2-w3-1", title: "Ficción corta y narrativa", completed: false },
+              { id: "c2-w3-2", title: "Poesía con control de forma", completed: false },
+              { id: "c2-w3-3", title: "Ensayos personales y creativos", completed: false },
+              { id: "c2-w3-4", title: "Guiones y diálogos", completed: false },
+            ]
+          },
+          {
+            id: "c2-write-4",
+            title: "Escritura periodística avanzada",
+            description: "Advanced journalistic writing",
+            completed: false,
+            subSkills: [
+              { id: "c2-w4-1", title: "Reportajes investigativos", completed: false },
+              { id: "c2-w4-2", title: "Columnas de opinión", completed: false },
+              { id: "c2-w4-3", title: "Perfiles y entrevistas", completed: false },
+              { id: "c2-w4-4", title: "Críticas y reseñas profesionales", completed: false },
+            ]
+          },
+          {
+            id: "c2-write-5",
+            title: "Edición y revisión",
+            description: "Editing and revision",
+            completed: false,
+            subSkills: [
+              { id: "c2-w5-1", title: "Auto-edición rigurosa", completed: false },
+              { id: "c2-w5-2", title: "Edición de estilo y claridad", completed: false },
+              { id: "c2-w5-3", title: "Copyediting profesional", completed: false },
+              { id: "c2-w5-4", title: "Feedback constructivo a otros", completed: false },
+            ]
+          },
+          {
+            id: "c2-write-6",
+            title: "Voz y estilo distintivo",
+            description: "Distinctive voice and style",
+            completed: false,
+            subSkills: [
+              { id: "c2-w6-1", title: "Desarrollar voz autoral única", completed: false },
+              { id: "c2-w6-2", title: "Adaptar estilo a géneros diferentes", completed: false },
+              { id: "c2-w6-3", title: "Crear consistencia tonal", completed: false },
+              { id: "c2-w6-4", title: "Innovar dentro de convenciones", completed: false },
+            ]
+          },
+        ]
+      },
+      {
+        id: "c2-strategies",
+        title: "Competencia Sociocultural y Metacognitiva",
+        icon: "🧭",
+        description: "Navegación experta de contextos culturales y comunicativos complejos",
+        skills: [
+          {
+            id: "c2-strat-1",
+            title: "Competencia intercultural avanzada",
+            description: "Advanced intercultural competence",
+            completed: false,
+            subSkills: [
+              { id: "c2-st1-1", title: "Navegar diferencias culturales sutiles", completed: false },
+              { id: "c2-st1-2", title: "Adaptar comportamiento a normas locales", completed: false },
+              { id: "c2-st1-3", title: "Mediar entre culturas", completed: false },
+              { id: "c2-st1-4", title: "Evitar malentendidos culturales", completed: false },
+            ]
+          },
+          {
+            id: "c2-strat-2",
+            title: "Metacognición lingüística",
+            description: "Linguistic metacognition",
+            completed: false,
+            subSkills: [
+              { id: "c2-st2-1", title: "Reflexionar sobre el propio uso del idioma", completed: false },
+              { id: "c2-st2-2", title: "Identificar áreas de mejora continua", completed: false },
+              { id: "c2-st2-3", title: "Aprender vocabulario nuevo eficientemente", completed: false },
+              { id: "c2-st2-4", title: "Mantener y expandir competencia", completed: false },
+            ]
+          },
+          {
+            id: "c2-strat-3",
+            title: "Comunicación en situaciones de alto riesgo",
+            description: "High-stakes communication",
+            completed: false,
+            subSkills: [
+              { id: "c2-st3-1", title: "Entrevistas de trabajo ejecutivas", completed: false },
+              { id: "c2-st3-2", title: "Presentaciones a inversores", completed: false },
+              { id: "c2-st3-3", title: "Comunicación de crisis", completed: false },
+              { id: "c2-st3-4", title: "Negociaciones críticas", completed: false },
+            ]
+          },
+          {
+            id: "c2-strat-4",
+            title: "Enseñar y explicar el idioma",
+            description: "Teaching and explaining language",
+            completed: false,
+            subSkills: [
+              { id: "c2-st4-1", title: "Explicar gramática a no nativos", completed: false },
+              { id: "c2-st4-2", title: "Dar feedback lingüístico útil", completed: false },
+              { id: "c2-st4-3", title: "Crear ejemplos claros", completed: false },
+              { id: "c2-st4-4", title: "Adaptar explicaciones al nivel del oyente", completed: false },
+            ]
+          },
+          {
+            id: "c2-strat-5",
+            title: "Inteligencia emocional lingüística",
+            description: "Linguistic emotional intelligence",
+            completed: false,
+            subSkills: [
+              { id: "c2-st5-1", title: "Leer emociones a través del lenguaje", completed: false },
+              { id: "c2-st5-2", title: "Responder empáticamente", completed: false },
+              { id: "c2-st5-3", title: "Manejar conversaciones difíciles", completed: false },
+              { id: "c2-st5-4", title: "Comunicar emociones complejas precisamente", completed: false },
+            ]
+          },
+          {
+            id: "c2-strat-6",
+            title: "Traducción e interpretación",
+            description: "Translation and interpretation",
+            completed: false,
+            subSkills: [
+              { id: "c2-st6-1", title: "Traducir con precisión semántica", completed: false },
+              { id: "c2-st6-2", title: "Mantener tono y registro al traducir", completed: false },
+              { id: "c2-st6-3", title: "Interpretar simultáneamente (básico)", completed: false },
+              { id: "c2-st6-4", title: "Adaptar contenido culturalmente", completed: false },
             ]
           },
         ]
