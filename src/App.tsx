@@ -21,6 +21,7 @@ import Settings from "./pages/Settings";
 import AdaptiveQuiz from "./pages/AdaptiveQuiz";
 import News from "./pages/News";
 import Auth from "./pages/Auth";
+import ErrorHistory from "./pages/ErrorHistory";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -50,6 +51,7 @@ const App = () => (
                   <Route path="/settings" element={<Settings />} />
                   <Route path="/adaptive-quiz" element={<AdaptiveQuiz />} />
                   <Route path="/news" element={<News />} />
+                  <Route path="/error-history" element={<ErrorHistory />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </BrowserRouter>

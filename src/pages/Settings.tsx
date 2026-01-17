@@ -7,7 +7,7 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { ArrowLeft, User, Bell, Clock, Volume2, Palette, RotateCcw } from "lucide-react";
+import { ArrowLeft, User, Bell, Clock, Volume2, Palette, RotateCcw, AlertCircle, ChevronRight } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 
 export default function Settings() {
@@ -101,6 +101,24 @@ export default function Settings() {
                     </SelectContent>
                   </Select>
                 </div>
+              </div>
+
+              {/* Error History Link */}
+              <div className="mt-6 pt-6 border-t">
+                <Button 
+                  variant="outline" 
+                  className="w-full justify-between"
+                  onClick={() => navigate("/error-history")}
+                >
+                  <div className="flex items-center gap-2">
+                    <AlertCircle className="w-4 h-4 text-destructive" />
+                    <span>Historial de Errores</span>
+                  </div>
+                  <ChevronRight className="w-4 h-4" />
+                </Button>
+                <p className="text-xs text-muted-foreground mt-2">
+                  Revisa tus errores para mejorar tu aprendizaje
+                </p>
               </div>
             </CardContent>
           </Card>
