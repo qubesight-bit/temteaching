@@ -11,6 +11,68 @@ import { ChatFeedback } from "@/components/ChatFeedback";
 import { GrammarTips } from "@/components/GrammarTips";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
+import { useLearningErrors, NewLearningError } from "@/hooks/useLearningErrors";
+
+// Helper function to parse error reports from AI response
+function parseErrorReports(content: string, conversationId: string | null, userLevel: string): NewLearningError[] {
+  const errors: NewLearningError[] = [];
+  
+  // Match EMAIL_READY blocks
+  const emailReadyRegex = /---EMAIL_READY---\s*```json\s*([\s\S]*?)```\s*---END EMAIL_READY---/g;
+  let match;
+  
+  while ((match = emailReadyRegex.exec(content)) !== null) {
+    try {
+      const jsonStr = match[1].trim();
+      const parsed = JSON.parse(jsonStr);
+      const body = parsed.body || {};
+      
+      // Determine phase from parsed data
+      let phase: "SPEAK" | "LISTEN" | "PRACTICE" | "CONVERSATION" = "CONVERSATION";
+      const faseStr = (body.fase || "").toUpperCase();
+      if (faseStr === "SPEAK" || faseStr === "LISTEN" || faseStr === "PRACTICE") {
+        phase = faseStr as "SPEAK" | "LISTEN" | "PRACTICE";
+      }
+      
+      const error: NewLearningError = {
+        conversation_id: conversationId || undefined,
+        level: body.nivel || userLevel,
+        phase,
+        question_text: body.pregunta || "",
+        user_response: body.respuesta_usuario || "",
+        correct_response: body.respuesta_correcta || "",
+        error_type: body.tipo_error || "general",
+        recommendation: body.recomendacion || undefined,
+      };
+      
+      if (error.question_text && error.user_response && error.correct_response) {
+        errors.push(error);
+      }
+    } catch (e) {
+      console.error("Error parsing EMAIL_READY block:", e);
+    }
+  }
+  
+  // Also match inline feedback errors for non-exam conversations
+  const feedbackRegex = /---FEEDBACK---\s*🔴\s*\*\*ERROR:\*\*\s*"([^"]+)"\s*✅\s*\*\*CORRECCIÓN:\*\*\s*"([^"]+)"\s*📖\s*\*\*EXPLICACIÓN:\*\*\s*([^\n]+)/g;
+  
+  while ((match = feedbackRegex.exec(content)) !== null) {
+    const error: NewLearningError = {
+      conversation_id: conversationId || undefined,
+      level: userLevel,
+      phase: "CONVERSATION",
+      question_text: "Conversación libre",
+      user_response: match[1].trim(),
+      correct_response: match[2].trim(),
+      error_type: "gramática",
+      recommendation: match[3].trim(),
+    };
+    
+    errors.push(error);
+  }
+  
+  return errors;
+}
 
 // Type declarations for Web Speech API
 interface SpeechRecognitionEvent extends Event {
@@ -173,6 +235,7 @@ type LevelFilter = typeof levels[number];
 export default function Conversation() {
   const navigate = useNavigate();
   const { user } = useAuth();
+  const { addError } = useLearningErrors();
   const [selectedScenario, setSelectedScenario] = useState<string | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<LevelFilter>("All");
   const [messages, setMessages] = useState<Message[]>([]);
@@ -184,6 +247,7 @@ export default function Conversation() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const recognitionRef = useRef<SpeechRecognition | null>(null);
   const confidenceScoresRef = useRef<number[]>([]);
+  const processedErrorsRef = useRef<Set<string>>(new Set());
 
   const filteredScenarios = selectedLevel === "All" 
     ? scenarios 
@@ -427,11 +491,32 @@ export default function Conversation() {
           },
         ]);
       },
-      onDone: () => {
+      onDone: async () => {
         setIsLoading(false);
         // Save assistant response to database
         if (assistantContent) {
           saveMessageToDatabase('assistant', assistantContent);
+          
+          // Parse and save any errors detected by the AI tutor
+          if (user) {
+            const userLevel = getUserLevel();
+            const detectedErrors = parseErrorReports(assistantContent, currentConversationId, userLevel);
+            
+            for (const error of detectedErrors) {
+              // Create a unique key for this error to avoid duplicates
+              const errorKey = `${error.user_response}-${error.correct_response}-${error.phase}`;
+              
+              if (!processedErrorsRef.current.has(errorKey)) {
+                processedErrorsRef.current.add(errorKey);
+                try {
+                  await addError.mutateAsync(error);
+                  console.log("Learning error saved:", error);
+                } catch (e) {
+                  console.error("Failed to save learning error:", e);
+                }
+              }
+            }
+          }
         }
       },
       onError: (error) => {
