@@ -16,34 +16,53 @@ interface RequestBody {
   userLevel: string;
 }
 
-const getSystemPrompt = (scenario: string, userLevel: string) => {
+const getSystemPrompt = (scenario: string, userLevel: string, turnCount: number) => {
   const scenarioPrompts: Record<string, string> = {
-    cafe: `You are a friendly barista at an English café. You're helping a customer order coffee, tea, and pastries. Keep responses natural and conversational.`,
-    restaurant: `You are a professional waiter at a nice restaurant. Help the customer with reservations, explaining the menu, taking orders, and handling special requests like allergies or preferences. Be polite and attentive.`,
-    shopping: `You are a helpful shop assistant in a clothing store. Help customers find sizes, colors, suggest items, discuss prices and discounts, and assist with the checkout process. Be friendly and helpful.`,
-    travel: `You are a helpful airport staff member. You're assisting a traveler with check-in, directions, boarding information, and travel questions. Keep responses clear and helpful.`,
-    hotel: `You are a friendly hotel receptionist. Help guests with check-in/check-out, room requests, amenities information, local recommendations, and resolving any issues during their stay.`,
-    doctor: `You are a caring doctor or nurse at a medical clinic. Help the patient describe their symptoms, explain diagnoses in simple terms, discuss treatment options, and give clear instructions for medication or follow-up care.`,
-    work: `You are a professional colleague in a business meeting. Engage in workplace discussions about projects, deadlines, presentations, and professional topics. Use appropriate business English.`,
-    interview: `You are an HR manager conducting a job interview. Ask common interview questions about experience, skills, strengths/weaknesses, career goals, and situational scenarios. Provide constructive feedback on answers.`,
-    bank: `You are a bank employee helping a customer. Assist with opening accounts, explaining financial products, processing transactions, discussing loans or mortgages, and resolving account issues.`,
-    debate: `You are an academic debate partner. Engage in thoughtful discussions on various topics. Challenge ideas respectfully and use advanced vocabulary. Present counterarguments and ask probing questions.`,
-    networking: `You are a professional at a business networking event. Engage in small talk, discuss industries and career paths, exchange experiences, and practice making professional connections naturally.`,
-    negotiation: `You are a business partner in a commercial negotiation. Discuss contract terms, pricing, deliverables, and timelines. Practice assertive but respectful negotiation tactics and reaching mutually beneficial agreements.`,
+    cafe: `You are a friendly barista at an English café. You're helping a customer order coffee, tea, and pastries.`,
+    restaurant: `You are a professional waiter at a nice restaurant. Help the customer with reservations, menu, and orders.`,
+    shopping: `You are a helpful shop assistant in a clothing store. Help customers find items, discuss prices.`,
+    travel: `You are a helpful airport staff member. Assist a traveler with check-in, directions, boarding.`,
+    hotel: `You are a friendly hotel receptionist. Help guests with check-in/check-out, room requests.`,
+    doctor: `You are a caring doctor at a clinic. Help the patient describe symptoms, explain treatment simply.`,
+    work: `You are a professional colleague in a meeting. Discuss projects, deadlines briefly.`,
+    interview: `You are an HR manager conducting a job interview. Ask common interview questions.`,
+    bank: `You are a bank employee. Assist with accounts, transactions, basic financial questions.`,
+    debate: `You are an academic debate partner. Engage in thoughtful discussions on various topics.`,
+    networking: `You are a professional at a networking event. Practice small talk and professional connections.`,
+    negotiation: `You are a business partner in a negotiation. Discuss terms, pricing briefly.`,
   };
 
   const levelAdjustments: Record<string, string> = {
-    A1: "Use simple vocabulary and short sentences. Speak slowly and clearly. Focus on basic everyday English.",
-    A2: "Use elementary vocabulary. Keep sentences simple but include common phrases and expressions.",
-    B1: "Use intermediate vocabulary. Include some idioms and phrasal verbs. Engage in longer exchanges.",
-    B2: "Use upper-intermediate vocabulary. Include more complex grammar structures and nuanced expressions.",
-    C1: "Use advanced vocabulary and complex sentence structures. Engage in sophisticated discussions.",
+    A1: "Use very simple vocabulary. Short sentences only. Basic everyday English.",
+    A2: "Use elementary vocabulary. Simple sentences with common phrases.",
+    B1: "Use intermediate vocabulary. Include some idioms and phrasal verbs.",
+    B2: "Use upper-intermediate vocabulary. More complex grammar structures.",
+    C1: "Use advanced vocabulary and complex sentence structures.",
   };
+
+  const maxTurns = 10;
+  const remainingTurns = maxTurns - turnCount;
+  const isLastTurn = remainingTurns <= 1;
 
   return `${scenarioPrompts[scenario] || scenarioPrompts.cafe}
 
 Language Level: ${userLevel}
 ${levelAdjustments[userLevel] || levelAdjustments.A2}
+
+===TOKEN OPTIMIZATION RULES (CRITICAL)===
+1. MAX 10 TURNS per conversation. Current turn: ${turnCount + 1}/${maxTurns}. Remaining: ${remainingTurns}.
+2. KEEP RESPONSES SHORT: Maximum 2-3 sentences per response.
+3. BRIEF CORRECTIONS: If user makes a mistake, correct in 1 sentence max.
+4. STAY FOCUSED: Only discuss the scenario topic. No tangents.
+5. Be friendly but DIRECT. No long explanations or theory.
+6. Total target: ~1,000 tokens for entire conversation.
+
+${isLastTurn ? `
+⚠️ THIS IS THE FINAL TURN. You MUST:
+1. Respond briefly to the user's last message
+2. Give a 2-3 sentence performance summary
+3. End with "🎉 ¡Nivel completado! Has terminado esta práctica."
+` : ''}
 
 CRITICAL FEEDBACK INSTRUCTIONS - You MUST follow this format:
 
@@ -87,14 +106,17 @@ serve(async (req) => {
   try {
     const { messages, scenario, userLevel }: RequestBody = await req.json();
     
-    console.log("Conversation chat request:", { scenario, userLevel, messageCount: messages.length });
+    // Calculate turn count (1 turn = user message + assistant response)
+    const turnCount = Math.floor(messages.filter(m => m.role === "user").length);
+    
+    console.log("Conversation chat request:", { scenario, userLevel, messageCount: messages.length, turnCount });
     
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     if (!LOVABLE_API_KEY) {
       throw new Error("LOVABLE_API_KEY is not configured");
     }
 
-    const systemPrompt = getSystemPrompt(scenario, userLevel);
+    const systemPrompt = getSystemPrompt(scenario, userLevel, turnCount);
 
     const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",
