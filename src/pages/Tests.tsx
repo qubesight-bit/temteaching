@@ -1,61 +1,28 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { ArrowLeft, Clock, Trophy, Target, ChevronRight, CheckCircle2, XCircle, ArrowRight } from "lucide-react";
+import { ArrowLeft, Clock, Trophy, Target, ChevronRight, CheckCircle2, XCircle, ArrowRight, BookOpen, Languages } from "lucide-react";
 import { cn } from "@/lib/utils";
-
-interface Test {
-  id: string;
-  title: string;
-  description: string;
-  level: "A1" | "A2" | "B1" | "B2" | "C1";
-  questions: number;
-  duration: number;
-  completed: boolean;
-  score?: number;
-}
-
-interface TestQuestion {
-  id: string;
-  question: string;
-  options: string[];
-  correctAnswer: string;
-}
-
-const availableTests: Test[] = [
-  { id: "a1-grammar", title: "Test de Gramática A1", description: "Presente simple, pronombres, artículos", level: "A1", questions: 15, duration: 10, completed: false },
-  { id: "a1-vocab", title: "Test de Vocabulario A1", description: "Familia, comida, colores, números", level: "A1", questions: 20, duration: 12, completed: false },
-  { id: "a2-grammar", title: "Test de Gramática A2", description: "Pasado simple, futuro, comparativos", level: "A2", questions: 20, duration: 15, completed: false },
-  { id: "a2-vocab", title: "Test de Vocabulario A2", description: "Viajes, trabajo, salud", level: "A2", questions: 25, duration: 15, completed: false },
-  { id: "a2-placement", title: "Test de Nivel A2", description: "Evaluación completa del nivel A2", level: "A2", questions: 40, duration: 30, completed: false },
-  { id: "b1-grammar", title: "Test de Gramática B1", description: "Present perfect, condicionales, pasiva", level: "B1", questions: 25, duration: 20, completed: false },
-  { id: "b1-vocab", title: "Test de Vocabulario B1", description: "Emociones, tecnología, negocios", level: "B1", questions: 30, duration: 20, completed: false },
-  { id: "b2-grammar", title: "Test de Gramática B2", description: "Condicionales avanzados, reported speech", level: "B2", questions: 30, duration: 25, completed: false },
-];
-
-const testQuestions: TestQuestion[] = [
-  { id: "1", question: "She ___ to the gym three times a week.", options: ["go", "goes", "going", "gone"], correctAnswer: "goes" },
-  { id: "2", question: "I ___ never ___ to Japan.", options: ["have / been", "has / been", "have / be", "was / being"], correctAnswer: "have / been" },
-  { id: "3", question: "If I ___ you, I would apologize.", options: ["am", "was", "were", "be"], correctAnswer: "were" },
-  { id: "4", question: "The meeting ___ cancelled yesterday.", options: ["is", "was", "were", "has been"], correctAnswer: "was" },
-  { id: "5", question: "She asked me ___ I was from.", options: ["where", "what", "which", "who"], correctAnswer: "where" },
-  { id: "6", question: "___ you mind opening the window?", options: ["Do", "Would", "Could", "Should"], correctAnswer: "Would" },
-  { id: "7", question: "I'm looking forward ___ you again.", options: ["to see", "seeing", "to seeing", "see"], correctAnswer: "to seeing" },
-  { id: "8", question: "This is the restaurant ___ we had dinner last week.", options: ["where", "which", "that", "what"], correctAnswer: "where" },
-  { id: "9", question: "By the time he arrived, the movie ___.", options: ["started", "has started", "had started", "was starting"], correctAnswer: "had started" },
-  { id: "10", question: "I wish I ___ more time to study.", options: ["have", "had", "has", "having"], correctAnswer: "had" },
-];
+import { testDefinitions, TestDefinition, TestQuestion } from "@/data/testsData";
 
 export default function Tests() {
   const navigate = useNavigate();
-  const [selectedTest, setSelectedTest] = useState<Test | null>(null);
+  const [selectedTest, setSelectedTest] = useState<TestDefinition | null>(null);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResults, setShowResults] = useState(false);
-  const [timeRemaining, setTimeRemaining] = useState(0);
+  const [completedTests, setCompletedTests] = useState<Record<string, number>>({});
+
+  // Get shuffled questions for current test
+  const currentQuestions = useMemo(() => {
+    if (!selectedTest) return [];
+    // Shuffle and take the number of questions specified
+    const shuffled = [...selectedTest.questions].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, selectedTest.questionsCount);
+  }, [selectedTest]);
 
   const getLevelColor = (level: string) => {
     const colors: Record<string, string> = {
@@ -64,39 +31,56 @@ export default function Tests() {
       B1: "bg-level-b1",
       B2: "bg-level-b2",
       C1: "bg-level-c1",
+      C2: "bg-level-c2",
     };
     return colors[level] || "bg-primary";
   };
 
-  const handleStartTest = (test: Test) => {
+  const getTypeIcon = (type: string) => {
+    if (type === "grammar") return <BookOpen className="w-5 h-5" />;
+    if (type === "vocabulary") return <Languages className="w-5 h-5" />;
+    return <Target className="w-5 h-5" />;
+  };
+
+  const handleStartTest = (test: TestDefinition) => {
     setSelectedTest(test);
     setCurrentQuestion(0);
     setAnswers({});
     setShowResults(false);
-    setTimeRemaining(test.duration * 60);
   };
 
   const handleSelectAnswer = (answer: string) => {
     setAnswers(prev => ({
       ...prev,
-      [testQuestions[currentQuestion].id]: answer
+      [currentQuestions[currentQuestion].id]: answer
     }));
   };
 
   const handleNext = () => {
-    if (currentQuestion < testQuestions.length - 1) {
+    if (currentQuestion < currentQuestions.length - 1) {
       setCurrentQuestion(prev => prev + 1);
     } else {
+      const score = calculateScore();
+      if (selectedTest) {
+        setCompletedTests(prev => ({
+          ...prev,
+          [selectedTest.id]: score
+        }));
+      }
       setShowResults(true);
     }
   };
 
   const calculateScore = () => {
     let correct = 0;
-    testQuestions.forEach(q => {
+    currentQuestions.forEach(q => {
       if (answers[q.id] === q.correctAnswer) correct++;
     });
-    return Math.round((correct / testQuestions.length) * 100);
+    return Math.round((correct / currentQuestions.length) * 100);
+  };
+
+  const getCorrectCount = () => {
+    return currentQuestions.filter(q => answers[q.id] === q.correctAnswer).length;
   };
 
   const handleBack = () => {
@@ -108,8 +92,11 @@ export default function Tests() {
     }
   };
 
+  // Results view
   if (selectedTest && showResults) {
     const score = calculateScore();
+    const correctCount = getCorrectCount();
+    const incorrectCount = currentQuestions.length - correctCount;
     
     return (
       <div className="min-h-screen bg-background">
@@ -142,24 +129,20 @@ export default function Tests() {
                 
                 <div className="flex items-center justify-center gap-8 mb-8">
                   <div className="text-center">
-                    <p className="text-xl font-semibold text-success">
-                      {Object.values(answers).filter((a, i) => a === testQuestions[i]?.correctAnswer).length}
-                    </p>
+                    <p className="text-xl font-semibold text-success">{correctCount}</p>
                     <p className="text-sm text-muted-foreground">Correctas</p>
                   </div>
                   <div className="w-px h-12 bg-border" />
                   <div className="text-center">
-                    <p className="text-xl font-semibold text-destructive">
-                      {testQuestions.length - Object.values(answers).filter((a, i) => a === testQuestions[i]?.correctAnswer).length}
-                    </p>
+                    <p className="text-xl font-semibold text-destructive">{incorrectCount}</p>
                     <p className="text-sm text-muted-foreground">Incorrectas</p>
                   </div>
                 </div>
 
                 {/* Review answers */}
-                <div className="text-left mb-8 space-y-3">
-                  <h3 className="font-semibold">Revisión de respuestas:</h3>
-                  {testQuestions.slice(0, 5).map((q, i) => {
+                <div className="text-left mb-8 space-y-3 max-h-80 overflow-y-auto">
+                  <h3 className="font-semibold sticky top-0 bg-background py-2">Revisión de respuestas:</h3>
+                  {currentQuestions.map((q) => {
                     const isCorrect = answers[q.id] === q.correctAnswer;
                     return (
                       <div key={q.id} className={cn(
@@ -167,16 +150,23 @@ export default function Tests() {
                         isCorrect ? "bg-success/5 border-success/20" : "bg-destructive/5 border-destructive/20"
                       )}>
                         <p className="text-sm font-medium">{q.question}</p>
-                        <div className="flex items-center gap-2 mt-1">
+                        <div className="flex items-start gap-2 mt-1">
                           {isCorrect ? (
-                            <CheckCircle2 className="w-4 h-4 text-success" />
+                            <CheckCircle2 className="w-4 h-4 text-success shrink-0 mt-0.5" />
                           ) : (
-                            <XCircle className="w-4 h-4 text-destructive" />
+                            <XCircle className="w-4 h-4 text-destructive shrink-0 mt-0.5" />
                           )}
-                          <span className="text-sm">
-                            Tu respuesta: <span className={isCorrect ? "text-success" : "text-destructive"}>{answers[q.id]}</span>
-                            {!isCorrect && <span className="text-muted-foreground"> · Correcta: {q.correctAnswer}</span>}
-                          </span>
+                          <div className="text-sm">
+                            <span>Tu respuesta: <span className={isCorrect ? "text-success font-medium" : "text-destructive font-medium"}>{answers[q.id] || "(sin respuesta)"}</span></span>
+                            {!isCorrect && (
+                              <>
+                                <span className="text-muted-foreground"> · Correcta: <span className="text-success font-medium">{q.correctAnswer}</span></span>
+                                {q.explanation && (
+                                  <p className="text-muted-foreground mt-1 italic">{q.explanation}</p>
+                                )}
+                              </>
+                            )}
+                          </div>
                         </div>
                       </div>
                     );
@@ -199,9 +189,10 @@ export default function Tests() {
     );
   }
 
-  if (selectedTest) {
-    const question = testQuestions[currentQuestion];
-    const progress = ((currentQuestion + 1) / testQuestions.length) * 100;
+  // Active test view
+  if (selectedTest && currentQuestions.length > 0) {
+    const question = currentQuestions[currentQuestion];
+    const progress = ((currentQuestion + 1) / currentQuestions.length) * 100;
     
     return (
       <div className="min-h-screen bg-background">
@@ -226,7 +217,7 @@ export default function Tests() {
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm font-medium">{selectedTest.title}</span>
                 <span className="text-sm text-muted-foreground">
-                  Pregunta {currentQuestion + 1} de {testQuestions.length}
+                  Pregunta {currentQuestion + 1} de {currentQuestions.length}
                 </span>
               </div>
               <Progress value={progress} className="h-2" />
@@ -235,12 +226,17 @@ export default function Tests() {
             {/* Question */}
             <Card>
               <CardContent className="p-8">
-                <span className={cn(
-                  "inline-block px-3 py-1 rounded-full text-xs font-medium text-white mb-4",
-                  getLevelColor(selectedTest.level)
-                )}>
-                  {selectedTest.level}
-                </span>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className={cn(
+                    "inline-block px-3 py-1 rounded-full text-xs font-medium text-white",
+                    getLevelColor(selectedTest.level)
+                  )}>
+                    {selectedTest.level}
+                  </span>
+                  <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-muted text-muted-foreground capitalize">
+                    {selectedTest.type === "grammar" ? "Gramática" : "Vocabulario"}
+                  </span>
+                </div>
                 
                 <h2 className="font-display font-bold text-xl mb-6">
                   {question.question}
@@ -268,7 +264,7 @@ export default function Tests() {
                   onClick={handleNext}
                   disabled={!answers[question.id]}
                 >
-                  {currentQuestion < testQuestions.length - 1 ? (
+                  {currentQuestion < currentQuestions.length - 1 ? (
                     <>
                       Siguiente
                       <ArrowRight className="w-4 h-4 ml-2" />
@@ -284,6 +280,12 @@ export default function Tests() {
       </div>
     );
   }
+
+  // Test list view
+  const completedCount = Object.keys(completedTests).length;
+  const averageScore = completedCount > 0 
+    ? Math.round(Object.values(completedTests).reduce((a, b) => a + b, 0) / completedCount)
+    : 0;
 
   return (
     <div className="min-h-screen bg-background">
@@ -311,7 +313,7 @@ export default function Tests() {
                 Tests y Evaluaciones
               </h1>
               <p className="text-muted-foreground">
-                Evalúa tu progreso con exámenes tipo certificación
+                Evalúa tu progreso con exámenes de gramática y vocabulario
               </p>
             </div>
           </div>
@@ -322,15 +324,15 @@ export default function Tests() {
           <CardContent className="p-6">
             <div className="grid grid-cols-3 gap-6 text-center">
               <div>
-                <p className="text-3xl font-display font-bold text-foreground">0</p>
+                <p className="text-3xl font-display font-bold text-foreground">{completedCount}</p>
                 <p className="text-sm text-muted-foreground">Tests completados</p>
               </div>
               <div>
-                <p className="text-3xl font-display font-bold text-success">0%</p>
+                <p className="text-3xl font-display font-bold text-success">{averageScore}%</p>
                 <p className="text-sm text-muted-foreground">Promedio</p>
               </div>
               <div>
-                <p className="text-3xl font-display font-bold text-primary">8</p>
+                <p className="text-3xl font-display font-bold text-primary">{testDefinitions.length - completedCount}</p>
                 <p className="text-sm text-muted-foreground">Tests pendientes</p>
               </div>
             </div>
@@ -339,56 +341,71 @@ export default function Tests() {
 
         {/* Tests List */}
         <div className="space-y-4">
-          {availableTests.map((test) => (
-            <Card 
-              key={test.id} 
-              className={cn(
-                "hover:shadow-lg transition-all duration-300",
-                test.completed && "opacity-80"
-              )}
-            >
-              <CardContent className="p-6">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className={cn(
-                      "w-12 h-12 rounded-xl flex items-center justify-center",
-                      test.completed ? "bg-success/10" : getLevelColor(test.level)
-                    )}>
-                      {test.completed ? (
-                        <Trophy className="w-6 h-6 text-success" />
-                      ) : (
-                        <span className="text-white font-bold">{test.level}</span>
-                      )}
-                    </div>
-                    <div>
-                      <h3 className="font-display font-semibold text-lg">
-                        {test.title}
-                        {test.completed && test.score && (
-                          <span className="ml-2 text-success text-sm font-normal">
-                            {test.score}%
-                          </span>
+          {testDefinitions.map((test) => {
+            const isCompleted = completedTests[test.id] !== undefined;
+            const score = completedTests[test.id];
+            
+            return (
+              <Card 
+                key={test.id} 
+                className={cn(
+                  "hover:shadow-lg transition-all duration-300",
+                  isCompleted && "opacity-90"
+                )}
+              >
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <div className={cn(
+                        "w-12 h-12 rounded-xl flex items-center justify-center",
+                        isCompleted ? "bg-success/10" : getLevelColor(test.level)
+                      )}>
+                        {isCompleted ? (
+                          <Trophy className="w-6 h-6 text-success" />
+                        ) : (
+                          <span className="text-white font-bold">{test.level}</span>
                         )}
-                      </h3>
-                      <p className="text-sm text-muted-foreground">{test.description}</p>
-                      <div className="flex items-center gap-4 mt-2 text-xs text-muted-foreground">
-                        <span>{test.questions} preguntas</span>
-                        <span>·</span>
-                        <span>{test.duration} min</span>
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <h3 className="font-display font-semibold text-lg">
+                            {test.title}
+                          </h3>
+                          {isCompleted && (
+                            <span className={cn(
+                              "text-sm font-medium",
+                              score >= 70 ? "text-success" : "text-warning"
+                            )}>
+                              {score}%
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-sm text-muted-foreground">{test.description}</p>
+                        <div className="flex items-center gap-4 mt-2 text-xs text-muted-foreground">
+                          <span className="flex items-center gap-1">
+                            {getTypeIcon(test.type)}
+                            {test.type === "grammar" ? "Gramática" : "Vocabulario"}
+                          </span>
+                          <span>·</span>
+                          <span>{test.questionsCount} preguntas</span>
+                          <span>·</span>
+                          <span>{test.duration} min</span>
+                        </div>
                       </div>
                     </div>
+                    
+                    <Button
+                      variant={isCompleted ? "outline" : "default"}
+                      onClick={() => handleStartTest(test)}
+                    >
+                      {isCompleted ? "Repetir" : "Comenzar"}
+                      <ChevronRight className="w-4 h-4 ml-1" />
+                    </Button>
                   </div>
-                  
-                  <Button
-                    variant={test.completed ? "outline" : "default"}
-                    onClick={() => handleStartTest(test)}
-                  >
-                    {test.completed ? "Repetir" : "Comenzar"}
-                    <ChevronRight className="w-4 h-4 ml-1" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </main>
     </div>
