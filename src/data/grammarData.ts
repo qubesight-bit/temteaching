@@ -36,7 +36,7 @@ export const grammarCategories: GrammarCategory[] = [
         id: "present-simple",
         title: "Present Simple",
         level: "A1",
-        completed: true,
+        completed: false,
         explanation: "El Present Simple se usa para describir rutinas, hábitos, hechos generales y verdades universales. Se forma con el verbo en infinitivo (sin 'to'), y en tercera persona singular (he/she/it) se añade -s o -es.",
         examples: [
           { english: "I work every day.", spanish: "Trabajo todos los días." },
@@ -74,7 +74,7 @@ export const grammarCategories: GrammarCategory[] = [
         id: "present-continuous",
         title: "Present Continuous",
         level: "A1",
-        completed: true,
+        completed: false,
         explanation: "El Present Continuous describe acciones que están ocurriendo en este momento o alrededor de este período. Se forma con el verbo 'to be' + verbo con -ing.",
         examples: [
           { english: "I am studying right now.", spanish: "Estoy estudiando ahora mismo." },
@@ -96,7 +96,7 @@ export const grammarCategories: GrammarCategory[] = [
         id: "past-simple",
         title: "Past Simple",
         level: "A2",
-        completed: true,
+        completed: false,
         explanation: "El Past Simple se usa para acciones completadas en el pasado. Los verbos regulares añaden -ed, mientras que los irregulares tienen formas especiales.",
         examples: [
           { english: "I visited Paris last year.", spanish: "Visité París el año pasado." },
@@ -220,7 +220,7 @@ export const grammarCategories: GrammarCategory[] = [
         id: "can-could",
         title: "Can & Could",
         level: "A1",
-        completed: true,
+        completed: false,
         explanation: "'Can' expresa habilidad, permiso y posibilidad en presente. 'Could' es su forma pasada o más formal/cortés.",
         examples: [
           { english: "I can swim very well.", spanish: "Puedo nadar muy bien." },
@@ -488,7 +488,7 @@ export const grammarCategories: GrammarCategory[] = [
         id: "articles-basic",
         title: "A, An, The - Básico",
         level: "A1",
-        completed: true,
+        completed: false,
         explanation: "'A' se usa antes de consonantes, 'an' antes de vocales (por sonido). 'The' se usa para cosas específicas o únicas.",
         examples: [
           { english: "I have a cat and an apple.", spanish: "Tengo un gato y una manzana." },
@@ -518,7 +518,7 @@ export const grammarCategories: GrammarCategory[] = [
         id: "prepositions-time",
         title: "Preposiciones de Tiempo",
         level: "A1",
-        completed: true,
+        completed: false,
         explanation: "'At' para horas específicas y momentos. 'On' para días y fechas. 'In' para meses, años, siglos y períodos largos.",
         examples: [
           { english: "I wake up at 7 o'clock.", spanish: "Me despierto a las 7." },
@@ -540,7 +540,7 @@ export const grammarCategories: GrammarCategory[] = [
         id: "prepositions-place",
         title: "Preposiciones de Lugar",
         level: "A1",
-        completed: true,
+        completed: false,
         explanation: "'At' para puntos específicos. 'On' para superficies. 'In' para espacios cerrados o áreas.",
         examples: [
           { english: "She is at the bus stop.", spanish: "Ella está en la parada de autobús." },
@@ -570,7 +570,7 @@ export const grammarCategories: GrammarCategory[] = [
         id: "personal-pronouns",
         title: "Pronombres Personales",
         level: "A1",
-        completed: true,
+        completed: false,
         explanation: "Los pronombres sujeto (I, you, he, she, it, we, they) reemplazan al sujeto. Los pronombres objeto (me, you, him, her, it, us, them) reciben la acción.",
         examples: [
           { english: "I love her. She loves me.", spanish: "Yo la amo. Ella me ama." },

@@ -13,7 +13,7 @@ const modules = [
     title: "Gramática",
     description: "19 categorías completas desde tiempos verbales hasta estructuras complejas",
     icon: BookOpen,
-    progress: 45,
+    progress: 0,
     color: "bg-level-b1",
     path: "/grammar",
   },
@@ -21,7 +21,7 @@ const modules = [
     title: "Vocabulario",
     description: "Expande tu léxico con flashcards y ejercicios contextuales",
     icon: Lightbulb,
-    progress: 62,
+    progress: 0,
     color: "bg-level-a2",
     path: "/vocabulary",
   },
@@ -29,7 +29,7 @@ const modules = [
     title: "Práctica",
     description: "Ejercicios interactivos adaptados a tu nivel actual",
     icon: PenTool,
-    progress: 38,
+    progress: 0,
     color: "bg-primary",
     path: "/practice",
   },
@@ -37,7 +37,7 @@ const modules = [
     title: "Conversación",
     description: "Practica con IA y mejora tu fluidez con feedback instantáneo",
     icon: MessageSquare,
-    progress: 25,
+    progress: 0,
     color: "bg-accent",
     path: "/conversation",
   },
@@ -45,7 +45,7 @@ const modules = [
     title: "Tests",
     description: "Evalúa tu progreso con exámenes tipo certificación",
     icon: GraduationCap,
-    progress: 15,
+    progress: 0,
     color: "bg-level-c1",
     path: "/tests",
   },
@@ -72,9 +72,9 @@ const Index = () => {
         <div className="mb-8 p-6 rounded-2xl bg-card border shadow-card animate-slide-up" style={{ animationDelay: '0.1s' }}>
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-display font-semibold text-lg">Tu progreso MCER</h2>
-            <span className="text-sm text-muted-foreground">Nivel actual: <span className="font-semibold text-level-a2">A2</span></span>
+            <span className="text-sm text-muted-foreground">Nivel actual: <span className="font-semibold text-level-a1">A1</span></span>
           </div>
-          <LevelProgress currentLevel="A2" progress={45} />
+          <LevelProgress currentLevel="A1" progress={0} />
         </div>
 
         {/* Quick Stats */}
@@ -122,12 +122,12 @@ const Index = () => {
             {/* Daily Goal Widget */}
             <section>
               <h2 className="font-display font-semibold text-lg mb-4">Tu actividad</h2>
-              <DailyGoalWidget
-                currentStreak={7}
-                bestStreak={14}
-                todayMinutes={18}
+            <DailyGoalWidget
+                currentStreak={0}
+                bestStreak={0}
+                todayMinutes={0}
                 goalMinutes={20}
-                weeklyProgress={[100, 100, 75, 100, 90, 50, 0]}
+                weeklyProgress={[0, 0, 0, 0, 0, 0, 0]}
               />
             </section>
 
