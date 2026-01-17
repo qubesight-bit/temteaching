@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { Header } from "@/components/Header";
+import { AppLayout } from "@/components/AppLayout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -99,10 +99,8 @@ export default function Tests() {
     const incorrectCount = currentQuestions.length - correctCount;
     
     return (
-      <div className="min-h-screen bg-background">
-        <Header />
-        
-        <main className="container py-8">
+      <AppLayout>
+        <div className="container py-8">
           <div className="max-w-2xl mx-auto">
             <Card>
               <CardContent className="p-8 text-center">
@@ -184,8 +182,8 @@ export default function Tests() {
               </CardContent>
             </Card>
           </div>
-        </main>
-      </div>
+        </div>
+      </AppLayout>
     );
   }
 
@@ -195,10 +193,8 @@ export default function Tests() {
     const progress = ((currentQuestion + 1) / currentQuestions.length) * 100;
     
     return (
-      <div className="min-h-screen bg-background">
-        <Header />
-        
-        <main className="container py-8">
+      <AppLayout>
+        <div className="container py-8">
           <div className="max-w-2xl mx-auto">
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
@@ -276,8 +272,8 @@ export default function Tests() {
               </CardContent>
             </Card>
           </div>
-        </main>
-      </div>
+        </div>
+      </AppLayout>
     );
   }
 
@@ -288,10 +284,8 @@ export default function Tests() {
     : 0;
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
-      <main className="container py-8">
+    <AppLayout>
+      <div className="container py-8">
         {/* Back Button & Title */}
         <div className="mb-8">
           <Button
@@ -407,7 +401,7 @@ export default function Tests() {
             );
           })}
         </div>
-      </main>
-    </div>
+      </div>
+    </AppLayout>
   );
 }

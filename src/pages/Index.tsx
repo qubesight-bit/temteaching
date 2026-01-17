@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Header } from "@/components/Header";
+import { AppLayout } from "@/components/AppLayout";
 import { LevelProgress } from "@/components/LevelProgress";
 import { QuickStats } from "@/components/QuickStats";
 import { TodayLesson } from "@/components/TodayLesson";
@@ -62,10 +62,8 @@ const modules = [
 const Index = () => {
   const navigate = useNavigate();
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      
-      <main className="container py-8">
+    <AppLayout>
+      <div className="container py-8">
         {/* Welcome Section */}
         <div className="mb-8 animate-fade-in">
           <h1 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-2">
@@ -172,8 +170,8 @@ const Index = () => {
             </section>
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </AppLayout>
   );
 };
 

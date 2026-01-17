@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { Bell, Menu, Settings, User, LogOut } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -18,7 +19,11 @@ const navItems = [
   { label: 'Tests', path: '/tests' },
 ];
 
-export function Header() {
+interface HeaderProps {
+  children?: ReactNode;
+}
+
+export function Header({ children }: HeaderProps) {
   const navigate = useNavigate();
   const location = useLocation();
   const { user, signOut } = useAuth();
@@ -33,6 +38,7 @@ export function Header() {
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">
+          {children}
           <button className="lg:hidden p-2 hover:bg-secondary rounded-lg">
             <Menu className="w-5 h-5" />
           </button>
