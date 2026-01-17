@@ -1924,134 +1924,678 @@ export const curriculumData: LevelCurriculum[] = [
   {
     level: "C1",
     title: "Avanzado",
-    description: "Comunicación eficaz y flexible en todos los contextos",
-    targetVocabulary: "8,000-10,000 palabras",
-    estimatedHours: 700,
+    description: "Usuario altamente autónomo, preciso y socialmente efectivo en contextos académicos, profesionales y sociales complejos",
+    targetVocabulary: "6,000-8,000 palabras (uso activo)",
+    estimatedHours: 600,
     categories: [
       {
         id: "c1-vocabulary",
-        title: "Vocabulario",
+        title: "Dominio Léxico",
         icon: "📚",
-        description: "Dominio del léxico y matices",
+        description: "Profundidad, precisión y registro - control léxico casi nativo",
         skills: [
           {
             id: "c1-vocab-1",
-            title: "Vocabulario sofisticado",
-            description: "Nuanced and precise vocabulary",
+            title: "Diferencias de significado precisas",
+            description: "Fine-grained meaning differences",
             completed: false,
             subSkills: [
-              { id: "c1-v1-1", title: "Sinónimos y matices", completed: false },
-              { id: "c1-v1-2", title: "Registro formal/informal", completed: false },
+              { id: "c1-v1-1", title: "assume vs presume", completed: false },
+              { id: "c1-v1-2", title: "affect vs effect", completed: false },
+              { id: "c1-v1-3", title: "imply vs infer", completed: false },
+              { id: "c1-v1-4", title: "comprise vs compose", completed: false },
+              { id: "c1-v1-5", title: "continual vs continuous", completed: false },
             ]
           },
           {
             id: "c1-vocab-2",
-            title: "Lenguaje figurativo",
-            description: "Metaphors, similes, nuances",
+            title: "Vocabulario abstracto y técnico",
+            description: "Abstract & technical vocabulary",
             completed: false,
             subSkills: [
-              { id: "c1-v2-1", title: "Metáforas comunes", completed: false },
-              { id: "c1-v2-2", title: "Ironía y sarcasmo", completed: false },
+              { id: "c1-v2-1", title: "Política y gobierno (policy, legislation, reform)", completed: false },
+              { id: "c1-v2-2", title: "Ética y filosofía (ethics, morality, principles)", completed: false },
+              { id: "c1-v2-3", title: "Metodología (approach, framework, analysis)", completed: false },
+              { id: "c1-v2-4", title: "Economía y finanzas (investment, inflation, revenue)", completed: false },
+              { id: "c1-v2-5", title: "Ciencia y tecnología (hypothesis, variables, data)", completed: false },
+            ]
+          },
+          {
+            id: "c1-vocab-3",
+            title: "Modismos y expresiones fijas",
+            description: "Idioms, fixed expressions, and metaphor",
+            completed: false,
+            subSkills: [
+              { id: "c1-v3-1", title: "Modismos de negocios (the bottom line, think outside the box)", completed: false },
+              { id: "c1-v3-2", title: "Modismos académicos (food for thought, in the same vein)", completed: false },
+              { id: "c1-v3-3", title: "Metáforas comunes (tip of the iceberg, light at the end)", completed: false },
+              { id: "c1-v3-4", title: "Expresiones formales (by and large, for the most part)", completed: false },
+            ]
+          },
+          {
+            id: "c1-vocab-4",
+            title: "Colocaciones avanzadas",
+            description: "Advanced collocations",
+            completed: false,
+            subSkills: [
+              { id: "c1-v4-1", title: "pose a threat / challenge / question", completed: false },
+              { id: "c1-v4-2", title: "draw a conclusion / comparison / distinction", completed: false },
+              { id: "c1-v4-3", title: "reach an agreement / consensus / decision", completed: false },
+              { id: "c1-v4-4", title: "exert influence / pressure / control", completed: false },
+              { id: "c1-v4-5", title: "bear in mind / responsibility / resemblance", completed: false },
+            ]
+          },
+          {
+            id: "c1-vocab-5",
+            title: "Control de registro",
+            description: "Register control (formal, neutral, informal, academic)",
+            completed: false,
+            subSkills: [
+              { id: "c1-v5-1", title: "Registro formal (commence, enquire, therefore)", completed: false },
+              { id: "c1-v5-2", title: "Registro neutro (start, ask, so)", completed: false },
+              { id: "c1-v5-3", title: "Registro informal (kick off, check out, anyway)", completed: false },
+              { id: "c1-v5-4", title: "Registro académico (furthermore, notwithstanding, hence)", completed: false },
+            ]
+          },
+          {
+            id: "c1-vocab-6",
+            title: "Connotación y tono",
+            description: "Connotation & tone (neutral vs critical vs ironic)",
+            completed: false,
+            subSkills: [
+              { id: "c1-v6-1", title: "Vocabulario neutral vs crítico", completed: false },
+              { id: "c1-v6-2", title: "Tono irónico y sarcástico", completed: false },
+              { id: "c1-v6-3", title: "Eufemismos y lenguaje diplomático", completed: false },
+              { id: "c1-v6-4", title: "Intensificadores y atenuadores", completed: false },
+            ]
+          },
+          {
+            id: "c1-vocab-7",
+            title: "Formación de palabras",
+            description: "Word formation and derivation fluency",
+            completed: false,
+            subSkills: [
+              { id: "c1-v7-1", title: "Prefijos avanzados (counter-, ultra-, pseudo-)", completed: false },
+              { id: "c1-v7-2", title: "Sufijos nominales (-ation, -ment, -ity)", completed: false },
+              { id: "c1-v7-3", title: "Sufijos adjetivales (-ive, -ous, -al)", completed: false },
+              { id: "c1-v7-4", title: "Familias de palabras completas", completed: false },
             ]
           },
         ]
       },
       {
         id: "c1-grammar",
-        title: "Gramática",
+        title: "Gramática y Sintaxis Avanzada",
         icon: "🧩",
-        description: "Control completo de estructuras complejas",
+        description: "Sofisticación estructural - de gramática flexible a control estilístico",
         skills: [
           {
             id: "c1-gram-1",
-            title: "Estructuras avanzadas",
-            description: "Complex sentence structures",
+            title: "Estructuras de cláusulas complejas",
+            description: "Complex clause structures",
             completed: false,
             subSkills: [
-              { id: "c1-g1-1", title: "Subjuntivo", completed: false },
-              { id: "c1-g1-2", title: "Cleft sentences", completed: false },
+              { id: "c1-g1-1", title: "Cláusulas subordinadas múltiples", completed: false },
+              { id: "c1-g1-2", title: "Cláusulas reducidas (participio)", completed: false },
+              { id: "c1-g1-3", title: "Cláusulas nominales complejas", completed: false },
             ]
           },
           {
             id: "c1-gram-2",
-            title: "Modales perfectos",
-            description: "Modal perfects for deduction and regret",
+            title: "Subordinación e incrustación",
+            description: "Subordination & embedding",
             completed: false,
             subSkills: [
-              { id: "c1-g2-1", title: "Must have, could have", completed: false },
-              { id: "c1-g2-2", title: "Should have, would have", completed: false },
+              { id: "c1-g2-1", title: "Cláusulas incrustadas profundas", completed: false },
+              { id: "c1-g2-2", title: "Estructuras de relativo complejas", completed: false },
+              { id: "c1-g2-3", title: "Complementos oracionales", completed: false },
+            ]
+          },
+          {
+            id: "c1-gram-3",
+            title: "Todos los condicionales (incluyendo mixtos)",
+            description: "All conditionals including mixed",
+            completed: false,
+            subSkills: [
+              { id: "c1-g3-1", title: "Tercer condicional perfecto", completed: false },
+              { id: "c1-g3-2", title: "Mixtos: pasado irreal → presente (If I had studied, I would know)", completed: false },
+              { id: "c1-g3-3", title: "Mixtos: presente irreal → pasado (If I were taller, I would have been selected)", completed: false },
+              { id: "c1-g3-4", title: "Condicionales con modales alternativos", completed: false },
+            ]
+          },
+          {
+            id: "c1-gram-4",
+            title: "Construcciones pasivas avanzadas",
+            description: "Advanced passive constructions",
+            completed: false,
+            subSkills: [
+              { id: "c1-g4-1", title: "Pasiva con verbos de reporte (It is believed that...)", completed: false },
+              { id: "c1-g4-2", title: "Pasiva causativa (have/get something done)", completed: false },
+              { id: "c1-g4-3", title: "Pasiva con infinitivo (He is said to be...)", completed: false },
+              { id: "c1-g4-4", title: "Pasiva impersonal", completed: false },
+            ]
+          },
+          {
+            id: "c1-gram-5",
+            title: "Nominalización",
+            description: "Nominalisation (The implementation of…)",
+            completed: false,
+            subSkills: [
+              { id: "c1-g5-1", title: "Convertir verbos en sustantivos", completed: false },
+              { id: "c1-g5-2", title: "Convertir adjetivos en sustantivos", completed: false },
+              { id: "c1-g5-3", title: "Estructuras nominales complejas", completed: false },
+              { id: "c1-g5-4", title: "Uso en escritura académica", completed: false },
+            ]
+          },
+          {
+            id: "c1-gram-6",
+            title: "Inversión y énfasis",
+            description: "Inversion & emphasis",
+            completed: false,
+            subSkills: [
+              { id: "c1-g6-1", title: "Not only... but also (inversión)", completed: false },
+              { id: "c1-g6-2", title: "Had I known... (inversión condicional)", completed: false },
+              { id: "c1-g6-3", title: "Never have I seen... (inversión negativa)", completed: false },
+              { id: "c1-g6-4", title: "Rarely does one find... (inversión con adverbios)", completed: false },
+              { id: "c1-g6-5", title: "Cleft sentences (What I need is... / It was John who...)", completed: false },
+            ]
+          },
+          {
+            id: "c1-gram-7",
+            title: "Elipsis y sustitución",
+            description: "Ellipsis & substitution",
+            completed: false,
+            subSkills: [
+              { id: "c1-g7-1", title: "Elipsis nominal (I'll have the red one)", completed: false },
+              { id: "c1-g7-2", title: "Elipsis verbal (She can swim and so can I)", completed: false },
+              { id: "c1-g7-3", title: "Sustitución con 'do', 'so', 'one'", completed: false },
+              { id: "c1-g7-4", title: "Evitar repetición en textos formales", completed: false },
+            ]
+          },
+          {
+            id: "c1-gram-8",
+            title: "Gramática a nivel de discurso",
+            description: "Discourse-level grammar",
+            completed: false,
+            subSkills: [
+              { id: "c1-g8-1", title: "Cohesión léxica y gramatical", completed: false },
+              { id: "c1-g8-2", title: "Referencia anafórica y catafórica", completed: false },
+              { id: "c1-g8-3", title: "Conectores de discurso avanzados", completed: false },
+            ]
+          },
+          {
+            id: "c1-gram-9",
+            title: "Puntuación precisa para significado",
+            description: "Accurate punctuation for meaning",
+            completed: false,
+            subSkills: [
+              { id: "c1-g9-1", title: "Punto y coma vs coma", completed: false },
+              { id: "c1-g9-2", title: "Dos puntos para énfasis", completed: false },
+              { id: "c1-g9-3", title: "Guiones y paréntesis", completed: false },
+              { id: "c1-g9-4", title: "Apóstrofos en casos complejos", completed: false },
             ]
           },
         ]
       },
       {
         id: "c1-speaking",
-        title: "Expresión Oral",
+        title: "Expresión Oral: Control Retórico e Interactivo",
         icon: "🗣️",
-        description: "Fluidez y precisión en todos los contextos",
+        description: "Discurso hablado de alto nivel - de conversación fluida a habla articulada y persuasiva",
         skills: [
           {
             id: "c1-speak-1",
-            title: "Comunicación profesional",
-            description: "High-level professional communication",
+            title: "Expresar ideas espontánea y precisamente",
+            description: "Express ideas spontaneously and precisely",
             completed: false,
             subSkills: [
-              { id: "c1-s1-1", title: "Negociaciones", completed: false },
-              { id: "c1-s1-2", title: "Entrevistas avanzadas", completed: false },
+              { id: "c1-s1-1", title: "Hablar sin preparación sobre temas complejos", completed: false },
+              { id: "c1-s1-2", title: "Encontrar palabras precisas rápidamente", completed: false },
+              { id: "c1-s1-3", title: "Auto-corregirse sin perder fluidez", completed: false },
+            ]
+          },
+          {
+            id: "c1-speak-2",
+            title: "Desarrollar argumentos extendidos coherentemente",
+            description: "Develop extended arguments coherently",
+            completed: false,
+            subSkills: [
+              { id: "c1-s2-1", title: "Estructurar argumentos lógicamente", completed: false },
+              { id: "c1-s2-2", title: "Proporcionar evidencia y ejemplos", completed: false },
+              { id: "c1-s2-3", title: "Anticipar contraargumentos", completed: false },
+              { id: "c1-s2-4", title: "Concluir efectivamente", completed: false },
+            ]
+          },
+          {
+            id: "c1-speak-3",
+            title: "Persuadir, negociar e hipotetizar",
+            description: "Persuade, negotiate, and hypothesise",
+            completed: false,
+            subSkills: [
+              { id: "c1-s3-1", title: "Técnicas de persuasión", completed: false },
+              { id: "c1-s3-2", title: "Negociación y compromiso", completed: false },
+              { id: "c1-s3-3", title: "Especulación sobre escenarios", completed: false },
+              { id: "c1-s3-4", title: "Proponer soluciones alternativas", completed: false },
+            ]
+          },
+          {
+            id: "c1-speak-4",
+            title: "Adaptar el habla a audiencia y contexto",
+            description: "Adapt speech to audience and context",
+            completed: false,
+            subSkills: [
+              { id: "c1-s4-1", title: "Ajustar formalidad según situación", completed: false },
+              { id: "c1-s4-2", title: "Modificar complejidad para la audiencia", completed: false },
+              { id: "c1-s4-3", title: "Cambiar tono apropiadamente", completed: false },
+            ]
+          },
+          {
+            id: "c1-speak-5",
+            title: "Gestionar turnos complejos",
+            description: "Manage complex turn-taking",
+            completed: false,
+            subSkills: [
+              { id: "c1-s5-1", title: "Interrumpir educadamente", completed: false },
+              { id: "c1-s5-2", title: "Mantener el turno bajo presión", completed: false },
+              { id: "c1-s5-3", title: "Ceder el turno elegantemente", completed: false },
+              { id: "c1-s5-4", title: "Moderar discusiones grupales", completed: false },
+            ]
+          },
+          {
+            id: "c1-speak-6",
+            title: "Usar atenuación, énfasis y matices",
+            description: "Use hedging, emphasis, and nuance",
+            completed: false,
+            subSkills: [
+              { id: "c1-s6-1", title: "Hedging (It seems that..., I tend to think...)", completed: false },
+              { id: "c1-s6-2", title: "Énfasis retórico", completed: false },
+              { id: "c1-s6-3", title: "Expresar certeza graduada", completed: false },
+              { id: "c1-s6-4", title: "Matizar opiniones fuertes", completed: false },
+            ]
+          },
+          {
+            id: "c1-speak-7",
+            title: "Transmitir postura y desacuerdo sutil",
+            description: "Convey stance, attitude, and subtle disagreement",
+            completed: false,
+            subSkills: [
+              { id: "c1-s7-1", title: "Expresar escepticismo diplomáticamente", completed: false },
+              { id: "c1-s7-2", title: "Desacordar sin confrontar", completed: false },
+              { id: "c1-s7-3", title: "Mostrar actitud mediante entonación", completed: false },
+            ]
+          },
+          {
+            id: "c1-speak-8",
+            title: "Mantener coherencia en habla extendida",
+            description: "Maintain coherence over long stretches of speech",
+            completed: false,
+            subSkills: [
+              { id: "c1-s8-1", title: "Señalizar estructura del discurso", completed: false },
+              { id: "c1-s8-2", title: "Resumir puntos anteriores", completed: false },
+              { id: "c1-s8-3", title: "Conectar ideas a lo largo del tiempo", completed: false },
             ]
           },
         ]
       },
       {
         id: "c1-listening",
-        title: "Comprensión Auditiva",
+        title: "Comprensión Auditiva: Competencia Interpretativa",
         icon: "👂",
-        description: "Comprensión casi completa en cualquier contexto",
+        description: "Entender significado implícito - de entender contenido a entender intención",
         skills: [
           {
             id: "c1-list-1",
-            title: "Todo tipo de contenido",
-            description: "All types of spoken content",
+            title: "Habla rápida y natural",
+            description: "Fast, natural speech",
             completed: false,
             subSkills: [
-              { id: "c1-l1-1", title: "Conferencias académicas", completed: false },
-              { id: "c1-l1-2", title: "Humor y sarcasmo", completed: false },
+              { id: "c1-l1-1", title: "Velocidad nativa sin adaptación", completed: false },
+              { id: "c1-l1-2", title: "Habla conectada y reducciones", completed: false },
+              { id: "c1-l1-3", title: "Múltiples hablantes simultáneos", completed: false },
+            ]
+          },
+          {
+            id: "c1-list-2",
+            title: "Conferencias académicas",
+            description: "Academic lectures",
+            completed: false,
+            subSkills: [
+              { id: "c1-l2-1", title: "Seguir argumentos complejos", completed: false },
+              { id: "c1-l2-2", title: "Identificar puntos principales y secundarios", completed: false },
+              { id: "c1-l2-3", title: "Tomar notas efectivas", completed: false },
+            ]
+          },
+          {
+            id: "c1-list-3",
+            title: "Reuniones profesionales",
+            description: "Professional meetings",
+            completed: false,
+            subSkills: [
+              { id: "c1-l3-1", title: "Discusiones de negocios", completed: false },
+              { id: "c1-l3-2", title: "Negociaciones y debates", completed: false },
+              { id: "c1-l3-3", title: "Presentaciones técnicas", completed: false },
+            ]
+          },
+          {
+            id: "c1-list-4",
+            title: "Discusiones y debates en medios",
+            description: "Media discussions & debates",
+            completed: false,
+            subSkills: [
+              { id: "c1-l4-1", title: "Programas de noticias y análisis", completed: false },
+              { id: "c1-l4-2", title: "Podcasts complejos", completed: false },
+              { id: "c1-l4-3", title: "Documentales sin subtítulos", completed: false },
+            ]
+          },
+          {
+            id: "c1-list-5",
+            title: "Lenguaje idiomático y figurativo",
+            description: "Idiomatic and figurative language",
+            completed: false,
+            subSkills: [
+              { id: "c1-l5-1", title: "Modismos en contexto", completed: false },
+              { id: "c1-l5-2", title: "Metáforas y analogías", completed: false },
+              { id: "c1-l5-3", title: "Referencias culturales", completed: false },
+            ]
+          },
+          {
+            id: "c1-list-6",
+            title: "Ironía, humor y subestimación",
+            description: "Irony, humour, understatement",
+            completed: false,
+            subSkills: [
+              { id: "c1-l6-1", title: "Detectar ironía y sarcasmo", completed: false },
+              { id: "c1-l6-2", title: "Entender humor británico vs americano", completed: false },
+              { id: "c1-l6-3", title: "Reconocer subestimación (understatement)", completed: false },
+            ]
+          },
+          {
+            id: "c1-list-7",
+            title: "Actitud y postura del hablante",
+            description: "Attitude and speaker stance",
+            completed: false,
+            subSkills: [
+              { id: "c1-l7-1", title: "Identificar opinión vs hecho", completed: false },
+              { id: "c1-l7-2", title: "Detectar sesgo y perspectiva", completed: false },
+              { id: "c1-l7-3", title: "Interpretar tono emocional", completed: false },
             ]
           },
         ]
       },
       {
         id: "c1-reading",
-        title: "Comprensión Lectora",
+        title: "Lectura: Habilidades Analíticas y Críticas",
         icon: "📖",
-        description: "Textos largos y complejos sin dificultad",
+        description: "Textos densos, abstractos y académicos - de comprensión a evaluación y síntesis",
         skills: [
           {
             id: "c1-read-1",
-            title: "Literatura clásica",
-            description: "Classic literature and academic texts",
+            title: "Artículos académicos",
+            description: "Academic articles",
             completed: false,
             subSkills: [
-              { id: "c1-r1-1", title: "Novelas sin adaptar", completed: false },
-              { id: "c1-r1-2", title: "Textos académicos", completed: false },
+              { id: "c1-r1-1", title: "Journals y revistas especializadas", completed: false },
+              { id: "c1-r1-2", title: "Abstracts y conclusiones", completed: false },
+              { id: "c1-r1-3", title: "Metodología y resultados", completed: false },
+            ]
+          },
+          {
+            id: "c1-read-2",
+            title: "Papers de investigación",
+            description: "Research papers",
+            completed: false,
+            subSkills: [
+              { id: "c1-r2-1", title: "Estructura de papers académicos", completed: false },
+              { id: "c1-r2-2", title: "Análisis de datos y estadísticas", completed: false },
+              { id: "c1-r2-3", title: "Revisión de literatura", completed: false },
+            ]
+          },
+          {
+            id: "c1-read-3",
+            title: "Editoriales y ensayos",
+            description: "Editorials & essays",
+            completed: false,
+            subSkills: [
+              { id: "c1-r3-1", title: "Opinión editorial en periódicos de calidad", completed: false },
+              { id: "c1-r3-2", title: "Ensayos argumentativos", completed: false },
+              { id: "c1-r3-3", title: "Críticas y reseñas extensas", completed: false },
+            ]
+          },
+          {
+            id: "c1-read-4",
+            title: "Documentos de política",
+            description: "Policy documents",
+            completed: false,
+            subSkills: [
+              { id: "c1-r4-1", title: "Informes gubernamentales", completed: false },
+              { id: "c1-r4-2", title: "White papers", completed: false },
+              { id: "c1-r4-3", title: "Propuestas y recomendaciones", completed: false },
+            ]
+          },
+          {
+            id: "c1-read-5",
+            title: "Periodismo de formato largo",
+            description: "Long-form journalism",
+            completed: false,
+            subSkills: [
+              { id: "c1-r5-1", title: "Artículos investigativos", completed: false },
+              { id: "c1-r5-2", title: "Reportajes en profundidad", completed: false },
+              { id: "c1-r5-3", title: "Perfiles y entrevistas extensas", completed: false },
+            ]
+          },
+          {
+            id: "c1-read-6",
+            title: "Literatura (no simplificada)",
+            description: "Literature (non-simplified)",
+            completed: false,
+            subSkills: [
+              { id: "c1-r6-1", title: "Novelas contemporáneas", completed: false },
+              { id: "c1-r6-2", title: "Clásicos de literatura inglesa", completed: false },
+              { id: "c1-r6-3", title: "Poesía y drama", completed: false },
+            ]
+          },
+          {
+            id: "c1-read-7",
+            title: "Identificar argumentos implícitos",
+            description: "Identify implicit arguments",
+            completed: false,
+            subSkills: [
+              { id: "c1-r7-1", title: "Leer entre líneas", completed: false },
+              { id: "c1-r7-2", title: "Detectar suposiciones subyacentes", completed: false },
+              { id: "c1-r7-3", title: "Inferir intención del autor", completed: false },
+            ]
+          },
+          {
+            id: "c1-read-8",
+            title: "Evaluar afirmaciones críticamente",
+            description: "Evaluate claims critically",
+            completed: false,
+            subSkills: [
+              { id: "c1-r8-1", title: "Analizar evidencia y fuentes", completed: false },
+              { id: "c1-r8-2", title: "Identificar falacias lógicas", completed: false },
+              { id: "c1-r8-3", title: "Comparar perspectivas opuestas", completed: false },
+            ]
+          },
+          {
+            id: "c1-read-9",
+            title: "Sintetizar información de múltiples fuentes",
+            description: "Synthesize information from multiple sources",
+            completed: false,
+            subSkills: [
+              { id: "c1-r9-1", title: "Combinar información de varios textos", completed: false },
+              { id: "c1-r9-2", title: "Crear resúmenes integrados", completed: false },
+              { id: "c1-r9-3", title: "Identificar consenso y desacuerdo", completed: false },
             ]
           },
         ]
       },
       {
         id: "c1-writing",
-        title: "Expresión Escrita",
+        title: "Escritura: Control Avanzado y Estilo",
         icon: "✍️",
-        description: "Escritura clara, bien estructurada y detallada",
+        description: "Producción escrita sofisticada - de textos bien estructurados a escritura controlada y pulida",
         skills: [
           {
             id: "c1-write-1",
-            title: "Textos académicos",
-            description: "Essays, dissertations, articles",
+            title: "Ensayos académicos",
+            description: "Academic essays",
             completed: false,
             subSkills: [
-              { id: "c1-w1-1", title: "Ensayos argumentativos", completed: false },
-              { id: "c1-w1-2", title: "Artículos de investigación", completed: false },
+              { id: "c1-w1-1", title: "Tesis clara y argumentación", completed: false },
+              { id: "c1-w1-2", title: "Estructura de párrafos académicos", completed: false },
+              { id: "c1-w1-3", title: "Citación y referencias", completed: false },
+              { id: "c1-w1-4", title: "Conclusiones efectivas", completed: false },
+            ]
+          },
+          {
+            id: "c1-write-2",
+            title: "Informes y propuestas",
+            description: "Reports & proposals",
+            completed: false,
+            subSkills: [
+              { id: "c1-w2-1", title: "Estructura de informes profesionales", completed: false },
+              { id: "c1-w2-2", title: "Executive summaries", completed: false },
+              { id: "c1-w2-3", title: "Recomendaciones y acciones", completed: false },
+            ]
+          },
+          {
+            id: "c1-write-3",
+            title: "Reseñas críticas",
+            description: "Critical reviews",
+            completed: false,
+            subSkills: [
+              { id: "c1-w3-1", title: "Reseñas de libros y artículos", completed: false },
+              { id: "c1-w3-2", title: "Análisis crítico equilibrado", completed: false },
+              { id: "c1-w3-3", title: "Evaluación de fortalezas y debilidades", completed: false },
+            ]
+          },
+          {
+            id: "c1-write-4",
+            title: "Position papers",
+            description: "Position papers",
+            completed: false,
+            subSkills: [
+              { id: "c1-w4-1", title: "Argumentación de una postura", completed: false },
+              { id: "c1-w4-2", title: "Contraargumentos y refutación", completed: false },
+              { id: "c1-w4-3", title: "Evidencia y ejemplos persuasivos", completed: false },
+            ]
+          },
+          {
+            id: "c1-write-5",
+            title: "Correspondencia formal",
+            description: "Formal correspondence",
+            completed: false,
+            subSkills: [
+              { id: "c1-w5-1", title: "Emails profesionales complejos", completed: false },
+              { id: "c1-w5-2", title: "Cartas formales de negocio", completed: false },
+              { id: "c1-w5-3", title: "Comunicación diplomática", completed: false },
+            ]
+          },
+          {
+            id: "c1-write-6",
+            title: "Cohesión y coherencia avanzada",
+            description: "Cohesion across paragraphs",
+            completed: false,
+            subSkills: [
+              { id: "c1-w6-1", title: "Conectores de discurso avanzados", completed: false },
+              { id: "c1-w6-2", title: "Transiciones entre secciones", completed: false },
+              { id: "c1-w6-3", title: "Referencia y sustitución efectiva", completed: false },
+            ]
+          },
+          {
+            id: "c1-write-7",
+            title: "Hedging y marcadores de postura",
+            description: "Hedging and stance markers",
+            completed: false,
+            subSkills: [
+              { id: "c1-w7-1", title: "Expresar certeza y duda", completed: false },
+              { id: "c1-w7-2", title: "Lenguaje tentativo en academia", completed: false },
+              { id: "c1-w7-3", title: "Posicionamiento del autor", completed: false },
+            ]
+          },
+          {
+            id: "c1-write-8",
+            title: "Variación estilística",
+            description: "Stylistic variation",
+            completed: false,
+            subSkills: [
+              { id: "c1-w8-1", title: "Variar longitud de oraciones", completed: false },
+              { id: "c1-w8-2", title: "Usar voz activa vs pasiva estratégicamente", completed: false },
+              { id: "c1-w8-3", title: "Adaptar estilo al propósito", completed: false },
+            ]
+          },
+        ]
+      },
+      {
+        id: "c1-strategies",
+        title: "Habilidades Pragmáticas y Metacognitivas",
+        icon: "🧭",
+        description: "Inteligencia comunicativa esencial en C1",
+        skills: [
+          {
+            id: "c1-strat-1",
+            title: "Parafrasear con precisión",
+            description: "Strategic paraphrasing",
+            completed: false,
+            subSkills: [
+              { id: "c1-st1-1", title: "Reformular ideas complejas", completed: false },
+              { id: "c1-st1-2", title: "Simplificar para diferentes audiencias", completed: false },
+              { id: "c1-st1-3", title: "Mantener significado con diferentes palabras", completed: false },
+            ]
+          },
+          {
+            id: "c1-strat-2",
+            title: "Reparar malentendidos sutilmente",
+            description: "Repairing misunderstandings subtly",
+            completed: false,
+            subSkills: [
+              { id: "c1-st2-1", title: "Detectar malentendidos temprano", completed: false },
+              { id: "c1-st2-2", title: "Clarificar sin ofender", completed: false },
+              { id: "c1-st2-3", title: "Reformular de manera elegante", completed: false },
+            ]
+          },
+          {
+            id: "c1-strat-3",
+            title: "Manejar actos amenazantes",
+            description: "Managing face-threatening acts",
+            completed: false,
+            subSkills: [
+              { id: "c1-st3-1", title: "Dar malas noticias diplomáticamente", completed: false },
+              { id: "c1-st3-2", title: "Criticar constructivamente", completed: false },
+              { id: "c1-st3-3", title: "Rechazar propuestas elegantemente", completed: false },
+            ]
+          },
+          {
+            id: "c1-strat-4",
+            title: "Leer señales sociales",
+            description: "Reading social cues",
+            completed: false,
+            subSkills: [
+              { id: "c1-st4-1", title: "Interpretar lenguaje corporal", completed: false },
+              { id: "c1-st4-2", title: "Detectar incomodidad o desacuerdo", completed: false },
+              { id: "c1-st4-3", title: "Ajustar según reacciones", completed: false },
+            ]
+          },
+          {
+            id: "c1-strat-5",
+            title: "Ajustar tono durante la interacción",
+            description: "Adjusting tone mid-interaction",
+            completed: false,
+            subSkills: [
+              { id: "c1-st5-1", title: "Escalar o desescalar tensión", completed: false },
+              { id: "c1-st5-2", title: "Cambiar de formal a informal apropiadamente", completed: false },
+              { id: "c1-st5-3", title: "Adaptar a cambios en la conversación", completed: false },
+            ]
+          },
+          {
+            id: "c1-strat-6",
+            title: "Monitorear el propio output en tiempo real",
+            description: "Monitoring own output in real time",
+            completed: false,
+            subSkills: [
+              { id: "c1-st6-1", title: "Auto-evaluación durante el habla", completed: false },
+              { id: "c1-st6-2", title: "Corrección inmediata de errores", completed: false },
+              { id: "c1-st6-3", title: "Mantener coherencia general", completed: false },
             ]
           },
         ]
