@@ -13,6 +13,7 @@ import Vocabulary from "./pages/Vocabulary";
 import Practice from "./pages/Practice";
 import Conversation from "./pages/Conversation";
 import ConversationHistory from "./pages/ConversationHistory";
+import ConversationDetail from "./pages/ConversationDetail";
 import Tests from "./pages/Tests";
 import Lesson from "./pages/Lesson";
 import Settings from "./pages/Settings";
@@ -41,6 +42,7 @@ const App = () => (
                   <Route path="/practice" element={<Practice />} />
                   <Route path="/conversation" element={<Conversation />} />
                   <Route path="/conversation/history" element={<ConversationHistory />} />
+                  <Route path="/conversation/history/:id" element={<ConversationDetail />} />
                   <Route path="/tests" element={<Tests />} />
                   <Route path="/lesson/:type/:categoryId/:topicId" element={<Lesson />} />
                   <Route path="/settings" element={<Settings />} />
