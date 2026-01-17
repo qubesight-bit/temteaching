@@ -17,6 +17,7 @@ import ConversationHistory from "./pages/ConversationHistory";
 import ConversationDetail from "./pages/ConversationDetail";
 import Tests from "./pages/Tests";
 import Lesson from "./pages/Lesson";
+import SkillLesson from "./pages/SkillLesson";
 import Settings from "./pages/Settings";
 import AdaptiveQuiz from "./pages/AdaptiveQuiz";
 import News from "./pages/News";
@@ -48,6 +49,7 @@ const App = () => (
                   <Route path="/conversation/history/:id" element={<ConversationDetail />} />
                   <Route path="/tests" element={<Tests />} />
                   <Route path="/lesson/:type/:categoryId/:topicId" element={<Lesson />} />
+                  <Route path="/skill/:level/:categoryId/:skillId" element={<SkillLesson />} />
                   <Route path="/settings" element={<Settings />} />
                   <Route path="/adaptive-quiz" element={<AdaptiveQuiz />} />
                   <Route path="/news" element={<News />} />
