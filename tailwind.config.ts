@@ -69,6 +69,7 @@ export default {
           b1: "hsl(var(--level-b1))",
           b2: "hsl(var(--level-b2))",
           c1: "hsl(var(--level-c1))",
+          c2: "hsl(var(--level-c2))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
