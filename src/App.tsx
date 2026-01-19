@@ -23,6 +23,8 @@ import AdaptiveQuiz from "./pages/AdaptiveQuiz";
 import News from "./pages/News";
 import Auth from "./pages/Auth";
 import ErrorHistory from "./pages/ErrorHistory";
+import Articles from "./pages/Articles";
+import ArticleDetail from "./pages/ArticleDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -54,6 +56,8 @@ const App = () => (
                   <Route path="/adaptive-quiz" element={<AdaptiveQuiz />} />
                   <Route path="/news" element={<News />} />
                   <Route path="/error-history" element={<ErrorHistory />} />
+                  <Route path="/articles" element={<Articles />} />
+                  <Route path="/articles/:articleId" element={<ArticleDetail />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </BrowserRouter>
