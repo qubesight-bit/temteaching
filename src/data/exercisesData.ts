@@ -1394,6 +1394,9 @@ export const a1VocabularyExercises: Record<string, Exercise[]> = {
   ],
 };
 
+// Import speaking exercises
+import { getSpeakingExercisesBySkillId } from "./speakingExercises";
+
 // Function to get exercises by skill ID and category type
 export function getExercisesBySkillId(skillId: string, categoryType: string): Exercise[] {
   if (categoryType.includes('grammar')) {
@@ -1401,6 +1404,9 @@ export function getExercisesBySkillId(skillId: string, categoryType: string): Ex
   }
   if (categoryType.includes('vocab')) {
     return a1VocabularyExercises[skillId] || [];
+  }
+  if (categoryType.includes('speak')) {
+    return getSpeakingExercisesBySkillId(skillId);
   }
   return [];
 }
