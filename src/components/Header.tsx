@@ -13,6 +13,7 @@ import {
 
 const navItems = [
   { label: 'Dashboard', path: '/' },
+  { label: 'Artículos', path: '/articles' },
   { label: 'Gramática', path: '/grammar' },
   { label: 'Vocabulario', path: '/vocabulary' },
   { label: 'Práctica', path: '/practice' },
