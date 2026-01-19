@@ -9,9 +9,10 @@ import { curriculumData, Skill, CEFRLevel } from "@/data/curriculumData";
 import { getExercisesBySkillId, Exercise } from "@/data/exercisesData";
 import { getAdvancedExercisesBySkillId } from "@/data/exercisesDataAdvanced";
 import { getImageExercisesForSkill } from "@/data/imageVocabularyData";
+import { getArticleForExercise } from "@/data/articlesData";
 import { 
   ArrowLeft, ArrowRight, CheckCircle2, XCircle, Volume2, 
-  BookOpen, Dumbbell, Trophy, Target, Lightbulb, Star, Image
+  BookOpen, Dumbbell, Trophy, Target, Lightbulb, Star, Image, FileText
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
@@ -679,8 +680,8 @@ export default function SkillLesson() {
                     </h2>
                   </div>
 
-                  {/* Audio button for pronunciation */}
-                  <div className="flex justify-center gap-2 mb-4">
+                  {/* Audio button and Article link */}
+                  <div className="flex flex-wrap justify-center gap-2 mb-4">
                     <Button
                       variant="outline"
                       size="sm"
@@ -690,6 +691,23 @@ export default function SkillLesson() {
                       <Volume2 className="w-4 h-4 mr-1" />
                       Escuchar pregunta
                     </Button>
+                    {(() => {
+                      const relatedArticle = getArticleForExercise(currentExerciseData.tags || []);
+                      if (relatedArticle) {
+                        return (
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => navigate(`/articles/${relatedArticle.id}`)}
+                            className="text-xs border-primary/30 text-primary hover:bg-primary/10"
+                          >
+                            <FileText className="w-4 h-4 mr-1" />
+                            Leer artículo completo
+                          </Button>
+                        );
+                      }
+                      return null;
+                    })()}
                   </div>
 
                   {/* Options - Grid for image-match, List for others */}
