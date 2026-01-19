@@ -6,7 +6,7 @@ import { TodayLesson } from "@/components/TodayLesson";
 import { ModuleCard } from "@/components/ModuleCard";
 import { DailyGoalWidget } from "@/components/DailyGoalWidget";
 import { AITutorPreview } from "@/components/AITutorPreview";
-import { BookOpen, MessageSquare, PenTool, GraduationCap, Lightbulb, Map } from "lucide-react";
+import { BookOpen, MessageSquare, PenTool, GraduationCap, Lightbulb, Map, Library } from "lucide-react";
 
 const modules = [
   {
@@ -16,6 +16,14 @@ const modules = [
     progress: 0,
     color: "bg-primary",
     path: "/curriculum",
+  },
+  {
+    title: "Biblioteca de Artículos",
+    description: "Explicaciones completas estilo libro de texto para cada tema gramatical",
+    icon: Library,
+    progress: 0,
+    color: "bg-level-b2",
+    path: "/articles",
   },
   {
     title: "Gramática",
