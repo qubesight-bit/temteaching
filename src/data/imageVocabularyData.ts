@@ -125,13 +125,13 @@ export const vocabularyImages: Record<string, { emoji: string; word: string; spa
 // Generate image-match exercises for a specific category
 export const generateImageMatchExercises = (category: string, level: string): Exercise[] => {
   const categoryItems = Object.entries(vocabularyImages)
-    .filter(([_, item]) => item.category === category)
-    .slice(0, 8); // Limit to 8 items per category
+    .filter(([_, item]) => item.category === category);
   
   return categoryItems.map(([key, item], index) => {
     // Get 3 wrong options from the same category
     const wrongOptions = Object.entries(vocabularyImages)
       .filter(([k, i]) => i.category === category && k !== key)
+      .sort(() => Math.random() - 0.5)
       .slice(0, 3)
       .map(([_, i]) => i.word);
     
@@ -155,12 +155,12 @@ export const generateImageMatchExercises = (category: string, level: string): Ex
 // Generate reverse exercises (word to image)
 export const generateWordToImageExercises = (category: string, level: string): Exercise[] => {
   const categoryItems = Object.entries(vocabularyImages)
-    .filter(([_, item]) => item.category === category)
-    .slice(0, 6);
+    .filter(([_, item]) => item.category === category);
   
   return categoryItems.map(([key, item], index) => {
     const wrongOptions = Object.entries(vocabularyImages)
       .filter(([k, i]) => i.category === category && k !== key)
+      .sort(() => Math.random() - 0.5)
       .slice(0, 3)
       .map(([_, i]) => i.emoji);
     
@@ -180,9 +180,68 @@ export const generateWordToImageExercises = (category: string, level: string): E
   });
 };
 
+// Generate translation exercises (Spanish to English)
+export const generateTranslationExercises = (category: string, level: string): Exercise[] => {
+  const categoryItems = Object.entries(vocabularyImages)
+    .filter(([_, item]) => item.category === category);
+  
+  return categoryItems.map(([key, item], index) => {
+    const wrongOptions = Object.entries(vocabularyImages)
+      .filter(([k, i]) => i.category === category && k !== key)
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 3)
+      .map(([_, i]) => i.word);
+    
+    const allOptions = [item.word, ...wrongOptions].sort(() => Math.random() - 0.5);
+    
+    return {
+      id: `trans-${category}-${index}`,
+      type: "multiple-choice" as const,
+      question: `¿Cómo se dice "${item.spanishWord}" en inglés?`,
+      options: allOptions,
+      correctAnswer: item.word,
+      explanation: `"${item.spanishWord}" in English is "${item.word}".`,
+      explanationSpanish: `"${item.spanishWord}" en inglés se dice "${item.word}".`,
+      difficulty: 1 as const,
+      tags: ["vocabulary", "translation", category, level.toLowerCase()]
+    };
+  });
+};
+
+// Generate spelling recognition exercises
+export const generateSpellingExercises = (category: string, level: string): Exercise[] => {
+  const categoryItems = Object.entries(vocabularyImages)
+    .filter(([_, item]) => item.category === category)
+    .slice(0, 6);
+  
+  return categoryItems.map(([key, item], index) => {
+    // Create misspelled versions
+    const misspellings = [
+      item.word.replace(/(.)(.)/, '$2$1'), // swap first two letters
+      item.word + 's', // add s
+      item.word.slice(0, -1), // remove last letter
+    ].filter(w => w !== item.word);
+    
+    const allOptions = [item.word, ...misspellings.slice(0, 3)].sort(() => Math.random() - 0.5);
+    
+    return {
+      id: `spell-${category}-${index}`,
+      type: "multiple-choice" as const,
+      question: `${item.emoji} ¿Cuál es la ortografía correcta?`,
+      imageUrl: item.emoji,
+      options: allOptions,
+      correctAnswer: item.word,
+      explanation: `The correct spelling is "${item.word}".`,
+      explanationSpanish: `La ortografía correcta es "${item.word}".`,
+      difficulty: 2 as const,
+      tags: ["vocabulary", "spelling", category, level.toLowerCase()]
+    };
+  });
+};
+
 // Get all image exercises for a vocabulary skill
 export const getImageExercisesForSkill = (skillId: string, level: string): Exercise[] => {
-  // Map skill IDs to categories
+  // Map skill IDs to categories - expanded for more variety
   const skillCategoryMap: Record<string, string[]> = {
     "a1-vocab-1": ["colors", "numbers"],
     "a1-vocab-2": ["family"],
@@ -193,19 +252,25 @@ export const getImageExercisesForSkill = (skillId: string, level: string): Exerc
     "a2-vocab-1": ["food", "professions"],
     "a2-vocab-2": ["sports", "objects"],
     "a2-vocab-3": ["weather", "clothes"],
+    "a2-vocab-4": ["family", "professions"],
+    "a2-vocab-5": ["animals", "food"],
+    "b1-vocab-1": ["professions", "sports"],
+    "b1-vocab-2": ["weather", "objects"],
   };
   
-  const categories = skillCategoryMap[skillId] || ["food", "animals"];
+  const categories = skillCategoryMap[skillId] || ["food", "animals", "objects"];
   
   let exercises: Exercise[] = [];
   categories.forEach(category => {
     exercises = [
       ...exercises,
       ...generateImageMatchExercises(category, level),
-      ...generateWordToImageExercises(category, level)
+      ...generateWordToImageExercises(category, level),
+      ...generateTranslationExercises(category, level),
+      ...generateSpellingExercises(category, level)
     ];
   });
   
-  // Shuffle and limit
-  return exercises.sort(() => Math.random() - 0.5).slice(0, 12);
+  // Shuffle and return more exercises (25-30 per practice)
+  return exercises.sort(() => Math.random() - 0.5).slice(0, 30);
 };
