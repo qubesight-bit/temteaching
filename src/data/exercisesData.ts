@@ -1394,8 +1394,11 @@ export const a1VocabularyExercises: Record<string, Exercise[]> = {
   ],
 };
 
-// Import speaking exercises
+// Import all exercise modules
 import { getSpeakingExercisesBySkillId } from "./speakingExercises";
+import { getReadingExercisesBySkillId } from "./readingExercises";
+import { getListeningExercisesBySkillId } from "./listeningExercises";
+import { getWritingExercisesBySkillId } from "./writingExercises";
 
 // Function to get exercises by skill ID and category type
 export function getExercisesBySkillId(skillId: string, categoryType: string): Exercise[] {
@@ -1407,6 +1410,15 @@ export function getExercisesBySkillId(skillId: string, categoryType: string): Ex
   }
   if (categoryType.includes('speak')) {
     return getSpeakingExercisesBySkillId(skillId);
+  }
+  if (categoryType.includes('read')) {
+    return getReadingExercisesBySkillId(skillId);
+  }
+  if (categoryType.includes('list')) {
+    return getListeningExercisesBySkillId(skillId);
+  }
+  if (categoryType.includes('writ')) {
+    return getWritingExercisesBySkillId(skillId);
   }
   return [];
 }
