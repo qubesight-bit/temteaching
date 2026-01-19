@@ -138,6 +138,29 @@ const generateGenericExercise = (title: string, description: string, level: CEFR
   };
 };
 
+// Helper function to generate detailed explanations based on exercise tags
+const getDetailedExplanation = (exercise: Exercise): string => {
+  const tags = exercise.tags || [];
+  
+  if (tags.includes('to-be')) {
+    return "El verbo 'to be' (ser/estar) cambia según el sujeto: I→am, he/she/it→is, you/we/they→are. Recuerda que en inglés siempre necesitas un sujeto explícito.";
+  }
+  if (tags.includes('present-simple')) {
+    return "El Present Simple se usa para hábitos, rutinas y verdades generales. Con he/she/it añade -s/-es al verbo. En negativo/pregunta usa do/does + verbo base.";
+  }
+  if (tags.includes('present-continuous')) {
+    return "El Present Continuous (am/is/are + -ing) se usa para acciones que ocurren ahora mismo o planes futuros. Identifica palabras clave como 'now', 'right now', 'at the moment'.";
+  }
+  if (tags.includes('vocabulary')) {
+    return "Para vocabulario, relaciona las palabras con imágenes mentales y contextos reales. Practica usando las palabras en oraciones propias.";
+  }
+  if (tags.includes('grammar')) {
+    return "La gramática inglesa sigue patrones consistentes. Identifica el patrón, practica con ejemplos similares, y pronto será automático.";
+  }
+  
+  return "Analiza la estructura de la oración, identifica el sujeto y el verbo, y aplica la regla gramatical correspondiente.";
+};
+
 // Generate exercises based on category type
 const generateExercises = (skill: Skill, level: CEFRLevel, categoryId: string): Exercise[] => {
   // First try to get from exercise database
@@ -515,10 +538,47 @@ export default function SkillLesson() {
                     </div>
                   )}
 
+                  {/* Pre-Exercise Explanation - ANTES de responder */}
+                  {!showExplanation && (
+                    <div className="mb-6 p-4 rounded-xl bg-primary/5 border border-primary/20">
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <Lightbulb className="w-4 h-4 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-sm text-primary mb-1">
+                            💡 Cómo resolver este ejercicio
+                          </h3>
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            {currentExerciseData.explanationSpanish || currentExerciseData.explanation}
+                          </p>
+                          {currentExerciseData.hint && (
+                            <p className="text-xs text-muted-foreground mt-2 italic">
+                              📌 Pista: {currentExerciseData.hint}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
                   {/* Question */}
                   <h2 className="font-display font-bold text-xl mb-6">
                     {currentExerciseData.question}
                   </h2>
+
+                  {/* Audio button for pronunciation */}
+                  <div className="flex gap-2 mb-4">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => speakText(currentExerciseData.question)}
+                      className="text-xs"
+                    >
+                      <Volume2 className="w-4 h-4 mr-1" />
+                      Escuchar pregunta
+                    </Button>
+                  </div>
 
                   {/* Options */}
                   <div className="space-y-3">
@@ -553,18 +613,61 @@ export default function SkillLesson() {
                     })}
                   </div>
 
-                  {/* Explanation */}
+                  {/* Post-Answer Explanation - DESPUÉS de responder */}
                   {showExplanation && (
                     <div className={cn(
                       "mt-6 p-4 rounded-xl",
                       isCorrect ? "bg-success/10 border border-success/20" : "bg-warning/10 border border-warning/20"
                     )}>
-                      <p className="font-medium mb-1">
-                        {isCorrect ? "¡Correcto! 🎉" : `Respuesta correcta: ${currentExerciseData.correctAnswer}`}
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        {currentExerciseData.explanation}
-                      </p>
+                      <div className="flex items-start gap-3">
+                        <div className={cn(
+                          "w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0",
+                          isCorrect ? "bg-success/20" : "bg-warning/20"
+                        )}>
+                          {isCorrect ? (
+                            <CheckCircle2 className="w-4 h-4 text-success" />
+                          ) : (
+                            <BookOpen className="w-4 h-4 text-warning" />
+                          )}
+                        </div>
+                        <div className="flex-1">
+                          <p className="font-semibold mb-2">
+                            {isCorrect ? "¡Excelente! 🎉" : `La respuesta correcta es: "${currentExerciseData.correctAnswer}"`}
+                          </p>
+                          
+                          {/* English explanation */}
+                          <div className="mb-3">
+                            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-1">
+                              📚 Explicación en inglés:
+                            </p>
+                            <p className="text-sm text-foreground">
+                              {currentExerciseData.explanation}
+                            </p>
+                          </div>
+                          
+                          {/* Spanish explanation */}
+                          {currentExerciseData.explanationSpanish && (
+                            <div className="pt-2 border-t border-border/50">
+                              <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-1">
+                                🇪🇸 Explicación en español:
+                              </p>
+                              <p className="text-sm text-foreground">
+                                {currentExerciseData.explanationSpanish}
+                              </p>
+                            </div>
+                          )}
+
+                          {/* Why this answer works */}
+                          <div className="mt-3 pt-2 border-t border-border/50">
+                            <p className="text-xs font-medium text-primary mb-1">
+                              🎯 ¿Por qué esta es la respuesta correcta?
+                            </p>
+                            <p className="text-xs text-muted-foreground">
+                              {getDetailedExplanation(currentExerciseData)}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   )}
 
