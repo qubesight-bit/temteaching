@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Bell, Menu, Settings, User, LogOut } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { LanguageSelector } from "@/components/LanguageSelector";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,15 +12,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
-const navItems = [
-  { label: 'Dashboard', path: '/' },
-  { label: 'Artículos', path: '/articles' },
-  { label: 'Gramática', path: '/grammar' },
-  { label: 'Vocabulario', path: '/vocabulary' },
-  { label: 'Práctica', path: '/practice' },
-  { label: 'Tests', path: '/tests' },
-];
 
 interface HeaderProps {
   children?: ReactNode;
@@ -28,6 +21,17 @@ export function Header({ children }: HeaderProps) {
   const navigate = useNavigate();
   const location = useLocation();
   const { user, signOut } = useAuth();
+  const { t } = useLanguage();
+
+  // Navigation items with translations
+  const navItems = [
+    { label: t('nav.home'), path: '/' },
+    { label: t('nav.articles'), path: '/articles' },
+    { label: t('nav.grammar'), path: '/grammar' },
+    { label: t('nav.vocabulary'), path: '/vocabulary' },
+    { label: t('nav.practice'), path: '/practice' },
+    { label: t('nav.tests'), path: '/tests' },
+  ];
 
   const handleSignOut = async () => {
     await signOut();
@@ -60,7 +64,7 @@ export function Header({ children }: HeaderProps) {
         <nav className="hidden lg:flex items-center gap-1">
           {navItems.map((item) => (
             <button
-              key={item.label}
+              key={item.path}
               onClick={() => navigate(item.path)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 location.pathname === item.path 
@@ -75,6 +79,9 @@ export function Header({ children }: HeaderProps) {
 
         {/* Right side */}
         <div className="flex items-center gap-2">
+          {/* Language Selector */}
+          <LanguageSelector variant="minimal" />
+          
           <Button variant="ghost" size="icon" className="relative">
             <Bell className="w-5 h-5" />
             <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-accent rounded-full" />
@@ -92,21 +99,21 @@ export function Header({ children }: HeaderProps) {
                   </span>
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56">
+              <DropdownMenuContent align="end" className="w-56 bg-popover">
                 <div className="px-2 py-1.5">
                   <p className="text-sm font-medium">{user.email}</p>
                 </div>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={() => navigate('/conversation/history')}>
-                  Historial de conversaciones
+                  {t('nav.conversation')}
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => navigate('/settings')}>
-                  Configuración
+                  {t('nav.settings')}
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={handleSignOut} className="text-destructive">
                   <LogOut className="w-4 h-4 mr-2" />
-                  Cerrar sesión
+                  {t('common.cancel')}
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -117,7 +124,7 @@ export function Header({ children }: HeaderProps) {
               onClick={() => navigate('/auth')}
               className="ml-2"
             >
-              Iniciar sesión
+              {t('common.start')}
             </Button>
           )}
         </div>

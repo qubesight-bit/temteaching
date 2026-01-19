@@ -3194,3 +3194,72 @@ export const getRelatedArticles = (articleId: string): Article[] => {
 export const getArticleById = (id: string): Article | undefined => {
   return articles.find(article => article.id === id);
 };
+
+// Helper function to get articles by tag
+export const getArticlesByTag = (tag: string): Article[] => {
+  return articles.filter(article => 
+    article.tags.some(t => t.toLowerCase().includes(tag.toLowerCase()))
+  );
+};
+
+// Helper function to get the most relevant article for an exercise based on its tags
+export const getArticleForExercise = (exerciseTags: string[]): Article | null => {
+  if (!exerciseTags || exerciseTags.length === 0) return null;
+  
+  // Tag mapping from exercise tags to article IDs/tags
+  const tagToArticleMap: Record<string, string> = {
+    'to-be': 'verb-to-be',
+    'present-simple': 'present-simple',
+    'present-continuous': 'present-continuous',
+    'articles': 'articles-a-an-the',
+    'possessive': 'possessive-adjectives',
+    'past-simple': 'past-simple',
+    'present-perfect': 'present-perfect-basic',
+    'comparatives': 'comparatives-superlatives',
+    'superlatives': 'comparatives-superlatives',
+    'future': 'future-going-to',
+    'going-to': 'future-going-to',
+    'modals': 'modals-basic',
+    'can': 'modals-basic',
+    'must': 'modals-basic',
+    'should': 'modals-basic',
+    'prepositions': 'prepositions',
+    'past-continuous': 'past-continuous',
+    'first-conditional': 'first-conditional',
+    'second-conditional': 'second-conditional',
+    'passive': 'passive-voice',
+    'reported-speech': 'reported-speech',
+    'relative-clauses': 'relative-clauses',
+    'mixed-conditionals': 'mixed-conditionals',
+    'vocabulary': 'vocabulary',
+    'food': 'vocabulary',
+    'animals': 'vocabulary',
+    'family': 'vocabulary',
+    'clothes': 'vocabulary',
+    'body': 'vocabulary',
+    'colors': 'vocabulary',
+    'numbers': 'vocabulary',
+    'weather': 'vocabulary',
+    'professions': 'vocabulary',
+    'sports': 'vocabulary',
+  };
+  
+  // Find matching article
+  for (const tag of exerciseTags) {
+    const articleId = tagToArticleMap[tag.toLowerCase()];
+    if (articleId) {
+      const article = getArticleById(articleId);
+      if (article) return article;
+    }
+  }
+  
+  // Fallback: search by tag in articles
+  for (const tag of exerciseTags) {
+    const matchingArticles = getArticlesByTag(tag);
+    if (matchingArticles.length > 0) {
+      return matchingArticles[0];
+    }
+  }
+  
+  return null;
+};
