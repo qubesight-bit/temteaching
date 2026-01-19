@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { curriculumData, Skill, CEFRLevel } from "@/data/curriculumData";
+import { getExercisesBySkillId, Exercise } from "@/data/exercisesData";
+import { getAdvancedExercisesBySkillId } from "@/data/exercisesDataAdvanced";
 import { 
   ArrowLeft, ArrowRight, CheckCircle2, XCircle, Volume2, 
   BookOpen, Dumbbell, Trophy, Target, Lightbulb, Star
@@ -15,44 +17,30 @@ import { toast } from "@/hooks/use-toast";
 
 type LessonStep = "overview" | "exercises" | "complete";
 
-interface GeneratedExercise {
-  id: string;
-  type: 'multiple-choice' | 'true-false' | 'fill-blank';
-  question: string;
-  options: string[];
-  correctAnswer: string;
-  explanation: string;
-}
-
-// Exercise generator based on skill type and level
-const generateExercises = (skill: Skill, level: CEFRLevel, categoryType: string): GeneratedExercise[] => {
-  const exercises: GeneratedExercise[] = [];
+// Get exercises from the database or generate fallback
+const getExercisesForSkill = (skill: Skill, level: CEFRLevel, categoryType: string): Exercise[] => {
+  // Try to get exercises from database
+  let exercises = getExercisesBySkillId(skill.id, categoryType);
   
-  // Generate exercises based on subSkills
-  skill.subSkills.forEach((subSkill, index) => {
-    // Generate different types of exercises based on the skill content
-    if (categoryType.includes('grammar')) {
-      exercises.push(generateGrammarExercise(subSkill.title, skill.title, level, index));
-    } else if (categoryType.includes('vocab')) {
-      exercises.push(generateVocabularyExercise(subSkill.title, skill.title, level, index));
-    } else if (categoryType.includes('speak')) {
-      exercises.push(generateSpeakingExercise(subSkill.title, skill.title, level, index));
-    } else if (categoryType.includes('listen')) {
-      exercises.push(generateListeningExercise(subSkill.title, skill.title, level, index));
-    } else if (categoryType.includes('read')) {
-      exercises.push(generateReadingExercise(subSkill.title, skill.title, level, index));
-    } else if (categoryType.includes('writ')) {
-      exercises.push(generateWritingExercise(subSkill.title, skill.title, level, index));
-    } else {
-      exercises.push(generateGenericExercise(subSkill.title, skill.title, level, index));
-    }
-  });
-
-  // Add at least 3 exercises
-  while (exercises.length < 3) {
-    exercises.push(generateGenericExercise(skill.title, skill.description, level, exercises.length));
+  // If no exercises in main data, try advanced data
+  if (exercises.length === 0) {
+    exercises = getAdvancedExercisesBySkillId(skill.id, level);
   }
-
+  
+  // If still no exercises, generate basic ones
+  if (exercises.length === 0) {
+    exercises = skill.subSkills.map((subSkill, index) => ({
+      id: `gen-${index}`,
+      type: 'multiple-choice' as const,
+      question: `Practice: ${subSkill.title}`,
+      options: ["Option A", "Option B", "Option C", "Option D"],
+      correctAnswer: "Option A",
+      explanation: `This is related to ${skill.title} - ${subSkill.title}`,
+      difficulty: 1 as const,
+      tags: [categoryType]
+    }));
+  }
+  
   return exercises;
 };
 
