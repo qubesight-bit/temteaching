@@ -44,111 +44,45 @@ const getExercisesForSkill = (skill: Skill, level: CEFRLevel, categoryType: stri
   return exercises;
 };
 
-const generateGrammarExercise = (subSkillTitle: string, skillTitle: string, level: CEFRLevel, index: number): GeneratedExercise => {
-  const grammarExercises: Record<string, GeneratedExercise[]> = {
-    "Verbo To Be": [
-      {
-        id: `gram-${index}`,
-        type: 'multiple-choice',
-        question: "She ___ a teacher.",
-        options: ["am", "is", "are", "be"],
-        correctAnswer: "is",
-        explanation: "Usamos 'is' con tercera persona singular (she, he, it)."
-      },
-      {
-        id: `gram-${index}`,
-        type: 'multiple-choice',
-        question: "They ___ from Spain.",
-        options: ["am", "is", "are", "be"],
-        correctAnswer: "are",
-        explanation: "Usamos 'are' con 'they' (plural)."
-      }
-    ],
-    "Present Simple": [
-      {
-        id: `gram-${index}`,
-        type: 'multiple-choice',
-        question: "He ___ to work every day.",
-        options: ["go", "goes", "going", "went"],
-        correctAnswer: "goes",
-        explanation: "En tercera persona singular añadimos -s/-es al verbo."
-      }
-    ],
-    "default": [
-      {
-        id: `gram-${index}`,
-        type: 'true-false',
-        question: `¿Es correcto decir que "${skillTitle}" se utiliza en el nivel ${level}?`,
-        options: ["Verdadero", "Falso"],
-        correctAnswer: "Verdadero",
-        explanation: `Sí, "${skillTitle}" es un tema importante del nivel ${level}.`
-      }
-    ]
-  };
+// Type alias for generated exercises (same as Exercise)
+type GeneratedExercise = Exercise;
 
-  const exerciseSet = grammarExercises[skillTitle] || grammarExercises["default"];
-  return exerciseSet[index % exerciseSet.length];
+const generateGrammarExercise = (subSkillTitle: string, skillTitle: string, level: CEFRLevel, index: number): GeneratedExercise => {
+  return {
+    id: `gram-${index}`,
+    type: 'multiple-choice',
+    question: `Practice "${subSkillTitle}": She ___ a teacher.`,
+    options: ["am", "is", "are", "be"],
+    correctAnswer: "is",
+    explanation: `We use 'is' with third person singular (she, he, it) - related to ${skillTitle}.`,
+    difficulty: 1,
+    tags: ["grammar", level.toLowerCase()]
+  };
 };
 
 const generateVocabularyExercise = (subSkillTitle: string, skillTitle: string, level: CEFRLevel, index: number): GeneratedExercise => {
-  const vocabExercises: Record<string, GeneratedExercise[]> = {
-    "Números y colores": [
-      {
-        id: `vocab-${index}`,
-        type: 'multiple-choice',
-        question: "¿Cómo se dice 'rojo' en inglés?",
-        options: ["Blue", "Red", "Green", "Yellow"],
-        correctAnswer: "Red",
-        explanation: "'Red' significa rojo en inglés."
-      },
-      {
-        id: `vocab-${index}`,
-        type: 'multiple-choice',
-        question: "What number comes after 'twelve'?",
-        options: ["Eleven", "Thirteen", "Fourteen", "Ten"],
-        correctAnswer: "Thirteen",
-        explanation: "Después de 'twelve' (12) viene 'thirteen' (13)."
-      }
-    ],
-    "Familia y personas": [
-      {
-        id: `vocab-${index}`,
-        type: 'multiple-choice',
-        question: "My mother's mother is my ___.",
-        options: ["aunt", "grandmother", "sister", "cousin"],
-        correctAnswer: "grandmother",
-        explanation: "'Grandmother' es la madre de tu madre o padre."
-      }
-    ],
-    "default": [
-      {
-        id: `vocab-${index}`,
-        type: 'multiple-choice',
-        question: `¿Qué categoría de vocabulario incluye "${subSkillTitle}"?`,
-        options: [skillTitle, "Animales", "Deportes", "Tecnología"],
-        correctAnswer: skillTitle,
-        explanation: `"${subSkillTitle}" pertenece a la categoría de ${skillTitle}.`
-      }
-    ]
+  return {
+    id: `vocab-${index}`,
+    type: 'multiple-choice',
+    question: `Vocabulary practice for "${subSkillTitle}":`,
+    options: [skillTitle, "Animals", "Sports", "Technology"],
+    correctAnswer: skillTitle,
+    explanation: `"${subSkillTitle}" belongs to the ${skillTitle} category.`,
+    difficulty: 1,
+    tags: ["vocabulary", level.toLowerCase()]
   };
-
-  const exerciseSet = vocabExercises[skillTitle] || vocabExercises["default"];
-  return exerciseSet[index % exerciseSet.length];
 };
 
 const generateSpeakingExercise = (subSkillTitle: string, skillTitle: string, level: CEFRLevel, index: number): GeneratedExercise => {
   return {
     id: `speak-${index}`,
     type: 'multiple-choice',
-    question: `Para "${subSkillTitle}", ¿cuál es la expresión más apropiada?`,
-    options: [
-      "Could you please help me?",
-      "Give me that!",
-      "I want now!",
-      "You must do this!"
-    ],
+    question: `For "${subSkillTitle}", which expression is most appropriate?`,
+    options: ["Could you please help me?", "Give me that!", "I want now!", "You must do this!"],
     correctAnswer: "Could you please help me?",
-    explanation: "Las expresiones corteses y formales son más apropiadas en contextos sociales."
+    explanation: "Polite and formal expressions are more appropriate in social contexts.",
+    difficulty: 1,
+    tags: ["speaking", level.toLowerCase()]
   };
 };
 
@@ -156,10 +90,12 @@ const generateListeningExercise = (subSkillTitle: string, skillTitle: string, le
   return {
     id: `listen-${index}`,
     type: 'true-false',
-    question: `En comprensión auditiva de nivel ${level}, es importante poder identificar "${subSkillTitle}".`,
-    options: ["Verdadero", "Falso"],
-    correctAnswer: "Verdadero",
-    explanation: `La habilidad de identificar "${subSkillTitle}" es fundamental para la comprensión auditiva en el nivel ${level}.`
+    question: `In ${level} listening comprehension, it's important to identify "${subSkillTitle}".`,
+    options: ["True", "False"],
+    correctAnswer: "True",
+    explanation: `Identifying "${subSkillTitle}" is fundamental for listening at ${level} level.`,
+    difficulty: 1,
+    tags: ["listening", level.toLowerCase()]
   };
 };
 
@@ -167,15 +103,12 @@ const generateReadingExercise = (subSkillTitle: string, skillTitle: string, leve
   return {
     id: `read-${index}`,
     type: 'multiple-choice',
-    question: `Al leer textos sobre "${subSkillTitle}", ¿qué estrategia es más útil?`,
-    options: [
-      "Leer palabra por palabra",
-      "Buscar palabras clave y contexto",
-      "Ignorar las palabras desconocidas",
-      "Solo mirar las imágenes"
-    ],
-    correctAnswer: "Buscar palabras clave y contexto",
-    explanation: "Identificar palabras clave y usar el contexto ayuda a comprender mejor el texto."
+    question: `When reading texts about "${subSkillTitle}", which strategy is most useful?`,
+    options: ["Read word by word", "Look for keywords and context", "Ignore unknown words", "Only look at images"],
+    correctAnswer: "Look for keywords and context",
+    explanation: "Identifying keywords and using context helps better understand the text.",
+    difficulty: 1,
+    tags: ["reading", level.toLowerCase()]
   };
 };
 
@@ -183,15 +116,12 @@ const generateWritingExercise = (subSkillTitle: string, skillTitle: string, leve
   return {
     id: `write-${index}`,
     type: 'multiple-choice',
-    question: `Para escribir sobre "${subSkillTitle}", ¿qué es esencial incluir?`,
-    options: [
-      "Solo palabras simples",
-      "Estructura clara y vocabulario apropiado",
-      "Muchas palabras complicadas",
-      "Textos muy largos siempre"
-    ],
-    correctAnswer: "Estructura clara y vocabulario apropiado",
-    explanation: "Una buena escritura combina estructura clara con vocabulario adecuado al nivel."
+    question: `To write about "${subSkillTitle}", what is essential to include?`,
+    options: ["Only simple words", "Clear structure and appropriate vocabulary", "Many complicated words", "Always very long texts"],
+    correctAnswer: "Clear structure and appropriate vocabulary",
+    explanation: "Good writing combines clear structure with vocabulary appropriate to the level.",
+    difficulty: 1,
+    tags: ["writing", level.toLowerCase()]
   };
 };
 
@@ -199,11 +129,50 @@ const generateGenericExercise = (title: string, description: string, level: CEFR
   return {
     id: `gen-${index}`,
     type: 'true-false',
-    question: `El tema "${title}" es relevante para estudiantes de nivel ${level}.`,
-    options: ["Verdadero", "Falso"],
-    correctAnswer: "Verdadero",
-    explanation: `Sí, "${title}" forma parte del currículo del nivel ${level}.`
+    question: `The topic "${title}" is relevant for ${level} level students.`,
+    options: ["True", "False"],
+    correctAnswer: "True",
+    explanation: `Yes, "${title}" is part of the ${level} curriculum.`,
+    difficulty: 1,
+    tags: ["general", level.toLowerCase()]
   };
+};
+
+// Generate exercises based on category type
+const generateExercises = (skill: Skill, level: CEFRLevel, categoryId: string): Exercise[] => {
+  // First try to get from exercise database
+  const dbExercises = getExercisesForSkill(skill, level, categoryId);
+  if (dbExercises.length > 0) {
+    return dbExercises;
+  }
+  
+  // Fallback: generate exercises based on category
+  const categoryType = categoryId.includes('gram') ? 'grammar' 
+    : categoryId.includes('vocab') ? 'vocabulary'
+    : categoryId.includes('speak') ? 'speaking'
+    : categoryId.includes('listen') ? 'listening'
+    : categoryId.includes('read') ? 'reading'
+    : categoryId.includes('writ') ? 'writing'
+    : 'general';
+  
+  return skill.subSkills.map((subSkill, index) => {
+    switch (categoryType) {
+      case 'grammar':
+        return generateGrammarExercise(subSkill.title, skill.title, level, index);
+      case 'vocabulary':
+        return generateVocabularyExercise(subSkill.title, skill.title, level, index);
+      case 'speaking':
+        return generateSpeakingExercise(subSkill.title, skill.title, level, index);
+      case 'listening':
+        return generateListeningExercise(subSkill.title, skill.title, level, index);
+      case 'reading':
+        return generateReadingExercise(subSkill.title, skill.title, level, index);
+      case 'writing':
+        return generateWritingExercise(subSkill.title, skill.title, level, index);
+      default:
+        return generateGenericExercise(skill.title, subSkill.title, level, index);
+    }
+  });
 };
 
 const levelColors: Record<CEFRLevel, string> = {
