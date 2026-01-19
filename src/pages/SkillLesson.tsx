@@ -138,27 +138,84 @@ const generateGenericExercise = (title: string, description: string, level: CEFR
   };
 };
 
-// Helper function to generate detailed explanations based on exercise tags
+// Helper function to get PRE-exercise teaching explanation (without giving the answer)
+const getPreExerciseTeaching = (exercise: Exercise): string => {
+  const tags = exercise.tags || [];
+  
+  // TO BE verb explanations
+  if (tags.includes('to-be')) {
+    if (tags.includes('affirmative')) {
+      return "🔤 REGLA: El verbo TO BE cambia según el sujeto:\n• I → am (Yo soy/estoy)\n• He/She/It → is (Él/Ella es/está)\n• You/We/They → are (Tú/Nosotros/Ellos son/están)\n\n👉 Identifica el SUJETO de la oración y elige la forma correcta.";
+    }
+    if (tags.includes('negative')) {
+      return "🔤 REGLA: Negativo con TO BE:\n• I am not (I'm not)\n• He/She/It is not (isn't)\n• You/We/They are not (aren't)\n\n👉 Primero identifica el sujeto, luego añade 'not' después del verbo.";
+    }
+    if (tags.includes('questions')) {
+      return "🔤 REGLA: Preguntas con TO BE - invierte el orden:\n• Am I...? / Is he/she...? / Are you/we/they...?\n\n👉 En preguntas, el verbo TO BE va ANTES del sujeto.";
+    }
+    return "🔤 REGLA: TO BE = ser/estar en inglés\n• I → am\n• He/She/It → is\n• You/We/They → are\n\n👉 Mira quién hace la acción (el sujeto) para elegir la forma correcta.";
+  }
+  
+  // Present Simple explanations
+  if (tags.includes('present-simple')) {
+    if (tags.includes('third-person')) {
+      return "🔤 REGLA: Present Simple con HE/SHE/IT:\n• Añade -S al verbo: work→works, play→plays\n• Verbos en -ch, -sh, -ss, -x, -o: añade -ES: watch→watches\n• Verbos en consonante+Y: cambia Y por -IES: study→studies\n\n👉 ¿El sujeto es he/she/it? Entonces el verbo necesita -S/-ES.";
+    }
+    if (tags.includes('negative')) {
+      return "🔤 REGLA: Negativo en Present Simple:\n• I/You/We/They + don't + verbo base\n• He/She/It + doesn't + verbo base\n\n⚠️ ¡El verbo vuelve a su forma BASE! (She doesn't LIKE, no 'likes')";
+    }
+    if (tags.includes('questions')) {
+      return "🔤 REGLA: Preguntas en Present Simple:\n• Do + I/you/we/they + verbo base?\n• Does + he/she/it + verbo base?\n\n👉 Después de DO/DOES el verbo siempre va en forma base (sin -s).";
+    }
+    return "🔤 REGLA: Present Simple = acciones habituales/rutinas\n• I/You/We/They + verbo base\n• He/She/It + verbo + S/ES\n\n👉 Identifica si el sujeto es singular (he/she/it) o plural.";
+  }
+  
+  // Present Continuous
+  if (tags.includes('present-continuous')) {
+    return "🔤 REGLA: Present Continuous = acción ahora mismo\nEstructura: AM/IS/ARE + verbo-ING\n• I am working\n• She is reading\n• They are playing\n\n👉 Busca palabras clave: now, right now, at the moment, look!";
+  }
+  
+  // Vocabulary - by category
+  if (tags.includes('vocabulary') || tags.includes('food') || tags.includes('family') || tags.includes('clothes') || tags.includes('body')) {
+    return "📚 VOCABULARIO: Lee la pregunta con atención.\n\n👉 Piensa en la categoría temática (comida, familia, ropa, cuerpo, etc.)\n👉 Relaciona las palabras con imágenes mentales\n👉 Descarta las opciones que claramente no encajan";
+  }
+  
+  // Articles
+  if (tags.includes('articles')) {
+    return "🔤 REGLA: Artículos A/AN/THE:\n• A + consonante: a book, a car\n• AN + vocal: an apple, an egg\n• THE = específico/único: the sun, the book (que ya conocemos)\n\n👉 ¿Empieza con sonido vocal? Usa AN. ¿Es específico? Usa THE.";
+  }
+  
+  // Possessives
+  if (tags.includes('possessive')) {
+    return "🔤 REGLA: Posesivos:\n• My (mi), Your (tu), His (de él), Her (de ella)\n• Its (de ello), Our (nuestro), Their (de ellos)\n\n👉 Identifica QUIÉN es el dueño para elegir el posesivo correcto.";
+  }
+  
+  // Default grammar
+  if (tags.includes('grammar')) {
+    return "🔤 GRAMÁTICA: Analiza la oración paso a paso:\n1. Identifica el SUJETO (¿quién?)\n2. Identifica el TIEMPO verbal (¿cuándo?)\n3. Aplica la regla correspondiente\n\n👉 Lee todas las opciones antes de decidir.";
+  }
+  
+  return "📖 CONSEJO: Lee la oración completa, identifica qué tipo de palabra falta (verbo, sustantivo, adjetivo) y piensa en el contexto.";
+};
+
+// Helper function for detailed post-answer explanation
 const getDetailedExplanation = (exercise: Exercise): string => {
   const tags = exercise.tags || [];
   
   if (tags.includes('to-be')) {
-    return "El verbo 'to be' (ser/estar) cambia según el sujeto: I→am, he/she/it→is, you/we/they→are. Recuerda que en inglés siempre necesitas un sujeto explícito.";
+    return "Recuerda: I→am, he/she/it→is, you/we/they→are. En preguntas se invierte el orden. En negativo añadimos 'not'.";
   }
   if (tags.includes('present-simple')) {
-    return "El Present Simple se usa para hábitos, rutinas y verdades generales. Con he/she/it añade -s/-es al verbo. En negativo/pregunta usa do/does + verbo base.";
+    return "En Present Simple: con he/she/it añade -s/-es. En negativo/pregunta usa do/does + verbo base (sin -s).";
   }
   if (tags.includes('present-continuous')) {
-    return "El Present Continuous (am/is/are + -ing) se usa para acciones que ocurren ahora mismo o planes futuros. Identifica palabras clave como 'now', 'right now', 'at the moment'.";
+    return "Present Continuous = am/is/are + verbo-ING. Se usa para acciones en progreso ahora mismo.";
   }
   if (tags.includes('vocabulary')) {
-    return "Para vocabulario, relaciona las palabras con imágenes mentales y contextos reales. Practica usando las palabras en oraciones propias.";
-  }
-  if (tags.includes('grammar')) {
-    return "La gramática inglesa sigue patrones consistentes. Identifica el patrón, practica con ejemplos similares, y pronto será automático.";
+    return "Asocia las palabras con imágenes y contextos reales. La práctica constante es clave.";
   }
   
-  return "Analiza la estructura de la oración, identifica el sujeto y el verbo, y aplica la regla gramatical correspondiente.";
+  return "Practica identificando el patrón gramatical. Con repetición, estas reglas se vuelven automáticas.";
 };
 
 // Generate exercises based on category type
@@ -538,25 +595,20 @@ export default function SkillLesson() {
                     </div>
                   )}
 
-                  {/* Pre-Exercise Explanation - ANTES de responder */}
+                  {/* Pre-Exercise Teaching - Regla gramatical SIN dar la respuesta */}
                   {!showExplanation && (
-                    <div className="mb-6 p-4 rounded-xl bg-primary/5 border border-primary/20">
+                    <div className="mb-6 p-4 rounded-xl bg-gradient-to-br from-primary/5 to-accent/5 border border-primary/20">
                       <div className="flex items-start gap-3">
-                        <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                          <Lightbulb className="w-4 h-4 text-primary" />
+                        <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <BookOpen className="w-5 h-5 text-primary" />
                         </div>
                         <div className="flex-1">
-                          <h3 className="font-semibold text-sm text-primary mb-1">
-                            💡 Cómo resolver este ejercicio
+                          <h3 className="font-semibold text-sm text-primary mb-2">
+                            📚 Antes de responder, recuerda:
                           </h3>
-                          <p className="text-sm text-muted-foreground leading-relaxed">
-                            {currentExerciseData.explanationSpanish || currentExerciseData.explanation}
-                          </p>
-                          {currentExerciseData.hint && (
-                            <p className="text-xs text-muted-foreground mt-2 italic">
-                              📌 Pista: {currentExerciseData.hint}
-                            </p>
-                          )}
+                          <div className="text-sm text-foreground leading-relaxed whitespace-pre-line bg-background/50 rounded-lg p-3 border">
+                            {getPreExerciseTeaching(currentExerciseData)}
+                          </div>
                         </div>
                       </div>
                     </div>
