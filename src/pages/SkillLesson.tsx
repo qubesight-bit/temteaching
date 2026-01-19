@@ -8,9 +8,10 @@ import { Badge } from "@/components/ui/badge";
 import { curriculumData, Skill, CEFRLevel } from "@/data/curriculumData";
 import { getExercisesBySkillId, Exercise } from "@/data/exercisesData";
 import { getAdvancedExercisesBySkillId } from "@/data/exercisesDataAdvanced";
+import { getImageExercisesForSkill } from "@/data/imageVocabularyData";
 import { 
   ArrowLeft, ArrowRight, CheckCircle2, XCircle, Volume2, 
-  BookOpen, Dumbbell, Trophy, Target, Lightbulb, Star
+  BookOpen, Dumbbell, Trophy, Target, Lightbulb, Star, Image
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
@@ -25,6 +26,12 @@ const getExercisesForSkill = (skill: Skill, level: CEFRLevel, categoryType: stri
   // If no exercises in main data, try advanced data
   if (exercises.length === 0) {
     exercises = getAdvancedExercisesBySkillId(skill.id, level);
+  }
+  
+  // For vocabulary, also add image exercises
+  if (categoryType.includes('vocab')) {
+    const imageExercises = getImageExercisesForSkill(skill.id, level);
+    exercises = [...exercises, ...imageExercises];
   }
   
   // If still no exercises, generate basic ones
@@ -142,6 +149,14 @@ const generateGenericExercise = (title: string, description: string, level: CEFR
 const getPreExerciseTeaching = (exercise: Exercise): string => {
   const tags = exercise.tags || [];
   
+  // Image-match exercises
+  if (exercise.type === 'image-match') {
+    if (tags.includes('word-to-image')) {
+      return "🖼️ EJERCICIO VISUAL: Mira la palabra en inglés y selecciona la imagen que la representa.\n\n👉 Piensa en el significado de la palabra\n👉 Visualiza el objeto en tu mente\n👉 Selecciona la imagen correcta";
+    }
+    return "🖼️ EJERCICIO VISUAL: Observa la imagen con atención.\n\n👉 ¿Qué objeto, animal o concepto representa?\n👉 Piensa en cómo se dice en inglés\n👉 Selecciona la palabra correcta entre las opciones";
+  }
+  
   // TO BE verb explanations
   if (tags.includes('to-be')) {
     if (tags.includes('affirmative')) {
@@ -175,9 +190,41 @@ const getPreExerciseTeaching = (exercise: Exercise): string => {
     return "🔤 REGLA: Present Continuous = acción ahora mismo\nEstructura: AM/IS/ARE + verbo-ING\n• I am working\n• She is reading\n• They are playing\n\n👉 Busca palabras clave: now, right now, at the moment, look!";
   }
   
-  // Vocabulary - by category
-  if (tags.includes('vocabulary') || tags.includes('food') || tags.includes('family') || tags.includes('clothes') || tags.includes('body')) {
-    return "📚 VOCABULARIO: Lee la pregunta con atención.\n\n👉 Piensa en la categoría temática (comida, familia, ropa, cuerpo, etc.)\n👉 Relaciona las palabras con imágenes mentales\n👉 Descarta las opciones que claramente no encajan";
+  // Vocabulary - by specific category
+  if (tags.includes('food')) {
+    return "🍎 VOCABULARIO - COMIDA:\n• Frutas: apple, banana, orange...\n• Bebidas: water, milk, coffee...\n• Comidas: bread, cheese, pizza...\n\n👉 Observa la imagen y piensa en qué categoría de comida pertenece.";
+  }
+  if (tags.includes('animals')) {
+    return "🐾 VOCABULARIO - ANIMALES:\n• Mascotas: dog, cat, bird...\n• Granja: cow, pig, horse...\n• Salvajes: lion, elephant, bear...\n\n👉 ¿Es un animal doméstico, de granja o salvaje?";
+  }
+  if (tags.includes('family')) {
+    return "👨‍👩‍👧 VOCABULARIO - FAMILIA:\n• Padres: mother, father\n• Hermanos: sister, brother\n• Abuelos: grandmother, grandfather\n\n👉 Piensa en la relación familiar que representa.";
+  }
+  if (tags.includes('clothes')) {
+    return "👕 VOCABULARIO - ROPA:\n• Arriba: shirt, dress, hat\n• Abajo: pants, shoes\n• Accesorios: glasses, hat\n\n👉 ¿Qué parte del cuerpo cubre esta prenda?";
+  }
+  if (tags.includes('body')) {
+    return "🫀 VOCABULARIO - CUERPO:\n• Cabeza: head, eye, ear, nose, mouth\n• Extremidades: hand, foot\n• Órganos: heart\n\n👉 Identifica qué parte del cuerpo representa la imagen.";
+  }
+  if (tags.includes('colors')) {
+    return "🎨 VOCABULARIO - COLORES:\n• Primarios: red, blue, yellow\n• Secundarios: green, orange, purple\n• Neutros: black, white, brown\n\n👉 Observa el color y recuerda su nombre en inglés.";
+  }
+  if (tags.includes('numbers')) {
+    return "🔢 VOCABULARIO - NÚMEROS:\n• 1-5: one, two, three, four, five\n• 6-10: six, seven, eight, nine, ten\n\n👉 Cuenta mentalmente y selecciona el número correcto.";
+  }
+  if (tags.includes('weather')) {
+    return "🌤️ VOCABULARIO - CLIMA:\n• Soleado: sun, hot\n• Lluvioso: rain, cloud\n• Frío: snow, wind\n\n👉 ¿Qué condición climática representa?";
+  }
+  if (tags.includes('professions')) {
+    return "👨‍⚕️ VOCABULARIO - PROFESIONES:\n• Salud: doctor, nurse\n• Educación: teacher\n• Servicios: police, firefighter, chef\n\n👉 ¿Qué trabajo realiza esta persona?";
+  }
+  if (tags.includes('sports')) {
+    return "⚽ VOCABULARIO - DEPORTES:\n• Con pelota: soccer, basketball, tennis\n• Acuáticos: swimming\n• Atletismo: running\n\n👉 ¿Qué deporte o actividad representa?";
+  }
+  
+  // General vocabulary
+  if (tags.includes('vocabulary')) {
+    return "📚 VOCABULARIO: Lee la pregunta con atención.\n\n👉 Piensa en la categoría temática\n👉 Relaciona las palabras con imágenes mentales\n👉 Descarta las opciones que claramente no encajan";
   }
   
   // Articles
@@ -614,13 +661,26 @@ export default function SkillLesson() {
                     </div>
                   )}
 
-                  {/* Question */}
-                  <h2 className="font-display font-bold text-xl mb-6">
-                    {currentExerciseData.question}
-                  </h2>
+                  {/* Question with image for image-match type */}
+                  <div className="mb-6">
+                    {currentExerciseData.type === 'image-match' && currentExerciseData.imageUrl && (
+                      <div className="flex flex-col items-center mb-4">
+                        <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/20 flex items-center justify-center mb-4 shadow-lg">
+                          <span className="text-7xl">{currentExerciseData.imageUrl}</span>
+                        </div>
+                        <Badge variant="outline" className="text-xs">
+                          <Image className="w-3 h-3 mr-1" />
+                          Ejercicio Visual
+                        </Badge>
+                      </div>
+                    )}
+                    <h2 className="font-display font-bold text-xl text-center">
+                      {currentExerciseData.question}
+                    </h2>
+                  </div>
 
                   {/* Audio button for pronunciation */}
-                  <div className="flex gap-2 mb-4">
+                  <div className="flex justify-center gap-2 mb-4">
                     <Button
                       variant="outline"
                       size="sm"
@@ -632,38 +692,72 @@ export default function SkillLesson() {
                     </Button>
                   </div>
 
-                  {/* Options */}
-                  <div className="space-y-3">
-                    {currentExerciseData.options.map((option) => {
-                      const isSelected = selectedAnswer === option;
-                      const isCorrectOption = option === currentExerciseData.correctAnswer;
-                      
-                      return (
-                        <button
-                          key={option}
-                          className={cn(
-                            "w-full p-4 rounded-xl border-2 text-left font-medium transition-all",
-                            !showExplanation && "hover:border-primary hover:bg-primary/5",
-                            !showExplanation && isSelected && "border-primary bg-primary/10",
-                            showExplanation && isCorrectOption && "border-success bg-success/10 text-success",
-                            showExplanation && isSelected && !isCorrect && "border-destructive bg-destructive/10 text-destructive"
-                          )}
-                          onClick={() => handleSelectAnswer(option)}
-                          disabled={showExplanation}
-                        >
-                          <div className="flex items-center justify-between">
-                            <span>{option}</span>
+                  {/* Options - Grid for image-match, List for others */}
+                  {currentExerciseData.type === 'image-match' && currentExerciseData.tags?.includes('word-to-image') ? (
+                    // Emoji grid for word-to-image exercises
+                    <div className="grid grid-cols-2 gap-3">
+                      {currentExerciseData.options.map((option) => {
+                        const isSelected = selectedAnswer === option;
+                        const isCorrectOption = option === currentExerciseData.correctAnswer;
+                        
+                        return (
+                          <button
+                            key={option}
+                            className={cn(
+                              "p-6 rounded-xl border-2 font-medium transition-all flex flex-col items-center justify-center gap-2",
+                              !showExplanation && "hover:border-primary hover:bg-primary/5 hover:scale-105",
+                              !showExplanation && isSelected && "border-primary bg-primary/10 scale-105",
+                              showExplanation && isCorrectOption && "border-success bg-success/10",
+                              showExplanation && isSelected && !isCorrect && "border-destructive bg-destructive/10"
+                            )}
+                            onClick={() => handleSelectAnswer(option)}
+                            disabled={showExplanation}
+                          >
+                            <span className="text-5xl">{option}</span>
                             {showExplanation && isCorrectOption && (
                               <CheckCircle2 className="w-5 h-5 text-success" />
                             )}
                             {showExplanation && isSelected && !isCorrect && (
                               <XCircle className="w-5 h-5 text-destructive" />
                             )}
-                          </div>
-                        </button>
-                      );
-                    })}
-                  </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  ) : (
+                    // Standard list for other exercises
+                    <div className="space-y-3">
+                      {currentExerciseData.options.map((option) => {
+                        const isSelected = selectedAnswer === option;
+                        const isCorrectOption = option === currentExerciseData.correctAnswer;
+                        
+                        return (
+                          <button
+                            key={option}
+                            className={cn(
+                              "w-full p-4 rounded-xl border-2 text-left font-medium transition-all",
+                              !showExplanation && "hover:border-primary hover:bg-primary/5",
+                              !showExplanation && isSelected && "border-primary bg-primary/10",
+                              showExplanation && isCorrectOption && "border-success bg-success/10 text-success",
+                              showExplanation && isSelected && !isCorrect && "border-destructive bg-destructive/10 text-destructive"
+                            )}
+                            onClick={() => handleSelectAnswer(option)}
+                            disabled={showExplanation}
+                          >
+                            <div className="flex items-center justify-between">
+                              <span>{option}</span>
+                              {showExplanation && isCorrectOption && (
+                                <CheckCircle2 className="w-5 h-5 text-success" />
+                              )}
+                              {showExplanation && isSelected && !isCorrect && (
+                                <XCircle className="w-5 h-5 text-destructive" />
+                              )}
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
 
                   {/* Post-Answer Explanation - DESPUÉS de responder */}
                   {showExplanation && (

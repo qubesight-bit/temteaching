@@ -5,7 +5,7 @@ import { CEFRLevel } from "./curriculumData";
 
 export interface Exercise {
   id: string;
-  type: "multiple-choice" | "fill-blank" | "true-false" | "matching" | "ordering" | "translation";
+  type: "multiple-choice" | "fill-blank" | "true-false" | "matching" | "ordering" | "translation" | "image-match";
   question: string;
   questionAudio?: string;
   options: string[];
@@ -15,6 +15,9 @@ export interface Exercise {
   hint?: string;
   difficulty: 1 | 2 | 3;
   tags: string[];
+  // For image-match exercises
+  imageUrl?: string;
+  imageOptions?: { word: string; imageUrl: string; }[];
 }
 
 export interface ExerciseSet {
