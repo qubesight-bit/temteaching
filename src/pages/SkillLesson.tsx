@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -10,9 +10,10 @@ import { getExercisesBySkillId, Exercise } from "@/data/exercisesData";
 import { getAdvancedExercisesBySkillId } from "@/data/exercisesDataAdvanced";
 import { getImageExercisesForSkill } from "@/data/imageVocabularyData";
 import { getArticleForExercise } from "@/data/articlesData";
+import { getCurriculumArticleById, searchCurriculumArticles } from "@/data/curriculumArticles";
 import { 
   ArrowLeft, ArrowRight, CheckCircle2, XCircle, Volume2, 
-  BookOpen, Dumbbell, Trophy, Target, Lightbulb, Star, Image, FileText
+  BookOpen, Dumbbell, Trophy, Target, Lightbulb, Star, Image, FileText, ExternalLink
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
