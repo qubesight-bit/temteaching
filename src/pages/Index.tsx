@@ -6,7 +6,7 @@ import { TodayLesson } from "@/components/TodayLesson";
 import { ModuleCard } from "@/components/ModuleCard";
 import { DailyGoalWidget } from "@/components/DailyGoalWidget";
 import { AITutorPreview } from "@/components/AITutorPreview";
-import { BookOpen, MessageSquare, PenTool, GraduationCap, Lightbulb, Map, Library } from "lucide-react";
+import { BookOpen, MessageSquare, PenTool, GraduationCap, Lightbulb, Map, Library, Music } from "lucide-react";
 
 const modules = [
   {
@@ -64,6 +64,14 @@ const modules = [
     progress: 0,
     color: "bg-level-c1",
     path: "/tests",
+  },
+  {
+    title: "Karaoke Educativo",
+    description: "Aprende inglés cantando tus canciones favoritas con letras sincronizadas",
+    icon: Music,
+    progress: 0,
+    color: "bg-accent",
+    path: "/karaoke",
   },
 ];
 
