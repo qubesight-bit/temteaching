@@ -3,6 +3,10 @@
 
 import { CEFRLevel } from "./curriculumData";
 import { allA2Exercises } from "./a2Exercises";
+import { b1GrammarExercises, b1VocabularyExercises } from "./b1Exercises";
+import { b2GrammarExercises, b2VocabularyExercises } from "./b2Exercises";
+import { c1GrammarExercises, c1VocabularyExercises } from "./c1Exercises";
+import { c2GrammarExercises, c2VocabularyExercises } from "./c2Exercises";
 
 export interface Exercise {
   id: string;
@@ -1403,10 +1407,30 @@ import { getWritingExercisesBySkillId } from "./writingExercises";
 
 // Function to get exercises by skill ID and category type
 export function getExercisesBySkillId(skillId: string, categoryType: string): Exercise[] {
-  if (categoryType.includes('grammar')) {
+  // Determine level from skillId prefix
+  const isA1 = skillId.startsWith('a1-');
+  const isA2 = skillId.startsWith('a2-');
+  const isB1 = skillId.startsWith('b1-');
+  const isB2 = skillId.startsWith('b2-');
+  const isC1 = skillId.startsWith('c1-');
+  const isC2 = skillId.startsWith('c2-');
+
+  if (categoryType.includes('grammar') || categoryType.includes('gram')) {
+    if (isA1) return a1GrammarExercises[skillId] || [];
+    if (isA2) return allA2Exercises.grammar[skillId] || [];
+    if (isB1) return b1GrammarExercises[skillId] || [];
+    if (isB2) return b2GrammarExercises[skillId] || [];
+    if (isC1) return c1GrammarExercises[skillId] || [];
+    if (isC2) return c2GrammarExercises[skillId] || [];
     return a1GrammarExercises[skillId] || [];
   }
   if (categoryType.includes('vocab')) {
+    if (isA1) return a1VocabularyExercises[skillId] || [];
+    if (isA2) return allA2Exercises.vocabulary[skillId] || [];
+    if (isB1) return b1VocabularyExercises[skillId] || [];
+    if (isB2) return b2VocabularyExercises[skillId] || [];
+    if (isC1) return c1VocabularyExercises[skillId] || [];
+    if (isC2) return c2VocabularyExercises[skillId] || [];
     return a1VocabularyExercises[skillId] || [];
   }
   if (categoryType.includes('speak')) {
@@ -1428,4 +1452,13 @@ export function getExercisesBySkillId(skillId: string, categoryType: string): Ex
 export const allExercises = {
   a1Grammar: a1GrammarExercises,
   a1Vocabulary: a1VocabularyExercises,
+  a2: allA2Exercises,
+  b1Grammar: b1GrammarExercises,
+  b1Vocabulary: b1VocabularyExercises,
+  b2Grammar: b2GrammarExercises,
+  b2Vocabulary: b2VocabularyExercises,
+  c1Grammar: c1GrammarExercises,
+  c1Vocabulary: c1VocabularyExercises,
+  c2Grammar: c2GrammarExercises,
+  c2Vocabulary: c2VocabularyExercises,
 };
