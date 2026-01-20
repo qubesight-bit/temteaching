@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
@@ -9,26 +9,38 @@ import { Slider } from "@/components/ui/slider";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ArrowLeft, User, Bell, Clock, Volume2, Palette, RotateCcw, AlertCircle, ChevronRight } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import { useAppState, UserProgress } from "@/hooks/useAppState";
 
 export default function Settings() {
   const navigate = useNavigate();
+  const { userProgress, setUserProgress } = useAppState();
+  
   const [settings, setSettings] = useState(() => {
     const saved = localStorage.getItem('settings');
     return saved ? JSON.parse(saved) : {
-      dailyGoal: 20,
+      dailyGoal: userProgress.goalMinutes,
       soundEffects: true,
       notifications: true,
       reminderTime: "09:00",
       theme: "system",
-      level: "A2",
     };
   });
 
+  const [selectedLevel, setSelectedLevel] = useState<UserProgress['currentLevel']>(userProgress.currentLevel);
+
   const handleSave = () => {
+    // Save settings to localStorage
     localStorage.setItem('settings', JSON.stringify(settings));
+    
+    // Update global app state with new level
+    setUserProgress({ 
+      currentLevel: selectedLevel,
+      goalMinutes: settings.dailyGoal 
+    });
+    
     toast({
       title: "Configuración guardada",
-      description: "Tus preferencias han sido actualizadas",
+      description: `Nivel actualizado a ${selectedLevel}. Tus preferencias han sido guardadas.`,
     });
   };
 
@@ -39,9 +51,9 @@ export default function Settings() {
       notifications: true,
       reminderTime: "09:00",
       theme: "system",
-      level: "A2",
     };
     setSettings(defaultSettings);
+    setSelectedLevel("A2");
     toast({
       title: "Configuración restablecida",
       description: "Se han restaurado los valores por defecto",
@@ -85,9 +97,12 @@ export default function Settings() {
               <div className="space-y-4">
                 <div>
                   <Label>Nivel actual</Label>
+                  <p className="text-xs text-muted-foreground mb-2">
+                    Tu nivel actual: <span className="font-semibold text-primary">{userProgress.currentLevel}</span>
+                  </p>
                   <Select 
-                    value={settings.level} 
-                    onValueChange={(value) => setSettings(prev => ({ ...prev, level: value }))}
+                    value={selectedLevel} 
+                    onValueChange={(value: UserProgress['currentLevel']) => setSelectedLevel(value)}
                   >
                     <SelectTrigger className="mt-2">
                       <SelectValue placeholder="Selecciona tu nivel" />
@@ -100,6 +115,11 @@ export default function Settings() {
                       <SelectItem value="C1">C1 - Avanzado</SelectItem>
                     </SelectContent>
                   </Select>
+                  {selectedLevel !== userProgress.currentLevel && (
+                    <p className="text-xs text-amber-600 mt-2">
+                      ⚠️ Cambiarás de {userProgress.currentLevel} a {selectedLevel}. Guarda para aplicar.
+                    </p>
+                  )}
                 </div>
               </div>
 
