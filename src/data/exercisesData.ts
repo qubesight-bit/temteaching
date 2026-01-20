@@ -2,6 +2,7 @@
 // This file contains exercises for Grammar, Vocabulary, and general practice
 
 import { CEFRLevel } from "./curriculumData";
+import { allA2Exercises } from "./a2Exercises";
 
 export interface Exercise {
   id: string;
