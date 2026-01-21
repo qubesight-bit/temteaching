@@ -77,7 +77,7 @@ export default function Vocabulary() {
             onClick={handleBack}
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Volver a categorías
+            Back to categories
           </Button>
 
           <div className="max-w-2xl mx-auto">
@@ -126,7 +126,7 @@ export default function Vocabulary() {
                     {currentWord.pronunciation}
                   </span>
                   <p className="text-sm text-center text-muted-foreground mt-8">
-                    Toca para ver la traducción
+                    Tap to see translation
                   </p>
                 </CardContent>
               </Card>
@@ -160,7 +160,7 @@ export default function Vocabulary() {
                 onClick={handlePrevWord}
                 disabled={currentWordIndex === 0}
               >
-                Anterior
+                Previous
               </Button>
               
               <Button
@@ -179,7 +179,7 @@ export default function Vocabulary() {
                 onClick={handleNextWord}
                 disabled={currentWordIndex === selectedCategory.words.length - 1}
               >
-                Siguiente
+                Next
               </Button>
             </div>
 
@@ -191,7 +191,7 @@ export default function Vocabulary() {
                 className="w-full mt-6"
                 onClick={handleBack}
               >
-                ¡Completar sesión!
+                Complete session!
               </Button>
             )}
           </div>
@@ -214,7 +214,7 @@ export default function Vocabulary() {
             onClick={() => navigate("/")}
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Volver al Dashboard
+            Back to Dashboard
           </Button>
           
           <div className="flex items-center gap-4">
@@ -223,10 +223,10 @@ export default function Vocabulary() {
             </div>
             <div>
               <h1 className="font-display font-bold text-3xl text-foreground">
-                Vocabulario
+                Vocabulary
               </h1>
               <p className="text-muted-foreground">
-                Expande tu léxico con flashcards y ejercicios contextuales
+                Expand your lexicon with flashcards and contextual exercises
               </p>
             </div>
           </div>
@@ -238,15 +238,15 @@ export default function Vocabulary() {
             <div className="grid grid-cols-3 gap-6 text-center">
               <div>
                 <p className="text-3xl font-display font-bold text-foreground">0</p>
-                <p className="text-sm text-muted-foreground">Palabras aprendidas</p>
+                <p className="text-sm text-muted-foreground">Words learned</p>
               </div>
               <div>
                 <p className="text-3xl font-display font-bold text-foreground">10</p>
-                <p className="text-sm text-muted-foreground">Categorías</p>
+                <p className="text-sm text-muted-foreground">Categories</p>
               </div>
               <div>
                 <p className="text-3xl font-display font-bold text-success">0%</p>
-                <p className="text-sm text-muted-foreground">Progreso total</p>
+                <p className="text-sm text-muted-foreground">Total progress</p>
               </div>
             </div>
           </CardContent>
@@ -283,7 +283,7 @@ export default function Vocabulary() {
                   </h3>
                   
                   <div className="flex items-center justify-between text-sm text-muted-foreground mb-3">
-                    <span>{category.learned} / {category.wordCount} palabras</span>
+                    <span>{category.learned} / {category.wordCount} words</span>
                     <span className="font-medium text-foreground">{progress}%</span>
                   </div>
                   
@@ -291,7 +291,7 @@ export default function Vocabulary() {
                   
                   <Button variant="outline" size="sm" className="w-full group-hover:bg-primary group-hover:text-white transition-colors">
                     <Play className="w-4 h-4 mr-2" />
-                    Practicar
+                    Practice
                   </Button>
                 </CardContent>
               </Card>

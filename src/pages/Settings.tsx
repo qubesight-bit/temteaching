@@ -39,8 +39,8 @@ export default function Settings() {
     });
     
     toast({
-      title: "Configuración guardada",
-      description: `Nivel actualizado a ${selectedLevel}. Tus preferencias han sido guardadas.`,
+      title: "Settings saved",
+      description: `Level updated to ${selectedLevel}. Your preferences have been saved.`,
     });
   };
 
@@ -55,8 +55,8 @@ export default function Settings() {
     setSettings(defaultSettings);
     setSelectedLevel("A2");
     toast({
-      title: "Configuración restablecida",
-      description: "Se han restaurado los valores por defecto",
+      title: "Settings reset",
+      description: "Default values have been restored",
     });
   };
 
@@ -75,14 +75,14 @@ export default function Settings() {
               onClick={() => navigate("/")}
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Volver al Dashboard
+              Back to Dashboard
             </Button>
             
             <h1 className="font-display font-bold text-3xl text-foreground">
-              Configuración
+              Settings
             </h1>
             <p className="text-muted-foreground">
-              Personaliza tu experiencia de aprendizaje
+              Customize your learning experience
             </p>
           </div>
 
@@ -91,33 +91,33 @@ export default function Settings() {
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6">
                 <User className="w-5 h-5 text-primary" />
-                <h2 className="font-display font-semibold text-lg">Perfil</h2>
+                <h2 className="font-display font-semibold text-lg">Profile</h2>
               </div>
               
               <div className="space-y-4">
                 <div>
-                  <Label>Nivel actual</Label>
+                  <Label>Current level</Label>
                   <p className="text-xs text-muted-foreground mb-2">
-                    Tu nivel actual: <span className="font-semibold text-primary">{userProgress.currentLevel}</span>
+                    Your current level: <span className="font-semibold text-primary">{userProgress.currentLevel}</span>
                   </p>
                   <Select 
                     value={selectedLevel} 
                     onValueChange={(value: UserProgress['currentLevel']) => setSelectedLevel(value)}
                   >
                     <SelectTrigger className="mt-2">
-                      <SelectValue placeholder="Selecciona tu nivel" />
+                      <SelectValue placeholder="Select your level" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="A1">A1 - Principiante</SelectItem>
-                      <SelectItem value="A2">A2 - Elemental</SelectItem>
-                      <SelectItem value="B1">B1 - Intermedio</SelectItem>
-                      <SelectItem value="B2">B2 - Intermedio Alto</SelectItem>
-                      <SelectItem value="C1">C1 - Avanzado</SelectItem>
+                      <SelectItem value="A1">A1 - Beginner</SelectItem>
+                      <SelectItem value="A2">A2 - Elementary</SelectItem>
+                      <SelectItem value="B1">B1 - Intermediate</SelectItem>
+                      <SelectItem value="B2">B2 - Upper Intermediate</SelectItem>
+                      <SelectItem value="C1">C1 - Advanced</SelectItem>
                     </SelectContent>
                   </Select>
                   {selectedLevel !== userProgress.currentLevel && (
                     <p className="text-xs text-amber-600 mt-2">
-                      ⚠️ Cambiarás de {userProgress.currentLevel} a {selectedLevel}. Guarda para aplicar.
+                      ⚠️ You will change from {userProgress.currentLevel} to {selectedLevel}. Save to apply.
                     </p>
                   )}
                 </div>
@@ -132,12 +132,12 @@ export default function Settings() {
                 >
                   <div className="flex items-center gap-2">
                     <AlertCircle className="w-4 h-4 text-destructive" />
-                    <span>Historial de Errores</span>
+                    <span>Error History</span>
                   </div>
                   <ChevronRight className="w-4 h-4" />
                 </Button>
                 <p className="text-xs text-muted-foreground mt-2">
-                  Revisa tus errores para mejorar tu aprendizaje
+                  Review your errors to improve your learning
                 </p>
               </div>
             </CardContent>
@@ -148,13 +148,13 @@ export default function Settings() {
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6">
                 <Clock className="w-5 h-5 text-primary" />
-                <h2 className="font-display font-semibold text-lg">Objetivos</h2>
+                <h2 className="font-display font-semibold text-lg">Goals</h2>
               </div>
               
               <div className="space-y-6">
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <Label>Meta diaria de estudio</Label>
+                    <Label>Daily study goal</Label>
                     <span className="text-sm font-medium">{settings.dailyGoal} min</span>
                   </div>
                   <Slider
@@ -179,14 +179,14 @@ export default function Settings() {
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6">
                 <Bell className="w-5 h-5 text-primary" />
-                <h2 className="font-display font-semibold text-lg">Notificaciones</h2>
+                <h2 className="font-display font-semibold text-lg">Notifications</h2>
               </div>
               
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <Label>Recordatorios diarios</Label>
-                    <p className="text-sm text-muted-foreground">Recibe un recordatorio para estudiar</p>
+                    <Label>Daily reminders</Label>
+                    <p className="text-sm text-muted-foreground">Receive a reminder to study</p>
                   </div>
                   <Switch
                     checked={settings.notifications}
@@ -196,13 +196,13 @@ export default function Settings() {
                 
                 {settings.notifications && (
                   <div>
-                    <Label>Hora del recordatorio</Label>
+                    <Label>Reminder time</Label>
                     <Select 
                       value={settings.reminderTime} 
                       onValueChange={(value) => setSettings(prev => ({ ...prev, reminderTime: value }))}
                     >
                       <SelectTrigger className="mt-2">
-                        <SelectValue placeholder="Selecciona una hora" />
+                        <SelectValue placeholder="Select a time" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="07:00">7:00 AM</SelectItem>
@@ -224,13 +224,13 @@ export default function Settings() {
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6">
                 <Volume2 className="w-5 h-5 text-primary" />
-                <h2 className="font-display font-semibold text-lg">Sonido</h2>
+                <h2 className="font-display font-semibold text-lg">Sound</h2>
               </div>
               
               <div className="flex items-center justify-between">
                 <div>
-                  <Label>Efectos de sonido</Label>
-                  <p className="text-sm text-muted-foreground">Sonidos al completar ejercicios</p>
+                  <Label>Sound effects</Label>
+                  <p className="text-sm text-muted-foreground">Sounds when completing exercises</p>
                 </div>
                 <Switch
                   checked={settings.soundEffects}
@@ -245,22 +245,22 @@ export default function Settings() {
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-6">
                 <Palette className="w-5 h-5 text-primary" />
-                <h2 className="font-display font-semibold text-lg">Apariencia</h2>
+                <h2 className="font-display font-semibold text-lg">Appearance</h2>
               </div>
               
               <div>
-                <Label>Tema</Label>
+                <Label>Theme</Label>
                 <Select 
                   value={settings.theme} 
                   onValueChange={(value) => setSettings(prev => ({ ...prev, theme: value }))}
                 >
                   <SelectTrigger className="mt-2">
-                    <SelectValue placeholder="Selecciona un tema" />
+                    <SelectValue placeholder="Select a theme" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="light">Claro</SelectItem>
-                    <SelectItem value="dark">Oscuro</SelectItem>
-                    <SelectItem value="system">Sistema</SelectItem>
+                    <SelectItem value="light">Light</SelectItem>
+                    <SelectItem value="dark">Dark</SelectItem>
+                    <SelectItem value="system">System</SelectItem>
                   </SelectContent>
               </Select>
             </div>
@@ -275,14 +275,14 @@ export default function Settings() {
               onClick={handleReset}
             >
               <RotateCcw className="w-4 h-4 mr-2" />
-              Restablecer
+              Reset
             </Button>
             <Button
               variant="hero"
               className="flex-1"
               onClick={handleSave}
             >
-              Guardar cambios
+              Save changes
             </Button>
           </div>
         </div>

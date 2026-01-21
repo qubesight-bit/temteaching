@@ -52,7 +52,7 @@ export function TopicRow({ topic, index, onStart, getLevelColor }: TopicRowProps
               {topic.level}
             </span>
             {topic.completed && (
-              <span className="text-xs text-success">Completado</span>
+              <span className="text-xs text-success">Completed</span>
             )}
           </div>
         </div>
@@ -65,11 +65,11 @@ export function TopicRow({ topic, index, onStart, getLevelColor }: TopicRowProps
         onClick={onStart}
       >
         {topic.completed ? (
-          "Repasar"
+          "Review"
         ) : (
           <>
             <Play className="w-4 h-4 mr-1" />
-            Empezar
+            Start
           </>
         )}
       </Button>

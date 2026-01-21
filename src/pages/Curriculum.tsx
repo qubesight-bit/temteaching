@@ -102,8 +102,8 @@ export default function Curriculum() {
             <ArrowLeft className="w-5 h-5" />
           </Button>
           <div>
-            <h1 className="text-2xl font-display font-bold">Currículo CEFR</h1>
-            <p className="text-white/80 text-sm">Tu ruta de aprendizaje estructurada</p>
+            <h1 className="text-2xl font-display font-bold">CEFR Curriculum</h1>
+            <p className="text-white/80 text-sm">Your structured learning path</p>
           </div>
         </div>
 
@@ -154,24 +154,24 @@ export default function Curriculum() {
             <div className="grid grid-cols-3 gap-4 text-center">
               <div className="p-3 bg-secondary rounded-lg">
                 <Target className={cn("w-5 h-5 mx-auto mb-1", levelTextColors[selectedLevel])} />
-                <p className="text-xs text-muted-foreground">Vocabulario</p>
+                <p className="text-xs text-muted-foreground">Vocabulary</p>
                 <p className="font-semibold text-sm">{currentLevelData.targetVocabulary}</p>
               </div>
               <div className="p-3 bg-secondary rounded-lg">
                 <Clock className={cn("w-5 h-5 mx-auto mb-1", levelTextColors[selectedLevel])} />
-                <p className="text-xs text-muted-foreground">Horas estimadas</p>
+                <p className="text-xs text-muted-foreground">Estimated hours</p>
                 <p className="font-semibold text-sm">{currentLevelData.estimatedHours}h</p>
               </div>
               <div className="p-3 bg-secondary rounded-lg">
                 <BookOpen className={cn("w-5 h-5 mx-auto mb-1", levelTextColors[selectedLevel])} />
-                <p className="text-xs text-muted-foreground">Categorías</p>
+                <p className="text-xs text-muted-foreground">Categories</p>
                 <p className="font-semibold text-sm">{currentLevelData.categories.length}</p>
               </div>
             </div>
 
             <div>
               <div className="flex justify-between text-sm mb-2">
-                <span>Progreso del nivel</span>
+                <span>Level progress</span>
                 <span className={cn("font-semibold", levelTextColors[selectedLevel])}>{levelProgress}%</span>
               </div>
               <Progress value={levelProgress} className="h-3" />

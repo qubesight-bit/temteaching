@@ -28,12 +28,12 @@ type SupportedLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 const levels: SupportedLevel[] = ["A1", "A2", "B1", "B2", "C1", "C2"];
 
 const levelConfig: Record<SupportedLevel, { label: string; icon: React.ElementType; color: string; bgColor: string }> = {
-  A1: { label: "Novato", icon: Shield, color: "text-level-a1", bgColor: "bg-level-a1/10" },
-  A2: { label: "Aprendiz", icon: Swords, color: "text-level-a2", bgColor: "bg-level-a2/10" },
-  B1: { label: "Aventurero", icon: Trophy, color: "text-level-b1", bgColor: "bg-level-b1/10" },
-  B2: { label: "Guerrero", icon: Sparkles, color: "text-level-b2", bgColor: "bg-level-b2/10" },
-  C1: { label: "Maestro", icon: Crown, color: "text-level-c1", bgColor: "bg-level-c1/10" },
-  C2: { label: "Leyenda", icon: Crown, color: "text-level-c2", bgColor: "bg-level-c2/10" },
+  A1: { label: "Novice", icon: Shield, color: "text-level-a1", bgColor: "bg-level-a1/10" },
+  A2: { label: "Learner", icon: Swords, color: "text-level-a2", bgColor: "bg-level-a2/10" },
+  B1: { label: "Adventurer", icon: Trophy, color: "text-level-b1", bgColor: "bg-level-b1/10" },
+  B2: { label: "Warrior", icon: Sparkles, color: "text-level-b2", bgColor: "bg-level-b2/10" },
+  C1: { label: "Master", icon: Crown, color: "text-level-c1", bgColor: "bg-level-c1/10" },
+  C2: { label: "Legend", icon: Crown, color: "text-level-c2", bgColor: "bg-level-c2/10" },
 };
 
 const categoryIcons: Record<string, string> = {
@@ -147,15 +147,15 @@ export function TopicsSidebar() {
             <Book className="h-4 w-4 text-primary" />
           </div>
           <div>
-            <h2 className="font-display font-semibold text-sm">Mapa de Aventura</h2>
-            <p className="text-xs text-muted-foreground">Explora los topics</p>
+            <h2 className="font-display font-semibold text-sm">Adventure Map</h2>
+            <p className="text-xs text-muted-foreground">Explore the topics</p>
           </div>
         </div>
 
         {/* Level Selector - RPG Style */}
         <div className="space-y-2">
           <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-            Seleccionar Nivel
+            Select Level
           </p>
           <div className="flex flex-wrap gap-1.5">
             <Button
@@ -167,7 +167,7 @@ export function TopicsSidebar() {
                 selectedLevel === "ALL" && "bg-gradient-to-r from-level-a1 via-level-b1 to-level-c1 text-white border-0"
               )}
             >
-              Todos
+              All
             </Button>
             {levels.map((level) => {
               const config = levelConfig[level];
@@ -201,7 +201,7 @@ export function TopicsSidebar() {
                 return <Icon className={cn("h-4 w-4", levelConfig[selectedLevel].color)} />;
               })()}
               <span className={cn("text-xs font-medium", levelConfig[selectedLevel].color)}>
-                {levelConfig[selectedLevel].label} - Nivel {selectedLevel}
+                {levelConfig[selectedLevel].label} - Level {selectedLevel}
               </span>
             </div>
           )}
@@ -283,4 +283,3 @@ export function TopicsSidebar() {
     </Sidebar>
   );
 }
-
