@@ -47,8 +47,8 @@ export default function Lesson() {
     if (answer === currentExerciseData.correctAnswer) {
       setScore(prev => ({ ...prev, correct: prev.correct + 1 }));
       toast({
-        title: "¡Correcto! 🎉",
-        description: "Excelente trabajo",
+        title: "Correct! 🎉",
+        description: "Excellent work",
       });
     } else {
       setScore(prev => ({ ...prev, incorrect: prev.incorrect + 1 }));
@@ -98,39 +98,39 @@ export default function Lesson() {
                 </div>
                 
                 <h2 className="font-display font-bold text-2xl mb-2">
-                  ¡Lección completada!
+                  Lesson Completed!
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                  Has terminado: {topic.title}
+                  You finished: {topic.title}
                 </p>
                 
                 <div className="flex items-center justify-center gap-8 mb-8">
                   <div className="text-center">
                     <p className="text-4xl font-display font-bold text-success">{score.correct}</p>
-                    <p className="text-sm text-muted-foreground">Correctas</p>
+                    <p className="text-sm text-muted-foreground">Correct</p>
                   </div>
                   <div className="w-px h-12 bg-border" />
                   <div className="text-center">
                     <p className="text-4xl font-display font-bold text-destructive">{score.incorrect}</p>
-                    <p className="text-sm text-muted-foreground">Incorrectas</p>
+                    <p className="text-sm text-muted-foreground">Incorrect</p>
                   </div>
                   <div className="w-px h-12 bg-border" />
                   <div className="text-center">
                     <p className="text-4xl font-display font-bold text-primary">{percentage}%</p>
-                    <p className="text-sm text-muted-foreground">Precisión</p>
+                    <p className="text-sm text-muted-foreground">Accuracy</p>
                   </div>
                 </div>
 
                 <div className="bg-secondary/50 rounded-xl p-4 mb-6">
-                  <p className="text-sm font-medium">+50 XP ganados</p>
+                  <p className="text-sm font-medium">+50 XP earned</p>
                 </div>
                 
                 <div className="flex gap-4 justify-center">
                   <Button variant="outline" onClick={() => navigate("/grammar")}>
-                    Volver a Gramática
+                    Back to Grammar
                   </Button>
                   <Button variant="hero" onClick={() => navigate("/")}>
-                    Ir al Dashboard
+                    Go to Dashboard
                   </Button>
                 </div>
               </CardContent>
@@ -155,7 +155,7 @@ export default function Lesson() {
               onClick={() => navigate("/grammar")}
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Volver a Gramática
+              Back to Grammar
             </Button>
           </div>
 
@@ -185,7 +185,7 @@ export default function Lesson() {
               onClick={() => setCurrentStep("explanation")}
             >
               <BookOpen className="w-4 h-4" />
-              Explicación
+              Explanation
             </button>
             <button
               className={cn(
@@ -197,7 +197,7 @@ export default function Lesson() {
               onClick={() => setCurrentStep("exercises")}
             >
               <Dumbbell className="w-4 h-4" />
-              Ejercicios
+              Exercises
             </button>
           </div>
 
@@ -207,7 +207,7 @@ export default function Lesson() {
               <CardContent className="p-8">
                 {/* Explanation */}
                 <div className="prose prose-sm max-w-none mb-8">
-                  <h3 className="font-display font-semibold text-lg mb-4">¿Qué es el {topic.title}?</h3>
+                  <h3 className="font-display font-semibold text-lg mb-4">What is {topic.title}?</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     {topic.explanation}
                   </p>
@@ -215,7 +215,7 @@ export default function Lesson() {
 
                 {/* Examples */}
                 <div className="mb-8">
-                  <h3 className="font-display font-semibold text-lg mb-4">Ejemplos</h3>
+                  <h3 className="font-display font-semibold text-lg mb-4">Examples</h3>
                   <div className="space-y-3">
                     {topic.examples.map((example, index) => (
                       <div
@@ -251,7 +251,7 @@ export default function Lesson() {
                   }}
                 >
                   <Dumbbell className="w-5 h-5 mr-2" />
-                  Comenzar ejercicios
+                  Start Exercises
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </CardContent>
@@ -264,10 +264,10 @@ export default function Lesson() {
               <div className="mb-6">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm font-medium">
-                    Ejercicio {currentExercise + 1} de {exercises.length}
+                    Exercise {currentExercise + 1} of {exercises.length}
                   </span>
                   <span className="text-sm text-muted-foreground">
-                    {score.correct} correctas
+                    {score.correct} correct
                   </span>
                 </div>
                 <Progress 
@@ -323,7 +323,7 @@ export default function Lesson() {
                       isCorrect ? "bg-success/10 border border-success/20" : "bg-warning/10 border border-warning/20"
                     )}>
                       <p className="font-medium mb-1">
-                        {isCorrect ? "¡Correcto!" : `Respuesta correcta: ${currentExerciseData.correctAnswer}`}
+                        {isCorrect ? "Correct!" : `Correct answer: ${currentExerciseData.correctAnswer}`}
                       </p>
                       <p className="text-sm text-muted-foreground">
                         {currentExerciseData.explanation}
@@ -341,11 +341,11 @@ export default function Lesson() {
                     >
                       {currentExercise < exercises.length - 1 ? (
                         <>
-                          Siguiente ejercicio
+                          Next Exercise
                           <ArrowRight className="w-4 h-4 ml-2" />
                         </>
                       ) : (
-                        "Ver resultados"
+                        "View Results"
                       )}
                     </Button>
                   )}

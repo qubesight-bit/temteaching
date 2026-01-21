@@ -31,7 +31,7 @@ export function KaraokeSearch({ onSearch, isLoading }: KaraokeSearchProps) {
           <Input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Nombre de la canción..."
+            placeholder="Song name..."
             className="pl-10"
           />
         </div>
@@ -39,17 +39,17 @@ export function KaraokeSearch({ onSearch, isLoading }: KaraokeSearchProps) {
           <Input
             value={artist}
             onChange={(e) => setArtist(e.target.value)}
-            placeholder="Artista (opcional)..."
+            placeholder="Artist (optional)..."
           />
         </div>
         <Button type="submit" disabled={isLoading || !query.trim()}>
           <Search className="h-4 w-4 mr-2" />
-          {isLoading ? 'Buscando...' : 'Buscar Karaoke'}
+          {isLoading ? 'Searching...' : 'Search Karaoke'}
         </Button>
       </form>
 
       <div className="flex flex-wrap gap-2">
-        <span className="text-sm text-muted-foreground">Sugerencias:</span>
+        <span className="text-sm text-muted-foreground">Suggestions:</span>
         {[
           { title: 'Yesterday', artist: 'The Beatles' },
           { title: 'Hello', artist: 'Adele' },

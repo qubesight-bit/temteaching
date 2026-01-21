@@ -24,12 +24,12 @@ const levelColors: Record<string, string> = {
 };
 
 const levelLabels: Record<string, string> = {
-  A1: "Principiante",
-  A2: "Elemental",
-  B1: "Intermedio",
-  B2: "Intermedio Alto",
-  C1: "Avanzado",
-  C2: "Maestría",
+  A1: "Beginner",
+  A2: "Elementary",
+  B1: "Intermediate",
+  B2: "Upper Intermediate",
+  C1: "Advanced",
+  C2: "Mastery",
 };
 
 // Text-to-speech helper
@@ -93,7 +93,7 @@ export default function ArticleDetail() {
           className="mb-6"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
-          Volver a la biblioteca
+          Back to Library
         </Button>
 
         <div className="grid lg:grid-cols-[1fr,300px] gap-8">
@@ -113,7 +113,7 @@ export default function ArticleDetail() {
                   </Badge>
                   <div className="flex items-center gap-1 text-muted-foreground text-sm">
                     <Clock className="w-4 h-4" />
-                    {article.estimatedReadTime} min de lectura
+                    {article.estimatedReadTime} min read
                   </div>
                 </div>
 
@@ -139,7 +139,7 @@ export default function ArticleDetail() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <GraduationCap className="w-5 h-5 text-primary" />
-                  Introducción
+                  Introduction
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -201,7 +201,7 @@ export default function ArticleDetail() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Lightbulb className="w-5 h-5 text-warning" />
-                  Ejemplos Prácticos
+                  Practical Examples
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -247,7 +247,7 @@ export default function ArticleDetail() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <AlertTriangle className="w-5 h-5 text-destructive" />
-                  Errores Comunes a Evitar
+                  Common Mistakes to Avoid
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -287,7 +287,7 @@ export default function ArticleDetail() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <BookText className="w-5 h-5 text-primary" />
-                  Ejercicios de Práctica
+                  Practice Exercises
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -301,19 +301,19 @@ export default function ArticleDetail() {
                         {index + 1}. {exercise.question}
                       </p>
                       <p className="text-sm text-muted-foreground mb-3">
-                        💡 Pista: {exercise.hint}
+                        💡 Hint: {exercise.hint}
                       </p>
                       <Button
                         variant="outline"
                         size="sm"
                         onClick={() => togglePracticeAnswer(index)}
                       >
-                        {showPracticeAnswers[index] ? "Ocultar respuesta" : "Ver respuesta"}
+                        {showPracticeAnswers[index] ? "Hide Answer" : "Show Answer"}
                       </Button>
                       {showPracticeAnswers[index] && (
                         <div className="mt-3 p-3 bg-success/10 rounded-lg border border-success/20">
                           <span className="text-success font-medium">
-                            Respuesta: {exercise.answer}
+                            Answer: {exercise.answer}
                           </span>
                         </div>
                       )}
@@ -328,7 +328,7 @@ export default function ArticleDetail() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-success" />
-                  Resumen
+                  Summary
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -345,7 +345,7 @@ export default function ArticleDetail() {
               {/* Table of Contents */}
               <Card>
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-sm">Contenido</CardTitle>
+                  <CardTitle className="text-sm">Contents</CardTitle>
                 </CardHeader>
                 <CardContent className="pt-0">
                   <ScrollArea className="h-[300px]">
@@ -358,7 +358,7 @@ export default function ArticleDetail() {
                           window.scrollTo({ top: 0, behavior: 'smooth' });
                         }}
                       >
-                        Introducción
+                        Introduction
                       </a>
                       {article.sections.map((section, index) => (
                         <a
@@ -387,7 +387,7 @@ export default function ArticleDetail() {
               {relatedArticles.length > 0 && (
                 <Card>
                   <CardHeader className="pb-3">
-                    <CardTitle className="text-sm">Artículos Relacionados</CardTitle>
+                    <CardTitle className="text-sm">Related Articles</CardTitle>
                   </CardHeader>
                   <CardContent className="pt-0">
                     <div className="space-y-2">
@@ -428,7 +428,7 @@ export default function ArticleDetail() {
                     onClick={() => navigate("/curriculum")}
                   >
                     <BookOpen className="w-4 h-4 mr-2" />
-                    Practicar con ejercicios
+                    Practice with Exercises
                     <ChevronRight className="w-4 h-4 ml-auto" />
                   </Button>
                 </CardContent>

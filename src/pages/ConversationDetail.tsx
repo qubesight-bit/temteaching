@@ -8,7 +8,6 @@ import { useAuth } from '@/contexts/AuthContext';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
 import { format } from 'date-fns';
-import { es } from 'date-fns/locale';
 import { cn } from '@/lib/utils';
 
 interface Message {
@@ -68,7 +67,7 @@ export default function ConversationDetail() {
       if (!conversationResult.data) {
         toast({
           title: 'Error',
-          description: 'Conversación no encontrada',
+          description: 'Conversation not found',
           variant: 'destructive',
         });
         navigate('/conversation/history');
@@ -81,7 +80,7 @@ export default function ConversationDetail() {
       console.error('Error fetching conversation details:', error);
       toast({
         title: 'Error',
-        description: 'No se pudieron cargar los detalles de la conversación',
+        description: 'Could not load conversation details',
         variant: 'destructive',
       });
     } finally {
@@ -90,11 +89,11 @@ export default function ConversationDetail() {
   };
 
   const getPronunciationFeedback = (score: number) => {
-    if (score >= 0.9) return { label: "Excelente", color: "text-green-500", bgColor: "bg-green-500/10", emoji: "🌟" };
-    if (score >= 0.75) return { label: "Muy bien", color: "text-emerald-500", bgColor: "bg-emerald-500/10", emoji: "👍" };
-    if (score >= 0.6) return { label: "Bien", color: "text-yellow-500", bgColor: "bg-yellow-500/10", emoji: "👌" };
-    if (score >= 0.4) return { label: "Sigue practicando", color: "text-orange-500", bgColor: "bg-orange-500/10", emoji: "💪" };
-    return { label: "Intenta de nuevo", color: "text-red-500", bgColor: "bg-red-500/10", emoji: "🔄" };
+    if (score >= 0.9) return { label: "Excellent", color: "text-green-500", bgColor: "bg-green-500/10", emoji: "🌟" };
+    if (score >= 0.75) return { label: "Very Good", color: "text-emerald-500", bgColor: "bg-emerald-500/10", emoji: "👍" };
+    if (score >= 0.6) return { label: "Good", color: "text-yellow-500", bgColor: "bg-yellow-500/10", emoji: "👌" };
+    if (score >= 0.4) return { label: "Keep Practicing", color: "text-orange-500", bgColor: "bg-orange-500/10", emoji: "💪" };
+    return { label: "Try Again", color: "text-red-500", bgColor: "bg-red-500/10", emoji: "🔄" };
   };
 
   const speakText = (text: string) => {
@@ -139,7 +138,7 @@ export default function ConversationDetail() {
       <div className="min-h-screen bg-background">
         <Header />
         <main className="container py-8">
-          <p className="text-center text-muted-foreground">Conversación no encontrada</p>
+          <p className="text-center text-muted-foreground">Conversation not found</p>
         </main>
       </div>
     );
@@ -169,7 +168,7 @@ export default function ConversationDetail() {
             onClick={() => navigate('/conversation/history')}
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Volver al Historial
+            Back to History
           </Button>
           
           {/* Conversation Header */}
@@ -182,7 +181,7 @@ export default function ConversationDetail() {
                 {conversation.scenario_title}
               </h1>
               <p className="text-muted-foreground">
-                {format(new Date(conversation.started_at), "d 'de' MMMM, yyyy - HH:mm", { locale: es })}
+                {format(new Date(conversation.started_at), "MMMM d, yyyy - HH:mm")}
               </p>
             </div>
           </div>
@@ -193,7 +192,7 @@ export default function ConversationDetail() {
               <CardContent className="p-4 text-center">
                 <MessageSquare className="w-6 h-6 mx-auto text-primary mb-2" />
                 <p className="text-2xl font-bold text-foreground">{messages.length}</p>
-                <p className="text-sm text-muted-foreground">Mensajes</p>
+                <p className="text-sm text-muted-foreground">Messages</p>
               </CardContent>
             </Card>
             <Card>
@@ -204,14 +203,14 @@ export default function ConversationDetail() {
                     ? `${Math.round(conversation.avg_pronunciation_score * 100)}%`
                     : '-'}
                 </p>
-                <p className="text-sm text-muted-foreground">Pronunciación</p>
+                <p className="text-sm text-muted-foreground">Pronunciation</p>
               </CardContent>
             </Card>
             <Card className="col-span-2 md:col-span-1">
               <CardContent className="p-4 text-center">
                 <span className="text-2xl mb-2 block">💡</span>
                 <p className="text-2xl font-bold text-foreground">{allCorrections.length}</p>
-                <p className="text-sm text-muted-foreground">Correcciones</p>
+                <p className="text-sm text-muted-foreground">Corrections</p>
               </CardContent>
             </Card>
           </div>
@@ -222,7 +221,7 @@ export default function ConversationDetail() {
           <Card className="mb-6">
             <CardContent className="p-6">
               <h3 className="font-display font-semibold text-lg mb-4 flex items-center gap-2">
-                📝 Resumen de Correcciones
+                📝 Corrections Summary
               </h3>
               <ul className="space-y-2">
                 {allCorrections.map((correction, index) => (
@@ -243,7 +242,7 @@ export default function ConversationDetail() {
           <Card className="mb-6">
             <CardContent className="p-6">
               <h3 className="font-display font-semibold text-lg mb-4 flex items-center gap-2">
-                🎤 Puntuaciones de Pronunciación
+                🎤 Pronunciation Scores
               </h3>
               <div className="space-y-3">
                 {userMessagesWithScores.map((message, index) => {
@@ -274,7 +273,7 @@ export default function ConversationDetail() {
         <Card>
           <CardContent className="p-6">
             <h3 className="font-display font-semibold text-lg mb-4 flex items-center gap-2">
-              💬 Conversación Completa
+              💬 Full Conversation
             </h3>
             <div className="space-y-4">
               {messages.map((message) => (
@@ -316,7 +315,7 @@ export default function ConversationDetail() {
                           return (
                             <>
                               <span>{feedback.emoji}</span>
-                              <span>Pronunciación: {Math.round(message.pronunciation_score * 100)}%</span>
+                              <span>Pronunciation: {Math.round(message.pronunciation_score * 100)}%</span>
                             </>
                           );
                         })()}
@@ -332,7 +331,7 @@ export default function ConversationDetail() {
                         onClick={() => speakText(message.content)}
                       >
                         <Volume2 className="w-3 h-3 mr-1" />
-                        Escuchar
+                        Listen
                       </Button>
                     )}
                   </div>
@@ -348,14 +347,14 @@ export default function ConversationDetail() {
             className="flex-1"
             onClick={() => navigate('/conversation')}
           >
-            Nueva Conversación
+            New Conversation
           </Button>
           <Button 
             variant="outline"
             className="flex-1"
             onClick={() => navigate('/conversation/history')}
           >
-            Ver Historial
+            View History
           </Button>
         </div>
       </main>

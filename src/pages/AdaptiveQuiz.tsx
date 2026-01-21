@@ -44,7 +44,7 @@ export default function AdaptiveQuiz() {
       setScore(prev => ({ ...prev, correct: prev.correct + 1 }));
       setSessionPerformance(prev => Math.min(100, prev + 5));
       addXP(10, 'quiz');
-      toast({ title: "¡Correcto! 🎉", description: "+10 XP" });
+      toast({ title: "Correct! 🎉", description: "+10 XP" });
     } else {
       setScore(prev => ({ ...prev, incorrect: prev.incorrect + 1 }));
       setSessionPerformance(prev => Math.max(0, prev - 10));
@@ -79,7 +79,7 @@ export default function AdaptiveQuiz() {
         <Header />
         <main className="container py-8">
           <Button variant="ghost" size="sm" className="mb-6" onClick={() => navigate("/")}>
-            <ArrowLeft className="w-4 h-4 mr-2" />Volver
+            <ArrowLeft className="w-4 h-4 mr-2" />Back
           </Button>
           
           <div className="flex items-center gap-4 mb-8">
@@ -87,8 +87,8 @@ export default function AdaptiveQuiz() {
               <Brain className="w-8 h-8 text-white" />
             </div>
             <div>
-              <h1 className="font-display font-bold text-3xl">Quizzes Adaptativos</h1>
-              <p className="text-muted-foreground">+2000 ejercicios con dificultad que se adapta a ti</p>
+              <h1 className="font-display font-bold text-3xl">Adaptive Quizzes</h1>
+              <p className="text-muted-foreground">+2000 exercises with difficulty that adapts to you</p>
             </div>
           </div>
 
@@ -96,18 +96,18 @@ export default function AdaptiveQuiz() {
             <CardContent className="p-6">
               <div className="flex items-center gap-3 mb-4">
                 <Zap className="w-5 h-5 text-primary" />
-                <h3 className="font-semibold">IA Adaptativa</h3>
+                <h3 className="font-semibold">Adaptive AI</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                La dificultad se ajusta automáticamente según tu rendimiento. Si contestas bien, las preguntas serán más difíciles. Si te equivocas, te ayudaremos a reforzar.
+                Difficulty automatically adjusts based on your performance. If you answer correctly, questions will be harder. If you make mistakes, we'll help you reinforce.
               </p>
               <div className="mt-4 p-3 rounded-lg bg-secondary/50">
-                <p className="text-xs text-muted-foreground">Nivel de dificultad actual: <span className="font-bold text-primary">{profile.adaptiveDifficulty}/5</span></p>
+                <p className="text-xs text-muted-foreground">Current difficulty level: <span className="font-bold text-primary">{profile.adaptiveDifficulty}/5</span></p>
               </div>
             </CardContent>
           </Card>
 
-          <h2 className="font-display font-semibold text-lg mb-4">Selecciona tu nivel</h2>
+          <h2 className="font-display font-semibold text-lg mb-4">Select your level</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {(["A1", "A2", "B1", "B2", "C1"] as const).map((level) => (
               <Card key={level} className="cursor-pointer hover:shadow-lg transition-all" onClick={() => startQuiz(level)}>
@@ -115,8 +115,8 @@ export default function AdaptiveQuiz() {
                   <div className={cn("w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center text-white font-bold text-xl", `bg-level-${level.toLowerCase()}`)}>
                     {level}
                   </div>
-                  <h3 className="font-semibold mb-2">{level === "A1" ? "Principiante" : level === "A2" ? "Elemental" : level === "B1" ? "Intermedio" : level === "B2" ? "Intermedio Alto" : "Avanzado"}</h3>
-                  <Button variant="outline" size="sm" className="w-full">Comenzar Quiz</Button>
+                  <h3 className="font-semibold mb-2">{level === "A1" ? "Beginner" : level === "A2" ? "Elementary" : level === "B1" ? "Intermediate" : level === "B2" ? "Upper Intermediate" : "Advanced"}</h3>
+                  <Button variant="outline" size="sm" className="w-full">Start Quiz</Button>
                 </CardContent>
               </Card>
             ))}
@@ -138,24 +138,24 @@ export default function AdaptiveQuiz() {
                 <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
                   <Trophy className="w-10 h-10 text-primary" />
                 </div>
-                <h2 className="font-display font-bold text-2xl mb-2">¡Quiz completado!</h2>
+                <h2 className="font-display font-bold text-2xl mb-2">Quiz Completed!</h2>
                 <div className="flex items-center justify-center gap-8 my-8">
                   <div className="text-center">
                     <p className="text-4xl font-bold text-success">{score.correct}</p>
-                    <p className="text-sm text-muted-foreground">Correctas</p>
+                    <p className="text-sm text-muted-foreground">Correct</p>
                   </div>
                   <div className="text-center">
                     <p className="text-4xl font-bold text-destructive">{score.incorrect}</p>
-                    <p className="text-sm text-muted-foreground">Incorrectas</p>
+                    <p className="text-sm text-muted-foreground">Incorrect</p>
                   </div>
                   <div className="text-center">
                     <p className="text-4xl font-bold text-primary">{percentage}%</p>
-                    <p className="text-sm text-muted-foreground">Precisión</p>
+                    <p className="text-sm text-muted-foreground">Accuracy</p>
                   </div>
                 </div>
                 <div className="flex gap-4 justify-center">
-                  <Button variant="outline" onClick={() => navigate("/")}>Volver al inicio</Button>
-                  <Button variant="hero" onClick={handleRestart}><RotateCcw className="w-4 h-4 mr-2" />Otro quiz</Button>
+                  <Button variant="outline" onClick={() => navigate("/")}>Back to Home</Button>
+                  <Button variant="hero" onClick={handleRestart}><RotateCcw className="w-4 h-4 mr-2" />Another Quiz</Button>
                 </div>
               </CardContent>
             </Card>
@@ -171,12 +171,12 @@ export default function AdaptiveQuiz() {
       <main className="container py-8">
         <div className="max-w-2xl mx-auto">
           <div className="mb-6">
-            <Button variant="ghost" size="sm" onClick={handleRestart}><ArrowLeft className="w-4 h-4 mr-2" />Salir</Button>
+            <Button variant="ghost" size="sm" onClick={handleRestart}><ArrowLeft className="w-4 h-4 mr-2" />Exit</Button>
           </div>
           <div className="mb-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium">Pregunta {currentQuestionIndex + 1} de {questions.length}</span>
-              <span className="text-sm text-muted-foreground">{score.correct} correctas</span>
+              <span className="text-sm font-medium">Question {currentQuestionIndex + 1} of {questions.length}</span>
+              <span className="text-sm text-muted-foreground">{score.correct} correct</span>
             </div>
             <Progress value={progress} className="h-2" />
           </div>
@@ -202,11 +202,11 @@ export default function AdaptiveQuiz() {
               {showExplanation && (
                 <>
                   <div className={cn("mt-6 p-4 rounded-xl", isCorrect ? "bg-success/10 border border-success/20" : "bg-warning/10 border border-warning/20")}>
-                    <p className="font-medium mb-1">{isCorrect ? "¡Correcto!" : "Respuesta correcta: " + currentQuestion.correctAnswer}</p>
+                    <p className="font-medium mb-1">{isCorrect ? "Correct!" : "Correct answer: " + currentQuestion.correctAnswer}</p>
                     <p className="text-sm text-muted-foreground">{currentQuestion.explanation}</p>
                   </div>
                   <Button variant="hero" size="lg" className="w-full mt-6" onClick={handleNextQuestion}>
-                    {currentQuestionIndex < questions.length - 1 ? <>Siguiente<ArrowRight className="w-4 h-4 ml-2" /></> : "Ver resultados"}
+                    {currentQuestionIndex < questions.length - 1 ? <>Next<ArrowRight className="w-4 h-4 ml-2" /></> : "View Results"}
                   </Button>
                 </>
               )}

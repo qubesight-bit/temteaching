@@ -14,7 +14,7 @@ export function KaraokeSearchResults({ results, onSelect }: KaraokeSearchResults
 
   return (
     <div className="space-y-3">
-      <h3 className="font-semibold">Resultados ({results.length})</h3>
+      <h3 className="font-semibold">Results ({results.length})</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {results.map((video) => (
           <div
@@ -35,7 +35,7 @@ export function KaraokeSearchResults({ results, onSelect }: KaraokeSearchResults
                   className="gap-2"
                 >
                   <Play className="h-5 w-5" />
-                  Cantar
+                  Sing
                 </Button>
               </div>
             </div>

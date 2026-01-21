@@ -25,7 +25,7 @@ export function KaraokeScorePanel({
   return (
     <div className="space-y-4 p-4 bg-card rounded-lg border">
       <div className="flex items-center justify-between">
-        <h3 className="font-semibold">Tu Puntuación</h3>
+        <h3 className="font-semibold">Your Score</h3>
         <span className="text-3xl">{getScoreEmoji(score.total)}</span>
       </div>
 
@@ -49,7 +49,7 @@ export function KaraokeScorePanel({
 
         <div className="space-y-1">
           <div className="flex justify-between text-sm">
-            <span>Pronunciación</span>
+            <span>Pronunciation</span>
             <span className="font-medium">{score.pronunciation}%</span>
           </div>
           <Progress value={score.pronunciation} className="h-2" />
@@ -57,7 +57,7 @@ export function KaraokeScorePanel({
 
         <div className="space-y-1">
           <div className="flex justify-between text-sm">
-            <span>Completitud</span>
+            <span>Completeness</span>
             <span className="font-medium">{score.completeness}%</span>
           </div>
           <Progress value={score.completeness} className="h-2" />
@@ -67,8 +67,8 @@ export function KaraokeScorePanel({
       {/* Progress */}
       <div className="pt-2 border-t">
         <div className="flex justify-between text-sm text-muted-foreground mb-1">
-          <span>Progreso</span>
-          <span>{linesCompleted} / {totalLines} líneas</span>
+          <span>Progress</span>
+          <span>{linesCompleted} / {totalLines} lines</span>
         </div>
         <Progress value={(linesCompleted / totalLines) * 100} className="h-2" />
       </div>
@@ -83,19 +83,19 @@ export function KaraokeScorePanel({
           {isRecording ? (
             <>
               <MicOff className="h-4 w-4 mr-2" />
-              Detener Grabación
+              Stop Recording
             </>
           ) : (
             <>
               <Mic className="h-4 w-4 mr-2" />
-              Grabar Mi Voz
+              Record My Voice
             </>
           )}
         </Button>
 
         {userAudioUrl && (
           <div className="space-y-2">
-            <p className="text-sm text-muted-foreground">Tu grabación:</p>
+            <p className="text-sm text-muted-foreground">Your recording:</p>
             <audio src={userAudioUrl} controls className="w-full h-10" />
           </div>
         )}

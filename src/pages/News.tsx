@@ -33,7 +33,7 @@ export default function News() {
     const xp = correct * 15;
     addXP(xp, 'news');
     setShowResults(true);
-    toast({ title: `${correct}/${selectedArticle.questions.length} correctas`, description: `+${xp} XP ganados` });
+    toast({ title: `${correct}/${selectedArticle.questions.length} correct`, description: `+${xp} XP earned` });
   };
 
   if (selectedArticle) {
@@ -42,7 +42,7 @@ export default function News() {
         <Header />
         <main className="container py-8 max-w-4xl">
           <Button variant="ghost" size="sm" className="mb-6" onClick={() => { setSelectedArticle(null); setShowQuiz(false); setAnswers({}); setShowResults(false); }}>
-            <ArrowLeft className="w-4 h-4 mr-2" />Volver a noticias
+            <ArrowLeft className="w-4 h-4 mr-2" />Back to News
           </Button>
 
           <Card className="mb-6">
@@ -56,7 +56,7 @@ export default function News() {
               
               <div className="flex gap-2 mb-6">
                 <Button variant="outline" size="sm" onClick={() => speakText(selectedArticle.content)}>
-                  <Volume2 className="w-4 h-4 mr-2" />Escuchar
+                  <Volume2 className="w-4 h-4 mr-2" />Listen
                 </Button>
               </div>
 
@@ -67,7 +67,7 @@ export default function News() {
               </div>
 
               <div className="mt-6 p-4 rounded-xl bg-secondary/50">
-                <h3 className="font-semibold mb-3">📚 Vocabulario clave</h3>
+                <h3 className="font-semibold mb-3">📚 Key Vocabulary</h3>
                 <div className="grid sm:grid-cols-2 gap-3">
                   {selectedArticle.vocabulary.map((item, i) => (
                     <div key={i} className="p-3 rounded-lg bg-background">
@@ -82,12 +82,12 @@ export default function News() {
 
           {!showQuiz ? (
             <Button variant="hero" size="lg" className="w-full" onClick={() => setShowQuiz(true)}>
-              <BookOpen className="w-4 h-4 mr-2" />Comprobar comprensión
+              <BookOpen className="w-4 h-4 mr-2" />Check Comprehension
             </Button>
           ) : (
             <Card>
               <CardContent className="p-6">
-                <h3 className="font-display font-semibold text-lg mb-4">Preguntas de comprensión</h3>
+                <h3 className="font-display font-semibold text-lg mb-4">Comprehension Questions</h3>
                 <div className="space-y-6">
                   {selectedArticle.questions.map((q, i) => (
                     <div key={i}>
@@ -110,7 +110,7 @@ export default function News() {
                 </div>
                 {!showResults && (
                   <Button variant="hero" size="lg" className="w-full mt-6" onClick={handleCheckAnswers} disabled={Object.keys(answers).length < selectedArticle.questions.length}>
-                    Comprobar respuestas
+                    Check Answers
                   </Button>
                 )}
               </CardContent>
@@ -126,19 +126,19 @@ export default function News() {
       <Header />
       <main className="container py-8">
         <Button variant="ghost" size="sm" className="mb-6" onClick={() => navigate("/")}>
-          <ArrowLeft className="w-4 h-4 mr-2" />Volver
+          <ArrowLeft className="w-4 h-4 mr-2" />Back
         </Button>
 
         <div className="flex items-center gap-4 mb-8">
           <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-info to-primary flex items-center justify-center text-3xl">📰</div>
           <div>
             <h1 className="font-display font-bold text-3xl">Global News</h1>
-            <p className="text-muted-foreground">Noticias adaptadas a tu nivel para practicar lectura</p>
+            <p className="text-muted-foreground">News adapted to your level for reading practice</p>
           </div>
         </div>
 
         <div className="flex gap-2 mb-6 flex-wrap">
-          <Button variant={selectedLevel === null ? "default" : "outline"} size="sm" onClick={() => setSelectedLevel(null)}>Todos</Button>
+          <Button variant={selectedLevel === null ? "default" : "outline"} size="sm" onClick={() => setSelectedLevel(null)}>All</Button>
           {(["A1", "A2", "B1", "B2", "C1"] as const).map((level) => (
             <Button key={level} variant={selectedLevel === level ? "default" : "outline"} size="sm" onClick={() => setSelectedLevel(level)}>{level}</Button>
           ))}

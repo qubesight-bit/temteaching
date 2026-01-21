@@ -45,7 +45,7 @@ export function KaraokeLyrics({
             onCheckedChange={onToggleTranslation}
           />
           <Label htmlFor="show-translation" className="text-sm">
-            Traducción
+            Translation
           </Label>
         </div>
       </div>
@@ -83,7 +83,7 @@ export function KaraokeLyrics({
       </div>
 
       <div className="flex flex-wrap gap-2">
-        <span className="text-sm font-medium">Vocabulario:</span>
+        <span className="text-sm font-medium">Vocabulary:</span>
         {lyrics.vocabulary.map((word) => (
           <span
             key={word}
