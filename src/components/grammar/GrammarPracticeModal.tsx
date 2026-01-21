@@ -286,7 +286,7 @@ export function GrammarPracticeModal({
                         {isCorrect ? "Correct!" : "Incorrect"}
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        {currentExercise.explanationSpanish}
+                        {currentExercise.explanation}
                       </p>
                     </div>
                   </div>
