@@ -9,7 +9,7 @@ import { grammarCategories, GrammarCategory } from "@/data/grammarData";
 import { grammarExerciseStats } from "@/data/grammarExercisesExpanded";
 import { ChevronDown, ChevronRight, ArrowLeft, Dumbbell } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { TopicRow } from "@/components/grammar/TopicRow";
+import { TopicRowWithLevels } from "@/components/grammar/TopicRowWithLevels";
 import { GrammarPracticeModal } from "@/components/grammar/GrammarPracticeModal";
 import { useAppState } from "@/hooks/useAppState";
 
@@ -21,6 +21,7 @@ export default function Grammar() {
   const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
   const [practiceModalOpen, setPracticeModalOpen] = useState(false);
   const [selectedLevel, setSelectedLevel] = useState<CEFRLevel>("A1");
+  const [selectedCategory, setSelectedCategory] = useState<string | undefined>(undefined);
 
   const currentLevel = (userProgress?.currentLevel as CEFRLevel) || "A1";
 
@@ -48,11 +49,16 @@ export default function Grammar() {
     return colors[level] || "bg-primary";
   };
 
-  const handleStartTopic = (categoryId: string, topicId: string) => {
-    navigate(`/lesson/grammar/${categoryId}/${topicId}`);
+  // Start quick practice by level (random exercises)
+  const handleStartQuickPractice = (level: CEFRLevel) => {
+    setSelectedLevel(level);
+    setSelectedCategory(undefined);
+    setPracticeModalOpen(true);
   };
 
-  const handleStartPractice = (level: CEFRLevel) => {
+  // Start topic-specific practice with category and level
+  const handleStartTopicPractice = (category: string, level: CEFRLevel) => {
+    setSelectedCategory(category);
     setSelectedLevel(level);
     setPracticeModalOpen(true);
   };
@@ -113,7 +119,7 @@ export default function Grammar() {
                     "flex flex-col gap-1 h-auto py-3",
                     level === currentLevel && getLevelColor(level)
                   )}
-                  onClick={() => handleStartPractice(level)}
+                  onClick={() => handleStartQuickPractice(level)}
                 >
                   <span className="font-bold text-lg">{level}</span>
                   <span className="text-xs opacity-80">
@@ -172,15 +178,15 @@ export default function Grammar() {
                   </div>
                 </button>
 
-                {/* Topics List */}
+                {/* Topics List with Level Toggle */}
                 {isExpanded && (
                   <div className="border-t">
                     {category.topics.map((topic, index) => (
-                      <TopicRow
+                      <TopicRowWithLevels
                         key={topic.id}
                         topic={topic}
                         index={index}
-                        onStart={() => handleStartTopic(category.id, topic.id)}
+                        onStartPractice={handleStartTopicPractice}
                         getLevelColor={getLevelColor}
                       />
                     ))}
@@ -197,6 +203,7 @@ export default function Grammar() {
         isOpen={practiceModalOpen}
         onClose={() => setPracticeModalOpen(false)}
         level={selectedLevel}
+        category={selectedCategory}
         exerciseCount={10}
       />
     </div>
