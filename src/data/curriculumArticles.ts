@@ -19,781 +19,781 @@ export interface CurriculumArticle {
 
 export const curriculumArticles: CurriculumArticle[] = [
   // ================================================================
-  // CURSO 1: A1 → A2 (Articles 1-29)
+  // COURSE 1: A1 → A2 (Articles 1-29)
   // ================================================================
 
   // Article 1: Daily Routines Vocabulary
   {
     id: 'vocab-daily-routines',
-    title: 'Vocabulario: Rutinas Diarias',
+    title: 'Vocabulary: Daily Routines',
     level: 'A1→A2',
     category: 'vocabulary',
-    learningGoal: 'El estudiante podrá describir sus actividades diarias usando verbos de acción comunes como wake up, work, study, cook.',
-    explanation: `Las rutinas diarias son el primer paso para comunicarte en inglés sobre tu vida cotidiana. Los verbos de acción (action verbs) describen actividades que realizamos regularmente.
+    learningGoal: 'The student will be able to describe their daily activities using common action verbs like wake up, work, study, cook.',
+    explanation: `Daily routines are the first step to communicating in English about your everyday life. Action verbs describe activities we do regularly.
 
-**Verbos esenciales de rutina:**
-• **Wake up** /weɪk ʌp/ - despertarse
-• **Get up** /ɡet ʌp/ - levantarse
-• **Have breakfast** /hæv ˈbrekfəst/ - desayunar
-• **Go to work/school** - ir al trabajo/escuela
-• **Work** /wɜːrk/ - trabajar
-• **Study** /ˈstʌdi/ - estudiar
-• **Have lunch** - almorzar
-• **Come home** - llegar a casa
-• **Cook** /kʊk/ - cocinar
-• **Have dinner** - cenar
-• **Watch TV** - ver televisión
-• **Go to bed** - ir a la cama
-• **Sleep** /sliːp/ - dormir
+**Essential routine verbs:**
+• **Wake up** /weɪk ʌp/ - to stop sleeping
+• **Get up** /ɡet ʌp/ - to get out of bed
+• **Have breakfast** /hæv ˈbrekfəst/ - to eat morning meal
+• **Go to work/school** - to travel to workplace/school
+• **Work** /wɜːrk/ - to do your job
+• **Study** /ˈstʌdi/ - to learn
+• **Have lunch** - to eat midday meal
+• **Come home** - to return to your house
+• **Cook** /kʊk/ - to prepare food
+• **Have dinner** - to eat evening meal
+• **Watch TV** - to look at television
+• **Go to bed** - to get into bed
+• **Sleep** /sliːp/ - to rest with eyes closed
 
-**Expresiones de tiempo:**
-• In the morning - por la mañana
-• In the afternoon - por la tarde
-• In the evening - por la noche
-• At night - en la noche
-• Every day - todos los días
+**Time expressions:**
+• In the morning - before noon
+• In the afternoon - after noon
+• In the evening - after 5-6 PM
+• At night - late hours
+• Every day - daily
 
-**Estructura típica:**
-"I + verbo + (complemento) + (tiempo)"
-Ejemplo: "I wake up at 7 AM every day."`,
+**Typical structure:**
+"I + verb + (complement) + (time)"
+Example: "I wake up at 7 AM every day."`,
     examples: [
-      { english: "I wake up at 6:30 in the morning.", spanish: "Me despierto a las 6:30 de la mañana.", context: "Describiendo tu hora de despertar" },
-      { english: "She goes to work by bus.", spanish: "Ella va al trabajo en autobús.", context: "Describiendo transporte" },
-      { english: "We have dinner at 8 PM.", spanish: "Cenamos a las 8 PM.", context: "Horario de comidas" },
-      { english: "He studies English every evening.", spanish: "Él estudia inglés cada noche.", context: "Actividad regular" }
+      { english: "I wake up at 6:30 in the morning.", spanish: "Me despierto a las 6:30 de la mañana.", context: "Describing your wake-up time" },
+      { english: "She goes to work by bus.", spanish: "Ella va al trabajo en autobús.", context: "Describing transportation" },
+      { english: "We have dinner at 8 PM.", spanish: "Cenamos a las 8 PM.", context: "Meal schedule" },
+      { english: "He studies English every evening.", spanish: "Él estudia inglés cada noche.", context: "Regular activity" }
     ],
     commonMistakes: [
-      { mistake: "I wake up me at 7.", correction: "I wake up at 7.", why: "'Wake up' ya incluye el sentido reflexivo en inglés." },
-      { mistake: "I go to the work.", correction: "I go to work.", why: "No usamos artículo antes de 'work' como lugar." },
-      { mistake: "I breakfast at 8.", correction: "I have breakfast at 8.", why: "Necesitas el verbo 'have' con las comidas." }
+      { mistake: "I wake up me at 7.", correction: "I wake up at 7.", why: "'Wake up' already includes the reflexive meaning in English." },
+      { mistake: "I go to the work.", correction: "I go to work.", why: "We don't use an article before 'work' as a place." },
+      { mistake: "I breakfast at 8.", correction: "I have breakfast at 8.", why: "You need the verb 'have' with meals." }
     ],
     practiceTips: [
-      "Escribe tu rutina real en inglés cada mañana.",
-      "Usa flashcards con imágenes de actividades.",
-      "Describe en voz alta lo que haces mientras lo haces.",
-      "Compara tu rutina con la de un amigo usando 'I... but he/she...'",
-      "Escucha podcasts sobre 'daily routines' en inglés básico."
+      "Write your real routine in English every morning.",
+      "Use flashcards with pictures of activities.",
+      "Describe out loud what you do while doing it.",
+      "Compare your routine with a friend's using 'I... but he/she...'",
+      "Listen to podcasts about 'daily routines' in basic English."
     ],
     checkpoint: { 
-      question: "Traduce: 'Me levanto a las 7 y desayuno a las 7:30.'", 
+      question: "Translate: 'I get up at 7 and have breakfast at 7:30.'", 
       answer: "I get up at 7 and have breakfast at 7:30." 
     },
-    nextStep: "Ahora que conoces los verbos de rutina, aprende a describir a tu familia con 'Family and Relationships Vocabulary'."
+    nextStep: "Now that you know routine verbs, learn to describe your family with 'Family and Relationships Vocabulary'."
   },
 
   // Article 2: Family and Relationships
   {
     id: 'vocab-family-relationships',
-    title: 'Vocabulario: Familia y Relaciones',
+    title: 'Vocabulary: Family and Relationships',
     level: 'A1→A2',
     category: 'vocabulary',
-    learningGoal: 'El estudiante podrá identificar y nombrar a los miembros de la familia y usar adjetivos posesivos correctamente.',
-    explanation: `La familia es uno de los primeros temas de conversación en cualquier idioma. Aprender este vocabulario te permite presentar a tus seres queridos.
+    learningGoal: 'The student will be able to identify and name family members and use possessive adjectives correctly.',
+    explanation: `Family is one of the first conversation topics in any language. Learning this vocabulary allows you to introduce your loved ones.
 
-**Familia nuclear:**
-• **Mother** (mom/mum) - madre/mamá
-• **Father** (dad) - padre/papá
-• **Sister** - hermana
-• **Brother** - hermano
-• **Son** - hijo
-• **Daughter** - hija
-• **Parents** - padres
-• **Children** (kids) - hijos/niños
+**Nuclear family:**
+• **Mother** (mom/mum) - female parent
+• **Father** (dad) - male parent
+• **Sister** - female sibling
+• **Brother** - male sibling
+• **Son** - male child
+• **Daughter** - female child
+• **Parents** - mother and father
+• **Children** (kids) - sons and daughters
 
-**Familia extendida:**
-• **Grandmother** (grandma) - abuela
-• **Grandfather** (grandpa) - abuelo
-• **Grandparents** - abuelos
-• **Aunt** - tía
-• **Uncle** - tío
-• **Cousin** - primo/prima
-• **Niece** - sobrina
-• **Nephew** - sobrino
+**Extended family:**
+• **Grandmother** (grandma) - parent's mother
+• **Grandfather** (grandpa) - parent's father
+• **Grandparents** - grandma and grandpa
+• **Aunt** - parent's sister
+• **Uncle** - parent's brother
+• **Cousin** - aunt/uncle's child
+• **Niece** - sibling's daughter
+• **Nephew** - sibling's son
 
-**Familia política:**
-• **Mother-in-law** - suegra
-• **Father-in-law** - suegro
-• **Sister-in-law** - cuñada
-• **Brother-in-law** - cuñado
+**In-laws:**
+• **Mother-in-law** - spouse's mother
+• **Father-in-law** - spouse's father
+• **Sister-in-law** - spouse's sister
+• **Brother-in-law** - spouse's brother
 
-**Adjetivos posesivos:**
-• My - mi/mis
-• Your - tu/tus
-• His - su (de él)
-• Her - su (de ella)
-• Our - nuestro/a
-• Their - su (de ellos)
+**Possessive adjectives:**
+• My - belonging to me
+• Your - belonging to you
+• His - belonging to him
+• Her - belonging to her
+• Our - belonging to us
+• Their - belonging to them
 
-**Estructura:** "This is my + miembro de familia"`,
+**Structure:** "This is my + family member"`,
     examples: [
-      { english: "This is my mother. Her name is Ana.", spanish: "Esta es mi madre. Su nombre es Ana.", context: "Presentando a alguien" },
-      { english: "I have two brothers and one sister.", spanish: "Tengo dos hermanos y una hermana.", context: "Describiendo tu familia" },
-      { english: "My grandparents live in Mexico.", spanish: "Mis abuelos viven en México.", context: "Ubicación de familia" },
-      { english: "His father is a doctor.", spanish: "Su padre (de él) es médico.", context: "Describiendo profesión" }
+      { english: "This is my mother. Her name is Ana.", spanish: "Esta es mi madre. Su nombre es Ana.", context: "Introducing someone" },
+      { english: "I have two brothers and one sister.", spanish: "Tengo dos hermanos y una hermana.", context: "Describing your family" },
+      { english: "My grandparents live in Mexico.", spanish: "Mis abuelos viven en México.", context: "Family location" },
+      { english: "His father is a doctor.", spanish: "Su padre (de él) es médico.", context: "Describing profession" }
     ],
     commonMistakes: [
-      { mistake: "My sister have 25 years.", correction: "My sister is 25 years old.", why: "En inglés usamos 'be + age years old', no 'have'." },
-      { mistake: "She is my sister. His name is Maria.", correction: "She is my sister. Her name is Maria.", why: "'Her' para femenino, 'his' para masculino." },
-      { mistake: "I have one brother and one sister.", correction: "I have one brother and one sister. / I have a brother and a sister.", why: "Ambas son correctas, pero con 'one' suena más enfático." }
+      { mistake: "My sister have 25 years.", correction: "My sister is 25 years old.", why: "In English we use 'be + age years old', not 'have'." },
+      { mistake: "She is my sister. His name is Maria.", correction: "She is my sister. Her name is Maria.", why: "'Her' for feminine, 'his' for masculine." },
+      { mistake: "I have one brother and one sister.", correction: "I have one brother and one sister. / I have a brother and a sister.", why: "Both are correct, but 'one' sounds more emphatic." }
     ],
     practiceTips: [
-      "Dibuja tu árbol genealógico con los nombres en inglés.",
-      "Describe fotos familiares en voz alta.",
-      "Practica con un compañero: pregúntense sobre sus familias.",
-      "Escribe oraciones usando cada posesivo (my, your, his, her, etc.).",
-      "Crea tarjetas de memoria con fotos y relaciones."
+      "Draw your family tree with names in English.",
+      "Describe family photos out loud.",
+      "Practice with a partner: ask each other about your families.",
+      "Write sentences using each possessive (my, your, his, her, etc.).",
+      "Create memory cards with photos and relationships."
     ],
     checkpoint: { 
-      question: "¿Cómo dices 'Mi tío tiene tres hijos'?", 
+      question: "How do you say 'My uncle has three children'?", 
       answer: "My uncle has three children." 
     },
-    nextStep: "Continúa con 'Food and Shopping Vocabulary' para aprender a comprar y hablar de comida."
+    nextStep: "Continue with 'Food and Shopping Vocabulary' to learn about food and buying things."
   },
 
   // Article 3: Food and Shopping
   {
     id: 'vocab-food-shopping',
-    title: 'Vocabulario: Comida y Compras',
+    title: 'Vocabulary: Food and Shopping',
     level: 'A1→A2',
     category: 'vocabulary',
-    learningGoal: 'El estudiante podrá nombrar alimentos comunes, identificar tiendas y preguntar precios en inglés.',
-    explanation: `Saber hablar de comida y compras es esencial para la vida diaria. Este vocabulario te servirá en supermercados, restaurantes y tiendas.
+    learningGoal: 'The student will be able to name common foods, identify shops, and ask prices in English.',
+    explanation: `Knowing how to talk about food and shopping is essential for daily life. This vocabulary will help you in supermarkets, restaurants, and stores.
 
-**Frutas (Fruits):**
-• Apple - manzana
-• Banana - plátano
-• Orange - naranja
-• Strawberry - fresa
-• Grape - uva
-• Watermelon - sandía
+**Fruits:**
+• Apple - red/green round fruit
+• Banana - yellow curved fruit
+• Orange - orange citrus fruit
+• Strawberry - small red berry
+• Grape - small round fruit in bunches
+• Watermelon - large green fruit, red inside
 
-**Verduras (Vegetables):**
-• Tomato - tomate
-• Potato - papa
-• Onion - cebolla
-• Carrot - zanahoria
-• Lettuce - lechuga
-• Pepper - pimiento
+**Vegetables:**
+• Tomato - red, used in salads
+• Potato - brown, used for fries
+• Onion - makes you cry when cutting
+• Carrot - orange, good for eyes
+• Lettuce - green leaves for salads
+• Pepper - red/green/yellow vegetable
 
-**Carnes y proteínas:**
-• Chicken - pollo
-• Beef - carne de res
-• Fish - pescado
-• Eggs - huevos
-• Cheese - queso
+**Meat and proteins:**
+• Chicken - white meat from birds
+• Beef - red meat from cows
+• Fish - seafood
+• Eggs - from chickens
+• Cheese - made from milk
 
-**Bebidas (Drinks):**
-• Water - agua
-• Milk - leche
-• Juice - jugo
-• Coffee - café
-• Tea - té
+**Drinks:**
+• Water - clear liquid
+• Milk - white, from cows
+• Juice - from fruits
+• Coffee - hot brown drink
+• Tea - hot drink from leaves
 
-**Tiendas (Shops/Stores):**
-• Supermarket - supermercado
-• Bakery - panadería
-• Butcher's - carnicería
-• Pharmacy - farmacia
+**Shops/Stores:**
+• Supermarket - large food store
+• Bakery - sells bread
+• Butcher's - sells meat
+• Pharmacy - sells medicine
 
-**Preguntar precios:**
-• "How much is this?" - ¿Cuánto cuesta esto?
-• "How much are these?" - ¿Cuánto cuestan estos?
-• "It's $5." - Cuesta $5.
-• "They're $3 each." - Cuestan $3 cada uno.`,
+**Asking prices:**
+• "How much is this?" - for singular items
+• "How much are these?" - for plural items
+• "It's $5." - singular answer
+• "They're $3 each." - plural answer`,
     examples: [
-      { english: "How much is this cheese?", spanish: "¿Cuánto cuesta este queso?", context: "Preguntando precio (singular)" },
-      { english: "I need two kilos of apples.", spanish: "Necesito dos kilos de manzanas.", context: "Haciendo compras" },
-      { english: "The milk is next to the eggs.", spanish: "La leche está al lado de los huevos.", context: "Ubicando productos" },
-      { english: "Can I have a bottle of water, please?", spanish: "¿Me puede dar una botella de agua, por favor?", context: "Pidiendo algo" }
+      { english: "How much is this cheese?", spanish: "¿Cuánto cuesta este queso?", context: "Asking price (singular)" },
+      { english: "I need two kilos of apples.", spanish: "Necesito dos kilos de manzanas.", context: "Shopping" },
+      { english: "The milk is next to the eggs.", spanish: "La leche está al lado de los huevos.", context: "Locating products" },
+      { english: "Can I have a bottle of water, please?", spanish: "¿Me puede dar una botella de agua, por favor?", context: "Ordering something" }
     ],
     commonMistakes: [
-      { mistake: "How much are this apple?", correction: "How much is this apple?", why: "'This apple' es singular, usa 'is'." },
-      { mistake: "I want two waters.", correction: "I want two bottles of water.", why: "'Water' es incontable; necesitas un contenedor." },
-      { mistake: "The tomatos are fresh.", correction: "The tomatoes are fresh.", why: "El plural de 'tomato' es 'tomatoes' (añade -es)." }
+      { mistake: "How much are this apple?", correction: "How much is this apple?", why: "'This apple' is singular, use 'is'." },
+      { mistake: "I want two waters.", correction: "I want two bottles of water.", why: "'Water' is uncountable; you need a container." },
+      { mistake: "The tomatos are fresh.", correction: "The tomatoes are fresh.", why: "The plural of 'tomato' is 'tomatoes' (add -es)." }
     ],
     practiceTips: [
-      "Haz tu lista del supermercado en inglés.",
-      "Practica diálogos de compra con un amigo.",
-      "Etiqueta productos en tu cocina con post-its en inglés.",
-      "Ve videos de cocina en inglés y anota ingredientes.",
-      "Juega 'Memory' con cartas de alimentos."
+      "Make your grocery list in English.",
+      "Practice shopping dialogues with a friend.",
+      "Label products in your kitchen with English post-its.",
+      "Watch cooking videos in English and note ingredients.",
+      "Play 'Memory' with food cards."
     ],
     checkpoint: { 
-      question: "Pregunta el precio de unas fresas.", 
+      question: "Ask the price of some strawberries.", 
       answer: "How much are these strawberries?" 
     },
-    nextStep: "Aprende a dar direcciones en la ciudad con 'The City and Directions Vocabulary'."
+    nextStep: "Learn to give directions in the city with 'The City and Directions Vocabulary'."
   },
 
   // Article 4: The City and Directions
   {
     id: 'vocab-city-directions',
-    title: 'Vocabulario: La Ciudad y Direcciones',
+    title: 'Vocabulary: The City and Directions',
     level: 'A1→A2',
     category: 'vocabulary',
-    learningGoal: 'El estudiante podrá nombrar lugares de la ciudad, usar preposiciones de lugar y dar/seguir indicaciones básicas.',
-    explanation: `Navegar por una ciudad requiere vocabulario específico de lugares y direcciones. Las preposiciones de lugar son fundamentales.
+    learningGoal: 'The student will be able to name places in the city, use place prepositions, and give/follow basic directions.',
+    explanation: `Navigating a city requires specific vocabulary for places and directions. Place prepositions are fundamental.
 
-**Lugares de la ciudad:**
-• Bank - banco
-• Hospital - hospital
-• School - escuela
-• Church - iglesia
-• Park - parque
-• Restaurant - restaurante
-• Hotel - hotel
-• Library - biblioteca
-• Museum - museo
-• Train station - estación de tren
-• Bus stop - parada de autobús
-• Airport - aeropuerto
-• Shopping center/mall - centro comercial
-• Police station - comisaría
+**City places:**
+• Bank - where you keep money
+• Hospital - for medical care
+• School - for learning
+• Church - for worship
+• Park - green area for relaxation
+• Restaurant - for eating out
+• Hotel - for staying overnight
+• Library - for books
+• Museum - for art and history
+• Train station - for train travel
+• Bus stop - where buses stop
+• Airport - for plane travel
+• Shopping center/mall - many stores
+• Police station - for emergencies
 
-**Preposiciones de lugar:**
-• **Next to** - al lado de
-• **Across from / Opposite** - enfrente de
-• **Between** - entre
-• **Behind** - detrás de
-• **In front of** - delante de
-• **On the corner** - en la esquina
-• **Near** - cerca de
-• **Far from** - lejos de
+**Place prepositions:**
+• **Next to** - beside
+• **Across from / Opposite** - on the other side
+• **Between** - in the middle of two things
+• **Behind** - at the back of
+• **In front of** - facing
+• **On the corner** - where streets meet
+• **Near** - close to
+• **Far from** - a long distance
 
-**Dar direcciones:**
-• Go straight - sigue recto
-• Turn left - gira a la izquierda
-• Turn right - gira a la derecha
-• Go past - pasa (el lugar)
-• Cross the street - cruza la calle
-• It's on your left/right - está a tu izquierda/derecha
+**Giving directions:**
+• Go straight - continue forward
+• Turn left - go to the left
+• Turn right - go to the right
+• Go past - pass something
+• Cross the street - walk across
+• It's on your left/right - location side
 
-**Preguntar direcciones:**
+**Asking for directions:**
 • "Excuse me, where is the bank?"
 • "How do I get to the station?"
 • "Is there a pharmacy near here?"`,
     examples: [
-      { english: "The bank is next to the supermarket.", spanish: "El banco está al lado del supermercado.", context: "Describiendo ubicación" },
-      { english: "Go straight and turn left at the corner.", spanish: "Sigue recto y gira a la izquierda en la esquina.", context: "Dando direcciones" },
-      { english: "Is there a hospital near here?", spanish: "¿Hay un hospital cerca de aquí?", context: "Preguntando por lugares" },
-      { english: "The museum is between the park and the library.", spanish: "El museo está entre el parque y la biblioteca.", context: "Usando 'between'" }
+      { english: "The bank is next to the supermarket.", spanish: "El banco está al lado del supermercado.", context: "Describing location" },
+      { english: "Go straight and turn left at the corner.", spanish: "Sigue recto y gira a la izquierda en la esquina.", context: "Giving directions" },
+      { english: "Is there a hospital near here?", spanish: "¿Hay un hospital cerca de aquí?", context: "Asking for places" },
+      { english: "The museum is between the park and the library.", spanish: "El museo está entre el parque y la biblioteca.", context: "Using 'between'" }
     ],
     commonMistakes: [
-      { mistake: "The bank is in front the hotel.", correction: "The bank is in front of the hotel.", why: "'In front of' siempre lleva 'of'." },
-      { mistake: "Turn in left.", correction: "Turn left.", why: "No usamos preposición después de 'turn'." },
-      { mistake: "Go straight until the bank.", correction: "Go straight to the bank. / Go until you see the bank.", why: "'Until' requiere estructura diferente." }
+      { mistake: "The bank is in front the hotel.", correction: "The bank is in front of the hotel.", why: "'In front of' always includes 'of'." },
+      { mistake: "Turn in left.", correction: "Turn left.", why: "We don't use a preposition after 'turn'." },
+      { mistake: "Go straight until the bank.", correction: "Go straight to the bank. / Go until you see the bank.", why: "'Until' requires a different structure." }
     ],
     practiceTips: [
-      "Dibuja un mapa de tu barrio y etiquétalo en inglés.",
-      "Da direcciones en voz alta mientras caminas.",
-      "Usa Google Maps en inglés para practicar.",
-      "Haz role-play: uno pregunta direcciones, otro responde.",
-      "Describe la ubicación de lugares en fotos de ciudades."
+      "Draw a map of your neighborhood and label it in English.",
+      "Give directions out loud while walking.",
+      "Use Google Maps in English for practice.",
+      "Do role-play: one asks for directions, the other responds.",
+      "Describe the location of places in city photos."
     ],
     checkpoint: { 
-      question: "Da direcciones del banco a la biblioteca.", 
+      question: "Give directions from the bank to the library.", 
       answer: "Go straight, turn right at the corner. The library is on your left, next to the park." 
     },
-    nextStep: "Continúa aprendiendo sobre pasatiempos con 'Hobbies and Free Time Vocabulary'."
+    nextStep: "Continue learning about hobbies with 'Hobbies and Free Time Vocabulary'."
   },
 
   // Article 5: Hobbies and Free Time
   {
     id: 'vocab-hobbies-free-time',
-    title: 'Vocabulario: Pasatiempos y Tiempo Libre',
+    title: 'Vocabulary: Hobbies and Free Time',
     level: 'A1→A2',
     category: 'vocabulary',
-    learningGoal: 'El estudiante podrá hablar sobre actividades de ocio usando verbos como read, watch, play y expresar preferencias.',
-    explanation: `Hablar de pasatiempos es una excelente manera de conectar con otras personas. Los verbos más comunes son read, watch, play, listen y go.
+    learningGoal: 'The student will be able to talk about leisure activities using verbs like read, watch, play and express preferences.',
+    explanation: `Talking about hobbies is an excellent way to connect with others. The most common verbs are read, watch, play, listen, and go.
 
-**Pasatiempos comunes:**
-• **Read** (a book/magazine) - leer (un libro/revista)
-• **Watch** (TV/movies) - ver (televisión/películas)
-• **Play** (sports/games/music) - jugar/tocar
-• **Listen to** (music/podcasts) - escuchar
+**Common hobbies:**
+• **Read** (a book/magazine) - look at written words
+• **Watch** (TV/movies) - look at screens
+• **Play** (sports/games/music) - engage in activity
+• **Listen to** (music/podcasts) - hear sounds
 • **Go** + verb-ing (go swimming, go shopping)
-• **Cook** - cocinar
-• **Dance** - bailar
-• **Draw/Paint** - dibujar/pintar
-• **Exercise/Work out** - hacer ejercicio
-• **Travel** - viajar
+• **Cook** - prepare food
+• **Dance** - move to music
+• **Draw/Paint** - create art
+• **Exercise/Work out** - physical activity
+• **Travel** - visit places
 
-**Deportes (Sports):**
-• Football/Soccer - fútbol
-• Basketball - baloncesto
-• Tennis - tenis
-• Swimming - natación
-• Running - correr
-• Cycling - ciclismo
+**Sports:**
+• Football/Soccer - team ball sport
+• Basketball - throwing ball in hoop
+• Tennis - racket sport
+• Swimming - moving in water
+• Running - fast walking
+• Cycling - riding a bicycle
 
-**Música e instrumentos:**
-• Play the guitar - tocar la guitarra
-• Play the piano - tocar el piano
-• Sing - cantar
+**Music and instruments:**
+• Play the guitar - string instrument
+• Play the piano - keyboard instrument
+• Sing - make music with voice
 
-**Estructura "go + verb-ing":**
-• Go swimming - ir a nadar
-• Go shopping - ir de compras
-• Go dancing - ir a bailar
-• Go hiking - ir de excursión
+**"Go + verb-ing" structure:**
+• Go swimming - to swim
+• Go shopping - to shop
+• Go dancing - to dance
+• Go hiking - to walk in nature
 
-**Expresar preferencias:**
-• "I like + verb-ing" (Me gusta + verbo)
-• "I love + verb-ing" (Me encanta)
-• "I don't like + verb-ing" (No me gusta)
-• "I hate + verb-ing" (Odio)
-• "I prefer + verb-ing" (Prefiero)`,
+**Expressing preferences:**
+• "I like + verb-ing" (enjoy)
+• "I love + verb-ing" (really enjoy)
+• "I don't like + verb-ing" (dislike)
+• "I hate + verb-ing" (strongly dislike)
+• "I prefer + verb-ing" (like more)`,
     examples: [
-      { english: "I like reading books in the evening.", spanish: "Me gusta leer libros por la noche.", context: "Expresando gusto" },
-      { english: "She plays tennis every Saturday.", spanish: "Ella juega tenis todos los sábados.", context: "Actividad regular" },
-      { english: "We go swimming on weekends.", spanish: "Vamos a nadar los fines de semana.", context: "Usando 'go + ing'" },
-      { english: "He doesn't like watching horror movies.", spanish: "A él no le gusta ver películas de terror.", context: "Expresando disgusto" }
+      { english: "I like reading books in the evening.", spanish: "Me gusta leer libros por la noche.", context: "Expressing likes" },
+      { english: "She plays tennis every Saturday.", spanish: "Ella juega tenis todos los sábados.", context: "Regular activity" },
+      { english: "We go swimming on weekends.", spanish: "Vamos a nadar los fines de semana.", context: "Using 'go + ing'" },
+      { english: "He doesn't like watching horror movies.", spanish: "A él no le gusta ver películas de terror.", context: "Expressing dislikes" }
     ],
     commonMistakes: [
-      { mistake: "I like play tennis.", correction: "I like playing tennis.", why: "Después de 'like', el verbo va en gerundio (-ing)." },
-      { mistake: "She plays the tennis.", correction: "She plays tennis.", why: "Los deportes no llevan artículo." },
-      { mistake: "I go to swim.", correction: "I go swimming.", why: "La estructura es 'go + verb-ing'." }
+      { mistake: "I like play tennis.", correction: "I like playing tennis.", why: "After 'like', the verb takes gerund (-ing)." },
+      { mistake: "She plays the tennis.", correction: "She plays tennis.", why: "Sports don't take an article." },
+      { mistake: "I go to swim.", correction: "I go swimming.", why: "The structure is 'go + verb-ing'." }
     ],
     practiceTips: [
-      "Haz una lista de 10 cosas que te gusta hacer.",
-      "Entrevista a un amigo sobre sus pasatiempos en inglés.",
-      "Describe tu fin de semana ideal usando estos verbos.",
-      "Mira videos de tus hobbies favoritos en inglés.",
-      "Únete a grupos online sobre tus intereses en inglés."
+      "Make a list of 10 things you like to do.",
+      "Interview a friend about their hobbies in English.",
+      "Describe your ideal weekend using these verbs.",
+      "Watch videos about your favorite hobbies in English.",
+      "Join online groups about your interests in English."
     ],
     checkpoint: { 
-      question: "¿Cómo dices 'Me encanta ir de excursión y tomar fotos'?", 
+      question: "How do you say 'I love going hiking and taking photos'?", 
       answer: "I love going hiking and taking photos." 
     },
-    nextStep: "Prepárate para viajar con 'Travel and Transport Vocabulary'."
+    nextStep: "Prepare for travel with 'Travel and Transport Vocabulary'."
   },
 
   // Article 6: Travel and Transport
   {
     id: 'vocab-travel-transport',
-    title: 'Vocabulario: Viajes y Transporte',
+    title: 'Vocabulary: Travel and Transport',
     level: 'A1→A2',
     category: 'vocabulary',
-    learningGoal: 'El estudiante podrá describir medios de transporte y usar verbos relacionados con viajes como take, buy a ticket, arrive.',
-    explanation: `Viajar es una de las mejores formas de practicar inglés. Este vocabulario te ayudará en aeropuertos, estaciones y hoteles.
+    learningGoal: 'The student will be able to describe means of transport and use travel-related verbs like take, buy a ticket, arrive.',
+    explanation: `Traveling is one of the best ways to practice English. This vocabulary will help you at airports, stations, and hotels.
 
-**Medios de transporte:**
-• **By plane** - en avión
-• **By train** - en tren
-• **By bus** - en autobús
-• **By car** - en coche
-• **By taxi** - en taxi
-• **By boat/ship** - en barco
-• **By bicycle/bike** - en bicicleta
-• **On foot** - a pie
+**Means of transport:**
+• **By plane** - air travel
+• **By train** - rail travel
+• **By bus** - coach travel
+• **By car** - driving
+• **By taxi** - hired car
+• **By boat/ship** - water travel
+• **By bicycle/bike** - cycling
+• **On foot** - walking
 
-**Verbos de viaje:**
-• **Take** (a bus/train/taxi) - tomar
-• **Drive** (a car) - conducir
-• **Fly** - volar
-• **Buy a ticket** - comprar un boleto
-• **Book/Reserve** - reservar
-• **Check in** - registrarse
-• **Check out** - hacer el checkout
-• **Arrive** - llegar
-• **Depart/Leave** - salir
-• **Miss** (a flight/train) - perder
+**Travel verbs:**
+• **Take** (a bus/train/taxi) - use transport
+• **Drive** (a car) - operate a vehicle
+• **Fly** - travel by plane
+• **Buy a ticket** - purchase passage
+• **Book/Reserve** - arrange in advance
+• **Check in** - register arrival
+• **Check out** - register departure
+• **Arrive** - reach destination
+• **Depart/Leave** - start journey
+• **Miss** (a flight/train) - fail to catch
 
-**En el aeropuerto:**
-• Passport - pasaporte
-• Boarding pass - pase de abordar
-• Gate - puerta de embarque
-• Luggage/Baggage - equipaje
-• Departure - salida
-• Arrival - llegada
-• Delayed - retrasado
-• Cancelled - cancelado
+**At the airport:**
+• Passport - travel document
+• Boarding pass - flight ticket
+• Gate - departure door
+• Luggage/Baggage - bags
+• Departure - leaving
+• Arrival - coming
+• Delayed - late
+• Cancelled - not happening
 
-**En el hotel:**
-• Room - habitación
-• Single/Double room - habitación individual/doble
-• Reservation - reservación
-• Key - llave
-• Reception - recepción
+**At the hotel:**
+• Room - place to stay
+• Single/Double room - for 1/2 people
+• Reservation - booking
+• Key - to open door
+• Reception - front desk
 
-**Preguntas útiles:**
+**Useful questions:**
 • "What time does the train leave?"
 • "How long does the flight take?"
 • "Where is the check-in desk?"`,
     examples: [
-      { english: "I take the bus to work every day.", spanish: "Tomo el autobús al trabajo todos los días.", context: "Transporte diario" },
-      { english: "The flight departs at 3 PM.", spanish: "El vuelo sale a las 3 PM.", context: "Horario de vuelo" },
+      { english: "I take the bus to work every day.", spanish: "Tomo el autobús al trabajo todos los días.", context: "Daily transport" },
+      { english: "The flight departs at 3 PM.", spanish: "El vuelo sale a las 3 PM.", context: "Flight schedule" },
       { english: "We need to check in by 2 PM.", spanish: "Necesitamos registrarnos antes de las 2 PM.", context: "Hotel" },
-      { english: "Can I have a window seat, please?", spanish: "¿Puedo tener un asiento de ventanilla, por favor?", context: "En el avión" }
+      { english: "Can I have a window seat, please?", spanish: "¿Puedo tener un asiento de ventanilla, por favor?", context: "On the plane" }
     ],
     commonMistakes: [
-      { mistake: "I go by foot.", correction: "I go on foot.", why: "Con 'foot' usamos 'on', no 'by'." },
-      { mistake: "What time arrives the train?", correction: "What time does the train arrive?", why: "En preguntas, el orden es auxiliar + sujeto + verbo." },
-      { mistake: "I missed my train.", correction: "I missed my train. ✓", why: "¡Esto es correcto! 'Miss' significa perder (transporte)." }
+      { mistake: "I go by foot.", correction: "I go on foot.", why: "With 'foot' we use 'on', not 'by'." },
+      { mistake: "What time arrives the train?", correction: "What time does the train arrive?", why: "In questions, the order is auxiliary + subject + verb." },
+      { mistake: "I missed my train.", correction: "I missed my train. ✓", why: "This is correct! 'Miss' means fail to catch (transport)." }
     ],
     practiceTips: [
-      "Planea un viaje imaginario y escribe todo en inglés.",
-      "Practica diálogos de aeropuerto y hotel.",
-      "Lee señales de aeropuertos en fotos.",
-      "Mira vlogs de viajes en inglés.",
-      "Aprende las frases más útiles de memoria."
+      "Plan an imaginary trip and write everything in English.",
+      "Practice airport and hotel dialogues.",
+      "Read airport signs in photos.",
+      "Watch travel vlogs in English.",
+      "Learn the most useful phrases by heart."
     ],
     checkpoint: { 
-      question: "Pregunta a qué hora sale el tren a Madrid.", 
+      question: "Ask what time the train to Madrid leaves.", 
       answer: "What time does the train to Madrid leave/depart?" 
     },
-    nextStep: "Aprende vocabulario de salud básico con 'Health (Basic) Vocabulary'."
+    nextStep: "Learn basic health vocabulary with 'Health (Basic) Vocabulary'."
   },
 
   // Article 7: Health (Basic)
   {
     id: 'vocab-health-basic',
-    title: 'Vocabulario: Salud (Básico)',
+    title: 'Vocabulary: Health (Basic)',
     level: 'A1→A2',
     category: 'vocabulary',
-    learningGoal: 'El estudiante podrá describir síntomas comunes como headache, cold, y comunicarse en situaciones médicas básicas.',
-    explanation: `Poder describir cómo te sientes es crucial cuando viajas o vives en un país de habla inglesa. Este vocabulario te ayudará en farmacias y consultas médicas.
+    learningGoal: 'The student will be able to describe common symptoms like headache, cold, and communicate in basic medical situations.',
+    explanation: `Being able to describe how you feel is crucial when traveling or living in an English-speaking country. This vocabulary will help you at pharmacies and doctor's offices.
 
-**Partes del cuerpo:**
-• Head - cabeza
-• Eye(s) - ojo(s)
-• Ear(s) - oreja(s)
-• Nose - nariz
-• Mouth - boca
-• Throat - garganta
-• Chest - pecho
-• Stomach - estómago
-• Back - espalda
-• Arm(s) - brazo(s)
-• Hand(s) - mano(s)
-• Leg(s) - pierna(s)
-• Foot/Feet - pie(s)
+**Body parts:**
+• Head - top of body
+• Eye(s) - for seeing
+• Ear(s) - for hearing
+• Nose - for smelling
+• Mouth - for eating/speaking
+• Throat - inside neck
+• Chest - front of body
+• Stomach - abdomen
+• Back - rear of body
+• Arm(s) - from shoulder to hand
+• Hand(s) - with fingers
+• Leg(s) - from hip to foot
+• Foot/Feet - at bottom
 
-**Síntomas comunes:**
-• **Headache** - dolor de cabeza
-• **Stomachache** - dolor de estómago
-• **Toothache** - dolor de muelas
-• **Backache** - dolor de espalda
-• **Sore throat** - dolor de garganta
-• **Cold** - resfriado
-• **Flu** - gripe
-• **Fever** - fiebre
-• **Cough** - tos
-• **Runny nose** - nariz congestionada/mocosa
+**Common symptoms:**
+• **Headache** - head pain
+• **Stomachache** - stomach pain
+• **Toothache** - tooth pain
+• **Backache** - back pain
+• **Sore throat** - painful throat
+• **Cold** - common illness
+• **Flu** - influenza
+• **Fever** - high temperature
+• **Cough** - air from lungs
+• **Runny nose** - watery nose
 
-**Expresar malestar:**
-• "I have a headache." - Tengo dolor de cabeza.
-• "My back hurts." - Me duele la espalda.
-• "I feel sick/ill." - Me siento mal/enfermo.
-• "I don't feel well." - No me siento bien.
-• "I'm tired." - Estoy cansado.
+**Expressing discomfort:**
+• "I have a headache." - head pain
+• "My back hurts." - back pain
+• "I feel sick/ill." - unwell
+• "I don't feel well." - not good
+• "I'm tired." - need rest
 
-**En la farmacia:**
+**At the pharmacy:**
 • "I need something for a cold."
 • "Do you have painkillers?"
 • "Can I have some aspirin?"`,
     examples: [
-      { english: "I have a terrible headache.", spanish: "Tengo un dolor de cabeza terrible.", context: "Describiendo síntoma" },
-      { english: "My throat hurts. I think I have a cold.", spanish: "Me duele la garganta. Creo que tengo un resfriado.", context: "Auto-diagnóstico" },
-      { english: "You should see a doctor.", spanish: "Deberías ver a un médico.", context: "Dando consejo" },
-      { english: "I need something for a cough, please.", spanish: "Necesito algo para la tos, por favor.", context: "En la farmacia" }
+      { english: "I have a terrible headache.", spanish: "Tengo un dolor de cabeza terrible.", context: "Describing symptom" },
+      { english: "My throat hurts. I think I have a cold.", spanish: "Me duele la garganta. Creo que tengo un resfriado.", context: "Self-diagnosis" },
+      { english: "You should see a doctor.", spanish: "Deberías ver a un médico.", context: "Giving advice" },
+      { english: "I need something for a cough, please.", spanish: "Necesito algo para la tos, por favor.", context: "At the pharmacy" }
     ],
     commonMistakes: [
-      { mistake: "I have headache.", correction: "I have a headache.", why: "Los dolores necesitan artículo 'a'." },
-      { mistake: "My head is hurting me.", correction: "My head hurts. / I have a headache.", why: "Usamos 'hurt' sin 'me' o preferimos 'have a headache'." },
-      { mistake: "I am cold.", correction: "I have a cold.", why: "'I am cold' significa 'tengo frío'. 'I have a cold' es 'estoy resfriado'." }
+      { mistake: "I have headache.", correction: "I have a headache.", why: "Aches need article 'a'." },
+      { mistake: "My head is hurting me.", correction: "My head hurts. / I have a headache.", why: "Use 'hurt' without 'me' or prefer 'have a headache'." },
+      { mistake: "I am cold.", correction: "I have a cold.", why: "'I am cold' means temperature. 'I have a cold' means illness." }
     ],
     practiceTips: [
-      "Señala partes de tu cuerpo y nómbralas en inglés.",
-      "Practica describiendo síntomas con un compañero.",
-      "Aprende frases de farmacia de memoria.",
-      "Ve programas médicos en inglés con subtítulos.",
-      "Simula una visita al médico."
+      "Point to body parts and name them in English.",
+      "Practice describing symptoms with a partner.",
+      "Learn pharmacy phrases by heart.",
+      "Watch medical shows in English with subtitles.",
+      "Simulate a doctor's visit."
     ],
     checkpoint: { 
-      question: "¿Cómo dices 'Me duele el estómago y tengo fiebre'?", 
+      question: "How do you say 'My stomach hurts and I have a fever'?", 
       answer: "I have a stomachache and I have a fever. / My stomach hurts and I have a fever." 
     },
-    nextStep: "Aprende a hablar del clima con 'Weather and Seasons Vocabulary'."
+    nextStep: "Learn to talk about weather with 'Weather and Seasons Vocabulary'."
   },
 
   // Article 8: Weather and Seasons
   {
     id: 'vocab-weather-seasons',
-    title: 'Vocabulario: Clima y Estaciones',
+    title: 'Vocabulary: Weather and Seasons',
     level: 'A1→A2',
     category: 'vocabulary',
-    learningGoal: 'El estudiante podrá describir condiciones climáticas usando adjetivos y hablar sobre los meses y estaciones del año.',
-    explanation: `El clima es uno de los temas de conversación más universales. En países anglosajones, es común iniciar conversaciones hablando del tiempo.
+    learningGoal: 'The student will be able to describe weather conditions using adjectives and talk about months and seasons.',
+    explanation: `Weather is one of the most universal conversation topics. In English-speaking countries, it's common to start conversations by talking about the weather.
 
-**Las estaciones (Seasons):**
-• **Spring** - primavera (marzo-mayo)
-• **Summer** - verano (junio-agosto)
-• **Autumn/Fall** - otoño (septiembre-noviembre)
-• **Winter** - invierno (diciembre-febrero)
+**Seasons:**
+• **Spring** - March-May
+• **Summer** - June-August
+• **Autumn/Fall** - September-November
+• **Winter** - December-February
 
-**Meses del año:**
+**Months of the year:**
 January, February, March, April, May, June, July, August, September, October, November, December
 
-**Condiciones climáticas:**
-• **Sunny** - soleado
-• **Cloudy** - nublado
-• **Rainy** - lluvioso
-• **Windy** - ventoso
-• **Snowy** - nevado
-• **Foggy** - con niebla
-• **Stormy** - tormentoso
+**Weather conditions:**
+• **Sunny** - sun is shining
+• **Cloudy** - covered with clouds
+• **Rainy** - water falling
+• **Windy** - lots of wind
+• **Snowy** - snow falling
+• **Foggy** - mist/fog
+• **Stormy** - thunder/lightning
 
-**Temperatura:**
-• **Hot** - caliente
-• **Warm** - cálido
-• **Cool** - fresco
-• **Cold** - frío
-• **Freezing** - helado
+**Temperature:**
+• **Hot** - very warm
+• **Warm** - comfortable heat
+• **Cool** - slightly cold
+• **Cold** - low temperature
+• **Freezing** - very cold
 
-**Describir el clima:**
-• "It's sunny today." - Está soleado hoy.
-• "It's raining." - Está lloviendo.
-• "It's going to snow." - Va a nevar.
-• "What's the weather like?" - ¿Cómo está el clima?
+**Describing weather:**
+• "It's sunny today." - describing now
+• "It's raining." - happening now
+• "It's going to snow." - prediction
+• "What's the weather like?" - asking about weather
 
-**Estructura con "It":**
-Siempre usamos "It" como sujeto para el clima:
-• It's cold. (Hace frío)
-• It's raining. (Está lloviendo)`,
+**Structure with "It":**
+We always use "It" as the subject for weather:
+• It's cold. (temperature)
+• It's raining. (precipitation)`,
     examples: [
-      { english: "What's the weather like in London?", spanish: "¿Cómo está el clima en Londres?", context: "Preguntando por el clima" },
-      { english: "It's very hot in summer.", spanish: "Hace mucho calor en verano.", context: "Describiendo estación" },
-      { english: "Take an umbrella. It's going to rain.", spanish: "Lleva un paraguas. Va a llover.", context: "Predicción" },
-      { english: "I love autumn because the leaves change color.", spanish: "Me encanta el otoño porque las hojas cambian de color.", context: "Preferencia" }
+      { english: "What's the weather like in London?", spanish: "¿Cómo está el clima en Londres?", context: "Asking about weather" },
+      { english: "It's very hot in summer.", spanish: "Hace mucho calor en verano.", context: "Describing season" },
+      { english: "Take an umbrella. It's going to rain.", spanish: "Lleva un paraguas. Va a llover.", context: "Prediction" },
+      { english: "I love autumn because the leaves change color.", spanish: "Me encanta el otoño porque las hojas cambian de color.", context: "Preference" }
     ],
     commonMistakes: [
-      { mistake: "Today is sunny.", correction: "It's sunny today.", why: "Para el clima siempre usamos 'It' como sujeto." },
-      { mistake: "I have cold.", correction: "I'm cold. / I feel cold.", why: "'Tengo frío' se dice 'I'm cold', no 'I have cold'." },
-      { mistake: "In the summer.", correction: "In summer. / In the summer.", why: "Ambos son correctos, pero sin artículo es más común en BE." }
+      { mistake: "Today is sunny.", correction: "It's sunny today.", why: "For weather we always use 'It' as subject." },
+      { mistake: "I have cold.", correction: "I'm cold. / I feel cold.", why: "'I have cold' is wrong. Say 'I'm cold'." },
+      { mistake: "In the summer.", correction: "In summer. / In the summer.", why: "Both are correct, but without article is more common in BE." }
     ],
     practiceTips: [
-      "Describe el clima de hoy cada mañana.",
-      "Aprende los meses en orden cantando una canción.",
-      "Compara el clima de dos ciudades.",
-      "Mira el pronóstico del tiempo en canales ingleses.",
-      "Escribe sobre tu estación favorita y por qué."
+      "Describe today's weather every morning.",
+      "Learn the months in order by singing a song.",
+      "Compare the weather in two cities.",
+      "Watch weather forecasts on English channels.",
+      "Write about your favorite season and why."
     ],
     checkpoint: { 
-      question: "Describe el clima típico de invierno en tu ciudad.", 
+      question: "Describe the typical winter weather in your city.", 
       answer: "In winter, it's usually cold and sometimes it snows. / It's cold and rainy in winter here." 
     },
-    nextStep: "Expande tu vocabulario descriptivo con 'Common Adjectives'."
+    nextStep: "Expand your descriptive vocabulary with 'Common Adjectives'."
   },
 
   // Article 9: Common Adjectives
   {
     id: 'vocab-common-adjectives',
-    title: 'Vocabulario: Adjetivos Comunes',
+    title: 'Vocabulary: Common Adjectives',
     level: 'A1→A2',
     category: 'vocabulary',
-    learningGoal: 'El estudiante podrá usar pares de adjetivos opuestos como big/small, easy/difficult para describir objetos y situaciones.',
-    explanation: `Los adjetivos describen sustantivos. En inglés, el adjetivo siempre va ANTES del sustantivo, a diferencia del español.
+    learningGoal: 'The student will be able to use pairs of opposite adjectives like big/small, easy/difficult to describe objects and situations.',
+    explanation: `Adjectives describe nouns. In English, the adjective always goes BEFORE the noun, unlike in Spanish.
 
-**Pares de opuestos (Opposites):**
-• **Big / Small** - grande / pequeño
-• **Long / Short** - largo / corto
-• **Tall / Short** - alto / bajo (personas)
-• **Old / New** - viejo / nuevo
-• **Old / Young** - viejo / joven (personas)
-• **Fast / Slow** - rápido / lento
-• **Hot / Cold** - caliente / frío
-• **Easy / Difficult (Hard)** - fácil / difícil
-• **Cheap / Expensive** - barato / caro
-• **Good / Bad** - bueno / malo
-• **Happy / Sad** - feliz / triste
-• **Beautiful / Ugly** - hermoso / feo
-• **Clean / Dirty** - limpio / sucio
-• **Full / Empty** - lleno / vacío
-• **Heavy / Light** - pesado / ligero
-• **Strong / Weak** - fuerte / débil
-• **Rich / Poor** - rico / pobre
-• **Safe / Dangerous** - seguro / peligroso
+**Pairs of opposites:**
+• **Big / Small** - size
+• **Long / Short** - length
+• **Tall / Short** - height (people)
+• **Old / New** - age (things)
+• **Old / Young** - age (people)
+• **Fast / Slow** - speed
+• **Hot / Cold** - temperature
+• **Easy / Difficult (Hard)** - complexity
+• **Cheap / Expensive** - price
+• **Good / Bad** - quality
+• **Happy / Sad** - mood
+• **Beautiful / Ugly** - appearance
+• **Clean / Dirty** - cleanliness
+• **Full / Empty** - content
+• **Heavy / Light** - weight
+• **Strong / Weak** - strength
+• **Rich / Poor** - wealth
+• **Safe / Dangerous** - safety
 
-**Posición del adjetivo:**
-• Antes del sustantivo: "a big house", "a small car"
-• Después de 'be': "The house is big", "The car is small"
+**Adjective position:**
+• Before noun: "a big house", "a small car"
+• After 'be': "The house is big", "The car is small"
 
-**Con 'very' para intensificar:**
+**With 'very' for intensity:**
 • "It's very hot today."
 • "She is very intelligent."`,
     examples: [
-      { english: "This is a big house with a small garden.", spanish: "Esta es una casa grande con un jardín pequeño.", context: "Describiendo tamaños" },
-      { english: "The test was easy, but the homework is difficult.", spanish: "El examen fue fácil, pero la tarea es difícil.", context: "Comparando dificultad" },
-      { english: "She's a young woman with old ideas.", spanish: "Es una mujer joven con ideas viejas.", context: "Contrastes" },
-      { english: "Is this coffee hot or cold?", spanish: "¿Este café está caliente o frío?", context: "Preguntando" }
+      { english: "This is a big house with a small garden.", spanish: "Esta es una casa grande con un jardín pequeño.", context: "Describing sizes" },
+      { english: "The test was easy, but the homework is difficult.", spanish: "El examen fue fácil, pero la tarea es difícil.", context: "Comparing difficulty" },
+      { english: "She's a young woman with old ideas.", spanish: "Es una mujer joven con ideas viejas.", context: "Contrasts" },
+      { english: "Is this coffee hot or cold?", spanish: "¿Este café está caliente o frío?", context: "Asking" }
     ],
     commonMistakes: [
-      { mistake: "A house big.", correction: "A big house.", why: "El adjetivo va ANTES del sustantivo en inglés." },
-      { mistake: "She is more tall than me.", correction: "She is taller than me.", why: "Con adjetivos cortos, añade -er, no uses 'more'." },
-      { mistake: "The movie was very interested.", correction: "The movie was very interesting.", why: "'Interested' es para personas, 'interesting' para cosas." }
+      { mistake: "A house big.", correction: "A big house.", why: "The adjective goes BEFORE the noun in English." },
+      { mistake: "She is more tall than me.", correction: "She is taller than me.", why: "With short adjectives, add -er, don't use 'more'." },
+      { mistake: "The movie was very interested.", correction: "The movie was very interesting.", why: "'Interested' is for people, 'interesting' for things." }
     ],
     practiceTips: [
-      "Describe 5 objetos a tu alrededor usando adjetivos.",
-      "Aprende adjetivos en pares de opuestos.",
-      "Practica poniendo el adjetivo antes del sustantivo.",
-      "Juega 'opuestos' con un compañero.",
-      "Describe personas y lugares en fotos."
+      "Describe 5 objects around you using adjectives.",
+      "Learn adjectives in pairs of opposites.",
+      "Practice putting the adjective before the noun.",
+      "Play 'opposites' with a partner.",
+      "Describe people and places in photos."
     ],
     checkpoint: { 
-      question: "Describe tu teléfono usando 3 adjetivos.", 
+      question: "Describe your phone using 3 adjectives.", 
       answer: "My phone is small, new, and expensive. / I have a small, black, new phone." 
     },
-    nextStep: "Ahora aprende la gramática del Present Simple para describir rutinas."
+    nextStep: "Now learn Present Simple grammar to describe routines."
   },
 
   // Article 10: Present Simple Grammar
   {
     id: 'gram-present-simple',
-    title: 'Gramática: Presente Simple',
+    title: 'Grammar: Present Simple',
     level: 'A1→A2',
     category: 'grammar',
-    learningGoal: 'El estudiante dominará el Present Simple para expresar rutinas, hábitos y verdades universales, incluyendo la regla de tercera persona.',
-    explanation: `El Present Simple es el tiempo verbal más básico y frecuente. Se usa para acciones habituales, hechos generales y verdades universales.
+    learningGoal: 'The student will master the Present Simple to express routines, habits, and universal truths, including the third person rule.',
+    explanation: `The Present Simple is the most basic and frequent tense. It's used for habitual actions, general facts, and universal truths.
 
-**Usos principales:**
-1. **Rutinas y hábitos:** I wake up at 7 AM.
-2. **Hechos generales:** Water boils at 100°C.
-3. **Horarios fijos:** The train leaves at 9 PM.
-4. **Estados permanentes:** She lives in Paris.
+**Main uses:**
+1. **Routines and habits:** I wake up at 7 AM.
+2. **General facts:** Water boils at 100°C.
+3. **Fixed schedules:** The train leaves at 9 PM.
+4. **Permanent states:** She lives in Paris.
 
-**Formación:**
-| Sujeto | Verbo |
-|--------|-------|
-| I/You/We/They | verbo base (work) |
-| He/She/It | verbo + s/es (works) |
+**Formation:**
+| Subject | Verb |
+|---------|------|
+| I/You/We/They | base verb (work) |
+| He/She/It | verb + s/es (works) |
 
-**Regla de tercera persona (he/she/it):**
-• General: añadir -S → work**s**, play**s**
-• Verbos en -ch, -sh, -ss, -x, -o: añadir -ES → watch**es**, go**es**
-• Consonante + Y: cambiar Y por -IES → study → stud**ies**
-• Vocal + Y: solo -S → play**s**
+**Third person rule (he/she/it):**
+• General: add -S → work**s**, play**s**
+• Verbs in -ch, -sh, -ss, -x, -o: add -ES → watch**es**, go**es**
+• Consonant + Y: change Y to -IES → study → stud**ies**
+• Vowel + Y: just -S → play**s**
 
-**Negativo:**
-• I/You/We/They + **don't** + verbo
-• He/She/It + **doesn't** + verbo (¡sin -s!)
+**Negative:**
+• I/You/We/They + **don't** + verb
+• He/She/It + **doesn't** + verb (no -s!)
 
-**Pregunta:**
-• **Do** + I/you/we/they + verbo?
-• **Does** + he/she/it + verbo? (¡sin -s!)
+**Question:**
+• **Do** + I/you/we/they + verb?
+• **Does** + he/she/it + verb? (no -s!)
 
-**Adverbios de frecuencia:**
+**Adverbs of frequency:**
 always > usually > often > sometimes > rarely > never
-Posición: antes del verbo (después de 'be')
+Position: before the verb (after 'be')
 • "I always drink coffee." / "She is always happy."`,
     examples: [
-      { english: "She works in a hospital.", spanish: "Ella trabaja en un hospital.", context: "Tercera persona + s" },
-      { english: "I don't like vegetables.", spanish: "No me gustan las verduras.", context: "Negativo con don't" },
-      { english: "Does he speak English?", spanish: "¿Él habla inglés?", context: "Pregunta con does" },
-      { english: "The class starts at 9 AM.", spanish: "La clase empieza a las 9 AM.", context: "Horario fijo" },
-      { english: "We usually have dinner at 8.", spanish: "Usualmente cenamos a las 8.", context: "Adverbio de frecuencia" }
+      { english: "She works in a hospital.", spanish: "Ella trabaja en un hospital.", context: "Third person + s" },
+      { english: "I don't like vegetables.", spanish: "No me gustan las verduras.", context: "Negative with don't" },
+      { english: "Does he speak English?", spanish: "¿Él habla inglés?", context: "Question with does" },
+      { english: "The class starts at 9 AM.", spanish: "La clase empieza a las 9 AM.", context: "Fixed schedule" },
+      { english: "We usually have dinner at 8.", spanish: "Usualmente cenamos a las 8.", context: "Adverb of frequency" }
     ],
     commonMistakes: [
-      { mistake: "She work every day.", correction: "She works every day.", why: "Con he/she/it, el verbo SIEMPRE lleva -s." },
-      { mistake: "He don't like coffee.", correction: "He doesn't like coffee.", why: "Con he/she/it usamos 'doesn't', no 'don't'." },
-      { mistake: "Does she works here?", correction: "Does she work here?", why: "Después de 'does', el verbo va sin -s." },
-      { mistake: "I drink always coffee.", correction: "I always drink coffee.", why: "El adverbio va antes del verbo principal." }
+      { mistake: "She work every day.", correction: "She works every day.", why: "With he/she/it, the verb ALWAYS takes -s." },
+      { mistake: "He don't like coffee.", correction: "He doesn't like coffee.", why: "With he/she/it we use 'doesn't', not 'don't'." },
+      { mistake: "Does she works here?", correction: "Does she work here?", why: "After 'does', the verb has no -s." },
+      { mistake: "I drink always coffee.", correction: "I always drink coffee.", why: "The adverb goes before the main verb." }
     ],
     practiceTips: [
-      "Escribe tu rutina diaria en Present Simple.",
-      "Transforma oraciones de afirmativo a negativo y pregunta.",
-      "Practica la conjugación con diferentes sujetos.",
-      "Memoriza verbos irregulares de tercera persona.",
-      "Lee textos simples e identifica verbos en Present Simple."
+      "Write your daily routine in Present Simple.",
+      "Transform sentences from affirmative to negative and question.",
+      "Practice conjugation with different subjects.",
+      "Memorize irregular third person verbs.",
+      "Read simple texts and identify Present Simple verbs."
     ],
     checkpoint: { 
-      question: "Escribe: 'Ella estudia inglés pero no habla francés' en inglés.", 
+      question: "Write: 'She studies English but doesn't speak French' in English.", 
       answer: "She studies English but doesn't speak French." 
     },
-    nextStep: "Continúa con el Present Continuous para acciones en progreso."
+    nextStep: "Continue with Present Continuous for actions in progress."
   },
 
   // Article 11: Present Continuous Grammar
   {
     id: 'gram-present-continuous',
-    title: 'Gramática: Presente Continuo',
+    title: 'Grammar: Present Continuous',
     level: 'A1→A2',
     category: 'grammar',
-    learningGoal: 'El estudiante usará el Present Continuous para describir acciones que ocurren ahora mismo o en este período.',
-    explanation: `El Present Continuous (también llamado Present Progressive) describe acciones en progreso en el momento de hablar.
+    learningGoal: 'The student will use the Present Continuous to describe actions happening right now or during this period.',
+    explanation: `The Present Continuous (also called Present Progressive) describes actions in progress at the moment of speaking.
 
-**Estructura:**
-Sujeto + AM/IS/ARE + verbo-ING
+**Structure:**
+Subject + AM/IS/ARE + verb-ING
 
-| Sujeto | To Be | Verbo+ING |
-|--------|-------|-----------|
+| Subject | To Be | Verb+ING |
+|---------|-------|----------|
 | I | am | working |
 | He/She/It | is | working |
 | You/We/They | are | working |
 
-**Reglas para formar -ING:**
-• General: añadir -ING → work**ing**
-• Termina en -E: quitar E, añadir -ING → mak**e** → mak**ing**
-• CVC (consonante-vocal-consonante): duplicar última consonante → run → run**n**ing
-• Termina en -IE: cambiar a -YING → die → d**ying**
+**Rules for forming -ING:**
+• General: add -ING → work**ing**
+• Ends in -E: drop E, add -ING → mak**e** → mak**ing**
+• CVC (consonant-vowel-consonant): double last consonant → run → run**n**ing
+• Ends in -IE: change to -YING → die → d**ying**
 
-**Usos:**
-1. **Acciones ahora:** "I'm studying English right now."
-2. **Acciones temporales:** "She's living in London this month."
-3. **Planes futuros:** "We're meeting tomorrow at 5."
-4. **Cambios/tendencias:** "Technology is changing rapidly."
+**Uses:**
+1. **Actions now:** "I'm studying English right now."
+2. **Temporary actions:** "She's living in London this month."
+3. **Future plans:** "We're meeting tomorrow at 5."
+4. **Changes/trends:** "Technology is changing rapidly."
 
-**Palabras clave:**
+**Key words:**
 now, right now, at the moment, currently, this week/month, today
 
-**Negativo:** Sujeto + am/is/are + NOT + verb-ing
-**Pregunta:** Am/Is/Are + sujeto + verb-ing?
+**Negative:** Subject + am/is/are + NOT + verb-ing
+**Question:** Am/Is/Are + subject + verb-ing?
 
-**⚠️ Stative Verbs (no usan -ing):**
-love, hate, like, want, need, know, understand, believe, see, hear, have (posesión)`,
+**⚠️ Stative Verbs (don't use -ing):**
+love, hate, like, want, need, know, understand, believe, see, hear, have (possession)`,
     examples: [
-      { english: "She's cooking dinner right now.", spanish: "Ella está cocinando la cena ahora mismo.", context: "Acción en progreso" },
-      { english: "I'm not watching TV, I'm studying.", spanish: "No estoy viendo TV, estoy estudiando.", context: "Negativo" },
-      { english: "Are you listening to me?", spanish: "¿Me estás escuchando?", context: "Pregunta" },
-      { english: "We're meeting John tomorrow.", spanish: "Nos reunimos con John mañana.", context: "Plan futuro" }
+      { english: "She's cooking dinner right now.", spanish: "Ella está cocinando la cena ahora mismo.", context: "Action in progress" },
+      { english: "I'm not watching TV, I'm studying.", spanish: "No estoy viendo TV, estoy estudiando.", context: "Negative" },
+      { english: "Are you listening to me?", spanish: "¿Me estás escuchando?", context: "Question" },
+      { english: "We're meeting John tomorrow.", spanish: "Nos reunimos con John mañana.", context: "Future plan" }
     ],
     commonMistakes: [
-      { mistake: "She is work right now.", correction: "She is working right now.", why: "Necesitas la forma -ING después de am/is/are." },
-      { mistake: "I am knowing the answer.", correction: "I know the answer.", why: "'Know' es un stative verb, no usa forma continua." },
-      { mistake: "They are running (runing).", correction: "They are running.", why: "Run termina en CVC: duplica la 'n'." }
+      { mistake: "She is work right now.", correction: "She is working right now.", why: "You need the -ING form after am/is/are." },
+      { mistake: "I am knowing the answer.", correction: "I know the answer.", why: "'Know' is a stative verb, doesn't use continuous form." },
+      { mistake: "They are running (runing).", correction: "They are running.", why: "Run ends in CVC: double the 'n'." }
     ],
     practiceTips: [
-      "Describe lo que ves a tu alrededor en este momento.",
-      "Compara Present Simple vs Continuous con la misma oración.",
-      "Practica formando -ING con verbos variados.",
-      "Memoriza la lista de stative verbs.",
-      "Describe fotos o videos usando Present Continuous."
+      "Describe what you see around you right now.",
+      "Compare Present Simple vs Continuous with the same sentence.",
+      "Practice forming -ING with various verbs.",
+      "Memorize the list of stative verbs.",
+      "Describe photos or videos using Present Continuous."
     ],
     checkpoint: { 
-      question: "Traduce: '¿Qué estás haciendo? Estoy leyendo un libro.'", 
+      question: "Translate: 'What are you doing? I'm reading a book.'", 
       answer: "What are you doing? I'm reading a book." 
     },
-    nextStep: "Aprende a hablar del pasado con Past Simple (Basic)."
+    nextStep: "Learn to talk about the past with Past Simple (Basic)."
   },
 
   // Article 12: Past Simple (Basic) Grammar
   {
     id: 'gram-past-simple-basic',
-    title: 'Gramática: Pasado Simple (Básico)',
+    title: 'Grammar: Past Simple (Basic)',
     level: 'A1→A2',
     category: 'grammar',
-    learningGoal: 'El estudiante usará el Past Simple con verbos regulares e irregulares comunes para describir acciones completadas en el pasado.',
-    explanation: `El Past Simple se usa para acciones completadas en un momento específico del pasado.
+    learningGoal: 'The student will use the Past Simple with regular and common irregular verbs to describe completed actions in the past.',
+    explanation: `The Past Simple is used for actions completed at a specific time in the past.
 
-**Verbos regulares:**
-Añadir -ED al verbo base
+**Regular verbs:**
+Add -ED to the base verb
 • work → work**ed**
 • play → play**ed**
-• study → studi**ed** (consonante+Y → -IED)
-• live → liv**ed** (-E → solo añadir -D)
-• stop → stopp**ed** (CVC → duplicar consonante)
+• study → studi**ed** (consonant+Y → -IED)
+• live → liv**ed** (-E → just add -D)
+• stop → stopp**ed** (CVC → double consonant)
 
-**Verbos irregulares comunes:**
+**Common irregular verbs:**
 • be → was/were
 • go → went
 • see → saw
@@ -811,604 +811,587 @@ Añadir -ED al verbo base
 • think → thought
 • buy → bought
 
-**Estructura:**
-• **Afirmativo:** Sujeto + verbo en pasado
-• **Negativo:** Sujeto + didn't + verbo BASE
-• **Pregunta:** Did + sujeto + verbo BASE?
+**Structure:**
+• **Affirmative:** Subject + past verb
+• **Negative:** Subject + didn't + BASE verb
+• **Question:** Did + subject + BASE verb?
 
-**Palabras clave:**
-yesterday, last (week/month/year), ago, in 2020, when I was young
-
-**IMPORTANTE:**
-Después de 'did' y 'didn't', el verbo SIEMPRE va en forma base (sin -ed).`,
+**Time expressions:**
+yesterday, last week/month/year, ago, in 2020, when I was young`,
     examples: [
-      { english: "I visited my grandmother last weekend.", spanish: "Visité a mi abuela el fin de semana pasado.", context: "Verbo regular" },
-      { english: "She went to Paris in 2019.", spanish: "Ella fue a París en 2019.", context: "Verbo irregular (go→went)" },
-      { english: "We didn't watch the movie.", spanish: "No vimos la película.", context: "Negativo" },
-      { english: "Did you see John yesterday?", spanish: "¿Viste a John ayer?", context: "Pregunta" }
+      { english: "I visited my grandmother yesterday.", spanish: "Visité a mi abuela ayer.", context: "Regular verb" },
+      { english: "She went to Paris last summer.", spanish: "Ella fue a París el verano pasado.", context: "Irregular verb" },
+      { english: "We didn't see the movie.", spanish: "No vimos la película.", context: "Negative" },
+      { english: "Did you have a good weekend?", spanish: "¿Tuviste un buen fin de semana?", context: "Question" }
     ],
     commonMistakes: [
-      { mistake: "She goed to school.", correction: "She went to school.", why: "'Go' es irregular: go → went." },
-      { mistake: "Did you went there?", correction: "Did you go there?", why: "Después de 'did', el verbo va en forma base." },
-      { mistake: "I didn't saw him.", correction: "I didn't see him.", why: "Después de 'didn't', usa el verbo base, no pasado." },
-      { mistake: "Yesterday I work.", correction: "Yesterday I worked.", why: "Verbos regulares añaden -ed en pasado." }
+      { mistake: "I goed to school.", correction: "I went to school.", why: "'Go' is irregular: go → went." },
+      { mistake: "She didn't went.", correction: "She didn't go.", why: "After 'didn't', use BASE verb." },
+      { mistake: "Did you saw him?", correction: "Did you see him?", why: "After 'did', use BASE verb." }
     ],
     practiceTips: [
-      "Memoriza los 20 verbos irregulares más comunes.",
-      "Escribe un diario: '¿Qué hiciste ayer?'",
-      "Transforma oraciones de presente a pasado.",
-      "Lee historias cortas e identifica verbos en pasado.",
-      "Practica la pronunciación de -ed (/t/, /d/, /ɪd/)."
+      "Write about your last weekend.",
+      "Practice irregular verbs daily.",
+      "Tell a story from your childhood.",
+      "Transform sentences: affirmative → negative → question.",
+      "Read short stories in past tense."
     ],
     checkpoint: { 
-      question: "Cuenta algo que hiciste ayer usando 3 verbos.", 
-      answer: "Yesterday I woke up at 7, had breakfast, and went to work." 
+      question: "Write: 'I went to the store and bought milk yesterday.'", 
+      answer: "I went to the store and bought milk yesterday." 
     },
-    nextStep: "Aprende a hablar de planes futuros con 'Future with Going To'."
+    nextStep: "Learn future with 'going to' for plans."
   },
 
   // Article 13: Future with Going To
   {
     id: 'gram-future-going-to',
-    title: 'Gramática: Futuro con "Going To"',
+    title: 'Grammar: Future with "Going to"',
     level: 'A1→A2',
     category: 'grammar',
-    learningGoal: 'El estudiante usará "going to" para expresar planes e intenciones futuras.',
-    explanation: `"Going to" es la forma más común de expresar el futuro en inglés cotidiano, especialmente para planes decididos.
+    learningGoal: 'The student will use "going to" to talk about future plans and predictions based on evidence.',
+    explanation: `"Going to" is used to express future plans decided beforehand and predictions based on current evidence.
 
-**Estructura:**
-Sujeto + AM/IS/ARE + going to + verbo base
+**Structure:**
+Subject + am/is/are + going to + base verb
 
-| Sujeto | To Be | Going to + verbo |
-|--------|-------|------------------|
-| I | am | going to travel |
-| He/She/It | is | going to travel |
-| You/We/They | are | going to travel |
+| Subject | Be | Going to | Verb |
+|---------|-----|----------|------|
+| I | am | going to | study |
+| He/She | is | going to | study |
+| We/They | are | going to | study |
 
-**Usos de "Going To":**
-1. **Planes e intenciones:**
-   "I'm going to study medicine." (Ya lo decidí)
-   
-2. **Predicciones basadas en evidencia:**
-   "Look at those clouds! It's going to rain." (Hay evidencia)
+**Uses:**
+1. **Decided plans:** "I'm going to visit my parents next week."
+2. **Evidence-based predictions:** "Look at those clouds! It's going to rain."
 
-**Formas:**
-• **Negativo:** am/is/are + not + going to + verbo
-  "I'm not going to come."
-  
-• **Pregunta:** Am/Is/Are + sujeto + going to + verbo?
-  "Are you going to come?"
+**Negative:**
+Subject + am/is/are + NOT + going to + verb
+• "I'm not going to work tomorrow."
 
-**Contracciones comunes:**
-• I'm going to = I'm gonna (informal oral)
-• She's going to = She's gonna
+**Question:**
+Am/Is/Are + subject + going to + verb?
+• "Are you going to come to the party?"
 
-**Palabras clave:**
-tomorrow, next (week/month/year), soon, later, tonight`,
+**Time expressions:**
+tomorrow, next week/month/year, this weekend, soon, later
+
+**Going to vs Will:**
+• **Going to:** plans decided before speaking, evidence
+• **Will:** spontaneous decisions, promises, offers`,
     examples: [
-      { english: "I'm going to buy a new car next month.", spanish: "Voy a comprar un coche nuevo el próximo mes.", context: "Plan futuro" },
-      { english: "She's going to start a new job.", spanish: "Ella va a empezar un nuevo trabajo.", context: "Intención" },
-      { english: "We aren't going to travel this summer.", spanish: "No vamos a viajar este verano.", context: "Negativo" },
-      { english: "What are you going to do tomorrow?", spanish: "¿Qué vas a hacer mañana?", context: "Pregunta" },
-      { english: "Look! The baby is going to cry.", spanish: "¡Mira! El bebé va a llorar.", context: "Predicción con evidencia" }
+      { english: "I'm going to study medicine.", spanish: "Voy a estudiar medicina.", context: "Life plan" },
+      { english: "She's going to have a baby!", spanish: "¡Ella va a tener un bebé!", context: "Near future event" },
+      { english: "Look out! That car is going to crash!", spanish: "¡Cuidado! ¡Ese carro va a chocar!", context: "Evidence-based prediction" },
+      { english: "We aren't going to buy a new car.", spanish: "No vamos a comprar un carro nuevo.", context: "Negative" }
     ],
     commonMistakes: [
-      { mistake: "I going to travel.", correction: "I'm going to travel.", why: "Necesitas el verbo 'to be' (am/is/are)." },
-      { mistake: "She's going to goes home.", correction: "She's going to go home.", why: "Después de 'going to', usa el verbo base." },
-      { mistake: "Are you going to to come?", correction: "Are you going to come?", why: "Solo un 'to' después de 'going'." }
+      { mistake: "I going to travel.", correction: "I'm going to travel.", why: "You need 'am/is/are' before 'going to'." },
+      { mistake: "She is going to studies.", correction: "She is going to study.", why: "After 'going to', use BASE verb." },
+      { mistake: "I'm go to the party.", correction: "I'm going to go to the party.", why: "The full structure is 'going to + verb'." }
     ],
     practiceTips: [
-      "Escribe 5 planes para este fin de semana.",
-      "Pregunta a un amigo sobre sus planes futuros.",
-      "Practica predicciones mirando fotos.",
-      "Transforma oraciones de presente a futuro con 'going to'.",
-      "Describe tus metas para este año."
+      "Write 5 plans for this weekend.",
+      "Ask a friend about their future plans.",
+      "Practice predictions by looking at photos.",
+      "Transform sentences from present to future with 'going to'.",
+      "Describe your goals for this year."
     ],
     checkpoint: { 
-      question: "¿Cuáles son tus planes para las vacaciones?", 
+      question: "What are your plans for the vacation?", 
       answer: "I'm going to travel to the beach. / I'm going to visit my family." 
     },
-    nextStep: "Aprende 'There is / There are' para describir existencia."
+    nextStep: "Learn 'There is / There are' to describe existence."
   },
 
   // Article 14: There is / There are
   {
     id: 'gram-there-is-are',
-    title: 'Gramática: "There is / There are"',
+    title: 'Grammar: "There is / There are"',
     level: 'A1→A2',
     category: 'grammar',
-    learningGoal: 'El estudiante usará "there is/are" correctamente para expresar existencia o presencia de personas y objetos.',
-    explanation: `"There is" y "There are" equivalen a "hay" en español. Se usan para indicar que algo existe o está presente en un lugar.
+    learningGoal: 'The student will use "there is/are" correctly to express existence or presence of people and objects.',
+    explanation: `"There is" and "There are" are used to indicate that something exists or is present in a place.
 
-**Regla básica:**
-• **There is** + sustantivo singular/incontable
-• **There are** + sustantivo plural
+**Basic rule:**
+• **There is** + singular/uncountable noun
+• **There are** + plural noun
 
-**Estructuras:**
-| Forma | Singular | Plural |
-|-------|----------|--------|
-| Afirmativo | There is (There's) | There are |
-| Negativo | There isn't | There aren't |
-| Pregunta | Is there...? | Are there...? |
+**Structures:**
+| Form | Singular | Plural |
+|------|----------|--------|
+| Affirmative | There is (There's) | There are |
+| Negative | There isn't | There aren't |
+| Question | Is there...? | Are there...? |
 
-**Uso con contables e incontables:**
-• "There is a book on the table." (contable singular)
-• "There is some water in the glass." (incontable)
-• "There are three cats in the garden." (contable plural)
+**Use with countable and uncountable:**
+• "There is a book on the table." (countable singular)
+• "There is some water in the glass." (uncountable)
+• "There are three cats in the garden." (countable plural)
 
-**Expresiones de cantidad:**
-• There is/are + **some** (afirmativo)
-• There isn't/aren't + **any** (negativo)
-• Is/Are there + **any**...? (pregunta)
+**Quantity expressions:**
+• There is/are + **some** (affirmative)
+• There isn't/aren't + **any** (negative)
+• Is/Are there + **any**...? (question)
 
-**Ejemplos de ubicación:**
+**Location examples:**
 in, on, at, under, next to, behind, in front of`,
     examples: [
-      { english: "There is a bank next to the supermarket.", spanish: "Hay un banco al lado del supermercado.", context: "Singular + ubicación" },
+      { english: "There is a bank next to the supermarket.", spanish: "Hay un banco al lado del supermercado.", context: "Singular + location" },
       { english: "There are many students in the class.", spanish: "Hay muchos estudiantes en la clase.", context: "Plural" },
-      { english: "Is there a pharmacy near here?", spanish: "¿Hay una farmacia cerca de aquí?", context: "Pregunta singular" },
-      { english: "There aren't any books on the shelf.", spanish: "No hay libros en el estante.", context: "Negativo plural" },
-      { english: "There's some milk in the fridge.", spanish: "Hay leche en el refrigerador.", context: "Incontable" }
+      { english: "Is there a pharmacy near here?", spanish: "¿Hay una farmacia cerca de aquí?", context: "Singular question" },
+      { english: "There aren't any books on the shelf.", spanish: "No hay libros en el estante.", context: "Negative plural" },
+      { english: "There's some milk in the fridge.", spanish: "Hay leche en el refrigerador.", context: "Uncountable" }
     ],
     commonMistakes: [
-      { mistake: "There is many people.", correction: "There are many people.", why: "'People' es plural, usa 'are'." },
-      { mistake: "Have a book on the table.", correction: "There is a book on the table.", why: "En inglés usamos 'there is/are', no 'have' para existencia." },
-      { mistake: "Is there some milk?", correction: "Is there any milk?", why: "En preguntas, usamos 'any', no 'some'." },
-      { mistake: "There are a cat.", correction: "There is a cat.", why: "'A cat' es singular, usa 'is'." }
+      { mistake: "There is many people.", correction: "There are many people.", why: "'People' is plural, use 'are'." },
+      { mistake: "Have a book on the table.", correction: "There is a book on the table.", why: "In English we use 'there is/are', not 'have' for existence." },
+      { mistake: "Is there some milk?", correction: "Is there any milk?", why: "In questions, use 'any', not 'some'." },
+      { mistake: "There are a cat.", correction: "There is a cat.", why: "'A cat' is singular, use 'is'." }
     ],
     practiceTips: [
-      "Describe tu habitación: 'There is a bed, there are two chairs...'",
-      "Mira fotos y describe qué hay en ellas.",
-      "Practica preguntas: 'Is there...? Are there...?'",
-      "Combina con preposiciones de lugar.",
-      "Juega 'I Spy': describe objetos con 'there is'."
+      "Describe your room: 'There is a bed, there are two chairs...'",
+      "Look at photos and describe what's in them.",
+      "Practice questions: 'Is there...? Are there...?'",
+      "Combine with place prepositions.",
+      "Play 'I Spy': describe objects with 'there is'."
     ],
     checkpoint: { 
-      question: "Describe qué hay en tu cocina.", 
+      question: "Describe what's in your kitchen.", 
       answer: "There is a fridge and a stove. There are some plates on the shelf." 
     },
-    nextStep: "Continúa con 'Countable and Uncountable Nouns'."
+    nextStep: "Continue with 'Countable and Uncountable Nouns'."
   },
 
   // Article 15: Countable and Uncountable Nouns
   {
     id: 'gram-countable-uncountable',
-    title: 'Gramática: Sustantivos Contables e Incontables',
+    title: 'Grammar: Countable and Uncountable Nouns',
     level: 'A1→A2',
     category: 'grammar',
-    learningGoal: 'El estudiante distinguirá entre sustantivos contables e incontables y usará correctamente a/an, some, much/many.',
-    explanation: `En inglés, los sustantivos se dividen en contables (los que podemos contar) e incontables (los que no).
+    learningGoal: 'The student will distinguish between countable and uncountable nouns and correctly use a/an, some, much/many.',
+    explanation: `In English, nouns are divided into countable (can be counted) and uncountable (cannot).
 
-**Contables (Countable):**
-Pueden pluralizarse: book → books, apple → apples
-• Usan a/an en singular: "a book", "an apple"
-• Usan números: "three books", "two apples"
-• Preguntas con "How many...?"
+**Countable:**
+Can be pluralized: book → books, apple → apples
+• Use a/an with singular: "a book", "an apple"
+• Use numbers: "three books", "two apples"
+• Questions with "How many...?"
 
-**Incontables (Uncountable):**
-No tienen plural: water, rice, money, information
-• NO usan a/an
-• Usan "some": "some water", "some rice"
-• Preguntas con "How much...?"
+**Uncountable:**
+No plural form: water, rice, money, information
+• Don't use a/an
+• Use "some": "some water", "some rice"
+• Questions with "How much...?"
 
-**Incontables comunes:**
-• Líquidos: water, milk, coffee, juice
-• Materiales: wood, plastic, glass, paper
-• Alimentos: rice, bread, cheese, meat, fruit
-• Conceptos: information, advice, news, work, money
-• Otros: furniture, luggage, traffic, weather
+**Common uncountables:**
+• Liquids: water, milk, coffee, juice
+• Materials: wood, plastic, glass, paper
+• Foods: rice, bread, cheese, meat, fruit
+• Concepts: information, advice, news, work, money
+• Others: furniture, luggage, traffic, weather
 
-**Cuantificadores:**
-| | Contables | Incontables |
+**Quantifiers:**
+| | Countable | Uncountable |
 |-----|-----------|-------------|
-| Afirmativo | some, many, a few, a lot of | some, much, a little, a lot of |
-| Negativo | any, many, few | any, much, little |
-| Pregunta | any, how many | any, how much |
+| Affirmative | some, many, a few, a lot of | some, much, a little, a lot of |
+| Negative | any, many, few | any, much, little |
+| Question | any, how many | any, how much |
 
-**Hacer incontables contables:**
+**Making uncountables countable:**
 • a glass of water, a cup of coffee
 • a piece of advice, a piece of information
 • a slice of bread, a bottle of wine`,
     examples: [
-      { english: "Can I have some water, please?", spanish: "¿Puedo tomar agua, por favor?", context: "Incontable + some" },
-      { english: "How many apples do you want?", spanish: "¿Cuántas manzanas quieres?", context: "How many + contable" },
-      { english: "How much money do you need?", spanish: "¿Cuánto dinero necesitas?", context: "How much + incontable" },
-      { english: "I don't have any milk.", spanish: "No tengo leche.", context: "Negativo + any" },
-      { english: "There are a few chairs in the room.", spanish: "Hay algunas sillas en la habitación.", context: "a few + contable plural" }
+      { english: "Can I have some water, please?", spanish: "¿Puedo tomar agua, por favor?", context: "Uncountable + some" },
+      { english: "How many apples do you want?", spanish: "¿Cuántas manzanas quieres?", context: "How many + countable" },
+      { english: "How much money do you need?", spanish: "¿Cuánto dinero necesitas?", context: "How much + uncountable" },
+      { english: "I don't have any milk.", spanish: "No tengo leche.", context: "Negative + any" },
+      { english: "There are a few chairs in the room.", spanish: "Hay algunas sillas en la habitación.", context: "a few + countable plural" }
     ],
     commonMistakes: [
-      { mistake: "I need an information.", correction: "I need some information.", why: "'Information' es incontable, no usa 'a/an'." },
-      { mistake: "How many water?", correction: "How much water?", why: "'Water' es incontable, usa 'how much'." },
-      { mistake: "I have much friends.", correction: "I have many friends.", why: "'Friends' es contable, usa 'many' no 'much'." },
-      { mistake: "Can I have a bread?", correction: "Can I have some bread? / Can I have a slice of bread?", why: "'Bread' es incontable." }
+      { mistake: "I need an information.", correction: "I need some information.", why: "'Information' is uncountable, doesn't use 'a/an'." },
+      { mistake: "How many water?", correction: "How much water?", why: "'Water' is uncountable, use 'how much'." },
+      { mistake: "I have much friends.", correction: "I have many friends.", why: "'Friends' is countable, use 'many' not 'much'." },
+      { mistake: "Can I have a bread?", correction: "Can I have some bread? / Can I have a slice of bread?", why: "'Bread' is uncountable." }
     ],
     practiceTips: [
-      "Clasifica palabras de vocabulario en contables/incontables.",
-      "Practica con fotos: 'How many...? How much...?'",
-      "Memoriza los incontables más comunes.",
-      "Practica usando some/any en oraciones.",
-      "Aprende expresiones: a piece of, a glass of, etc."
+      "Classify vocabulary words as countable/uncountable.",
+      "Practice with photos: 'How many...? How much...?'",
+      "Memorize the most common uncountables.",
+      "Practice using some/any in sentences.",
+      "Learn expressions: a piece of, a glass of, etc."
     ],
     checkpoint: { 
-      question: "Completa: 'I don't have ___ money but I have ___ coins.'", 
+      question: "Complete: 'I don't have ___ money but I have ___ coins.'", 
       answer: "I don't have any/much money but I have some coins." 
     },
-    nextStep: "Aprende a comparar con 'Comparatives and Superlatives (Basic)'."
+    nextStep: "Learn to compare with 'Comparatives and Superlatives (Basic)'."
   },
 
   // Article 16: Comparatives and Superlatives (Basic)
   {
     id: 'gram-comparatives-superlatives-basic',
-    title: 'Gramática: Comparativos y Superlativos (Básicos)',
+    title: 'Grammar: Comparatives and Superlatives (Basic)',
     level: 'A1→A2',
     category: 'grammar',
-    learningGoal: 'El estudiante formará comparativos con -er/more y superlativos con -est/most para adjetivos comunes.',
-    explanation: `Los comparativos se usan para comparar dos cosas. Los superlativos, para indicar el extremo de un grupo.
+    learningGoal: 'The student will form comparatives with -er/more and superlatives with -est/most for common adjectives.',
+    explanation: `Comparatives are used to compare two things. Superlatives indicate the extreme of a group.
 
-**Comparativos: -ER / MORE**
-• Adjetivos cortos (1 sílaba): añadir -ER
+**Comparatives: -ER / MORE**
+• Short adjectives (1 syllable): add -ER
   - tall → tall**er**, old → old**er**
-  - Regla CVC: big → bigg**er**
+  - CVC rule: big → bigg**er**
   
-• Adjetivos largos (2+ sílabas): MORE + adjetivo
+• Long adjectives (2+ syllables): MORE + adjective
   - beautiful → **more** beautiful
   - expensive → **more** expensive
   
-• Adjetivos de 2 sílabas en -y: cambiar Y por -IER
+• 2-syllable adjectives in -y: change Y to -IER
   - happy → happ**ier**, easy → eas**ier**
 
-**Superlativos: -EST / MOST**
-• Adjetivos cortos: THE + adjetivo + -EST
+**Superlatives: -EST / MOST**
+• Short adjectives: THE + adjective + -EST
   - tall → **the** tall**est**
   
-• Adjetivos largos: THE MOST + adjetivo
+• Long adjectives: THE MOST + adjective
   - beautiful → **the most** beautiful
 
-**Irregulares:**
-| Adjetivo | Comparativo | Superlativo |
-|----------|-------------|-------------|
+**Irregulars:**
+| Adjective | Comparative | Superlative |
+|-----------|-------------|-------------|
 | good | better | the best |
 | bad | worse | the worst |
 | far | farther/further | the farthest/furthest |
 
-**Estructura comparativa:**
-A + is/are + comparativo + **than** + B
+**Comparative structure:**
+A + is/are + comparative + **than** + B
 "John is taller **than** Mary."
 
-**Estructura superlativa:**
-A + is/are + **the** + superlativo + (of/in + grupo)
+**Superlative structure:**
+A + is/are + **the** + superlative + (of/in + group)
 "John is **the** tallest in the class."`,
     examples: [
-      { english: "My house is bigger than yours.", spanish: "Mi casa es más grande que la tuya.", context: "Comparativo + than" },
-      { english: "She's the smartest student in the class.", spanish: "Ella es la estudiante más inteligente de la clase.", context: "Superlativo + in" },
-      { english: "This movie is more interesting than that one.", spanish: "Esta película es más interesante que esa.", context: "More + adjetivo largo" },
+      { english: "My house is bigger than yours.", spanish: "Mi casa es más grande que la tuya.", context: "Comparative + than" },
+      { english: "She's the smartest student in the class.", spanish: "Ella es la estudiante más inteligente de la clase.", context: "Superlative + in" },
+      { english: "This movie is more interesting than that one.", spanish: "Esta película es más interesante que esa.", context: "More + long adjective" },
       { english: "He's better at math than me.", spanish: "Él es mejor en matemáticas que yo.", context: "Irregular: good → better" }
     ],
     commonMistakes: [
-      { mistake: "She is more tall than me.", correction: "She is taller than me.", why: "'Tall' es corto (1 sílaba), usa -er." },
-      { mistake: "This is the most easy test.", correction: "This is the easiest test.", why: "Adjetivo en -y: cambia a -iest." },
-      { mistake: "He is more better.", correction: "He is better.", why: "No combines 'more' con comparativos irregulares." },
-      { mistake: "She is taller that me.", correction: "She is taller than me.", why: "Después del comparativo siempre va 'than'." }
+      { mistake: "She is more tall than me.", correction: "She is taller than me.", why: "'Tall' is short (1 syllable), use -er." },
+      { mistake: "This is the most easy test.", correction: "This is the easiest test.", why: "Adjective in -y: change to -iest." },
+      { mistake: "He is more better.", correction: "He is better.", why: "Don't combine 'more' with irregular comparatives." },
+      { mistake: "She is taller that me.", correction: "She is taller than me.", why: "After comparatives always use 'than'." }
     ],
     practiceTips: [
-      "Compara objetos a tu alrededor.",
-      "Clasifica adjetivos en 'cortos' y 'largos'.",
-      "Memoriza los irregulares: good, bad, far.",
-      "Practica describiendo famosos: 'Who is the tallest?'",
-      "Escribe comparaciones de productos."
+      "Compare objects around you.",
+      "Classify adjectives as 'short' and 'long'.",
+      "Memorize irregulars: good, bad, far.",
+      "Practice describing celebrities: 'Who is the tallest?'",
+      "Write product comparisons."
     ],
     checkpoint: { 
-      question: "Compara: elefante vs. gato (big), y di cuál es el más grande.", 
+      question: "Compare: elephant vs. cat (big), and say which is the biggest.", 
       answer: "An elephant is bigger than a cat. The elephant is the biggest." 
     },
-    nextStep: "Aprende los verbos modales básicos: can, must, should."
+    nextStep: "Learn basic modal verbs: can, must, should."
   },
 
   // Article 17: Basic Modals (can, must, should)
   {
     id: 'gram-modals-basic',
-    title: 'Gramática: Verbos Modales Básicos (can, must, should)',
+    title: 'Grammar: Basic Modal Verbs (can, must, should)',
     level: 'A1→A2',
     category: 'grammar',
-    learningGoal: 'El estudiante usará can, must y should para expresar habilidad, obligación y consejo.',
-    explanation: `Los verbos modales modifican el significado del verbo principal. Los tres más básicos son:
+    learningGoal: 'The student will use can, must, and should to express ability, obligation, and advice.',
+    explanation: `Modal verbs modify the meaning of the main verb. The three most basic are:
 
-**CAN - Habilidad/Posibilidad/Permiso**
-• Habilidad: "I **can** swim." (Sé nadar)
-• Posibilidad: "We **can** go tomorrow." (Podemos ir)
-• Permiso: "**Can** I use your phone?" (¿Puedo usar...)
+**CAN - Ability/Possibility/Permission**
+• Ability: "I **can** swim." (I know how)
+• Possibility: "We **can** go tomorrow." (It's possible)
+• Permission: "**Can** I use your phone?" (May I?)
 
-**CAN'T/CANNOT - Inhabilidad/Imposibilidad/Prohibición**
-• "I **can't** drive." (No sé conducir)
-• "You **can't** park here." (No puedes estacionar aquí)
+**CAN'T/CANNOT - Inability/Impossibility/Prohibition**
+• "I **can't** drive." (I don't know how)
+• "You **can't** park here." (Not allowed)
 
-**MUST - Obligación fuerte/Necesidad**
-• "You **must** wear a seatbelt." (Debes usar cinturón)
-• "I **must** study for the exam." (Tengo que estudiar)
+**MUST - Strong Obligation/Necessity**
+• "You **must** wear a seatbelt." (Required)
+• "I **must** study for the exam." (Necessary)
 
-**MUSTN'T - Prohibición**
-• "You **mustn't** smoke here." (No debes fumar)
-⚠️ Mustn't ≠ don't have to (no es lo mismo)
+**MUSTN'T - Prohibition**
+• "You **mustn't** smoke here." (Forbidden)
+⚠️ Mustn't ≠ don't have to (different meanings)
 
-**SHOULD - Consejo/Recomendación**
-• "You **should** eat more vegetables." (Deberías comer)
-• "He **should** see a doctor." (Debería ver)
+**SHOULD - Advice/Recommendation**
+• "You **should** eat more vegetables." (Recommendation)
+• "He **should** see a doctor." (Advice)
 
-**SHOULDN'T - Consejo negativo**
-• "You **shouldn't** eat too much sugar." (No deberías)
+**SHOULDN'T - Negative Advice**
+• "You **shouldn't** eat too much sugar." (Not recommended)
 
-**Reglas de modales:**
-1. Sin cambio por persona (no añaden -s)
-2. Seguidos de verbo base (sin 'to')
-3. Forman negativo/pregunta sin auxiliar
+**Modal rules:**
+1. No change for person (no -s added)
+2. Followed by base verb (no 'to')
+3. Form negative/question without auxiliary
 
-**Estructura:**
-• Afirmativo: Sujeto + modal + verbo base
-• Negativo: Sujeto + modal + not + verbo base
-• Pregunta: Modal + sujeto + verbo base?`,
+**Structure:**
+• Affirmative: Subject + modal + base verb
+• Negative: Subject + modal + not + base verb
+• Question: Modal + subject + base verb?`,
     examples: [
-      { english: "Can you help me, please?", spanish: "¿Puedes ayudarme, por favor?", context: "Petición" },
-      { english: "You must finish the project today.", spanish: "Debes terminar el proyecto hoy.", context: "Obligación" },
-      { english: "She can speak three languages.", spanish: "Ella puede hablar tres idiomas.", context: "Habilidad" },
-      { english: "You should drink more water.", spanish: "Deberías beber más agua.", context: "Consejo" },
-      { english: "You mustn't tell anyone.", spanish: "No debes decirle a nadie.", context: "Prohibición" }
+      { english: "Can you help me, please?", spanish: "¿Puedes ayudarme, por favor?", context: "Request" },
+      { english: "You must finish the project today.", spanish: "Debes terminar el proyecto hoy.", context: "Obligation" },
+      { english: "She can speak three languages.", spanish: "Ella puede hablar tres idiomas.", context: "Ability" },
+      { english: "You should drink more water.", spanish: "Deberías beber más agua.", context: "Advice" },
+      { english: "You mustn't tell anyone.", spanish: "No debes decirle a nadie.", context: "Prohibition" }
     ],
     commonMistakes: [
-      { mistake: "She can to swim.", correction: "She can swim.", why: "Después del modal, el verbo va sin 'to'." },
-      { mistake: "He cans drive.", correction: "He can drive.", why: "Los modales no añaden -s con he/she/it." },
-      { mistake: "You must to study.", correction: "You must study.", why: "Nunca uses 'to' después de un modal." },
-      { mistake: "Do you can help?", correction: "Can you help?", why: "Los modales no necesitan auxiliar en preguntas." }
+      { mistake: "She can to swim.", correction: "She can swim.", why: "After modal, verb has no 'to'." },
+      { mistake: "He cans drive.", correction: "He can drive.", why: "Modals don't add -s with he/she/it." },
+      { mistake: "You must to study.", correction: "You must study.", why: "Never use 'to' after a modal." },
+      { mistake: "Do you can help?", correction: "Can you help?", why: "Modals don't need auxiliary in questions." }
     ],
     practiceTips: [
-      "Haz listas de 'cosas que puedo hacer' y 'cosas que debo hacer'.",
-      "Da consejos a amigos usando 'should'.",
-      "Practica permisos: 'Can I...?'",
-      "Identifica modales en textos que lees.",
-      "Describe reglas de tu trabajo/escuela con 'must/mustn't'."
+      "Make lists of 'things I can do' and 'things I must do'.",
+      "Give friends advice using 'should'.",
+      "Practice permissions: 'Can I...?'",
+      "Identify modals in texts you read.",
+      "Describe work/school rules with 'must/mustn't'."
     ],
     checkpoint: { 
-      question: "Da un consejo para alguien con dolor de cabeza.", 
+      question: "Give advice to someone with a headache.", 
       answer: "You should take some aspirin and rest. / You shouldn't look at screens." 
     },
-    nextStep: "Domina las preposiciones de lugar y tiempo con el siguiente artículo."
+    nextStep: "Master place and time prepositions with the next article."
   },
 
   // Article 18: Prepositions of Place and Time
   {
     id: 'gram-prepositions',
-    title: 'Gramática: Preposiciones de Lugar y Tiempo (in, on, at)',
+    title: 'Grammar: Prepositions of Place and Time (in, on, at)',
     level: 'A1→A2',
     category: 'grammar',
-    learningGoal: 'El estudiante usará correctamente in, on, at para expresar lugar y tiempo.',
-    explanation: `Las preposiciones son pequeñas palabras que causan grandes errores. IN, ON, AT son las más importantes.
+    learningGoal: 'The student will correctly use in, on, at to express place and time.',
+    explanation: `Prepositions are small words that cause big mistakes. IN, ON, AT are the most important.
 
-**PREPOSICIONES DE LUGAR:**
+**PLACE PREPOSITIONS:**
 
-**IN** (dentro de, en espacios cerrados/grandes):
+**IN** (inside, enclosed/large spaces):
 • in a room, in a building, in a city
 • in the car, in a box, in the water
 • in Spain, in Europe, in the world
 
-**ON** (sobre superficies, líneas):
+**ON** (on surfaces, lines):
 • on the table, on the wall, on the floor
-• on the street, on the bus (transporte público)
+• on the street, on the bus (public transport)
 • on the left/right, on the corner
 
-**AT** (punto específico):
+**AT** (specific point):
 • at the door, at the bus stop
 • at home, at work, at school
 • at the airport, at the station
 
-**PREPOSICIONES DE TIEMPO:**
+**TIME PREPOSITIONS:**
 
-**IN** (períodos largos):
+**IN** (long periods):
 • in the morning/afternoon/evening
 • in January, in summer, in 2024
-• in a week, in two hours (dentro de)
+• in a week, in two hours (within)
 
-**ON** (días específicos):
+**ON** (specific days):
 • on Monday, on Friday
 • on May 5th, on my birthday
 • on the weekend (AmE)
 
-**AT** (horas, momentos específicos):
+**AT** (hours, specific moments):
 • at 7 o'clock, at noon, at midnight
-• at night (excepción)
-• at Christmas, at Easter (festividades)
+• at night (exception)
+• at Christmas, at Easter (holidays)
 
-**Casos especiales:**
-• at home, at work, at school (sin artículo)
+**Special cases:**
+• at home, at work, at school (no article)
 • at the weekend (BrE) / on the weekend (AmE)
 • in the morning BUT at night`,
     examples: [
-      { english: "The meeting is at 3 PM on Friday.", spanish: "La reunión es a las 3 PM el viernes.", context: "Tiempo: at + hora, on + día" },
-      { english: "She lives in a small town in Italy.", spanish: "Ella vive en un pueblo pequeño en Italia.", context: "Lugar: in + ciudad/país" },
-      { english: "Put the book on the table.", spanish: "Pon el libro sobre la mesa.", context: "Lugar: on + superficie" },
-      { english: "I'll see you at the cinema at 8.", spanish: "Te veo en el cine a las 8.", context: "At + lugar específico + hora" },
-      { english: "In summer, I wake up at 6 in the morning.", spanish: "En verano, me despierto a las 6 de la mañana.", context: "Combinación de preposiciones" }
+      { english: "The meeting is at 3 PM on Friday.", spanish: "La reunión es a las 3 PM el viernes.", context: "Time: at + hour, on + day" },
+      { english: "She lives in a small town in Italy.", spanish: "Ella vive en un pueblo pequeño en Italia.", context: "Place: in + city/country" },
+      { english: "Put the book on the table.", spanish: "Pon el libro sobre la mesa.", context: "Place: on + surface" },
+      { english: "I'll see you at the cinema at 8.", spanish: "Te veo en el cine a las 8.", context: "At + specific place + hour" },
+      { english: "In summer, I wake up at 6 in the morning.", spanish: "En verano, me despierto a las 6 de la mañana.", context: "Combination of prepositions" }
     ],
     commonMistakes: [
-      { mistake: "I arrive in Friday.", correction: "I arrive on Friday.", why: "Para días específicos usamos 'on'." },
-      { mistake: "I'm at home in night.", correction: "I'm at home at night.", why: "'Night' es excepción: usamos 'at night'." },
-      { mistake: "The picture is in the wall.", correction: "The picture is on the wall.", why: "Para superficies usamos 'on'." },
-      { mistake: "She's on work.", correction: "She's at work.", why: "Decimos 'at work', 'at home', 'at school'." }
+      { mistake: "I arrive in Friday.", correction: "I arrive on Friday.", why: "For specific days use 'on'." },
+      { mistake: "I'm at home in night.", correction: "I'm at home at night.", why: "'Night' is exception: use 'at night'." },
+      { mistake: "The picture is in the wall.", correction: "The picture is on the wall.", why: "For surfaces use 'on'." },
+      { mistake: "She's on work.", correction: "She's at work.", why: "We say 'at work', 'at home', 'at school'." }
     ],
     practiceTips: [
-      "Memoriza expresiones fijas: at home, at work, in the morning.",
-      "Describe ubicaciones de objetos en tu habitación.",
-      "Practica diciendo tu horario con preposiciones de tiempo.",
-      "Crea oraciones combinando lugar y tiempo.",
-      "Haz tarjetas con las reglas y ejemplos."
+      "Memorize fixed expressions: at home, at work, in the morning.",
+      "Describe locations of objects in your room.",
+      "Practice saying your schedule with time prepositions.",
+      "Create sentences combining place and time.",
+      "Make flashcards with rules and examples."
     ],
     checkpoint: { 
-      question: "Completa: 'I have a meeting ___ Monday ___ 10 AM ___ the office.'", 
+      question: "Complete: 'I have a meeting ___ Monday ___ 10 AM ___ the office.'", 
       answer: "I have a meeting on Monday at 10 AM in the office." 
     },
-    nextStep: "Aprende a formar preguntas correctamente."
+    nextStep: "Learn to form questions correctly."
   },
 
   // Article 19: Question Formation
   {
     id: 'gram-question-formation',
-    title: 'Gramática: Formación de Preguntas',
+    title: 'Grammar: Question Formation',
     level: 'A1→A2',
     category: 'grammar',
-    learningGoal: 'El estudiante formará preguntas Yes/No y Wh- correctamente en diferentes tiempos verbales.',
-    explanation: `Hay dos tipos principales de preguntas en inglés: Yes/No questions y Wh- questions.
+    learningGoal: 'The student will form Yes/No and Wh- questions correctly in different verb tenses.',
+    explanation: `There are two main types of questions in English: Yes/No questions and Wh- questions.
 
 **YES/NO QUESTIONS:**
-Respuestas: Yes o No
+Answers: Yes or No
 
-**Con TO BE:**
-Inversión: BE + sujeto + complemento?
+**With TO BE:**
+Inversion: BE + subject + complement?
 • "Are you ready?" → "Yes, I am."
 • "Is she a teacher?" → "No, she isn't."
 
-**Con otros verbos (DO/DOES/DID):**
-Auxiliar + sujeto + verbo base?
+**With other verbs (DO/DOES/DID):**
+Auxiliary + subject + base verb?
 • "Do you like pizza?" → "Yes, I do."
 • "Does he work here?" → "No, he doesn't."
 • "Did they arrive?" → "Yes, they did."
 
-**Con modales (CAN/WILL/MUST/SHOULD):**
-Modal + sujeto + verbo base?
+**With modals (CAN/WILL/MUST/SHOULD):**
+Modal + subject + base verb?
 • "Can you swim?" → "Yes, I can."
 • "Should I call?" → "No, you shouldn't."
 
 **WH- QUESTIONS:**
-Empiezan con palabra interrogativa
+Start with a question word
 
-| Palabra | Pregunta por |
-|---------|-------------|
-| What | cosa/objeto |
-| Where | lugar |
-| When | tiempo |
-| Who | persona (sujeto) |
-| Whose | posesión |
-| Which | elección |
-| Why | razón |
-| How | manera/estado |
+| Word | Asks about |
+|------|-----------|
+| What | thing/object |
+| Where | place |
+| When | time |
+| Who | person |
+| Why | reason |
+| How | manner |
+| Which | choice |
+| How much | quantity (uncountable) |
+| How many | quantity (countable) |
 
-**Estructura Wh-:**
-Wh- + auxiliar + sujeto + verbo?
-• "**What** do you do?" (¿A qué te dedicas?)
-• "**Where** does she live?" (¿Dónde vive?)
-• "**When** did they arrive?" (¿Cuándo llegaron?)
-• "**Why** are you sad?" (¿Por qué estás triste?)
-
-**How + adjetivo/adverbio:**
-• How old...? (edad)
-• How long...? (duración)
-• How often...? (frecuencia)
-• How much/many...? (cantidad)
-• How far...? (distancia)`,
+**WH- structure:**
+Wh-word + auxiliary + subject + verb?
+• "Where do you live?"
+• "What did she buy?"
+• "When is the meeting?"`,
     examples: [
-      { english: "Where do you work?", spanish: "¿Dónde trabajas?", context: "Wh- + do + sujeto + verbo" },
-      { english: "How old are you?", spanish: "¿Cuántos años tienes?", context: "How + adjetivo" },
-      { english: "Did you see the movie?", spanish: "¿Viste la película?", context: "Yes/No en pasado" },
-      { english: "What time does the train leave?", spanish: "¿A qué hora sale el tren?", context: "What time + does" },
-      { english: "Why didn't you call me?", spanish: "¿Por qué no me llamaste?", context: "Wh- negativo" }
+      { english: "Do you speak Spanish?", spanish: "¿Hablas español?", context: "Yes/No present" },
+      { english: "Where did you go yesterday?", spanish: "¿Adónde fuiste ayer?", context: "Wh- past" },
+      { english: "What time does the movie start?", spanish: "¿A qué hora empieza la película?", context: "What time" },
+      { english: "Why are you crying?", spanish: "¿Por qué estás llorando?", context: "Why + continuous" }
     ],
     commonMistakes: [
-      { mistake: "Where you work?", correction: "Where do you work?", why: "Necesitas el auxiliar 'do' en preguntas." },
-      { mistake: "What means this?", correction: "What does this mean?", why: "Orden: What + does + sujeto + verbo." },
-      { mistake: "You are ready?", correction: "Are you ready?", why: "En preguntas, invierte el orden de 'be'." },
-      { mistake: "When did you arrived?", correction: "When did you arrive?", why: "Después de 'did', el verbo va en base." }
+      { mistake: "Where you live?", correction: "Where do you live?", why: "Wh- questions need auxiliary 'do/does'." },
+      { mistake: "What means this?", correction: "What does this mean?", why: "Correct structure: What does X mean?" },
+      { mistake: "Do you can help?", correction: "Can you help?", why: "Modals form questions directly, no 'do'." }
     ],
     practiceTips: [
-      "Practica transformando oraciones en preguntas.",
-      "Memoriza el orden: Wh + aux + sujeto + verbo.",
-      "Haz entrevistas imaginarias a famosos.",
-      "Responde preguntas y luego hazlas tú.",
-      "Juega '20 preguntas' para practicar."
+      "Practice transforming statements into questions.",
+      "Memorize Wh- words and their functions.",
+      "Interview friends using different question types.",
+      "Watch interviews and note question structures.",
+      "Write 5 questions about yourself and answer them."
     ],
     checkpoint: { 
-      question: "Forma una pregunta para saber el hobby de alguien.", 
-      answer: "What are your hobbies? / What do you like to do in your free time?" 
+      question: "Form a question: 'She works at a hospital.' → Where...?", 
+      answer: "Where does she work?" 
     },
-    nextStep: "Practica la habilidad de presentarte en inglés."
+    nextStep: "Learn to express obligation and need with 'have to'."
   },
 
-  // Articles 20-29: Skills for A1→A2
-  // Article 20: Introducing Yourself
+  // Article 20: Imperatives
   {
-    id: 'skill-introducing-yourself',
-    title: 'Habilidad: Presentarse a uno mismo y a otros',
+    id: 'gram-imperatives',
+    title: 'Grammar: Imperatives',
     level: 'A1→A2',
-    category: 'skill',
-    learningGoal: 'El estudiante podrá presentarse de manera clara y presentar a otras personas usando vocabulario apropiado.',
-    explanation: `Saber presentarte es la primera habilidad social en cualquier idioma. En inglés, las presentaciones siguen patrones específicos.
+    category: 'grammar',
+    learningGoal: 'The student will use imperative forms to give instructions, orders, and advice.',
+    explanation: `The imperative is used to give orders, instructions, directions, and advice. It's the simplest verb form.
 
-**Presentarte a ti mismo:**
+**Formation:**
+Just the base verb (infinitive without 'to')
 
-**Información básica:**
-• "Hello/Hi, my name is [nombre]."
-• "I'm [nombre]." (más informal)
-• "Nice to meet you." / "Pleased to meet you."
+**Affirmative:**
+• "Open the door."
+• "Sit down."
+• "Listen carefully."
 
-**Información adicional:**
-• "I'm from [país/ciudad]."
-• "I'm [profesión]." / "I work as a [profesión]."
-• "I live in [ciudad]."
-• "I'm [edad] years old."
-• "I like [hobbies]."
+**Negative:**
+Don't + base verb
+• "Don't open the door."
+• "Don't sit there."
+• "Don't forget your keys."
 
-**Presentar a otros:**
-• "This is my friend, [nombre]."
-• "I'd like you to meet [nombre]."
-• "Let me introduce you to [nombre]."
+**With 'Let's' (suggestions):**
+Let's + base verb (includes speaker)
+• "Let's go!" (You and I)
+• "Let's eat!"
+• "Let's not argue."
 
-**Respuestas:**
-• "Nice to meet you too."
-• "It's a pleasure."
-• "How do you do?" (muy formal)
+**Uses:**
+1. **Instructions:** "Mix the ingredients."
+2. **Orders:** "Stop talking!"
+3. **Directions:** "Turn left here."
+4. **Advice:** "Take an umbrella."
+5. **Warnings:** "Be careful!"
+6. **Invitations:** "Come in!"
 
-**Preguntas para conocer a alguien:**
-• "What's your name?"
-• "Where are you from?"
-• "What do you do?" (profesión)
-• "How old are you?" (solo en contextos apropiados)
-
-**Modelo de presentación completa:**
-"Hi, I'm María. I'm from Mexico City. I'm 28 years old and I work as a graphic designer. In my free time, I like reading and traveling. Nice to meet you!"`,
+**Being polite:**
+Add 'please' for politeness
+• "Please sit down."
+• "Close the window, please."`,
     examples: [
-      { english: "Hi, I'm Carlos. I'm from Spain and I work as an engineer.", spanish: "Hola, soy Carlos. Soy de España y trabajo como ingeniero.", context: "Presentación básica" },
-      { english: "This is my colleague, Ana. She's from our marketing team.", spanish: "Esta es mi colega, Ana. Es de nuestro equipo de marketing.", context: "Presentando a otros" },
-      { english: "Nice to meet you! What do you do?", spanish: "¡Mucho gusto! ¿A qué te dedicas?", context: "Después de conocer a alguien" },
-      { english: "I live in Madrid but I'm originally from Barcelona.", spanish: "Vivo en Madrid pero soy originalmente de Barcelona.", context: "Detalles sobre origen" }
+      { english: "Open your books to page 45.", spanish: "Abran sus libros en la página 45.", context: "Classroom instruction" },
+      { english: "Don't touch that! It's hot.", spanish: "¡No toques eso! Está caliente.", context: "Warning" },
+      { english: "Let's have lunch together.", spanish: "Almorcemos juntos.", context: "Suggestion" },
+      { english: "Please wait here.", spanish: "Por favor espere aquí.", context: "Polite request" }
     ],
     commonMistakes: [
-      { mistake: "I am Carlos years.", correction: "I am Carlos. I'm X years old.", why: "Separa nombre y edad; usa 'years old'." },
-      { mistake: "Nice to meet you. Me too.", correction: "Nice to meet you. Nice to meet you too.", why: "Repite la frase completa para responder." },
-      { mistake: "What is your job?", correction: "What do you do?", why: "'What do you do?' es más natural para preguntar profesión." }
+      { mistake: "You sit down.", correction: "Sit down.", why: "Imperatives don't use subject 'you'." },
+      { mistake: "Not open the door.", correction: "Don't open the door.", why: "Negative imperative needs 'don't'." },
+      { mistake: "Let's to go.", correction: "Let's go.", why: "After 'let's' use base verb, no 'to'." }
     ],
     practiceTips: [
-      "Escribe tu presentación y memorizala.",
-      "Practica frente al espejo.",
-      "Grábate presentándote y escucha tu pronunciación.",
-      "Practica con un compañero: tomen turnos presentándose.",
-      "Varía tu presentación según el contexto (formal/informal)."
+      "Write instructions for a simple recipe.",
+      "Give directions to places using imperatives.",
+      "Practice classroom commands in English.",
+      "Play 'Simon Says' to practice.",
+      "Write warnings for dangerous situations."
     ],
     checkpoint: { 
-      question: "Preséntate en 4-5 oraciones.", 
-      answer: "Hi, I'm [Name]. I'm from [City/Country]. I'm [Age] years old. I work as a [Job]/I'm a student. I like [Hobbies]. Nice to meet you!" 
+      question: "Give 3 instructions for making coffee.", 
+      answer: "Boil some water. Put coffee in a cup. Pour the hot water. / Add milk and sugar." 
     },
-    nextStep: "Aprende a hablar de tu vida diaria y hábitos."
+    nextStep: "Now practice the skill of talking about daily life."
   },
 
-  // Article 21: Talking About Daily Life
+  // Article 21: Skill - Talking about Daily Life
   {
     id: 'skill-daily-life',
-    title: 'Habilidad: Hablar de la vida diaria y hábitos',
+    title: 'Skill: Talking about Daily Life and Habits',
     level: 'A1→A2',
     category: 'skill',
-    learningGoal: 'El estudiante describirá su rutina diaria y hábitos usando Present Simple y adverbios de frecuencia.',
-    explanation: `Hablar de tu vida diaria es una de las conversaciones más comunes. Usa Present Simple y adverbios de frecuencia.
+    learningGoal: 'The student will describe their daily routine and habits using Present Simple and adverbs of frequency.',
+    explanation: `Talking about your daily life is one of the most common conversations. Use Present Simple and adverbs of frequency.
 
-**Estructura básica:**
-"I + verbo (+ adverbio) + complemento"
+**Basic structure:**
+"I + verb (+ adverb) + complement"
 
-**Verbos de rutina comunes:**
+**Common routine verbs:**
 • wake up, get up
 • have breakfast/lunch/dinner
 • go to work/school
@@ -1418,188 +1401,187 @@ Wh- + auxiliar + sujeto + verbo?
 • get dressed
 • go to bed, sleep
 
-**Adverbios de frecuencia:**
-• always (100%) - siempre
-• usually (80%) - usualmente
-• often (60%) - a menudo
-• sometimes (40%) - a veces
-• rarely/seldom (20%) - raramente
-• never (0%) - nunca
+**Adverbs of frequency:**
+• always (100%) - every time
+• usually (80%) - most of the time
+• often (60%) - frequently
+• sometimes (40%) - occasionally
+• rarely/seldom (20%) - not often
+• never (0%) - not at any time
 
-**Expresiones de tiempo:**
+**Time expressions:**
 • every day/week/month
 • on weekdays/weekends
 • in the morning/afternoon/evening
 • at night
 • once/twice/three times a week
 
-**Modelo de rutina:**
+**Routine model:**
 "I usually wake up at 7 AM. First, I take a shower and get dressed. Then, I have breakfast at 7:30. I always drink coffee in the morning. I go to work at 8 and I usually start at 9. I have lunch at 1 PM. I finish work at 6 and come home around 7. In the evening, I sometimes watch TV or read. I usually go to bed at 11 PM."`,
     examples: [
-      { english: "I always have coffee for breakfast.", spanish: "Siempre tomo café para el desayuno.", context: "Hábito con 'always'" },
-      { english: "She usually goes to the gym three times a week.", spanish: "Ella usualmente va al gimnasio tres veces a la semana.", context: "Frecuencia específica" },
-      { english: "On weekends, I like to sleep late.", spanish: "Los fines de semana, me gusta dormir hasta tarde.", context: "Rutina de fin de semana" },
-      { english: "I never eat breakfast. I'm not hungry in the morning.", spanish: "Nunca desayuno. No tengo hambre por la mañana.", context: "Negativo con 'never'" }
+      { english: "I always have coffee for breakfast.", spanish: "Siempre tomo café para el desayuno.", context: "Habit with 'always'" },
+      { english: "She usually goes to the gym three times a week.", spanish: "Ella usualmente va al gimnasio tres veces a la semana.", context: "Specific frequency" },
+      { english: "On weekends, I like to sleep late.", spanish: "Los fines de semana, me gusta dormir hasta tarde.", context: "Weekend routine" },
+      { english: "I never eat breakfast. I'm not hungry in the morning.", spanish: "Nunca desayuno. No tengo hambre por la mañana.", context: "Negative with 'never'" }
     ],
     commonMistakes: [
-      { mistake: "I always am tired.", correction: "I'm always tired.", why: "Con 'be', el adverbio va después." },
-      { mistake: "I go sometimes to the gym.", correction: "I sometimes go to the gym.", why: "El adverbio va antes del verbo principal." },
-      { mistake: "I have the breakfast at 8.", correction: "I have breakfast at 8.", why: "No usamos artículo antes de 'breakfast/lunch/dinner'." }
+      { mistake: "I always am tired.", correction: "I'm always tired.", why: "With 'be', the adverb goes after." },
+      { mistake: "I go sometimes to the gym.", correction: "I sometimes go to the gym.", why: "Adverb goes before the main verb." },
+      { mistake: "I have the breakfast at 8.", correction: "I have breakfast at 8.", why: "Don't use article before 'breakfast/lunch/dinner'." }
     ],
     practiceTips: [
-      "Escribe tu rutina completa de un día normal.",
-      "Compara tu rutina con la de un amigo.",
-      "Usa conectores: first, then, after that, finally.",
-      "Practica describiendo rutinas de otras personas.",
-      "Graba un video describiendo tu día típico."
+      "Write your complete routine for a normal day.",
+      "Compare your routine with a friend's.",
+      "Use connectors: first, then, after that, finally.",
+      "Practice describing other people's routines.",
+      "Record a video describing your typical day."
     ],
     checkpoint: { 
-      question: "Describe tu mañana típica en 3-4 oraciones.", 
+      question: "Describe your typical morning in 3-4 sentences.", 
       answer: "I wake up at 7 AM. I take a shower and get dressed. Then I have breakfast. I leave for work at 8." 
     },
-    nextStep: "Aprende a describir experiencias pasadas simples."
+    nextStep: "Learn to describe simple past experiences."
   },
 
   // Article 22: Describing Past Experiences
   {
     id: 'skill-past-experiences',
-    title: 'Habilidad: Describir experiencias pasadas simples',
+    title: 'Skill: Describing Simple Past Experiences',
     level: 'A1→A2',
     category: 'skill',
-    learningGoal: 'El estudiante narrará eventos pasados usando Past Simple con verbos regulares e irregulares.',
-    explanation: `Contar experiencias pasadas es esencial para conversaciones. Usa Past Simple con expresiones de tiempo pasado.
+    learningGoal: 'The student will narrate past events using Past Simple with regular and irregular verbs.',
+    explanation: `Telling past experiences is essential for conversations. Use Past Simple with past time expressions.
 
-**Estructura:**
-Sujeto + verbo en pasado + complemento + (expresión de tiempo)
+**Structure:**
+Subject + past verb + complement + (time expression)
 
-**Expresiones de tiempo pasado:**
-• yesterday - ayer
+**Past time expressions:**
+• yesterday - the day before today
 • last night/week/month/year
 • ago: two days ago, a week ago
 • in 2020, in January
 • when I was young/a child
 
-**Preguntas sobre el pasado:**
+**Questions about the past:**
 • "What did you do yesterday?"
 • "Where did you go last weekend?"
 • "How was your vacation?"
 • "Did you have a good time?"
 
-**Respuestas:**
+**Answers:**
 • "I went to the beach."
 • "It was great!"
 • "Yes, I had a wonderful time."
 
-**Conectores temporales:**
+**Time connectors:**
 • First, ... / At first, ...
 • Then, ... / After that, ...
 • Later, ...
 • Finally, ... / In the end, ...
 
-**Modelo de narración:**
+**Narration model:**
 "Last weekend, I went to the mountains with my family. First, we drove for two hours. Then, we had a picnic near a lake. The weather was beautiful. After that, we took many photos. We came back home in the evening. It was a wonderful day!"`,
     examples: [
-      { english: "Yesterday I visited my grandmother.", spanish: "Ayer visité a mi abuela.", context: "Pasado simple + yesterday" },
-      { english: "Last summer, we traveled to Italy. It was amazing!", spanish: "El verano pasado, viajamos a Italia. ¡Fue increíble!", context: "Narración con opinión" },
-      { english: "I didn't go to the party because I was sick.", spanish: "No fui a la fiesta porque estaba enfermo.", context: "Pasado negativo + razón" },
-      { english: "When I was a child, I lived in a small town.", spanish: "Cuando era niño, vivía en un pueblo pequeño.", context: "Pasado + cuando era niño" }
+      { english: "Yesterday I visited my grandmother.", spanish: "Ayer visité a mi abuela.", context: "Past simple + yesterday" },
+      { english: "Last summer, we traveled to Italy. It was amazing!", spanish: "El verano pasado, viajamos a Italia. ¡Fue increíble!", context: "Narration with opinion" },
+      { english: "I didn't go to the party because I was sick.", spanish: "No fui a la fiesta porque estaba enfermo.", context: "Negative past + reason" },
+      { english: "When I was a child, I lived in a small town.", spanish: "Cuando era niño, vivía en un pueblo pequeño.", context: "Past + when I was young" }
     ],
     commonMistakes: [
-      { mistake: "Yesterday I go to the cinema.", correction: "Yesterday I went to the cinema.", why: "Con expresiones de pasado, usa el verbo en pasado." },
-      { mistake: "I didn't went there.", correction: "I didn't go there.", why: "Después de 'didn't', el verbo va en forma base." },
-      { mistake: "It was a day wonderful.", correction: "It was a wonderful day.", why: "Adjetivo antes del sustantivo en inglés." }
+      { mistake: "Yesterday I go to the cinema.", correction: "Yesterday I went to the cinema.", why: "With past expressions, use past tense verb." },
+      { mistake: "I didn't went there.", correction: "I didn't go there.", why: "After 'didn't', use base form verb." },
+      { mistake: "It was a day wonderful.", correction: "It was a wonderful day.", why: "Adjective before noun in English." }
     ],
     practiceTips: [
-      "Escribe sobre tu último fin de semana.",
-      "Practica verbos irregulares en pasado.",
-      "Cuenta una anécdota de tu infancia.",
-      "Responde preguntas: 'What did you do yesterday?'",
-      "Lee historias cortas en pasado y retells."
+      "Write about your last weekend.",
+      "Practice irregular verbs in past tense.",
+      "Tell a story from your childhood.",
+      "Answer questions: 'What did you do yesterday?'",
+      "Read short stories in past tense and retell them."
     ],
     checkpoint: { 
-      question: "Cuenta qué hiciste el fin de semana pasado.", 
+      question: "Tell what you did last weekend.", 
       answer: "Last weekend, I [verb in past]. First, I... Then, I... It was [adjective]!" 
     },
-    nextStep: "Aprende a pedir y dar direcciones."
+    nextStep: "Learn to ask for and give directions."
   },
 
-  // Articles 23-29 continue with remaining A1→A2 skills...
   // Article 23: Asking and Giving Directions
   {
     id: 'skill-directions',
-    title: 'Habilidad: Pedir y dar direcciones',
+    title: 'Skill: Asking and Giving Directions',
     level: 'A1→A2',
     category: 'skill',
-    learningGoal: 'El estudiante preguntará cómo llegar a lugares y dará indicaciones claras usando imperativo y preposiciones.',
-    explanation: `Pedir y dar direcciones es una habilidad práctica esencial, especialmente al viajar.
+    learningGoal: 'The student will ask how to get to places and give clear directions using imperatives and prepositions.',
+    explanation: `Asking and giving directions is an essential practical skill, especially when traveling.
 
-**Pedir direcciones:**
+**Asking for directions:**
 • "Excuse me, where is the bank?"
 • "Could you tell me how to get to the station?"
 • "Is there a pharmacy near here?"
 • "How do I get to the museum?"
 
-**Dar direcciones - Verbos imperativo:**
-• Go straight (ahead) - sigue recto
-• Turn left/right - gira a la izquierda/derecha
-• Take the first/second left/right - toma la primera/segunda a la izquierda
-• Go past the... - pasa el/la...
-• Cross the street - cruza la calle
-• Walk along the street - camina por la calle
+**Giving directions - Imperative verbs:**
+• Go straight (ahead) - continue forward
+• Turn left/right - change direction
+• Take the first/second left/right - at the first/second turn
+• Go past the... - pass by something
+• Cross the street - walk across
+• Walk along the street - walk down the street
 
-**Preposiciones de lugar:**
-• on your left/right - a tu izquierda/derecha
-• at the corner - en la esquina
-• next to - al lado de
-• across from / opposite - enfrente de
-• between X and Y - entre X e Y
+**Place prepositions:**
+• on your left/right - to the left/right side
+• at the corner - where streets meet
+• next to - beside
+• across from / opposite - on the other side
+• between X and Y - in the middle
 
-**Expresiones de distancia:**
+**Distance expressions:**
 • It's about 5 minutes walk.
 • It's not far from here.
 • It's two blocks from here.
 • You can't miss it.
 
-**Modelo de diálogo:**
+**Dialogue model:**
 A: "Excuse me, where is the post office?"
 B: "Go straight ahead for two blocks. Then turn left at the corner. The post office is on your right, next to the bank."
 A: "Thank you very much!"
 B: "You're welcome."`,
     examples: [
-      { english: "Go straight and turn right at the traffic lights.", spanish: "Sigue recto y gira a la derecha en el semáforo.", context: "Instrucciones básicas" },
-      { english: "The museum is on your left, across from the park.", spanish: "El museo está a tu izquierda, enfrente del parque.", context: "Ubicación con preposiciones" },
-      { english: "Could you tell me how to get to the train station?", spanish: "¿Podría decirme cómo llegar a la estación de tren?", context: "Pregunta formal" },
-      { english: "It's about a 10-minute walk from here.", spanish: "Está a unos 10 minutos a pie de aquí.", context: "Indicando distancia" }
+      { english: "Go straight and turn right at the traffic lights.", spanish: "Sigue recto y gira a la derecha en el semáforo.", context: "Basic instructions" },
+      { english: "The museum is on your left, across from the park.", spanish: "El museo está a tu izquierda, enfrente del parque.", context: "Location with prepositions" },
+      { english: "Could you tell me how to get to the train station?", spanish: "¿Podría decirme cómo llegar a la estación de tren?", context: "Formal question" },
+      { english: "It's about a 10-minute walk from here.", spanish: "Está a unos 10 minutos a pie de aquí.", context: "Indicating distance" }
     ],
     commonMistakes: [
-      { mistake: "Where is the bank is?", correction: "Where is the bank?", why: "No repitas 'is'." },
-      { mistake: "Turn to the left.", correction: "Turn left.", why: "'Turn left/right' no necesita 'to the'." },
-      { mistake: "Go straight on for two streets.", correction: "Go straight for two blocks.", why: "'Blocks' es más natural que 'streets' para distancia." }
+      { mistake: "Where is the bank is?", correction: "Where is the bank?", why: "Don't repeat 'is'." },
+      { mistake: "Turn to the left.", correction: "Turn left.", why: "'Turn left/right' doesn't need 'to the'." },
+      { mistake: "Go straight on for two streets.", correction: "Go straight for two blocks.", why: "'Blocks' is more natural than 'streets' for distance." }
     ],
     practiceTips: [
-      "Usa Google Maps para practicar direcciones.",
-      "Dibuja un mapa y da direcciones a un amigo.",
-      "Role-play: uno pregunta, otro responde.",
-      "Practica con lugares reales de tu ciudad.",
-      "Memoriza expresiones útiles como 'You can't miss it.'"
+      "Use Google Maps to practice directions.",
+      "Draw a map and give directions to a friend.",
+      "Role-play: one asks, the other responds.",
+      "Practice with real places in your city.",
+      "Memorize useful expressions like 'You can't miss it.'"
     ],
     checkpoint: { 
-      question: "Da direcciones de tu casa a la tienda más cercana.", 
+      question: "Give directions from your house to the nearest store.", 
       answer: "Go out of my house and turn left. Walk straight for one block. The store is on your right." 
     },
-    nextStep: "Aprende a ordenar comida y comprar en tiendas."
+    nextStep: "Learn to order food and shop in stores."
   },
 
   // Article 24: Ordering Food and Shopping
   {
     id: 'skill-ordering-shopping',
-    title: 'Habilidad: Ordenar comida y comprar en una tienda',
+    title: 'Skill: Ordering Food and Shopping in a Store',
     level: 'A1→A2',
     category: 'skill',
-    learningGoal: 'El estudiante podrá hacer pedidos en restaurantes y realizar compras básicas con frases apropiadas.',
-    explanation: `Saber pedir comida y comprar es esencial para la vida diaria y los viajes.
+    learningGoal: 'The student will be able to order in restaurants and make basic purchases with appropriate phrases.',
+    explanation: `Knowing how to order food and shop is essential for daily life and travel.
 
-**En un restaurante - Cliente:**
+**In a restaurant - Customer:**
 • "A table for two, please."
 • "Can I see the menu, please?"
 • "I'd like... / I'll have..."
@@ -1608,66 +1590,66 @@ B: "You're welcome."`,
 • "I'm allergic to..."
 • "Can I have the bill/check, please?"
 
-**Respuestas del mesero:**
+**Waiter responses:**
 • "Would you like something to drink?"
 • "Are you ready to order?"
 • "How would you like your steak?" (rare/medium/well-done)
 • "Anything else?"
 
-**En una tienda - Cliente:**
+**In a store - Customer:**
 • "Excuse me, where can I find...?"
 • "Do you have...?"
 • "How much is this?"
-• "Can I try this on?" (ropa)
+• "Can I try this on?" (clothes)
 • "I'll take this one."
 • "Can I pay by card?"
 
-**Respuestas del vendedor:**
+**Seller responses:**
 • "Can I help you?"
 • "What size do you need?"
 • "That's $50, please."
 • "Cash or card?"
 
-**Frases útiles:**
+**Useful phrases:**
 • "It's too expensive."
 • "Do you have this in a different size/color?"
 • "I'm just looking, thanks."
 • "Keep the change."`,
     examples: [
-      { english: "I'd like a cheeseburger and a cola, please.", spanish: "Quisiera una hamburguesa con queso y una coca, por favor.", context: "Ordenando comida" },
-      { english: "How much are these shoes?", spanish: "¿Cuánto cuestan estos zapatos?", context: "Preguntando precio (plural)" },
-      { english: "Do you have this shirt in medium?", spanish: "¿Tiene esta camisa en talla mediana?", context: "Preguntando por talla" },
-      { english: "Can I have the check, please? We're ready to go.", spanish: "¿Me puede traer la cuenta, por favor? Estamos listos para irnos.", context: "Pidiendo la cuenta" }
+      { english: "I'd like a cheeseburger and a cola, please.", spanish: "Quisiera una hamburguesa con queso y una coca, por favor.", context: "Ordering food" },
+      { english: "How much are these shoes?", spanish: "¿Cuánto cuestan estos zapatos?", context: "Asking price (plural)" },
+      { english: "Do you have this shirt in medium?", spanish: "¿Tiene esta camisa en talla mediana?", context: "Asking for size" },
+      { english: "Can I have the check, please? We're ready to go.", spanish: "¿Me puede traer la cuenta, por favor? Estamos listos para irnos.", context: "Asking for bill" }
     ],
     commonMistakes: [
-      { mistake: "I want a coffee.", correction: "I'd like a coffee, please.", why: "'I'd like' es más educado que 'I want'." },
-      { mistake: "How much costs this?", correction: "How much is this? / How much does this cost?", why: "Estructura correcta con 'how much'." },
-      { mistake: "The account, please.", correction: "The bill/check, please.", why: "'Bill' (UK) o 'check' (US), no 'account'." }
+      { mistake: "I want a coffee.", correction: "I'd like a coffee, please.", why: "'I'd like' is more polite than 'I want'." },
+      { mistake: "How much costs this?", correction: "How much is this? / How much does this cost?", why: "Correct structure with 'how much'." },
+      { mistake: "The account, please.", correction: "The bill/check, please.", why: "'Bill' (UK) or 'check' (US), not 'account'." }
     ],
     practiceTips: [
-      "Role-play: practica con un amigo como mesero/cliente.",
-      "Lee menús de restaurantes en inglés.",
-      "Practica diálogos de compras en voz alta.",
-      "Memoriza frases clave: 'I'd like...', 'Can I have...?'",
-      "Ve videos de compras en inglés."
+      "Role-play: practice with a friend as waiter/customer.",
+      "Read restaurant menus in English.",
+      "Practice shopping dialogues out loud.",
+      "Memorize key phrases: 'I'd like...', 'Can I have...?'",
+      "Watch shopping videos in English."
     ],
     checkpoint: { 
-      question: "Ordena un café y un sándwich en un café.", 
+      question: "Order a coffee and a sandwich at a café.", 
       answer: "I'd like a coffee and a sandwich, please. / Can I have a coffee and a chicken sandwich?" 
     },
-    nextStep: "Aprende a hacer planes simples con 'going to'."
+    nextStep: "Learn to make simple plans with 'going to'."
   },
 
   // Article 25: Making Simple Plans
   {
     id: 'skill-making-plans',
-    title: 'Habilidad: Hacer planes simples',
+    title: 'Skill: Making Simple Plans',
     level: 'A1→A2',
     category: 'skill',
-    learningGoal: 'El estudiante usará "going to" y expresiones de tiempo futuro para proponer y acordar planes.',
-    explanation: `Hacer planes con amigos y colegas requiere vocabulario específico y estructuras de futuro.
+    learningGoal: 'The student will use "going to" and future time expressions to propose and agree on plans.',
+    explanation: `Making plans with friends and colleagues requires specific vocabulary and future structures.
 
-**Proponer planes:**
+**Proposing plans:**
 • "Do you want to...?"
 • "Would you like to...?"
 • "How about + verb-ing...?"
@@ -1675,569 +1657,567 @@ B: "You're welcome."`,
 • "We could + verb..."
 • "Why don't we + verb...?"
 
-**Aceptar:**
+**Accepting:**
 • "Sure!"
 • "That sounds great!"
 • "I'd love to!"
 • "Good idea!"
 • "Count me in!"
 
-**Rechazar cortésmente:**
+**Declining politely:**
 • "I'm sorry, I can't."
 • "I'd love to, but..."
 • "Maybe another time."
 • "I'm afraid I'm busy."
 
-**Hablar de planes decididos:**
+**Talking about decided plans:**
 • "I'm going to visit my parents this weekend."
 • "We're having dinner at 8."
 • "She's traveling to Paris next week."
 
-**Expresiones de tiempo futuro:**
+**Future time expressions:**
 • tomorrow, tonight
 • this weekend, this week
 • next Monday, next month
 • in two days, in a week
 
-**Confirmar detalles:**
+**Confirming details:**
 • "What time shall we meet?"
 • "Where do you want to go?"
 • "How about meeting at 7?"
 • "Is Saturday good for you?"`,
     examples: [
-      { english: "Do you want to go to the cinema tonight?", spanish: "¿Quieres ir al cine esta noche?", context: "Proponiendo plan" },
-      { english: "That sounds great! What time?", spanish: "¡Suena genial! ¿A qué hora?", context: "Aceptando" },
-      { english: "I'm sorry, I can't. I'm going to have dinner with my family.", spanish: "Lo siento, no puedo. Voy a cenar con mi familia.", context: "Rechazando con razón" },
-      { english: "Let's meet at 7 in front of the restaurant.", spanish: "Quedemos a las 7 frente al restaurante.", context: "Fijando detalles" }
+      { english: "Do you want to go to the cinema tonight?", spanish: "¿Quieres ir al cine esta noche?", context: "Proposing plan" },
+      { english: "That sounds great! What time?", spanish: "¡Suena genial! ¿A qué hora?", context: "Accepting" },
+      { english: "I'm sorry, I can't. I'm going to have dinner with my family.", spanish: "Lo siento, no puedo. Voy a cenar con mi familia.", context: "Declining with reason" },
+      { english: "Let's meet at 7 in front of the restaurant.", spanish: "Quedemos a las 7 frente al restaurante.", context: "Setting details" }
     ],
     commonMistakes: [
       { mistake: "I want go to the cinema.", correction: "I want to go to the cinema.", why: "After 'want', use 'to + verb'." },
-      { mistake: "Let's to meet tomorrow.", correction: "Let's meet tomorrow.", why: "After 'let's', use verb base (no 'to')." },
+      { mistake: "Let's to meet tomorrow.", correction: "Let's meet tomorrow.", why: "After 'let's', use base verb (no 'to')." },
       { mistake: "What about go to the beach?", correction: "What about going to the beach?", why: "'What about' / 'How about' + verb-ING." }
     ],
     practiceTips: [
-      "Practica invitando a amigos por mensaje en inglés.",
-      "Role-play: propón planes y responde.",
-      "Escribe tus planes para la semana.",
-      "Memoriza formas de aceptar y rechazar.",
-      "Practica negociando horarios y lugares."
+      "Practice inviting friends by text in English.",
+      "Role-play: propose plans and respond.",
+      "Write your plans for the week.",
+      "Memorize ways to accept and decline.",
+      "Practice negotiating times and places."
     ],
     checkpoint: { 
-      question: "Invita a un amigo a ver una película el sábado.", 
+      question: "Invite a friend to watch a movie on Saturday.", 
       answer: "Would you like to watch a movie on Saturday? / Do you want to go to the cinema this Saturday?" 
     },
-    nextStep: "Aprende a expresar gustos y disgustos."
+    nextStep: "Learn to express likes and dislikes."
   },
 
   // Article 26: Expressing Likes and Dislikes
   {
     id: 'skill-likes-dislikes',
-    title: 'Habilidad: Expresar gustos y disgustos',
+    title: 'Skill: Expressing Likes and Dislikes',
     level: 'A1→A2',
     category: 'skill',
-    learningGoal: 'El estudiante expresará preferencias usando like, love, hate, prefer y otras estructuras.',
-    explanation: `Expresar gustos es fundamental para conversaciones y para conocer a otras personas.
+    learningGoal: 'The student will express preferences using like, love, hate, prefer and other structures.',
+    explanation: `Expressing likes is fundamental for conversations and getting to know others.
 
-**Verbos de preferencia + verb-ING / noun:**
-• **Love** (encanta): "I love cooking."
-• **Like** (gusta): "I like pizza."
-• **Enjoy** (disfruta): "I enjoy reading."
-• **Don't mind** (no importa): "I don't mind waiting."
-• **Don't like** (no gusta): "I don't like spiders."
-• **Hate** (odia): "I hate getting up early."
-• **Can't stand** (no soporta): "I can't stand loud music."
+**Preference verbs + verb-ING / noun:**
+• **Love** (love): "I love cooking."
+• **Like** (like): "I like pizza."
+• **Enjoy** (enjoy): "I enjoy reading."
+• **Don't mind** (don't mind): "I don't mind waiting."
+• **Don't like** (don't like): "I don't like spiders."
+• **Hate** (hate): "I hate getting up early."
+• **Can't stand** (can't stand): "I can't stand loud music."
 
-**Escala de preferencia:**
+**Preference scale:**
 love > really like > like > don't mind > don't like > hate > can't stand
 
-**Preguntas:**
+**Questions:**
 • "Do you like...?"
 • "What kind of music do you like?"
 • "What's your favorite...?"
 • "Which do you prefer, A or B?"
 
-**Expresar preferencia:**
+**Expressing preference:**
 • "I prefer coffee to tea."
 • "I'd rather stay home."
 • "I like both, but I prefer..."
 
-**Razones:**
+**Reasons:**
 • "I like it because..."
 • "I don't like it because it's..."
 • "It makes me feel..."
 
-**Respuestas:**
-• "So do I!" (Yo también - positivo)
-• "Neither do I." (Yo tampoco - negativo)
-• "Really? I don't." (¿En serio? A mí no.)`,
+**Responses:**
+• "So do I!" (Me too - positive)
+• "Neither do I." (Me neither - negative)
+• "Really? I don't." (Really? I don't.)`,
     examples: [
-      { english: "I love traveling but I hate packing.", spanish: "Me encanta viajar pero odio empacar.", context: "Contraste de gustos" },
-      { english: "What kind of movies do you like?", spanish: "¿Qué tipo de películas te gustan?", context: "Preguntando preferencias" },
-      { english: "I prefer tea to coffee.", spanish: "Prefiero el té al café.", context: "Comparando preferencias" },
-      { english: "I really enjoy cooking. It relaxes me.", spanish: "Realmente disfruto cocinar. Me relaja.", context: "Gusto con razón" }
+      { english: "I love traveling but I hate packing.", spanish: "Me encanta viajar pero odio empacar.", context: "Contrasting likes" },
+      { english: "What kind of movies do you like?", spanish: "¿Qué tipo de películas te gustan?", context: "Asking preferences" },
+      { english: "I prefer tea to coffee.", spanish: "Prefiero el té al café.", context: "Comparing preferences" },
+      { english: "I really enjoy cooking. It relaxes me.", spanish: "Realmente disfruto cocinar. Me relaja.", context: "Like with reason" }
     ],
     commonMistakes: [
-      { mistake: "I like play tennis.", correction: "I like playing tennis.", why: "Después de 'like', usa verbo + -ING." },
-      { mistake: "I'm like pizza.", correction: "I like pizza.", why: "'I'm like' significa 'soy como'. 'I like' = 'me gusta'." },
-      { mistake: "Me too.", correction: "So do I. / Me too.", why: "'Me too' es informal. 'So do I' es más correcto gramaticalmente." }
+      { mistake: "I like play tennis.", correction: "I like playing tennis.", why: "After 'like', use verb + -ING." },
+      { mistake: "I'm like pizza.", correction: "I like pizza.", why: "'I'm like' means 'I am similar to'. 'I like' = 'I enjoy'." },
+      { mistake: "Me too.", correction: "So do I. / Me too.", why: "'Me too' is informal. 'So do I' is more grammatically correct." }
     ],
     practiceTips: [
-      "Haz una lista de 10 cosas que amas y 5 que odias.",
-      "Compara tus gustos con un amigo.",
-      "Practica dando razones: 'I like X because...'",
-      "Responde a gustos: 'So do I' / 'Neither do I'.",
-      "Describe tus comidas, películas y música favoritas."
+      "Make a list of 10 things you love and 5 you hate.",
+      "Compare your likes with a friend.",
+      "Interview someone about their favorites.",
+      "Practice 'So do I' and 'Neither do I' responses.",
+      "Write about why you like your favorite things."
     ],
     checkpoint: { 
-      question: "Describe tres cosas que te gustan y una que no te gusta.", 
-      answer: "I love traveling and reading. I like cooking. But I don't like getting up early." 
+      question: "Tell 3 things you love and 2 you hate.", 
+      answer: "I love traveling, cooking, and reading. I hate getting up early and doing housework." 
     },
-    nextStep: "Aprende a hacer comparaciones básicas."
+    nextStep: "Learn to talk on the phone."
   },
 
-  // Article 27: Making Basic Comparisons
+  // Article 27: Making Phone Calls
   {
-    id: 'skill-basic-comparisons',
-    title: 'Habilidad: Hacer comparaciones básicas',
+    id: 'skill-phone-calls',
+    title: 'Skill: Making Phone Calls',
     level: 'A1→A2',
     category: 'skill',
-    learningGoal: 'El estudiante comparará personas, lugares y cosas usando comparativos y superlativos.',
-    explanation: `Las comparaciones son útiles para describir diferencias y similitudes.
+    learningGoal: 'The student will handle basic phone conversations including answering, asking for information, and leaving messages.',
+    explanation: `Phone calls can be challenging because you can't see the person. Learn common phrases for different situations.
 
-**Comparativos (dos cosas):**
-• A is + comparativo + than B
-• "Paris is bigger than Lyon."
-• "This book is more interesting than that one."
+**Answering the phone:**
+• "Hello?"
+• "Good morning/afternoon, [name] speaking."
+• "[Company name], how can I help you?"
 
-**Superlativos (tres o más):**
-• A is the + superlativo + (of/in)
-• "Tokyo is the biggest city in Japan."
-• "She's the most intelligent person I know."
+**Asking for someone:**
+• "Is [name] there?"
+• "Can I speak to [name], please?"
+• "Could I speak with [name]?"
 
-**Igualdad:**
-• as + adjetivo + as
-• "He's as tall as his father."
-• "This coffee is as good as the other."
+**Identifying yourself:**
+• "This is [name]."
+• "It's [name] calling."
+• "My name is [name]."
 
-**Desigualdad:**
-• not as + adjetivo + as
-• "My car is not as fast as yours."
+**Asking the caller to wait:**
+• "Just a moment, please."
+• "Hold on, please."
+• "One moment."
 
-**Expresiones útiles:**
-• "Which is better, A or B?"
-• "They're both good, but I prefer..."
-• "There's no comparison. X is much better."
-• "It's completely different."
-• "They're quite similar."
+**Person not available:**
+• "I'm sorry, [name] isn't here right now."
+• "Can I take a message?"
+• "Would you like to leave a message?"
 
-**Amplificadores:**
-• much/far + comparativo: "much better"
-• a little/slightly + comparativo: "a little cheaper"
-• by far + superlativo: "by far the best"`,
+**Leaving a message:**
+• "Could you tell him/her that [name] called?"
+• "Please ask him/her to call me back."
+• "My number is..."
+
+**Ending a call:**
+• "Goodbye."
+• "Thank you for calling."
+• "I'll call you later."`,
     examples: [
-      { english: "Summer is hotter than spring.", spanish: "El verano es más caliente que la primavera.", context: "Comparando estaciones" },
-      { english: "What's the most beautiful place you've visited?", spanish: "¿Cuál es el lugar más hermoso que has visitado?", context: "Pregunta superlativa" },
-      { english: "This restaurant is as expensive as the other one.", spanish: "Este restaurante es tan caro como el otro.", context: "Comparación de igualdad" },
-      { english: "My apartment is much smaller than my parents' house.", spanish: "Mi apartamento es mucho más pequeño que la casa de mis padres.", context: "Comparativo intensificado" }
+      { english: "Hello, could I speak to Mr. Johnson, please?", spanish: "Hola, ¿podría hablar con el Sr. Johnson, por favor?", context: "Formal request" },
+      { english: "I'm sorry, he's not available. Can I take a message?", spanish: "Lo siento, no está disponible. ¿Puedo tomar un mensaje?", context: "Person not available" },
+      { english: "Could you ask her to call me back? My number is 555-1234.", spanish: "¿Podría pedirle que me devuelva la llamada? Mi número es 555-1234.", context: "Leaving message" },
+      { english: "This is Maria from the marketing department.", spanish: "Soy María del departamento de marketing.", context: "Identifying yourself" }
     ],
     commonMistakes: [
-      { mistake: "He is more tall than me.", correction: "He is taller than me.", why: "Adjetivos cortos usan -er, no 'more'." },
-      { mistake: "She is the more intelligent.", correction: "She is the most intelligent.", why: "Superlativos usan 'the most', no 'the more'." },
-      { mistake: "My house is as big than yours.", correction: "My house is as big as yours.", why: "Usa 'as...as', no 'as...than'." }
+      { mistake: "I am John.", correction: "This is John.", why: "On the phone we say 'This is...' not 'I am...'." },
+      { mistake: "Who is speaking?", correction: "Who's calling? / May I ask who's calling?", why: "'Who is speaking?' sounds rude. Use polite alternatives." },
+      { mistake: "Repeat, please.", correction: "Could you repeat that, please?", why: "Just 'repeat' sounds abrupt. Use a polite question." }
     ],
     practiceTips: [
-      "Compara dos ciudades que conoces.",
-      "Describe a miembros de tu familia comparándolos.",
-      "Practica con fotos: '¿Cuál es más grande?'",
-      "Compara productos antes de 'comprar'.",
-      "Escribe comparaciones de tus películas favoritas."
+      "Practice phone dialogues with a friend.",
+      "Role-play being caller and receiver.",
+      "Memorize key phrases for phone calls.",
+      "Practice leaving messages.",
+      "Listen to phone conversations in English media."
     ],
     checkpoint: { 
-      question: "Compara dos países que conoces.", 
-      answer: "Spain is hotter than England. England is rainier than Spain. Spain is more popular for beach holidays." 
+      question: "Leave a message for John who isn't available.", 
+      answer: "Could you tell John that [name] called? Please ask him to call me back at [number]." 
     },
-    nextStep: "Aprende a pedir aclaración cuando no entiendes."
+    nextStep: "Learn the strategy of asking for clarification."
   },
 
   // Article 28: Asking for Clarification
   {
-    id: 'skill-asking-clarification',
-    title: 'Habilidad: Pedir aclaración',
+    id: 'strategy-clarification',
+    title: 'Strategy: Asking for Clarification',
     level: 'A1→A2',
-    category: 'skill',
-    learningGoal: 'El estudiante usará frases como "Can you repeat?" y "What does X mean?" para pedir ayuda comunicativa.',
-    explanation: `No entender algo es normal al aprender un idioma. Saber pedir aclaración es crucial.
+    category: 'strategy',
+    learningGoal: 'The student will ask for clarification when they don\'t understand something using polite expressions.',
+    explanation: `Not understanding is normal. The important thing is knowing how to ask for clarification politely.
 
-**Pedir repetición:**
-• "Sorry, can you repeat that?"
+**Asking for repetition:**
+• "Sorry, could you repeat that?"
+• "Pardon?"
 • "Could you say that again, please?"
-• "Pardon?" / "I'm sorry?"
-• "I didn't catch that."
+• "I'm sorry, I didn't catch that."
 
-**Pedir que hablen más lento:**
+**Asking for slower speech:**
 • "Could you speak more slowly, please?"
-• "Can you slow down a bit?"
+• "Sorry, that was too fast."
 
-**Preguntar significado:**
-• "What does [palabra] mean?"
-• "What do you mean by [palabra]?"
-• "I don't understand [palabra]."
-• "How do you say [palabra en español] in English?"
+**Asking for meaning:**
+• "What does [word] mean?"
+• "What do you mean by [word]?"
+• "I don't understand. What is [word]?"
 
-**Verificar comprensión:**
-• "Do you mean...?"
-• "So, you're saying that...?"
-• "Let me check I understand..."
-• "In other words, ...?"
-
-**Pedir que deletreen:**
+**Asking for spelling:**
 • "How do you spell that?"
-• "Can you spell that for me?"
+• "Could you spell that for me?"
 
-**Disculparse por no entender:**
-• "Sorry, I didn't understand."
-• "I'm still learning English."
-• "My English isn't very good yet."
+**Asking for examples:**
+• "Could you give me an example?"
+• "What do you mean exactly?"
 
-**Respuestas útiles:**
+**Asking for confirmation:**
+• "Do you mean...?"
+• "So, you're saying...?"
+• "Let me check I understand..."
+
+**Useful responses:**
 • "Yes, exactly!"
 • "No, what I mean is..."
 • "Let me explain again..."`,
     examples: [
-      { english: "Sorry, could you repeat that more slowly?", spanish: "Perdón, ¿podría repetir eso más lento?", context: "Pidiendo repetición" },
-      { english: "What does 'schedule' mean?", spanish: "¿Qué significa 'schedule'?", context: "Preguntando significado" },
-      { english: "How do you spell your last name?", spanish: "¿Cómo se deletrea tu apellido?", context: "Pidiendo deletreo" },
-      { english: "Do you mean we should meet tomorrow?", spanish: "¿Quieres decir que debemos vernos mañana?", context: "Verificando comprensión" }
+      { english: "Sorry, could you repeat that more slowly?", spanish: "Perdón, ¿podría repetir eso más lento?", context: "Asking for repetition" },
+      { english: "What does 'schedule' mean?", spanish: "¿Qué significa 'schedule'?", context: "Asking for meaning" },
+      { english: "How do you spell your last name?", spanish: "¿Cómo se deletrea tu apellido?", context: "Asking for spelling" },
+      { english: "Do you mean we should meet tomorrow?", spanish: "¿Quieres decir que debemos vernos mañana?", context: "Confirming understanding" }
     ],
     commonMistakes: [
-      { mistake: "Repeat, please.", correction: "Could you repeat that, please?", why: "Solo 'repeat' suena brusco. Usa una pregunta cortés." },
-      { mistake: "What means this word?", correction: "What does this word mean?", why: "Estructura correcta: What does X mean?" },
-      { mistake: "How do you say in English 'mesa'?", correction: "How do you say 'mesa' in English?", why: "'In English' va al final de la pregunta." }
+      { mistake: "Repeat, please.", correction: "Could you repeat that, please?", why: "Just 'repeat' sounds abrupt. Use a polite question." },
+      { mistake: "What means this word?", correction: "What does this word mean?", why: "Correct structure: What does X mean?" },
+      { mistake: "How do you say in English 'mesa'?", correction: "How do you say 'mesa' in English?", why: "'In English' goes at the end of the question." }
     ],
     practiceTips: [
-      "Memoriza 3-4 frases para pedir aclaración.",
-      "No tengas miedo de preguntar.",
-      "Practica con videos: pausa y pide repetición imaginaria.",
-      "Usa estas frases en conversaciones reales.",
-      "Escribe nuevas palabras que aprendas al preguntar."
+      "Memorize 3-4 phrases for asking clarification.",
+      "Don't be afraid to ask.",
+      "Practice with videos: pause and ask for imaginary repetition.",
+      "Use these phrases in real conversations.",
+      "Write down new words you learn by asking."
     ],
     checkpoint: { 
-      question: "¿Cómo preguntas el significado de una palabra que no conoces?", 
+      question: "How do you ask the meaning of a word you don't know?", 
       answer: "What does [word] mean? / Sorry, I don't understand. What does that mean?" 
     },
-    nextStep: "Desarrolla la estrategia de parafrasear cuando te falta vocabulario."
+    nextStep: "Develop the strategy of paraphrasing when you lack vocabulary."
   },
 
   // Article 29: Paraphrasing Strategy
   {
     id: 'strategy-paraphrasing',
-    title: 'Estrategia: Parafrasear y usar gestos cuando falta vocabulario',
+    title: 'Strategy: Paraphrasing and Using Gestures When Lacking Vocabulary',
     level: 'A1→A2',
     category: 'strategy',
-    learningGoal: 'El estudiante desarrollará estrategias para comunicarse cuando no conoce una palabra específica.',
-    explanation: `Cuando no conoces una palabra, no te detengas. Usa estrategias para seguir comunicándote.
+    learningGoal: 'The student will develop strategies to communicate when they don\'t know a specific word.',
+    explanation: `When you don't know a word, don't stop. Use strategies to keep communicating.
 
-**Estrategia 1: Describir la palabra**
-• "It's a thing that..." (Es una cosa que...)
-• "It's a place where..." (Es un lugar donde...)
-• "It's a person who..." (Es una persona que...)
-• "It's like a... but..." (Es como un... pero...)
+**Strategy 1: Describe the word**
+• "It's a thing that..." (It's an object that...)
+• "It's a place where..." (It's a location where...)
+• "It's a person who..." (It's someone who...)
+• "It's like a... but..." (It's similar to... but...)
 
-**Estrategia 2: Categorías generales**
+**Strategy 2: General categories**
 • "It's a kind of food/animal/tool..."
 • "It's a type of..."
 • "It's something you use to..."
 • "It's the thing you use when..."
 
-**Estrategia 3: Usar palabras simples**
-• En vez de "refrigerator" → "cold box for food"
-• En vez de "scissors" → "thing to cut paper"
-• En vez de "pillow" → "soft thing for your head in bed"
+**Strategy 3: Use simple words**
+• Instead of "refrigerator" → "cold box for food"
+• Instead of "scissors" → "thing to cut paper"
+• Instead of "pillow" → "soft thing for your head in bed"
 
-**Estrategia 4: Gestos y señales**
-• Señalar objetos
-• Hacer mímica de acciones
-• Dibujar si es posible
-• Usar el teléfono para mostrar imágenes
+**Strategy 4: Gestures and signals**
+• Point at objects
+• Make action mimes
+• Draw if possible
+• Use your phone to show pictures
 
-**Estrategia 5: Pedir la palabra**
-• "How do you say [descripción] in English?"
-• "What's the word for [descripción]?"
+**Strategy 5: Ask for the word**
+• "How do you say [description] in English?"
+• "What's the word for [description]?"
 • "I don't know the word, but it's..."
 
-**Ejemplo de parafraseo:**
+**Paraphrasing example:**
 "I need... I don't know the word... it's the thing... you use it in the kitchen... to open bottles... " → "A bottle opener!"`,
     examples: [
-      { english: "It's a thing you use to take photos. (camera)", spanish: "Es una cosa que usas para tomar fotos. (cámara)", context: "Describiendo un objeto" },
-      { english: "It's the person who brings food in a restaurant. (waiter)", spanish: "Es la persona que trae la comida en un restaurante. (mesero)", context: "Describiendo una persona" },
-      { english: "It's like a taxi but you call it with an app. (Uber)", spanish: "Es como un taxi pero lo llamas con una aplicación. (Uber)", context: "Comparando" },
-      { english: "It's the place where you wait for the train. (platform)", spanish: "Es el lugar donde esperas el tren. (andén)", context: "Describiendo un lugar" }
+      { english: "It's a thing you use to take photos. (camera)", spanish: "Es una cosa que usas para tomar fotos. (cámara)", context: "Describing an object" },
+      { english: "It's the person who brings food in a restaurant. (waiter)", spanish: "Es la persona que trae la comida en un restaurante. (mesero)", context: "Describing a person" },
+      { english: "It's like a taxi but you call it with an app. (Uber)", spanish: "Es como un taxi pero lo llamas con una aplicación. (Uber)", context: "Comparing" },
+      { english: "It's the place where you wait for the train. (platform)", spanish: "Es el lugar donde esperas el tren. (andén)", context: "Describing a place" }
     ],
     commonMistakes: [
-      { mistake: "Quedarse en silencio cuando no sabes una palabra.", correction: "Describe it: 'It's a thing that...'", why: "Siempre intenta comunicarte, aunque sea con rodeos." },
-      { mistake: "Decir la palabra en español y esperar.", correction: "Describe it or ask: 'How do you say [descripción] in English?'", why: "Es mejor describir que solo decir la palabra en español." }
+      { mistake: "Staying silent when you don't know a word.", correction: "Describe it: 'It's a thing that...'", why: "Always try to communicate, even in roundabout ways." },
+      { mistake: "Saying the word in your language and waiting.", correction: "Describe it or ask: 'How do you say [description] in English?'", why: "It's better to describe than just say the word in your language." }
     ],
     practiceTips: [
-      "Practica describiendo objetos sin decir su nombre.",
-      "Juega 'tabú': describe sin usar palabras clave.",
-      "Cuando no sepas una palabra, no te detengas, describe.",
-      "Usa gestos naturalmente al hablar.",
-      "Aprende frases útiles: 'It's a thing that...'"
+      "Practice describing objects without saying their name.",
+      "Play 'taboo': describe without using key words.",
+      "When you don't know a word, don't stop, describe.",
+      "Use gestures naturally while speaking.",
+      "Learn useful phrases: 'It's a thing that...'"
     ],
     checkpoint: { 
-      question: "Describe 'umbrella' sin usar la palabra.", 
+      question: "Describe 'umbrella' without using the word.", 
       answer: "It's a thing you use when it rains. You open it and it protects you from water." 
     },
-    nextStep: "¡Felicidades! Has completado el curso A1→A2. Continúa con A2→B1 para seguir avanzando."
+    nextStep: "Congratulations! You've completed the A1→A2 course. Continue with A2→B1 to keep advancing."
   },
 
   // ================================================================
-  // CURSO 2: A2 → B1 (Articles 30-56)
+  // COURSE 2: A2 → B1 (Articles 30-56)
   // ================================================================
 
   // Article 30: Work and Studies Vocabulary
   {
     id: 'vocab-work-studies',
-    title: 'Vocabulario: Trabajo y Estudios',
+    title: 'Vocabulary: Work and Studies',
     level: 'A2→B1',
     category: 'vocabulary',
-    learningGoal: 'El estudiante dominará vocabulario relacionado con profesiones, áreas de estudio y tareas laborales.',
-    explanation: `A nivel B1, necesitas hablar con más detalle sobre tu vida profesional y académica.
+    learningGoal: 'The student will master vocabulary related to professions, study areas, and work tasks.',
+    explanation: `At B1 level, you need to talk in more detail about your professional and academic life.
 
-**Profesiones avanzadas:**
-• accountant - contador
-• architect - arquitecto
-• consultant - consultor
-• entrepreneur - emprendedor
-• freelancer - trabajador independiente
-• HR manager - gerente de RRHH
-• software developer - desarrollador de software
-• marketing specialist - especialista en marketing
+**Advanced professions:**
+• accountant - handles finances
+• architect - designs buildings
+• consultant - gives expert advice
+• entrepreneur - starts businesses
+• freelancer - works independently
+• HR manager - handles personnel
+• software developer - writes code
+• marketing specialist - promotes products
 
-**Áreas de estudio:**
-• Business Administration - Administración de Empresas
-• Computer Science - Ciencias de la Computación
-• Law - Derecho
-• Medicine - Medicina
-• Engineering - Ingeniería
-• Psychology - Psicología
-• Economics - Economía
+**Study areas:**
+• Business Administration - managing companies
+• Computer Science - computing
+• Law - legal studies
+• Medicine - healthcare
+• Engineering - technical design
+• Psychology - study of mind
+• Economics - study of economy
 
-**Verbos de trabajo:**
-• apply for (a job) - postularse para
-• be in charge of - estar a cargo de
-• deal with - tratar con
-• manage - gestionar
-• report to - reportar a
-• be responsible for - ser responsable de
-• collaborate with - colaborar con
-• meet deadlines - cumplir plazos
+**Work verbs:**
+• apply for (a job) - request a position
+• be in charge of - be responsible for
+• deal with - handle
+• manage - oversee
+• report to - answer to
+• be responsible for - have duty for
+• collaborate with - work together with
+• meet deadlines - finish on time
 
-**Tipos de empleo:**
-• full-time - tiempo completo
-• part-time - medio tiempo
-• temporary - temporal
-• permanent - permanente
-• remote work - trabajo remoto
-• internship - pasantía
+**Employment types:**
+• full-time - complete working hours
+• part-time - reduced hours
+• temporary - for limited time
+• permanent - ongoing
+• remote work - from home
+• internship - training position
 
-**Vocabulario de oficina:**
-• colleague - colega
-• supervisor - supervisor
-• team - equipo
-• department - departamento
-• meeting - reunión
-• project - proyecto
-• deadline - fecha límite`,
+**Office vocabulary:**
+• colleague - coworker
+• supervisor - boss
+• team - work group
+• department - division
+• meeting - work gathering
+• project - planned work
+• deadline - due date`,
     examples: [
-      { english: "I'm applying for a marketing position at a tech company.", spanish: "Estoy postulándome para un puesto de marketing en una empresa tecnológica.", context: "Búsqueda de empleo" },
-      { english: "She's in charge of the finance department.", spanish: "Ella está a cargo del departamento de finanzas.", context: "Describiendo responsabilidades" },
-      { english: "I'm studying Business Administration part-time while working.", spanish: "Estoy estudiando Administración de Empresas medio tiempo mientras trabajo.", context: "Combinando estudio y trabajo" },
-      { english: "We need to meet the deadline by Friday.", spanish: "Necesitamos cumplir el plazo para el viernes.", context: "Contexto laboral" }
+      { english: "I'm applying for a marketing position at a tech company.", spanish: "Estoy postulándome para un puesto de marketing en una empresa tecnológica.", context: "Job search" },
+      { english: "She's in charge of the finance department.", spanish: "Ella está a cargo del departamento de finanzas.", context: "Describing responsibilities" },
+      { english: "I'm studying Business Administration part-time while working.", spanish: "Estoy estudiando Administración de Empresas medio tiempo mientras trabajo.", context: "Combining study and work" },
+      { english: "We need to meet the deadline by Friday.", spanish: "Necesitamos cumplir el plazo para el viernes.", context: "Work context" }
     ],
     commonMistakes: [
-      { mistake: "I'm working in a company.", correction: "I work at/for a company.", why: "Para empleo, usamos 'work at/for', no 'in'." },
-      { mistake: "I study the medicine.", correction: "I study medicine.", why: "Las áreas de estudio no llevan artículo." },
-      { mistake: "I apply to a job.", correction: "I apply for a job.", why: "El phrasal verb correcto es 'apply for'." }
+      { mistake: "I'm working in a company.", correction: "I work at/for a company.", why: "For employment, we use 'work at/for', not 'in'." },
+      { mistake: "I study the medicine.", correction: "I study medicine.", why: "Study areas don't take an article." },
+      { mistake: "I apply to a job.", correction: "I apply for a job.", why: "The correct phrasal verb is 'apply for'." }
     ],
     practiceTips: [
-      "Describe tu trabajo o el de alguien que conoces en detalle.",
-      "Practica una entrevista de trabajo en inglés.",
-      "Lee descripciones de trabajo en inglés.",
-      "Escribe tu CV/resume en inglés.",
-      "Habla sobre tus metas profesionales."
+      "Describe your job or someone's job in detail.",
+      "Practice a job interview in English.",
+      "Read job descriptions in English.",
+      "Write your CV/resume in English.",
+      "Talk about your career goals."
     ],
     checkpoint: { 
-      question: "Describe tu trabajo o tus estudios en 3-4 oraciones.", 
+      question: "Describe your job or studies in 3-4 sentences.", 
       answer: "I work as a [job] at [company]. I'm responsible for [tasks]. I collaborate with [team]. I'm also studying [subject] part-time." 
     },
-    nextStep: "Aprende vocabulario de tecnología y medios."
+    nextStep: "Learn technology and media vocabulary."
   },
-
-  // Continuing with remaining articles for A2→B1, B1→B2, B2→C1...
-  // For brevity, I'll include key articles from each level
 
   // Article 40: Past Simple vs Present Perfect
   {
     id: 'gram-past-vs-perfect',
-    title: 'Gramática: Contraste Pasado Simple vs. Presente Perfecto',
+    title: 'Grammar: Past Simple vs. Present Perfect Contrast',
     level: 'A2→B1',
     category: 'grammar',
-    learningGoal: 'El estudiante distinguirá cuándo usar Past Simple (momento específico) vs Present Perfect (conexión con el presente).',
-    explanation: `Esta es una de las diferencias más difíciles para hispanohablantes. Entiéndela bien para sonar natural.
+    learningGoal: 'The student will distinguish when to use Past Simple (specific moment) vs Present Perfect (connection to present).',
+    explanation: `This is one of the most difficult differences for Spanish speakers. Understand it well to sound natural.
 
 **PAST SIMPLE:**
-Acciones completas en un momento ESPECÍFICO del pasado.
-• "I **visited** Paris in 2019." (momento específico: 2019)
-• "She **graduated** last year." (momento específico: año pasado)
+Complete actions at a SPECIFIC moment in the past.
+• "I **visited** Paris in 2019." (specific moment: 2019)
+• "She **graduated** last year." (specific moment: last year)
 
-**Palabras clave:**
+**Key words:**
 yesterday, last week/month/year, in 2020, ago, when I was young
 
 **PRESENT PERFECT:**
-Acciones pasadas con CONEXIÓN al presente (sin tiempo específico).
-• "I **have visited** Paris." (experiencia de vida - no importa cuándo)
-• "She **has graduated**." (resultado relevante ahora)
+Past actions with CONNECTION to the present (no specific time).
+• "I **have visited** Paris." (life experience - doesn't matter when)
+• "She **has graduated**." (relevant result now)
 
-**Palabras clave:**
+**Key words:**
 ever, never, already, yet, just, recently, so far, since, for
 
-**REGLA CLAVE:**
-• ¿Cuándo? → PAST SIMPLE
-• ¿Has hecho esto alguna vez? → PRESENT PERFECT
+**KEY RULE:**
+• When? → PAST SIMPLE
+• Have you ever done this? → PRESENT PERFECT
 
-**Comparación directa:**
+**Direct comparison:**
 | Present Perfect | Past Simple |
 |-----------------|-------------|
-| I've been to London. (experiencia) | I went to London in 2018. (cuándo) |
+| I've been to London. (experience) | I went to London in 2018. (when) |
 | Have you ever tried sushi? | Did you try sushi last night? |
-| She has just arrived. (acaba de) | She arrived an hour ago. (cuándo) |
+| She has just arrived. (just now) | She arrived an hour ago. (when) |
 
-**Estructura Present Perfect:**
+**Present Perfect structure:**
 have/has + past participle
 • I/You/We/They have worked
 • He/She/It has worked
 
-**Usos del Present Perfect:**
-1. **Experiencias:** "I have never seen snow."
-2. **Acciones recientes:** "She has just finished."
-3. **Acciones que continúan:** "I have lived here for 5 years."
-4. **Cambios:** "He has lost weight."`,
+**Present Perfect uses:**
+1. **Experiences:** "I have never seen snow."
+2. **Recent actions:** "She has just finished."
+3. **Continuing actions:** "I have lived here for 5 years."
+4. **Changes:** "He has lost weight."`,
     examples: [
-      { english: "I have visited Japan. I went there in 2019.", spanish: "He visitado Japón. Fui en 2019.", context: "PP para experiencia, PS para cuándo" },
-      { english: "Have you ever eaten snails? - Yes, I tried them in France.", spanish: "¿Alguna vez has comido caracoles? - Sí, los probé en Francia.", context: "PP para experiencia, PS para momento" },
-      { english: "She has worked here for 5 years. She started in 2019.", spanish: "Ella ha trabajado aquí por 5 años. Empezó en 2019.", context: "PP para duración hasta ahora, PS para inicio" },
-      { english: "I've just finished my homework.", spanish: "Acabo de terminar mi tarea.", context: "Acción reciente con 'just'" }
+      { english: "I have visited Japan. I went there in 2019.", spanish: "He visitado Japón. Fui en 2019.", context: "PP for experience, PS for when" },
+      { english: "Have you ever eaten snails? - Yes, I tried them in France.", spanish: "¿Alguna vez has comido caracoles? - Sí, los probé en Francia.", context: "PP for experience, PS for moment" },
+      { english: "She has worked here for 5 years. She started in 2019.", spanish: "Ella ha trabajado aquí por 5 años. Empezó en 2019.", context: "PP for duration until now, PS for start" },
+      { english: "I've just finished my homework.", spanish: "Acabo de terminar mi tarea.", context: "Recent action with 'just'" }
     ],
     commonMistakes: [
-      { mistake: "I have visited Paris last year.", correction: "I visited Paris last year.", why: "Con tiempo específico (last year), usa Past Simple." },
-      { mistake: "Did you ever see this movie?", correction: "Have you ever seen this movie?", why: "Para experiencias de vida, usa Present Perfect + ever." },
-      { mistake: "I live here since 2020.", correction: "I have lived here since 2020.", why: "Para acciones que empezaron en el pasado y continúan, usa Present Perfect." }
+      { mistake: "I have visited Paris last year.", correction: "I visited Paris last year.", why: "With specific time (last year), use Past Simple." },
+      { mistake: "Did you ever see this movie?", correction: "Have you ever seen this movie?", why: "For life experiences, use Present Perfect + ever." },
+      { mistake: "I live here since 2020.", correction: "I have lived here since 2020.", why: "For actions that started in the past and continue, use Present Perfect." }
     ],
     practiceTips: [
-      "Pregunta '¿Hay tiempo específico?' → Si sí: Past Simple.",
-      "Practica con 'ever/never' para experiencias.",
-      "Usa 'for/since' correctamente con Present Perfect.",
-      "Lee textos e identifica por qué se usa cada tiempo.",
-      "Escribe sobre tus experiencias de vida."
+      "Ask 'Is there a specific time?' → If yes: Past Simple.",
+      "Practice with 'ever/never' for experiences.",
+      "Use 'for/since' correctly with Present Perfect.",
+      "Read texts and identify why each tense is used.",
+      "Write about your life experiences."
     ],
     checkpoint: { 
-      question: "Completa: 'I ___ (see) that movie. I ___ (watch) it last weekend.'", 
+      question: "Complete: 'I ___ (see) that movie. I ___ (watch) it last weekend.'", 
       answer: "I have seen / I've seen that movie. I watched it last weekend." 
     },
-    nextStep: "Aprende los tres tipos de futuro: will vs going to vs present continuous."
+    nextStep: "Learn the three types of future: will vs going to vs present continuous."
   },
 
   // Article 66: Conditionals Complete
   {
     id: 'gram-conditionals-complete',
-    title: 'Gramática: Condicionales Cero, Primero, Segundo, Tercero y Mixtos',
+    title: 'Grammar: Zero, First, Second, Third, and Mixed Conditionals',
     level: 'B1→B2',
     category: 'grammar',
-    learningGoal: 'El estudiante dominará todos los tipos de condicionales y sus usos comunicativos.',
-    explanation: `Los condicionales expresan situaciones hipotéticas y sus consecuencias. Dominarlos es señal de nivel avanzado.
+    learningGoal: 'The student will master all types of conditionals and their communicative uses.',
+    explanation: `Conditionals express hypothetical situations and their consequences. Mastering them is a sign of advanced level.
 
-**CONDICIONAL CERO (verdades generales):**
+**ZERO CONDITIONAL (general truths):**
 If + present simple, present simple
 • "If you heat water to 100°C, it boils."
-• Uso: Hechos científicos, verdades universales
+• Use: Scientific facts, universal truths
 
-**PRIMER CONDICIONAL (situaciones probables):**
+**FIRST CONDITIONAL (probable situations):**
 If + present simple, will + verb
 • "If it rains tomorrow, we will stay home."
-• Uso: Situaciones reales y probables en el futuro
+• Use: Real and probable future situations
 
-**SEGUNDO CONDICIONAL (situaciones hipotéticas presentes):**
+**SECOND CONDITIONAL (hypothetical present situations):**
 If + past simple, would + verb
 • "If I won the lottery, I would buy a house."
-• Uso: Situaciones irreales o improbables
+• Use: Unreal or unlikely situations
 
-**TERCER CONDICIONAL (situaciones irreales pasadas):**
+**THIRD CONDITIONAL (unreal past situations):**
 If + past perfect, would have + past participle
 • "If I had studied more, I would have passed."
-• Uso: Arrepentimientos, especular sobre el pasado
+• Use: Regrets, speculating about the past
 
-**CONDICIONALES MIXTOS:**
-Condición pasada → resultado presente:
+**MIXED CONDITIONALS:**
+Past condition → present result:
 If + past perfect, would + verb
 • "If I had taken that job, I would be rich now."
 
-Condición general → resultado pasado:
+General condition → past result:
 If + past simple, would have + past participle
 • "If I were more careful, I wouldn't have made that mistake."
 
-**Otros conectores condicionales:**
+**Other conditional connectors:**
 • Unless (= if not): "Unless you hurry, you'll miss the bus."
 • As long as / Provided that: "I'll help, provided that you ask nicely."
 • In case: "Take an umbrella in case it rains."`,
     examples: [
-      { english: "If I had more time, I would learn Japanese.", spanish: "Si tuviera más tiempo, aprendería japonés.", context: "2º condicional - hipotético" },
-      { english: "If you had told me earlier, I would have helped you.", spanish: "Si me hubieras dicho antes, te habría ayudado.", context: "3er condicional - pasado irreal" },
-      { english: "If I hadn't missed that flight, I would be in Paris now.", spanish: "Si no hubiera perdido ese vuelo, estaría en París ahora.", context: "Mixto: pasado → presente" },
-      { english: "I'll go unless it rains.", spanish: "Iré a menos que llueva.", context: "Unless = si no" }
+      { english: "If I had more time, I would learn Japanese.", spanish: "Si tuviera más tiempo, aprendería japonés.", context: "2nd conditional - hypothetical" },
+      { english: "If you had told me earlier, I would have helped you.", spanish: "Si me hubieras dicho antes, te habría ayudado.", context: "3rd conditional - unreal past" },
+      { english: "If I hadn't missed that flight, I would be in Paris now.", spanish: "Si no hubiera perdido ese vuelo, estaría en París ahora.", context: "Mixed: past → present" },
+      { english: "I'll go unless it rains.", spanish: "Iré a menos que llueva.", context: "Unless = if not" }
     ],
     commonMistakes: [
-      { mistake: "If I would have money, I would travel.", correction: "If I had money, I would travel.", why: "En la cláusula 'if', usa past simple, no 'would'." },
-      { mistake: "If I knew, I would have told you.", correction: "If I had known, I would have told you.", why: "Para pasado irreal, usa past perfect en 'if'." },
-      { mistake: "If I will see him, I will tell him.", correction: "If I see him, I will tell him.", why: "En 1er condicional, 'if' va con present, no future." }
+      { mistake: "If I would have money, I would travel.", correction: "If I had money, I would travel.", why: "In the 'if' clause, use past simple, not 'would'." },
+      { mistake: "If I knew, I would have told you.", correction: "If I had known, I would have told you.", why: "For unreal past, use past perfect in 'if'." },
+      { mistake: "If I will see him, I will tell him.", correction: "If I see him, I will tell him.", why: "In 1st conditional, 'if' goes with present, not future." }
     ],
     practiceTips: [
-      "Practica identificando qué tipo de condicional usar.",
-      "Escribe sobre arrepentimientos con 3er condicional.",
-      "Imagina escenarios hipotéticos con 2º condicional.",
-      "Mezcla condicionales en una historia.",
-      "Practica con situaciones reales: '¿Qué harías si...?'"
+      "Practice identifying which type of conditional to use.",
+      "Write about regrets with 3rd conditional.",
+      "Imagine hypothetical scenarios with 2nd conditional.",
+      "Mix conditionals in a story.",
+      "Practice with real situations: 'What would you do if...?'"
     ],
     checkpoint: { 
-      question: "Crea una oración con cada tipo de condicional.", 
+      question: "Create a sentence with each type of conditional.", 
       answer: "0: If you mix blue and yellow, you get green. 1: If I finish early, I'll call you. 2: If I were you, I would accept. 3: If I had known, I would have come." 
     },
-    nextStep: "Domina la voz pasiva en múltiples tiempos."
+    nextStep: "Master passive voice in multiple tenses."
   },
 
   // Article 86: Nominalization
   {
     id: 'gram-nominalization',
-    title: 'Gramática: Nominalización',
+    title: 'Grammar: Nominalization',
     level: 'B2→C1',
     category: 'grammar',
-    learningGoal: 'El estudiante transformará verbos y adjetivos en sustantivos para un estilo más formal y académico.',
-    explanation: `La nominalización es convertir verbos/adjetivos en sustantivos. Es clave para escritura académica y formal.
+    learningGoal: 'The student will transform verbs and adjectives into nouns for a more formal and academic style.',
+    explanation: `Nominalization is converting verbs/adjectives into nouns. It's key for academic and formal writing.
 
-**¿Qué es nominalizar?**
-Cambiar: "They implemented the policy" (verbo)
-Por: "The implementation of the policy" (sustantivo)
+**What is nominalization?**
+Changing: "They implemented the policy" (verb)
+To: "The implementation of the policy" (noun)
 
-**¿Por qué nominalizar?**
-• Suena más formal y académico
-• Permite oraciones más densas en información
-• Es característico del inglés académico y profesional
+**Why nominalize?**
+• Sounds more formal and academic
+• Allows denser information in sentences
+• Characteristic of academic and professional English
 
-**Sufijos comunes de nominalización:**
+**Common nominalization suffixes:**
 
-**De verbos:**
-| Verbo | Sustantivo |
-|-------|-----------|
+**From verbs:**
+| Verb | Noun |
+|------|------|
 | decide | decision (-sion) |
 | develop | development (-ment) |
 | analyze | analysis (-sis) |
@@ -2246,16 +2226,16 @@ Por: "The implementation of the policy" (sustantivo)
 | fail | failure (-ure) |
 | arrive | arrival (-al) |
 
-**De adjetivos:**
-| Adjetivo | Sustantivo |
-|----------|-----------|
+**From adjectives:**
+| Adjective | Noun |
+|-----------|------|
 | important | importance (-ance) |
 | different | difference (-ence) |
 | able | ability (-ity) |
 | happy | happiness (-ness) |
 | free | freedom (-dom) |
 
-**Ejemplos de transformación:**
+**Transformation examples:**
 
 Informal: "They decided to reduce costs."
 Formal: "The decision to implement cost reduction..."
@@ -2263,59 +2243,56 @@ Formal: "The decision to implement cost reduction..."
 Informal: "We need to develop new products quickly."
 Formal: "The rapid development of new products is necessary."
 
-**Patrones útiles:**
+**Useful patterns:**
 • The + noun + of + noun: "The implementation of the strategy"
 • Due to + noun: "Due to the complexity of the issue"
-• Following + noun: "Following the announcement"
-
-**Cuándo NO nominalizar:**
-• Cuando hace el texto demasiado denso
-• En comunicación informal
-• Cuando pierde claridad`,
+• The + adjective + noun: "The rapid development"`,
     examples: [
-      { english: "The government's decision (← decided) to increase taxes caused controversy.", spanish: "La decisión del gobierno de aumentar impuestos causó controversia.", context: "decide → decision" },
-      { english: "The development (← developed) of new technology requires significant investment.", spanish: "El desarrollo de nueva tecnología requiere inversión significativa.", context: "develop → development" },
-      { english: "The importance (← important) of education cannot be overstated.", spanish: "La importancia de la educación no puede subestimarse.", context: "important → importance" },
-      { english: "Due to the failure (← failed) of negotiations, the project was cancelled.", spanish: "Debido al fracaso de las negociaciones, el proyecto fue cancelado.", context: "fail → failure" }
+      { english: "The implementation of new policies requires careful planning.", spanish: "La implementación de nuevas políticas requiere planificación cuidadosa.", context: "Formal writing" },
+      { english: "Their discovery of the virus led to a breakthrough.", spanish: "Su descubrimiento del virus llevó a un avance.", context: "Academic style" },
+      { english: "The government's failure to act caused widespread criticism.", spanish: "El fracaso del gobierno en actuar causó críticas generalizadas.", context: "News style" },
+      { english: "The importance of education cannot be overstated.", spanish: "La importancia de la educación no puede ser exagerada.", context: "Adjective → noun" }
     ],
     commonMistakes: [
-      { mistake: "The develop of...", correction: "The development of...", why: "Usa el sustantivo, no el verbo." },
-      { mistake: "The importantly of education", correction: "The importance of education", why: "Usa el sustantivo del adjetivo, no el adverbio." },
-      { mistake: "Nominalizar todo el texto.", correction: "Balance nominalization with clear verbs.", why: "El exceso hace el texto difícil de leer." }
+      { mistake: "The way they implement policies is important.", correction: "The implementation of policies is important.", why: "Nominalization is more formal and concise." },
+      { mistake: "How they decided affected the outcome.", correction: "Their decision affected the outcome.", why: "Using the noun form is more sophisticated." }
     ],
     practiceTips: [
-      "Identifica nominalizaciones en textos académicos.",
-      "Transforma oraciones informales a formales.",
-      "Crea un banco de sufijos de nominalización.",
-      "Lee abstracts de papers y analiza su estructura.",
-      "Practica escritura académica usando nominalizaciones."
+      "Identify verbs in sentences and nominalize them.",
+      "Read academic texts and note nominalized forms.",
+      "Practice transforming informal sentences to formal.",
+      "Learn common noun suffixes.",
+      "Use nominalization in formal writing assignments."
     ],
     checkpoint: { 
-      question: "Nominaliza: 'The company decided to invest in training because employees performed poorly.'", 
-      answer: "The company's decision to invest in training resulted from poor employee performance." 
+      question: "Nominalize: 'They analyzed the data carefully.'", 
+      answer: "Their careful analysis of the data..." 
     },
-    nextStep: "Aprende el uso estilístico de la gramática para el énfasis."
+    nextStep: "Continue developing advanced academic writing skills."
   }
 ];
 
-// Helper functions
-export const getCurriculumArticleById = (id: string): CurriculumArticle | undefined => {
+// ================================================================
+// HELPER FUNCTIONS
+// ================================================================
+
+export function getCurriculumArticleById(id: string): CurriculumArticle | undefined {
   return curriculumArticles.find(article => article.id === id);
-};
+}
 
-export const getCurriculumArticlesByLevel = (level: CurriculumArticle['level']): CurriculumArticle[] => {
+export function getCurriculumArticlesByLevel(level: CurriculumArticle['level']): CurriculumArticle[] {
   return curriculumArticles.filter(article => article.level === level);
-};
+}
 
-export const getCurriculumArticlesByCategory = (category: CurriculumArticle['category']): CurriculumArticle[] => {
+export function getCurriculumArticlesByCategory(category: CurriculumArticle['category']): CurriculumArticle[] {
   return curriculumArticles.filter(article => article.category === category);
-};
+}
 
-export const searchCurriculumArticles = (query: string): CurriculumArticle[] => {
+export function searchCurriculumArticles(query: string): CurriculumArticle[] {
   const lowerQuery = query.toLowerCase();
-  return curriculumArticles.filter(article =>
+  return curriculumArticles.filter(article => 
     article.title.toLowerCase().includes(lowerQuery) ||
     article.learningGoal.toLowerCase().includes(lowerQuery) ||
     article.explanation.toLowerCase().includes(lowerQuery)
   );
-};
+}
