@@ -125,27 +125,24 @@ export default function Grammar() {
             >
               All
               <span className="ml-2 text-xs opacity-80">
-                ({grammarCategories.reduce((sum, cat) => sum + cat.topics.length, 0)})
+                ({grammarExerciseStats.total})
               </span>
             </Button>
-            {levels.map((level) => {
-              const count = getTopicCountForLevel(level);
-              return (
-                <Button
-                  key={level}
-                  variant={filterLevel === level ? "default" : "outline"}
-                  onClick={() => setFilterLevel(level)}
-                  className={cn(
-                    "min-w-[80px]",
-                    filterLevel === level && getLevelColor(level),
-                    filterLevel === level && "text-white border-transparent"
-                  )}
-                >
-                  {level}
-                  <span className="ml-2 text-xs opacity-80">({count})</span>
-                </Button>
-              );
-            })}
+            {levels.map((level) => (
+              <Button
+                key={level}
+                variant={filterLevel === level ? "default" : "outline"}
+                onClick={() => setFilterLevel(level)}
+                className={cn(
+                  "min-w-[80px]",
+                  filterLevel === level && getLevelColor(level),
+                  filterLevel === level && "text-white border-transparent"
+                )}
+              >
+                {level}
+                <span className="ml-2 text-xs opacity-80">({grammarExerciseStats[level]})</span>
+              </Button>
+            ))}
           </div>
         </div>
 
