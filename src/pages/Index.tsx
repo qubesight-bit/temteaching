@@ -6,7 +6,7 @@ import { TodayLesson } from "@/components/TodayLesson";
 import { ModuleCard } from "@/components/ModuleCard";
 import { DailyGoalWidget } from "@/components/DailyGoalWidget";
 import { AITutorPreview } from "@/components/AITutorPreview";
-import { BookOpen, MessageSquare, PenTool, GraduationCap, Lightbulb, Map, Library, Music } from "lucide-react";
+import { BookOpen, MessageSquare, PenTool, GraduationCap, Lightbulb, Map, Library, Music, Sparkles } from "lucide-react";
 
 const modules = [
   {
@@ -72,6 +72,14 @@ const modules = [
     progress: 0,
     color: "bg-accent",
     path: "/karaoke",
+  },
+  {
+    title: "Exámenes Personalizados",
+    description: "Genera exámenes específicos eligiendo el tema y nivel que quieras practicar",
+    icon: Sparkles,
+    progress: 0,
+    color: "bg-primary",
+    path: "/custom-exam",
   },
 ];
 

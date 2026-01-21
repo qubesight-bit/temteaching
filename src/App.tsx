@@ -27,6 +27,7 @@ import ErrorHistory from "./pages/ErrorHistory";
 import Articles from "./pages/Articles";
 import ArticleDetail from "./pages/ArticleDetail";
 import Karaoke from "./pages/Karaoke";
+import CustomExam from "./pages/CustomExam";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -62,6 +63,7 @@ const App = () => (
                     <Route path="/articles" element={<Articles />} />
                     <Route path="/articles/:articleId" element={<ArticleDetail />} />
                     <Route path="/karaoke" element={<Karaoke />} />
+                    <Route path="/custom-exam" element={<CustomExam />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </BrowserRouter>
