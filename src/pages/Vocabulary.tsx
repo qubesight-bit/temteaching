@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { vocabularyCategories, VocabularyCategory } from "@/data/vocabularyData";
+import { expandedVocabularyCategories, VocabularyCategory, getTotalWordCount, getCategoryCount } from "@/data/vocabularyDataExpanded";
 import { ArrowLeft, Play, RotateCcw, Volume2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -22,6 +22,7 @@ export default function Vocabulary() {
       B1: "bg-level-b1",
       B2: "bg-level-b2",
       C1: "bg-level-c1",
+      C2: "bg-level-c2",
     };
     return colors[level] || "bg-primary";
   };
@@ -241,12 +242,12 @@ export default function Vocabulary() {
                 <p className="text-sm text-muted-foreground">Words learned</p>
               </div>
               <div>
-                <p className="text-3xl font-display font-bold text-foreground">10</p>
+                <p className="text-3xl font-display font-bold text-foreground">{getCategoryCount()}</p>
                 <p className="text-sm text-muted-foreground">Categories</p>
               </div>
               <div>
-                <p className="text-3xl font-display font-bold text-success">0%</p>
-                <p className="text-sm text-muted-foreground">Total progress</p>
+                <p className="text-3xl font-display font-bold text-foreground">{getTotalWordCount()}</p>
+                <p className="text-sm text-muted-foreground">Total words</p>
               </div>
             </div>
           </CardContent>
@@ -254,7 +255,7 @@ export default function Vocabulary() {
 
         {/* Categories Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {vocabularyCategories.map((category) => {
+          {expandedVocabularyCategories.map((category) => {
             const progress = Math.round((category.learned / category.wordCount) * 100);
             
             return (
