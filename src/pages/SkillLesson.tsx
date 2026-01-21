@@ -8,6 +8,8 @@ import { Badge } from "@/components/ui/badge";
 import { curriculumData, Skill, CEFRLevel } from "@/data/curriculumData";
 import { getExercisesBySkillId, Exercise } from "@/data/exercisesData";
 import { getAdvancedExercisesBySkillId } from "@/data/exercisesDataAdvanced";
+import { getB1ExercisesCompleteBySkillId } from "@/data/b1ExercisesComplete";
+import { getB2ExercisesCompleteBySkillId } from "@/data/b2ExercisesComplete";
 import { getImageExercisesForSkill } from "@/data/imageVocabularyData";
 import { getArticleForExercise } from "@/data/articlesData";
 import { getCurriculumArticleById, searchCurriculumArticles } from "@/data/curriculumArticles";
@@ -22,6 +24,18 @@ type LessonStep = "overview" | "exercises" | "complete";
 
 // Get exercises from the database or generate fallback
 const getExercisesForSkill = (skill: Skill, level: CEFRLevel, categoryType: string): Exercise[] => {
+  // First try B1 complete exercises
+  if (level === "B1") {
+    const b1Exercises = getB1ExercisesCompleteBySkillId(skill.id, categoryType);
+    if (b1Exercises.length > 0) return b1Exercises;
+  }
+  
+  // Try B2 complete exercises
+  if (level === "B2") {
+    const b2Exercises = getB2ExercisesCompleteBySkillId(skill.id, categoryType);
+    if (b2Exercises.length > 0) return b2Exercises;
+  }
+  
   // Try to get exercises from database
   let exercises = getExercisesBySkillId(skill.id, categoryType);
   

@@ -15,6 +15,15 @@ import {
   getB1ExercisesCompleteBySkillId
 } from "./b1ExercisesComplete";
 import { b2GrammarExercises, b2VocabularyExercises } from "./b2Exercises";
+import { 
+  b2GrammarExercisesComplete, 
+  b2VocabularyExercisesComplete, 
+  b2SpeakingExercisesComplete,
+  b2ListeningExercisesComplete,
+  b2ReadingExercisesComplete,
+  b2WritingExercisesComplete,
+  getB2ExercisesCompleteBySkillId
+} from "./b2ExercisesComplete";
 import { c1GrammarExercises, c1VocabularyExercises } from "./c1Exercises";
 import { c2GrammarExercises, c2VocabularyExercises } from "./c2Exercises";
 
