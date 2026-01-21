@@ -7,25 +7,25 @@ export function KaraokeStats() {
   const stats = [
     {
       icon: Trophy,
-      label: 'Sesiones Completadas',
+      label: 'Sessions Completed',
       value: state.totalLessons,
       color: 'text-yellow-500',
     },
     {
       icon: Target,
-      label: 'Puntuación Promedio',
+      label: 'Average Score',
       value: `${state.accuracy}%`,
       color: 'text-green-500',
     },
     {
       icon: Flame,
-      label: 'Días Consecutivos',
+      label: 'Consecutive Days',
       value: state.currentStreak,
       color: 'text-orange-500',
     },
     {
       icon: BookOpen,
-      label: 'Palabras Aprendidas',
+      label: 'Words Learned',
       value: state.totalWords,
       color: 'text-blue-500',
     },

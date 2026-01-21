@@ -24,14 +24,14 @@ const levelColors: Record<CEFRLevel, string> = {
 };
 
 const topicCategories = [
-  { id: "tenses", name: "Tiempos Verbales", icon: "⏰", topics: ["Present Simple", "Present Continuous", "Past Simple", "Past Continuous", "Present Perfect", "Past Perfect", "Future Simple", "Future Continuous", "Future Perfect"] },
-  { id: "conditionals", name: "Condicionales", icon: "🔀", topics: ["Zero Conditional", "First Conditional", "Second Conditional", "Third Conditional", "Mixed Conditionals"] },
-  { id: "passive", name: "Voz Pasiva", icon: "🔄", topics: ["Passive Voice", "Passive with Modals", "Causative Passive"] },
-  { id: "modals", name: "Verbos Modales", icon: "💪", topics: ["Can/Could", "Must/Have to", "Should/Ought to", "May/Might", "Would"] },
-  { id: "articles", name: "Artículos y Determinantes", icon: "📝", topics: ["Articles", "Determiners", "Quantifiers"] },
-  { id: "clauses", name: "Oraciones y Cláusulas", icon: "🔗", topics: ["Relative Clauses", "Noun Clauses", "Adverbial Clauses", "Cleft Sentences"] },
-  { id: "reported", name: "Estilo Indirecto", icon: "💬", topics: ["Reported Speech", "Reporting Verbs"] },
-  { id: "advanced", name: "Estructuras Avanzadas", icon: "🎓", topics: ["Inversion", "Subjunctive", "Emphatic Structures", "Ellipsis"] },
+  { id: "tenses", name: "Verb Tenses", icon: "⏰", topics: ["Present Simple", "Present Continuous", "Past Simple", "Past Continuous", "Present Perfect", "Past Perfect", "Future Simple", "Future Continuous", "Future Perfect"] },
+  { id: "conditionals", name: "Conditionals", icon: "🔀", topics: ["Zero Conditional", "First Conditional", "Second Conditional", "Third Conditional", "Mixed Conditionals"] },
+  { id: "passive", name: "Passive Voice", icon: "🔄", topics: ["Passive Voice", "Passive with Modals", "Causative Passive"] },
+  { id: "modals", name: "Modal Verbs", icon: "💪", topics: ["Can/Could", "Must/Have to", "Should/Ought to", "May/Might", "Would"] },
+  { id: "articles", name: "Articles and Determiners", icon: "📝", topics: ["Articles", "Determiners", "Quantifiers"] },
+  { id: "clauses", name: "Sentences and Clauses", icon: "🔗", topics: ["Relative Clauses", "Noun Clauses", "Adverbial Clauses", "Cleft Sentences"] },
+  { id: "reported", name: "Reported Speech", icon: "💬", topics: ["Reported Speech", "Reporting Verbs"] },
+  { id: "advanced", name: "Advanced Structures", icon: "🎓", topics: ["Inversion", "Subjunctive", "Emphatic Structures", "Ellipsis"] },
 ];
 
 const CustomExam = () => {
@@ -133,44 +133,44 @@ const CustomExam = () => {
               <div className="mx-auto mb-4 p-4 rounded-full bg-primary/10">
                 <Trophy className="h-12 w-12 text-primary" />
               </div>
-              <CardTitle className="text-2xl">¡Examen Completado!</CardTitle>
+              <CardTitle className="text-2xl">Exam Completed!</CardTitle>
               <CardDescription>
-                Tema: {selectedTopic} • Nivel: {selectedLevel}
+                Topic: {selectedTopic} • Level: {selectedLevel}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid grid-cols-3 gap-4">
                 <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/20">
                   <div className="text-3xl font-bold text-green-600">{score.correct}</div>
-                  <div className="text-sm text-muted-foreground">Correctas</div>
+                  <div className="text-sm text-muted-foreground">Correct</div>
                 </div>
                 <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20">
                   <div className="text-3xl font-bold text-red-600">{score.incorrect}</div>
-                  <div className="text-sm text-muted-foreground">Incorrectas</div>
+                  <div className="text-sm text-muted-foreground">Incorrect</div>
                 </div>
                 <div className="p-4 rounded-xl bg-primary/10 border border-primary/20">
                   <div className="text-3xl font-bold text-primary">{scorePercent}%</div>
-                  <div className="text-sm text-muted-foreground">Precisión</div>
+                  <div className="text-sm text-muted-foreground">Accuracy</div>
                 </div>
               </div>
 
               <div className="p-4 rounded-xl bg-muted/50">
                 {scorePercent >= 80 ? (
-                  <p className="text-green-600 font-medium">🎉 ¡Excelente! Dominas muy bien este tema.</p>
+                  <p className="text-green-600 font-medium">🎉 Excellent! You have mastered this topic very well.</p>
                 ) : scorePercent >= 60 ? (
-                  <p className="text-yellow-600 font-medium">👍 Buen trabajo, pero hay espacio para mejorar.</p>
+                  <p className="text-yellow-600 font-medium">👍 Good job, but there's room for improvement.</p>
                 ) : (
-                  <p className="text-red-600 font-medium">📚 Te recomendamos repasar este tema antes de continuar.</p>
+                  <p className="text-red-600 font-medium">📚 We recommend reviewing this topic before continuing.</p>
                 )}
               </div>
 
               <div className="flex gap-3 justify-center">
                 <Button variant="outline" onClick={handleRestart}>
                   <RotateCcw className="h-4 w-4 mr-2" />
-                  Nuevo Examen
+                  New Exam
                 </Button>
                 <Button onClick={() => navigate("/")}>
-                  Volver al Inicio
+                  Back to Home
                 </Button>
               </div>
             </CardContent>
@@ -189,7 +189,7 @@ const CustomExam = () => {
             <div className="flex items-center justify-between mb-2">
               <Badge className={levelColors[selectedLevel]}>{selectedLevel}</Badge>
               <span className="text-sm text-muted-foreground">
-                Pregunta {currentIndex + 1} de {exercises.length}
+                Question {currentIndex + 1} of {exercises.length}
               </span>
             </div>
             <Progress value={progressPercent} className="h-2" />
@@ -248,7 +248,7 @@ const CustomExam = () => {
 
               {showExplanation && (
                 <div className="p-4 rounded-xl bg-muted/50 border space-y-2">
-                  <p className="font-medium text-sm">📖 Explicación:</p>
+                  <p className="font-medium text-sm">📖 Explanation:</p>
                   <p className="text-sm text-muted-foreground">{currentExercise.explanation}</p>
                   {currentExercise.explanationSpanish && (
                     <p className="text-sm text-muted-foreground italic">{currentExercise.explanationSpanish}</p>
@@ -258,7 +258,7 @@ const CustomExam = () => {
 
               {showExplanation && (
                 <Button className="w-full" onClick={handleNext}>
-                  {currentIndex < exercises.length - 1 ? "Siguiente Pregunta" : "Ver Resultados"}
+                  {currentIndex < exercises.length - 1 ? "Next Question" : "View Results"}
                   <ChevronRight className="h-4 w-4 ml-2" />
                 </Button>
               )}
@@ -266,8 +266,8 @@ const CustomExam = () => {
           </Card>
 
           <div className="mt-4 flex justify-between text-sm text-muted-foreground">
-            <span className="text-green-600">✓ {score.correct} correctas</span>
-            <span className="text-red-600">✗ {score.incorrect} incorrectas</span>
+            <span className="text-green-600">✓ {score.correct} correct</span>
+            <span className="text-red-600">✗ {score.incorrect} incorrect</span>
           </div>
         </div>
       </AppLayout>
@@ -280,16 +280,16 @@ const CustomExam = () => {
       <div className="container py-8">
         <Button variant="ghost" onClick={() => navigate("/")} className="mb-6">
           <ArrowLeft className="h-4 w-4 mr-2" />
-          Volver al Inicio
+          Back to Home
         </Button>
 
         <div className="mb-8">
           <h1 className="font-display font-bold text-3xl mb-2 flex items-center gap-3">
             <Sparkles className="h-8 w-8 text-primary" />
-            Exámenes Personalizados
+            Custom Exams
           </h1>
           <p className="text-muted-foreground text-lg">
-            Selecciona un tema y nivel para generar un examen específico
+            Select a topic and level to generate a specific exam
           </p>
         </div>
 
@@ -298,7 +298,7 @@ const CustomExam = () => {
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
               <Target className="h-5 w-5" />
-              1. Selecciona tu nivel
+              1. Select your level
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -322,10 +322,10 @@ const CustomExam = () => {
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
               <BookOpen className="h-5 w-5" />
-              2. Selecciona un tema
+              2. Select a topic
             </CardTitle>
             <CardDescription>
-              Elige el tema gramatical que quieres practicar
+              Choose the grammar topic you want to practice
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -364,7 +364,7 @@ const CustomExam = () => {
               <div>
                 {selectedTopic ? (
                   <div className="space-y-1">
-                    <p className="font-medium">Examen seleccionado:</p>
+                    <p className="font-medium">Selected exam:</p>
                     <div className="flex items-center gap-2">
                       <Badge className={levelColors[selectedLevel]}>{selectedLevel}</Badge>
                       <span className="text-muted-foreground">•</span>
@@ -372,7 +372,7 @@ const CustomExam = () => {
                     </div>
                   </div>
                 ) : (
-                  <p className="text-muted-foreground">Selecciona un tema para comenzar</p>
+                  <p className="text-muted-foreground">Select a topic to begin</p>
                 )}
               </div>
               <Button 
@@ -382,7 +382,7 @@ const CustomExam = () => {
                 className="gap-2"
               >
                 <Sparkles className="h-5 w-5" />
-                Generar Examen
+                Generate Exam
               </Button>
             </div>
           </CardContent>

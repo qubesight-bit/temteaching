@@ -32,22 +32,22 @@ export function QuickStats() {
       <StatItem
         icon={<Clock className="w-5 h-5 text-info" />}
         value="0h"
-        label="Esta semana"
+        label="This week"
       />
       <StatItem
         icon={<BookOpen className="w-5 h-5 text-success" />}
         value="0"
-        label="Lecciones completadas"
+        label="Lessons completed"
       />
       <StatItem
         icon={<Brain className="w-5 h-5 text-primary" />}
         value="0"
-        label="Palabras aprendidas"
+        label="Words learned"
       />
       <StatItem
         icon={<Zap className="w-5 h-5 text-warning" />}
         value="0%"
-        label="Precisión promedio"
+        label="Average accuracy"
       />
     </div>
   );
