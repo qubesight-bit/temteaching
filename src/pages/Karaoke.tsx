@@ -63,7 +63,7 @@ export default function Karaoke() {
               </Button>
               <div className="flex items-center gap-2">
                 <Music className="h-6 w-6 text-primary" />
-                <h1 className="text-xl font-bold">Karaoke Educativo</h1>
+                <h1 className="text-xl font-bold">Educational Karaoke</h1>
               </div>
             </div>
           </div>
@@ -73,9 +73,9 @@ export default function Karaoke() {
       <main className="container mx-auto px-4 py-6 space-y-6">
         {/* Hero Section */}
         <div className="text-center space-y-2 pb-4">
-          <h2 className="text-2xl font-bold">🎵 Aprende Inglés con Música 🎵</h2>
+          <h2 className="text-2xl font-bold">🎵 Learn English with Music 🎵</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Mejora tu pronunciación, vocabulario y fluidez cantando tus canciones favoritas en inglés.
+            Improve your pronunciation, vocabulary, and fluency by singing your favorite songs in English.
           </p>
         </div>
 
@@ -88,7 +88,7 @@ export default function Karaoke() {
             <AlertDescription className="flex items-center justify-between">
               {error}
               <Button variant="ghost" size="sm" onClick={() => setError(null)}>
-                Cerrar
+                Close
               </Button>
             </AlertDescription>
           </Alert>
@@ -139,7 +139,7 @@ export default function Karaoke() {
                     setActiveTab('search');
                   }}
                 >
-                  Elegir Otra Canción
+                  Choose Another Song
                 </Button>
               </div>
             </div>
@@ -147,8 +147,8 @@ export default function Karaoke() {
         ) : (
           <Tabs value={activeTab} onValueChange={setActiveTab}>
             <TabsList className="grid w-full max-w-md mx-auto grid-cols-2">
-              <TabsTrigger value="search">Buscar</TabsTrigger>
-              <TabsTrigger value="library">Biblioteca</TabsTrigger>
+              <TabsTrigger value="search">Search</TabsTrigger>
+              <TabsTrigger value="library">Library</TabsTrigger>
             </TabsList>
 
             <TabsContent value="search" className="space-y-6 mt-6">
@@ -165,32 +165,32 @@ export default function Karaoke() {
         {/* Instructions */}
         <div className="grid md:grid-cols-3 gap-4 pt-6 border-t">
           <div className="p-4 bg-card rounded-lg border">
-            <h4 className="font-semibold mb-2">🎯 Cómo funciona:</h4>
+            <h4 className="font-semibold mb-2">🎯 How it works:</h4>
             <ol className="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
-              <li>Busca o elige una canción</li>
-              <li>Sigue las letras resaltadas</li>
-              <li>Graba tu voz para feedback</li>
-              <li>Mejora tu puntuación</li>
+              <li>Search or choose a song</li>
+              <li>Follow the highlighted lyrics</li>
+              <li>Record your voice for feedback</li>
+              <li>Improve your score</li>
             </ol>
           </div>
 
           <div className="p-4 bg-card rounded-lg border">
-            <h4 className="font-semibold mb-2">📚 Beneficios:</h4>
+            <h4 className="font-semibold mb-2">📚 Benefits:</h4>
             <ul className="text-sm text-muted-foreground space-y-1">
-              <li>✅ Mejora pronunciación</li>
-              <li>✅ Expande vocabulario</li>
-              <li>✅ Desarrolla escucha</li>
-              <li>✅ Aprende con diversión</li>
+              <li>✅ Improve pronunciation</li>
+              <li>✅ Expand vocabulary</li>
+              <li>✅ Develop listening skills</li>
+              <li>✅ Learn while having fun</li>
             </ul>
           </div>
 
           <div className="p-4 bg-card rounded-lg border">
             <h4 className="font-semibold mb-2">💡 Tips:</h4>
             <ul className="text-sm text-muted-foreground space-y-1">
-              <li>🎯 Empieza con canciones fáciles</li>
-              <li>🎯 Practica 15 min diarios</li>
-              <li>🎯 Graba y compara tu voz</li>
-              <li>🎯 Enfócate en palabras difíciles</li>
+              <li>🎯 Start with easy songs</li>
+              <li>🎯 Practice 15 min daily</li>
+              <li>🎯 Record and compare your voice</li>
+              <li>🎯 Focus on difficult words</li>
             </ul>
           </div>
         </div>

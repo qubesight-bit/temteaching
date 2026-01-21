@@ -14,9 +14,9 @@ const difficultyColors = {
 };
 
 const difficultyLabels = {
-  easy: 'Fácil',
-  intermediate: 'Intermedio',
-  hard: 'Difícil',
+  easy: 'Easy',
+  intermediate: 'Intermediate',
+  hard: 'Hard',
 };
 
 export function KaraokeSongLibrary({ onSelectSong }: KaraokeSongLibraryProps) {
@@ -26,12 +26,12 @@ export function KaraokeSongLibrary({ onSelectSong }: KaraokeSongLibraryProps) {
     <div className="space-y-4">
       <div className="flex items-center gap-2">
         <Music className="h-5 w-5 text-primary" />
-        <h3 className="font-semibold text-lg">Biblioteca de Canciones</h3>
-        <Badge variant="secondary">{songs.length} canciones</Badge>
+        <h3 className="font-semibold text-lg">Song Library</h3>
+        <Badge variant="secondary">{songs.length} songs</Badge>
       </div>
 
       <p className="text-sm text-muted-foreground">
-        Estas canciones tienen letras pre-sincronizadas para una mejor experiencia de karaoke.
+        These songs have pre-synchronized lyrics for a better karaoke experience.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
@@ -69,7 +69,7 @@ export function KaraokeSongLibrary({ onSelectSong }: KaraokeSongLibraryProps) {
                   onSelectSong(song.title, song.artist);
                 }}
               >
-                Cantar
+                Sing
               </Button>
             </div>
 

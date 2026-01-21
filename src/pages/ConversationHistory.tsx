@@ -8,7 +8,6 @@ import { useAuth } from '@/contexts/AuthContext';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
 import { format } from 'date-fns';
-import { es } from 'date-fns/locale';
 
 interface Conversation {
   id: string;
@@ -46,7 +45,7 @@ export default function ConversationHistory() {
       console.error('Error fetching conversations:', error);
       toast({
         title: 'Error',
-        description: 'No se pudieron cargar las conversaciones',
+        description: 'Could not load conversations',
         variant: 'destructive',
       });
     } finally {
@@ -65,14 +64,14 @@ export default function ConversationHistory() {
       
       setConversations(prev => prev.filter(c => c.id !== id));
       toast({
-        title: 'Conversación eliminada',
-        description: 'La conversación ha sido eliminada correctamente',
+        title: 'Conversation deleted',
+        description: 'The conversation has been successfully deleted',
       });
     } catch (error) {
       console.error('Error deleting conversation:', error);
       toast({
         title: 'Error',
-        description: 'No se pudo eliminar la conversación',
+        description: 'Could not delete the conversation',
         variant: 'destructive',
       });
     }
@@ -109,14 +108,14 @@ export default function ConversationHistory() {
             onClick={() => navigate('/conversation')}
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Volver a Conversaciones
+            Back to Conversations
           </Button>
           
           <h1 className="font-display font-bold text-3xl text-foreground">
-            Historial de Conversaciones
+            Conversation History
           </h1>
           <p className="text-muted-foreground">
-            Revisa tus conversaciones pasadas y tu progreso
+            Review your past conversations and progress
           </p>
         </div>
 
@@ -124,12 +123,12 @@ export default function ConversationHistory() {
           <Card>
             <CardContent className="p-8 text-center">
               <MessageSquare className="w-12 h-12 mx-auto text-muted-foreground mb-4" />
-              <h3 className="font-semibold text-lg mb-2">No hay conversaciones aún</h3>
+              <h3 className="font-semibold text-lg mb-2">No conversations yet</h3>
               <p className="text-muted-foreground mb-4">
-                Inicia una conversación con el tutor de IA para verla aquí
+                Start a conversation with the AI tutor to see it here
               </p>
               <Button onClick={() => navigate('/conversation')}>
-                Iniciar Conversación
+                Start Conversation
               </Button>
             </CardContent>
           </Card>
@@ -148,16 +147,16 @@ export default function ConversationHistory() {
                       <div className="flex items-center gap-4 mt-2 text-sm text-muted-foreground">
                         <span className="flex items-center gap-1">
                           <Calendar className="w-4 h-4" />
-                          {format(new Date(conversation.started_at), "d 'de' MMMM, yyyy - HH:mm", { locale: es })}
+                          {format(new Date(conversation.started_at), "MMMM d, yyyy - HH:mm")}
                         </span>
                         <span className="flex items-center gap-1">
                           <MessageSquare className="w-4 h-4" />
-                          {conversation.message_count} mensajes
+                          {conversation.message_count} messages
                         </span>
                         {conversation.avg_pronunciation_score !== null && (
                           <span className={`flex items-center gap-1 ${getScoreColor(conversation.avg_pronunciation_score)}`}>
                             <BarChart3 className="w-4 h-4" />
-                            {Math.round(conversation.avg_pronunciation_score * 100)}% pronunciación
+                            {Math.round(conversation.avg_pronunciation_score * 100)}% pronunciation
                           </span>
                         )}
                       </div>
@@ -184,17 +183,17 @@ export default function ConversationHistory() {
         {conversations.length > 0 && (
           <Card className="mt-8">
             <CardContent className="p-6">
-              <h3 className="font-display font-semibold mb-4">📊 Resumen</h3>
+              <h3 className="font-display font-semibold mb-4">📊 Summary</h3>
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
                   <p className="text-2xl font-bold text-primary">{conversations.length}</p>
-                  <p className="text-sm text-muted-foreground">Conversaciones</p>
+                  <p className="text-sm text-muted-foreground">Conversations</p>
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-primary">
                     {conversations.reduce((sum, c) => sum + c.message_count, 0)}
                   </p>
-                  <p className="text-sm text-muted-foreground">Mensajes totales</p>
+                  <p className="text-sm text-muted-foreground">Total Messages</p>
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-primary">
@@ -206,7 +205,7 @@ export default function ConversationHistory() {
                       return Math.round((scores.reduce((a, b) => a + b, 0) / scores.length) * 100) + '%';
                     })()}
                   </p>
-                  <p className="text-sm text-muted-foreground">Pronunciación promedio</p>
+                  <p className="text-sm text-muted-foreground">Average Pronunciation</p>
                 </div>
               </div>
             </CardContent>

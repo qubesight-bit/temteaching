@@ -115,10 +115,10 @@ export default function Tests() {
                 </div>
                 
                 <h2 className="font-display font-bold text-2xl mb-2">
-                  {score >= 70 ? "¡Excelente trabajo!" : "Sigue practicando"}
+                  {score >= 70 ? "Excellent work!" : "Keep practicing"}
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                  Has completado el {selectedTest.title}
+                  You completed the {selectedTest.title}
                 </p>
                 
                 <div className="text-6xl font-display font-bold text-primary mb-4">
@@ -128,18 +128,18 @@ export default function Tests() {
                 <div className="flex items-center justify-center gap-8 mb-8">
                   <div className="text-center">
                     <p className="text-xl font-semibold text-success">{correctCount}</p>
-                    <p className="text-sm text-muted-foreground">Correctas</p>
+                    <p className="text-sm text-muted-foreground">Correct</p>
                   </div>
                   <div className="w-px h-12 bg-border" />
                   <div className="text-center">
                     <p className="text-xl font-semibold text-destructive">{incorrectCount}</p>
-                    <p className="text-sm text-muted-foreground">Incorrectas</p>
+                    <p className="text-sm text-muted-foreground">Incorrect</p>
                   </div>
                 </div>
 
                 {/* Review answers */}
                 <div className="text-left mb-8 space-y-3 max-h-80 overflow-y-auto">
-                  <h3 className="font-semibold sticky top-0 bg-background py-2">Revisión de respuestas:</h3>
+                  <h3 className="font-semibold sticky top-0 bg-background py-2">Answer Review:</h3>
                   {currentQuestions.map((q) => {
                     const isCorrect = answers[q.id] === q.correctAnswer;
                     return (
@@ -155,10 +155,10 @@ export default function Tests() {
                             <XCircle className="w-4 h-4 text-destructive shrink-0 mt-0.5" />
                           )}
                           <div className="text-sm">
-                            <span>Tu respuesta: <span className={isCorrect ? "text-success font-medium" : "text-destructive font-medium"}>{answers[q.id] || "(sin respuesta)"}</span></span>
+                            <span>Your answer: <span className={isCorrect ? "text-success font-medium" : "text-destructive font-medium"}>{answers[q.id] || "(no answer)"}</span></span>
                             {!isCorrect && (
                               <>
-                                <span className="text-muted-foreground"> · Correcta: <span className="text-success font-medium">{q.correctAnswer}</span></span>
+                                <span className="text-muted-foreground"> · Correct: <span className="text-success font-medium">{q.correctAnswer}</span></span>
                                 {q.explanation && (
                                   <p className="text-muted-foreground mt-1 italic">{q.explanation}</p>
                                 )}
@@ -173,10 +173,10 @@ export default function Tests() {
                 
                 <div className="flex gap-4 justify-center">
                   <Button variant="outline" onClick={handleBack}>
-                    Volver a tests
+                    Back to Tests
                   </Button>
                   <Button variant="hero" onClick={() => handleStartTest(selectedTest)}>
-                    Repetir test
+                    Retry Test
                   </Button>
                 </div>
               </CardContent>
@@ -200,7 +200,7 @@ export default function Tests() {
             <div className="flex items-center justify-between mb-6">
               <Button variant="ghost" size="sm" onClick={handleBack}>
                 <ArrowLeft className="w-4 h-4 mr-2" />
-                Salir del test
+                Exit Test
               </Button>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Clock className="w-4 h-4" />
@@ -213,7 +213,7 @@ export default function Tests() {
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm font-medium">{selectedTest.title}</span>
                 <span className="text-sm text-muted-foreground">
-                  Pregunta {currentQuestion + 1} de {currentQuestions.length}
+                  Question {currentQuestion + 1} of {currentQuestions.length}
                 </span>
               </div>
               <Progress value={progress} className="h-2" />
@@ -230,7 +230,7 @@ export default function Tests() {
                     {selectedTest.level}
                   </span>
                   <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-muted text-muted-foreground capitalize">
-                    {selectedTest.type === "grammar" ? "Gramática" : "Vocabulario"}
+                    {selectedTest.type === "grammar" ? "Grammar" : "Vocabulary"}
                   </span>
                 </div>
                 
@@ -262,11 +262,11 @@ export default function Tests() {
                 >
                   {currentQuestion < currentQuestions.length - 1 ? (
                     <>
-                      Siguiente
+                      Next
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </>
                   ) : (
-                    "Finalizar test"
+                    "Finish Test"
                   )}
                 </Button>
               </CardContent>
@@ -295,7 +295,7 @@ export default function Tests() {
             onClick={() => navigate("/")}
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Volver al Dashboard
+            Back to Dashboard
           </Button>
           
           <div className="flex items-center gap-4">
@@ -304,10 +304,10 @@ export default function Tests() {
             </div>
             <div>
               <h1 className="font-display font-bold text-3xl text-foreground">
-                Tests y Evaluaciones
+                Tests & Assessments
               </h1>
               <p className="text-muted-foreground">
-                Evalúa tu progreso con exámenes de gramática y vocabulario
+                Evaluate your progress with grammar and vocabulary exams
               </p>
             </div>
           </div>
@@ -319,15 +319,15 @@ export default function Tests() {
             <div className="grid grid-cols-3 gap-6 text-center">
               <div>
                 <p className="text-3xl font-display font-bold text-foreground">{completedCount}</p>
-                <p className="text-sm text-muted-foreground">Tests completados</p>
+                <p className="text-sm text-muted-foreground">Tests Completed</p>
               </div>
               <div>
                 <p className="text-3xl font-display font-bold text-success">{averageScore}%</p>
-                <p className="text-sm text-muted-foreground">Promedio</p>
+                <p className="text-sm text-muted-foreground">Average</p>
               </div>
               <div>
                 <p className="text-3xl font-display font-bold text-primary">{testDefinitions.length - completedCount}</p>
-                <p className="text-sm text-muted-foreground">Tests pendientes</p>
+                <p className="text-sm text-muted-foreground">Tests Pending</p>
               </div>
             </div>
           </CardContent>
@@ -378,10 +378,10 @@ export default function Tests() {
                         <div className="flex items-center gap-4 mt-2 text-xs text-muted-foreground">
                           <span className="flex items-center gap-1">
                             {getTypeIcon(test.type)}
-                            {test.type === "grammar" ? "Gramática" : "Vocabulario"}
+                            {test.type === "grammar" ? "Grammar" : "Vocabulary"}
                           </span>
                           <span>·</span>
-                          <span>{test.questionsCount} preguntas</span>
+                          <span>{test.questionsCount} questions</span>
                           <span>·</span>
                           <span>{test.duration} min</span>
                         </div>
@@ -392,7 +392,7 @@ export default function Tests() {
                       variant={isCompleted ? "outline" : "default"}
                       onClick={() => handleStartTest(test)}
                     >
-                      {isCompleted ? "Repetir" : "Comenzar"}
+                      {isCompleted ? "Retry" : "Start"}
                       <ChevronRight className="w-4 h-4 ml-1" />
                     </Button>
                   </div>
