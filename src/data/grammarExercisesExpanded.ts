@@ -2015,23 +2015,43 @@ export const c1GrammarExercises: GrammarExercise[] = [
 
 // ==================== UTILITY FUNCTIONS ====================
 
-export function getGrammarExercisesByLevel(level: "A1" | "A2" | "B1" | "B2" | "C1"): GrammarExercise[] {
-  const exerciseMap: Record<string, GrammarExercise[]> = {
-    "A1": a1GrammarExercises,
-    "A2": a2GrammarExercises,
-    "B1": b1GrammarExercises,
-    "B2": b2GrammarExercises,
-    "C1": c1GrammarExercises,
+import { c2GrammarExercises } from './grammarExercisesC2';
+import { 
+  a1AdditionalExercises, 
+  a2AdditionalExercises, 
+  b1AdditionalExercises, 
+  b2AdditionalExercises, 
+  c1AdditionalExercises 
+} from './grammarExercisesAdditional';
+
+// Combine original and additional exercises for each level
+const allA1Exercises = [...a1GrammarExercises, ...a1AdditionalExercises];
+const allA2Exercises = [...a2GrammarExercises, ...a2AdditionalExercises];
+const allB1Exercises = [...b1GrammarExercises, ...b1AdditionalExercises];
+const allB2Exercises = [...b2GrammarExercises, ...b2AdditionalExercises];
+const allC1Exercises = [...c1GrammarExercises, ...c1AdditionalExercises];
+const allC2Exercises = c2GrammarExercises;
+
+export type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
+
+export function getGrammarExercisesByLevel(level: CEFRLevel): GrammarExercise[] {
+  const exerciseMap: Record<CEFRLevel, GrammarExercise[]> = {
+    "A1": allA1Exercises,
+    "A2": allA2Exercises,
+    "B1": allB1Exercises,
+    "B2": allB2Exercises,
+    "C1": allC1Exercises,
+    "C2": allC2Exercises,
   };
   return exerciseMap[level] || [];
 }
 
-export function getGrammarExercisesByCategory(level: "A1" | "A2" | "B1" | "B2" | "C1", category: string): GrammarExercise[] {
+export function getGrammarExercisesByCategory(level: CEFRLevel, category: string): GrammarExercise[] {
   const exercises = getGrammarExercisesByLevel(level);
-  return exercises.filter(ex => ex.category === category);
+  return exercises.filter(ex => ex.category === category || ex.category.includes(category) || category.includes(ex.category));
 }
 
-export function getRandomGrammarExercises(level: "A1" | "A2" | "B1" | "B2" | "C1", count: number = 10): GrammarExercise[] {
+export function getRandomGrammarExercises(level: CEFRLevel, count: number = 10): GrammarExercise[] {
   const exercises = getGrammarExercisesByLevel(level);
   const shuffled = [...exercises].sort(() => Math.random() - 0.5);
   return shuffled.slice(0, Math.min(count, exercises.length));
@@ -2039,19 +2059,21 @@ export function getRandomGrammarExercises(level: "A1" | "A2" | "B1" | "B2" | "C1
 
 export function getAllGrammarExercises(): GrammarExercise[] {
   return [
-    ...a1GrammarExercises,
-    ...a2GrammarExercises,
-    ...b1GrammarExercises,
-    ...b2GrammarExercises,
-    ...c1GrammarExercises,
+    ...allA1Exercises,
+    ...allA2Exercises,
+    ...allB1Exercises,
+    ...allB2Exercises,
+    ...allC1Exercises,
+    ...allC2Exercises,
   ];
 }
 
 export const grammarExerciseStats = {
-  A1: a1GrammarExercises.length,
-  A2: a2GrammarExercises.length,
-  B1: b1GrammarExercises.length,
-  B2: b2GrammarExercises.length,
-  C1: c1GrammarExercises.length,
-  total: a1GrammarExercises.length + a2GrammarExercises.length + b1GrammarExercises.length + b2GrammarExercises.length + c1GrammarExercises.length,
+  A1: allA1Exercises.length,
+  A2: allA2Exercises.length,
+  B1: allB1Exercises.length,
+  B2: allB2Exercises.length,
+  C1: allC1Exercises.length,
+  C2: allC2Exercises.length,
+  total: allA1Exercises.length + allA2Exercises.length + allB1Exercises.length + allB2Exercises.length + allC1Exercises.length + allC2Exercises.length,
 };

@@ -16,7 +16,7 @@ import {
 interface GrammarPracticeModalProps {
   isOpen: boolean;
   onClose: () => void;
-  level: "A1" | "A2" | "B1" | "B2" | "C1";
+  level: "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
   category?: string;
   exerciseCount?: number;
 }
@@ -108,6 +108,7 @@ export function GrammarPracticeModal({
       B1: "bg-level-b1",
       B2: "bg-level-b2",
       C1: "bg-level-c1",
+      C2: "bg-level-c2",
     };
     return colors[lvl] || "bg-primary";
   };

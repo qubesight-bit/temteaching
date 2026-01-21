@@ -13,7 +13,7 @@ import { TopicRowWithLevels } from "@/components/grammar/TopicRowWithLevels";
 import { GrammarPracticeModal } from "@/components/grammar/GrammarPracticeModal";
 import { useAppState } from "@/hooks/useAppState";
 
-type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1";
+type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
 export default function Grammar() {
   const navigate = useNavigate();
@@ -45,6 +45,7 @@ export default function Grammar() {
       B1: "bg-level-b1",
       B2: "bg-level-b2",
       C1: "bg-level-c1",
+      C2: "bg-level-c2",
     };
     return colors[level] || "bg-primary";
   };
@@ -63,7 +64,7 @@ export default function Grammar() {
     setPracticeModalOpen(true);
   };
 
-  const levels: CEFRLevel[] = ["A1", "A2", "B1", "B2", "C1"];
+  const levels: CEFRLevel[] = ["A1", "A2", "B1", "B2", "C1", "C2"];
 
   return (
     <div className="min-h-screen bg-background">

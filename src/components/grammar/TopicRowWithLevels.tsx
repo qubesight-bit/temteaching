@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { GrammarTopic } from "@/data/grammarData";
 import { getGrammarExercisesByCategory, grammarExerciseStats } from "@/data/grammarExercisesExpanded";
 
-type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1";
+type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
 interface TopicRowWithLevelsProps {
   topic: GrammarTopic;
@@ -54,7 +54,7 @@ function getExerciseCountForTopicLevel(topicId: string, level: CEFRLevel): numbe
 
 // Check which levels have exercises for this topic
 function getAvailableLevels(topicId: string): { level: CEFRLevel; count: number }[] {
-  const levels: CEFRLevel[] = ["A1", "A2", "B1", "B2", "C1"];
+  const levels: CEFRLevel[] = ["A1", "A2", "B1", "B2", "C1", "C2"];
   const available: { level: CEFRLevel; count: number }[] = [];
   
   for (const level of levels) {
@@ -173,8 +173,8 @@ export function TopicRowWithLevels({
           </p>
           
           {/* Level Buttons */}
-          <div className="grid grid-cols-5 gap-2 mb-4">
-            {(["A1", "A2", "B1", "B2", "C1"] as CEFRLevel[]).map((level) => {
+          <div className="grid grid-cols-6 gap-2 mb-4">
+            {(["A1", "A2", "B1", "B2", "C1", "C2"] as CEFRLevel[]).map((level) => {
               const levelData = availableLevels.find(l => l.level === level);
               const hasExercises = levelData && levelData.count > 0;
               const isSelected = selectedLevel === level;
