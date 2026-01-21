@@ -4,13 +4,25 @@ import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { grammarCategories, GrammarCategory, GrammarTopic } from "@/data/grammarData";
-import { ChevronDown, ChevronRight, Check, Lock, Play, ArrowLeft } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { grammarCategories, GrammarCategory } from "@/data/grammarData";
+import { grammarExerciseStats } from "@/data/grammarExercisesExpanded";
+import { ChevronDown, ChevronRight, ArrowLeft, Dumbbell } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { TopicRow } from "@/components/grammar/TopicRow";
+import { GrammarPracticeModal } from "@/components/grammar/GrammarPracticeModal";
+import { useAppState } from "@/hooks/useAppState";
+
+type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1";
 
 export default function Grammar() {
   const navigate = useNavigate();
+  const { userProgress } = useAppState();
   const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
+  const [practiceModalOpen, setPracticeModalOpen] = useState(false);
+  const [selectedLevel, setSelectedLevel] = useState<CEFRLevel>("A1");
+
+  const currentLevel = (userProgress?.currentLevel as CEFRLevel) || "A1";
 
   const toggleCategory = (categoryId: string) => {
     setExpandedCategories(prev =>
@@ -40,6 +52,13 @@ export default function Grammar() {
     navigate(`/lesson/grammar/${categoryId}/${topicId}`);
   };
 
+  const handleStartPractice = (level: CEFRLevel) => {
+    setSelectedLevel(level);
+    setPracticeModalOpen(true);
+  };
+
+  const levels: CEFRLevel[] = ["A1", "A2", "B1", "B2", "C1"];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -66,11 +85,45 @@ export default function Grammar() {
                 Gramática
               </h1>
               <p className="text-muted-foreground">
-                19 categorías completas desde tiempos verbales hasta estructuras complejas
+                {grammarExerciseStats.total}+ ejercicios completos desde tiempos verbales hasta estructuras complejas
               </p>
             </div>
           </div>
         </div>
+
+        {/* Quick Practice by Level */}
+        <Card className="mb-8">
+          <CardContent className="p-6">
+            <div className="flex items-center gap-3 mb-4">
+              <Dumbbell className="w-5 h-5 text-primary" />
+              <h3 className="font-semibold">Práctica Rápida por Nivel</h3>
+              <Badge variant="secondary" className="ml-auto">
+                {grammarExerciseStats.total} ejercicios
+              </Badge>
+            </div>
+            <p className="text-sm text-muted-foreground mb-4">
+              Selecciona un nivel para practicar 10 ejercicios aleatorios de gramática
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+              {levels.map((level) => (
+                <Button
+                  key={level}
+                  variant={level === currentLevel ? "default" : "outline"}
+                  className={cn(
+                    "flex flex-col gap-1 h-auto py-3",
+                    level === currentLevel && getLevelColor(level)
+                  )}
+                  onClick={() => handleStartPractice(level)}
+                >
+                  <span className="font-bold text-lg">{level}</span>
+                  <span className="text-xs opacity-80">
+                    {grammarExerciseStats[level]} ejercicios
+                  </span>
+                </Button>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Overall Progress */}
         <Card className="mb-8">
@@ -138,80 +191,14 @@ export default function Grammar() {
           })}
         </div>
       </main>
-    </div>
-  );
-}
 
-interface TopicRowProps {
-  topic: GrammarTopic;
-  index: number;
-  onStart: () => void;
-  getLevelColor: (level: string) => string;
-}
-
-function TopicRow({ topic, index, onStart, getLevelColor }: TopicRowProps) {
-  const isLocked = !topic.completed && index > 0;
-  
-  return (
-    <div
-      className={cn(
-        "flex items-center justify-between p-4 border-b last:border-b-0 transition-colors",
-        isLocked ? "opacity-60" : "hover:bg-secondary/30"
-      )}
-    >
-      <div className="flex items-center gap-4">
-        <div
-          className={cn(
-            "w-10 h-10 rounded-full flex items-center justify-center",
-            topic.completed
-              ? "bg-success text-white"
-              : isLocked
-              ? "bg-secondary text-muted-foreground"
-              : "bg-primary/10 text-primary"
-          )}
-        >
-          {topic.completed ? (
-            <Check className="w-5 h-5" />
-          ) : isLocked ? (
-            <Lock className="w-4 h-4" />
-          ) : (
-            <span className="text-sm font-bold">{index + 1}</span>
-          )}
-        </div>
-        
-        <div>
-          <h4 className="font-medium">{topic.title}</h4>
-          <div className="flex items-center gap-2 mt-1">
-            <span
-              className={cn(
-                "px-2 py-0.5 rounded-full text-xs font-medium text-white",
-                getLevelColor(topic.level)
-              )}
-            >
-              {topic.level}
-            </span>
-            {topic.completed && (
-              <span className="text-xs text-success">Completado</span>
-            )}
-          </div>
-        </div>
-      </div>
-
-      <Button
-        variant={topic.completed ? "outline" : "default"}
-        size="sm"
-        disabled={isLocked}
-        onClick={onStart}
-      >
-        {topic.completed ? (
-          "Repasar"
-        ) : (
-          <>
-            <Play className="w-4 h-4 mr-1" />
-            Empezar
-          </>
-        )}
-      </Button>
+      {/* Practice Modal */}
+      <GrammarPracticeModal
+        isOpen={practiceModalOpen}
+        onClose={() => setPracticeModalOpen(false)}
+        level={selectedLevel}
+        exerciseCount={10}
+      />
     </div>
   );
 }
