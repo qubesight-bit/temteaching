@@ -9,10 +9,11 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { 
   ArrowLeft, BookOpen, Clock, CheckCircle2, XCircle, 
   Lightbulb, AlertTriangle, BookText, ChevronRight,
-  Volume2, GraduationCap
+  Volume2, GraduationCap, Headphones
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getArticleById, Article, getArticlesByTag } from "@/data/articlesData";
+import { ArticleAudioQuiz } from "@/components/articles/ArticleAudioQuiz";
 
 const levelColors: Record<string, string> = {
   A1: "bg-level-a1",
@@ -133,6 +134,15 @@ export default function ArticleDetail() {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Audio Listening Quiz - NEW FEATURE */}
+            <ArticleAudioQuiz 
+              articleTitle={article.title}
+              articleContent={`${article.introduction}\n\n${article.sections.map(s => `${s.title}\n${s.content}`).join('\n\n')}`}
+              onComplete={(score, total) => {
+                console.log(`Quiz completed: ${score}/${total}`);
+              }}
+            />
 
             {/* Introduction */}
             <Card className="mb-8">
