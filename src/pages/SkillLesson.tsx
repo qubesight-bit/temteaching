@@ -26,7 +26,7 @@ type LessonStep = "overview" | "exercises" | "complete";
 const getExercisesForSkill = (skill: Skill, level: CEFRLevel, categoryType: string): Exercise[] => {
   // First try B1 complete exercises
   if (level === "B1") {
-    const b1Exercises = getB1ExercisesCompleteBySkillId(skill.id, categoryType);
+    const b1Exercises = getB1ExercisesCompleteBySkillId(skill.id);
     if (b1Exercises.length > 0) return b1Exercises;
   }
   
@@ -168,97 +168,97 @@ const getPreExerciseTeaching = (exercise: Exercise): string => {
   // Image-match exercises
   if (exercise.type === 'image-match') {
     if (tags.includes('word-to-image')) {
-      return "🖼️ EJERCICIO VISUAL: Mira la palabra en inglés y selecciona la imagen que la representa.\n\n👉 Piensa en el significado de la palabra\n👉 Visualiza el objeto en tu mente\n👉 Selecciona la imagen correcta";
+      return "🖼️ VISUAL EXERCISE: Look at the English word and select the image that represents it.\n\n👉 Think about the word's meaning\n👉 Visualize the object in your mind\n👉 Select the correct image";
     }
-    return "🖼️ EJERCICIO VISUAL: Observa la imagen con atención.\n\n👉 ¿Qué objeto, animal o concepto representa?\n👉 Piensa en cómo se dice en inglés\n👉 Selecciona la palabra correcta entre las opciones";
+    return "🖼️ VISUAL EXERCISE: Look carefully at the image.\n\n👉 What object, animal or concept does it represent?\n👉 Think about how it's said in English\n👉 Select the correct word from the options";
   }
   
   // TO BE verb explanations
   if (tags.includes('to-be')) {
     if (tags.includes('affirmative')) {
-      return "🔤 REGLA: El verbo TO BE cambia según el sujeto:\n• I → am (Yo soy/estoy)\n• He/She/It → is (Él/Ella es/está)\n• You/We/They → are (Tú/Nosotros/Ellos son/están)\n\n👉 Identifica el SUJETO de la oración y elige la forma correcta.";
+      return "🔤 RULE: The verb TO BE changes according to the subject:\n• I → am\n• He/She/It → is\n• You/We/They → are\n\n👉 Identify the SUBJECT and choose the correct form.";
     }
     if (tags.includes('negative')) {
-      return "🔤 REGLA: Negativo con TO BE:\n• I am not (I'm not)\n• He/She/It is not (isn't)\n• You/We/They are not (aren't)\n\n👉 Primero identifica el sujeto, luego añade 'not' después del verbo.";
+      return "🔤 RULE: Negative with TO BE:\n• I am not (I'm not)\n• He/She/It is not (isn't)\n• You/We/They are not (aren't)\n\n👉 First identify the subject, then add 'not' after the verb.";
     }
     if (tags.includes('questions')) {
-      return "🔤 REGLA: Preguntas con TO BE - invierte el orden:\n• Am I...? / Is he/she...? / Are you/we/they...?\n\n👉 En preguntas, el verbo TO BE va ANTES del sujeto.";
+      return "🔤 RULE: Questions with TO BE - invert the order:\n• Am I...? / Is he/she...? / Are you/we/they...?\n\n👉 In questions, the verb TO BE goes BEFORE the subject.";
     }
-    return "🔤 REGLA: TO BE = ser/estar en inglés\n• I → am\n• He/She/It → is\n• You/We/They → are\n\n👉 Mira quién hace la acción (el sujeto) para elegir la forma correcta.";
+    return "🔤 RULE: TO BE = to be in English\n• I → am\n• He/She/It → is\n• You/We/They → are\n\n👉 Look at who performs the action (the subject) to choose the correct form.";
   }
   
   // Present Simple explanations
   if (tags.includes('present-simple')) {
     if (tags.includes('third-person')) {
-      return "🔤 REGLA: Present Simple con HE/SHE/IT:\n• Añade -S al verbo: work→works, play→plays\n• Verbos en -ch, -sh, -ss, -x, -o: añade -ES: watch→watches\n• Verbos en consonante+Y: cambia Y por -IES: study→studies\n\n👉 ¿El sujeto es he/she/it? Entonces el verbo necesita -S/-ES.";
+      return "🔤 RULE: Present Simple with HE/SHE/IT:\n• Add -S to the verb: work→works, play→plays\n• Verbs ending in -ch, -sh, -ss, -x, -o: add -ES: watch→watches\n• Verbs ending in consonant+Y: change Y to -IES: study→studies\n\n👉 Is the subject he/she/it? Then the verb needs -S/-ES.";
     }
     if (tags.includes('negative')) {
-      return "🔤 REGLA: Negativo en Present Simple:\n• I/You/We/They + don't + verbo base\n• He/She/It + doesn't + verbo base\n\n⚠️ ¡El verbo vuelve a su forma BASE! (She doesn't LIKE, no 'likes')";
+      return "🔤 RULE: Negative in Present Simple:\n• I/You/We/They + don't + base verb\n• He/She/It + doesn't + base verb\n\n⚠️ The verb returns to its BASE form! (She doesn't LIKE, not 'likes')";
     }
     if (tags.includes('questions')) {
-      return "🔤 REGLA: Preguntas en Present Simple:\n• Do + I/you/we/they + verbo base?\n• Does + he/she/it + verbo base?\n\n👉 Después de DO/DOES el verbo siempre va en forma base (sin -s).";
+      return "🔤 RULE: Questions in Present Simple:\n• Do + I/you/we/they + base verb?\n• Does + he/she/it + base verb?\n\n👉 After DO/DOES the verb always goes in base form (without -s).";
     }
-    return "🔤 REGLA: Present Simple = acciones habituales/rutinas\n• I/You/We/They + verbo base\n• He/She/It + verbo + S/ES\n\n👉 Identifica si el sujeto es singular (he/she/it) o plural.";
+    return "🔤 RULE: Present Simple = habitual actions/routines\n• I/You/We/They + base verb\n• He/She/It + verb + S/ES\n\n👉 Identify if the subject is singular (he/she/it) or plural.";
   }
   
   // Present Continuous
   if (tags.includes('present-continuous')) {
-    return "🔤 REGLA: Present Continuous = acción ahora mismo\nEstructura: AM/IS/ARE + verbo-ING\n• I am working\n• She is reading\n• They are playing\n\n👉 Busca palabras clave: now, right now, at the moment, look!";
+    return "🔤 RULE: Present Continuous = action happening right now\nStructure: AM/IS/ARE + verb-ING\n• I am working\n• She is reading\n• They are playing\n\n👉 Look for keywords: now, right now, at the moment, look!";
   }
   
   // Vocabulary - by specific category
   if (tags.includes('food')) {
-    return "🍎 VOCABULARIO - COMIDA:\n• Frutas: apple, banana, orange...\n• Bebidas: water, milk, coffee...\n• Comidas: bread, cheese, pizza...\n\n👉 Observa la imagen y piensa en qué categoría de comida pertenece.";
+    return "🍎 VOCABULARY - FOOD:\n• Fruits: apple, banana, orange...\n• Drinks: water, milk, coffee...\n• Meals: bread, cheese, pizza...\n\n👉 Look at the image and think about what food category it belongs to.";
   }
   if (tags.includes('animals')) {
-    return "🐾 VOCABULARIO - ANIMALES:\n• Mascotas: dog, cat, bird...\n• Granja: cow, pig, horse...\n• Salvajes: lion, elephant, bear...\n\n👉 ¿Es un animal doméstico, de granja o salvaje?";
+    return "🐾 VOCABULARY - ANIMALS:\n• Pets: dog, cat, bird...\n• Farm: cow, pig, horse...\n• Wild: lion, elephant, bear...\n\n👉 Is it a domestic, farm or wild animal?";
   }
   if (tags.includes('family')) {
-    return "👨‍👩‍👧 VOCABULARIO - FAMILIA:\n• Padres: mother, father\n• Hermanos: sister, brother\n• Abuelos: grandmother, grandfather\n\n👉 Piensa en la relación familiar que representa.";
+    return "👨‍👩‍👧 VOCABULARY - FAMILY:\n• Parents: mother, father\n• Siblings: sister, brother\n• Grandparents: grandmother, grandfather\n\n👉 Think about the family relationship it represents.";
   }
   if (tags.includes('clothes')) {
-    return "👕 VOCABULARIO - ROPA:\n• Arriba: shirt, dress, hat\n• Abajo: pants, shoes\n• Accesorios: glasses, hat\n\n👉 ¿Qué parte del cuerpo cubre esta prenda?";
+    return "👕 VOCABULARY - CLOTHES:\n• Upper: shirt, dress, hat\n• Lower: pants, shoes\n• Accessories: glasses, hat\n\n👉 What part of the body does this item cover?";
   }
   if (tags.includes('body')) {
-    return "🫀 VOCABULARIO - CUERPO:\n• Cabeza: head, eye, ear, nose, mouth\n• Extremidades: hand, foot\n• Órganos: heart\n\n👉 Identifica qué parte del cuerpo representa la imagen.";
+    return "🫀 VOCABULARY - BODY:\n• Head: head, eye, ear, nose, mouth\n• Limbs: hand, foot\n• Organs: heart\n\n👉 Identify what body part the image represents.";
   }
   if (tags.includes('colors')) {
-    return "🎨 VOCABULARIO - COLORES:\n• Primarios: red, blue, yellow\n• Secundarios: green, orange, purple\n• Neutros: black, white, brown\n\n👉 Observa el color y recuerda su nombre en inglés.";
+    return "🎨 VOCABULARY - COLORS:\n• Primary: red, blue, yellow\n• Secondary: green, orange, purple\n• Neutral: black, white, brown\n\n👉 Look at the color and remember its English name.";
   }
   if (tags.includes('numbers')) {
-    return "🔢 VOCABULARIO - NÚMEROS:\n• 1-5: one, two, three, four, five\n• 6-10: six, seven, eight, nine, ten\n\n👉 Cuenta mentalmente y selecciona el número correcto.";
+    return "🔢 VOCABULARY - NUMBERS:\n• 1-5: one, two, three, four, five\n• 6-10: six, seven, eight, nine, ten\n\n👉 Count mentally and select the correct number.";
   }
   if (tags.includes('weather')) {
-    return "🌤️ VOCABULARIO - CLIMA:\n• Soleado: sun, hot\n• Lluvioso: rain, cloud\n• Frío: snow, wind\n\n👉 ¿Qué condición climática representa?";
+    return "🌤️ VOCABULARY - WEATHER:\n• Sunny: sun, hot\n• Rainy: rain, cloud\n• Cold: snow, wind\n\n👉 What weather condition does it represent?";
   }
   if (tags.includes('professions')) {
-    return "👨‍⚕️ VOCABULARIO - PROFESIONES:\n• Salud: doctor, nurse\n• Educación: teacher\n• Servicios: police, firefighter, chef\n\n👉 ¿Qué trabajo realiza esta persona?";
+    return "👨‍⚕️ VOCABULARY - PROFESSIONS:\n• Health: doctor, nurse\n• Education: teacher\n• Services: police, firefighter, chef\n\n👉 What job does this person do?";
   }
   if (tags.includes('sports')) {
-    return "⚽ VOCABULARIO - DEPORTES:\n• Con pelota: soccer, basketball, tennis\n• Acuáticos: swimming\n• Atletismo: running\n\n👉 ¿Qué deporte o actividad representa?";
+    return "⚽ VOCABULARY - SPORTS:\n• Ball sports: soccer, basketball, tennis\n• Water: swimming\n• Athletics: running\n\n👉 What sport or activity does it represent?";
   }
   
   // General vocabulary
   if (tags.includes('vocabulary')) {
-    return "📚 VOCABULARIO: Lee la pregunta con atención.\n\n👉 Piensa en la categoría temática\n👉 Relaciona las palabras con imágenes mentales\n👉 Descarta las opciones que claramente no encajan";
+    return "📚 VOCABULARY: Read the question carefully.\n\n👉 Think about the thematic category\n👉 Relate words to mental images\n👉 Eliminate options that clearly don't fit";
   }
   
   // Articles
   if (tags.includes('articles')) {
-    return "🔤 REGLA: Artículos A/AN/THE:\n• A + consonante: a book, a car\n• AN + vocal: an apple, an egg\n• THE = específico/único: the sun, the book (que ya conocemos)\n\n👉 ¿Empieza con sonido vocal? Usa AN. ¿Es específico? Usa THE.";
+    return "🔤 RULE: Articles A/AN/THE:\n• A + consonant: a book, a car\n• AN + vowel: an apple, an egg\n• THE = specific/unique: the sun, the book (that we already know)\n\n👉 Does it start with a vowel sound? Use AN. Is it specific? Use THE.";
   }
   
   // Possessives
   if (tags.includes('possessive')) {
-    return "🔤 REGLA: Posesivos:\n• My (mi), Your (tu), His (de él), Her (de ella)\n• Its (de ello), Our (nuestro), Their (de ellos)\n\n👉 Identifica QUIÉN es el dueño para elegir el posesivo correcto.";
+    return "🔤 RULE: Possessives:\n• My, Your, His, Her\n• Its, Our, Their\n\n👉 Identify WHO the owner is to choose the correct possessive.";
   }
   
   // Default grammar
   if (tags.includes('grammar')) {
-    return "🔤 GRAMÁTICA: Analiza la oración paso a paso:\n1. Identifica el SUJETO (¿quién?)\n2. Identifica el TIEMPO verbal (¿cuándo?)\n3. Aplica la regla correspondiente\n\n👉 Lee todas las opciones antes de decidir.";
+    return "🔤 GRAMMAR: Analyze the sentence step by step:\n1. Identify the SUBJECT (who?)\n2. Identify the TENSE (when?)\n3. Apply the corresponding rule\n\n👉 Read all options before deciding.";
   }
   
-  return "📖 CONSEJO: Lee la oración completa, identifica qué tipo de palabra falta (verbo, sustantivo, adjetivo) y piensa en el contexto.";
+  return "📖 TIP: Read the complete sentence, identify what type of word is missing (verb, noun, adjective) and think about the context.";
 };
 
 // Helper function for detailed post-answer explanation
@@ -266,19 +266,19 @@ const getDetailedExplanation = (exercise: Exercise): string => {
   const tags = exercise.tags || [];
   
   if (tags.includes('to-be')) {
-    return "Recuerda: I→am, he/she/it→is, you/we/they→are. En preguntas se invierte el orden. En negativo añadimos 'not'.";
+    return "Remember: I→am, he/she/it→is, you/we/they→are. In questions, invert the order. In negatives, add 'not'.";
   }
   if (tags.includes('present-simple')) {
-    return "En Present Simple: con he/she/it añade -s/-es. En negativo/pregunta usa do/does + verbo base (sin -s).";
+    return "In Present Simple: with he/she/it add -s/-es. In negative/question use do/does + base verb (without -s).";
   }
   if (tags.includes('present-continuous')) {
-    return "Present Continuous = am/is/are + verbo-ING. Se usa para acciones en progreso ahora mismo.";
+    return "Present Continuous = am/is/are + verb-ING. Used for actions in progress right now.";
   }
   if (tags.includes('vocabulary')) {
-    return "Asocia las palabras con imágenes y contextos reales. La práctica constante es clave.";
+    return "Associate words with real images and contexts. Constant practice is key.";
   }
   
-  return "Practica identificando el patrón gramatical. Con repetición, estas reglas se vuelven automáticas.";
+  return "Practice identifying the grammatical pattern. With repetition, these rules become automatic.";
 };
 
 // Generate exercises based on category type
@@ -328,12 +328,12 @@ const levelColors: Record<CEFRLevel, string> = {
 };
 
 const levelLabels: Record<CEFRLevel, string> = {
-  A1: "Novato",
-  A2: "Aprendiz",
-  B1: "Aventurero",
-  B2: "Guerrero",
-  C1: "Maestro",
-  C2: "Leyenda",
+  A1: "Beginner",
+  A2: "Elementary",
+  B1: "Intermediate",
+  B2: "Upper-Intermediate",
+  C1: "Advanced",
+  C2: "Proficient",
 };
 
 export default function SkillLesson() {
@@ -386,8 +386,8 @@ export default function SkillLesson() {
     if (answer === currentExerciseData.correctAnswer) {
       setScore(prev => ({ ...prev, correct: prev.correct + 1 }));
       toast({
-        title: "¡Correcto! 🎉",
-        description: "¡Excelente trabajo, aventurero!",
+        title: "Correct! 🎉",
+        description: "Excellent work!",
       });
     } else {
       setScore(prev => ({ ...prev, incorrect: prev.incorrect + 1 }));
@@ -429,7 +429,7 @@ export default function SkillLesson() {
               <div className={cn("p-6 text-white", levelColors[level as CEFRLevel])}>
                 <div className="flex items-center justify-center gap-3">
                   <Trophy className="w-8 h-8" />
-                  <h2 className="font-display font-bold text-2xl">¡Misión Completada!</h2>
+                  <h2 className="font-display font-bold text-2xl">Mission Complete!</h2>
                 </div>
               </div>
               
@@ -442,40 +442,40 @@ export default function SkillLesson() {
                   {skill.title}
                 </h3>
                 <p className="text-muted-foreground mb-6">
-                  Has completado esta habilidad del nivel {level}
+                  You have completed this {level} level skill
                 </p>
                 
                 <div className="flex items-center justify-center gap-8 mb-8">
                   <div className="text-center">
                     <p className="text-4xl font-display font-bold text-success">{score.correct}</p>
-                    <p className="text-sm text-muted-foreground">Correctas</p>
+                    <p className="text-sm text-muted-foreground">Correct</p>
                   </div>
                   <div className="w-px h-12 bg-border" />
                   <div className="text-center">
                     <p className="text-4xl font-display font-bold text-destructive">{score.incorrect}</p>
-                    <p className="text-sm text-muted-foreground">Incorrectas</p>
+                    <p className="text-sm text-muted-foreground">Incorrect</p>
                   </div>
                   <div className="w-px h-12 bg-border" />
                   <div className="text-center">
                     <p className="text-4xl font-display font-bold text-primary">{percentage}%</p>
-                    <p className="text-sm text-muted-foreground">Precisión</p>
+                    <p className="text-sm text-muted-foreground">Accuracy</p>
                   </div>
                 </div>
 
                 <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl p-4 mb-6">
                   <div className="flex items-center justify-center gap-2">
                     <Star className="w-5 h-5 text-accent fill-accent" />
-                    <p className="text-lg font-bold">+{xpEarned} XP ganados</p>
+                    <p className="text-lg font-bold">+{xpEarned} XP earned</p>
                   </div>
                 </div>
                 
                 <div className="flex gap-4 justify-center">
                   <Button variant="outline" onClick={() => navigate("/")}>
                     <ArrowLeft className="w-4 h-4 mr-2" />
-                    Volver al Inicio
+                    Back to Home
                   </Button>
                   <Button variant="hero" onClick={() => navigate("/curriculum")}>
-                    Continuar Aventura
+                    Continue Learning
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </div>
@@ -501,7 +501,7 @@ export default function SkillLesson() {
               onClick={() => navigate(-1)}
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Volver
+              Back
             </Button>
           </div>
 
@@ -539,7 +539,7 @@ export default function SkillLesson() {
               onClick={() => setCurrentStep("overview")}
             >
               <BookOpen className="w-4 h-4" />
-              Vista General
+              Overview
             </button>
             <button
               className={cn(
@@ -551,7 +551,7 @@ export default function SkillLesson() {
               onClick={() => setCurrentStep("exercises")}
             >
               <Dumbbell className="w-4 h-4" />
-              Práctica
+              Practice
             </button>
           </div>
 
@@ -563,13 +563,13 @@ export default function SkillLesson() {
                 <div className="mb-8">
                   <div className="flex items-center gap-2 mb-4">
                     <Target className="w-5 h-5 text-primary" />
-                    <h3 className="font-display font-semibold text-lg">Objetivos de Aprendizaje</h3>
+                    <h3 className="font-display font-semibold text-lg">Learning Objectives</h3>
                   </div>
                   <p className="text-muted-foreground leading-relaxed mb-4">
                     {skill.description}
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    Al completar esta lección dominarás {skill.subSkills.length} sub-habilidades clave.
+                    Upon completing this lesson, you will master {skill.subSkills.length} key sub-skills.
                   </p>
                 </div>
 
@@ -577,7 +577,7 @@ export default function SkillLesson() {
                 <div className="mb-8">
                   <div className="flex items-center gap-2 mb-4">
                     <Lightbulb className="w-5 h-5 text-accent" />
-                    <h3 className="font-display font-semibold text-lg">Contenido a Practicar</h3>
+                    <h3 className="font-display font-semibold text-lg">Content to Practice</h3>
                   </div>
                   <div className="space-y-2">
                     {skill.subSkills.map((subSkill, index) => (
@@ -622,7 +622,7 @@ export default function SkillLesson() {
                   }}
                 >
                   <Dumbbell className="w-5 h-5 mr-2" />
-                  Comenzar Práctica
+                  Start Practice
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </CardContent>
@@ -635,10 +635,10 @@ export default function SkillLesson() {
               <div className="mb-6">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm font-medium">
-                    Ejercicio {currentExercise + 1} de {exercises.length}
+                    Exercise {currentExercise + 1} of {exercises.length}
                   </span>
                   <span className="text-sm text-muted-foreground">
-                    {score.correct} correctas • {score.incorrect} incorrectas
+                    {score.correct} correct • {score.incorrect} incorrect
                   </span>
                 </div>
                 <Progress 
@@ -653,12 +653,12 @@ export default function SkillLesson() {
                   {skill.subSkills[currentExercise] && (
                     <div className="flex items-center gap-2 mb-4">
                       <Badge variant="secondary" className="text-xs">
-                        {skill.subSkills[currentExercise]?.title || `Ejercicio ${currentExercise + 1}`}
+                        {skill.subSkills[currentExercise]?.title || `Exercise ${currentExercise + 1}`}
                       </Badge>
                     </div>
                   )}
 
-                  {/* Pre-Exercise Teaching - Regla gramatical SIN dar la respuesta */}
+                  {/* Pre-Exercise Teaching - Grammar rule WITHOUT giving the answer */}
                   {!showExplanation && (
                     <div className="mb-6 p-4 rounded-xl bg-gradient-to-br from-primary/5 to-accent/5 border border-primary/20">
                       <div className="flex items-start gap-3">
@@ -667,7 +667,7 @@ export default function SkillLesson() {
                         </div>
                         <div className="flex-1">
                           <h3 className="font-semibold text-sm text-primary mb-2">
-                            📚 Antes de responder, recuerda:
+                            📚 Before answering, remember:
                           </h3>
                           <div className="text-sm text-foreground leading-relaxed whitespace-pre-line bg-background/50 rounded-lg p-3 border">
                             {getPreExerciseTeaching(currentExerciseData)}
@@ -686,7 +686,7 @@ export default function SkillLesson() {
                         </div>
                         <Badge variant="outline" className="text-xs">
                           <Image className="w-3 h-3 mr-1" />
-                          Ejercicio Visual
+                          Visual Exercise
                         </Badge>
                       </div>
                     )}
@@ -704,7 +704,7 @@ export default function SkillLesson() {
                       className="text-xs"
                     >
                       <Volume2 className="w-4 h-4 mr-1" />
-                      Escuchar pregunta
+                      Listen to question
                     </Button>
                     {(() => {
                       const relatedArticle = getArticleForExercise(currentExerciseData.tags || []);
@@ -717,7 +717,7 @@ export default function SkillLesson() {
                             className="text-xs border-primary/30 text-primary hover:bg-primary/10"
                           >
                             <FileText className="w-4 h-4 mr-1" />
-                            Leer artículo completo
+                            Read full article
                           </Button>
                         );
                       }
@@ -792,7 +792,7 @@ export default function SkillLesson() {
                     </div>
                   )}
 
-                  {/* Post-Answer Explanation - DESPUÉS de responder */}
+                  {/* Post-Answer Explanation - AFTER answering */}
                   {showExplanation && (
                     <div className={cn(
                       "mt-6 p-4 rounded-xl",
@@ -811,13 +811,13 @@ export default function SkillLesson() {
                         </div>
                         <div className="flex-1">
                           <p className="font-semibold mb-2">
-                            {isCorrect ? "¡Excelente! 🎉" : `La respuesta correcta es: "${currentExerciseData.correctAnswer}"`}
+                            {isCorrect ? "Excellent! 🎉" : `The correct answer is: "${currentExerciseData.correctAnswer}"`}
                           </p>
                           
                           {/* English explanation */}
                           <div className="mb-3">
                             <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-1">
-                              📚 Explicación en inglés:
+                              📚 Explanation:
                             </p>
                             <p className="text-sm text-foreground">
                               {currentExerciseData.explanation}
@@ -828,7 +828,7 @@ export default function SkillLesson() {
                           {currentExerciseData.explanationSpanish && (
                             <div className="pt-2 border-t border-border/50">
                               <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-1">
-                                🇪🇸 Explicación en español:
+                                🇪🇸 Spanish explanation:
                               </p>
                               <p className="text-sm text-foreground">
                                 {currentExerciseData.explanationSpanish}
@@ -839,7 +839,7 @@ export default function SkillLesson() {
                           {/* Why this answer works */}
                           <div className="mt-3 pt-2 border-t border-border/50">
                             <p className="text-xs font-medium text-primary mb-1">
-                              🎯 ¿Por qué esta es la respuesta correcta?
+                              🎯 Why is this the correct answer?
                             </p>
                             <p className="text-xs text-muted-foreground">
                               {getDetailedExplanation(currentExerciseData)}
@@ -860,12 +860,12 @@ export default function SkillLesson() {
                     >
                       {currentExercise < exercises.length - 1 ? (
                         <>
-                          Siguiente ejercicio
+                          Next exercise
                           <ArrowRight className="w-4 h-4 ml-2" />
                         </>
                       ) : (
                         <>
-                          Ver resultados
+                          View results
                           <Trophy className="w-4 h-4 ml-2" />
                         </>
                       )}

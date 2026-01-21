@@ -10,48 +10,48 @@ import { BookOpen, MessageSquare, PenTool, GraduationCap, Lightbulb, Map, Librar
 
 const modules = [
   {
-    title: "Currículo CEFR",
-    description: "Tu ruta completa de aprendizaje con todas las habilidades por nivel",
+    title: "CEFR Curriculum",
+    description: "Your complete learning path with all skills by level",
     icon: Map,
     progress: 0,
     color: "bg-primary",
     path: "/curriculum",
   },
   {
-    title: "Biblioteca de Artículos",
-    description: "Explicaciones completas estilo libro de texto para cada tema gramatical",
+    title: "Article Library",
+    description: "Complete textbook-style explanations for each grammar topic",
     icon: Library,
     progress: 0,
     color: "bg-level-b2",
     path: "/articles",
   },
   {
-    title: "Gramática",
-    description: "19 categorías completas desde tiempos verbales hasta estructuras complejas",
+    title: "Grammar",
+    description: "19 complete categories from verb tenses to complex structures",
     icon: BookOpen,
     progress: 0,
     color: "bg-level-b1",
     path: "/grammar",
   },
   {
-    title: "Vocabulario",
-    description: "Expande tu léxico con flashcards y ejercicios contextuales",
+    title: "Vocabulary",
+    description: "Expand your lexicon with flashcards and contextual exercises",
     icon: Lightbulb,
     progress: 0,
     color: "bg-level-a2",
     path: "/vocabulary",
   },
   {
-    title: "Práctica",
-    description: "Ejercicios interactivos adaptados a tu nivel actual",
+    title: "Practice",
+    description: "Interactive exercises adapted to your current level",
     icon: PenTool,
     progress: 0,
     color: "bg-level-a1",
     path: "/practice",
   },
   {
-    title: "Conversación",
-    description: "Practica con IA y mejora tu fluidez con feedback instantáneo",
+    title: "Conversation",
+    description: "Practice with AI and improve your fluency with instant feedback",
     icon: MessageSquare,
     progress: 0,
     color: "bg-accent",
@@ -59,23 +59,23 @@ const modules = [
   },
   {
     title: "Tests",
-    description: "Evalúa tu progreso con exámenes tipo certificación",
+    description: "Evaluate your progress with certification-style exams",
     icon: GraduationCap,
     progress: 0,
     color: "bg-level-c1",
     path: "/tests",
   },
   {
-    title: "Karaoke Educativo",
-    description: "Aprende inglés cantando tus canciones favoritas con letras sincronizadas",
+    title: "Educational Karaoke",
+    description: "Learn English by singing your favorite songs with synchronized lyrics",
     icon: Music,
     progress: 0,
     color: "bg-accent",
     path: "/karaoke",
   },
   {
-    title: "Exámenes Personalizados",
-    description: "Genera exámenes específicos eligiendo el tema y nivel que quieras practicar",
+    title: "Custom Exams",
+    description: "Generate specific exams by choosing the topic and level you want to practice",
     icon: Sparkles,
     progress: 0,
     color: "bg-primary",
@@ -91,18 +91,18 @@ const Index = () => {
         {/* Welcome Section */}
         <div className="mb-8 animate-fade-in">
           <h1 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-2">
-            ¡Hola, estudiante! 👋
+            Hello, learner! 👋
           </h1>
           <p className="text-muted-foreground text-lg">
-            Continúa tu camino hacia la fluidez en inglés
+            Continue your path to English fluency
           </p>
         </div>
 
         {/* Level Progress */}
         <div className="mb-8 p-6 rounded-2xl bg-card border shadow-card animate-slide-up" style={{ animationDelay: '0.1s' }}>
           <div className="flex items-center justify-between mb-4">
-            <h2 className="font-display font-semibold text-lg">Tu progreso MCER</h2>
-            <span className="text-sm text-muted-foreground">Nivel actual: <span className="font-semibold text-level-a1">A1</span></span>
+            <h2 className="font-display font-semibold text-lg">Your CEFR Progress</h2>
+            <span className="text-sm text-muted-foreground">Current level: <span className="font-semibold text-level-a1">A1</span></span>
           </div>
           <LevelProgress currentLevel="A1" progress={0} />
         </div>
@@ -118,19 +118,19 @@ const Index = () => {
           <div className="lg:col-span-2 space-y-8">
             {/* Today's Lesson */}
             <section className="animate-slide-up" style={{ animationDelay: '0.3s' }}>
-              <h2 className="font-display font-semibold text-lg mb-4">Lección de hoy</h2>
+              <h2 className="font-display font-semibold text-lg mb-4">Today's Lesson</h2>
               <TodayLesson />
             </section>
 
             {/* AI Tutor */}
             <section className="animate-slide-up" style={{ animationDelay: '0.4s' }}>
-              <h2 className="font-display font-semibold text-lg mb-4">Practica con IA</h2>
+              <h2 className="font-display font-semibold text-lg mb-4">Practice with AI</h2>
               <AITutorPreview />
             </section>
 
             {/* Modules Grid */}
             <section className="animate-slide-up" style={{ animationDelay: '0.5s' }}>
-              <h2 className="font-display font-semibold text-lg mb-4">Módulos de aprendizaje</h2>
+              <h2 className="font-display font-semibold text-lg mb-4">Learning Modules</h2>
               <div className="grid sm:grid-cols-2 gap-4">
                 {modules.map((module) => (
                   <ModuleCard
@@ -151,7 +151,7 @@ const Index = () => {
           <div className="space-y-6 animate-slide-up" style={{ animationDelay: '0.35s' }}>
             {/* Daily Goal Widget */}
             <section>
-              <h2 className="font-display font-semibold text-lg mb-4">Tu actividad</h2>
+              <h2 className="font-display font-semibold text-lg mb-4">Your Activity</h2>
             <DailyGoalWidget
                 currentStreak={0}
                 bestStreak={0}
@@ -165,11 +165,11 @@ const Index = () => {
             <section className="p-5 rounded-2xl border bg-card">
               <h3 className="font-display font-semibold mb-3 flex items-center gap-2">
                 <span className="text-xl">💡</span>
-                Consejo del día
+                Tip of the Day
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                El <span className="font-medium text-foreground">Present Perfect</span> conecta el pasado con el presente. Úsalo cuando la acción tiene relevancia ahora: 
-                <span className="italic text-primary"> "I have lost my keys"</span> (todavía no las encuentro).
+                The <span className="font-medium text-foreground">Present Perfect</span> connects the past with the present. Use it when the action has relevance now: 
+                <span className="italic text-primary"> "I have lost my keys"</span> (I still can't find them).
               </p>
             </section>
 
@@ -177,17 +177,17 @@ const Index = () => {
             <section className="p-5 rounded-2xl border bg-card">
               <h3 className="font-display font-semibold mb-3 flex items-center gap-2">
                 <span className="text-xl">🎯</span>
-                Áreas a reforzar
+                Areas to Improve
               </h3>
               <div className="space-y-2">
                 {[
                   { topic: "Phrasal verbs", count: 5 },
-                  { topic: "Artículos (a/an/the)", count: 3 },
-                  { topic: "Preposiciones de tiempo", count: 2 },
+                  { topic: "Articles (a/an/the)", count: 3 },
+                  { topic: "Time prepositions", count: 2 },
                 ].map((item) => (
                   <div key={item.topic} className="flex items-center justify-between py-2 px-3 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors cursor-pointer">
                     <span className="text-sm font-medium">{item.topic}</span>
-                    <span className="text-xs text-muted-foreground">{item.count} errores</span>
+                    <span className="text-xs text-muted-foreground">{item.count} errors</span>
                   </div>
                 ))}
               </div>
