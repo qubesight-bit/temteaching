@@ -4,6 +4,16 @@
 import { CEFRLevel } from "./curriculumData";
 import { allA2Exercises } from "./a2Exercises";
 import { b1GrammarExercises, b1VocabularyExercises } from "./b1Exercises";
+import { 
+  b1GrammarExercisesComplete, 
+  b1VocabularyExercisesComplete, 
+  b1SpeakingExercisesComplete,
+  b1ListeningExercisesComplete,
+  b1ReadingExercisesComplete,
+  b1WritingExercisesComplete,
+  b1StrategyExercisesComplete,
+  getB1ExercisesCompleteBySkillId
+} from "./b1ExercisesComplete";
 import { b2GrammarExercises, b2VocabularyExercises } from "./b2Exercises";
 import { c1GrammarExercises, c1VocabularyExercises } from "./c1Exercises";
 import { c2GrammarExercises, c2VocabularyExercises } from "./c2Exercises";
