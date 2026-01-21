@@ -194,6 +194,57 @@ export const c1SpeakingExercises: Record<string, Exercise[]> = {
   ]
 };
 
+// Helper function to get C1 exercises by skill ID
+export function getC1ExercisesBySkillId(skillId: string, categoryType: string): Exercise[] {
+  // Check vocabulary exercises
+  if (categoryType.includes('vocab') && c1VocabularyExercises[skillId]) {
+    return c1VocabularyExercises[skillId];
+  }
+  
+  // Check grammar exercises
+  if (categoryType.includes('gram') && c1GrammarExercises[skillId]) {
+    return c1GrammarExercises[skillId];
+  }
+  
+  // Check writing exercises
+  if (categoryType.includes('writ') && c1WritingExercises[skillId]) {
+    return c1WritingExercises[skillId];
+  }
+  
+  // Check reading exercises
+  if (categoryType.includes('read') && c1ReadingExercises[skillId]) {
+    return c1ReadingExercises[skillId];
+  }
+  
+  // Check listening exercises
+  if (categoryType.includes('listen') && c1ListeningExercises[skillId]) {
+    return c1ListeningExercises[skillId];
+  }
+  
+  // Check speaking exercises
+  if (categoryType.includes('speak') && c1SpeakingExercises[skillId]) {
+    return c1SpeakingExercises[skillId];
+  }
+  
+  // Fallback: search all categories
+  const allSets = [
+    c1VocabularyExercises,
+    c1GrammarExercises,
+    c1WritingExercises,
+    c1ReadingExercises,
+    c1ListeningExercises,
+    c1SpeakingExercises
+  ];
+  
+  for (const set of allSets) {
+    if (set[skillId]) {
+      return set[skillId];
+    }
+  }
+  
+  return [];
+}
+
 // Export all C1 exercises
 export const allC1Exercises = {
   vocabulary: c1VocabularyExercises,

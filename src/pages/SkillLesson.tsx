@@ -10,6 +10,7 @@ import { getExercisesBySkillId, Exercise } from "@/data/exercisesData";
 import { getAdvancedExercisesBySkillId } from "@/data/exercisesDataAdvanced";
 import { getB1ExercisesCompleteBySkillId } from "@/data/b1ExercisesComplete";
 import { getB2ExercisesCompleteBySkillId } from "@/data/b2ExercisesComplete";
+import { getC1ExercisesBySkillId } from "@/data/c1Exercises";
 import { getImageExercisesForSkill } from "@/data/imageVocabularyData";
 import { getArticleForExercise } from "@/data/articlesData";
 import { getCurriculumArticleById, searchCurriculumArticles } from "@/data/curriculumArticles";
@@ -34,6 +35,12 @@ const getExercisesForSkill = (skill: Skill, level: CEFRLevel, categoryType: stri
   if (level === "B2") {
     const b2Exercises = getB2ExercisesCompleteBySkillId(skill.id, categoryType);
     if (b2Exercises.length > 0) return b2Exercises;
+  }
+  
+  // Try C1 exercises
+  if (level === "C1") {
+    const c1Exercises = getC1ExercisesBySkillId(skill.id, categoryType);
+    if (c1Exercises.length > 0) return c1Exercises;
   }
   
   // Try to get exercises from database
