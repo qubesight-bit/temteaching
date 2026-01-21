@@ -28,8 +28,8 @@ export interface Exercise {
 export const grammarCategories: GrammarCategory[] = [
   {
     id: "tenses",
-    title: "Tiempos Verbales",
-    description: "Domina todos los tiempos verbales del inglés",
+    title: "Verb Tenses",
+    description: "Master all English verb tenses",
     icon: "⏰",
     topics: [
       {
@@ -37,7 +37,7 @@ export const grammarCategories: GrammarCategory[] = [
         title: "Present Simple",
         level: "A1",
         completed: false,
-        explanation: "El Present Simple se usa para describir rutinas, hábitos, hechos generales y verdades universales. Se forma con el verbo en infinitivo (sin 'to'), y en tercera persona singular (he/she/it) se añade -s o -es.",
+        explanation: "The Present Simple is used to describe routines, habits, general facts, and universal truths. It's formed with the base verb (without 'to'), and in third person singular (he/she/it) we add -s or -es.",
         examples: [
           { english: "I work every day.", spanish: "Trabajo todos los días." },
           { english: "She speaks English fluently.", spanish: "Ella habla inglés con fluidez." },
@@ -51,14 +51,14 @@ export const grammarCategories: GrammarCategory[] = [
             question: "She ___ to school every morning.",
             options: ["go", "goes", "going", "went"],
             correctAnswer: "goes",
-            explanation: "Con 'she' (tercera persona singular) usamos 'goes' en Present Simple."
+            explanation: "With 'she' (third person singular) we use 'goes' in Present Simple."
           },
           {
             id: "ps-2",
             type: "fill-blank",
             question: "My father ___ (read) the newspaper every morning.",
             correctAnswer: "reads",
-            explanation: "En tercera persona singular añadimos -s al verbo."
+            explanation: "In third person singular we add -s to the verb."
           },
           {
             id: "ps-3",
@@ -66,7 +66,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "_____ your brother work in a bank?",
             options: ["Do", "Does", "Is", "Are"],
             correctAnswer: "Does",
-            explanation: "Usamos 'Does' para preguntas con tercera persona singular."
+            explanation: "We use 'Does' for questions with third person singular."
           },
         ]
       },
@@ -75,7 +75,7 @@ export const grammarCategories: GrammarCategory[] = [
         title: "Present Continuous",
         level: "A1",
         completed: false,
-        explanation: "El Present Continuous describe acciones que están ocurriendo en este momento o alrededor de este período. Se forma con el verbo 'to be' + verbo con -ing.",
+        explanation: "The Present Continuous describes actions happening right now or around this time. It's formed with 'to be' + verb with -ing.",
         examples: [
           { english: "I am studying right now.", spanish: "Estoy estudiando ahora mismo." },
           { english: "They are playing football.", spanish: "Están jugando al fútbol." },
@@ -88,7 +88,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "Look! The children ___ in the garden.",
             options: ["play", "plays", "are playing", "played"],
             correctAnswer: "are playing",
-            explanation: "'Look!' indica una acción en progreso, así que usamos Present Continuous."
+            explanation: "'Look!' indicates an action in progress, so we use Present Continuous."
           },
         ]
       },
@@ -97,7 +97,7 @@ export const grammarCategories: GrammarCategory[] = [
         title: "Past Simple",
         level: "A2",
         completed: false,
-        explanation: "El Past Simple se usa para acciones completadas en el pasado. Los verbos regulares añaden -ed, mientras que los irregulares tienen formas especiales.",
+        explanation: "The Past Simple is used for completed actions in the past. Regular verbs add -ed, while irregular verbs have special forms.",
         examples: [
           { english: "I visited Paris last year.", spanish: "Visité París el año pasado." },
           { english: "She went to the cinema yesterday.", spanish: "Ella fue al cine ayer." },
@@ -110,7 +110,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "Yesterday I ___ my grandmother.",
             options: ["visit", "visited", "visiting", "visits"],
             correctAnswer: "visited",
-            explanation: "'Yesterday' indica pasado, usamos Past Simple: visited."
+            explanation: "'Yesterday' indicates past, we use Past Simple: visited."
           },
         ]
       },
@@ -119,7 +119,7 @@ export const grammarCategories: GrammarCategory[] = [
         title: "Present Perfect",
         level: "A2",
         completed: false,
-        explanation: "El Present Perfect conecta el pasado con el presente. Se usa para experiencias de vida, acciones recientes con 'just', y situaciones que empezaron en el pasado y continúan. Se forma con have/has + participio pasado.",
+        explanation: "The Present Perfect connects the past with the present. It's used for life experiences, recent actions with 'just', and situations that started in the past and continue. It's formed with have/has + past participle.",
         examples: [
           { english: "I have visited London three times.", spanish: "He visitado Londres tres veces." },
           { english: "She has just finished her homework.", spanish: "Ella acaba de terminar su tarea." },
@@ -133,7 +133,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "I ___ never ___ sushi before.",
             options: ["have / eaten", "has / eaten", "have / eat", "did / eat"],
             correctAnswer: "have / eaten",
-            explanation: "Con 'I' usamos 'have' y el participio 'eaten' para expresar experiencias."
+            explanation: "With 'I' we use 'have' and the participle 'eaten' to express experiences."
           },
           {
             id: "pp-2",
@@ -141,7 +141,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "She ___ in this company for 5 years.",
             options: ["worked", "has worked", "is working", "works"],
             correctAnswer: "has worked",
-            explanation: "'For 5 years' indica una situación que empezó en el pasado y continúa."
+            explanation: "'For 5 years' indicates a situation that started in the past and continues."
           },
         ]
       },
@@ -150,7 +150,7 @@ export const grammarCategories: GrammarCategory[] = [
         title: "Past Continuous",
         level: "B1",
         completed: false,
-        explanation: "El Past Continuous describe acciones en progreso en un momento específico del pasado. Se forma con was/were + verbo-ing.",
+        explanation: "The Past Continuous describes actions in progress at a specific moment in the past. It's formed with was/were + verb-ing.",
         examples: [
           { english: "I was sleeping when you called.", spanish: "Estaba durmiendo cuando llamaste." },
           { english: "They were watching TV at 8 PM.", spanish: "Estaban viendo la tele a las 8 PM." },
@@ -162,7 +162,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "What ___ you ___ at 9 o'clock last night?",
             options: ["were / doing", "was / doing", "did / do", "are / doing"],
             correctAnswer: "were / doing",
-            explanation: "Para preguntar sobre una acción en progreso en el pasado usamos were + doing."
+            explanation: "To ask about an action in progress in the past we use were + doing."
           },
         ]
       },
@@ -171,7 +171,7 @@ export const grammarCategories: GrammarCategory[] = [
         title: "Future with Will",
         level: "A2",
         completed: false,
-        explanation: "Usamos 'will' para predicciones, decisiones espontáneas, promesas y ofrecimientos. Se forma con will + infinitivo sin 'to'.",
+        explanation: "We use 'will' for predictions, spontaneous decisions, promises, and offers. It's formed with will + infinitive without 'to'.",
         examples: [
           { english: "I will help you with that.", spanish: "Te ayudaré con eso." },
           { english: "It will rain tomorrow.", spanish: "Lloverá mañana." },
@@ -183,7 +183,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "Don't worry, I ___ you later.",
             options: ["call", "will call", "calling", "called"],
             correctAnswer: "will call",
-            explanation: "Usamos 'will' para promesas sobre el futuro."
+            explanation: "We use 'will' for promises about the future."
           },
         ]
       },
@@ -192,7 +192,7 @@ export const grammarCategories: GrammarCategory[] = [
         title: "Future with Going to",
         level: "A2",
         completed: false,
-        explanation: "Usamos 'going to' para planes decididos previamente y predicciones basadas en evidencia. Se forma con am/is/are + going to + infinitivo.",
+        explanation: "We use 'going to' for previously decided plans and predictions based on evidence. It's formed with am/is/are + going to + infinitive.",
         examples: [
           { english: "I am going to visit my parents next week.", spanish: "Voy a visitar a mis padres la próxima semana." },
           { english: "Look at those clouds! It's going to rain.", spanish: "¡Mira esas nubes! Va a llover." },
@@ -204,7 +204,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "She ___ a new car next month. (planned)",
             options: ["buys", "will buy", "is going to buy", "bought"],
             correctAnswer: "is going to buy",
-            explanation: "Para planes decididos previamente usamos 'going to'."
+            explanation: "For previously decided plans we use 'going to'."
           },
         ]
       },
@@ -212,8 +212,8 @@ export const grammarCategories: GrammarCategory[] = [
   },
   {
     id: "modals",
-    title: "Verbos Modales",
-    description: "Can, could, must, should, would y más",
+    title: "Modal Verbs",
+    description: "Can, could, must, should, would and more",
     icon: "🔧",
     topics: [
       {
@@ -221,7 +221,7 @@ export const grammarCategories: GrammarCategory[] = [
         title: "Can & Could",
         level: "A1",
         completed: false,
-        explanation: "'Can' expresa habilidad, permiso y posibilidad en presente. 'Could' es su forma pasada o más formal/cortés.",
+        explanation: "'Can' expresses ability, permission, and possibility in the present. 'Could' is its past form or more formal/polite version.",
         examples: [
           { english: "I can swim very well.", spanish: "Puedo nadar muy bien." },
           { english: "Could you help me, please?", spanish: "¿Podrías ayudarme, por favor?" },
@@ -233,7 +233,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "___ you speak French when you were a child?",
             options: ["Can", "Could", "Must", "Should"],
             correctAnswer: "Could",
-            explanation: "Usamos 'could' para habilidades en el pasado."
+            explanation: "We use 'could' for abilities in the past."
           },
         ]
       },
@@ -242,7 +242,7 @@ export const grammarCategories: GrammarCategory[] = [
         title: "Must & Have to",
         level: "A2",
         completed: false,
-        explanation: "'Must' expresa obligación fuerte o deducción. 'Have to' expresa obligación externa. En negativo son diferentes: 'mustn't' = prohibición, 'don't have to' = no necesidad.",
+        explanation: "'Must' expresses strong obligation or deduction. 'Have to' expresses external obligation. In the negative they differ: 'mustn't' = prohibition, 'don't have to' = no necessity.",
         examples: [
           { english: "You must wear a seatbelt.", spanish: "Debes usar el cinturón de seguridad." },
           { english: "I have to work tomorrow.", spanish: "Tengo que trabajar mañana." },
@@ -256,7 +256,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "You ___ touch that! It's dangerous!",
             options: ["mustn't", "don't have to", "shouldn't", "can't"],
             correctAnswer: "mustn't",
-            explanation: "Usamos 'mustn't' para prohibiciones fuertes."
+            explanation: "We use 'mustn't' for strong prohibitions."
           },
         ]
       },
@@ -265,7 +265,7 @@ export const grammarCategories: GrammarCategory[] = [
         title: "Should & Ought to",
         level: "A2",
         completed: false,
-        explanation: "'Should' y 'ought to' expresan consejos, recomendaciones y expectativas. Son intercambiables, aunque 'should' es más común.",
+        explanation: "'Should' and 'ought to' express advice, recommendations, and expectations. They are interchangeable, though 'should' is more common.",
         examples: [
           { english: "You should see a doctor.", spanish: "Deberías ver a un médico." },
           { english: "He ought to apologize.", spanish: "Él debería disculparse." },
@@ -277,7 +277,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "You look tired. You ___ get some rest.",
             options: ["must", "should", "can", "would"],
             correctAnswer: "should",
-            explanation: "Usamos 'should' para dar consejos."
+            explanation: "We use 'should' to give advice."
           },
         ]
       },
@@ -285,7 +285,7 @@ export const grammarCategories: GrammarCategory[] = [
   },
   {
     id: "conditionals",
-    title: "Oraciones Condicionales",
+    title: "Conditional Sentences",
     description: "If clauses: Zero, First, Second, Third",
     icon: "🔀",
     topics: [
@@ -294,7 +294,7 @@ export const grammarCategories: GrammarCategory[] = [
         title: "Zero Conditional",
         level: "A2",
         completed: false,
-        explanation: "El Zero Conditional expresa verdades generales, hechos científicos y resultados predecibles. Estructura: If + present simple, present simple.",
+        explanation: "The Zero Conditional expresses general truths, scientific facts, and predictable results. Structure: If + present simple, present simple.",
         examples: [
           { english: "If you heat water to 100°C, it boils.", spanish: "Si calientas agua a 100°C, hierve." },
           { english: "If I drink coffee at night, I can't sleep.", spanish: "Si bebo café por la noche, no puedo dormir." },
@@ -306,7 +306,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "If you ___ ice in the sun, it ___.",
             options: ["put / melts", "put / will melt", "will put / melts", "putting / melting"],
             correctAnswer: "put / melts",
-            explanation: "Zero Conditional usa presente simple en ambas partes."
+            explanation: "Zero Conditional uses present simple in both parts."
           },
         ]
       },
@@ -315,7 +315,7 @@ export const grammarCategories: GrammarCategory[] = [
         title: "First Conditional",
         level: "A2",
         completed: false,
-        explanation: "El First Conditional expresa situaciones probables o posibles en el futuro. Estructura: If + present simple, will + infinitivo.",
+        explanation: "The First Conditional expresses probable or possible situations in the future. Structure: If + present simple, will + infinitive.",
         examples: [
           { english: "If it rains tomorrow, I will stay home.", spanish: "Si llueve mañana, me quedaré en casa." },
           { english: "If you study hard, you will pass the exam.", spanish: "Si estudias duro, aprobarás el examen." },
@@ -327,7 +327,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "If she ___ harder, she ___ the exam.",
             options: ["studies / will pass", "will study / passes", "studied / would pass", "studies / passes"],
             correctAnswer: "studies / will pass",
-            explanation: "First Conditional: If + presente, will + infinitivo."
+            explanation: "First Conditional: If + present, will + infinitive."
           },
         ]
       },
@@ -336,7 +336,7 @@ export const grammarCategories: GrammarCategory[] = [
         title: "Second Conditional",
         level: "B1",
         completed: false,
-        explanation: "El Second Conditional expresa situaciones hipotéticas o improbables en el presente/futuro. Estructura: If + past simple, would + infinitivo.",
+        explanation: "The Second Conditional expresses hypothetical or improbable situations in the present/future. Structure: If + past simple, would + infinitive.",
         examples: [
           { english: "If I won the lottery, I would travel the world.", spanish: "Si ganara la lotería, viajaría por el mundo." },
           { english: "If I were you, I would apologize.", spanish: "Si yo fuera tú, me disculparía." },
@@ -348,7 +348,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "If I ___ rich, I ___ a mansion.",
             options: ["am / will buy", "was / would buy", "were / would buy", "be / would buy"],
             correctAnswer: "were / would buy",
-            explanation: "En Second Conditional usamos 'were' para todas las personas con 'if'."
+            explanation: "In Second Conditional we use 'were' for all persons with 'if'."
           },
         ]
       },
@@ -357,7 +357,7 @@ export const grammarCategories: GrammarCategory[] = [
         title: "Third Conditional",
         level: "B2",
         completed: false,
-        explanation: "El Third Conditional expresa situaciones hipotéticas del pasado (imposibles de cambiar). Estructura: If + past perfect, would have + participio pasado.",
+        explanation: "The Third Conditional expresses hypothetical past situations (impossible to change). Structure: If + past perfect, would have + past participle.",
         examples: [
           { english: "If I had studied, I would have passed.", spanish: "Si hubiera estudiado, habría aprobado." },
           { english: "If she had arrived earlier, she would have seen him.", spanish: "Si ella hubiera llegado antes, lo habría visto." },
@@ -369,7 +369,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "If I ___ the email, I ___ you sooner.",
             options: ["had seen / would have called", "saw / would call", "have seen / would call", "seen / would have called"],
             correctAnswer: "had seen / would have called",
-            explanation: "Third Conditional: If + had + participio, would have + participio."
+            explanation: "Third Conditional: If + had + participle, would have + participle."
           },
         ]
       },
@@ -377,8 +377,8 @@ export const grammarCategories: GrammarCategory[] = [
   },
   {
     id: "passive",
-    title: "Voz Pasiva",
-    description: "Transformación activa a pasiva en todos los tiempos",
+    title: "Passive Voice",
+    description: "Active to passive transformation in all tenses",
     icon: "🔄",
     topics: [
       {
@@ -386,7 +386,7 @@ export const grammarCategories: GrammarCategory[] = [
         title: "Passive Voice - Present",
         level: "B1",
         completed: false,
-        explanation: "La voz pasiva enfatiza la acción o el receptor de la acción en lugar del agente. En presente: am/is/are + participio pasado.",
+        explanation: "The passive voice emphasizes the action or the receiver of the action rather than the agent. In present: am/is/are + past participle.",
         examples: [
           { english: "English is spoken worldwide.", spanish: "El inglés se habla en todo el mundo." },
           { english: "The letters are sent every day.", spanish: "Las cartas se envían todos los días." },
@@ -398,7 +398,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "Spanish ___ in many countries.",
             options: ["speaks", "is spoken", "is speaking", "spoke"],
             correctAnswer: "is spoken",
-            explanation: "Voz pasiva en presente: is/are + participio pasado."
+            explanation: "Passive voice in present: is/are + past participle."
           },
         ]
       },
@@ -407,7 +407,7 @@ export const grammarCategories: GrammarCategory[] = [
         title: "Passive Voice - Past",
         level: "B1",
         completed: false,
-        explanation: "Voz pasiva en pasado: was/were + participio pasado.",
+        explanation: "Passive voice in past: was/were + past participle.",
         examples: [
           { english: "The book was written by Hemingway.", spanish: "El libro fue escrito por Hemingway." },
           { english: "The pyramids were built thousands of years ago.", spanish: "Las pirámides fueron construidas hace miles de años." },
@@ -419,7 +419,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "The Mona Lisa ___ by Leonardo da Vinci.",
             options: ["painted", "was painted", "is painted", "paints"],
             correctAnswer: "was painted",
-            explanation: "Acción pasada completada, usamos was + participio."
+            explanation: "Past completed action, we use was + participle."
           },
         ]
       },
@@ -428,15 +428,15 @@ export const grammarCategories: GrammarCategory[] = [
   {
     id: "phrasal-verbs",
     title: "Phrasal Verbs",
-    description: "Los verbos compuestos más usados en inglés",
+    description: "The most used compound verbs in English",
     icon: "🧩",
     topics: [
       {
         id: "phrasal-verbs-basic",
-        title: "Phrasal Verbs Básicos",
+        title: "Basic Phrasal Verbs",
         level: "A2",
         completed: false,
-        explanation: "Los phrasal verbs son verbos combinados con preposiciones o adverbios que cambian su significado. Son esenciales para el inglés natural.",
+        explanation: "Phrasal verbs are verbs combined with prepositions or adverbs that change their meaning. They are essential for natural English.",
         examples: [
           { english: "Wake up at 7 AM.", spanish: "Despiértate a las 7 AM." },
           { english: "Turn on the lights.", spanish: "Enciende las luces." },
@@ -450,16 +450,16 @@ export const grammarCategories: GrammarCategory[] = [
             question: "Please ___ the TV. I want to watch the news.",
             options: ["turn on", "turn off", "turn up", "turn down"],
             correctAnswer: "turn on",
-            explanation: "'Turn on' significa encender."
+            explanation: "'Turn on' means to switch on."
           },
         ]
       },
       {
         id: "phrasal-verbs-intermediate",
-        title: "Phrasal Verbs Intermedios",
+        title: "Intermediate Phrasal Verbs",
         level: "B1",
         completed: false,
-        explanation: "Phrasal verbs más complejos utilizados en conversaciones cotidianas y situaciones laborales.",
+        explanation: "More complex phrasal verbs used in everyday conversations and work situations.",
         examples: [
           { english: "I need to figure out this problem.", spanish: "Necesito resolver este problema." },
           { english: "Don't put off your homework.", spanish: "No pospongas tu tarea." },
@@ -472,7 +472,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "The meeting was ___ until next week.",
             options: ["put off", "put on", "put up", "put down"],
             correctAnswer: "put off",
-            explanation: "'Put off' significa posponer."
+            explanation: "'Put off' means to postpone."
           },
         ]
       },
@@ -480,16 +480,16 @@ export const grammarCategories: GrammarCategory[] = [
   },
   {
     id: "articles",
-    title: "Artículos",
-    description: "A, an, the - cuándo usarlos y cuándo no",
+    title: "Articles",
+    description: "A, an, the - when to use them and when not to",
     icon: "📝",
     topics: [
       {
         id: "articles-basic",
-        title: "A, An, The - Básico",
+        title: "A, An, The - Basics",
         level: "A1",
         completed: false,
-        explanation: "'A' se usa antes de consonantes, 'an' antes de vocales (por sonido). 'The' se usa para cosas específicas o únicas.",
+        explanation: "'A' is used before consonants, 'an' before vowels (by sound). 'The' is used for specific or unique things.",
         examples: [
           { english: "I have a cat and an apple.", spanish: "Tengo un gato y una manzana." },
           { english: "The sun is shining.", spanish: "El sol está brillando." },
@@ -502,7 +502,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "I bought ___ umbrella because it was raining.",
             options: ["a", "an", "the", "-"],
             correctAnswer: "an",
-            explanation: "'Umbrella' empieza con sonido de vocal, usamos 'an'."
+            explanation: "'Umbrella' starts with a vowel sound, so we use 'an'."
           },
         ]
       },
@@ -510,16 +510,16 @@ export const grammarCategories: GrammarCategory[] = [
   },
   {
     id: "prepositions",
-    title: "Preposiciones",
-    description: "In, on, at, by, for, with y más",
+    title: "Prepositions",
+    description: "In, on, at, by, for, with and more",
     icon: "📍",
     topics: [
       {
         id: "prepositions-time",
-        title: "Preposiciones de Tiempo",
+        title: "Prepositions of Time",
         level: "A1",
         completed: false,
-        explanation: "'At' para horas específicas y momentos. 'On' para días y fechas. 'In' para meses, años, siglos y períodos largos.",
+        explanation: "'At' for specific times and moments. 'On' for days and dates. 'In' for months, years, centuries, and long periods.",
         examples: [
           { english: "I wake up at 7 o'clock.", spanish: "Me despierto a las 7." },
           { english: "The meeting is on Monday.", spanish: "La reunión es el lunes." },
@@ -532,16 +532,16 @@ export const grammarCategories: GrammarCategory[] = [
             question: "I have a meeting ___ 3 PM ___ Friday.",
             options: ["at / on", "on / at", "in / on", "at / in"],
             correctAnswer: "at / on",
-            explanation: "'At' para horas, 'on' para días."
+            explanation: "'At' for times, 'on' for days."
           },
         ]
       },
       {
         id: "prepositions-place",
-        title: "Preposiciones de Lugar",
+        title: "Prepositions of Place",
         level: "A1",
         completed: false,
-        explanation: "'At' para puntos específicos. 'On' para superficies. 'In' para espacios cerrados o áreas.",
+        explanation: "'At' for specific points. 'On' for surfaces. 'In' for enclosed spaces or areas.",
         examples: [
           { english: "She is at the bus stop.", spanish: "Ella está en la parada de autobús." },
           { english: "The book is on the table.", spanish: "El libro está sobre la mesa." },
@@ -554,7 +554,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "The cat is ___ the box.",
             options: ["in", "on", "at", "by"],
             correctAnswer: "in",
-            explanation: "'In' para dentro de espacios."
+            explanation: "'In' for inside spaces."
           },
         ]
       },
@@ -562,16 +562,16 @@ export const grammarCategories: GrammarCategory[] = [
   },
   {
     id: "pronouns",
-    title: "Pronombres",
-    description: "Personales, posesivos, reflexivos y relativos",
+    title: "Pronouns",
+    description: "Personal, possessive, reflexive, and relative",
     icon: "👤",
     topics: [
       {
         id: "personal-pronouns",
-        title: "Pronombres Personales",
+        title: "Personal Pronouns",
         level: "A1",
         completed: false,
-        explanation: "Los pronombres sujeto (I, you, he, she, it, we, they) reemplazan al sujeto. Los pronombres objeto (me, you, him, her, it, us, them) reciben la acción.",
+        explanation: "Subject pronouns (I, you, he, she, it, we, they) replace the subject. Object pronouns (me, you, him, her, it, us, them) receive the action.",
         examples: [
           { english: "I love her. She loves me.", spanish: "Yo la amo. Ella me ama." },
           { english: "They gave us a gift.", spanish: "Ellos nos dieron un regalo." },
@@ -583,7 +583,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "Can you help ___? I need ___.",
             options: ["me / them", "I / they", "me / they", "I / them"],
             correctAnswer: "me / them",
-            explanation: "Después de verbos usamos pronombres objeto: me, them."
+            explanation: "After verbs we use object pronouns: me, them."
           },
         ]
       },
@@ -591,16 +591,16 @@ export const grammarCategories: GrammarCategory[] = [
   },
   {
     id: "reported-speech",
-    title: "Estilo Indirecto",
-    description: "Cómo reportar lo que otros dijeron",
+    title: "Reported Speech",
+    description: "How to report what others said",
     icon: "💬",
     topics: [
       {
         id: "reported-speech-statements",
-        title: "Reported Speech - Afirmaciones",
+        title: "Reported Speech - Statements",
         level: "B1",
         completed: false,
-        explanation: "Al reportar lo que alguien dijo, los tiempos verbales retroceden: present → past, past → past perfect, will → would.",
+        explanation: "When reporting what someone said, verb tenses shift back: present → past, past → past perfect, will → would.",
         examples: [
           { english: "'I am tired' → She said she was tired.", spanish: "'Estoy cansada' → Dijo que estaba cansada." },
           { english: "'I will help' → He said he would help.", spanish: "'Ayudaré' → Dijo que ayudaría." },
@@ -612,7 +612,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "'I love pizza.' → He said he ___ pizza.",
             options: ["loves", "loved", "love", "loving"],
             correctAnswer: "loved",
-            explanation: "Present simple → Past simple en reported speech."
+            explanation: "Present simple → Past simple in reported speech."
           },
         ]
       },
@@ -620,16 +620,16 @@ export const grammarCategories: GrammarCategory[] = [
   },
   {
     id: "gerunds-infinitives",
-    title: "Gerundio e Infinitivo",
-    description: "Cuándo usar -ing vs to + verbo",
+    title: "Gerunds and Infinitives",
+    description: "When to use -ing vs to + verb",
     icon: "🔤",
     topics: [
       {
         id: "gerund-after-verbs",
-        title: "Gerundio después de Verbos",
+        title: "Gerund After Verbs",
         level: "B1",
         completed: false,
-        explanation: "Algunos verbos van seguidos de gerundio (-ing): enjoy, avoid, finish, mind, suggest, consider, etc.",
+        explanation: "Some verbs are followed by gerund (-ing): enjoy, avoid, finish, mind, suggest, consider, etc.",
         examples: [
           { english: "I enjoy reading books.", spanish: "Disfruto leer libros." },
           { english: "She avoids eating fast food.", spanish: "Ella evita comer comida rápida." },
@@ -641,16 +641,16 @@ export const grammarCategories: GrammarCategory[] = [
             question: "I enjoy ___ to music while working.",
             options: ["listen", "to listen", "listening", "listened"],
             correctAnswer: "listening",
-            explanation: "'Enjoy' va seguido de gerundio."
+            explanation: "'Enjoy' is followed by gerund."
           },
         ]
       },
       {
         id: "infinitive-after-verbs",
-        title: "Infinitivo después de Verbos",
+        title: "Infinitive After Verbs",
         level: "B1",
         completed: false,
-        explanation: "Algunos verbos van seguidos de infinitivo (to + verbo): want, need, decide, hope, expect, plan, etc.",
+        explanation: "Some verbs are followed by infinitive (to + verb): want, need, decide, hope, expect, plan, etc.",
         examples: [
           { english: "I want to learn Spanish.", spanish: "Quiero aprender español." },
           { english: "She decided to move to Paris.", spanish: "Decidió mudarse a París." },
@@ -662,7 +662,7 @@ export const grammarCategories: GrammarCategory[] = [
             question: "I decided ___ a new car.",
             options: ["buy", "to buy", "buying", "bought"],
             correctAnswer: "to buy",
-            explanation: "'Decide' va seguido de infinitivo."
+            explanation: "'Decide' is followed by infinitive."
           },
         ]
       },
