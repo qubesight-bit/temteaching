@@ -39,6 +39,9 @@ export default function Karaoke() {
     resetSession,
     setShowTranslation,
     setError,
+    handlePlayerReady,
+    handlePlayerStateChange,
+    handlePlayerError,
   } = useKaraokePlayer();
 
   const handleSearchFromLibrary = (title: string, artist: string) => {
@@ -97,12 +100,16 @@ export default function Karaoke() {
             {/* Video Player */}
             <div className="lg:col-span-2 space-y-4">
               <KaraokeVideoPlayer
+                videoId={currentVideo.id.videoId}
                 isPlaying={isPlaying}
                 playerReady={playerReady}
                 onPlay={play}
                 onPause={pause}
                 onStop={stop}
                 onReset={resetSession}
+                onPlayerReady={handlePlayerReady}
+                onPlayerStateChange={handlePlayerStateChange}
+                onPlayerError={handlePlayerError}
               />
               <KaraokeLyrics
                 lyrics={lyrics}
