@@ -8,12 +8,20 @@ import { expandedVocabularyCategories, VocabularyCategory, getTotalWordCount, ge
 import { ArrowLeft, Play, RotateCcw, Volume2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
+
 export default function Vocabulary() {
   const navigate = useNavigate();
+  const [selectedLevel, setSelectedLevel] = useState<CEFRLevel>("A1");
   const [selectedCategory, setSelectedCategory] = useState<VocabularyCategory | null>(null);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [showingFlashcard, setShowingFlashcard] = useState(false);
+
+  const filteredCategories = expandedVocabularyCategories.filter(cat => cat.level === selectedLevel);
+  const levelWordCount = filteredCategories.reduce((sum, cat) => sum + cat.words.length, 0);
+
+  const levels: CEFRLevel[] = ["A1", "A2", "B1", "B2", "C1", "C2"];
 
   const getLevelColor = (level: string) => {
     const colors: Record<string, string> = {
@@ -233,6 +241,32 @@ export default function Vocabulary() {
           </div>
         </div>
 
+        {/* Level Selector */}
+        <div className="mb-6">
+          <h2 className="text-lg font-semibold mb-3">Select Level</h2>
+          <div className="flex flex-wrap gap-2">
+            {levels.map((level) => {
+              const levelCategories = expandedVocabularyCategories.filter(c => c.level === level);
+              const count = levelCategories.reduce((sum, c) => sum + c.words.length, 0);
+              return (
+                <Button
+                  key={level}
+                  variant={selectedLevel === level ? "default" : "outline"}
+                  onClick={() => setSelectedLevel(level)}
+                  className={cn(
+                    "min-w-[80px]",
+                    selectedLevel === level && getLevelColor(level),
+                    selectedLevel === level && "text-white border-transparent"
+                  )}
+                >
+                  {level}
+                  <span className="ml-2 text-xs opacity-80">({count})</span>
+                </Button>
+              );
+            })}
+          </div>
+        </div>
+
         {/* Stats */}
         <Card className="mb-8">
           <CardContent className="p-6">
@@ -242,12 +276,12 @@ export default function Vocabulary() {
                 <p className="text-sm text-muted-foreground">Words learned</p>
               </div>
               <div>
-                <p className="text-3xl font-display font-bold text-foreground">{getCategoryCount()}</p>
+                <p className="text-3xl font-display font-bold text-foreground">{filteredCategories.length}</p>
                 <p className="text-sm text-muted-foreground">Categories</p>
               </div>
               <div>
-                <p className="text-3xl font-display font-bold text-foreground">{getTotalWordCount()}</p>
-                <p className="text-sm text-muted-foreground">Total words</p>
+                <p className="text-3xl font-display font-bold text-foreground">{levelWordCount}</p>
+                <p className="text-sm text-muted-foreground">Words in {selectedLevel}</p>
               </div>
             </div>
           </CardContent>
@@ -255,7 +289,7 @@ export default function Vocabulary() {
 
         {/* Categories Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {expandedVocabularyCategories.map((category) => {
+          {filteredCategories.map((category) => {
             const progress = Math.round((category.learned / category.wordCount) * 100);
             
             return (
