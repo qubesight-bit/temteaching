@@ -73,7 +73,7 @@ export default function Grammar() {
             onClick={() => navigate("/")}
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Volver al Dashboard
+            Back to Dashboard
           </Button>
           
           <div className="flex items-center gap-4">
@@ -82,10 +82,10 @@ export default function Grammar() {
             </div>
             <div>
               <h1 className="font-display font-bold text-3xl text-foreground">
-                Gramática
+                Grammar
               </h1>
               <p className="text-muted-foreground">
-                {grammarExerciseStats.total}+ ejercicios completos desde tiempos verbales hasta estructuras complejas
+                {grammarExerciseStats.total}+ complete exercises from verb tenses to complex structures
               </p>
             </div>
           </div>
@@ -96,13 +96,13 @@ export default function Grammar() {
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <Dumbbell className="w-5 h-5 text-primary" />
-              <h3 className="font-semibold">Práctica Rápida por Nivel</h3>
+              <h3 className="font-semibold">Quick Practice by Level</h3>
               <Badge variant="secondary" className="ml-auto">
-                {grammarExerciseStats.total} ejercicios
+                {grammarExerciseStats.total} exercises
               </Badge>
             </div>
             <p className="text-sm text-muted-foreground mb-4">
-              Selecciona un nivel para practicar 10 ejercicios aleatorios de gramática
+              Select a level to practice 10 random grammar exercises
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
               {levels.map((level) => (
@@ -117,7 +117,7 @@ export default function Grammar() {
                 >
                   <span className="font-bold text-lg">{level}</span>
                   <span className="text-xs opacity-80">
-                    {grammarExerciseStats[level]} ejercicios
+                    {grammarExerciseStats[level]} exercises
                   </span>
                 </Button>
               ))}
@@ -129,8 +129,8 @@ export default function Grammar() {
         <Card className="mb-8">
           <CardContent className="p-6">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="font-semibold">Progreso general</h3>
-              <span className="text-sm text-muted-foreground">0% completado</span>
+              <h3 className="font-semibold">Overall Progress</h3>
+              <span className="text-sm text-muted-foreground">0% completed</span>
             </div>
             <Progress value={0} className="h-3" />
           </CardContent>
@@ -162,7 +162,7 @@ export default function Grammar() {
                   <div className="flex items-center gap-4">
                     <div className="text-right hidden sm:block">
                       <p className="text-sm font-medium">{progress}%</p>
-                      <p className="text-xs text-muted-foreground">{category.topics.length} temas</p>
+                      <p className="text-xs text-muted-foreground">{category.topics.length} topics</p>
                     </div>
                     {isExpanded ? (
                       <ChevronDown className="w-5 h-5 text-muted-foreground" />

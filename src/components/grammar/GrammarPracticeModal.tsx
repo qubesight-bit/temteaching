@@ -124,7 +124,7 @@ export function GrammarPracticeModal({
             <span className={cn("px-2 py-1 rounded text-white text-sm", getLevelColor(level))}>
               {level}
             </span>
-            Práctica de Gramática
+            Grammar Practice
             {category && <Badge variant="secondary">{category}</Badge>}
           </DialogTitle>
         </DialogHeader>
@@ -137,19 +137,19 @@ export function GrammarPracticeModal({
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-2">
-                ¡Practica gramática nivel {level}!
+                Practice grammar level {level}!
               </h3>
               <p className="text-muted-foreground">
-                {totalExercisesAvailable} ejercicios disponibles
-                {category && ` en la categoría "${category}"`}
+                {totalExercisesAvailable} exercises available
+                {category && ` in category "${category}"`}
               </p>
             </div>
             <div className="flex flex-col gap-2 max-w-xs mx-auto">
               <Button onClick={startPractice} size="lg" className="gap-2">
-                Empezar ({Math.min(exerciseCount, totalExercisesAvailable)} ejercicios)
+                Start ({Math.min(exerciseCount, totalExercisesAvailable)} exercises)
               </Button>
               <Button variant="outline" onClick={handleClose}>
-                Cancelar
+                Cancel
               </Button>
             </div>
           </div>
@@ -160,20 +160,20 @@ export function GrammarPracticeModal({
               <Trophy className="w-10 h-10 text-success" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-2">¡Práctica completada!</h3>
-              <p className="text-muted-foreground">Nivel {level}</p>
+              <h3 className="text-2xl font-bold mb-2">Practice complete!</h3>
+              <p className="text-muted-foreground">Level {level}</p>
             </div>
             <div className="grid grid-cols-3 gap-4 max-w-sm mx-auto">
               <Card>
                 <CardContent className="p-4 text-center">
                   <div className="text-2xl font-bold text-success">{score.correct}</div>
-                  <div className="text-xs text-muted-foreground">Correctas</div>
+                  <div className="text-xs text-muted-foreground">Correct</div>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-4 text-center">
                   <div className="text-2xl font-bold text-destructive">{score.incorrect}</div>
-                  <div className="text-xs text-muted-foreground">Incorrectas</div>
+                  <div className="text-xs text-muted-foreground">Incorrect</div>
                 </CardContent>
               </Card>
               <Card>
@@ -181,17 +181,17 @@ export function GrammarPracticeModal({
                   <div className="text-2xl font-bold text-primary">
                     {Math.round((score.correct / exercises.length) * 100)}%
                   </div>
-                  <div className="text-xs text-muted-foreground">Aciertos</div>
+                  <div className="text-xs text-muted-foreground">Accuracy</div>
                 </CardContent>
               </Card>
             </div>
             <div className="flex gap-2 justify-center">
               <Button onClick={handleRestart} variant="outline" className="gap-2">
                 <RotateCcw className="w-4 h-4" />
-                Practicar de nuevo
+                Practice again
               </Button>
               <Button onClick={handleClose}>
-                Cerrar
+                Close
               </Button>
             </div>
           </div>
@@ -201,8 +201,8 @@ export function GrammarPracticeModal({
             {/* Progress */}
             <div className="space-y-2">
               <div className="flex justify-between text-sm">
-                <span>Pregunta {currentIndex + 1} de {exercises.length}</span>
-                <span className="text-success">{score.correct} correctas</span>
+                <span>Question {currentIndex + 1} of {exercises.length}</span>
+                <span className="text-success">{score.correct} correct</span>
               </div>
               <Progress value={progress} className="h-2" />
             </div>
@@ -283,7 +283,7 @@ export function GrammarPracticeModal({
                     )}
                     <div>
                       <p className="font-medium mb-1">
-                        {isCorrect ? "¡Correcto!" : "Incorrecto"}
+                        {isCorrect ? "Correct!" : "Incorrect"}
                       </p>
                       <p className="text-sm text-muted-foreground">
                         {currentExercise.explanationSpanish}
@@ -299,12 +299,12 @@ export function GrammarPracticeModal({
               <Button onClick={handleNext} className="w-full gap-2">
                 {currentIndex < exercises.length - 1 ? (
                   <>
-                    Siguiente
+                    Next
                     <ArrowRight className="w-4 h-4" />
                   </>
                 ) : (
                   <>
-                    Ver resultados
+                    View results
                     <Trophy className="w-4 h-4" />
                   </>
                 )}

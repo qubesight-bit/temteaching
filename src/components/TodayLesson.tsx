@@ -14,7 +14,7 @@ export function TodayLesson() {
                 A2
               </span>
               <span className="px-2.5 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-medium">
-                Gramática
+                Grammar
               </span>
             </div>
             
@@ -22,7 +22,7 @@ export function TodayLesson() {
               Present Perfect vs Past Simple
             </h3>
             <p className="text-sm text-muted-foreground mb-4">
-              Aprende cuándo usar cada tiempo verbal con ejemplos prácticos y ejercicios contextualizados.
+              Learn when to use each verb tense with practical examples and contextualized exercises.
             </p>
             
             <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
@@ -38,7 +38,7 @@ export function TodayLesson() {
             
             <Button variant="hero" size="lg" className="group/btn">
               <PlayCircle className="w-5 h-5" />
-              Comenzar lección
+              Start lesson
               <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
             </Button>
           </div>
@@ -51,8 +51,8 @@ export function TodayLesson() {
                 <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mx-auto mb-4 animate-float">
                   <span className="text-3xl">📚</span>
                 </div>
-                <p className="text-sm font-medium text-white/80">Lección recomendada</p>
-                <p className="text-xs text-white/60 mt-1">Basada en tu progreso</p>
+                <p className="text-sm font-medium text-white/80">Recommended lesson</p>
+                <p className="text-xs text-white/60 mt-1">Based on your progress</p>
               </div>
             </div>
             {/* Decorative elements */}

@@ -10,8 +10,8 @@ import { Loader2, BookOpen, Mail, Lock } from 'lucide-react';
 import { z } from 'zod';
 
 const authSchema = z.object({
-  email: z.string().email('Por favor ingresa un email válido'),
-  password: z.string().min(6, 'La contraseña debe tener al menos 6 caracteres'),
+  email: z.string().email('Please enter a valid email'),
+  password: z.string().min(6, 'Password must be at least 6 characters'),
 });
 
 export default function Auth() {
@@ -60,8 +60,8 @@ export default function Auth() {
         if (error) {
           if (error.message.includes('Invalid login credentials')) {
             toast({
-              title: 'Error de inicio de sesión',
-              description: 'Email o contraseña incorrectos',
+              title: 'Login error',
+              description: 'Incorrect email or password',
               variant: 'destructive',
             });
           } else {
@@ -73,8 +73,8 @@ export default function Auth() {
           }
         } else {
           toast({
-            title: '¡Bienvenido!',
-            description: 'Has iniciado sesión correctamente',
+            title: 'Welcome!',
+            description: 'You have signed in successfully',
           });
           navigate('/');
         }
@@ -83,8 +83,8 @@ export default function Auth() {
         if (error) {
           if (error.message.includes('already registered')) {
             toast({
-              title: 'Usuario existente',
-              description: 'Este email ya está registrado. Intenta iniciar sesión.',
+              title: 'User exists',
+              description: 'This email is already registered. Try signing in.',
               variant: 'destructive',
             });
           } else {
@@ -96,8 +96,8 @@ export default function Auth() {
           }
         } else {
           toast({
-            title: '¡Cuenta creada!',
-            description: 'Tu cuenta ha sido creada exitosamente',
+            title: 'Account created!',
+            description: 'Your account has been created successfully',
           });
           navigate('/');
         }
@@ -124,16 +124,16 @@ export default function Auth() {
             <BookOpen className="w-8 h-8 text-white" />
           </div>
           <h1 className="font-display font-bold text-2xl text-foreground">EnglishFlow</h1>
-          <p className="text-muted-foreground">Tu plataforma de aprendizaje de inglés</p>
+          <p className="text-muted-foreground">Your English learning platform</p>
         </div>
 
         <Card>
           <CardHeader>
-            <CardTitle>{isLogin ? 'Iniciar Sesión' : 'Crear Cuenta'}</CardTitle>
+            <CardTitle>{isLogin ? 'Sign In' : 'Create Account'}</CardTitle>
             <CardDescription>
               {isLogin
-                ? 'Ingresa tus credenciales para continuar'
-                : 'Crea una cuenta para guardar tu progreso'}
+                ? 'Enter your credentials to continue'
+                : 'Create an account to save your progress'}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -145,7 +145,7 @@ export default function Auth() {
                   <Input
                     id="email"
                     type="email"
-                    placeholder="tu@email.com"
+                    placeholder="your@email.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="pl-10"
@@ -158,7 +158,7 @@ export default function Auth() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="password">Contraseña</Label>
+                <Label htmlFor="password">Password</Label>
                 <div className="relative">
                   <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                   <Input
@@ -180,10 +180,10 @@ export default function Auth() {
                 {loading ? (
                   <>
                     <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                    {isLogin ? 'Iniciando sesión...' : 'Creando cuenta...'}
+                    {isLogin ? 'Signing in...' : 'Creating account...'}
                   </>
                 ) : (
-                  isLogin ? 'Iniciar Sesión' : 'Crear Cuenta'
+                  isLogin ? 'Sign In' : 'Create Account'
                 )}
               </Button>
             </form>
@@ -198,15 +198,15 @@ export default function Auth() {
                 }}
               >
                 {isLogin
-                  ? '¿No tienes cuenta? Regístrate'
-                  : '¿Ya tienes cuenta? Inicia sesión'}
+                  ? "Don't have an account? Sign up"
+                  : 'Already have an account? Sign in'}
               </button>
             </div>
           </CardContent>
         </Card>
 
         <p className="text-center text-sm text-muted-foreground mt-4">
-          Al continuar, aceptas nuestros términos de servicio y política de privacidad.
+          By continuing, you agree to our terms of service and privacy policy.
         </p>
       </div>
     </div>

@@ -23,7 +23,7 @@ const practiceQuestions: Question[] = [
     question: "She ___ to the gym every Monday.",
     options: ["go", "goes", "going", "went"],
     correctAnswer: "goes",
-    explanation: "Con 'she' (tercera persona singular) usamos 'goes' en Present Simple.",
+    explanation: "With 'she' (third person singular) we use 'goes' in Present Simple.",
     category: "Present Simple"
   },
   {
@@ -31,7 +31,7 @@ const practiceQuestions: Question[] = [
     question: "I ___ never ___ sushi before.",
     options: ["have / eaten", "has / eaten", "have / eat", "did / eat"],
     correctAnswer: "have / eaten",
-    explanation: "Usamos Present Perfect para experiencias de vida: have + participio pasado.",
+    explanation: "We use Present Perfect for life experiences: have + past participle.",
     category: "Present Perfect"
   },
   {
@@ -39,7 +39,7 @@ const practiceQuestions: Question[] = [
     question: "If I ___ rich, I ___ travel the world.",
     options: ["am / will", "was / would", "were / would", "be / would"],
     correctAnswer: "were / would",
-    explanation: "En Second Conditional usamos 'were' para todas las personas y 'would' para el resultado.",
+    explanation: "In Second Conditional we use 'were' for all persons and 'would' for the result.",
     category: "Conditionals"
   },
   {
@@ -47,7 +47,7 @@ const practiceQuestions: Question[] = [
     question: "She ___ working when I arrived.",
     options: ["is", "was", "were", "has been"],
     correctAnswer: "was",
-    explanation: "Past Continuous para una acción en progreso interrumpida por otra acción pasada.",
+    explanation: "Past Continuous for an action in progress interrupted by another past action.",
     category: "Past Continuous"
   },
   {
@@ -55,7 +55,7 @@ const practiceQuestions: Question[] = [
     question: "___ you help me with this, please?",
     options: ["Can", "Could", "Should", "Must"],
     correctAnswer: "Could",
-    explanation: "'Could' es más cortés que 'can' para hacer peticiones.",
+    explanation: "'Could' is more polite than 'can' for making requests.",
     category: "Modal Verbs"
   },
   {
@@ -63,7 +63,7 @@ const practiceQuestions: Question[] = [
     question: "I enjoy ___ to music while working.",
     options: ["listen", "to listen", "listening", "listened"],
     correctAnswer: "listening",
-    explanation: "El verbo 'enjoy' va seguido de gerundio (-ing).",
+    explanation: "The verb 'enjoy' is followed by a gerund (-ing).",
     category: "Gerunds & Infinitives"
   },
   {
@@ -71,7 +71,7 @@ const practiceQuestions: Question[] = [
     question: "The book ___ by millions of people.",
     options: ["reads", "is reading", "has read", "is read"],
     correctAnswer: "is read",
-    explanation: "Voz pasiva en presente: is + participio pasado.",
+    explanation: "Passive voice in present: is + past participle.",
     category: "Passive Voice"
   },
   {
@@ -79,7 +79,7 @@ const practiceQuestions: Question[] = [
     question: "I have a meeting ___ 3 PM ___ Friday.",
     options: ["at / on", "on / at", "in / on", "at / in"],
     correctAnswer: "at / on",
-    explanation: "'At' para horas específicas, 'on' para días de la semana.",
+    explanation: "'At' for specific times, 'on' for days of the week.",
     category: "Prepositions"
   },
   {
@@ -87,7 +87,7 @@ const practiceQuestions: Question[] = [
     question: "Please ___ the TV. I want to watch the news.",
     options: ["turn on", "turn off", "turn up", "turn down"],
     correctAnswer: "turn on",
-    explanation: "'Turn on' significa encender un dispositivo.",
+    explanation: "'Turn on' means to switch on a device.",
     category: "Phrasal Verbs"
   },
   {
@@ -95,7 +95,7 @@ const practiceQuestions: Question[] = [
     question: "You ___ smoke here. It's prohibited.",
     options: ["mustn't", "don't have to", "shouldn't", "needn't"],
     correctAnswer: "mustn't",
-    explanation: "'Mustn't' expresa prohibición, algo que no está permitido.",
+    explanation: "'Mustn't' expresses prohibition, something that is not allowed.",
     category: "Modal Verbs"
   },
 ];
@@ -121,8 +121,8 @@ export default function Practice() {
     if (answer === currentQuestion.correctAnswer) {
       setScore(prev => ({ ...prev, correct: prev.correct + 1 }));
       toast({
-        title: "¡Correcto! 🎉",
-        description: "Excelente trabajo",
+        title: "Correct! 🎉",
+        description: "Excellent work",
       });
     } else {
       setScore(prev => ({ ...prev, incorrect: prev.incorrect + 1 }));
@@ -163,36 +163,36 @@ export default function Practice() {
                 </div>
                 
                 <h2 className="font-display font-bold text-2xl mb-2">
-                  ¡Práctica completada!
+                  Practice complete!
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                  Has terminado esta sesión de práctica
+                  You have finished this practice session
                 </p>
                 
                 <div className="flex items-center justify-center gap-8 mb-8">
                   <div className="text-center">
                     <p className="text-4xl font-display font-bold text-success">{score.correct}</p>
-                    <p className="text-sm text-muted-foreground">Correctas</p>
+                    <p className="text-sm text-muted-foreground">Correct</p>
                   </div>
                   <div className="w-px h-12 bg-border" />
                   <div className="text-center">
                     <p className="text-4xl font-display font-bold text-destructive">{score.incorrect}</p>
-                    <p className="text-sm text-muted-foreground">Incorrectas</p>
+                    <p className="text-sm text-muted-foreground">Incorrect</p>
                   </div>
                   <div className="w-px h-12 bg-border" />
                   <div className="text-center">
                     <p className="text-4xl font-display font-bold text-primary">{percentage}%</p>
-                    <p className="text-sm text-muted-foreground">Precisión</p>
+                    <p className="text-sm text-muted-foreground">Accuracy</p>
                   </div>
                 </div>
                 
                 <div className="flex gap-4 justify-center">
                   <Button variant="outline" onClick={() => navigate("/")}>
-                    Volver al inicio
+                    Back to home
                   </Button>
                   <Button variant="hero" onClick={handleRestart}>
                     <RotateCcw className="w-4 h-4 mr-2" />
-                    Practicar de nuevo
+                    Practice again
                   </Button>
                 </div>
               </CardContent>
@@ -217,16 +217,16 @@ export default function Practice() {
               onClick={() => navigate("/")}
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Salir
+              Exit
             </Button>
           </div>
 
           {/* Progress */}
           <div className="mb-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium">Ejercicio {currentQuestionIndex + 1} de {practiceQuestions.length}</span>
+              <span className="text-sm font-medium">Exercise {currentQuestionIndex + 1} of {practiceQuestions.length}</span>
               <span className="text-sm text-muted-foreground">
-                {score.correct} correctas
+                {score.correct} correct
               </span>
             </div>
             <Progress value={progress} className="h-2" />
@@ -285,7 +285,7 @@ export default function Practice() {
                   isCorrect ? "bg-success/10 border border-success/20" : "bg-warning/10 border border-warning/20"
                 )}>
                   <p className="font-medium mb-1">
-                    {isCorrect ? "¡Correcto!" : "Respuesta correcta: " + currentQuestion.correctAnswer}
+                    {isCorrect ? "Correct!" : "Correct answer: " + currentQuestion.correctAnswer}
                   </p>
                   <p className="text-sm text-muted-foreground">
                     {currentQuestion.explanation}
@@ -303,11 +303,11 @@ export default function Practice() {
                 >
                   {currentQuestionIndex < practiceQuestions.length - 1 ? (
                     <>
-                      Siguiente pregunta
+                      Next question
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </>
                   ) : (
-                    "Ver resultados"
+                    "View results"
                   )}
                 </Button>
               )}

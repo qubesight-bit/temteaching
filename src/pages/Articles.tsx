@@ -27,12 +27,12 @@ const levelColors: Record<string, string> = {
 };
 
 const levelLabels: Record<string, string> = {
-  A1: "Principiante",
-  A2: "Elemental",
-  B1: "Intermedio",
-  B2: "Intermedio Alto",
-  C1: "Avanzado",
-  C2: "Maestría",
+  A1: "Beginner",
+  A2: "Elementary",
+  B1: "Intermediate",
+  B2: "Upper Intermediate",
+  C1: "Advanced",
+  C2: "Mastery",
 };
 
 const categoryIcons: Record<string, React.ReactNode> = {
@@ -45,12 +45,12 @@ const categoryIcons: Record<string, React.ReactNode> = {
 };
 
 const categoryLabels: Record<string, string> = {
-  grammar: "Gramática",
-  vocabulary: "Vocabulario",
-  speaking: "Expresión Oral",
-  listening: "Comprensión Auditiva",
-  reading: "Comprensión Lectora",
-  writing: "Expresión Escrita",
+  grammar: "Grammar",
+  vocabulary: "Vocabulary",
+  speaking: "Speaking",
+  listening: "Listening",
+  reading: "Reading",
+  writing: "Writing",
 };
 
 export default function Articles() {
@@ -101,7 +101,7 @@ export default function Articles() {
             className="mb-4"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Volver al inicio
+            Back to home
           </Button>
           
           <div className="flex items-center gap-4 mb-2">
@@ -110,10 +110,10 @@ export default function Articles() {
             </div>
             <div>
               <h1 className="font-display text-3xl font-bold">
-                Biblioteca de Artículos
+                Article Library
               </h1>
               <p className="text-muted-foreground">
-                Explicaciones completas estilo libro de texto para cada tema
+                Comprehensive textbook-style explanations for each topic
               </p>
             </div>
           </div>
@@ -127,7 +127,7 @@ export default function Articles() {
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                 <Input
-                  placeholder="Buscar artículos por título, tema o palabra clave..."
+                  placeholder="Search articles by title, topic or keyword..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-10"
@@ -139,7 +139,7 @@ export default function Articles() {
                 {/* Level Filter */}
                 <div className="flex items-center gap-2">
                   <Filter className="w-4 h-4 text-muted-foreground" />
-                  <span className="text-sm font-medium">Nivel:</span>
+                  <span className="text-sm font-medium">Level:</span>
                   <div className="flex flex-wrap gap-1">
                     {(['all', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'] as FilterLevel[]).map(level => (
                       <Button
@@ -152,7 +152,7 @@ export default function Articles() {
                           levelFilter === level && level !== 'all' && levelColors[level]
                         )}
                       >
-                        {level === 'all' ? 'Todos' : level}
+                        {level === 'all' ? 'All' : level}
                       </Button>
                     ))}
                   </div>
@@ -160,7 +160,7 @@ export default function Articles() {
 
                 {/* Category Filter */}
                 <div className="flex items-center gap-2">
-                  <span className="text-sm font-medium">Categoría:</span>
+                  <span className="text-sm font-medium">Category:</span>
                   <div className="flex flex-wrap gap-1">
                     <Button
                       variant={categoryFilter === "all" ? "default" : "outline"}
@@ -168,7 +168,7 @@ export default function Articles() {
                       onClick={() => setCategoryFilter("all")}
                       className="text-xs h-7"
                     >
-                      Todas
+                      All
                     </Button>
                     {(['grammar', 'vocabulary'] as FilterCategory[]).map(cat => (
                       <Button
@@ -191,7 +191,7 @@ export default function Articles() {
 
         {/* Results Count */}
         <div className="mb-4 text-sm text-muted-foreground">
-          {filteredArticles.length} artículo{filteredArticles.length !== 1 ? 's' : ''} encontrado{filteredArticles.length !== 1 ? 's' : ''}
+          {filteredArticles.length} article{filteredArticles.length !== 1 ? 's' : ''} found
         </div>
 
         {/* Articles Grid */}
@@ -199,9 +199,9 @@ export default function Articles() {
           {Object.keys(groupedArticles).length === 0 ? (
             <Card className="p-8 text-center">
               <BookOpen className="w-12 h-12 mx-auto text-muted-foreground mb-4" />
-              <h3 className="font-semibold text-lg mb-2">No se encontraron artículos</h3>
+              <h3 className="font-semibold text-lg mb-2">No articles found</h3>
               <p className="text-muted-foreground">
-                Intenta con otros términos de búsqueda o ajusta los filtros.
+                Try different search terms or adjust the filters.
               </p>
             </Card>
           ) : (
@@ -267,7 +267,7 @@ export default function Articles() {
                             size="sm" 
                             className="w-full group-hover:bg-primary/10"
                           >
-                            Leer artículo
+                            Read article
                             <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                           </Button>
                         </CardContent>
