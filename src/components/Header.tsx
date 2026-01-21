@@ -1,10 +1,8 @@
 import { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
-import { Bell, Menu, Settings, User, LogOut } from "lucide-react";
+import { Bell, Menu, Settings, LogOut } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { LanguageSelector } from "@/components/LanguageSelector";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,16 +19,15 @@ export function Header({ children }: HeaderProps) {
   const navigate = useNavigate();
   const location = useLocation();
   const { user, signOut } = useAuth();
-  const { t } = useLanguage();
 
-  // Navigation items with translations
+  // Navigation items
   const navItems = [
-    { label: t('nav.home'), path: '/' },
-    { label: t('nav.articles'), path: '/articles' },
-    { label: t('nav.grammar'), path: '/grammar' },
-    { label: t('nav.vocabulary'), path: '/vocabulary' },
-    { label: t('nav.practice'), path: '/practice' },
-    { label: t('nav.tests'), path: '/tests' },
+    { label: 'Home', path: '/' },
+    { label: 'Articles', path: '/articles' },
+    { label: 'Grammar', path: '/grammar' },
+    { label: 'Vocabulary', path: '/vocabulary' },
+    { label: 'Practice', path: '/practice' },
+    { label: 'Tests', path: '/tests' },
   ];
 
   const handleSignOut = async () => {
@@ -79,9 +76,6 @@ export function Header({ children }: HeaderProps) {
 
         {/* Right side */}
         <div className="flex items-center gap-2">
-          {/* Language Selector */}
-          <LanguageSelector variant="minimal" />
-          
           <Button variant="ghost" size="icon" className="relative">
             <Bell className="w-5 h-5" />
             <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-accent rounded-full" />
@@ -105,15 +99,15 @@ export function Header({ children }: HeaderProps) {
                 </div>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={() => navigate('/conversation/history')}>
-                  {t('nav.conversation')}
+                  Conversation History
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => navigate('/settings')}>
-                  {t('nav.settings')}
+                  Settings
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={handleSignOut} className="text-destructive">
                   <LogOut className="w-4 h-4 mr-2" />
-                  {t('common.cancel')}
+                  Sign Out
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -124,7 +118,7 @@ export function Header({ children }: HeaderProps) {
               onClick={() => navigate('/auth')}
               className="ml-2"
             >
-              {t('common.start')}
+              Get Started
             </Button>
           )}
         </div>
