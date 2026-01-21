@@ -12,6 +12,8 @@ export interface NewsArticle {
   readTime: number;
   vocabulary: VocabularyItem[];
   questions: ComprehensionQuestion[];
+  grammarExercises?: GrammarExercise[];
+  vocabularyExercises?: VocabularyExercise[];
   publishedAt: string;
 }
 
@@ -23,6 +25,25 @@ export interface VocabularyItem {
 }
 
 export interface ComprehensionQuestion {
+  question: string;
+  options: string[];
+  correctAnswer: string;
+  explanation: string;
+}
+
+export interface GrammarExercise {
+  type: "fill-blank" | "multiple-choice" | "error-correction";
+  instruction: string;
+  sentence: string;
+  options?: string[];
+  correctAnswer: string;
+  explanation: string;
+  grammarPoint: string;
+}
+
+export interface VocabularyExercise {
+  type: "definition" | "synonym" | "fill-blank" | "context";
+  word: string;
   question: string;
   options: string[];
   correctAnswer: string;
@@ -65,6 +86,16 @@ El parque está abierto todos los días de 6 AM a 10 PM. También hay baños y u
       { question: "Who came to the opening?", options: ["The president", "The mayor", "A famous actor", "A doctor"], correctAnswer: "The mayor", explanation: "The article mentions 'The mayor came to the opening.'" },
       { question: "What time does the park open?", options: ["5 AM", "6 AM", "7 AM", "8 AM"], correctAnswer: "6 AM", explanation: "The park is open from 6 AM to 10 PM." },
     ],
+    grammarExercises: [
+      { type: "fill-blank", instruction: "Complete with the correct verb form", sentence: "A new park _____ in the city center today.", options: ["open", "opened", "opens", "opening"], correctAnswer: "opened", explanation: "We use the past simple 'opened' for completed actions.", grammarPoint: "Past Simple" },
+      { type: "fill-blank", instruction: "Choose the correct article", sentence: "The park has many trees and _____.", options: ["a flowers", "flower", "flowers", "the flower"], correctAnswer: "flowers", explanation: "Plural countable nouns don't need an article when speaking generally.", grammarPoint: "Articles" },
+      { type: "multiple-choice", instruction: "Select the correct form", sentence: "It _____ free to visit.", options: ["is", "are", "be", "been"], correctAnswer: "is", explanation: "'It' takes the singular verb 'is'.", grammarPoint: "Subject-Verb Agreement" },
+    ],
+    vocabularyExercises: [
+      { type: "definition", word: "opened", question: "What does 'opened' mean?", options: ["Started to be available", "Closed down", "Built something", "Destroyed"], correctAnswer: "Started to be available", explanation: "'Opened' means something began to be accessible or available." },
+      { type: "context", word: "bench", question: "Complete: We sat on a _____ in the park.", options: ["chair", "bench", "table", "floor"], correctAnswer: "bench", explanation: "A bench is a long seat typically found in parks." },
+      { type: "synonym", word: "beautiful", question: "Which word is similar to 'beautiful'?", options: ["Ugly", "Pretty", "Sad", "Small"], correctAnswer: "Pretty", explanation: "'Beautiful' and 'pretty' both describe something nice to look at." },
+    ],
     publishedAt: "2025-01-15"
   },
   {
@@ -99,6 +130,16 @@ El fin de semana será un poco más fresco pero aún soleado. Recuerda beber agu
     questions: [
       { question: "How will the weather be this week?", options: ["Rainy", "Sunny", "Cloudy", "Snowy"], correctAnswer: "Sunny", explanation: "The article says the weather will be sunny and warm." },
       { question: "What will be the warmest days?", options: ["Monday and Tuesday", "Wednesday and Thursday", "Thursday and Friday", "Saturday and Sunday"], correctAnswer: "Thursday and Friday", explanation: "The article says Thursday and Friday will be the warmest days." },
+    ],
+    grammarExercises: [
+      { type: "fill-blank", instruction: "Choose the correct future form", sentence: "The weather _____ sunny and warm.", options: ["will be", "was", "is being", "were"], correctAnswer: "will be", explanation: "We use 'will be' for future predictions.", grammarPoint: "Future Simple" },
+      { type: "fill-blank", instruction: "Select the correct comparative", sentence: "Tuesday will be a little _____ than Monday.", options: ["warm", "warmer", "warmest", "more warm"], correctAnswer: "warmer", explanation: "We add '-er' to short adjectives to make comparatives.", grammarPoint: "Comparatives" },
+      { type: "multiple-choice", instruction: "Choose the correct superlative", sentence: "Thursday and Friday will be the _____ days.", options: ["warm", "warmer", "warmest", "more warm"], correctAnswer: "warmest", explanation: "We use 'the + -est' for superlatives with short adjectives.", grammarPoint: "Superlatives" },
+    ],
+    vocabularyExercises: [
+      { type: "definition", word: "sunny", question: "What does 'sunny' mean?", options: ["Rainy weather", "Bright with sunlight", "Cloudy sky", "Cold temperature"], correctAnswer: "Bright with sunlight", explanation: "'Sunny' describes weather when the sun is shining." },
+      { type: "context", word: "temperature", question: "The _____ will be 30 degrees.", options: ["weather", "temperature", "sunshine", "climate"], correctAnswer: "temperature", explanation: "Temperature is the measure of how hot or cold something is." },
+      { type: "synonym", word: "warm", question: "Which word is opposite to 'warm'?", options: ["Hot", "Cool", "Sunny", "Bright"], correctAnswer: "Cool", explanation: "'Warm' means a comfortable level of heat; 'cool' means slightly cold." },
     ],
     publishedAt: "2025-01-14"
   },
@@ -140,6 +181,16 @@ La ceremonia de premiación tuvo lugar el sábado pasado en Madrid. María y Ped
       { question: "When did Casa Maria open?", options: ["6 months ago", "12 months ago", "18 months ago", "24 months ago"], correctAnswer: "18 months ago", explanation: "The article says it opened 'just eighteen months ago.'" },
       { question: "What is their most popular dish?", options: ["Pizza", "Paella", "Pasta", "Tacos"], correctAnswer: "Paella", explanation: "The article mentions 'Their most popular dish is paella.'" },
       { question: "How many people can eat there at once?", options: ["20", "30", "40", "50"], correctAnswer: "40", explanation: "The restaurant can serve 40 people at a time." },
+    ],
+    grammarExercises: [
+      { type: "fill-blank", instruction: "Choose the correct verb tense", sentence: "The restaurant _____ the Best New Restaurant award this year.", options: ["win", "won", "has won", "winning"], correctAnswer: "has won", explanation: "Present Perfect is used for recent events with current relevance.", grammarPoint: "Present Perfect" },
+      { type: "fill-blank", instruction: "Select the correct relative pronoun", sentence: "The paella, _____ they make with fresh seafood, is very popular.", options: ["who", "which", "what", "where"], correctAnswer: "which", explanation: "We use 'which' for things in relative clauses.", grammarPoint: "Relative Clauses" },
+      { type: "multiple-choice", instruction: "Choose the correct passive form", sentence: "Reservations _____ recommended on weekends.", options: ["is", "are", "was", "being"], correctAnswer: "are", explanation: "'Reservations' is plural, so we use 'are' in passive voice.", grammarPoint: "Passive Voice" },
+    ],
+    vocabularyExercises: [
+      { type: "definition", word: "award", question: "What is an 'award'?", options: ["A type of food", "A prize for achievement", "A restaurant", "A cooking tool"], correctAnswer: "A prize for achievement", explanation: "An award is recognition given for excellence." },
+      { type: "context", word: "recipe", question: "We wanted to share our family _____.", options: ["awards", "recipes", "restaurants", "ceremonies"], correctAnswer: "recipes", explanation: "Recipes are instructions for preparing food." },
+      { type: "synonym", word: "popular", question: "Which word means the same as 'popular'?", options: ["Unknown", "Well-liked", "Expensive", "Old"], correctAnswer: "Well-liked", explanation: "'Popular' means liked or enjoyed by many people." },
     ],
     publishedAt: "2025-01-13"
   },
@@ -186,6 +237,18 @@ El equipo de investigación planea regresar al área el próximo año para apren
       { question: "How deep does the Abyssal Glider live?", options: ["1,000 meters", "2,000 meters", "Up to 3,000 meters", "4,000 meters"], correctAnswer: "Up to 3,000 meters", explanation: "The article states it lives at depths of up to 3,000 meters." },
       { question: "What makes this fish special?", options: ["Its large size", "Its transparent body and bioluminescence", "Its bright colors", "Its speed"], correctAnswer: "Its transparent body and bioluminescence", explanation: "The article describes its transparent body and ability to produce its own light." },
       { question: "What percentage of the ocean floor is unexplored?", options: ["50%", "60%", "70%", "80%"], correctAnswer: "80%", explanation: "Scientists estimate that up to 80% of the ocean floor remains unexplored." },
+    ],
+    grammarExercises: [
+      { type: "fill-blank", instruction: "Choose the correct verb form", sentence: "The discovery _____ during a three-month expedition.", options: ["made", "was made", "has made", "is making"], correctAnswer: "was made", explanation: "Passive voice is used when the action is more important than who did it.", grammarPoint: "Passive Voice" },
+      { type: "fill-blank", instruction: "Select the correct relative clause", sentence: "The creature, _____ lives at great depths, produces light.", options: ["who", "which", "what", "whom"], correctAnswer: "which", explanation: "We use 'which' for non-defining relative clauses about things.", grammarPoint: "Relative Clauses" },
+      { type: "multiple-choice", instruction: "Choose the correct reported speech", sentence: "Dr. Chen said that they _____ stunned when they first saw it.", options: ["are", "were", "will be", "have been"], correctAnswer: "were", explanation: "In reported speech, past tenses are maintained for past events.", grammarPoint: "Reported Speech" },
+      { type: "error-correction", instruction: "Find the correct form", sentence: "The fish's body allows it _____ nearly invisible.", options: ["remain", "to remain", "remaining", "remained"], correctAnswer: "to remain", explanation: "'Allow + object + to infinitive' is the correct pattern.", grammarPoint: "Infinitive Patterns" },
+    ],
+    vocabularyExercises: [
+      { type: "definition", word: "expedition", question: "What is an 'expedition'?", options: ["A quick trip", "An organized journey for research", "A vacation", "A boat"], correctAnswer: "An organized journey for research", explanation: "An expedition is a planned journey undertaken for exploration or research." },
+      { type: "context", word: "transparent", question: "Glass is _____, meaning you can see through it.", options: ["opaque", "transparent", "dark", "solid"], correctAnswer: "transparent", explanation: "Transparent materials allow light to pass through." },
+      { type: "synonym", word: "remarkable", question: "Which word is similar to 'remarkable'?", options: ["Ordinary", "Extraordinary", "Simple", "Common"], correctAnswer: "Extraordinary", explanation: "'Remarkable' means worthy of attention; extraordinary." },
+      { type: "definition", word: "habitat", question: "A 'habitat' is:", options: ["A type of fish", "A swimming pattern", "A natural home", "A camera"], correctAnswer: "A natural home", explanation: "Habitat refers to the natural environment where an organism lives." },
     ],
     publishedAt: "2025-01-12"
   },

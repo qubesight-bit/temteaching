@@ -3,27 +3,30 @@ import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Clock, BookOpen, Volume2, CheckCircle2 } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ArrowLeft, Clock, BookOpen, Volume2, CheckCircle2, MessageSquare, Headphones } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { newsArticles, NewsArticle } from "@/data/newsData";
 import { useGamification } from "@/hooks/useGamification";
 import { toast } from "@/hooks/use-toast";
+import { NewsExercises } from "@/components/news/NewsExercises";
 
 export default function News() {
   const navigate = useNavigate();
   const { addXP } = useGamification();
   const [selectedLevel, setSelectedLevel] = useState<"A1" | "A2" | "B1" | "B2" | "C1" | null>(null);
   const [selectedArticle, setSelectedArticle] = useState<NewsArticle | null>(null);
-  const [showQuiz, setShowQuiz] = useState(false);
+  const [activeSection, setActiveSection] = useState<"read" | "comprehension" | "exercises">("read");
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [showResults, setShowResults] = useState(false);
 
   const filteredArticles = selectedLevel ? newsArticles.filter(a => a.level === selectedLevel) : newsArticles;
 
   const speakText = (text: string) => {
+    window.speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'en-US';
-    utterance.rate = 0.8;
+    utterance.rate = 0.85;
     speechSynthesis.speak(utterance);
   };
 
@@ -36,86 +39,185 @@ export default function News() {
     toast({ title: `${correct}/${selectedArticle.questions.length} correct`, description: `+${xp} XP earned` });
   };
 
+  const resetArticle = () => {
+    setSelectedArticle(null);
+    setActiveSection("read");
+    setAnswers({});
+    setShowResults(false);
+  };
+
   if (selectedArticle) {
+    const hasExercises = (selectedArticle.grammarExercises?.length || 0) > 0 || 
+                          (selectedArticle.vocabularyExercises?.length || 0) > 0;
+
     return (
       <div className="min-h-screen bg-background">
         <Header />
         <main className="container py-8 max-w-4xl">
-          <Button variant="ghost" size="sm" className="mb-6" onClick={() => { setSelectedArticle(null); setShowQuiz(false); setAnswers({}); setShowResults(false); }}>
+          <Button variant="ghost" size="sm" className="mb-6" onClick={resetArticle}>
             <ArrowLeft className="w-4 h-4 mr-2" />Back to News
           </Button>
 
+          {/* Article Header */}
           <Card className="mb-6">
             <CardContent className="p-6">
               <div className="flex items-center gap-2 mb-4">
                 <span className={cn("px-2 py-1 rounded-full text-xs font-medium text-white", `bg-level-${selectedArticle.level.toLowerCase()}`)}>{selectedArticle.level}</span>
                 <span className="text-sm text-muted-foreground flex items-center gap-1"><Clock className="w-4 h-4" />{selectedArticle.readTime} min</span>
+                <span className="text-xs text-muted-foreground">{selectedArticle.category}</span>
               </div>
               <h1 className="font-display font-bold text-2xl mb-2">{selectedArticle.title}</h1>
               <p className="text-muted-foreground mb-4">{selectedArticle.titleEs}</p>
-              
-              <div className="flex gap-2 mb-6">
-                <Button variant="outline" size="sm" onClick={() => speakText(selectedArticle.content)}>
-                  <Volume2 className="w-4 h-4 mr-2" />Listen
-                </Button>
-              </div>
-
-              <div className="prose prose-sm max-w-none">
-                {selectedArticle.content.split('\n\n').map((paragraph, i) => (
-                  <p key={i} className="mb-4 leading-relaxed">{paragraph}</p>
-                ))}
-              </div>
-
-              <div className="mt-6 p-4 rounded-xl bg-secondary/50">
-                <h3 className="font-semibold mb-3">📚 Key Vocabulary</h3>
-                <div className="grid sm:grid-cols-2 gap-3">
-                  {selectedArticle.vocabulary.map((item, i) => (
-                    <div key={i} className="p-3 rounded-lg bg-background">
-                      <p className="font-medium">{item.word}</p>
-                      <p className="text-sm text-muted-foreground">{item.definitionEs}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </CardContent>
           </Card>
 
-          {!showQuiz ? (
-            <Button variant="hero" size="lg" className="w-full" onClick={() => setShowQuiz(true)}>
-              <BookOpen className="w-4 h-4 mr-2" />Check Comprehension
-            </Button>
-          ) : (
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="font-display font-semibold text-lg mb-4">Comprehension Questions</h3>
-                <div className="space-y-6">
-                  {selectedArticle.questions.map((q, i) => (
-                    <div key={i}>
-                      <p className="font-medium mb-3">{i + 1}. {q.question}</p>
-                      <div className="space-y-2">
-                        {q.options.map((opt) => (
-                          <button key={opt} className={cn("w-full p-3 rounded-lg border text-left transition-all", answers[i] === opt && "border-primary bg-primary/10", showResults && opt === q.correctAnswer && "border-success bg-success/10", showResults && answers[i] === opt && opt !== q.correctAnswer && "border-destructive bg-destructive/10")} onClick={() => !showResults && setAnswers(prev => ({ ...prev, [i]: opt }))} disabled={showResults}>
-                            <div className="flex items-center justify-between">
-                              <span>{opt}</span>
-                              {showResults && opt === q.correctAnswer && <CheckCircle2 className="w-4 h-4 text-success" />}
-                            </div>
-                          </button>
-                        ))}
-                      </div>
-                      {showResults && answers[i] !== q.correctAnswer && (
-                        <p className="text-sm text-muted-foreground mt-2">{q.explanation}</p>
-                      )}
-                    </div>
-                  ))}
-                </div>
-                {!showResults && (
-                  <Button variant="hero" size="lg" className="w-full mt-6" onClick={handleCheckAnswers} disabled={Object.keys(answers).length < selectedArticle.questions.length}>
-                    Check Answers
-                  </Button>
+          {/* Navigation Tabs */}
+          <Tabs value={activeSection} onValueChange={(v) => setActiveSection(v as any)} className="mb-6">
+            <TabsList className="grid w-full grid-cols-3">
+              <TabsTrigger value="read" className="flex items-center gap-2">
+                <Headphones className="w-4 h-4" />
+                Read & Listen
+              </TabsTrigger>
+              <TabsTrigger value="comprehension" className="flex items-center gap-2">
+                <BookOpen className="w-4 h-4" />
+                Comprehension
+              </TabsTrigger>
+              <TabsTrigger value="exercises" className="flex items-center gap-2" disabled={!hasExercises}>
+                <MessageSquare className="w-4 h-4" />
+                Grammar & Vocab
+                {hasExercises && (
+                  <span className="text-xs bg-accent/20 px-1.5 py-0.5 rounded-full">
+                    {(selectedArticle.grammarExercises?.length || 0) + (selectedArticle.vocabularyExercises?.length || 0)}
+                  </span>
                 )}
-              </CardContent>
-            </Card>
-          )}
+              </TabsTrigger>
+            </TabsList>
+
+            {/* Read & Listen Tab */}
+            <TabsContent value="read">
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex gap-2 mb-6">
+                    <Button variant="outline" size="sm" onClick={() => speakText(selectedArticle.content)}>
+                      <Volume2 className="w-4 h-4 mr-2" />Listen to Article
+                    </Button>
+                    <Button variant="ghost" size="sm" onClick={() => window.speechSynthesis.cancel()}>
+                      Stop
+                    </Button>
+                  </div>
+
+                  <div className="prose prose-sm max-w-none mb-6">
+                    {selectedArticle.content.split('\n\n').map((paragraph, i) => (
+                      <p key={i} className="mb-4 leading-relaxed text-foreground">{paragraph}</p>
+                    ))}
+                  </div>
+
+                  <div className="p-4 rounded-xl bg-secondary/50">
+                    <h3 className="font-semibold mb-3">📚 Key Vocabulary</h3>
+                    <div className="grid sm:grid-cols-2 gap-3">
+                      {selectedArticle.vocabulary.map((item, i) => (
+                        <div key={i} className="p-3 rounded-lg bg-background border">
+                          <div className="flex items-center justify-between">
+                            <p className="font-medium">{item.word}</p>
+                            <Button 
+                              variant="ghost" 
+                              size="sm" 
+                              className="h-6 w-6 p-0"
+                              onClick={() => speakText(item.word)}
+                            >
+                              <Volume2 className="w-3 h-3" />
+                            </Button>
+                          </div>
+                          <p className="text-sm text-muted-foreground">{item.definition}</p>
+                          <p className="text-xs text-primary/70 mt-1 italic">"{item.example}"</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            {/* Comprehension Tab */}
+            <TabsContent value="comprehension">
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="font-display font-semibold text-lg mb-4">Comprehension Questions</h3>
+                  <div className="space-y-6">
+                    {selectedArticle.questions.map((q, i) => (
+                      <div key={i}>
+                        <p className="font-medium mb-3">{i + 1}. {q.question}</p>
+                        <div className="space-y-2">
+                          {q.options.map((opt) => (
+                            <button 
+                              key={opt} 
+                              className={cn(
+                                "w-full p-3 rounded-lg border text-left transition-all", 
+                                answers[i] === opt && "border-primary bg-primary/10", 
+                                showResults && opt === q.correctAnswer && "border-success bg-success/10", 
+                                showResults && answers[i] === opt && opt !== q.correctAnswer && "border-destructive bg-destructive/10"
+                              )} 
+                              onClick={() => !showResults && setAnswers(prev => ({ ...prev, [i]: opt }))} 
+                              disabled={showResults}
+                            >
+                              <div className="flex items-center justify-between">
+                                <span>{opt}</span>
+                                {showResults && opt === q.correctAnswer && <CheckCircle2 className="w-4 h-4 text-success" />}
+                              </div>
+                            </button>
+                          ))}
+                        </div>
+                        {showResults && answers[i] !== q.correctAnswer && (
+                          <p className="text-sm text-muted-foreground mt-2">{q.explanation}</p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                  {!showResults && (
+                    <Button 
+                      variant="default" 
+                      size="lg" 
+                      className="w-full mt-6" 
+                      onClick={handleCheckAnswers} 
+                      disabled={Object.keys(answers).length < selectedArticle.questions.length}
+                    >
+                      Check Answers
+                    </Button>
+                  )}
+                  {showResults && hasExercises && (
+                    <Button 
+                      variant="default" 
+                      size="lg" 
+                      className="w-full mt-6" 
+                      onClick={() => setActiveSection("exercises")}
+                    >
+                      Practice Grammar & Vocabulary
+                      <MessageSquare className="w-4 h-4 ml-2" />
+                    </Button>
+                  )}
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            {/* Exercises Tab */}
+            <TabsContent value="exercises">
+              {hasExercises ? (
+                <NewsExercises 
+                  grammarExercises={selectedArticle.grammarExercises}
+                  vocabularyExercises={selectedArticle.vocabularyExercises}
+                  articleTitle={selectedArticle.title}
+                />
+              ) : (
+                <Card>
+                  <CardContent className="p-8 text-center">
+                    <p className="text-muted-foreground">
+                      No grammar or vocabulary exercises available for this article yet.
+                    </p>
+                  </CardContent>
+                </Card>
+              )}
+            </TabsContent>
+          </Tabs>
         </main>
       </div>
     );
