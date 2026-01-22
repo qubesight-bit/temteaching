@@ -1059,25 +1059,34 @@ Formal: "The rapid development of new products is necessary."
   }
 ];
 
+// Import A1 complete articles
+import { a1CompleteArticles } from './articlesA1Complete';
+
+// Combine all articles
+export const allCurriculumArticles: CurriculumArticle[] = [
+  ...a1CompleteArticles,
+  ...curriculumArticles,
+];
+
 // ================================================================
 // HELPER FUNCTIONS
 // ================================================================
 
 export function getCurriculumArticleById(id: string): CurriculumArticle | undefined {
-  return curriculumArticles.find(article => article.id === id);
+  return allCurriculumArticles.find(article => article.id === id);
 }
 
 export function getCurriculumArticlesByLevel(level: CurriculumArticle['level']): CurriculumArticle[] {
-  return curriculumArticles.filter(article => article.level === level);
+  return allCurriculumArticles.filter(article => article.level === level);
 }
 
 export function getCurriculumArticlesByCategory(category: CurriculumArticle['category']): CurriculumArticle[] {
-  return curriculumArticles.filter(article => article.category === category);
+  return allCurriculumArticles.filter(article => article.category === category);
 }
 
 export function searchCurriculumArticles(query: string): CurriculumArticle[] {
   const lowerQuery = query.toLowerCase();
-  return curriculumArticles.filter(article => 
+  return allCurriculumArticles.filter(article => 
     article.title.toLowerCase().includes(lowerQuery) ||
     article.learningGoal.toLowerCase().includes(lowerQuery) ||
     article.explanation.toLowerCase().includes(lowerQuery)
