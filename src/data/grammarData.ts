@@ -9,7 +9,7 @@ export interface GrammarCategory {
 export interface GrammarTopic {
   id: string;
   title: string;
-  level: "A1" | "A2" | "B1" | "B2" | "C1";
+  level: "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
   completed: boolean;
   explanation: string;
   examples: { english: string; spanish: string }[];
@@ -845,6 +845,212 @@ export const grammarCategories: GrammarCategory[] = [
             options: ["Nonetheless", "Therefore", "Because", "Although"],
             correctAnswer: "Nonetheless",
             explanation: "'Nonetheless' = despite that, nevertheless."
+          },
+        ]
+      },
+    ]
+  },
+  {
+    id: "mastery",
+    title: "C2 Mastery",
+    description: "Near-native precision and stylistic excellence",
+    icon: "👑",
+    topics: [
+      {
+        id: "advanced-inversions-c2",
+        title: "Advanced Inversions",
+        level: "C2",
+        completed: false,
+        explanation: "Sophisticated inversions for emphasis using negative adverbs (Never, Rarely, Seldom), 'Not only...but also', and formal conditionals (Had I known, Were she to...).",
+        examples: [
+          { english: "Never have I seen such beauty.", spanish: "Nunca he visto tanta belleza." },
+          { english: "Had I known, I would have helped.", spanish: "Si lo hubiera sabido, habría ayudado." },
+          { english: "Not only did she win, but she broke the record.", spanish: "No solo ganó, sino que batió el récord." },
+        ],
+        exercises: [
+          {
+            id: "inv-c2-1",
+            type: "multiple-choice",
+            question: "Rarely ___ such talent in a beginner.",
+            options: ["do we see", "we see", "we do see", "seeing"],
+            correctAnswer: "do we see",
+            explanation: "Negative adverb 'Rarely' triggers inversion."
+          },
+        ]
+      },
+      {
+        id: "subjunctive-c2",
+        title: "Subjunctive Mastery",
+        level: "C2",
+        completed: false,
+        explanation: "Full command of subjunctive in formal contexts, fixed expressions (Be that as it may, Come what may, Lest), and literary usage.",
+        examples: [
+          { english: "Be that as it may, we must proceed.", spanish: "Sea como sea, debemos proceder." },
+          { english: "Lest we forget the sacrifices made.", spanish: "Para que no olvidemos los sacrificios hechos." },
+          { english: "Come what may, I'll support you.", spanish: "Pase lo que pase, te apoyaré." },
+        ],
+        exercises: [
+          {
+            id: "subj-c2-1",
+            type: "multiple-choice",
+            question: "The committee insists that he ___ present.",
+            options: ["be", "is", "was", "being"],
+            correctAnswer: "be",
+            explanation: "Formal subjunctive after 'insist': base form 'be'."
+          },
+        ]
+      },
+      {
+        id: "ellipsis-c2",
+        title: "Ellipsis & Substitution",
+        level: "C2",
+        completed: false,
+        explanation: "Elegant omission and substitution to avoid repetition: auxiliary ellipsis, 'so/not' substitution, 'one/ones' for nouns, and 'to' for infinitive phrases.",
+        examples: [
+          { english: "A: Will it rain? B: I hope not.", spanish: "A: ¿Lloverá? B: Espero que no." },
+          { english: "She can speak French and so can I.", spanish: "Ella sabe francés y yo también." },
+          { english: "I'd like to help, but I'm not able to.", spanish: "Me gustaría ayudar, pero no puedo." },
+        ],
+        exercises: [
+          {
+            id: "ellip-c2-1",
+            type: "multiple-choice",
+            question: "A: Is she coming? B: I believe ___.",
+            options: ["so", "it", "yes", "that"],
+            correctAnswer: "so",
+            explanation: "'So' substitutes the entire clause."
+          },
+        ]
+      },
+      {
+        id: "cleft-sentences-c2",
+        title: "Cleft Sentence Mastery",
+        level: "C2",
+        completed: false,
+        explanation: "All cleft structures for precise emphasis: It-clefts, What-clefts, All-clefts, The thing/reason/place clefts for sophisticated focus.",
+        examples: [
+          { english: "What concerns me is the lack of funding.", spanish: "Lo que me preocupa es la falta de financiación." },
+          { english: "All I want is some peace and quiet.", spanish: "Todo lo que quiero es paz y tranquilidad." },
+          { english: "The reason I called is to discuss the project.", spanish: "La razón por la que llamé es para discutir el proyecto." },
+        ],
+        exercises: [
+          {
+            id: "cleft-c2-1",
+            type: "multiple-choice",
+            question: "___ I need is more time.",
+            options: ["What", "That", "It", "Which"],
+            correctAnswer: "What",
+            explanation: "What-cleft for emphasis on 'more time'."
+          },
+        ]
+      },
+      {
+        id: "idioms-c2",
+        title: "Idioms & Collocations",
+        level: "C2",
+        completed: false,
+        explanation: "Native-like command of idiomatic expressions, fixed collocations, and metaphorical language for natural, fluent communication.",
+        examples: [
+          { english: "The project is still up in the air.", spanish: "El proyecto aún está en el aire." },
+          { english: "She really went the extra mile.", spanish: "Realmente hizo un esfuerzo extra." },
+          { english: "Let's not beat around the bush.", spanish: "No nos andemos con rodeos." },
+        ],
+        exercises: [
+          {
+            id: "idiom-c2-1",
+            type: "multiple-choice",
+            question: "Don't put all your eggs in one ___.",
+            options: ["basket", "bag", "box", "bowl"],
+            correctAnswer: "basket",
+            explanation: "Idiom: Don't put all eggs in one basket = diversify risk."
+          },
+        ]
+      },
+      {
+        id: "register-style-c2",
+        title: "Register & Academic Style",
+        level: "C2",
+        completed: false,
+        explanation: "Mastery of formal/informal register shifts, academic hedging, nominalization, and impersonal structures for professional and scholarly writing.",
+        examples: [
+          { english: "The analysis of the data yielded significant results.", spanish: "El análisis de los datos arrojó resultados significativos." },
+          { english: "It could be argued that this approach is flawed.", spanish: "Podría argumentarse que este enfoque es defectuoso." },
+          { english: "This may be attributed to environmental factors.", spanish: "Esto puede atribuirse a factores ambientales." },
+        ],
+        exercises: [
+          {
+            id: "reg-c2-1",
+            type: "multiple-choice",
+            question: "Academic hedging: 'The results ___ that the hypothesis is correct.'",
+            options: ["suggest", "prove", "show definitely", "make clear"],
+            correctAnswer: "suggest",
+            explanation: "'Suggest' is appropriately cautious for academic writing."
+          },
+        ]
+      },
+      {
+        id: "nuanced-modality-c2",
+        title: "Nuanced Modality",
+        level: "C2",
+        completed: false,
+        explanation: "Subtle modal meanings: 'will' for habits/annoyance, 'would' for past habits, 'might' for criticism, and fine distinctions in deduction and expectation.",
+        examples: [
+          { english: "She will insist on doing everything herself.", spanish: "Ella insiste en hacerlo todo sola." },
+          { english: "You might have told me earlier!", spanish: "¡Podrías habérmelo dicho antes!" },
+          { english: "That'll be the postman.", spanish: "Ese debe ser el cartero." },
+        ],
+        exercises: [
+          {
+            id: "mod-c2-1",
+            type: "multiple-choice",
+            question: "She ___ keep interrupting me! (annoying habit)",
+            options: ["will", "would", "should", "might"],
+            correctAnswer: "will",
+            explanation: "'Will' for characteristic/annoying present habits."
+          },
+        ]
+      },
+      {
+        id: "participle-clauses-c2",
+        title: "Participle Clause Mastery",
+        level: "C2",
+        completed: false,
+        explanation: "Advanced reduction using present, past, and perfect participles. With-clauses for circumstances. Dangling participle avoidance.",
+        examples: [
+          { english: "Having completed the report, she left.", spanish: "Habiendo completado el informe, se fue." },
+          { english: "Built in 1900, the house is now protected.", spanish: "Construida en 1900, la casa ahora está protegida." },
+          { english: "With the deadline approaching, we worked faster.", spanish: "Con la fecha límite acercándose, trabajamos más rápido." },
+        ],
+        exercises: [
+          {
+            id: "part-c2-1",
+            type: "multiple-choice",
+            question: "___ the instructions, he began the experiment.",
+            options: ["Having read", "Have read", "Reading", "To read"],
+            correctAnswer: "Having read",
+            explanation: "Perfect participle for completed prior action."
+          },
+        ]
+      },
+      {
+        id: "discourse-markers-c2",
+        title: "Discourse Marker Mastery",
+        level: "C2",
+        completed: false,
+        explanation: "Full command of cohesive devices: 'That said', 'Be that as it may', 'Notwithstanding', 'As such', 'Hence', and concessive inversions.",
+        examples: [
+          { english: "The project succeeded. That said, it was over budget.", spanish: "El proyecto tuvo éxito. Dicho esto, excedió el presupuesto." },
+          { english: "Notwithstanding the risks, they proceeded.", spanish: "A pesar de los riesgos, procedieron." },
+          { english: "Complex though it may seem, the solution is simple.", spanish: "Por complejo que parezca, la solución es simple." },
+        ],
+        exercises: [
+          {
+            id: "disc-c2-1",
+            type: "multiple-choice",
+            question: "The evidence was weak. ___, the case was dismissed.",
+            options: ["As such", "Moreover", "Besides", "Likewise"],
+            correctAnswer: "As such",
+            explanation: "'As such' = Therefore/Consequently (formal)."
           },
         ]
       },
