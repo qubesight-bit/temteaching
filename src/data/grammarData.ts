@@ -1243,4 +1243,288 @@ export const grammarCategories: GrammarCategory[] = [
       },
     ]
   },
+  {
+    id: "a2-elementary",
+    title: "A2 Elementary",
+    description: "Routine matters and simple exchanges in familiar contexts",
+    icon: "📗",
+    topics: [
+      {
+        id: "past-simple-regular-a2",
+        title: "Past Simple - Regular Verbs",
+        level: "A2",
+        completed: false,
+        explanation: "Regular verbs in past simple add -ed to the base form. Used for completed actions in the past with time expressions like yesterday, last week, ago.",
+        examples: [
+          { english: "I worked yesterday.", spanish: "Trabajé ayer." },
+          { english: "She visited her grandmother last week.", spanish: "Visitó a su abuela la semana pasada." },
+          { english: "They played football two days ago.", spanish: "Jugaron al fútbol hace dos días." },
+          { english: "Did you watch the movie?", spanish: "¿Viste la película?" },
+        ],
+        exercises: [
+          {
+            id: "psr-a2-1",
+            type: "multiple-choice",
+            question: "Yesterday, I ___ to school by bus.",
+            options: ["travel", "travelled", "travelling", "travels"],
+            correctAnswer: "travelled",
+            explanation: "Past simple of regular verbs: add -ed. 'Yesterday' indicates past."
+          },
+        ]
+      },
+      {
+        id: "past-simple-irregular-a2",
+        title: "Past Simple - Irregular Verbs",
+        level: "A2",
+        completed: false,
+        explanation: "Irregular verbs have special past forms that must be memorized (go→went, eat→ate, see→saw, buy→bought, etc.).",
+        examples: [
+          { english: "I went to the cinema last night.", spanish: "Fui al cine anoche." },
+          { english: "She ate pizza for dinner.", spanish: "Ella comió pizza para cenar." },
+          { english: "We saw a beautiful sunset.", spanish: "Vimos una puesta de sol hermosa." },
+          { english: "He bought a new phone.", spanish: "Él compró un teléfono nuevo." },
+        ],
+        exercises: [
+          {
+            id: "psi-a2-1",
+            type: "multiple-choice",
+            question: "Last weekend, we ___ to the beach.",
+            options: ["go", "went", "going", "goes"],
+            correctAnswer: "went",
+            explanation: "'Go' is irregular: go → went → gone."
+          },
+        ]
+      },
+      {
+        id: "past-simple-negative-a2",
+        title: "Past Simple - Negatives & Questions",
+        level: "A2",
+        completed: false,
+        explanation: "Negatives use didn't + base verb. Questions use Did + subject + base verb. The main verb stays in base form.",
+        examples: [
+          { english: "I didn't go to work yesterday.", spanish: "No fui a trabajar ayer." },
+          { english: "She didn't eat breakfast.", spanish: "Ella no desayunó." },
+          { english: "Did you see the news?", spanish: "¿Viste las noticias?" },
+          { english: "Where did they go?", spanish: "¿Adónde fueron?" },
+        ],
+        exercises: [
+          {
+            id: "psn-a2-1",
+            type: "multiple-choice",
+            question: "I ___ to the party last night. I was tired.",
+            options: ["didn't go", "didn't went", "don't go", "not go"],
+            correctAnswer: "didn't go",
+            explanation: "Negative past: didn't + base verb (go, not went)."
+          },
+        ]
+      },
+      {
+        id: "comparatives-a2",
+        title: "Comparatives",
+        level: "A2",
+        completed: false,
+        explanation: "Compare two things: short adjectives add -er (taller, bigger), long adjectives use 'more' (more expensive, more beautiful). Irregular: good→better, bad→worse.",
+        examples: [
+          { english: "She is taller than her brother.", spanish: "Ella es más alta que su hermano." },
+          { english: "This book is more interesting than that one.", spanish: "Este libro es más interesante que ese." },
+          { english: "My car is faster than yours.", spanish: "Mi coche es más rápido que el tuyo." },
+          { english: "English is easier than Chinese.", spanish: "El inglés es más fácil que el chino." },
+        ],
+        exercises: [
+          {
+            id: "comp-a2-1",
+            type: "multiple-choice",
+            question: "This restaurant is ___ than the other one.",
+            options: ["cheaper", "more cheap", "cheapest", "most cheap"],
+            correctAnswer: "cheaper",
+            explanation: "Short adjectives (cheap) add -er for comparatives."
+          },
+        ]
+      },
+      {
+        id: "superlatives-a2",
+        title: "Superlatives",
+        level: "A2",
+        completed: false,
+        explanation: "Compare three or more things: short adjectives add -est (the tallest), long adjectives use 'the most' (the most expensive). Always use 'the' before superlatives.",
+        examples: [
+          { english: "She is the tallest in the class.", spanish: "Ella es la más alta de la clase." },
+          { english: "This is the most beautiful place I've seen.", spanish: "Este es el lugar más hermoso que he visto." },
+          { english: "He is the best player on the team.", spanish: "Él es el mejor jugador del equipo." },
+          { english: "It was the worst day of my life.", spanish: "Fue el peor día de mi vida." },
+        ],
+        exercises: [
+          {
+            id: "super-a2-1",
+            type: "multiple-choice",
+            question: "Mount Everest is ___ mountain in the world.",
+            options: ["the highest", "the higher", "highest", "more high"],
+            correctAnswer: "the highest",
+            explanation: "Superlatives: the + adjective-est for short adjectives."
+          },
+        ]
+      },
+      {
+        id: "going-to-future-a2",
+        title: "Going to - Future Plans",
+        level: "A2",
+        completed: false,
+        explanation: "Use 'going to' for planned intentions and predictions based on evidence. Structure: am/is/are + going to + verb.",
+        examples: [
+          { english: "I'm going to visit my parents this weekend.", spanish: "Voy a visitar a mis padres este fin de semana." },
+          { english: "They're going to buy a new house.", spanish: "Van a comprar una casa nueva." },
+          { english: "Look at those clouds! It's going to rain.", spanish: "¡Mira esas nubes! Va a llover." },
+          { english: "What are you going to do tomorrow?", spanish: "¿Qué vas a hacer mañana?" },
+        ],
+        exercises: [
+          {
+            id: "gtf-a2-1",
+            type: "multiple-choice",
+            question: "We ___ a party next Saturday.",
+            options: ["are going to have", "going to have", "are going have", "is going to have"],
+            correctAnswer: "are going to have",
+            explanation: "Going to future: subject + am/is/are + going to + verb."
+          },
+        ]
+      },
+      {
+        id: "could-should-a2",
+        title: "Could & Should",
+        level: "A2",
+        completed: false,
+        explanation: "'Could' expresses past ability and polite requests/suggestions. 'Should' gives advice and recommendations.",
+        examples: [
+          { english: "Could you help me, please?", spanish: "¿Podrías ayudarme, por favor?" },
+          { english: "When I was young, I could run very fast.", spanish: "Cuando era joven, podía correr muy rápido." },
+          { english: "You should see a doctor.", spanish: "Deberías ver a un médico." },
+          { english: "We should leave now.", spanish: "Deberíamos irnos ahora." },
+        ],
+        exercises: [
+          {
+            id: "cs-a2-1",
+            type: "multiple-choice",
+            question: "You look tired. You ___ get some rest.",
+            options: ["should", "could", "would", "must"],
+            correctAnswer: "should",
+            explanation: "'Should' is used for giving advice."
+          },
+        ]
+      },
+      {
+        id: "first-conditional-a2",
+        title: "First Conditional",
+        level: "A2",
+        completed: false,
+        explanation: "Express real/possible future situations. Structure: If + present simple, will + infinitive. Used for likely situations and their results.",
+        examples: [
+          { english: "If it rains, I will stay home.", spanish: "Si llueve, me quedaré en casa." },
+          { english: "If you study, you will pass the exam.", spanish: "Si estudias, aprobarás el examen." },
+          { english: "If she calls, tell her I'm busy.", spanish: "Si ella llama, dile que estoy ocupado." },
+          { english: "I'll help you if you need me.", spanish: "Te ayudaré si me necesitas." },
+        ],
+        exercises: [
+          {
+            id: "fc-a2-1",
+            type: "multiple-choice",
+            question: "If you ___ hard, you ___ the test.",
+            options: ["study / will pass", "will study / pass", "studied / would pass", "study / pass"],
+            correctAnswer: "study / will pass",
+            explanation: "First conditional: If + present simple, will + infinitive."
+          },
+        ]
+      },
+      {
+        id: "daily-routines-a2",
+        title: "Daily Routines & Habits",
+        level: "A2",
+        completed: false,
+        explanation: "Describe regular activities using present simple with frequency adverbs (always, usually, often, sometimes, never) and time expressions.",
+        examples: [
+          { english: "I usually wake up at 7 AM.", spanish: "Normalmente me despierto a las 7." },
+          { english: "She always has coffee for breakfast.", spanish: "Ella siempre toma café para desayunar." },
+          { english: "They often go to the gym after work.", spanish: "A menudo van al gimnasio después del trabajo." },
+          { english: "He never eats meat.", spanish: "Él nunca come carne." },
+        ],
+        exercises: [
+          {
+            id: "dr-a2-1",
+            type: "multiple-choice",
+            question: "She ___ gets up early. She loves sleeping late.",
+            options: ["never", "always", "usually", "often"],
+            correctAnswer: "never",
+            explanation: "'Never' indicates zero frequency - she doesn't get up early."
+          },
+        ]
+      },
+      {
+        id: "describing-people-a2",
+        title: "Describing People & Places",
+        level: "A2",
+        completed: false,
+        explanation: "Use adjectives to describe appearance, personality, and places. Word order: opinion + size + age + shape + color + origin + material + noun.",
+        examples: [
+          { english: "She has long brown hair and blue eyes.", spanish: "Ella tiene el pelo largo castaño y ojos azules." },
+          { english: "He's a tall, friendly man.", spanish: "Es un hombre alto y amable." },
+          { english: "It's a beautiful old Italian restaurant.", spanish: "Es un hermoso restaurante italiano antiguo." },
+          { english: "The city is modern and exciting.", spanish: "La ciudad es moderna y emocionante." },
+        ],
+        exercises: [
+          {
+            id: "dp-a2-1",
+            type: "multiple-choice",
+            question: "My grandmother is very ___. She always helps everyone.",
+            options: ["kind", "tall", "young", "fast"],
+            correctAnswer: "kind",
+            explanation: "'Kind' describes personality - being helpful and caring."
+          },
+        ]
+      },
+      {
+        id: "shopping-language-a2",
+        title: "Shopping & Transactions",
+        level: "A2",
+        completed: false,
+        explanation: "Essential language for shopping: asking prices, sizes, making requests, and completing purchases.",
+        examples: [
+          { english: "How much does this cost?", spanish: "¿Cuánto cuesta esto?" },
+          { english: "Do you have this in a larger size?", spanish: "¿Tiene esto en una talla más grande?" },
+          { english: "I'd like to try this on, please.", spanish: "Me gustaría probarme esto, por favor." },
+          { english: "Can I pay by card?", spanish: "¿Puedo pagar con tarjeta?" },
+        ],
+        exercises: [
+          {
+            id: "shop-a2-1",
+            type: "multiple-choice",
+            question: "Customer: How much ___ these shoes? Shop assistant: They're €50.",
+            options: ["are", "is", "do", "does"],
+            correctAnswer: "are",
+            explanation: "'Shoes' is plural, so we use 'are' with 'How much'."
+          },
+        ]
+      },
+      {
+        id: "jobs-work-a2",
+        title: "Jobs & Work",
+        level: "A2",
+        completed: false,
+        explanation: "Vocabulary and structures for talking about jobs, workplaces, and professional activities.",
+        examples: [
+          { english: "What do you do for a living?", spanish: "¿A qué te dedicas?" },
+          { english: "I work as a teacher.", spanish: "Trabajo como profesor." },
+          { english: "She works in an office downtown.", spanish: "Ella trabaja en una oficina en el centro." },
+          { english: "He's responsible for customer service.", spanish: "Él es responsable del servicio al cliente." },
+        ],
+        exercises: [
+          {
+            id: "job-a2-1",
+            type: "multiple-choice",
+            question: "A: What do you do? B: I ___ a nurse.",
+            options: ["am", "work", "do", "have"],
+            correctAnswer: "am",
+            explanation: "To state your profession: I am + job title."
+          },
+        ]
+      },
+    ]
+  },
 ];
