@@ -2041,6 +2041,7 @@ import {
 } from './grammarCurriculumComplete';
 import { allB1CompleteExercises } from './grammarB1Complete';
 import { allB2CompleteExercises } from './grammarB2Complete';
+import { allC2CompleteExercises } from './grammarC2Complete';
 
 // Combine original, additional, and curriculum exercises for each level
 const allA1Exercises = [...a1GrammarExercises, ...a1AdditionalExercises, ...a1NewExercises, ...a1GrammarCurriculum];
@@ -2048,7 +2049,7 @@ const allA2Exercises = [...a2GrammarExercises, ...a2AdditionalExercises, ...a2Ne
 const allB1Exercises = [...b1GrammarExercises, ...b1AdditionalExercises, ...b1NewExercises, ...b1GrammarCurriculum, ...allB1CompleteExercises];
 const allB2Exercises = [...b2GrammarExercises, ...b2AdditionalExercises, ...b2NewExercises, ...b2GrammarCurriculum, ...allB2CompleteExercises];
 const allC1Exercises = [...c1GrammarExercises, ...c1AdditionalExercises, ...c1NewExercises, ...allC1AdvancedExercises, ...c1GrammarCurriculum];
-const allC2Exercises = [...c2GrammarExercises, ...c2NewExercises];
+const allC2Exercises = [...c2GrammarExercises, ...c2NewExercises, ...allC2CompleteExercises];
 
 export type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
