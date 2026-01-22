@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { ArrowLeft, ChevronDown, ChevronRight, Check, Lock, BookOpen, Clock, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -38,10 +38,20 @@ const levelTextColors: Record<CEFRLevel, string> = {
 
 export default function Curriculum() {
   const navigate = useNavigate();
-  const [selectedLevel, setSelectedLevel] = useState<CEFRLevel>("A1");
+  const [searchParams] = useSearchParams();
+  const levelParam = searchParams.get("level") as CEFRLevel | null;
+  
+  const [selectedLevel, setSelectedLevel] = useState<CEFRLevel>(levelParam || "A1");
   const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
   const [expandedSkills, setExpandedSkills] = useState<string[]>([]);
   const [completedSkills, setCompletedSkills] = useState<string[]>([]);
+
+  // Update level when URL param changes
+  useEffect(() => {
+    if (levelParam && ["A1", "A2", "B1", "B2", "C1", "C2"].includes(levelParam)) {
+      setSelectedLevel(levelParam);
+    }
+  }, [levelParam]);
 
   useEffect(() => {
     const saved = localStorage.getItem("curriculum-progress");

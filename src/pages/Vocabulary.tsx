@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -12,11 +12,21 @@ type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
 export default function Vocabulary() {
   const navigate = useNavigate();
-  const [selectedLevel, setSelectedLevel] = useState<CEFRLevel>("A1");
+  const [searchParams] = useSearchParams();
+  const levelParam = searchParams.get("level") as CEFRLevel | null;
+  
+  const [selectedLevel, setSelectedLevel] = useState<CEFRLevel>(levelParam || "A1");
   const [selectedCategory, setSelectedCategory] = useState<VocabularyCategory | null>(null);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [showingFlashcard, setShowingFlashcard] = useState(false);
+
+  // Update level when URL param changes
+  useEffect(() => {
+    if (levelParam && ["A1", "A2", "B1", "B2", "C1", "C2"].includes(levelParam)) {
+      setSelectedLevel(levelParam);
+    }
+  }, [levelParam]);
 
   const filteredCategories = expandedVocabularyCategories.filter(cat => cat.level === selectedLevel);
   const levelWordCount = filteredCategories.reduce((sum, cat) => sum + cat.words.length, 0);

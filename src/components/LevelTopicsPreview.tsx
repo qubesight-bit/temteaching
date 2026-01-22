@@ -90,7 +90,7 @@ export function LevelTopicsPreview({ level }: LevelTopicsPreviewProps) {
           <Button 
             variant="outline" 
             size="sm"
-            onClick={() => navigate("/curriculum")}
+            onClick={() => navigate(`/curriculum?level=${level}`)}
             className="gap-1"
           >
             Full Curriculum <ChevronRight className="w-4 h-4" />
@@ -133,7 +133,7 @@ export function LevelTopicsPreview({ level }: LevelTopicsPreviewProps) {
                   <div 
                     key={category.id}
                     className="flex items-center gap-3 p-4 rounded-lg border hover:bg-secondary/50 transition-colors cursor-pointer"
-                    onClick={() => navigate("/curriculum")}
+                    onClick={() => navigate(`/curriculum?level=${level}`)}
                   >
                     <div className={cn(
                       "w-10 h-10 rounded-full flex items-center justify-center",
@@ -182,7 +182,7 @@ export function LevelTopicsPreview({ level }: LevelTopicsPreviewProps) {
                   <Button 
                     variant="ghost" 
                     className="w-full"
-                    onClick={() => navigate("/grammar")}
+                    onClick={() => navigate(`/grammar?level=${level}`)}
                   >
                     View all {grammarCount} exercises <ChevronRight className="w-4 h-4 ml-1" />
                   </Button>
@@ -199,7 +199,7 @@ export function LevelTopicsPreview({ level }: LevelTopicsPreviewProps) {
                   <div 
                     key={category.id}
                     className="flex items-center justify-between p-3 rounded-lg border hover:bg-secondary/50 cursor-pointer"
-                    onClick={() => navigate("/vocabulary")}
+                    onClick={() => navigate(`/vocabulary?level=${level}`)}
                   >
                     <div className="flex items-center gap-2">
                       <span className="text-xl">{category.icon}</span>
@@ -230,7 +230,7 @@ export function LevelTopicsPreview({ level }: LevelTopicsPreviewProps) {
                         {skill.subSkills.length} sub-skills
                       </p>
                     </div>
-                    <Button size="sm" variant="ghost" onClick={() => navigate("/curriculum")}>
+                    <Button size="sm" variant="ghost" onClick={() => navigate(`/curriculum?level=${level}`)}>
                       <Play className="w-4 h-4" />
                     </Button>
                   </div>
@@ -239,7 +239,7 @@ export function LevelTopicsPreview({ level }: LevelTopicsPreviewProps) {
                   <Button 
                     variant="ghost" 
                     className="w-full"
-                    onClick={() => navigate("/curriculum")}
+                    onClick={() => navigate(`/curriculum?level=${level}`)}
                   >
                     View all {allSkills.length} skills <ChevronRight className="w-4 h-4 ml-1" />
                   </Button>
@@ -253,7 +253,7 @@ export function LevelTopicsPreview({ level }: LevelTopicsPreviewProps) {
         <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t">
           <Button 
             size="sm" 
-            onClick={() => navigate("/grammar")}
+            onClick={() => navigate(`/grammar?level=${level}`)}
             className="gap-1"
           >
             <BookOpen className="w-4 h-4" /> Practice Grammar
@@ -261,7 +261,7 @@ export function LevelTopicsPreview({ level }: LevelTopicsPreviewProps) {
           <Button 
             size="sm" 
             variant="outline"
-            onClick={() => navigate("/vocabulary")}
+            onClick={() => navigate(`/vocabulary?level=${level}`)}
             className="gap-1"
           >
             <Lightbulb className="w-4 h-4" /> Learn Vocabulary
@@ -269,7 +269,7 @@ export function LevelTopicsPreview({ level }: LevelTopicsPreviewProps) {
           <Button 
             size="sm" 
             variant="outline"
-            onClick={() => navigate("/practice")}
+            onClick={() => navigate(`/practice?level=${level}`)}
             className="gap-1"
           >
             <PenTool className="w-4 h-4" /> Mixed Practice
