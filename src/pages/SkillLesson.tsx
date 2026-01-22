@@ -11,6 +11,11 @@ import { getAdvancedExercisesBySkillId } from "@/data/exercisesDataAdvanced";
 import { getB1ExercisesCompleteBySkillId } from "@/data/b1ExercisesComplete";
 import { getB2ExercisesCompleteBySkillId } from "@/data/b2ExercisesComplete";
 import { getC1ExercisesBySkillId } from "@/data/c1Exercises";
+import { getA1ExercisesBySkillId } from "@/data/curriculumExercisesA1";
+import { getA2ExercisesBySkillId } from "@/data/curriculumExercisesA2";
+import { getB1CurriculumExercisesBySkillId } from "@/data/curriculumExercisesB1";
+import { getB2CurriculumExercisesBySkillId } from "@/data/curriculumExercisesB2";
+import { getC1CurriculumExercisesBySkillId, getC2CurriculumExercisesBySkillId } from "@/data/curriculumExercisesC1C2";
 import { getImageExercisesForSkill } from "@/data/imageVocabularyData";
 import { getArticleForExercise } from "@/data/articlesData";
 import { getCurriculumArticleById, searchCurriculumArticles } from "@/data/curriculumArticles";
@@ -25,22 +30,41 @@ type LessonStep = "overview" | "exercises" | "complete";
 
 // Get exercises from the database or generate fallback
 const getExercisesForSkill = (skill: Skill, level: CEFRLevel, categoryType: string): Exercise[] => {
-  // First try B1 complete exercises
+  // First try new curriculum exercises by level
+  if (level === "A1") {
+    const a1Exercises = getA1ExercisesBySkillId(skill.id);
+    if (a1Exercises.length > 0) return a1Exercises;
+  }
+  
+  if (level === "A2") {
+    const a2Exercises = getA2ExercisesBySkillId(skill.id);
+    if (a2Exercises.length > 0) return a2Exercises;
+  }
+  
   if (level === "B1") {
+    const b1CurrExercises = getB1CurriculumExercisesBySkillId(skill.id);
+    if (b1CurrExercises.length > 0) return b1CurrExercises;
     const b1Exercises = getB1ExercisesCompleteBySkillId(skill.id);
     if (b1Exercises.length > 0) return b1Exercises;
   }
   
-  // Try B2 complete exercises
   if (level === "B2") {
+    const b2CurrExercises = getB2CurriculumExercisesBySkillId(skill.id);
+    if (b2CurrExercises.length > 0) return b2CurrExercises;
     const b2Exercises = getB2ExercisesCompleteBySkillId(skill.id, categoryType);
     if (b2Exercises.length > 0) return b2Exercises;
   }
   
-  // Try C1 exercises
   if (level === "C1") {
+    const c1CurrExercises = getC1CurriculumExercisesBySkillId(skill.id);
+    if (c1CurrExercises.length > 0) return c1CurrExercises;
     const c1Exercises = getC1ExercisesBySkillId(skill.id, categoryType);
     if (c1Exercises.length > 0) return c1Exercises;
+  }
+  
+  if (level === "C2") {
+    const c2Exercises = getC2CurriculumExercisesBySkillId(skill.id);
+    if (c2Exercises.length > 0) return c2Exercises;
   }
   
   // Try to get exercises from database
@@ -57,17 +81,17 @@ const getExercisesForSkill = (skill: Skill, level: CEFRLevel, categoryType: stri
     exercises = [...exercises, ...imageExercises];
   }
   
-  // If still no exercises, generate basic ones
+  // If still no exercises, generate basic ones based on skill
   if (exercises.length === 0) {
     exercises = skill.subSkills.map((subSkill, index) => ({
-      id: `gen-${index}`,
+      id: `gen-${skill.id}-${index}`,
       type: 'multiple-choice' as const,
-      question: `Practice: ${subSkill.title}`,
-      options: ["Option A", "Option B", "Option C", "Option D"],
-      correctAnswer: "Option A",
-      explanation: `This is related to ${skill.title} - ${subSkill.title}`,
+      question: `Practice: ${subSkill.title} - Complete this exercise related to ${skill.title}.`,
+      options: ["Complete the task", "Skip this exercise", "Review material", "Practice more"],
+      correctAnswer: "Complete the task",
+      explanation: `This exercise helps you practice ${skill.title} - ${subSkill.title}. Keep practicing to improve!`,
       difficulty: 1 as const,
-      tags: [categoryType]
+      tags: [categoryType, level.toLowerCase()]
     }));
   }
   
