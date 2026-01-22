@@ -2039,11 +2039,12 @@ import {
   b2GrammarCurriculum,
   c1GrammarCurriculum,
 } from './grammarCurriculumComplete';
+import { allB1CompleteExercises } from './grammarB1Complete';
 
 // Combine original, additional, and curriculum exercises for each level
 const allA1Exercises = [...a1GrammarExercises, ...a1AdditionalExercises, ...a1NewExercises, ...a1GrammarCurriculum];
 const allA2Exercises = [...a2GrammarExercises, ...a2AdditionalExercises, ...a2NewExercises, ...a2GrammarCurriculum];
-const allB1Exercises = [...b1GrammarExercises, ...b1AdditionalExercises, ...b1NewExercises, ...b1GrammarCurriculum];
+const allB1Exercises = [...b1GrammarExercises, ...b1AdditionalExercises, ...b1NewExercises, ...b1GrammarCurriculum, ...allB1CompleteExercises];
 const allB2Exercises = [...b2GrammarExercises, ...b2AdditionalExercises, ...b2NewExercises, ...b2GrammarCurriculum];
 const allC1Exercises = [...c1GrammarExercises, ...c1AdditionalExercises, ...c1NewExercises, ...allC1AdvancedExercises, ...c1GrammarCurriculum];
 const allC2Exercises = [...c2GrammarExercises, ...c2NewExercises];
