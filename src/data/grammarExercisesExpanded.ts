@@ -2016,7 +2016,7 @@ export const c1GrammarExercises: GrammarExercise[] = [
 // ==================== UTILITY FUNCTIONS ====================
 
 import { c2GrammarExercises } from './grammarExercisesC2';
-import { 
+import {
   a1AdditionalExercises, 
   a2AdditionalExercises, 
   b1AdditionalExercises, 
@@ -2032,13 +2032,20 @@ import {
   c2NewExercises
 } from './grammarExercisesExpanded2';
 import { allC1AdvancedExercises } from './grammarExercisesC1Complete';
+import {
+  a1GrammarCurriculum,
+  a2GrammarCurriculum,
+  b1GrammarCurriculum,
+  b2GrammarCurriculum,
+  c1GrammarCurriculum,
+} from './grammarCurriculumComplete';
 
-// Combine original and additional exercises for each level
-const allA1Exercises = [...a1GrammarExercises, ...a1AdditionalExercises, ...a1NewExercises];
-const allA2Exercises = [...a2GrammarExercises, ...a2AdditionalExercises, ...a2NewExercises];
-const allB1Exercises = [...b1GrammarExercises, ...b1AdditionalExercises, ...b1NewExercises];
-const allB2Exercises = [...b2GrammarExercises, ...b2AdditionalExercises, ...b2NewExercises];
-const allC1Exercises = [...c1GrammarExercises, ...c1AdditionalExercises, ...c1NewExercises, ...allC1AdvancedExercises];
+// Combine original, additional, and curriculum exercises for each level
+const allA1Exercises = [...a1GrammarExercises, ...a1AdditionalExercises, ...a1NewExercises, ...a1GrammarCurriculum];
+const allA2Exercises = [...a2GrammarExercises, ...a2AdditionalExercises, ...a2NewExercises, ...a2GrammarCurriculum];
+const allB1Exercises = [...b1GrammarExercises, ...b1AdditionalExercises, ...b1NewExercises, ...b1GrammarCurriculum];
+const allB2Exercises = [...b2GrammarExercises, ...b2AdditionalExercises, ...b2NewExercises, ...b2GrammarCurriculum];
+const allC1Exercises = [...c1GrammarExercises, ...c1AdditionalExercises, ...c1NewExercises, ...allC1AdvancedExercises, ...c1GrammarCurriculum];
 const allC2Exercises = [...c2GrammarExercises, ...c2NewExercises];
 
 export type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
