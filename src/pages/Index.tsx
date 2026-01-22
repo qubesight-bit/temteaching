@@ -1,12 +1,17 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppLayout } from "@/components/AppLayout";
-import { LevelProgress } from "@/components/LevelProgress";
+import { InteractiveLevelSelector } from "@/components/InteractiveLevelSelector";
+import { LevelTopicsPreview } from "@/components/LevelTopicsPreview";
 import { QuickStats } from "@/components/QuickStats";
 import { TodayLesson } from "@/components/TodayLesson";
 import { ModuleCard } from "@/components/ModuleCard";
 import { DailyGoalWidget } from "@/components/DailyGoalWidget";
 import { AITutorPreview } from "@/components/AITutorPreview";
 import { BookOpen, MessageSquare, PenTool, GraduationCap, Lightbulb, Map, Library, Music, Sparkles } from "lucide-react";
+import { useAppState } from "@/hooks/useAppState";
+
+type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
 const modules = [
   {
@@ -85,6 +90,11 @@ const modules = [
 
 const Index = () => {
   const navigate = useNavigate();
+  const { userProgress } = useAppState();
+  const [selectedLevel, setSelectedLevel] = useState<CEFRLevel>(
+    (userProgress.currentLevel as CEFRLevel) || "A1"
+  );
+
   return (
     <AppLayout>
       <div className="container py-8">
@@ -98,13 +108,21 @@ const Index = () => {
           </p>
         </div>
 
-        {/* Level Progress */}
-        <div className="mb-8 p-6 rounded-2xl bg-card border shadow-card animate-slide-up" style={{ animationDelay: '0.1s' }}>
+        {/* Interactive Level Selector */}
+        <div className="mb-6 p-6 rounded-2xl bg-card border shadow-card animate-slide-up" style={{ animationDelay: '0.1s' }}>
           <div className="flex items-center justify-between mb-4">
-            <h2 className="font-display font-semibold text-lg">Your CEFR Progress</h2>
-            <span className="text-sm text-muted-foreground">Current level: <span className="font-semibold text-level-a1">A1</span></span>
+            <h2 className="font-display font-semibold text-lg">Explore CEFR Levels</h2>
           </div>
-          <LevelProgress currentLevel="A1" progress={0} />
+          <InteractiveLevelSelector 
+            selectedLevel={selectedLevel}
+            onLevelSelect={setSelectedLevel}
+            currentUserLevel={userProgress.currentLevel as CEFRLevel}
+          />
+        </div>
+
+        {/* Level Topics Preview */}
+        <div className="mb-8 animate-slide-up" style={{ animationDelay: '0.15s' }}>
+          <LevelTopicsPreview level={selectedLevel} />
         </div>
 
         {/* Quick Stats */}
