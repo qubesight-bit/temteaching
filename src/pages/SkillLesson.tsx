@@ -16,6 +16,7 @@ import { getA2ExercisesBySkillId } from "@/data/curriculumExercisesA2";
 import { getB1CurriculumExercisesBySkillId } from "@/data/curriculumExercisesB1";
 import { getB2CurriculumExercisesBySkillId } from "@/data/curriculumExercisesB2";
 import { getC1CurriculumExercisesBySkillId, getC2CurriculumExercisesBySkillId } from "@/data/curriculumExercisesC1C2";
+import { getC2ExercisesCompleteBySkillId } from "@/data/c2ExercisesComplete";
 import { getImageExercisesForSkill } from "@/data/imageVocabularyData";
 import { getArticleForExercise } from "@/data/articlesData";
 import { getCurriculumArticleById, searchCurriculumArticles } from "@/data/curriculumArticles";
@@ -63,6 +64,8 @@ const getExercisesForSkill = (skill: Skill, level: CEFRLevel, categoryType: stri
   }
   
   if (level === "C2") {
+    const c2CompleteExercises = getC2ExercisesCompleteBySkillId(skill.id);
+    if (c2CompleteExercises.length > 0) return c2CompleteExercises;
     const c2Exercises = getC2CurriculumExercisesBySkillId(skill.id);
     if (c2Exercises.length > 0) return c2Exercises;
   }

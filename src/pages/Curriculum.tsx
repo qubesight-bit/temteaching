@@ -203,6 +203,9 @@ export default function Curriculum() {
               completedSkills={completedSkills}
               onToggleSubSkill={toggleSubSkill}
               currentLevelData={currentLevelData}
+              onNavigateToLesson={(level, categoryId, skillId) => {
+                navigate(`/lesson/${level}/${categoryId}/${skillId}`);
+              }}
             />
           ))}
         </div>
@@ -221,6 +224,7 @@ interface CategoryCardProps {
   completedSkills: string[];
   onToggleSubSkill: (subSkillId: string) => void;
   currentLevelData: LevelCurriculum;
+  onNavigateToLesson: (level: CEFRLevel, categoryId: string, skillId: string) => void;
 }
 
 function CategoryCard({
@@ -233,6 +237,7 @@ function CategoryCard({
   completedSkills,
   onToggleSubSkill,
   currentLevelData,
+  onNavigateToLesson,
 }: CategoryCardProps) {
   const progress = getCategoryProgress(category.id, completedSkills, currentLevelData);
 
@@ -271,11 +276,13 @@ function CategoryCard({
                 key={skill.id}
                 skill={skill}
                 level={level}
+                categoryId={category.id}
                 isExpanded={expandedSkills.includes(skill.id)}
                 onToggle={() => onToggleSkill(skill.id)}
                 completedSkills={completedSkills}
                 onToggleSubSkill={onToggleSubSkill}
                 currentLevelData={currentLevelData}
+                onNavigateToLesson={onNavigateToLesson}
               />
             ))}
           </CardContent>
@@ -288,21 +295,25 @@ function CategoryCard({
 interface SkillRowProps {
   skill: Skill;
   level: CEFRLevel;
+  categoryId: string;
   isExpanded: boolean;
   onToggle: () => void;
   completedSkills: string[];
   onToggleSubSkill: (subSkillId: string) => void;
   currentLevelData: LevelCurriculum;
+  onNavigateToLesson: (level: CEFRLevel, categoryId: string, skillId: string) => void;
 }
 
 function SkillRow({
   skill,
   level,
+  categoryId,
   isExpanded,
   onToggle,
   completedSkills,
   onToggleSubSkill,
   currentLevelData,
+  onNavigateToLesson,
 }: SkillRowProps) {
   const progress = getSkillProgress(skill.id, completedSkills, currentLevelData);
   const isComplete = progress === 100;
@@ -372,6 +383,19 @@ function SkillRow({
                 </button>
               );
             })}
+            
+            {/* Practice Button */}
+            <Button
+              size="sm"
+              className={cn("w-full mt-2", levelColors[level], "text-white")}
+              onClick={(e) => {
+                e.stopPropagation();
+                onNavigateToLesson(level, categoryId, skill.id);
+              }}
+            >
+              <Target className="w-4 h-4 mr-2" />
+              Practice {skill.title}
+            </Button>
           </div>
         </CollapsibleContent>
       </div>
