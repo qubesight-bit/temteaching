@@ -1056,4 +1056,191 @@ export const grammarCategories: GrammarCategory[] = [
       },
     ]
   },
+  {
+    id: "b2-advanced",
+    title: "B2 Upper-Intermediate",
+    description: "Clear, detailed communication on a wide range of subjects",
+    icon: "🎯",
+    topics: [
+      {
+        id: "mixed-conditionals-b2",
+        title: "Mixed Conditionals",
+        level: "B2",
+        completed: false,
+        explanation: "Mixed conditionals combine elements from different conditional types. Type 3+2: If + past perfect, would + infinitive (past cause, present result). Type 2+3: If + past simple, would have + past participle (present cause, past result).",
+        examples: [
+          { english: "If I had studied medicine, I would be a doctor now.", spanish: "Si hubiera estudiado medicina, ahora sería médico." },
+          { english: "If she weren't so shy, she would have spoken up.", spanish: "Si ella no fuera tan tímida, habría hablado." },
+          { english: "If we had left earlier, we wouldn't be stuck in traffic.", spanish: "Si hubiéramos salido antes, no estaríamos atascados." },
+        ],
+        exercises: [
+          {
+            id: "mixc-b2-1",
+            type: "multiple-choice",
+            question: "If I ___ harder at university, I ___ a better job now.",
+            options: ["had studied / would have", "studied / would have", "had studied / would", "have studied / would have"],
+            correctAnswer: "had studied / would",
+            explanation: "Mixed conditional: past perfect (past cause) + would + infinitive (present result)."
+          },
+        ]
+      },
+      {
+        id: "third-conditional-b2",
+        title: "Third Conditional Mastery",
+        level: "B2",
+        completed: false,
+        explanation: "The third conditional expresses hypothetical past situations with their imagined results. Structure: If + past perfect, would/could/might have + past participle. Used for regrets, speculation about the past, and analyzing past decisions.",
+        examples: [
+          { english: "If I had known about the meeting, I would have attended.", spanish: "Si hubiera sabido de la reunión, habría asistido." },
+          { english: "If they had invested earlier, they might have become rich.", spanish: "Si hubieran invertido antes, podrían haberse hecho ricos." },
+          { english: "She could have passed if she had studied more.", spanish: "Podría haber aprobado si hubiera estudiado más." },
+        ],
+        exercises: [
+          {
+            id: "3cond-b2-1",
+            type: "multiple-choice",
+            question: "If the weather ___ better, we ___ the picnic.",
+            options: ["had been / would have enjoyed", "was / would enjoy", "were / would have enjoyed", "had been / enjoyed"],
+            correctAnswer: "had been / would have enjoyed",
+            explanation: "Third conditional for hypothetical past: If + past perfect, would have + past participle."
+          },
+        ]
+      },
+      {
+        id: "past-perfect-b2",
+        title: "Past Perfect Advanced",
+        level: "B2",
+        completed: false,
+        explanation: "The past perfect (had + past participle) establishes the 'earlier past' in narratives, explains cause-effect in past situations, and is essential in reported speech and third conditionals.",
+        examples: [
+          { english: "By the time she arrived, the meeting had already finished.", spanish: "Para cuando ella llegó, la reunión ya había terminado." },
+          { english: "I realized I had left my wallet at home.", spanish: "Me di cuenta de que había dejado mi cartera en casa." },
+          { english: "They had never seen such a beautiful sunset.", spanish: "Nunca habían visto una puesta de sol tan hermosa." },
+        ],
+        exercises: [
+          {
+            id: "pp-b2-1",
+            type: "multiple-choice",
+            question: "When I got to the station, the train ___.",
+            options: ["had already left", "already left", "has already left", "was already leaving"],
+            correctAnswer: "had already left",
+            explanation: "Past perfect for an action completed before another past action."
+          },
+        ]
+      },
+      {
+        id: "modals-past-b2",
+        title: "Modals in the Past",
+        level: "B2",
+        completed: false,
+        explanation: "Modal verbs + have + past participle express speculation, criticism, and missed opportunities about the past. Must have (deduction), might/may have (possibility), could have (possibility/criticism), should have (advice/regret), would have (hypothetical).",
+        examples: [
+          { english: "She must have forgotten about the appointment.", spanish: "Ella debe haberse olvidado de la cita." },
+          { english: "You should have told me earlier!", spanish: "¡Deberías habérmelo dicho antes!" },
+          { english: "They might have taken the wrong train.", spanish: "Podrían haber tomado el tren equivocado." },
+          { english: "He could have been more careful.", spanish: "Podría haber tenido más cuidado." },
+        ],
+        exercises: [
+          {
+            id: "modp-b2-1",
+            type: "multiple-choice",
+            question: "The lights are off. They ___ to bed. (logical deduction)",
+            options: ["must have gone", "might go", "should have gone", "could go"],
+            correctAnswer: "must have gone",
+            explanation: "'Must have + past participle' for strong deduction about the past."
+          },
+        ]
+      },
+      {
+        id: "complex-passive-b2",
+        title: "Complex Passive Forms",
+        level: "B2",
+        completed: false,
+        explanation: "Advanced passive structures including passive with modals, passive with reporting verbs (It is said that..., He is believed to...), passive causatives (have/get something done), and double object passives.",
+        examples: [
+          { english: "It is believed that the company will expand.", spanish: "Se cree que la empresa se expandirá." },
+          { english: "He is said to be the best in his field.", spanish: "Se dice que es el mejor en su campo." },
+          { english: "I need to have my car serviced.", spanish: "Necesito que me revisen el coche." },
+          { english: "The report should have been submitted yesterday.", spanish: "El informe debería haberse entregado ayer." },
+        ],
+        exercises: [
+          {
+            id: "cpass-b2-1",
+            type: "multiple-choice",
+            question: "It ___ that the CEO will resign.",
+            options: ["is rumoured", "rumours", "is rumouring", "has rumoured"],
+            correctAnswer: "is rumoured",
+            explanation: "Passive with reporting verbs: It is rumoured/believed/said that..."
+          },
+        ]
+      },
+      {
+        id: "reported-speech-b2",
+        title: "Reported Speech Advanced",
+        level: "B2",
+        completed: false,
+        explanation: "Transforming direct speech to indirect speech with tense backshift, pronoun changes, and time/place references. Includes reporting questions, commands, and complex tense sequences.",
+        examples: [
+          { english: "He said he had been waiting for hours.", spanish: "Dijo que había estado esperando durante horas." },
+          { english: "She asked if I could help her.", spanish: "Me preguntó si podía ayudarla." },
+          { english: "The teacher told us not to forget our homework.", spanish: "El profesor nos dijo que no olvidáramos los deberes." },
+        ],
+        exercises: [
+          {
+            id: "repsp-b2-1",
+            type: "multiple-choice",
+            question: "'I will call you tomorrow' → She said she ___ me the next day.",
+            options: ["would call", "will call", "called", "had called"],
+            correctAnswer: "would call",
+            explanation: "Reported speech: 'will' becomes 'would' with tense backshift."
+          },
+        ]
+      },
+      {
+        id: "wish-regret-b2",
+        title: "Wish & Regret Structures",
+        level: "B2",
+        completed: false,
+        explanation: "Expressing wishes about present, past, and future situations. Wish + past simple (present unreal), wish + past perfect (past regret), wish + would (complaints/future desires). Also: If only, It's time, Would rather.",
+        examples: [
+          { english: "I wish I had more free time.", spanish: "Ojalá tuviera más tiempo libre." },
+          { english: "If only I had listened to your advice!", spanish: "¡Si tan solo hubiera escuchado tu consejo!" },
+          { english: "I wish you wouldn't make so much noise.", spanish: "Ojalá no hicieras tanto ruido." },
+          { english: "It's high time we left.", spanish: "Ya es hora de que nos vayamos." },
+        ],
+        exercises: [
+          {
+            id: "wish-b2-1",
+            type: "multiple-choice",
+            question: "I wish I ___ to the party last night. (regret)",
+            options: ["had gone", "went", "have gone", "would go"],
+            correctAnswer: "had gone",
+            explanation: "Wish + past perfect for past regrets."
+          },
+        ]
+      },
+      {
+        id: "abstract-vocabulary-b2",
+        title: "Abstract Topic Expression",
+        level: "B2",
+        completed: false,
+        explanation: "Structures for discussing abstract topics like society, technology, and opinions: Defining/non-defining relative clauses, nominalization, hedging language, and complex sentence structures for nuanced arguments.",
+        examples: [
+          { english: "The impact of technology on society is undeniable.", spanish: "El impacto de la tecnología en la sociedad es innegable." },
+          { english: "It could be argued that social media has more disadvantages.", spanish: "Podría argumentarse que las redes sociales tienen más desventajas." },
+          { english: "This phenomenon, which affects millions, requires attention.", spanish: "Este fenómeno, que afecta a millones, requiere atención." },
+        ],
+        exercises: [
+          {
+            id: "abs-b2-1",
+            type: "multiple-choice",
+            question: "It ___ that technology has transformed communication.",
+            options: ["could be argued", "argues", "is arguing", "has argued"],
+            correctAnswer: "could be argued",
+            explanation: "Hedging structure for presenting opinions in academic/formal contexts."
+          },
+        ]
+      },
+    ]
+  },
 ];
