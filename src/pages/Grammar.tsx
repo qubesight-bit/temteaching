@@ -7,6 +7,7 @@ import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { grammarCategories, GrammarCategory } from "@/data/grammarData";
 import { grammarExerciseStats } from "@/data/grammarExercisesExpanded";
+import { grammarCurriculumStats } from "@/data/grammarCurriculumComplete";
 import { ChevronDown, ChevronRight, ArrowLeft, Dumbbell } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TopicRowWithLevels } from "@/components/grammar/TopicRowWithLevels";
