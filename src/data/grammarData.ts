@@ -668,4 +668,186 @@ export const grammarCategories: GrammarCategory[] = [
       },
     ]
   },
+  {
+    id: "advanced-structures",
+    title: "Advanced Structures",
+    description: "C1 level grammar for sophisticated communication",
+    icon: "🎯",
+    topics: [
+      {
+        id: "inversions",
+        title: "Inversions",
+        level: "C1",
+        completed: false,
+        explanation: "Inversion occurs when the subject and auxiliary verb are reversed for emphasis. Common with negative adverbs: never, rarely, seldom, hardly, not only, little.",
+        examples: [
+          { english: "Never have I seen such beauty.", spanish: "Nunca he visto tanta belleza." },
+          { english: "Rarely does she make mistakes.", spanish: "Raramente comete errores." },
+          { english: "Not only did he win, but he also set a record.", spanish: "No solo ganó, sino que también batió un récord." },
+        ],
+        exercises: [
+          {
+            id: "inv-1",
+            type: "multiple-choice",
+            question: "Hardly ___ arrived when the phone rang.",
+            options: ["had I", "I had", "have I", "I have"],
+            correctAnswer: "had I",
+            explanation: "'Hardly' triggers inversion: Hardly had I arrived..."
+          },
+        ]
+      },
+      {
+        id: "cleft-sentences",
+        title: "Cleft Sentences",
+        level: "C1",
+        completed: false,
+        explanation: "Cleft sentences emphasize specific information. It-clefts use 'It was/is... that/who'. What-clefts use 'What... is/was'.",
+        examples: [
+          { english: "It was John who broke the window.", spanish: "Fue John quien rompió la ventana." },
+          { english: "What I need is a vacation.", spanish: "Lo que necesito es unas vacaciones." },
+          { english: "It's the price that concerns me.", spanish: "Es el precio lo que me preocupa." },
+        ],
+        exercises: [
+          {
+            id: "cleft-1",
+            type: "multiple-choice",
+            question: "___ the manager who made the final decision.",
+            options: ["It was", "There was", "That was", "What was"],
+            correctAnswer: "It was",
+            explanation: "It-cleft for emphasis: It was X who/that..."
+          },
+        ]
+      },
+      {
+        id: "participle-clauses",
+        title: "Participle Clauses",
+        level: "C1",
+        completed: false,
+        explanation: "Participle clauses replace relative clauses or adverbial clauses. Present participle (-ing) for active, past participle (-ed) for passive meanings.",
+        examples: [
+          { english: "Having finished work, she went home.", spanish: "Habiendo terminado el trabajo, se fue a casa." },
+          { english: "Encouraged by success, he continued.", spanish: "Animado por el éxito, continuó." },
+          { english: "Not knowing what to do, I waited.", spanish: "Sin saber qué hacer, esperé." },
+        ],
+        exercises: [
+          {
+            id: "part-1",
+            type: "multiple-choice",
+            question: "___ the instructions, he began the test.",
+            options: ["Having read", "Have read", "Reading", "To read"],
+            correctAnswer: "Having read",
+            explanation: "Perfect participle for action completed before main verb."
+          },
+        ]
+      },
+      {
+        id: "modal-perfects",
+        title: "Modal Perfects",
+        level: "C1",
+        completed: false,
+        explanation: "Modal + have + past participle expresses deductions, criticism, and regret about the past. Must have (certain), can't have (impossible), should have (criticism).",
+        examples: [
+          { english: "She must have left early.", spanish: "Debe haberse ido temprano." },
+          { english: "He can't have forgotten.", spanish: "No puede haberlo olvidado." },
+          { english: "You should have told me.", spanish: "Deberías habérmelo dicho." },
+        ],
+        exercises: [
+          {
+            id: "modp-1",
+            type: "multiple-choice",
+            question: "She ___ the train; her car is still here.",
+            options: ["must have taken", "can't have taken", "might take", "should take"],
+            correctAnswer: "must have taken",
+            explanation: "'Must have' = certain deduction about the past."
+          },
+        ]
+      },
+      {
+        id: "subjunctive",
+        title: "Subjunctive Mood",
+        level: "C1",
+        completed: false,
+        explanation: "The subjunctive uses base form after verbs of demand/suggestion (demand, insist, suggest, recommend) and in 'It is essential/important that...'.",
+        examples: [
+          { english: "I suggest he leave now.", spanish: "Sugiero que se vaya ahora." },
+          { english: "It is essential that she be informed.", spanish: "Es esencial que se le informe." },
+          { english: "They insisted he apologize.", spanish: "Insistieron en que se disculpara." },
+        ],
+        exercises: [
+          {
+            id: "subj-1",
+            type: "multiple-choice",
+            question: "The doctor recommended that she ___ more rest.",
+            options: ["get", "gets", "got", "getting"],
+            correctAnswer: "get",
+            explanation: "Subjunctive after 'recommend': base form without -s."
+          },
+        ]
+      },
+      {
+        id: "advanced-passive",
+        title: "Advanced Passive Forms",
+        level: "C1",
+        completed: false,
+        explanation: "Complex passive structures include causative have/get, passive infinitives, and impersonal passives (It is said that...).",
+        examples: [
+          { english: "It is believed that he escaped.", spanish: "Se cree que escapó." },
+          { english: "She is known to be brilliant.", spanish: "Se sabe que es brillante." },
+          { english: "The report is being written.", spanish: "El informe está siendo escrito." },
+        ],
+        exercises: [
+          {
+            id: "advp-1",
+            type: "multiple-choice",
+            question: "It ___ that the economy will improve.",
+            options: ["is expected", "expects", "is expecting", "expected"],
+            correctAnswer: "is expected",
+            explanation: "Impersonal passive: It is expected/believed/thought that..."
+          },
+        ]
+      },
+      {
+        id: "mixed-conditionals",
+        title: "Mixed Conditionals",
+        level: "C1",
+        completed: false,
+        explanation: "Mixed conditionals combine different time references: past condition with present result (If + past perfect, would + base) or present condition with past result.",
+        examples: [
+          { english: "If I had studied law, I would be a lawyer now.", spanish: "Si hubiera estudiado derecho, ahora sería abogado." },
+          { english: "If she were taller, she would have been a model.", spanish: "Si fuera más alta, habría sido modelo." },
+        ],
+        exercises: [
+          {
+            id: "mixc-1",
+            type: "multiple-choice",
+            question: "If I ___ harder at school, I ___ a better job now.",
+            options: ["had worked / would have", "worked / would have", "had worked / would", "work / would have"],
+            correctAnswer: "had worked / would have",
+            explanation: "Past unreal condition → present unreal result."
+          },
+        ]
+      },
+      {
+        id: "discourse-markers",
+        title: "Advanced Discourse Markers",
+        level: "C1",
+        completed: false,
+        explanation: "Sophisticated linking words for academic and formal writing: nonetheless, furthermore, consequently, notwithstanding, whereby.",
+        examples: [
+          { english: "The evidence is limited; nonetheless, we can draw conclusions.", spanish: "La evidencia es limitada; no obstante, podemos sacar conclusiones." },
+          { english: "Furthermore, the results confirm our hypothesis.", spanish: "Además, los resultados confirman nuestra hipótesis." },
+        ],
+        exercises: [
+          {
+            id: "disc-1",
+            type: "multiple-choice",
+            question: "The data was inconclusive. ___, we proceeded with the study.",
+            options: ["Nonetheless", "Therefore", "Because", "Although"],
+            correctAnswer: "Nonetheless",
+            explanation: "'Nonetheless' = despite that, nevertheless."
+          },
+        ]
+      },
+    ]
+  },
 ];
