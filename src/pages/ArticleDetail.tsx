@@ -237,7 +237,7 @@ export default function ArticleDetail() {
                             </Button>
                           </div>
                           <p className="text-muted-foreground text-sm">
-                            {example.spanish}
+                            {example.context}
                           </p>
                           {example.explanation && (
                             <p className="text-xs text-primary/80 mt-2 italic">
