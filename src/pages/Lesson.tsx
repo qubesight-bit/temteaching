@@ -233,7 +233,7 @@ export default function Lesson() {
                             <Volume2 className="w-4 h-4" />
                           </Button>
                         </div>
-                        <p className="text-sm text-muted-foreground mt-1">{example.spanish}</p>
+                        <p className="text-sm text-muted-foreground mt-1">{example.context}</p>
                       </div>
                     ))}
                   </div>

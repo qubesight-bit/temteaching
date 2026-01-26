@@ -145,7 +145,7 @@ export default function Vocabulary() {
                     {currentWord.pronunciation}
                   </span>
                   <p className="text-sm text-center text-muted-foreground mt-8">
-                    Tap to see translation
+                    Tap to see definition
                   </p>
                 </CardContent>
               </Card>
@@ -157,15 +157,15 @@ export default function Vocabulary() {
                 )}
               >
                 <CardContent className="h-full flex flex-col items-center justify-center p-8">
-                  <span className="text-4xl font-display font-bold text-primary mb-4">
-                    {currentWord.spanish}
+                  <span className="text-xl font-display font-bold text-primary mb-4">
+                    {currentWord.definition}
                   </span>
                   <div className="text-center space-y-2 mt-4">
                     <p className="text-sm italic text-foreground">
                       "{currentWord.example}"
                     </p>
                     <p className="text-sm text-muted-foreground">
-                      {currentWord.exampleTranslation}
+                      {currentWord.context}
                     </p>
                   </div>
                 </CardContent>
