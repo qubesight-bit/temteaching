@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
@@ -27,6 +27,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
+import { useExerciseFeedback } from "@/hooks/useExerciseFeedback";
 
 type LessonStep = "overview" | "exercises" | "complete";
 
@@ -385,6 +386,10 @@ export default function SkillLesson() {
   const [showExplanation, setShowExplanation] = useState(false);
   const [score, setScore] = useState({ correct: 0, incorrect: 0 });
   const [completedSubSkills, setCompletedSubSkills] = useState<Set<string>>(new Set());
+  const [incorrectAnswers, setIncorrectAnswers] = useState<{ question: string; userAnswer: string; correctAnswer: string }[]>([]);
+  const feedbackSentRef = useRef(false);
+  
+  const { sendFeedbackToTeacher } = useExerciseFeedback();
 
   // Find the skill from curriculum data
   const { skill, category, levelData } = useMemo(() => {
@@ -431,10 +436,19 @@ export default function SkillLesson() {
       });
     } else {
       setScore(prev => ({ ...prev, incorrect: prev.incorrect + 1 }));
+      // Track incorrect answer for teacher feedback
+      const correctAnswerStr = Array.isArray(currentExerciseData.correctAnswer) 
+        ? currentExerciseData.correctAnswer.join(', ')
+        : currentExerciseData.correctAnswer;
+      setIncorrectAnswers(prev => [...prev, {
+        question: currentExerciseData.question,
+        userAnswer: answer,
+        correctAnswer: correctAnswerStr,
+      }]);
     }
   };
 
-  const handleNextExercise = () => {
+  const handleNextExercise = async () => {
     // Mark subSkill as completed
     if (skill.subSkills[currentExercise]) {
       setCompletedSubSkills(prev => new Set([...prev, skill.subSkills[currentExercise].id]));
@@ -445,6 +459,34 @@ export default function SkillLesson() {
       setSelectedAnswer(null);
       setShowExplanation(false);
     } else {
+      // Send feedback to teacher when exercise is completed
+      if (!feedbackSentRef.current) {
+        feedbackSentRef.current = true;
+        const percentage = Math.round(((score.correct + (selectedAnswer === currentExerciseData?.correctAnswer ? 1 : 0)) / exercises.length) * 100);
+        
+        sendFeedbackToTeacher({
+          exerciseType: categoryId?.includes('gram') ? 'Grammar' 
+            : categoryId?.includes('vocab') ? 'Vocabulary'
+            : categoryId?.includes('speak') ? 'Speaking'
+            : categoryId?.includes('listen') ? 'Listening'
+            : categoryId?.includes('read') ? 'Reading'
+            : categoryId?.includes('writ') ? 'Writing'
+            : 'Practice',
+          exerciseTitle: skill.title,
+          level: level || 'Unknown',
+          score: percentage,
+          totalQuestions: exercises.length,
+          correctAnswers: score.correct + (selectedAnswer === currentExerciseData?.correctAnswer ? 1 : 0),
+          incorrectAnswers: incorrectAnswers,
+        }).then(result => {
+          if (result.success) {
+            console.log("Teacher feedback sent successfully");
+          } else {
+            console.error("Failed to send teacher feedback:", result.error);
+          }
+        });
+      }
+      
       setCurrentStep("complete");
     }
   };

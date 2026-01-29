@@ -1,1 +1,10 @@
 project_id = "rnmnpubprzqykqneckne"
+
+[functions.conversation-chat]
+verify_jwt = false
+
+[functions.youtube-search]
+verify_jwt = false
+
+[functions.send-exercise-feedback]
+verify_jwt = false
