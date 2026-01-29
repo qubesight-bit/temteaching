@@ -49,10 +49,10 @@ export function Header({ children }: HeaderProps) {
             onClick={() => navigate("/")}
           >
             <div className="w-9 h-9 rounded-xl gradient-primary flex items-center justify-center">
-              <span className="text-white font-bold text-lg">E</span>
+              <span className="text-white font-bold text-lg">T</span>
             </div>
             <span className="font-display font-bold text-xl hidden sm:block">
-              English<span className="text-primary">Path</span>
+              Teacher <span className="text-primary">Tim</span>
             </span>
           </button>
         </div>
