@@ -219,24 +219,75 @@ export const getSongKey = (title: string, artist: string): string => {
   return `${title.toLowerCase()}-${artist.toLowerCase()}`.replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
 };
 
+// Normalize text for better matching
+const normalizeText = (text: string): string => {
+  return text
+    .toLowerCase()
+    .replace(/\(.*?\)/g, '') // Remove parentheses content
+    .replace(/\[.*?\]/g, '') // Remove brackets content
+    .replace(/karaoke|version|lyrics|with|official|video|hd|4k|remaster|remastered/gi, '')
+    .replace(/[^a-z0-9\s]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+};
+
+// Try to find matching lyrics with fuzzy matching
 export const getLocalLyrics = (title: string, artist: string): SynchronizedLyrics | null => {
-  const key = getSongKey(title, artist);
-  return localLyricsDatabase[key] || null;
+  // First try exact match
+  const exactKey = getSongKey(title, artist);
+  if (localLyricsDatabase[exactKey]) {
+    return localLyricsDatabase[exactKey];
+  }
+
+  // Normalize input for fuzzy matching
+  const normalizedTitle = normalizeText(title);
+  const normalizedArtist = normalizeText(artist);
+
+  // Search through all songs for a match
+  for (const [key, songData] of Object.entries(localLyricsDatabase)) {
+    const songTitle = normalizeText(songData.title);
+    const songArtist = normalizeText(songData.artist);
+
+    // Check if title matches (allowing partial matches)
+    const titleMatch = normalizedTitle.includes(songTitle) || songTitle.includes(normalizedTitle);
+    const artistMatch = normalizedArtist.includes(songArtist) || songArtist.includes(normalizedArtist);
+
+    if (titleMatch && artistMatch) {
+      return songData;
+    }
+
+    // Also check if song title and artist appear anywhere in the input
+    if (normalizedTitle.includes(songTitle) || normalizedArtist.includes(songTitle)) {
+      if (normalizedTitle.includes(songArtist) || normalizedArtist.includes(songArtist)) {
+        return songData;
+      }
+    }
+  }
+
+  return null;
+};
+
+// Get list of available songs with lyrics
+export const getAvailableSongs = (): Array<{ title: string; artist: string; difficulty: string }> => {
+  return Object.values(localLyricsDatabase).map(song => ({
+    title: song.title,
+    artist: song.artist,
+    difficulty: song.difficulty,
+  }));
+};
+
+// Check if a song has lyrics available
+export const hasLyricsAvailable = (title: string, artist: string): boolean => {
+  return getLocalLyrics(title, artist) !== null;
 };
 
 export const createFallbackLyrics = (title: string, artist: string): SynchronizedLyrics => ({
   songId: getSongKey(title, artist),
   title,
   artist,
-  lyrics: [
-    { id: 'f1', startTime: 0, endTime: 5, text: `Now playing: ${title} by ${artist}`, translation: `Reproduciendo: ${title} de ${artist}` },
-    { id: 'f2', startTime: 5, endTime: 10, text: 'Sing along to practice your English pronunciation!', translation: '¡Canta para practicar tu pronunciación en inglés!' },
-    { id: 'f3', startTime: 10, endTime: 15, text: 'Follow the highlighted lyrics as they appear', translation: 'Sigue las letras resaltadas a medida que aparecen' },
-    { id: 'f4', startTime: 15, endTime: 20, text: 'Try to match the timing and melody', translation: 'Intenta coincidir con el ritmo y la melodía' },
-    { id: 'f5', startTime: 20, endTime: 25, text: 'Record your voice to compare with the original', translation: 'Graba tu voz para comparar con el original' },
-    { id: 'f6', startTime: 25, endTime: 30, text: 'Practice makes perfect!', translation: '¡La práctica hace al maestro!' },
-  ],
-  duration: 30,
+  lyrics: [],
+  duration: 0,
   difficulty: 'easy',
-  vocabulary: ['pronunciation', 'practice', 'timing', 'melody', 'record'],
+  vocabulary: [],
+  isPlaceholder: true,
 });

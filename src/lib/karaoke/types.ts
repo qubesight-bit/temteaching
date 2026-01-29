@@ -25,6 +25,7 @@ export interface SynchronizedLyrics {
   duration: number;
   difficulty: 'easy' | 'intermediate' | 'hard';
   vocabulary: string[];
+  isPlaceholder?: boolean;
 }
 
 export interface KaraokeScore {
