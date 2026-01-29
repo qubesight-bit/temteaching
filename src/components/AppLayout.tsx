@@ -8,12 +8,27 @@ interface AppLayoutProps {
   showSidebar?: boolean;
 }
 
+const Footer = () => (
+  <footer className="py-4 px-6 text-center text-sm text-muted-foreground border-t border-border">
+    Built and made by{" "}
+    <a 
+      href="https://qubesight.lat" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="font-medium text-primary hover:underline"
+    >
+      QubeSight
+    </a>
+  </footer>
+);
+
 export function AppLayout({ children, showSidebar = true }: AppLayoutProps) {
   if (!showSidebar) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background flex flex-col">
         <Header />
-        {children}
+        <div className="flex-1">{children}</div>
+        <Footer />
       </div>
     );
   }
@@ -29,6 +44,7 @@ export function AppLayout({ children, showSidebar = true }: AppLayoutProps) {
           <main className="flex-1">
             {children}
           </main>
+          <Footer />
         </div>
       </div>
     </SidebarProvider>
