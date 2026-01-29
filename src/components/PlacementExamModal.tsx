@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import {
   Dialog,
   DialogContent,
@@ -16,17 +16,33 @@ import {
   placementExamSections, 
   getAllPlacementQuestions, 
   calculatePlacementLevel,
-  PlacementQuestion 
+  getSectionBreakdown,
+  getIncorrectAnswers,
+  PLACEMENT_EXAM_DURATION_MINUTES,
 } from "@/data/placementExamData";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/contexts/AuthContext";
 import { useAppState } from "@/hooks/useAppState";
-import { CheckCircle2, ArrowRight, ArrowLeft, GraduationCap, Trophy } from "lucide-react";
+import { CheckCircle2, ArrowRight, ArrowLeft, GraduationCap, Trophy, Clock, AlertTriangle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 interface PlacementExamModalProps {
   open: boolean;
   onComplete: (level: string) => void;
+}
+
+function formatTime(seconds: number): string {
+  const mins = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+  return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+}
+
+function formatTimeSpent(startTime: number, endTime: number): string {
+  const totalSeconds = Math.floor((endTime - startTime) / 1000);
+  const mins = Math.floor(totalSeconds / 60);
+  const secs = totalSeconds % 60;
+  if (mins === 0) return `${secs} seconds`;
+  return `${mins} min ${secs} sec`;
 }
 
 export function PlacementExamModal({ open, onComplete }: PlacementExamModalProps) {
@@ -35,6 +51,8 @@ export function PlacementExamModal({ open, onComplete }: PlacementExamModalProps
   const { toast } = useToast();
   
   const [started, setStarted] = useState(false);
+  const [startTime, setStartTime] = useState<number | null>(null);
+  const [timeRemaining, setTimeRemaining] = useState(PLACEMENT_EXAM_DURATION_MINUTES * 60);
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
@@ -53,6 +71,71 @@ export function PlacementExamModal({ open, onComplete }: PlacementExamModalProps
   const totalAnswered = questionsBeforeCurrentSection + currentQuestionIndex;
   const progressPercentage = (totalAnswered / allQuestions.length) * 100;
 
+  // Timer logic
+  useEffect(() => {
+    if (!started || completed) return;
+    
+    const interval = setInterval(() => {
+      setTimeRemaining(prev => {
+        if (prev <= 1) {
+          clearInterval(interval);
+          handleSubmit(true); // Force submit when time runs out
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [started, completed]);
+
+  const sendPlacementResults = async (
+    score: number, 
+    assignedLevel: string, 
+    endTime: number
+  ) => {
+    if (!user) return;
+
+    try {
+      const sectionBreakdown = getSectionBreakdown(answers);
+      const incorrectAnswers = getIncorrectAnswers(answers);
+      const percentage = Math.round((score / allQuestions.length) * 100);
+      const timeSpent = startTime ? formatTimeSpent(startTime, endTime) : "Unknown";
+
+      // Fetch user profile for name
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('display_name')
+        .eq('user_id', user.id)
+        .single();
+
+      const studentName = profile?.display_name || user.email?.split('@')[0] || 'Unknown Student';
+
+      const response = await supabase.functions.invoke('send-placement-results', {
+        body: {
+          studentName,
+          studentEmail: user.email || 'Unknown',
+          assignedLevel,
+          score,
+          totalQuestions: allQuestions.length,
+          percentage,
+          timeSpent,
+          completedAt: new Date().toISOString(),
+          sectionBreakdown,
+          incorrectAnswers,
+        }
+      });
+
+      if (response.error) {
+        console.error('Error sending placement results email:', response.error);
+      } else {
+        console.log('Placement results email sent successfully');
+      }
+    } catch (error) {
+      console.error('Error sending placement results:', error);
+    }
+  };
+
   const handleAnswer = (value: string) => {
     if (currentQuestion) {
       setAnswers(prev => ({ ...prev, [currentQuestion.id]: value }));
@@ -66,7 +149,7 @@ export function PlacementExamModal({ open, onComplete }: PlacementExamModalProps
       setCurrentSectionIndex(prev => prev + 1);
       setCurrentQuestionIndex(0);
     } else {
-      handleSubmit();
+      handleSubmit(false);
     }
   };
 
@@ -80,10 +163,11 @@ export function PlacementExamModal({ open, onComplete }: PlacementExamModalProps
     }
   };
 
-  const handleSubmit = async () => {
-    if (!user) return;
+  const handleSubmit = useCallback(async (timedOut: boolean = false) => {
+    if (!user || isSubmitting) return;
     
     setIsSubmitting(true);
+    const endTime = Date.now();
     
     // Calculate score
     let score = 0;
@@ -118,12 +202,17 @@ export function PlacementExamModal({ open, onComplete }: PlacementExamModalProps
       // Update local state
       setUserProgress({ currentLevel: assignedLevel as any });
       
+      // Send results to teacher email
+      await sendPlacementResults(score, assignedLevel, endTime);
+      
       setResult({ score, level: assignedLevel });
       setCompleted(true);
       
       toast({
-        title: "Placement Complete!",
-        description: `You've been placed at level ${assignedLevel}`,
+        title: timedOut ? "Time's Up!" : "Placement Complete!",
+        description: timedOut 
+          ? `Your test has been submitted. You've been placed at level ${assignedLevel}`
+          : `You've been placed at level ${assignedLevel}`,
       });
       
     } catch (error) {
@@ -136,6 +225,11 @@ export function PlacementExamModal({ open, onComplete }: PlacementExamModalProps
     } finally {
       setIsSubmitting(false);
     }
+  }, [user, answers, allQuestions, isSubmitting, startTime, setUserProgress, toast]);
+
+  const handleStart = () => {
+    setStarted(true);
+    setStartTime(Date.now());
   };
 
   const handleClose = () => {
@@ -148,6 +242,9 @@ export function PlacementExamModal({ open, onComplete }: PlacementExamModalProps
   const isLastQuestion = 
     currentSectionIndex === placementExamSections.length - 1 && 
     currentQuestionIndex === currentSection.questions.length - 1;
+  
+  const isTimeLow = timeRemaining <= 300; // Less than 5 minutes
+  const isTimeCritical = timeRemaining <= 60; // Less than 1 minute
 
   if (completed && result) {
     return (
@@ -175,7 +272,7 @@ export function PlacementExamModal({ open, onComplete }: PlacementExamModalProps
             
             <p className="text-sm text-muted-foreground mb-6">
               Your curriculum has been personalized to start at level {result.level}. 
-              You can always change this in Settings.
+              Your results have been sent to your teacher.
             </p>
             
             <Button onClick={handleClose} className="w-full" size="lg">
@@ -213,17 +310,27 @@ export function PlacementExamModal({ open, onComplete }: PlacementExamModalProps
               <h4 className="font-semibold mb-2">What to expect:</h4>
               <ul className="text-sm text-muted-foreground space-y-1">
                 <li>• {allQuestions.length} multiple-choice questions</li>
-                <li>• 4 sections covering different grammar topics</li>
-                <li>• Takes approximately 15-20 minutes</li>
+                <li>• {placementExamSections.length} sections covering different grammar topics</li>
+                <li className="flex items-center gap-1">
+                  <Clock className="h-3 w-3" />
+                  <strong className="text-foreground">{PLACEMENT_EXAM_DURATION_MINUTES} minutes</strong> time limit
+                </li>
                 <li>• You can navigate back and forth between questions</li>
+                <li>• Results will be sent to your teacher</li>
               </ul>
             </Card>
             
-            <p className="text-sm text-muted-foreground mb-6">
-              Please complete this test to unlock your personalized learning path.
-            </p>
+            <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-lg p-3 mb-6">
+              <div className="flex items-center gap-2 text-amber-700 dark:text-amber-400">
+                <AlertTriangle className="h-4 w-4" />
+                <span className="text-sm font-medium">Important</span>
+              </div>
+              <p className="text-xs text-amber-600 dark:text-amber-500 mt-1">
+                The timer starts immediately when you begin. Make sure you have {PLACEMENT_EXAM_DURATION_MINUTES} minutes available.
+              </p>
+            </div>
             
-            <Button onClick={() => setStarted(true)} className="w-full" size="lg">
+            <Button onClick={handleStart} className="w-full" size="lg">
               Begin Placement Test
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
@@ -235,6 +342,19 @@ export function PlacementExamModal({ open, onComplete }: PlacementExamModalProps
                 <Badge variant="outline" className="font-normal">
                   Section {currentSectionIndex + 1} of {placementExamSections.length}
                 </Badge>
+                
+                {/* Timer Display */}
+                <div className={`flex items-center gap-1.5 px-3 py-1 rounded-full font-mono text-sm font-medium ${
+                  isTimeCritical 
+                    ? 'bg-red-100 text-red-700 dark:bg-red-950 dark:text-red-400 animate-pulse'
+                    : isTimeLow 
+                      ? 'bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-400'
+                      : 'bg-secondary text-foreground'
+                }`}>
+                  <Clock className="h-3.5 w-3.5" />
+                  {formatTime(timeRemaining)}
+                </div>
+                
                 <span className="text-sm text-muted-foreground">
                   Question {totalAnswered + 1} of {allQuestions.length}
                 </span>
