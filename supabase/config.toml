@@ -11,3 +11,6 @@ verify_jwt = false
 
 [functions.fetch-lyrics]
 verify_jwt = false
+
+[functions.send-placement-results]
+verify_jwt = false
