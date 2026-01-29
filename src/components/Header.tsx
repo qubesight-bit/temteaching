@@ -52,7 +52,7 @@ export function Header({ children }: HeaderProps) {
               <span className="text-white font-bold text-lg">T</span>
             </div>
             <span className="font-display font-bold text-xl hidden sm:block">
-              Teacher <span className="text-primary">Tim</span>
+              Teacher <span className="text-primary">Tem</span>
             </span>
           </button>
         </div>
