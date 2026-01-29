@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppLayout } from "@/components/AppLayout";
 import { InteractiveLevelSelector } from "@/components/InteractiveLevelSelector";
@@ -10,6 +10,8 @@ import { DailyGoalWidget } from "@/components/DailyGoalWidget";
 import { AITutorPreview } from "@/components/AITutorPreview";
 import { BookOpen, MessageSquare, PenTool, GraduationCap, Lightbulb, Map, Library, Music, Sparkles } from "lucide-react";
 import { useAppState } from "@/hooks/useAppState";
+import { useAuth } from "@/contexts/AuthContext";
+import { supabase } from "@/integrations/supabase/client";
 
 type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
@@ -91,9 +93,35 @@ const modules = [
 const Index = () => {
   const navigate = useNavigate();
   const { userProgress } = useAppState();
+  const { user } = useAuth();
+  const [displayName, setDisplayName] = useState<string | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<CEFRLevel>(
     (userProgress.currentLevel as CEFRLevel) || "A1"
   );
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      if (user) {
+        const { data } = await supabase
+          .from('profiles')
+          .select('display_name')
+          .eq('user_id', user.id)
+          .single();
+        
+        if (data?.display_name) {
+          setDisplayName(data.display_name);
+        }
+      }
+    };
+    fetchProfile();
+  }, [user]);
+
+  // Get greeting name: profile name > email username > "learner"
+  const getGreetingName = () => {
+    if (displayName) return displayName;
+    if (user?.email) return user.email.split('@')[0];
+    return "learner";
+  };
 
   return (
     <AppLayout>
@@ -101,7 +129,7 @@ const Index = () => {
         {/* Welcome Section */}
         <div className="mb-8 animate-fade-in">
           <h1 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-2">
-            Hello, learner! 👋
+            Hello, {getGreetingName()}! 👋
           </h1>
           <p className="text-muted-foreground text-lg">
             Continue your path to English fluency
