@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { SynchronizedLyrics, KaraokeScore, YouTubeSearchResult } from '@/lib/karaoke/types';
-import { getLocalLyrics, createFallbackLyrics } from '@/lib/karaoke/lyricsDatabase';
+import { fetchLyrics } from '@/lib/karaoke/lyricsService';
 import { calculateLineScore, calculateSessionScore } from '@/lib/karaoke/scoringService';
 import { AudioRecorder, createAudioUrl, revokeAudioUrl } from '@/lib/karaoke/audioRecorder';
 
@@ -84,24 +84,39 @@ export function useKaraokePlayer() {
     }
   }, []);
 
-  const selectVideo = useCallback((video: YouTubeSearchResult) => {
+  const selectVideo = useCallback(async (video: YouTubeSearchResult) => {
     setCurrentVideo(video);
     setCurrentLineIndex(0);
     setLineScores([]);
     setSessionScore({ timing: 0, pronunciation: 0, completeness: 0, total: 0 });
     setPlayerReady(false);
+    setIsLoading(true);
+    setError(null);
 
     // Extract song info from title
     const titleParts = video.snippet.title.split('-');
-    const artist = titleParts.length > 1 ? titleParts[0].trim() : '';
+    const artist = titleParts.length > 1 ? titleParts[0].trim() : video.snippet.channelTitle;
     const title = titleParts.length > 1 ? titleParts[1].trim() : video.snippet.title;
 
-    // Try to get local lyrics, fallback to generated
-    const localLyrics = getLocalLyrics(title, artist);
-    if (localLyrics) {
-      setLyrics(localLyrics);
-    } else {
-      setLyrics(createFallbackLyrics(title, artist));
+    try {
+      // Fetch lyrics from LRCLIB API (with local fallback)
+      const lyrics = await fetchLyrics(title, artist);
+      setLyrics(lyrics);
+    } catch (err) {
+      console.error('Error fetching lyrics:', err);
+      setError('Could not load lyrics for this song');
+      setLyrics({
+        songId: `error-${Date.now()}`,
+        title,
+        artist,
+        lyrics: [],
+        duration: 180,
+        difficulty: 'intermediate',
+        vocabulary: [],
+        isPlaceholder: true,
+      });
+    } finally {
+      setIsLoading(false);
     }
   }, []);
 

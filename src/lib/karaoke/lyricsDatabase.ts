@@ -291,3 +291,32 @@ export const createFallbackLyrics = (title: string, artist: string): Synchronize
   vocabulary: [],
   isPlaceholder: true,
 });
+
+/**
+ * Extract vocabulary words from lyrics text
+ */
+export function extractVocabulary(text: string): string[] {
+  const commonWords = new Set([
+    'the', 'a', 'an', 'and', 'or', 'but', 'is', 'are', 'was', 'were', 'be', 'been',
+    'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could',
+    'should', 'may', 'might', 'must', 'can', 'to', 'of', 'in', 'for', 'on', 'with',
+    'at', 'by', 'from', 'as', 'into', 'through', 'during', 'before', 'after',
+    'above', 'below', 'between', 'under', 'again', 'further', 'then', 'once',
+    'here', 'there', 'when', 'where', 'why', 'how', 'all', 'each', 'few', 'more',
+    'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same',
+    'so', 'than', 'too', 'very', 'just', 'i', 'me', 'my', 'myself', 'we', 'our',
+    'ours', 'you', 'your', 'yours', 'he', 'him', 'his', 'she', 'her', 'hers',
+    'it', 'its', 'they', 'them', 'their', 'what', 'which', 'who', 'whom', 'this',
+    'that', 'these', 'those', 'am', 'if', 'oh', 'yeah', 'ooh', 'ah', 'la', 'na',
+    'da', 'mmm', 'uh', 'um',
+  ]);
+
+  const words = text.toLowerCase()
+    .replace(/[^\w\s']/g, ' ')
+    .split(/\s+/)
+    .filter(word => word.length > 3 && !commonWords.has(word));
+
+  // Get unique words and take up to 10
+  const unique = [...new Set(words)];
+  return unique.slice(0, 10);
+}
