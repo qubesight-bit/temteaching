@@ -21,6 +21,7 @@ import { getC2ExercisesCompleteBySkillId } from "@/data/c2ExercisesComplete";
 import { getImageExercisesForSkill } from "@/data/imageVocabularyData";
 import { getArticleForExercise } from "@/data/articlesData";
 import { getCurriculumArticleById, searchCurriculumArticles } from "@/data/curriculumArticles";
+import { getThemesByLevel, generateVocabularyExercises } from "@/data/vocabularyCurriculumComplete";
 import { 
   ArrowLeft, ArrowRight, CheckCircle2, XCircle, Volume2, 
   BookOpen, Dumbbell, Trophy, Target, Lightbulb, Star, Image, FileText, ExternalLink
@@ -85,8 +86,21 @@ const getExercisesForSkill = (skill: Skill, level: CEFRLevel, categoryType: stri
     exercises = getAdvancedExercisesBySkillId(skill.id, level);
   }
   
-  // For vocabulary, also add image exercises
+  // For vocabulary, use the comprehensive vocabulary curriculum
   if (categoryType.includes('vocab')) {
+    // Try to get theme-based exercises from the new vocabulary system
+    const themes = getThemesByLevel(level);
+    const skillIndex = parseInt(skill.id.split('-').pop() || '1') - 1;
+    const selectedTheme = themes[skillIndex % themes.length];
+    
+    if (selectedTheme) {
+      const themeExercises = generateVocabularyExercises(selectedTheme);
+      if (themeExercises.length > 0) {
+        exercises = [...themeExercises, ...exercises];
+      }
+    }
+    
+    // Also add image exercises for visual learning
     const imageExercises = getImageExercisesForSkill(skill.id, level);
     exercises = [...exercises, ...imageExercises];
   }
