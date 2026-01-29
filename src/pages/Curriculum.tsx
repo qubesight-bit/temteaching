@@ -250,7 +250,12 @@ function CategoryCard({
               <div className="flex items-center gap-3">
                 <span className="text-2xl">{category.icon}</span>
                 <div className="text-left">
-                  <CardTitle className="text-base">{category.title}</CardTitle>
+                  <div className="flex items-center gap-2">
+                    <CardTitle className="text-base">{category.title}</CardTitle>
+                    <Badge variant="secondary" className="text-xs px-1.5 py-0.5">
+                      {category.skills.length} themes
+                    </Badge>
+                  </div>
                   <p className="text-sm text-muted-foreground">{category.description}</p>
                 </div>
               </div>
