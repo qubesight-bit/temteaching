@@ -159,6 +159,39 @@ export type Database = {
         }
         Relationships: []
       }
+      user_placement_exams: {
+        Row: {
+          answers: Json | null
+          assigned_level: string
+          completed_at: string
+          created_at: string
+          id: string
+          score: number
+          total_questions: number
+          user_id: string
+        }
+        Insert: {
+          answers?: Json | null
+          assigned_level: string
+          completed_at?: string
+          created_at?: string
+          id?: string
+          score: number
+          total_questions: number
+          user_id: string
+        }
+        Update: {
+          answers?: Json | null
+          assigned_level?: string
+          completed_at?: string
+          created_at?: string
+          id?: string
+          score?: number
+          total_questions?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

@@ -8,9 +8,11 @@ import { TodayLesson } from "@/components/TodayLesson";
 import { ModuleCard } from "@/components/ModuleCard";
 import { DailyGoalWidget } from "@/components/DailyGoalWidget";
 import { AITutorPreview } from "@/components/AITutorPreview";
+import { PlacementExamModal } from "@/components/PlacementExamModal";
 import { BookOpen, MessageSquare, PenTool, GraduationCap, Lightbulb, Map, Library, Music, Sparkles } from "lucide-react";
 import { useAppState } from "@/hooks/useAppState";
 import { useAuth } from "@/contexts/AuthContext";
+import { usePlacementExam } from "@/hooks/usePlacementExam";
 import { supabase } from "@/integrations/supabase/client";
 
 type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
@@ -94,10 +96,16 @@ const Index = () => {
   const navigate = useNavigate();
   const { userProgress } = useAppState();
   const { user } = useAuth();
+  const { needsPlacementExam, loading: placementLoading, markPlacementComplete } = usePlacementExam();
   const [displayName, setDisplayName] = useState<string | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<CEFRLevel>(
     (userProgress.currentLevel as CEFRLevel) || "A1"
   );
+
+  const handlePlacementComplete = (level: string) => {
+    markPlacementComplete();
+    setSelectedLevel(level as CEFRLevel);
+  };
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -125,6 +133,12 @@ const Index = () => {
 
   return (
     <AppLayout>
+      {/* Placement Exam Modal - Mandatory for new users */}
+      <PlacementExamModal 
+        open={needsPlacementExam && !placementLoading && !!user} 
+        onComplete={handlePlacementComplete} 
+      />
+      
       <div className="container py-8">
         {/* Welcome Section */}
         <div className="mb-8 animate-fade-in">
