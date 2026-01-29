@@ -6,7 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { ArrowLeft, BookOpen, CheckCircle2, XCircle, RotateCcw, Sparkles, ChevronRight, Trophy, Target } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
+import { ArrowLeft, BookOpen, CheckCircle2, XCircle, RotateCcw, Sparkles, ChevronRight, Trophy, Target, X } from "lucide-react";
 import { grammarCategories } from "@/data/grammarData";
 import { getGrammarExercisesByCategory, getGrammarExercisesByLevel, GrammarExercise } from "@/data/grammarExercisesExpanded";
 import { useAppState } from "@/hooks/useAppState";
@@ -38,7 +39,7 @@ const CustomExam = () => {
   const navigate = useNavigate();
   const { userProgress } = useAppState();
   const [selectedLevel, setSelectedLevel] = useState<CEFRLevel>(userProgress.currentLevel as CEFRLevel || "A1");
-  const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
+  const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
   const [examStarted, setExamStarted] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
@@ -47,36 +48,69 @@ const CustomExam = () => {
   const [examCompleted, setExamCompleted] = useState(false);
   const [exercises, setExercises] = useState<GrammarExercise[]>([]);
 
-  const generateExam = (topic: string, level: CEFRLevel) => {
-    // Get exercises that match the topic
-    let availableExercises = getGrammarExercisesByCategory(level, topic);
-    
-    // If not enough exercises for the specific topic, get from the level
-    if (availableExercises.length < 5) {
-      const levelExercises = getGrammarExercisesByLevel(level);
-      // Filter by topic keyword in the question or category
-      const topicKeywords = topic.toLowerCase().split(" ");
-      availableExercises = levelExercises.filter(ex => 
-        topicKeywords.some(keyword => 
-          ex.question.toLowerCase().includes(keyword) || 
-          ex.category.toLowerCase().includes(keyword)
-        )
-      );
-      
-      // If still not enough, just get random from level
-      if (availableExercises.length < 5) {
-        availableExercises = levelExercises;
+  const MAX_TOPICS = 4;
+
+  const handleTopicToggle = (topic: string) => {
+    setSelectedTopics(prev => {
+      if (prev.includes(topic)) {
+        return prev.filter(t => t !== topic);
       }
+      if (prev.length >= MAX_TOPICS) {
+        return prev; // Don't add more than max
+      }
+      return [...prev, topic];
+    });
+  };
+
+  const removeTopic = (topic: string) => {
+    setSelectedTopics(prev => prev.filter(t => t !== topic));
+  };
+
+  const generateExam = (topics: string[], level: CEFRLevel) => {
+    const allExercises: GrammarExercise[] = [];
+    
+    // Get exercises for each selected topic
+    topics.forEach(topic => {
+      let topicExercises = getGrammarExercisesByCategory(level, topic);
+      
+      // If not enough exercises for the specific topic, search by keywords
+      if (topicExercises.length < 3) {
+        const levelExercises = getGrammarExercisesByLevel(level);
+        const topicKeywords = topic.toLowerCase().split(" ");
+        topicExercises = levelExercises.filter(ex => 
+          topicKeywords.some(keyword => 
+            ex.question.toLowerCase().includes(keyword) || 
+            ex.category.toLowerCase().includes(keyword)
+          )
+        );
+      }
+      
+      allExercises.push(...topicExercises);
+    });
+
+    // Remove duplicates by id
+    const uniqueExercises = allExercises.filter((ex, index, self) => 
+      index === self.findIndex(e => e.id === ex.id)
+    );
+
+    // If not enough exercises, add more from the level
+    let finalExercises = uniqueExercises;
+    if (uniqueExercises.length < 10) {
+      const levelExercises = getGrammarExercisesByLevel(level);
+      const additionalExercises = levelExercises.filter(ex => 
+        !uniqueExercises.some(ue => ue.id === ex.id)
+      );
+      finalExercises = [...uniqueExercises, ...additionalExercises];
     }
 
     // Shuffle and take 10 exercises
-    const shuffled = [...availableExercises].sort(() => Math.random() - 0.5);
+    const shuffled = [...finalExercises].sort(() => Math.random() - 0.5);
     return shuffled.slice(0, 10);
   };
 
   const handleStartExam = () => {
-    if (!selectedTopic) return;
-    const examExercises = generateExam(selectedTopic, selectedLevel);
+    if (selectedTopics.length === 0) return;
+    const examExercises = generateExam(selectedTopics, selectedLevel);
     setExercises(examExercises);
     setExamStarted(true);
     setCurrentIndex(0);
@@ -109,7 +143,7 @@ const CustomExam = () => {
 
   const handleRestart = () => {
     setExamStarted(false);
-    setSelectedTopic(null);
+    setSelectedTopics([]);
     setCurrentIndex(0);
     setScore({ correct: 0, incorrect: 0 });
     setExamCompleted(false);
@@ -135,7 +169,7 @@ const CustomExam = () => {
               </div>
               <CardTitle className="text-2xl">Exam Completed!</CardTitle>
               <CardDescription>
-                Topic: {selectedTopic} • Level: {selectedLevel}
+                Topics: {selectedTopics.join(", ")} • Level: {selectedLevel}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -197,9 +231,13 @@ const CustomExam = () => {
 
           <Card>
             <CardHeader>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2 flex-wrap">
                 <Target className="h-4 w-4" />
-                {selectedTopic}
+                {selectedTopics.map((topic, idx) => (
+                  <Badge key={topic} variant="secondary" className="text-xs">
+                    {topic}{idx < selectedTopics.length - 1 ? "" : ""}
+                  </Badge>
+                ))}
               </div>
               <CardTitle className="text-lg leading-relaxed">
                 {currentExercise.question}
@@ -322,14 +360,48 @@ const CustomExam = () => {
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
               <BookOpen className="h-5 w-5" />
-              2. Select a topic
+              2. Select topics (up to {MAX_TOPICS})
             </CardTitle>
             <CardDescription>
-              Choose the grammar topic you want to practice
+              Choose the grammar topics you want to practice. Questions will be mixed from all selected topics.
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <ScrollArea className="h-[400px] pr-4">
+            {/* Selected Topics Display */}
+            {selectedTopics.length > 0 && (
+              <div className="mb-4 p-3 rounded-lg bg-primary/5 border border-primary/20">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm font-medium">Selected topics ({selectedTopics.length}/{MAX_TOPICS}):</span>
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    onClick={() => setSelectedTopics([])}
+                    className="text-xs h-6"
+                  >
+                    Clear all
+                  </Button>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {selectedTopics.map(topic => (
+                    <Badge 
+                      key={topic} 
+                      variant="default" 
+                      className="gap-1 pr-1"
+                    >
+                      {topic}
+                      <button 
+                        onClick={() => removeTopic(topic)}
+                        className="ml-1 rounded-full hover:bg-primary-foreground/20 p-0.5"
+                      >
+                        <X className="h-3 w-3" />
+                      </button>
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            )}
+            
+            <ScrollArea className="h-[350px] pr-4">
               <div className="space-y-4">
                 {topicCategories.map(category => (
                   <div key={category.id} className="space-y-2">
@@ -338,17 +410,31 @@ const CustomExam = () => {
                       {category.name}
                     </h3>
                     <div className="flex flex-wrap gap-2 pl-6">
-                      {category.topics.map(topic => (
-                        <Button
-                          key={topic}
-                          variant={selectedTopic === topic ? "default" : "outline"}
-                          size="sm"
-                          onClick={() => setSelectedTopic(topic)}
-                          className="text-xs"
-                        >
-                          {topic}
-                        </Button>
-                      ))}
+                      {category.topics.map(topic => {
+                        const isSelected = selectedTopics.includes(topic);
+                        const isDisabled = !isSelected && selectedTopics.length >= MAX_TOPICS;
+                        
+                        return (
+                          <div 
+                            key={topic}
+                            className={`flex items-center gap-2 p-2 rounded-lg border cursor-pointer transition-all ${
+                              isSelected 
+                                ? "border-primary bg-primary/10" 
+                                : isDisabled 
+                                  ? "border-muted bg-muted/30 opacity-50 cursor-not-allowed" 
+                                  : "border-muted hover:border-primary/50 hover:bg-muted/50"
+                            }`}
+                            onClick={() => !isDisabled && handleTopicToggle(topic)}
+                          >
+                            <Checkbox 
+                              checked={isSelected}
+                              disabled={isDisabled}
+                              onCheckedChange={() => !isDisabled && handleTopicToggle(topic)}
+                            />
+                            <span className="text-xs font-medium">{topic}</span>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 ))}
@@ -362,27 +448,27 @@ const CustomExam = () => {
           <CardContent className="pt-6">
             <div className="flex items-center justify-between">
               <div>
-                {selectedTopic ? (
+                {selectedTopics.length > 0 ? (
                   <div className="space-y-1">
                     <p className="font-medium">Selected exam:</p>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 flex-wrap">
                       <Badge className={levelColors[selectedLevel]}>{selectedLevel}</Badge>
                       <span className="text-muted-foreground">•</span>
-                      <span>{selectedTopic}</span>
+                      <span className="text-sm">{selectedTopics.length} topic{selectedTopics.length > 1 ? "s" : ""} selected</span>
                     </div>
                   </div>
                 ) : (
-                  <p className="text-muted-foreground">Select a topic to begin</p>
+                  <p className="text-muted-foreground">Select at least one topic to begin</p>
                 )}
               </div>
               <Button 
                 size="lg" 
-                disabled={!selectedTopic}
+                disabled={selectedTopics.length === 0}
                 onClick={handleStartExam}
                 className="gap-2"
               >
                 <Sparkles className="h-5 w-5" />
-                Generate Exam
+                Generate Mixed Exam
               </Button>
             </div>
           </CardContent>
