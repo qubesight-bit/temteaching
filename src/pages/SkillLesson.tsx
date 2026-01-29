@@ -11,6 +11,7 @@ import { getAdvancedExercisesBySkillId } from "@/data/exercisesDataAdvanced";
 import { getB1ExercisesCompleteBySkillId } from "@/data/b1ExercisesComplete";
 import { getB2ExercisesCompleteBySkillId } from "@/data/b2ExercisesComplete";
 import { getC1ExercisesBySkillId } from "@/data/c1Exercises";
+import { getC1CompleteExercisesBySkillId } from "@/data/c1ExercisesComplete";
 import { getA1ExercisesBySkillId } from "@/data/curriculumExercisesA1";
 import { getA2ExercisesBySkillId } from "@/data/curriculumExercisesA2";
 import { getB1CurriculumExercisesBySkillId } from "@/data/curriculumExercisesB1";
@@ -57,8 +58,13 @@ const getExercisesForSkill = (skill: Skill, level: CEFRLevel, categoryType: stri
   }
   
   if (level === "C1") {
+    // First try the new complete C1 exercises
+    const c1CompleteExercises = getC1CompleteExercisesBySkillId(skill.id);
+    if (c1CompleteExercises.length > 0) return c1CompleteExercises;
+    // Then try curriculum exercises
     const c1CurrExercises = getC1CurriculumExercisesBySkillId(skill.id);
     if (c1CurrExercises.length > 0) return c1CurrExercises;
+    // Finally try the original C1 exercises
     const c1Exercises = getC1ExercisesBySkillId(skill.id, categoryType);
     if (c1Exercises.length > 0) return c1Exercises;
   }

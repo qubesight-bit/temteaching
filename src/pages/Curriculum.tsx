@@ -204,7 +204,7 @@ export default function Curriculum() {
               onToggleSubSkill={toggleSubSkill}
               currentLevelData={currentLevelData}
               onNavigateToLesson={(level, categoryId, skillId) => {
-                navigate(`/lesson/${level}/${categoryId}/${skillId}`);
+                navigate(`/skill/${level}/${categoryId}/${skillId}`);
               }}
             />
           ))}
