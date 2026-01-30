@@ -51,8 +51,8 @@ function extractErrors(content: string): Array<{ error: string; correction: stri
     
     for (const block of errorBlocks) {
       const errorMatch = block.match(/🔴 ERROR:\s*"([^"]+)"/);
-      const correctionMatch = block.match(/✅ CORRECCIÓN:\s*"([^"]+)"/);
-      const explanationMatch = block.match(/📖 EXPLICACIÓN:\s*([^\n]+)/);
+      const correctionMatch = block.match(/✅ CORRECTION:\s*"([^"]+)"/);
+      const explanationMatch = block.match(/📖 EXPLANATION:\s*([^\n]+)/);
       
       if (errorMatch && correctionMatch) {
         errors.push({

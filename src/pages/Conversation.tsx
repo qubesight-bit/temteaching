@@ -54,7 +54,7 @@ function parseErrorReports(content: string, conversationId: string | null, userL
   }
   
   // Also match inline feedback errors for non-exam conversations
-  const feedbackRegex = /---FEEDBACK---\s*🔴\s*\*\*ERROR:\*\*\s*"([^"]+)"\s*✅\s*\*\*CORRECCIÓN:\*\*\s*"([^"]+)"\s*📖\s*\*\*EXPLICACIÓN:\*\*\s*([^\n]+)/g;
+  const feedbackRegex = /---FEEDBACK---\s*🔴\s*\*\*ERROR:\*\*\s*"([^"]+)"\s*✅\s*\*\*CORRECTION:\*\*\s*"([^"]+)"\s*📖\s*\*\*EXPLANATION:\*\*\s*([^\n]+)/g;
   
   while ((match = feedbackRegex.exec(content)) !== null) {
     const error: NewLearningError = {

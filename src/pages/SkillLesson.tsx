@@ -919,18 +919,6 @@ export default function SkillLesson() {
                               {currentExerciseData.explanation}
                             </p>
                           </div>
-                          
-                          {/* Spanish explanation */}
-                          {currentExerciseData.explanationSpanish && (
-                            <div className="pt-2 border-t border-border/50">
-                              <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-1">
-                                🇪🇸 Spanish explanation:
-                              </p>
-                              <p className="text-sm text-foreground">
-                                {currentExerciseData.explanationSpanish}
-                              </p>
-                            </div>
-                          )}
 
                           {/* Why this answer works */}
                           <div className="mt-3 pt-2 border-t border-border/50">

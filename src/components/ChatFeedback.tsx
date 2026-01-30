@@ -44,9 +44,9 @@ export function parseFeedback(content: string): { mainContent: string; feedback:
     
     for (const errorBlock of errorMatches) {
       const errorMatch = errorBlock.match(/🔴 ERROR:\s*"([^"]+)"/);
-      const correctionMatch = errorBlock.match(/✅ CORRECCIÓN:\s*"([^"]+)"/);
-      const explanationMatch = errorBlock.match(/📖 EXPLICACIÓN:\s*([^\n]+)/);
-      const exampleMatch = errorBlock.match(/💡 EJEMPLO:\s*"([^"]+)"/);
+      const correctionMatch = errorBlock.match(/✅ CORRECTION:\s*"([^"]+)"/);
+      const explanationMatch = errorBlock.match(/📖 EXPLANATION:\s*([^\n]+)/);
+      const exampleMatch = errorBlock.match(/💡 EXAMPLE:\s*"([^"]+)"/i);
       
       if (errorMatch) {
         feedback.push({
@@ -113,7 +113,7 @@ export function ChatFeedback({ content }: ChatFeedbackProps) {
                 {/* Example */}
                 {item.example && (
                   <p className="text-primary pl-1 italic">
-                    💡 Ejemplo: "{item.example}"
+                    💡 Example: "{item.example}"
                   </p>
                 )}
               </div>
