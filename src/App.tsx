@@ -28,6 +28,8 @@ import Articles from "./pages/Articles";
 import ArticleDetail from "./pages/ArticleDetail";
 import Karaoke from "./pages/Karaoke";
 import CustomExam from "./pages/CustomExam";
+import PendingApproval from "./pages/PendingApproval";
+import AdminUsers from "./pages/AdminUsers";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -46,7 +48,13 @@ const App = () => (
                   {/* Public route - Auth page */}
                   <Route path="/auth" element={<Auth />} />
                   
-                  {/* Protected routes - Require login */}
+                  {/* Pending approval page - requires login but not approval */}
+                  <Route path="/pending-approval" element={<PendingApproval />} />
+                  
+                  {/* Admin routes */}
+                  <Route path="/admin/users" element={<ProtectedRoute><AdminUsers /></ProtectedRoute>} />
+                  
+                  {/* Protected routes - Require login AND approval */}
                   <Route path="/" element={<ProtectedRoute><Index /></ProtectedRoute>} />
                   <Route path="/curriculum" element={<ProtectedRoute><Curriculum /></ProtectedRoute>} />
                   <Route path="/grammar" element={<ProtectedRoute><Grammar /></ProtectedRoute>} />
