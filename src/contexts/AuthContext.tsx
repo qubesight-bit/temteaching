@@ -86,14 +86,30 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
     });
 
-    // If signup successful, update the profile with display name
-    if (!error && data.user && displayName) {
+    // If signup successful, update the profile and send admin notification
+    if (!error && data.user) {
+      const userName = displayName || email.split('@')[0];
+      
+      // Update profile with display name
       setTimeout(async () => {
         await supabase
           .from('profiles')
-          .update({ display_name: displayName })
+          .update({ display_name: userName })
           .eq('user_id', data.user!.id);
       }, 100);
+
+      // Send signup notification to admin (fire and forget)
+      const adminUrl = `${window.location.origin}/admin/users`;
+      supabase.functions.invoke('send-signup-notification', {
+        body: {
+          userEmail: email,
+          displayName: userName,
+          signupTime: new Date().toISOString(),
+          adminUrl: adminUrl,
+        },
+      }).catch((err) => {
+        console.error('Failed to send signup notification:', err);
+      });
     }
 
     return { error };
