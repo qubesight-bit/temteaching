@@ -32,12 +32,12 @@ export function AITutorPreview() {
                 AI Tutor
               </h3>
               <span className="px-2 py-0.5 rounded-full bg-white/20 text-xs font-medium text-white">
-                En línea
+                Online
               </span>
             </div>
             
             <p className="text-white/80 text-sm mb-4">
-              Practica conversaciones reales con corrección instantánea. Tu tutor personal disponible 24/7.
+              Practice real conversations with instant corrections. Your personal tutor available 24/7.
             </p>
             
             {/* Sample conversation */}
@@ -63,7 +63,7 @@ export function AITutorPreview() {
                 onClick={() => navigate('/conversation')}
               >
                 <MessageCircle className="w-5 h-5" />
-                Iniciar chat
+                Start Chat
               </Button>
               <Button 
                 variant="heroOutline" 
@@ -71,7 +71,7 @@ export function AITutorPreview() {
                 onClick={() => navigate('/conversation')}
               >
                 <Mic className="w-5 h-5" />
-                Voz
+                Voice
               </Button>
             </div>
           </div>
