@@ -74,42 +74,42 @@ function categorizeError(explanation: string, error: string): string {
   
   if (lowerExplanation.includes('past') || lowerExplanation.includes('pasado') || 
       lowerExplanation.includes('went') || lowerExplanation.includes('did')) {
-    return 'Tiempos verbales';
+    return 'Verb Tenses';
   }
   if (lowerExplanation.includes('article') || lowerExplanation.includes('artículo') ||
       lowerError.includes(' a ') || lowerError.includes(' an ') || lowerError.includes(' the ')) {
-    return 'Artículos';
+    return 'Articles';
   }
   if (lowerExplanation.includes('preposition') || lowerExplanation.includes('preposición') ||
       /\b(in|on|at|to|for|with|by)\b/.test(lowerError)) {
-    return 'Preposiciones';
+    return 'Prepositions';
   }
   if (lowerExplanation.includes('subject') || lowerExplanation.includes('verb') || 
       lowerExplanation.includes('agreement') || lowerExplanation.includes('concordancia')) {
-    return 'Concordancia sujeto-verbo';
+    return 'Subject-Verb Agreement';
   }
   if (lowerExplanation.includes('spelling') || lowerExplanation.includes('ortografía')) {
-    return 'Ortografía';
+    return 'Spelling';
   }
   if (lowerExplanation.includes('word order') || lowerExplanation.includes('orden')) {
-    return 'Orden de palabras';
+    return 'Word Order';
   }
   if (lowerExplanation.includes('vocabulary') || lowerExplanation.includes('vocabulario') ||
       lowerExplanation.includes('word choice')) {
-    return 'Vocabulario';
+    return 'Vocabulary';
   }
-  return 'Gramática general';
+  return 'General Grammar';
 }
 
 const categoryIcons: Record<string, string> = {
-  'Tiempos verbales': '⏰',
-  'Artículos': '📝',
-  'Preposiciones': '📍',
-  'Concordancia sujeto-verbo': '🔗',
-  'Ortografía': '✏️',
-  'Orden de palabras': '🔀',
-  'Vocabulario': '📚',
-  'Gramática general': '📖'
+  'Verb Tenses': '⏰',
+  'Articles': '📝',
+  'Prepositions': '📍',
+  'Subject-Verb Agreement': '🔗',
+  'Spelling': '✏️',
+  'Word Order': '🔀',
+  'Vocabulary': '📚',
+  'General Grammar': '📖'
 };
 
 export function GrammarTips() {
@@ -232,10 +232,10 @@ export function GrammarTips() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <TrendingUp className="w-5 h-5 text-orange-500" />
-              <h3 className="font-display font-semibold">Áreas a mejorar</h3>
+              <h3 className="font-display font-semibold">Areas to Improve</h3>
             </div>
             <span className="text-xs text-muted-foreground">
-              Basado en {categories.reduce((sum, c) => sum + c.totalCount, 0)} errores
+              Based on {categories.reduce((sum, c) => sum + c.totalCount, 0)} errors
             </span>
           </div>
         </div>
@@ -258,7 +258,7 @@ export function GrammarTips() {
                   <div className="text-left">
                     <p className="font-medium text-sm">{cat.category}</p>
                     <p className="text-xs text-muted-foreground">
-                      {cat.totalCount} error{cat.totalCount !== 1 ? 'es' : ''}
+                      {cat.totalCount} error{cat.totalCount !== 1 ? 's' : ''}
                     </p>
                   </div>
                 </div>
@@ -330,12 +330,12 @@ export function GrammarTips() {
               {expanded ? (
                 <>
                   <ChevronUp className="w-4 h-4 mr-2" />
-                  Ver menos
+                  Show Less
                 </>
               ) : (
                 <>
                   <ChevronDown className="w-4 h-4 mr-2" />
-                  Ver {categories.length - 3} categorías más
+                  Show {categories.length - 3} More Categories
                 </>
               )}
             </Button>
