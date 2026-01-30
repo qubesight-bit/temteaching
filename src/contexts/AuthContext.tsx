@@ -37,29 +37,29 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     // Set up auth state listener FIRST
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        setSession(session);
-        setUser(session?.user ?? null);
+      (event, currentSession) => {
+        setSession(currentSession);
+        setUser(currentSession?.user ?? null);
         setLoading(false);
-
-        // Register session on sign in
-        if (event === 'SIGNED_IN' && session?.user) {
-          setTimeout(() => {
-            registerSession();
-          }, 0);
-        }
       }
     );
 
     // THEN check for existing session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      setUser(session?.user ?? null);
+    supabase.auth.getSession().then(({ data: { session: currentSession } }) => {
+      setSession(currentSession);
+      setUser(currentSession?.user ?? null);
       setLoading(false);
     });
 
     return () => subscription.unsubscribe();
   }, []);
+
+  // Register session when user changes (after sign in)
+  useEffect(() => {
+    if (user) {
+      registerSession();
+    }
+  }, [user, registerSession]);
 
   // Periodic session validation
   useEffect(() => {
