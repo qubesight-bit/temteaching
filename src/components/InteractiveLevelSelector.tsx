@@ -108,12 +108,15 @@ export function InteractiveLevelSelector({
 
   return (
     <div className="w-full">
-      <div className="flex items-center justify-between mb-4">
+    <div className="flex items-center justify-between mb-4">
         <p className="text-sm text-muted-foreground">
           Click on any level to explore its topics and exercises
         </p>
-        <span className="text-xs px-2 py-1 rounded-full bg-secondary text-muted-foreground">
-          Your level: <span className="font-semibold text-foreground">{currentUserLevel}</span>
+        <span className={cn(
+          "text-xs px-2 py-1 rounded-full text-white font-semibold",
+          getLevelColor(selectedLevel)
+        )}>
+          Exploring: {selectedLevel} - {levels.find(l => l.id === selectedLevel)?.label}
         </span>
       </div>
       
