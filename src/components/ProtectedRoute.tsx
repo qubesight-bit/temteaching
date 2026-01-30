@@ -10,7 +10,7 @@ interface ProtectedRouteProps {
 }
 
 export function ProtectedRoute({ children, requireApproval = true }: ProtectedRouteProps) {
-  const { user, loading } = useAuth();
+  const { user, loading, sessionValid } = useAuth();
   const location = useLocation();
   const [isApproved, setIsApproved] = useState<boolean | null>(null);
   const [checkingApproval, setCheckingApproval] = useState(true);
@@ -63,6 +63,11 @@ export function ProtectedRoute({ children, requireApproval = true }: ProtectedRo
 
   if (!user) {
     return <Navigate to="/auth" state={{ from: location }} replace />;
+  }
+
+  // If session was kicked (logged in from another device)
+  if (!sessionValid) {
+    return <Navigate to="/session-expired" replace />;
   }
 
   // If approval is required and user is not approved, redirect to pending page
