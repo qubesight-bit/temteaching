@@ -540,11 +540,28 @@ export default function Conversation() {
   const speakText = (text: string) => {
     // Extract only the main content without feedback sections
     const { mainContent } = parseFeedback(text);
-    // Also remove any remaining markdown formatting
-    const cleanText = mainContent.replace(/\*\*.*?\*\*/g, '').replace(/💡.*$/gm, '').trim();
-    const utterance = new SpeechSynthesisUtterance(cleanText);
-    utterance.lang = 'en-US';
-    speechSynthesis.speak(utterance);
+    
+    // Remove all feedback-related content for clean audio:
+    // - Remove markdown bold formatting (**text**)
+    // - Remove tip lines starting with 💡
+    // - Remove correction markers (✅, ❌, 🔴)
+    // - Remove explanation lines (📖)
+    // - Remove EMAIL_READY blocks
+    // - Remove any remaining emojis that are part of feedback
+    let cleanText = mainContent
+      .replace(/---EMAIL_READY---[\s\S]*?---END EMAIL_READY---/g, '') // Remove email blocks
+      .replace(/\*\*[^*]+\*\*/g, '') // Remove bold markdown
+      .replace(/💡[^\n]*/g, '') // Remove tip lines
+      .replace(/📖[^\n]*/g, '') // Remove explanation lines
+      .replace(/[✅❌🔴🌟👍👌💪🔄]/g, '') // Remove feedback emojis
+      .replace(/\n{3,}/g, '\n\n') // Clean up multiple newlines
+      .trim();
+    
+    if (cleanText) {
+      const utterance = new SpeechSynthesisUtterance(cleanText);
+      utterance.lang = 'en-US';
+      speechSynthesis.speak(utterance);
+    }
   };
 
   const handleBack = () => {
