@@ -1,11 +1,13 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState, ReactNode, useCallback } from 'react';
 import { User, Session } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
+import { useSessionManager } from '@/hooks/useSessionManager';
 
 interface AuthContextType {
   user: User | null;
   session: Session | null;
   loading: boolean;
+  sessionValid: boolean;
   signUp: (email: string, password: string, displayName?: string) => Promise<{ error: Error | null }>;
   signIn: (email: string, password: string) => Promise<{ error: Error | null }>;
   signOut: () => Promise<void>;
@@ -17,6 +19,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
+  const [sessionValid, setSessionValid] = useState(true);
+
+  const { registerSession, removeSession, clearLocalSession, checkSession } = useSessionManager(user?.id);
+
+  // Check if session is still valid periodically
+  const validateSession = useCallback(async () => {
+    if (!user) return;
+    
+    const isValid = await checkSession();
+    if (!isValid && session) {
+      // Session was kicked - sign out
+      setSessionValid(false);
+    }
+  }, [user, session, checkSession]);
 
   useEffect(() => {
     // Set up auth state listener FIRST
@@ -25,6 +41,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setSession(session);
         setUser(session?.user ?? null);
         setLoading(false);
+
+        // Register session on sign in
+        if (event === 'SIGNED_IN' && session?.user) {
+          setTimeout(() => {
+            registerSession();
+          }, 0);
+        }
       }
     );
 
@@ -37,6 +60,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     return () => subscription.unsubscribe();
   }, []);
+
+  // Periodic session validation
+  useEffect(() => {
+    if (!user) return;
+
+    const interval = setInterval(() => {
+      validateSession();
+    }, 30000); // Check every 30 seconds
+
+    return () => clearInterval(interval);
+  }, [user, validateSession]);
 
   const signUp = async (email: string, password: string, displayName?: string) => {
     const redirectUrl = `${window.location.origin}/`;
@@ -70,15 +104,23 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       email,
       password,
     });
+    
+    if (!error) {
+      setSessionValid(true);
+    }
+    
     return { error };
   };
 
   const signOut = async () => {
+    await removeSession();
+    clearLocalSession();
     await supabase.auth.signOut();
+    setSessionValid(true);
   };
 
   return (
-    <AuthContext.Provider value={{ user, session, loading, signUp, signIn, signOut }}>
+    <AuthContext.Provider value={{ user, session, loading, sessionValid, signUp, signIn, signOut }}>
       {children}
     </AuthContext.Provider>
   );

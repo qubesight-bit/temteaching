@@ -29,6 +29,7 @@ import ArticleDetail from "./pages/ArticleDetail";
 import Karaoke from "./pages/Karaoke";
 import CustomExam from "./pages/CustomExam";
 import PendingApproval from "./pages/PendingApproval";
+import SessionExpired from "./pages/SessionExpired";
 import AdminUsers from "./pages/AdminUsers";
 import NotFound from "./pages/NotFound";
 
@@ -48,8 +49,9 @@ const App = () => (
                   {/* Public route - Auth page */}
                   <Route path="/auth" element={<Auth />} />
                   
-                  {/* Pending approval page - requires login but not approval */}
+                  {/* Session/Approval pages - requires login but not approval */}
                   <Route path="/pending-approval" element={<PendingApproval />} />
+                  <Route path="/session-expired" element={<SessionExpired />} />
                   
                   {/* Admin routes */}
                   <Route path="/admin/users" element={<ProtectedRoute><AdminUsers /></ProtectedRoute>} />
