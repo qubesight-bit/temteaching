@@ -150,19 +150,19 @@ export function KaraokeVideoPlayer({
             onError: (event) => {
               console.error('YouTube player error:', event.data);
               const errorMessages: Record<number, string> = {
-                2: 'ID de video inválido',
-                5: 'Error del reproductor HTML5',
-                100: 'Video no encontrado',
-                101: 'Video no disponible para embeber',
-                150: 'Video restringido',
+                2: 'Invalid video ID',
+                5: 'HTML5 player error',
+                100: 'Video not found',
+                101: 'Video not available for embedding',
+                150: 'Restricted video',
               };
-              onPlayerError(errorMessages[event.data] || 'Error al cargar el video');
+              onPlayerError(errorMessages[event.data] || 'Error loading video');
             },
           },
         });
       } catch (err) {
         console.error('Error creating YouTube player:', err);
-        onPlayerError('Error al inicializar el reproductor');
+        onPlayerError('Error initializing player');
       }
     };
 
@@ -207,7 +207,7 @@ export function KaraokeVideoPlayer({
         className="aspect-video bg-muted rounded-lg overflow-hidden flex items-center justify-center"
       >
         {!videoId && (
-          <p className="text-muted-foreground">Selecciona una canción para comenzar</p>
+          <p className="text-muted-foreground">Select a song to begin</p>
         )}
       </div>
 
@@ -225,11 +225,11 @@ export function KaraokeVideoPlayer({
         )}
         <Button variant="outline" size="sm" onClick={onStop} disabled={!playerReady}>
           <Square className="h-4 w-4 mr-1" />
-          Detener
+          Stop
         </Button>
         <Button variant="ghost" size="sm" onClick={onReset}>
           <RotateCcw className="h-4 w-4 mr-1" />
-          Reiniciar
+          Reset
         </Button>
       </div>
     </div>

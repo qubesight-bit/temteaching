@@ -61,10 +61,10 @@ function parseErrorReports(content: string, conversationId: string | null, userL
       conversation_id: conversationId || undefined,
       level: userLevel,
       phase: "CONVERSATION",
-      question_text: "Conversación libre",
+      question_text: "Free conversation",
       user_response: match[1].trim(),
       correct_response: match[2].trim(),
-      error_type: "gramática",
+      error_type: "grammar",
       recommendation: match[3].trim(),
     };
     
@@ -109,18 +109,18 @@ interface Message {
 }
 
 const scenarios = [
-  { id: "cafe", title: "En el café", description: "Practica ordenar en una cafetería", icon: "☕", level: "A1" },
-  { id: "restaurant", title: "En el restaurante", description: "Reservas y pedidos de comida", icon: "🍽️", level: "A1" },
-  { id: "shopping", title: "De compras", description: "Comprar ropa y preguntar precios", icon: "🛍️", level: "A1" },
-  { id: "travel", title: "En el aeropuerto", description: "Vocabulario de viajes", icon: "✈️", level: "A2" },
-  { id: "hotel", title: "En el hotel", description: "Check-in y servicios del hotel", icon: "🏨", level: "A2" },
-  { id: "doctor", title: "En el médico", description: "Describir síntomas y entender indicaciones", icon: "🏥", level: "B1" },
-  { id: "work", title: "Reunión de trabajo", description: "Inglés profesional", icon: "💼", level: "B1" },
-  { id: "interview", title: "Entrevista de trabajo", description: "Responder preguntas y presentarte", icon: "👔", level: "B1" },
-  { id: "bank", title: "En el banco", description: "Abrir cuentas y transacciones", icon: "🏦", level: "B2" },
-  { id: "debate", title: "Debate académico", description: "Argumentación avanzada", icon: "🎓", level: "B2" },
-  { id: "networking", title: "Evento de networking", description: "Conversación profesional informal", icon: "🤝", level: "B2" },
-  { id: "negotiation", title: "Negociación comercial", description: "Cerrar acuerdos y negociar términos", icon: "📊", level: "C1" },
+  { id: "cafe", title: "At the Café", description: "Practice ordering at a coffee shop", icon: "☕", level: "A1" },
+  { id: "restaurant", title: "At the Restaurant", description: "Reservations and food orders", icon: "🍽️", level: "A1" },
+  { id: "shopping", title: "Shopping", description: "Buying clothes and asking prices", icon: "🛍️", level: "A1" },
+  { id: "travel", title: "At the Airport", description: "Travel vocabulary and phrases", icon: "✈️", level: "A2" },
+  { id: "hotel", title: "At the Hotel", description: "Check-in and hotel services", icon: "🏨", level: "A2" },
+  { id: "doctor", title: "At the Doctor", description: "Describing symptoms and understanding directions", icon: "🏥", level: "B1" },
+  { id: "work", title: "Work Meeting", description: "Professional English", icon: "💼", level: "B1" },
+  { id: "interview", title: "Job Interview", description: "Answering questions and presenting yourself", icon: "👔", level: "B1" },
+  { id: "bank", title: "At the Bank", description: "Opening accounts and transactions", icon: "🏦", level: "B2" },
+  { id: "debate", title: "Academic Debate", description: "Advanced argumentation", icon: "🎓", level: "B2" },
+  { id: "networking", title: "Networking Event", description: "Informal professional conversation", icon: "🤝", level: "B2" },
+  { id: "negotiation", title: "Business Negotiation", description: "Closing deals and negotiating terms", icon: "📊", level: "C1" },
 ];
 
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/conversation-chat`;
@@ -689,7 +689,7 @@ export default function Conversation() {
               {isRecording ? <MicOff className="w-5 h-5" /> : <Mic className="w-5 h-5" />}
             </Button>
             <Input
-              placeholder={isRecording ? "🎤 Listening... speak in English" : "Escribe tu mensaje en inglés..."}
+              placeholder={isRecording ? "🎤 Listening... speak in English" : "Type your message in English..."}
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
@@ -738,10 +738,10 @@ export default function Conversation() {
               </div>
               <div>
                 <h1 className="font-display font-bold text-3xl text-foreground">
-                  Conversación con IA
+                  AI Conversation
                 </h1>
                 <p className="text-muted-foreground">
-                  Practica con tu tutor virtual 24/7 con corrección instantánea impulsada por IA
+                  Practice with your virtual tutor 24/7 with AI-powered instant correction
                 </p>
               </div>
             </div>
@@ -752,7 +752,7 @@ export default function Conversation() {
                 className="gap-2"
               >
                 <History className="w-4 h-4" />
-                Historial
+                History
               </Button>
             )}
           </div>
@@ -763,7 +763,7 @@ export default function Conversation() {
 
         {/* Level Filter */}
         <div className="mb-6">
-          <h2 className="font-display font-semibold text-lg mb-3">Filtrar por nivel</h2>
+          <h2 className="font-display font-semibold text-lg mb-3">Filter by Level</h2>
           <div className="flex flex-wrap gap-2">
             {levels.map((level) => (
               <Button
@@ -773,17 +773,17 @@ export default function Conversation() {
                 onClick={() => setSelectedLevel(level)}
                 className="min-w-[60px]"
               >
-                {level === "All" ? "Todos" : level}
+                {level}
               </Button>
             ))}
           </div>
           <p className="text-sm text-muted-foreground mt-2">
-            {filteredScenarios.length} escenario{filteredScenarios.length !== 1 ? 's' : ''} disponible{filteredScenarios.length !== 1 ? 's' : ''}
+            {filteredScenarios.length} scenario{filteredScenarios.length !== 1 ? 's' : ''} available
           </p>
         </div>
 
         {/* Scenario Selection */}
-        <h2 className="font-display font-semibold text-lg mb-4">Elige un escenario</h2>
+        <h2 className="font-display font-semibold text-lg mb-4">Choose a Scenario</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredScenarios.map((scenario) => (
             <Card
@@ -809,7 +809,7 @@ export default function Conversation() {
                       {scenario.description}
                     </p>
                     <Button variant="outline" size="sm" className="mt-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                      Comenzar conversación
+                      Start Conversation
                     </Button>
                   </div>
                 </div>
@@ -824,13 +824,13 @@ export default function Conversation() {
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="font-display font-semibold mb-1">💾 Guarda tu progreso</h3>
+                  <h3 className="font-display font-semibold mb-1">💾 Save Your Progress</h3>
                   <p className="text-sm text-muted-foreground">
-                    Inicia sesión para guardar tus conversaciones y ver tu historial de práctica
+                    Sign in to save your conversations and view your practice history
                   </p>
                 </div>
                 <Button onClick={() => navigate('/auth')}>
-                  Crear cuenta gratis
+                  Create Free Account
                 </Button>
               </div>
             </CardContent>
@@ -840,13 +840,13 @@ export default function Conversation() {
         {/* Tips */}
         <Card className="mt-8">
           <CardContent className="p-6">
-            <h3 className="font-display font-semibold mb-4">💡 Consejos para practicar</h3>
+            <h3 className="font-display font-semibold mb-4">💡 Practice Tips</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>• Intenta escribir oraciones completas, no solo palabras sueltas</li>
-              <li>• No te preocupes por los errores, el tutor IA te corregirá amablemente</li>
-              <li>• Usa el botón de audio para escuchar la pronunciación correcta</li>
-              <li>• Practica al menos 10 minutos al día para mejorar tu fluidez</li>
-              <li>• La IA se adapta a tu nivel configurado en Ajustes</li>
+              <li>• Try writing complete sentences, not just single words</li>
+              <li>• Don't worry about mistakes, the AI tutor will correct you kindly</li>
+              <li>• Use the audio button to hear the correct pronunciation</li>
+              <li>• Practice at least 10 minutes a day to improve your fluency</li>
+              <li>• The AI adapts to your level configured in Settings</li>
             </ul>
           </CardContent>
         </Card>

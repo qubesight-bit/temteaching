@@ -10,7 +10,7 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
 import { useLearningErrors, LearningError } from "@/hooks/useLearningErrors";
 import { useAuth } from "@/contexts/AuthContext";
 import { format } from "date-fns";
-import { es } from "date-fns/locale";
+import { enUS } from "date-fns/locale";
 
 const ErrorHistory = () => {
   const navigate = useNavigate();
@@ -26,9 +26,9 @@ const ErrorHistory = () => {
         <Card className="max-w-md w-full">
           <CardContent className="pt-6 text-center">
             <AlertCircle className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-            <h2 className="text-xl font-semibold mb-2">Inicia sesión</h2>
-            <p className="text-muted-foreground mb-4">Necesitas iniciar sesión para ver tu historial de errores.</p>
-            <Button onClick={() => navigate("/auth")}>Iniciar Sesión</Button>
+            <h2 className="text-xl font-semibold mb-2">Sign In Required</h2>
+            <p className="text-muted-foreground mb-4">You need to sign in to view your error history.</p>
+            <Button onClick={() => navigate("/auth")}>Sign In</Button>
           </CardContent>
         </Card>
       </div>
@@ -86,8 +86,8 @@ const ErrorHistory = () => {
               <ArrowLeft className="w-5 h-5" />
             </Button>
             <div>
-              <h1 className="text-2xl font-bold">Historial de Errores</h1>
-              <p className="text-muted-foreground text-sm">Seguimiento de tu progreso de aprendizaje</p>
+              <h1 className="text-2xl font-bold">Error History</h1>
+              <p className="text-muted-foreground text-sm">Track your learning progress</p>
             </div>
           </div>
           {errors.length > 0 && (
@@ -95,20 +95,20 @@ const ErrorHistory = () => {
               <AlertDialogTrigger asChild>
                 <Button variant="destructive" size="sm">
                   <Trash2 className="w-4 h-4 mr-2" />
-                  Limpiar Todo
+                  Clear All
                 </Button>
               </AlertDialogTrigger>
               <AlertDialogContent>
                 <AlertDialogHeader>
-                  <AlertDialogTitle>¿Eliminar todo el historial?</AlertDialogTitle>
+                  <AlertDialogTitle>Delete all history?</AlertDialogTitle>
                   <AlertDialogDescription>
-                    Esta acción no se puede deshacer. Se eliminarán todos los errores registrados.
+                    This action cannot be undone. All recorded errors will be deleted.
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
-                  <AlertDialogCancel>Cancelar</AlertDialogCancel>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
                   <AlertDialogAction onClick={() => clearAllErrors.mutate()}>
-                    Eliminar Todo
+                    Delete All
                   </AlertDialogAction>
                 </AlertDialogFooter>
               </AlertDialogContent>
@@ -124,7 +124,7 @@ const ErrorHistory = () => {
                 <AlertCircle className="w-5 h-5 text-destructive" />
                 <div>
                   <p className="text-2xl font-bold">{stats.totalErrors}</p>
-                  <p className="text-xs text-muted-foreground">Total Errores</p>
+                  <p className="text-xs text-muted-foreground">Total Errors</p>
                 </div>
               </div>
             </CardContent>
@@ -170,15 +170,15 @@ const ErrorHistory = () => {
             <CardContent className="pt-4 pb-4">
               <div className="flex items-center gap-2 mb-3">
                 <Filter className="w-4 h-4 text-muted-foreground" />
-                <span className="text-sm font-medium">Filtros</span>
+                <span className="text-sm font-medium">Filters</span>
               </div>
               <div className="grid grid-cols-3 gap-3">
                 <Select value={filterLevel} onValueChange={setFilterLevel}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Nivel" />
+                    <SelectValue placeholder="Level" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">Todos los niveles</SelectItem>
+                    <SelectItem value="all">All Levels</SelectItem>
                     {uniqueLevels.map((level) => (
                       <SelectItem key={level} value={level}>{level}</SelectItem>
                     ))}
@@ -186,10 +186,10 @@ const ErrorHistory = () => {
                 </Select>
                 <Select value={filterPhase} onValueChange={setFilterPhase}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Fase" />
+                    <SelectValue placeholder="Phase" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">Todas las fases</SelectItem>
+                    <SelectItem value="all">All Phases</SelectItem>
                     {uniquePhases.map((phase) => (
                       <SelectItem key={phase} value={phase}>{phase}</SelectItem>
                     ))}
@@ -197,10 +197,10 @@ const ErrorHistory = () => {
                 </Select>
                 <Select value={filterType} onValueChange={setFilterType}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Tipo" />
+                    <SelectValue placeholder="Type" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">Todos los tipos</SelectItem>
+                    <SelectItem value="all">All Types</SelectItem>
                     {uniqueTypes.map((type) => (
                       <SelectItem key={type} value={type}>{type}</SelectItem>
                     ))}
@@ -215,19 +215,19 @@ const ErrorHistory = () => {
         {isLoading ? (
           <div className="text-center py-12">
             <div className="animate-spin w-8 h-8 border-2 border-primary border-t-transparent rounded-full mx-auto mb-4" />
-            <p className="text-muted-foreground">Cargando historial...</p>
+            <p className="text-muted-foreground">Loading history...</p>
           </div>
         ) : filteredErrors.length === 0 ? (
           <Card>
             <CardContent className="py-12 text-center">
               <BookOpen className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
               <h3 className="text-lg font-semibold mb-2">
-                {errors.length === 0 ? "¡Sin errores registrados!" : "No hay errores con estos filtros"}
+                {errors.length === 0 ? "No Errors Recorded!" : "No errors match these filters"}
               </h3>
               <p className="text-muted-foreground">
                 {errors.length === 0 
-                  ? "Los errores de tus conversaciones y exámenes aparecerán aquí."
-                  : "Prueba ajustando los filtros para ver más resultados."}
+                  ? "Errors from your conversations and exams will appear here."
+                  : "Try adjusting the filters to see more results."}
               </p>
             </CardContent>
           </Card>
@@ -288,16 +288,16 @@ const ErrorCard = ({ error, onDelete, getPhaseIcon, getPhaseColor, getLevelColor
             {expanded && (
               <div className="space-y-3 mt-3 pt-3 border-t">
                 <div>
-                  <p className="text-xs font-medium text-destructive mb-1">Tu respuesta:</p>
+                  <p className="text-xs font-medium text-destructive mb-1">Your Answer:</p>
                   <p className="text-sm bg-destructive/10 p-2 rounded">{error.user_response}</p>
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-green-600 mb-1">Respuesta correcta:</p>
+                  <p className="text-xs font-medium text-green-600 mb-1">Correct Answer:</p>
                   <p className="text-sm bg-green-500/10 p-2 rounded">{error.correct_response}</p>
                 </div>
                 {error.recommendation && (
                   <div>
-                    <p className="text-xs font-medium text-blue-600 mb-1">Recomendación:</p>
+                    <p className="text-xs font-medium text-blue-600 mb-1">Recommendation:</p>
                     <p className="text-sm bg-blue-500/10 p-2 rounded">{error.recommendation}</p>
                   </div>
                 )}
@@ -306,14 +306,14 @@ const ErrorCard = ({ error, onDelete, getPhaseIcon, getPhaseColor, getLevelColor
 
             <div className="flex items-center justify-between mt-3">
               <span className="text-xs text-muted-foreground">
-                {format(new Date(error.created_at), "d MMM yyyy, HH:mm", { locale: es })}
+                {format(new Date(error.created_at), "d MMM yyyy, HH:mm", { locale: enUS })}
               </span>
               <Button 
                 variant="ghost" 
                 size="sm" 
                 onClick={() => setExpanded(!expanded)}
               >
-                {expanded ? "Ver menos" : "Ver más"}
+                {expanded ? "Show Less" : "Show More"}
               </Button>
             </div>
           </div>
@@ -326,14 +326,14 @@ const ErrorCard = ({ error, onDelete, getPhaseIcon, getPhaseColor, getLevelColor
             </AlertDialogTrigger>
             <AlertDialogContent>
               <AlertDialogHeader>
-                <AlertDialogTitle>¿Eliminar este error?</AlertDialogTitle>
+                <AlertDialogTitle>Delete this error?</AlertDialogTitle>
                 <AlertDialogDescription>
-                  Esta acción no se puede deshacer.
+                  This action cannot be undone.
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>
-                <AlertDialogCancel>Cancelar</AlertDialogCancel>
-                <AlertDialogAction onClick={onDelete}>Eliminar</AlertDialogAction>
+                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                <AlertDialogAction onClick={onDelete}>Delete</AlertDialogAction>
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialog>

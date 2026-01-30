@@ -17,7 +17,7 @@ export function DailyGoalWidget({
   weeklyProgress 
 }: DailyGoalWidgetProps) {
   const goalProgress = Math.min((todayMinutes / goalMinutes) * 100, 100);
-  const days = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
+  const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
   
   return (
     <Card variant="gradient" className="overflow-hidden">
@@ -30,14 +30,14 @@ export function DailyGoalWidget({
             </div>
             <div>
               <p className="text-2xl font-display font-bold text-foreground">{currentStreak}</p>
-              <p className="text-xs text-muted-foreground">días de racha</p>
+              <p className="text-xs text-muted-foreground">day streak</p>
             </div>
           </div>
           
           <div className="text-right">
             <p className="text-sm font-medium text-muted-foreground flex items-center gap-1 justify-end">
               <TrendingUp className="w-4 h-4" />
-              Mejor: {bestStreak}
+              Best: {bestStreak}
             </p>
           </div>
         </div>
@@ -47,7 +47,7 @@ export function DailyGoalWidget({
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2">
               <Target className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium">Meta diaria</span>
+              <span className="text-sm font-medium">Daily Goal</span>
             </div>
             <div className="flex items-center gap-1 text-sm">
               <Clock className="w-4 h-4 text-muted-foreground" />
@@ -65,14 +65,14 @@ export function DailyGoalWidget({
           
           {goalProgress >= 100 && (
             <p className="text-xs text-success font-medium mt-2 flex items-center gap-1">
-              <span className="text-lg">🎉</span> ¡Meta completada!
+              <span className="text-lg">🎉</span> Goal completed!
             </p>
           )}
         </div>
 
         {/* Weekly Progress */}
         <div>
-          <p className="text-xs text-muted-foreground mb-3">Esta semana</p>
+          <p className="text-xs text-muted-foreground mb-3">This Week</p>
           <div className="flex justify-between gap-1">
             {weeklyProgress.map((progress, index) => (
               <div key={index} className="flex flex-col items-center gap-1.5 flex-1">
