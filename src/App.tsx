@@ -7,6 +7,7 @@ import { AppStateProvider } from "@/hooks/useAppState";
 import { GamificationProvider } from "@/hooks/useGamification";
 import { AdaptiveLearningProvider } from "@/hooks/useAdaptiveLearning";
 import { AuthProvider } from "@/contexts/AuthContext";
+import { ProtectedRoute } from "@/components/ProtectedRoute";
 import Index from "./pages/Index";
 import Curriculum from "./pages/Curriculum";
 import Grammar from "./pages/Grammar";
@@ -42,26 +43,29 @@ const App = () => (
               <Sonner />
               <BrowserRouter>
                 <Routes>
-                  <Route path="/" element={<Index />} />
-                  <Route path="/curriculum" element={<Curriculum />} />
+                  {/* Public route - Auth page */}
                   <Route path="/auth" element={<Auth />} />
-                  <Route path="/grammar" element={<Grammar />} />
-                  <Route path="/vocabulary" element={<Vocabulary />} />
-                  <Route path="/practice" element={<Practice />} />
-                  <Route path="/conversation" element={<Conversation />} />
-                  <Route path="/conversation/history" element={<ConversationHistory />} />
-                  <Route path="/conversation/history/:id" element={<ConversationDetail />} />
-                  <Route path="/tests" element={<Tests />} />
-                  <Route path="/lesson/:type/:categoryId/:topicId" element={<Lesson />} />
-                  <Route path="/skill/:level/:categoryId/:skillId" element={<SkillLesson />} />
-                  <Route path="/settings" element={<Settings />} />
-                  <Route path="/adaptive-quiz" element={<AdaptiveQuiz />} />
-                  <Route path="/news" element={<News />} />
-                  <Route path="/error-history" element={<ErrorHistory />} />
-                  <Route path="/articles" element={<Articles />} />
-                  <Route path="/articles/:articleId" element={<ArticleDetail />} />
-                  <Route path="/karaoke" element={<Karaoke />} />
-                  <Route path="/custom-exam" element={<CustomExam />} />
+                  
+                  {/* Protected routes - Require login */}
+                  <Route path="/" element={<ProtectedRoute><Index /></ProtectedRoute>} />
+                  <Route path="/curriculum" element={<ProtectedRoute><Curriculum /></ProtectedRoute>} />
+                  <Route path="/grammar" element={<ProtectedRoute><Grammar /></ProtectedRoute>} />
+                  <Route path="/vocabulary" element={<ProtectedRoute><Vocabulary /></ProtectedRoute>} />
+                  <Route path="/practice" element={<ProtectedRoute><Practice /></ProtectedRoute>} />
+                  <Route path="/conversation" element={<ProtectedRoute><Conversation /></ProtectedRoute>} />
+                  <Route path="/conversation/history" element={<ProtectedRoute><ConversationHistory /></ProtectedRoute>} />
+                  <Route path="/conversation/history/:id" element={<ProtectedRoute><ConversationDetail /></ProtectedRoute>} />
+                  <Route path="/tests" element={<ProtectedRoute><Tests /></ProtectedRoute>} />
+                  <Route path="/lesson/:type/:categoryId/:topicId" element={<ProtectedRoute><Lesson /></ProtectedRoute>} />
+                  <Route path="/skill/:level/:categoryId/:skillId" element={<ProtectedRoute><SkillLesson /></ProtectedRoute>} />
+                  <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
+                  <Route path="/adaptive-quiz" element={<ProtectedRoute><AdaptiveQuiz /></ProtectedRoute>} />
+                  <Route path="/news" element={<ProtectedRoute><News /></ProtectedRoute>} />
+                  <Route path="/error-history" element={<ProtectedRoute><ErrorHistory /></ProtectedRoute>} />
+                  <Route path="/articles" element={<ProtectedRoute><Articles /></ProtectedRoute>} />
+                  <Route path="/articles/:articleId" element={<ProtectedRoute><ArticleDetail /></ProtectedRoute>} />
+                  <Route path="/karaoke" element={<ProtectedRoute><Karaoke /></ProtectedRoute>} />
+                  <Route path="/custom-exam" element={<ProtectedRoute><CustomExam /></ProtectedRoute>} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </BrowserRouter>
