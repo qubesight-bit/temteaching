@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { ArrowLeft, Send, Sparkles, Mic, MicOff, Volume2, Loader2, History } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
-import { ChatFeedback } from "@/components/ChatFeedback";
+import { ChatFeedback, parseFeedback } from "@/components/ChatFeedback";
 import { GrammarTips } from "@/components/GrammarTips";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
@@ -538,8 +538,10 @@ export default function Conversation() {
   };
 
   const speakText = (text: string) => {
-    // Remove markdown formatting for speech
-    const cleanText = text.replace(/\*\*.*?\*\*/g, '').replace(/💡.*$/gm, '');
+    // Extract only the main content without feedback sections
+    const { mainContent } = parseFeedback(text);
+    // Also remove any remaining markdown formatting
+    const cleanText = mainContent.replace(/\*\*.*?\*\*/g, '').replace(/💡.*$/gm, '').trim();
     const utterance = new SpeechSynthesisUtterance(cleanText);
     utterance.lang = 'en-US';
     speechSynthesis.speak(utterance);
