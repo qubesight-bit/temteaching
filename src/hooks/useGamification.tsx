@@ -44,41 +44,41 @@ interface GamificationContextType {
 
 const allAchievements: Achievement[] = [
   // Streak achievements
-  { id: "streak-3", title: "Getting Started", description: "Estudia 3 días seguidos", icon: "🔥", xpReward: 50, requirement: { type: "streak", value: 3 } },
-  { id: "streak-7", title: "Week Warrior", description: "Estudia 7 días seguidos", icon: "⚡", xpReward: 100, requirement: { type: "streak", value: 7 } },
-  { id: "streak-14", title: "Dedicated Learner", description: "Estudia 14 días seguidos", icon: "🏆", xpReward: 200, requirement: { type: "streak", value: 14 } },
-  { id: "streak-30", title: "Monthly Master", description: "Estudia 30 días seguidos", icon: "👑", xpReward: 500, requirement: { type: "streak", value: 30 } },
-  { id: "streak-100", title: "Century Champion", description: "Estudia 100 días seguidos", icon: "💎", xpReward: 2000, requirement: { type: "streak", value: 100 } },
+  { id: "streak-3", title: "Getting Started", description: "Study for 3 days in a row", icon: "🔥", xpReward: 50, requirement: { type: "streak", value: 3 } },
+  { id: "streak-7", title: "Week Warrior", description: "Study for 7 days in a row", icon: "⚡", xpReward: 100, requirement: { type: "streak", value: 7 } },
+  { id: "streak-14", title: "Dedicated Learner", description: "Study for 14 days in a row", icon: "🏆", xpReward: 200, requirement: { type: "streak", value: 14 } },
+  { id: "streak-30", title: "Monthly Master", description: "Study for 30 days in a row", icon: "👑", xpReward: 500, requirement: { type: "streak", value: 30 } },
+  { id: "streak-100", title: "Century Champion", description: "Study for 100 days in a row", icon: "💎", xpReward: 2000, requirement: { type: "streak", value: 100 } },
   
   // Lesson achievements
-  { id: "lessons-1", title: "First Step", description: "Completa tu primera lección", icon: "📖", xpReward: 25, requirement: { type: "lessons", value: 1 } },
-  { id: "lessons-10", title: "Eager Student", description: "Completa 10 lecciones", icon: "📚", xpReward: 100, requirement: { type: "lessons", value: 10 } },
-  { id: "lessons-50", title: "Knowledge Seeker", description: "Completa 50 lecciones", icon: "🎓", xpReward: 300, requirement: { type: "lessons", value: 50 } },
-  { id: "lessons-100", title: "Scholar", description: "Completa 100 lecciones", icon: "🏛️", xpReward: 500, requirement: { type: "lessons", value: 100 } },
+  { id: "lessons-1", title: "First Step", description: "Complete your first lesson", icon: "📖", xpReward: 25, requirement: { type: "lessons", value: 1 } },
+  { id: "lessons-10", title: "Eager Student", description: "Complete 10 lessons", icon: "📚", xpReward: 100, requirement: { type: "lessons", value: 10 } },
+  { id: "lessons-50", title: "Knowledge Seeker", description: "Complete 50 lessons", icon: "🎓", xpReward: 300, requirement: { type: "lessons", value: 50 } },
+  { id: "lessons-100", title: "Scholar", description: "Complete 100 lessons", icon: "🏛️", xpReward: 500, requirement: { type: "lessons", value: 100 } },
   
   // Vocabulary achievements
-  { id: "words-50", title: "Word Collector", description: "Aprende 50 palabras", icon: "✨", xpReward: 75, requirement: { type: "words", value: 50 } },
-  { id: "words-200", title: "Vocabulary Builder", description: "Aprende 200 palabras", icon: "📝", xpReward: 200, requirement: { type: "words", value: 200 } },
-  { id: "words-500", title: "Lexicon Master", description: "Aprende 500 palabras", icon: "📕", xpReward: 400, requirement: { type: "words", value: 500 } },
-  { id: "words-1000", title: "Polyglot", description: "Aprende 1000 palabras", icon: "🌟", xpReward: 1000, requirement: { type: "words", value: 1000 } },
+  { id: "words-50", title: "Word Collector", description: "Learn 50 words", icon: "✨", xpReward: 75, requirement: { type: "words", value: 50 } },
+  { id: "words-200", title: "Vocabulary Builder", description: "Learn 200 words", icon: "📝", xpReward: 200, requirement: { type: "words", value: 200 } },
+  { id: "words-500", title: "Lexicon Master", description: "Learn 500 words", icon: "📕", xpReward: 400, requirement: { type: "words", value: 500 } },
+  { id: "words-1000", title: "Polyglot", description: "Learn 1000 words", icon: "🌟", xpReward: 1000, requirement: { type: "words", value: 1000 } },
   
   // Quiz achievements
-  { id: "quizzes-10", title: "Quiz Starter", description: "Completa 10 quizzes", icon: "❓", xpReward: 100, requirement: { type: "quizzes", value: 10 } },
-  { id: "quizzes-50", title: "Quiz Pro", description: "Completa 50 quizzes", icon: "💯", xpReward: 300, requirement: { type: "quizzes", value: 50 } },
+  { id: "quizzes-10", title: "Quiz Starter", description: "Complete 10 quizzes", icon: "❓", xpReward: 100, requirement: { type: "quizzes", value: 10 } },
+  { id: "quizzes-50", title: "Quiz Pro", description: "Complete 50 quizzes", icon: "💯", xpReward: 300, requirement: { type: "quizzes", value: 50 } },
   
   // Accuracy achievements
-  { id: "accuracy-80", title: "Sharp Mind", description: "Mantén 80% de precisión", icon: "🎯", xpReward: 150, requirement: { type: "accuracy", value: 80 } },
-  { id: "accuracy-90", title: "Near Perfect", description: "Mantén 90% de precisión", icon: "🔥", xpReward: 300, requirement: { type: "accuracy", value: 90 } },
-  { id: "accuracy-95", title: "Perfectionist", description: "Mantén 95% de precisión", icon: "💎", xpReward: 500, requirement: { type: "accuracy", value: 95 } },
+  { id: "accuracy-80", title: "Sharp Mind", description: "Maintain 80% accuracy", icon: "🎯", xpReward: 150, requirement: { type: "accuracy", value: 80 } },
+  { id: "accuracy-90", title: "Near Perfect", description: "Maintain 90% accuracy", icon: "🔥", xpReward: 300, requirement: { type: "accuracy", value: 90 } },
+  { id: "accuracy-95", title: "Perfectionist", description: "Maintain 95% accuracy", icon: "💎", xpReward: 500, requirement: { type: "accuracy", value: 95 } },
   
   // Conversation achievements
-  { id: "conversations-5", title: "Chatty", description: "Completa 5 conversaciones", icon: "💬", xpReward: 75, requirement: { type: "conversations", value: 5 } },
-  { id: "conversations-20", title: "Conversationalist", description: "Completa 20 conversaciones", icon: "🗣️", xpReward: 200, requirement: { type: "conversations", value: 20 } },
+  { id: "conversations-5", title: "Chatty", description: "Complete 5 conversations", icon: "💬", xpReward: 75, requirement: { type: "conversations", value: 5 } },
+  { id: "conversations-20", title: "Conversationalist", description: "Complete 20 conversations", icon: "🗣️", xpReward: 200, requirement: { type: "conversations", value: 20 } },
   
   // Time achievements
-  { id: "time-60", title: "Hour of Power", description: "Estudia 1 hora total", icon: "⏰", xpReward: 50, requirement: { type: "time", value: 60 } },
-  { id: "time-600", title: "Ten Hour Hero", description: "Estudia 10 horas total", icon: "⌛", xpReward: 200, requirement: { type: "time", value: 600 } },
-  { id: "time-3600", title: "Time Master", description: "Estudia 60 horas total", icon: "🕐", xpReward: 1000, requirement: { type: "time", value: 3600 } },
+  { id: "time-60", title: "Hour of Power", description: "Study for 1 hour total", icon: "⏰", xpReward: 50, requirement: { type: "time", value: 60 } },
+  { id: "time-600", title: "Ten Hour Hero", description: "Study for 10 hours total", icon: "⌛", xpReward: 200, requirement: { type: "time", value: 600 } },
+  { id: "time-3600", title: "Time Master", description: "Study for 60 hours total", icon: "🕐", xpReward: 1000, requirement: { type: "time", value: 3600 } },
 ];
 
 const initialState: GamificationState = {

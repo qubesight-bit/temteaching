@@ -7,7 +7,6 @@ import { AppStateProvider } from "@/hooks/useAppState";
 import { GamificationProvider } from "@/hooks/useGamification";
 import { AdaptiveLearningProvider } from "@/hooks/useAdaptiveLearning";
 import { AuthProvider } from "@/contexts/AuthContext";
-import { LanguageProvider } from "@/contexts/LanguageContext";
 import Index from "./pages/Index";
 import Curriculum from "./pages/Curriculum";
 import Grammar from "./pages/Grammar";
@@ -34,45 +33,43 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <LanguageProvider>
-      <AuthProvider>
-        <AppStateProvider>
-          <GamificationProvider>
-            <AdaptiveLearningProvider>
-              <TooltipProvider>
-                <Toaster />
-                <Sonner />
-                <BrowserRouter>
-                  <Routes>
-                    <Route path="/" element={<Index />} />
-                    <Route path="/curriculum" element={<Curriculum />} />
-                    <Route path="/auth" element={<Auth />} />
-                    <Route path="/grammar" element={<Grammar />} />
-                    <Route path="/vocabulary" element={<Vocabulary />} />
-                    <Route path="/practice" element={<Practice />} />
-                    <Route path="/conversation" element={<Conversation />} />
-                    <Route path="/conversation/history" element={<ConversationHistory />} />
-                    <Route path="/conversation/history/:id" element={<ConversationDetail />} />
-                    <Route path="/tests" element={<Tests />} />
-                    <Route path="/lesson/:type/:categoryId/:topicId" element={<Lesson />} />
-                    <Route path="/skill/:level/:categoryId/:skillId" element={<SkillLesson />} />
-                    <Route path="/settings" element={<Settings />} />
-                    <Route path="/adaptive-quiz" element={<AdaptiveQuiz />} />
-                    <Route path="/news" element={<News />} />
-                    <Route path="/error-history" element={<ErrorHistory />} />
-                    <Route path="/articles" element={<Articles />} />
-                    <Route path="/articles/:articleId" element={<ArticleDetail />} />
-                    <Route path="/karaoke" element={<Karaoke />} />
-                    <Route path="/custom-exam" element={<CustomExam />} />
-                    <Route path="*" element={<NotFound />} />
-                  </Routes>
-                </BrowserRouter>
-              </TooltipProvider>
-            </AdaptiveLearningProvider>
-          </GamificationProvider>
-        </AppStateProvider>
-      </AuthProvider>
-    </LanguageProvider>
+    <AuthProvider>
+      <AppStateProvider>
+        <GamificationProvider>
+          <AdaptiveLearningProvider>
+            <TooltipProvider>
+              <Toaster />
+              <Sonner />
+              <BrowserRouter>
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/curriculum" element={<Curriculum />} />
+                  <Route path="/auth" element={<Auth />} />
+                  <Route path="/grammar" element={<Grammar />} />
+                  <Route path="/vocabulary" element={<Vocabulary />} />
+                  <Route path="/practice" element={<Practice />} />
+                  <Route path="/conversation" element={<Conversation />} />
+                  <Route path="/conversation/history" element={<ConversationHistory />} />
+                  <Route path="/conversation/history/:id" element={<ConversationDetail />} />
+                  <Route path="/tests" element={<Tests />} />
+                  <Route path="/lesson/:type/:categoryId/:topicId" element={<Lesson />} />
+                  <Route path="/skill/:level/:categoryId/:skillId" element={<SkillLesson />} />
+                  <Route path="/settings" element={<Settings />} />
+                  <Route path="/adaptive-quiz" element={<AdaptiveQuiz />} />
+                  <Route path="/news" element={<News />} />
+                  <Route path="/error-history" element={<ErrorHistory />} />
+                  <Route path="/articles" element={<Articles />} />
+                  <Route path="/articles/:articleId" element={<ArticleDetail />} />
+                  <Route path="/karaoke" element={<Karaoke />} />
+                  <Route path="/custom-exam" element={<CustomExam />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </BrowserRouter>
+            </TooltipProvider>
+          </AdaptiveLearningProvider>
+        </GamificationProvider>
+      </AppStateProvider>
+    </AuthProvider>
   </QueryClientProvider>
 );
 

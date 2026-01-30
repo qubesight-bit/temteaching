@@ -1648,7 +1648,6 @@ export const generateVocabularyExercises = (theme: VocabularyTheme): Exercise[] 
       ].sort(() => Math.random() - 0.5),
       correctAnswer: word.definition,
       explanation: `"${word.word}" means: ${word.definition}`,
-      explanationSpanish: `"${word.word}" significa: ${word.definition}`,
       difficulty: 1,
       tags: ["vocabulary", "definition", theme.level.toLowerCase()]
     });
@@ -1666,7 +1665,6 @@ export const generateVocabularyExercises = (theme: VocabularyTheme): Exercise[] 
       ].sort(() => Math.random() - 0.5),
       correctAnswer: word.word,
       explanation: `The correct word is "${word.word}". ${word.definition}`,
-      explanationSpanish: `La palabra correcta es "${word.word}". ${word.definition}`,
       difficulty: 2,
       tags: ["vocabulary", "fill-blank", theme.level.toLowerCase()]
     });
@@ -1684,7 +1682,6 @@ export const generateVocabularyExercises = (theme: VocabularyTheme): Exercise[] 
       ].sort(() => Math.random() - 0.5),
       correctAnswer: word.word,
       explanation: `"${word.word}" is the correct answer. Example: ${word.example}`,
-      explanationSpanish: `"${word.word}" es la respuesta correcta. Ejemplo: ${word.example}`,
       difficulty: 1,
       tags: ["vocabulary", "matching", theme.level.toLowerCase()]
     });

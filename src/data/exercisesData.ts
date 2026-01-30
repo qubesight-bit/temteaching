@@ -35,6 +35,7 @@ export interface Exercise {
   options: string[];
   correctAnswer: string | string[];
   explanation: string;
+  /** @deprecated Spanish explanations are no longer displayed - English-only immersion */
   explanationSpanish?: string;
   hint?: string;
   difficulty: 1 | 2 | 3;

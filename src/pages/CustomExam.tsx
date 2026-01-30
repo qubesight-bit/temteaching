@@ -288,9 +288,6 @@ const CustomExam = () => {
                 <div className="p-4 rounded-xl bg-muted/50 border space-y-2">
                   <p className="font-medium text-sm">📖 Explanation:</p>
                   <p className="text-sm text-muted-foreground">{currentExercise.explanation}</p>
-                  {currentExercise.explanationSpanish && (
-                    <p className="text-sm text-muted-foreground italic">{currentExercise.explanationSpanish}</p>
-                  )}
                 </div>
               )}
 
