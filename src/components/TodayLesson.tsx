@@ -1,8 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Clock, PlayCircle, Star } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export function TodayLesson() {
+  const navigate = useNavigate();
+
+  const handleStartLesson = () => {
+    navigate("/skill/grammar-a2-present-perfect-vs-past-simple");
+  };
   return (
     <Card variant="interactive" className="overflow-hidden group">
       <CardContent className="p-0">
@@ -36,7 +42,7 @@ export function TodayLesson() {
               </div>
             </div>
             
-            <Button variant="hero" size="lg" className="group/btn">
+            <Button variant="hero" size="lg" className="group/btn" onClick={handleStartLesson}>
               <PlayCircle className="w-5 h-5" />
               Start lesson
               <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />

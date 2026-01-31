@@ -29,6 +29,7 @@ import { useToast } from "@/hooks/use-toast";
 interface PlacementExamModalProps {
   open: boolean;
   onComplete: (level: string) => void;
+  onSkip?: () => void;
 }
 
 function formatTime(seconds: number): string {
@@ -45,7 +46,7 @@ function formatTimeSpent(startTime: number, endTime: number): string {
   return `${mins} min ${secs} sec`;
 }
 
-export function PlacementExamModal({ open, onComplete }: PlacementExamModalProps) {
+export function PlacementExamModal({ open, onComplete, onSkip }: PlacementExamModalProps) {
   const { user } = useAuth();
   const { setUserProgress } = useAppState();
   const { toast } = useToast();
@@ -330,10 +331,22 @@ export function PlacementExamModal({ open, onComplete }: PlacementExamModalProps
               </p>
             </div>
             
-            <Button onClick={handleStart} className="w-full" size="lg">
-              Begin Placement Test
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+            <div className="space-y-3">
+              <Button onClick={handleStart} className="w-full" size="lg">
+                Begin Placement Test
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+              
+              {onSkip && (
+                <Button 
+                  variant="ghost" 
+                  onClick={onSkip} 
+                  className="w-full text-muted-foreground"
+                >
+                  Skip and start at A1 level
+                </Button>
+              )}
+            </div>
           </div>
         ) : (
           <>

@@ -107,6 +107,18 @@ const Index = () => {
     setSelectedLevel(level as CEFRLevel);
   };
 
+  const handleSkipPlacement = async () => {
+    if (user) {
+      // Set level to A1 in the database
+      await supabase
+        .from('profiles')
+        .update({ current_level: 'A1' })
+        .eq('user_id', user.id);
+    }
+    markPlacementComplete();
+    setSelectedLevel('A1');
+  };
+
   useEffect(() => {
     const fetchProfile = async () => {
       if (user) {
@@ -136,7 +148,8 @@ const Index = () => {
       {/* Placement Exam Modal - Mandatory for new users */}
       <PlacementExamModal 
         open={needsPlacementExam && !placementLoading && !!user} 
-        onComplete={handlePlacementComplete} 
+        onComplete={handlePlacementComplete}
+        onSkip={handleSkipPlacement}
       />
       
       <div className="container py-8">
