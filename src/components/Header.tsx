@@ -1,6 +1,7 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Bell, Menu, Settings, LogOut } from "lucide-react";
+import { Bell, Menu, Settings, LogOut, Shield } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import {
@@ -19,6 +20,27 @@ export function Header({ children }: HeaderProps) {
   const navigate = useNavigate();
   const location = useLocation();
   const { user, signOut } = useAuth();
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    const checkAdminRole = async () => {
+      if (!user) {
+        setIsAdmin(false);
+        return;
+      }
+      
+      const { data } = await supabase
+        .from('user_roles')
+        .select('role')
+        .eq('user_id', user.id)
+        .eq('role', 'admin')
+        .maybeSingle();
+      
+      setIsAdmin(!!data);
+    };
+
+    checkAdminRole();
+  }, [user]);
 
   // Navigation items
   const navItems = [
@@ -98,6 +120,12 @@ export function Header({ children }: HeaderProps) {
                   <p className="text-sm font-medium">{user.email}</p>
                 </div>
                 <DropdownMenuSeparator />
+                {isAdmin && (
+                  <DropdownMenuItem onClick={() => navigate('/admin/users')}>
+                    <Shield className="w-4 h-4 mr-2" />
+                    Admin Panel
+                  </DropdownMenuItem>
+                )}
                 <DropdownMenuItem onClick={() => navigate('/conversation/history')}>
                   Conversation History
                 </DropdownMenuItem>
