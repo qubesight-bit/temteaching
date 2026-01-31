@@ -23,16 +23,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const { registerSession, removeSession, clearLocalSession, checkSession } = useSessionManager(user?.id);
 
-  // Check if session is still valid periodically
-  const validateSession = useCallback(async () => {
-    if (!user) return;
-    
-    const isValid = await checkSession();
-    if (!isValid && session) {
-      // Session was kicked - sign out
-      setSessionValid(false);
-    }
-  }, [user, session, checkSession]);
+  // Session validation is now disabled since we removed device limits
+  // Admin can manually terminate sessions from the admin panel if needed
+  // This prevents false-positive session invalidation issues
 
   useEffect(() => {
     // Set up auth state listener FIRST
@@ -60,17 +53,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       registerSession();
     }
   }, [user, registerSession]);
-
-  // Periodic session validation
-  useEffect(() => {
-    if (!user) return;
-
-    const interval = setInterval(() => {
-      validateSession();
-    }, 30000); // Check every 30 seconds
-
-    return () => clearInterval(interval);
-  }, [user, validateSession]);
 
   const signUp = async (email: string, password: string, displayName?: string) => {
     const redirectUrl = `${window.location.origin}/`;
