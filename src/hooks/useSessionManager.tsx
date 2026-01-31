@@ -1,8 +1,7 @@
 import { useEffect, useRef, useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 
-const MAX_SESSIONS = 3;
-const SESSION_TOKEN_KEY = 'englishflow_session_token';
+const SESSION_TOKEN_KEY = 'tem_teaching_session_token';
 const HEARTBEAT_INTERVAL = 60000; // 1 minute
 
 // Generate a unique session token for this browser/device
@@ -71,18 +70,7 @@ export function useSessionManager(userId: string | undefined) {
         return { success: true, kicked: false };
       }
 
-      // New session - check if we need to kick an old one
-      if (sessions && sessions.length >= MAX_SESSIONS) {
-        // Remove oldest sessions to make room (keep only MAX_SESSIONS - 1)
-        const sessionsToRemove = sessions.slice(0, sessions.length - MAX_SESSIONS + 1);
-        
-        for (const session of sessionsToRemove) {
-          await supabase
-            .from('user_sessions')
-            .delete()
-            .eq('id', session.id);
-        }
-      }
+      // Insert new session (no device limit - admin can manage sessions manually)
 
       // Insert new session
       const { error: insertError } = await supabase
