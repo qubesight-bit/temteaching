@@ -43,7 +43,7 @@ const handler = async (req: Request): Promise<Response> => {
     });
 
     const emailResponse = await resend.emails.send({
-      from: "EnglishFlow <onboarding@resend.dev>",
+      from: "Tem Teaching <onboarding@resend.dev>",
       to: [ADMIN_EMAIL],
       subject: `🆕 New Signup: ${displayName || userEmail}`,
       html: `
@@ -93,7 +93,7 @@ const handler = async (req: Request): Promise<Response> => {
             </div>
 
             <p style="text-align: center; color: #a1a1aa; font-size: 12px; margin-top: 24px; margin-bottom: 0;">
-              This notification was sent from EnglishFlow
+              This notification was sent from Tem Teaching
             </p>
           </div>
         </body>

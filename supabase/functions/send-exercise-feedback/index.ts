@@ -88,11 +88,11 @@ const handler = async (req: Request): Promise<Response> => {
       <html>
         <head>
           <meta charset="utf-8">
-          <title>Exercise Completed - Teacher Tem</title>
+          <title>Exercise Completed - Tem Teaching</title>
         </head>
         <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9fafb;">
           <div style="background: linear-gradient(135deg, #6366f1, #8b5cf6); padding: 30px; border-radius: 12px 12px 0 0; text-align: center;">
-            <h1 style="color: white; margin: 0; font-size: 24px;">📧 Teacher Tem</h1>
+            <h1 style="color: white; margin: 0; font-size: 24px;">📧 Tem Teaching</h1>
             <p style="color: rgba(255,255,255,0.9); margin: 10px 0 0 0;">Exercise Completion Report</p>
           </div>
           
@@ -127,7 +127,7 @@ const handler = async (req: Request): Promise<Response> => {
             <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
             
             <p style="color: #6b7280; font-size: 12px; text-align: center;">
-              This is an automated message from Teacher Tem English Learning Platform.
+              This is an automated message from Tem Teaching English Learning Platform.
             </p>
           </div>
         </body>
@@ -142,7 +142,7 @@ const handler = async (req: Request): Promise<Response> => {
         "Authorization": `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Teacher Tem <onboarding@resend.dev>",
+        from: "Tem Teaching <onboarding@resend.dev>",
         to: [TEACHER_EMAIL],
         subject: `${performanceEmoji} ${studentName} completed ${exerciseTitle} (${score}%) - ${level}`,
         html: emailHtml,

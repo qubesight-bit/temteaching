@@ -19,7 +19,7 @@ export default function SessionExpired() {
           <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-info flex items-center justify-center mx-auto mb-4">
             <BookOpen className="w-8 h-8 text-white" />
           </div>
-          <h1 className="font-display font-bold text-2xl text-foreground">EnglishFlow</h1>
+          <h1 className="font-display font-bold text-2xl text-foreground">Tem Teaching</h1>
         </div>
 
         <Card className="text-center">
