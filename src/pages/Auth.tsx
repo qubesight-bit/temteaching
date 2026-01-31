@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
+import { supabase } from '@/integrations/supabase/client';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -24,6 +25,7 @@ export default function Auth() {
   const navigate = useNavigate();
   const { user, signIn, signUp, loading: authLoading } = useAuth();
   const [isLogin, setIsLogin] = useState(true);
+  const [isForgotPassword, setIsForgotPassword] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [displayName, setDisplayName] = useState('');
@@ -56,6 +58,38 @@ export default function Auth() {
         setErrors(fieldErrors);
       }
       return false;
+    }
+  };
+
+  const handleForgotPassword = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email || !z.string().email().safeParse(email).success) {
+      setErrors({ email: 'Please enter a valid email' });
+      return;
+    }
+    
+    setLoading(true);
+    try {
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${window.location.origin}/auth`,
+      });
+      
+      if (error) {
+        toast({
+          title: 'Error',
+          description: error.message,
+          variant: 'destructive',
+        });
+      } else {
+        toast({
+          title: 'Check your email',
+          description: 'We sent you a password reset link',
+        });
+        setIsForgotPassword(false);
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -141,101 +175,168 @@ export default function Auth() {
 
         <Card>
           <CardHeader>
-            <CardTitle>{isLogin ? 'Sign In' : 'Create Account'}</CardTitle>
+            <CardTitle>
+              {isForgotPassword ? 'Reset Password' : isLogin ? 'Sign In' : 'Create Account'}
+            </CardTitle>
             <CardDescription>
-              {isLogin
+              {isForgotPassword
+                ? 'Enter your email to receive a reset link'
+                : isLogin
                 ? 'Enter your credentials to continue'
                 : 'Create an account to save your progress'}
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="your@email.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="pl-10"
-                    disabled={loading}
-                  />
-                </div>
-                {errors.email && (
-                  <p className="text-sm text-destructive">{errors.email}</p>
-                )}
-              </div>
-
-              {!isLogin && (
+            {isForgotPassword ? (
+              <form onSubmit={handleForgotPassword} className="space-y-4">
                 <div className="space-y-2">
-                  <Label htmlFor="displayName">Username</Label>
+                  <Label htmlFor="email">Email</Label>
                   <div className="relative">
-                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                     <Input
-                      id="displayName"
-                      type="text"
-                      placeholder="Your username"
-                      value={displayName}
-                      onChange={(e) => setDisplayName(e.target.value)}
+                      id="email"
+                      type="email"
+                      placeholder="your@email.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       className="pl-10"
                       disabled={loading}
                     />
                   </div>
-                  {errors.displayName && (
-                    <p className="text-sm text-destructive">{errors.displayName}</p>
+                  {errors.email && (
+                    <p className="text-sm text-destructive">{errors.email}</p>
                   )}
                 </div>
-              )}
 
-              <div className="space-y-2">
-                <Label htmlFor="password">Password</Label>
-                <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                  <Input
-                    id="password"
-                    type="password"
-                    placeholder="••••••••"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="pl-10"
-                    disabled={loading}
-                  />
+                <Button type="submit" className="w-full" disabled={loading}>
+                  {loading ? (
+                    <>
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    'Send Reset Link'
+                  )}
+                </Button>
+
+                <div className="text-center">
+                  <button
+                    type="button"
+                    className="text-sm text-primary hover:underline"
+                    onClick={() => {
+                      setIsForgotPassword(false);
+                      setErrors({});
+                    }}
+                  >
+                    Back to sign in
+                  </button>
                 </div>
-                {errors.password && (
-                  <p className="text-sm text-destructive">{errors.password}</p>
-                )}
-              </div>
+              </form>
+            ) : (
+              <>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email</Label>
+                    <div className="relative">
+                      <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="your@email.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="pl-10"
+                        disabled={loading}
+                      />
+                    </div>
+                    {errors.email && (
+                      <p className="text-sm text-destructive">{errors.email}</p>
+                    )}
+                  </div>
 
-              <Button type="submit" className="w-full" disabled={loading}>
-                {loading ? (
-                  <>
-                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                    {isLogin ? 'Signing in...' : 'Creating account...'}
-                  </>
-                ) : (
-                  isLogin ? 'Sign In' : 'Create Account'
-                )}
-              </Button>
-            </form>
+                  {!isLogin && (
+                    <div className="space-y-2">
+                      <Label htmlFor="displayName">Username</Label>
+                      <div className="relative">
+                        <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                        <Input
+                          id="displayName"
+                          type="text"
+                          placeholder="Your username"
+                          value={displayName}
+                          onChange={(e) => setDisplayName(e.target.value)}
+                          className="pl-10"
+                          disabled={loading}
+                        />
+                      </div>
+                      {errors.displayName && (
+                        <p className="text-sm text-destructive">{errors.displayName}</p>
+                      )}
+                    </div>
+                  )}
 
-            <div className="mt-4 text-center">
-              <button
-                type="button"
-                className="text-sm text-primary hover:underline"
-                onClick={() => {
-                  setIsLogin(!isLogin);
-                  setErrors({});
-                  setDisplayName('');
-                }}
-              >
-                {isLogin
-                  ? "Don't have an account? Sign up"
-                  : 'Already have an account? Sign in'}
-              </button>
-            </div>
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <Label htmlFor="password">Password</Label>
+                      {isLogin && (
+                        <button
+                          type="button"
+                          className="text-xs text-primary hover:underline"
+                          onClick={() => {
+                            setIsForgotPassword(true);
+                            setErrors({});
+                          }}
+                        >
+                          Forgot password?
+                        </button>
+                      )}
+                    </div>
+                    <div className="relative">
+                      <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                      <Input
+                        id="password"
+                        type="password"
+                        placeholder="••••••••"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        className="pl-10"
+                        disabled={loading}
+                      />
+                    </div>
+                    {errors.password && (
+                      <p className="text-sm text-destructive">{errors.password}</p>
+                    )}
+                  </div>
+
+                  <Button type="submit" className="w-full" disabled={loading}>
+                    {loading ? (
+                      <>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        {isLogin ? 'Signing in...' : 'Creating account...'}
+                      </>
+                    ) : (
+                      isLogin ? 'Sign In' : 'Create Account'
+                    )}
+                  </Button>
+                </form>
+
+                <div className="mt-4 text-center">
+                  <button
+                    type="button"
+                    className="text-sm text-primary hover:underline"
+                    onClick={() => {
+                      setIsLogin(!isLogin);
+                      setErrors({});
+                      setDisplayName('');
+                    }}
+                  >
+                    {isLogin
+                      ? "Don't have an account? Sign up"
+                      : 'Already have an account? Sign in'}
+                  </button>
+                </div>
+              </>
+            )}
           </CardContent>
         </Card>
 
