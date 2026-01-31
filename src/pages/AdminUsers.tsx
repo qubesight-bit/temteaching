@@ -7,7 +7,9 @@ import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/contexts/AuthContext';
-import { Check, X, Users, Shield, Loader2, ArrowLeft } from 'lucide-react';
+import { Check, X, Users, Shield, Loader2, ArrowLeft, Monitor } from 'lucide-react';
+import { UserSessionsPanel } from '@/components/admin/UserSessionsPanel';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 interface UserProfile {
   id: string;
@@ -146,139 +148,158 @@ export default function AdminUsers() {
           </Button>
           <div>
             <h1 className="font-display font-bold text-2xl flex items-center gap-2">
-              <Users className="w-6 h-6" />
-              User Management
+              <Shield className="w-6 h-6" />
+              Admin Panel
             </h1>
-            <p className="text-muted-foreground">Approve or manage user accounts</p>
+            <p className="text-muted-foreground">Manage users and active sessions</p>
           </div>
         </div>
 
-        {/* Pending Approvals */}
-        <Card className="mb-6">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Badge variant="secondary" className="bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400">
-                {pendingUsers.length}
-              </Badge>
-              Pending Approvals
-            </CardTitle>
-            <CardDescription>
-              Users waiting for your approval to access the platform
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            {pendingUsers.length === 0 ? (
-              <p className="text-muted-foreground text-center py-4">
-                No pending approvals
-              </p>
-            ) : (
-              <div className="space-y-3">
-                {pendingUsers.map((profile) => (
-                  <div 
-                    key={profile.id} 
-                    className="flex items-center justify-between p-4 rounded-lg border bg-card hover:bg-secondary/30 transition-colors"
-                  >
-                    <div>
-                      <p className="font-medium">
-                        {profile.display_name || 'No name'}
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        Registered: {new Date(profile.created_at).toLocaleDateString()}
-                      </p>
-                    </div>
-                    <div className="flex gap-2">
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        className="text-destructive hover:bg-destructive hover:text-destructive-foreground"
-                        onClick={() => handleApproval(profile.user_id, false)}
-                        disabled={actionLoading === profile.user_id}
-                      >
-                        {actionLoading === profile.user_id ? (
-                          <Loader2 className="w-4 h-4 animate-spin" />
-                        ) : (
-                          <X className="w-4 h-4" />
-                        )}
-                      </Button>
-                      <Button
-                        size="sm"
-                        onClick={() => handleApproval(profile.user_id, true)}
-                        disabled={actionLoading === profile.user_id}
-                      >
-                        {actionLoading === profile.user_id ? (
-                          <Loader2 className="w-4 h-4 animate-spin" />
-                        ) : (
-                          <>
-                            <Check className="w-4 h-4 mr-1" />
-                            Approve
-                          </>
-                        )}
-                      </Button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </CardContent>
-        </Card>
+        <Tabs defaultValue="users" className="space-y-6">
+          <TabsList>
+            <TabsTrigger value="users" className="gap-2">
+              <Users className="w-4 h-4" />
+              Users
+            </TabsTrigger>
+            <TabsTrigger value="sessions" className="gap-2">
+              <Monitor className="w-4 h-4" />
+              Sessions
+            </TabsTrigger>
+          </TabsList>
 
-        {/* Approved Users */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
-                {approvedUsers.length}
-              </Badge>
-              Approved Users
-            </CardTitle>
-            <CardDescription>
-              Users with access to the platform
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            {approvedUsers.length === 0 ? (
-              <p className="text-muted-foreground text-center py-4">
-                No approved users yet
-              </p>
-            ) : (
-              <div className="space-y-3">
-                {approvedUsers.map((profile) => (
-                  <div 
-                    key={profile.id} 
-                    className="flex items-center justify-between p-4 rounded-lg border bg-card"
-                  >
-                    <div>
-                      <p className="font-medium flex items-center gap-2">
-                        {profile.display_name || 'No name'}
-                        {profile.current_level && (
-                          <Badge variant="outline" className="text-xs">
-                            {profile.current_level}
-                          </Badge>
-                        )}
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        Approved • Registered {new Date(profile.created_at).toLocaleDateString()}
-                      </p>
-                    </div>
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      className="text-muted-foreground hover:text-destructive"
-                      onClick={() => handleApproval(profile.user_id, false)}
-                      disabled={actionLoading === profile.user_id}
-                    >
-                      {actionLoading === profile.user_id ? (
-                        <Loader2 className="w-4 h-4 animate-spin" />
-                      ) : (
-                        'Revoke'
-                      )}
-                    </Button>
+          <TabsContent value="users" className="space-y-6">
+            {/* Pending Approvals */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Badge variant="secondary" className="bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400">
+                    {pendingUsers.length}
+                  </Badge>
+                  Pending Approvals
+                </CardTitle>
+                <CardDescription>
+                  Users waiting for your approval to access the platform
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                {pendingUsers.length === 0 ? (
+                  <p className="text-muted-foreground text-center py-4">
+                    No pending approvals
+                  </p>
+                ) : (
+                  <div className="space-y-3">
+                    {pendingUsers.map((profile) => (
+                      <div 
+                        key={profile.id} 
+                        className="flex items-center justify-between p-4 rounded-lg border bg-card hover:bg-secondary/30 transition-colors"
+                      >
+                        <div>
+                          <p className="font-medium">
+                            {profile.display_name || 'No name'}
+                          </p>
+                          <p className="text-sm text-muted-foreground">
+                            Registered: {new Date(profile.created_at).toLocaleDateString()}
+                          </p>
+                        </div>
+                        <div className="flex gap-2">
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="text-destructive hover:bg-destructive hover:text-destructive-foreground"
+                            onClick={() => handleApproval(profile.user_id, false)}
+                            disabled={actionLoading === profile.user_id}
+                          >
+                            {actionLoading === profile.user_id ? (
+                              <Loader2 className="w-4 h-4 animate-spin" />
+                            ) : (
+                              <X className="w-4 h-4" />
+                            )}
+                          </Button>
+                          <Button
+                            size="sm"
+                            onClick={() => handleApproval(profile.user_id, true)}
+                            disabled={actionLoading === profile.user_id}
+                          >
+                            {actionLoading === profile.user_id ? (
+                              <Loader2 className="w-4 h-4 animate-spin" />
+                            ) : (
+                              <>
+                                <Check className="w-4 h-4 mr-1" />
+                                Approve
+                              </>
+                            )}
+                          </Button>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            )}
-          </CardContent>
-        </Card>
+                )}
+              </CardContent>
+            </Card>
+
+            {/* Approved Users */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                    {approvedUsers.length}
+                  </Badge>
+                  Approved Users
+                </CardTitle>
+                <CardDescription>
+                  Users with access to the platform
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                {approvedUsers.length === 0 ? (
+                  <p className="text-muted-foreground text-center py-4">
+                    No approved users yet
+                  </p>
+                ) : (
+                  <div className="space-y-3">
+                    {approvedUsers.map((profile) => (
+                      <div 
+                        key={profile.id} 
+                        className="flex items-center justify-between p-4 rounded-lg border bg-card"
+                      >
+                        <div>
+                          <p className="font-medium flex items-center gap-2">
+                            {profile.display_name || 'No name'}
+                            {profile.current_level && (
+                              <Badge variant="outline" className="text-xs">
+                                {profile.current_level}
+                              </Badge>
+                            )}
+                          </p>
+                          <p className="text-sm text-muted-foreground">
+                            Approved • Registered {new Date(profile.created_at).toLocaleDateString()}
+                          </p>
+                        </div>
+                        <Button
+                          size="sm"
+                          variant="ghost"
+                          className="text-muted-foreground hover:text-destructive"
+                          onClick={() => handleApproval(profile.user_id, false)}
+                          disabled={actionLoading === profile.user_id}
+                        >
+                          {actionLoading === profile.user_id ? (
+                            <Loader2 className="w-4 h-4 animate-spin" />
+                          ) : (
+                            'Revoke'
+                          )}
+                        </Button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="sessions">
+            <UserSessionsPanel />
+          </TabsContent>
+        </Tabs>
       </div>
     </AppLayout>
   );

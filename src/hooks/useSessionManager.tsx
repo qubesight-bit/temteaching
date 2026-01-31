@@ -1,7 +1,7 @@
 import { useEffect, useRef, useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 
-const MAX_SESSIONS = 2;
+const MAX_SESSIONS = 3;
 const SESSION_TOKEN_KEY = 'englishflow_session_token';
 const HEARTBEAT_INTERVAL = 60000; // 1 minute
 
