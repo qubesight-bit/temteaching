@@ -14,42 +14,68 @@ interface TopicRowWithLevelsProps {
   getLevelColor: (level: string) => string;
 }
 
-// Map topic IDs to exercise categories
-const topicToCategoryMap: Record<string, string> = {
-  "present-simple": "present-simple",
-  "present-continuous": "present-continuous",
-  "past-simple": "past-simple",
-  "present-perfect": "present-perfect",
-  "past-continuous": "past-continuous",
-  "future-will": "future-will",
-  "future-going-to": "future-going-to",
-  "can-could": "modals",
-  "must-have-to": "modals",
-  "should-ought-to": "modals",
-  "zero-conditional": "zero-conditional",
-  "first-conditional": "first-conditional",
-  "second-conditional": "second-conditional",
-  "third-conditional": "third-conditional",
-  "passive-present": "passive",
-  "passive-past": "passive",
-  "phrasal-verbs-basic": "phrasal-verbs",
-  "phrasal-verbs-intermediate": "phrasal-verbs",
-  "articles-basics": "articles",
-  "prepositions-time": "prepositions-time",
-  "prepositions-place": "prepositions-place",
-  "personal-pronouns": "pronouns",
-  "reported-speech-statements": "reported-speech",
-  "gerund-after-verbs": "gerunds-infinitives",
-  "infinitive-after-verbs": "gerunds-infinitives",
+// Map topic IDs to exercise categories (with fallback matching)
+// Primary exact mappings, also supports partial matching in getExerciseCountForTopicLevel
+const topicToCategoryMap: Record<string, string[]> = {
+  // Verb Tenses
+  "present-simple": ["present-simple"],
+  "present-continuous": ["present-continuous"],
+  "past-simple": ["past-simple"],
+  "present-perfect": ["present-perfect"],
+  "past-continuous": ["past-continuous"],
+  "future-will": ["future-will", "future"],
+  "future-going-to": ["future-going-to", "going-to", "future"],
+  
+  // Modals
+  "can-could": ["modals", "modals-can"],
+  "must-have-to": ["modals"],
+  "should-ought-to": ["modals"],
+  
+  // Conditionals - match both specific and general category
+  "zero-conditional": ["zero-conditional", "conditionals"],
+  "first-conditional": ["first-conditional", "conditionals"],
+  "second-conditional": ["second-conditional", "conditionals"],
+  "third-conditional": ["third-conditional", "conditionals"],
+  
+  // Passive Voice
+  "passive-present": ["passive"],
+  "passive-past": ["passive"],
+  
+  // Phrasal Verbs
+  "phrasal-verbs-basic": ["phrasal-verbs"],
+  "phrasal-verbs-intermediate": ["phrasal-verbs"],
+  
+  // Other topics
+  "articles-basics": ["articles"],
+  "prepositions-time": ["prepositions-time", "prepositions"],
+  "prepositions-place": ["prepositions-place", "prepositions"],
+  "personal-pronouns": ["pronouns"],
+  "reported-speech-statements": ["reported-speech"],
+  "gerund-after-verbs": ["gerunds-infinitives"],
+  "infinitive-after-verbs": ["gerunds-infinitives"],
+  "relative-clauses-who-which": ["relative-clauses"],
 };
 
 // Get exercise count for a topic at a specific level
 function getExerciseCountForTopicLevel(topicId: string, level: CEFRLevel): number {
-  const category = topicToCategoryMap[topicId];
-  if (!category) return 0;
+  const categories = topicToCategoryMap[topicId];
+  if (!categories || categories.length === 0) return 0;
   
-  const exercises = getGrammarExercisesByCategory(level, category);
-  return exercises.length;
+  // Try each category and sum up unique exercises
+  let totalCount = 0;
+  const seenIds = new Set<string>();
+  
+  for (const category of categories) {
+    const exercises = getGrammarExercisesByCategory(level, category);
+    for (const ex of exercises) {
+      if (!seenIds.has(ex.id)) {
+        seenIds.add(ex.id);
+        totalCount++;
+      }
+    }
+  }
+  
+  return totalCount;
 }
 
 // Check which levels have exercises for this topic
@@ -80,14 +106,17 @@ export function TopicRowWithLevels({
   const isLocked = false;
   const availableLevels = getAvailableLevels(topic.id);
   const currentExerciseCount = getExerciseCountForTopicLevel(topic.id, selectedLevel);
-  const category = topicToCategoryMap[topic.id];
+  
+  // Get the first category from the mapping for practice modal
+  const categories = topicToCategoryMap[topic.id];
+  const primaryCategory = categories?.[0];
   
   // Get total exercises across all levels for this topic
   const totalExercises = availableLevels.reduce((sum, l) => sum + l.count, 0);
   
   const handleStartPractice = () => {
-    if (category) {
-      onStartPractice(category, selectedLevel);
+    if (primaryCategory) {
+      onStartPractice(primaryCategory, selectedLevel);
     }
   };
 
