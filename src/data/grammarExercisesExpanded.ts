@@ -8,7 +8,7 @@ export interface GrammarExercise {
   options?: string[];
   correctAnswer: string;
   explanation: string;
-  explanationSpanish: string;
+  explanationSpanish?: string;
   category: string;
   difficulty: 'easy' | 'medium' | 'hard';
 }
@@ -5518,8 +5518,510 @@ export const b1GrammarExercises: GrammarExercise[] = [
   },
 ];
 
-// ==================== B2 LEVEL EXERCISES (placeholder) ====================
-export const b2GrammarExercises: GrammarExercise[] = [];
+// ==================== B2 LEVEL EXERCISES ====================
+export const b2GrammarExercises: GrammarExercise[] = [
+  // ===== THIRD CONDITIONAL (50 exercises) =====
+  {
+    id: "B2_ThirdConditional_001",
+    type: "multiple-choice",
+    question: "If I ___ earlier, I would have caught the train.",
+    options: ["had left", "left", "would leave", "have left"],
+    correctAnswer: "had left",
+    explanation: "Third Conditional: if + past perfect for unreal past conditions.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_002",
+    type: "multiple-choice",
+    question: "She would have passed the exam if she ___ harder.",
+    options: ["had studied", "studied", "would study", "has studied"],
+    correctAnswer: "had studied",
+    explanation: "Past perfect in the if-clause for imaginary past situations.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_003",
+    type: "multiple-choice",
+    question: "If they had known about the party, they ___ come.",
+    options: ["would have", "will have", "had", "would"],
+    correctAnswer: "would have",
+    explanation: "Result clause uses would have + past participle.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_004",
+    type: "multiple-choice",
+    question: "We ___ have missed the flight if the taxi hadn't arrived late.",
+    options: ["wouldn't", "won't", "didn't", "hadn't"],
+    correctAnswer: "wouldn't",
+    explanation: "Negative result: wouldn't have + past participle.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_005",
+    type: "multiple-choice",
+    question: "If he ___ the warning signs, he could have avoided the accident.",
+    options: ["had noticed", "noticed", "would notice", "has noticed"],
+    correctAnswer: "had noticed",
+    explanation: "Past perfect for the condition that didn't happen.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_006",
+    type: "multiple-choice",
+    question: "They would have helped us if we ___ them.",
+    options: ["had asked", "asked", "would ask", "have asked"],
+    correctAnswer: "had asked",
+    explanation: "If-clause requires past perfect for past unreal conditions.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_007",
+    type: "multiple-choice",
+    question: "If I had known you were coming, I ___ prepared dinner.",
+    options: ["would have", "will have", "had", "would"],
+    correctAnswer: "would have",
+    explanation: "Would have + past participle for the imaginary result.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_008",
+    type: "multiple-choice",
+    question: "She ___ have bought the dress if it hadn't been so expensive.",
+    options: ["would", "will", "had", "could"],
+    correctAnswer: "would",
+    explanation: "Would have for the likely result of an unreal past condition.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_009",
+    type: "multiple-choice",
+    question: "If the weather ___ better, we would have gone to the beach.",
+    options: ["had been", "was", "would be", "has been"],
+    correctAnswer: "had been",
+    explanation: "Past perfect with 'be' for past unreal conditions.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_010",
+    type: "multiple-choice",
+    question: "He wouldn't have failed if he ___ more attention in class.",
+    options: ["had paid", "paid", "would pay", "has paid"],
+    correctAnswer: "had paid",
+    explanation: "Past perfect for the unfulfilled condition.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_011",
+    type: "multiple-choice",
+    question: "If we had left on time, we ___ arrived before dark.",
+    options: ["would have", "will have", "had", "would"],
+    correctAnswer: "would have",
+    explanation: "Result clause: would have + past participle.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_012",
+    type: "multiple-choice",
+    question: "I ___ have told you if I had known the truth.",
+    options: ["would", "will", "had", "could"],
+    correctAnswer: "would",
+    explanation: "Would have for certain imaginary past actions.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_013",
+    type: "multiple-choice",
+    question: "If she ___ the email, she would have replied immediately.",
+    options: ["had received", "received", "would receive", "has received"],
+    correctAnswer: "had received",
+    explanation: "Past perfect for the condition that didn't occur.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_014",
+    type: "multiple-choice",
+    question: "They ___ have won the match if their best player hadn't been injured.",
+    options: ["could", "can", "will", "had"],
+    correctAnswer: "could",
+    explanation: "Could have for possibility in the imaginary past result.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_015",
+    type: "multiple-choice",
+    question: "If I ___ you were sick, I would have visited you.",
+    options: ["had known", "knew", "would know", "have known"],
+    correctAnswer: "had known",
+    explanation: "Past perfect for unreal past knowledge.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_016",
+    type: "multiple-choice",
+    question: "We wouldn't have gotten lost if we ___ a map.",
+    options: ["had brought", "brought", "would bring", "have brought"],
+    correctAnswer: "had brought",
+    explanation: "Past perfect for the action that wasn't done.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_017",
+    type: "multiple-choice",
+    question: "If the restaurant ___ been full, we would have eaten there.",
+    options: ["hadn't", "wasn't", "wouldn't", "hasn't"],
+    correctAnswer: "hadn't",
+    explanation: "Negative past perfect: hadn't + past participle.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_018",
+    type: "multiple-choice",
+    question: "She ___ have become a doctor if she had studied medicine.",
+    options: ["might", "may", "will", "can"],
+    correctAnswer: "might",
+    explanation: "Might have for uncertain imaginary past outcomes.",
+    category: "third-conditional",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_ThirdConditional_019",
+    type: "multiple-choice",
+    question: "If he had saved more money, he ___ have bought a house.",
+    options: ["could", "can", "will", "had"],
+    correctAnswer: "could",
+    explanation: "Could have for past ability in hypothetical situations.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_020",
+    type: "multiple-choice",
+    question: "If I ___ harder, I would have gotten a promotion.",
+    options: ["had worked", "worked", "would work", "have worked"],
+    correctAnswer: "had worked",
+    explanation: "Past perfect for the unfulfilled past condition.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_021",
+    type: "multiple-choice",
+    question: "They wouldn't have fired him if he ___ late every day.",
+    options: ["hadn't been", "wasn't", "wouldn't be", "hasn't been"],
+    correctAnswer: "hadn't been",
+    explanation: "Negative past perfect for the condition that did happen.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_022",
+    type: "multiple-choice",
+    question: "If we ___ the hotel in advance, we wouldn't have found a room.",
+    options: ["hadn't booked", "didn't book", "wouldn't book", "haven't booked"],
+    correctAnswer: "hadn't booked",
+    explanation: "Negative condition that actually did happen, leading to a positive outcome.",
+    category: "third-conditional",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_ThirdConditional_023",
+    type: "multiple-choice",
+    question: "He would have called you if he ___ your number.",
+    options: ["had had", "had", "would have", "has had"],
+    correctAnswer: "had had",
+    explanation: "Past perfect of 'have' is 'had had.'",
+    category: "third-conditional",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_ThirdConditional_024",
+    type: "multiple-choice",
+    question: "If she ___ more carefully, she wouldn't have made so many mistakes.",
+    options: ["had listened", "listened", "would listen", "has listened"],
+    correctAnswer: "had listened",
+    explanation: "Past perfect for the past action that didn't happen.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_025",
+    type: "multiple-choice",
+    question: "We ___ have finished earlier if you had helped us.",
+    options: ["would", "will", "had", "could"],
+    correctAnswer: "would",
+    explanation: "Would have for the certain result of an unreal condition.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_026",
+    type: "multiple-choice",
+    question: "If I had seen her, I ___ have said hello.",
+    options: ["would", "will", "had", "could"],
+    correctAnswer: "would",
+    explanation: "Would have for definite imaginary past actions.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_027",
+    type: "multiple-choice",
+    question: "If the train ___ on time, we wouldn't have missed our connection.",
+    options: ["had arrived", "arrived", "would arrive", "has arrived"],
+    correctAnswer: "had arrived",
+    explanation: "Past perfect for the condition that didn't happen.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_028",
+    type: "multiple-choice",
+    question: "She ___ have married him if he had proposed.",
+    options: ["might", "may", "will", "can"],
+    correctAnswer: "might",
+    explanation: "Might have for uncertain hypothetical past outcomes.",
+    category: "third-conditional",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_ThirdConditional_029",
+    type: "multiple-choice",
+    question: "If they had invited me, I ___ have gone to the party.",
+    options: ["would", "will", "had", "could"],
+    correctAnswer: "would",
+    explanation: "Would have for willingness in past hypotheticals.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_030",
+    type: "multiple-choice",
+    question: "We wouldn't have argued if you ___ more understanding.",
+    options: ["had been", "were", "would be", "have been"],
+    correctAnswer: "had been",
+    explanation: "Past perfect of 'be' for past unreal states.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_031",
+    type: "multiple-choice",
+    question: "If he ___ the instructions, the machine would have worked.",
+    options: ["had followed", "followed", "would follow", "has followed"],
+    correctAnswer: "had followed",
+    explanation: "Past perfect for unfulfilled past actions.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_032",
+    type: "multiple-choice",
+    question: "I ___ never have met my wife if I hadn't moved to this city.",
+    options: ["would", "will", "had", "could"],
+    correctAnswer: "would",
+    explanation: "Would never have for emphasizing an unreal past outcome.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_033",
+    type: "multiple-choice",
+    question: "If she had taken the medicine, she ___ have felt better.",
+    options: ["would", "will", "had", "could"],
+    correctAnswer: "would",
+    explanation: "Would have for the expected result of an unreal action.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_034",
+    type: "multiple-choice",
+    question: "They ___ have escaped if they had noticed the fire earlier.",
+    options: ["could", "can", "will", "had"],
+    correctAnswer: "could",
+    explanation: "Could have for past ability in hypothetical situations.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_035",
+    type: "multiple-choice",
+    question: "If I ___ more time, I would have visited the museum.",
+    options: ["had had", "had", "would have", "have had"],
+    correctAnswer: "had had",
+    explanation: "Past perfect of 'have' for lack of time in the past.",
+    category: "third-conditional",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_ThirdConditional_036",
+    type: "multiple-choice",
+    question: "We wouldn't have been late if the traffic ___ so bad.",
+    options: ["hadn't been", "wasn't", "wouldn't be", "hasn't been"],
+    correctAnswer: "hadn't been",
+    explanation: "Negative past perfect for conditions that actually occurred.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_037",
+    type: "multiple-choice",
+    question: "If you had told me the truth, I ___ have been angry.",
+    options: ["wouldn't", "won't", "didn't", "hadn't"],
+    correctAnswer: "wouldn't",
+    explanation: "Negative result: wouldn't have + past participle.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_038",
+    type: "multiple-choice",
+    question: "He ___ have survived if the rescue team had arrived sooner.",
+    options: ["might", "may", "will", "can"],
+    correctAnswer: "might",
+    explanation: "Might have for uncertain past possibilities.",
+    category: "third-conditional",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_ThirdConditional_039",
+    type: "multiple-choice",
+    question: "If she ___ the job offer, she would be living in Paris now.",
+    options: ["had accepted", "accepted", "would accept", "has accepted"],
+    correctAnswer: "had accepted",
+    explanation: "Mixed conditional: past condition with present result.",
+    category: "third-conditional",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_ThirdConditional_040",
+    type: "multiple-choice",
+    question: "I would have bought that car if it ___ cheaper.",
+    options: ["had been", "was", "would be", "has been"],
+    correctAnswer: "had been",
+    explanation: "Past perfect of 'be' for price-related past conditions.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_041",
+    type: "multiple-choice",
+    question: "If we ___ the weather forecast, we would have taken umbrellas.",
+    options: ["had checked", "checked", "would check", "have checked"],
+    correctAnswer: "had checked",
+    explanation: "Past perfect for actions not taken before a past event.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_042",
+    type: "multiple-choice",
+    question: "They ___ have moved abroad if they had gotten the visa.",
+    options: ["would", "will", "had", "could"],
+    correctAnswer: "would",
+    explanation: "Would have for planned actions dependent on past conditions.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_043",
+    type: "multiple-choice",
+    question: "If you had warned me, I ___ have been more careful.",
+    options: ["would", "will", "had", "could"],
+    correctAnswer: "would",
+    explanation: "Would have for changed behavior in hypothetical past.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_044",
+    type: "multiple-choice",
+    question: "She wouldn't have gotten the job if she ___ lied on her CV.",
+    options: ["hadn't", "didn't", "wouldn't", "hasn't"],
+    correctAnswer: "hadn't",
+    explanation: "Negative past perfect: she actually did lie.",
+    category: "third-conditional",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_ThirdConditional_045",
+    type: "multiple-choice",
+    question: "If I ___ you were in town, I would have invited you to dinner.",
+    options: ["had known", "knew", "would know", "have known"],
+    correctAnswer: "had known",
+    explanation: "Past perfect for lack of knowledge in the past.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_046",
+    type: "multiple-choice",
+    question: "We ___ have seen the sunset if we had arrived earlier.",
+    options: ["could", "can", "will", "had"],
+    correctAnswer: "could",
+    explanation: "Could have for missed opportunities in the past.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_047",
+    type: "multiple-choice",
+    question: "If he had apologized, she ___ have forgiven him.",
+    options: ["might", "may", "will", "can"],
+    correctAnswer: "might",
+    explanation: "Might have for uncertain forgiveness in hypothetical past.",
+    category: "third-conditional",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_ThirdConditional_048",
+    type: "multiple-choice",
+    question: "If the company ___ invested in technology, it wouldn't have failed.",
+    options: ["had", "has", "would", "would have"],
+    correctAnswer: "had",
+    explanation: "Past perfect: had + past participle for the unreal condition.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_049",
+    type: "multiple-choice",
+    question: "I wouldn't have said that if I ___ it would hurt you.",
+    options: ["had known", "knew", "would know", "have known"],
+    correctAnswer: "had known",
+    explanation: "Past perfect for lack of awareness about consequences.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ThirdConditional_050",
+    type: "multiple-choice",
+    question: "If they ___ more carefully, the accident wouldn't have happened.",
+    options: ["had driven", "drove", "would drive", "have driven"],
+    correctAnswer: "had driven",
+    explanation: "Past perfect for the action that wasn't performed.",
+    category: "third-conditional",
+    difficulty: "medium"
+  },
+];
 
 // ==================== C1 LEVEL EXERCISES (placeholder) ====================
 export const c1GrammarExercises: GrammarExercise[] = [];
