@@ -9031,6 +9031,507 @@ export const c1GrammarExercises: GrammarExercise[] = [
     category: "subjunctive",
     difficulty: "medium"
   },
+  // ===== CLEFT SENTENCES (50 exercises) =====
+  {
+    id: "C1_CleftSentences_001",
+    type: "multiple-choice",
+    question: "___ was John who broke the window.",
+    options: ["It", "What", "That", "There"],
+    correctAnswer: "It",
+    explanation: "It-cleft: 'It was X who/that...' emphasizes the subject.",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_002",
+    type: "multiple-choice",
+    question: "___ I need is a good night's sleep.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft: 'What I need is...' emphasizes the object.",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_003",
+    type: "multiple-choice",
+    question: "It was in Paris ___ they first met.",
+    options: ["that", "what", "which", "where"],
+    correctAnswer: "that",
+    explanation: "It-cleft with place: use 'that' (not 'where') after 'It was.'",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_004",
+    type: "multiple-choice",
+    question: "___ she said surprised everyone.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft as subject: 'What she said' is a noun clause.",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_005",
+    type: "multiple-choice",
+    question: "It was the manager ___ made the decision.",
+    options: ["who", "what", "which", "whom"],
+    correctAnswer: "who",
+    explanation: "It-cleft with person: use 'who' (or 'that').",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_006",
+    type: "multiple-choice",
+    question: "___ happened next was completely unexpected.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft: 'What happened' functions as the subject.",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_007",
+    type: "multiple-choice",
+    question: "It was yesterday ___ I received the news.",
+    options: ["that", "when", "which", "what"],
+    correctAnswer: "that",
+    explanation: "It-cleft with time: use 'that' (not 'when') after 'It was.'",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_008",
+    type: "multiple-choice",
+    question: "___ we need to do is focus on the problem.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft: 'What we need to do' emphasizes the action.",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_009",
+    type: "multiple-choice",
+    question: "It was the noise ___ woke me up.",
+    options: ["that", "what", "who", "whom"],
+    correctAnswer: "that",
+    explanation: "It-cleft with thing: use 'that' (or 'which').",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_010",
+    type: "multiple-choice",
+    question: "___ I don't understand is why he left.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft: 'What I don't understand' introduces emphasis.",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_011",
+    type: "multiple-choice",
+    question: "It was because of the rain ___ we stayed home.",
+    options: ["that", "what", "which", "why"],
+    correctAnswer: "that",
+    explanation: "It-cleft with reason: use 'that' after 'because of.'",
+    category: "cleft-sentences",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_CleftSentences_012",
+    type: "multiple-choice",
+    question: "___ you should do is apologize.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft for advice: 'What you should do is...'",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_013",
+    type: "multiple-choice",
+    question: "It was to her mother ___ she told the secret.",
+    options: ["that", "who", "whom", "what"],
+    correctAnswer: "that",
+    explanation: "It-cleft emphasizing indirect object uses 'that.'",
+    category: "cleft-sentences",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_CleftSentences_014",
+    type: "multiple-choice",
+    question: "___ makes me angry is his attitude.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft: 'What makes me angry' as subject clause.",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_015",
+    type: "multiple-choice",
+    question: "It wasn't the money ___ I was worried about.",
+    options: ["that", "what", "which", "who"],
+    correctAnswer: "that",
+    explanation: "Negative it-cleft: 'It wasn't X that...'",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_016",
+    type: "multiple-choice",
+    question: "___ I want to know is how it happened.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft: 'What I want to know' for emphasis.",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_017",
+    type: "multiple-choice",
+    question: "It was only after the meeting ___ I realized my mistake.",
+    options: ["that", "when", "which", "what"],
+    correctAnswer: "that",
+    explanation: "It-cleft with time phrase: use 'that.'",
+    category: "cleft-sentences",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_CleftSentences_018",
+    type: "multiple-choice",
+    question: "___ they're proposing is completely impractical.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft: 'What they're proposing' as subject.",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_019",
+    type: "multiple-choice",
+    question: "It was her dedication ___ impressed the judges.",
+    options: ["that", "what", "who", "whom"],
+    correctAnswer: "that",
+    explanation: "It-cleft emphasizing quality: use 'that.'",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_020",
+    type: "multiple-choice",
+    question: "___ I'm trying to say is that we need more time.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft: 'What I'm trying to say' for clarification.",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_021",
+    type: "multiple-choice",
+    question: "It was not until midnight ___ the guests left.",
+    options: ["that", "when", "which", "what"],
+    correctAnswer: "that",
+    explanation: "'It was not until...that' is a fixed cleft pattern.",
+    category: "cleft-sentences",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_CleftSentences_022",
+    type: "multiple-choice",
+    question: "___ worries me is his lack of experience.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft expressing concern: 'What worries me...'",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_023",
+    type: "multiple-choice",
+    question: "It was the children ___ found the lost dog.",
+    options: ["who", "what", "which", "whom"],
+    correctAnswer: "who",
+    explanation: "It-cleft with people: use 'who' (or 'that').",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_024",
+    type: "multiple-choice",
+    question: "___ she really wants is some peace and quiet.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft: 'What she really wants' for emphasis.",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_025",
+    type: "multiple-choice",
+    question: "It was for this reason ___ they decided to postpone.",
+    options: ["that", "what", "which", "why"],
+    correctAnswer: "that",
+    explanation: "It-cleft with reason phrase: use 'that.'",
+    category: "cleft-sentences",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_CleftSentences_026",
+    type: "multiple-choice",
+    question: "___ we did was call the police immediately.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft describing action: 'What we did was...'",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_027",
+    type: "multiple-choice",
+    question: "It was precisely at 3pm ___ the accident occurred.",
+    options: ["that", "when", "which", "what"],
+    correctAnswer: "that",
+    explanation: "It-cleft with precise time: use 'that.'",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_028",
+    type: "multiple-choice",
+    question: "___ I find fascinating is how quickly she learned.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft expressing interest: 'What I find...'",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_029",
+    type: "multiple-choice",
+    question: "It was the first chapter ___ I found most difficult.",
+    options: ["that", "what", "which", "who"],
+    correctAnswer: "that",
+    explanation: "It-cleft emphasizing specific item: use 'that.'",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_030",
+    type: "multiple-choice",
+    question: "___ happened was that the system crashed.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft explaining events: 'What happened was...'",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_031",
+    type: "multiple-choice",
+    question: "It was in 1969 ___ humans first landed on the moon.",
+    options: ["that", "when", "which", "what"],
+    correctAnswer: "that",
+    explanation: "It-cleft with year: use 'that' (not 'when').",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_032",
+    type: "multiple-choice",
+    question: "___ I admire about her is her honesty.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft: 'What I admire about...' for specific quality.",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_033",
+    type: "multiple-choice",
+    question: "It was only when she spoke ___ I recognized her.",
+    options: ["that", "when", "which", "what"],
+    correctAnswer: "that",
+    explanation: "'It was only when...that' emphasizes the trigger moment.",
+    category: "cleft-sentences",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_CleftSentences_034",
+    type: "multiple-choice",
+    question: "___ you said made a lot of sense.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft as subject: 'What you said' is the topic.",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_035",
+    type: "multiple-choice",
+    question: "It was with great reluctance ___ she agreed.",
+    options: ["that", "what", "which", "how"],
+    correctAnswer: "that",
+    explanation: "It-cleft with manner phrase: use 'that.'",
+    category: "cleft-sentences",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_CleftSentences_036",
+    type: "multiple-choice",
+    question: "___ I can't figure out is why he lied.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft expressing confusion: 'What I can't figure out...'",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_037",
+    type: "multiple-choice",
+    question: "It was Tom's idea, not mine, ___ caused the problem.",
+    options: ["that", "what", "which", "who"],
+    correctAnswer: "that",
+    explanation: "It-cleft with contrast: 'not mine, that...'",
+    category: "cleft-sentences",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_CleftSentences_038",
+    type: "multiple-choice",
+    question: "___ I'm looking for is a simple solution.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft: 'What I'm looking for' states the need.",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_039",
+    type: "multiple-choice",
+    question: "It was how she said it, not what she said, ___ hurt me.",
+    options: ["that", "what", "which", "who"],
+    correctAnswer: "that",
+    explanation: "Complex it-cleft with contrast: use 'that.'",
+    category: "cleft-sentences",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_CleftSentences_040",
+    type: "multiple-choice",
+    question: "___ matters most is your health.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft: 'What matters most' emphasizes priority.",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_041",
+    type: "multiple-choice",
+    question: "It was the way he smiled ___ caught my attention.",
+    options: ["that", "what", "which", "how"],
+    correctAnswer: "that",
+    explanation: "It-cleft with 'the way': use 'that.'",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_042",
+    type: "multiple-choice",
+    question: "___ you need to remember is the deadline.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft for reminder: 'What you need to remember...'",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_043",
+    type: "multiple-choice",
+    question: "It is the quality, not the quantity, ___ counts.",
+    options: ["that", "what", "which", "who"],
+    correctAnswer: "that",
+    explanation: "Present tense it-cleft with contrast: use 'that.'",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_044",
+    type: "multiple-choice",
+    question: "___ I like best about the job is the flexibility.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft with superlative: 'What I like best...'",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_045",
+    type: "multiple-choice",
+    question: "It was here ___ the famous battle took place.",
+    options: ["that", "where", "which", "what"],
+    correctAnswer: "that",
+    explanation: "It-cleft with 'here': use 'that' (not 'where').",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_046",
+    type: "multiple-choice",
+    question: "___ I've always wanted is to travel the world.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft expressing long-held desire.",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_047",
+    type: "multiple-choice",
+    question: "It was her voice ___ I recognized first.",
+    options: ["that", "what", "which", "who"],
+    correctAnswer: "that",
+    explanation: "It-cleft emphasizing the identified element.",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_048",
+    type: "multiple-choice",
+    question: "___ I don't appreciate is being interrupted.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft expressing displeasure.",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_CleftSentences_049",
+    type: "multiple-choice",
+    question: "It was at this very spot ___ they found the treasure.",
+    options: ["that", "where", "which", "what"],
+    correctAnswer: "that",
+    explanation: "It-cleft with demonstrative place: use 'that.'",
+    category: "cleft-sentences",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_CleftSentences_050",
+    type: "multiple-choice",
+    question: "___ I'm suggesting is a complete redesign.",
+    options: ["What", "It", "That", "Which"],
+    correctAnswer: "What",
+    explanation: "Wh-cleft for proposals: 'What I'm suggesting is...'",
+    category: "cleft-sentences",
+    difficulty: "medium"
+  },
 ];
 
 // ==================== C2 LEVEL EXERCISES (placeholder) ====================
