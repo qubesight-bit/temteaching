@@ -28,6 +28,16 @@ export function useElevenLabsTTS(options: UseElevenLabsTTSOptions = {}) {
   const speak = useCallback(async (text: string) => {
     if (!text.trim()) return;
 
+    // Clean text: remove repeated words like "score score score" from empty values
+    // and ensure we have meaningful content to speak
+    let cleanText = text
+      .replace(/\b(\w+)(\s+\1){3,}\b/gi, '') // Remove words repeated 4+ times in a row
+      .replace(/\s{2,}/g, ' ') // Normalize multiple spaces
+      .trim();
+
+    // If cleaning removed all content, don't speak
+    if (!cleanText) return;
+
     // Stop any currently playing audio
     stopAudio();
 
