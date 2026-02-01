@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { supabase } from '@/integrations/supabase/client';
 
@@ -14,29 +14,28 @@ export function usePlacementExam() {
   const [needsPlacementExam, setNeedsPlacementExam] = useState(false);
   const [loading, setLoading] = useState(true);
   const [placementCompleted, setPlacementCompleted] = useState(false);
-  const hasChecked = useRef(false);
 
   useEffect(() => {
+    let isMounted = true;
+
     const checkPlacementStatus = async () => {
       if (!user) {
-        setLoading(false);
-        setNeedsPlacementExam(false);
+        if (isMounted) {
+          setLoading(false);
+          setNeedsPlacementExam(false);
+        }
         return;
       }
 
       // If already checked for this user in this session, use cached result
       if (placementCache.checked && placementCache.userId === user.id) {
-        setNeedsPlacementExam(placementCache.needsExam);
-        setPlacementCompleted(!placementCache.needsExam);
-        setLoading(false);
+        if (isMounted) {
+          setNeedsPlacementExam(placementCache.needsExam);
+          setPlacementCompleted(!placementCache.needsExam);
+          setLoading(false);
+        }
         return;
       }
-
-      // Prevent duplicate checks during the same render cycle
-      if (hasChecked.current) {
-        return;
-      }
-      hasChecked.current = true;
 
       try {
         // Check if user has completed placement exam
@@ -45,6 +44,8 @@ export function usePlacementExam() {
           .select('id, assigned_level')
           .eq('user_id', user.id)
           .maybeSingle();
+
+        if (!isMounted) return;
 
         if (error) {
           console.error('Error checking placement status:', error);
@@ -65,15 +66,23 @@ export function usePlacementExam() {
         }
       } catch (error) {
         console.error('Error checking placement status:', error);
-        setNeedsPlacementExam(false);
+        if (isMounted) {
+          setNeedsPlacementExam(false);
+        }
       } finally {
-        setLoading(false);
+        if (isMounted) {
+          setLoading(false);
+        }
       }
     };
 
     if (!authLoading) {
       checkPlacementStatus();
     }
+
+    return () => {
+      isMounted = false;
+    };
   }, [user, authLoading]);
 
   const markPlacementComplete = () => {
