@@ -7023,6 +7023,507 @@ export const b2GrammarExercises: GrammarExercise[] = [
     category: "mixed-conditionals",
     difficulty: "hard"
   },
+  // ===== RELATIVE CLAUSES (50 exercises) =====
+  {
+    id: "B2_RelativeClauses_001",
+    type: "multiple-choice",
+    question: "The woman ___ lives next door is a doctor.",
+    options: ["who", "which", "whose", "whom"],
+    correctAnswer: "who",
+    explanation: "Use 'who' for people as subjects of relative clauses.",
+    category: "relative-clauses",
+    difficulty: "easy"
+  },
+  {
+    id: "B2_RelativeClauses_002",
+    type: "multiple-choice",
+    question: "The book ___ I borrowed was very interesting.",
+    options: ["which", "who", "whose", "whom"],
+    correctAnswer: "which",
+    explanation: "Use 'which' or 'that' for things. 'Which' can be omitted here.",
+    category: "relative-clauses",
+    difficulty: "easy"
+  },
+  {
+    id: "B2_RelativeClauses_003",
+    type: "multiple-choice",
+    question: "The man ___ car was stolen reported it to the police.",
+    options: ["whose", "who", "which", "whom"],
+    correctAnswer: "whose",
+    explanation: "Use 'whose' to show possession for people.",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_004",
+    type: "multiple-choice",
+    question: "Paris, ___ is the capital of France, attracts millions of tourists.",
+    options: ["which", "that", "who", "where"],
+    correctAnswer: "which",
+    explanation: "Non-defining clauses about things use 'which' (not 'that').",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_005",
+    type: "multiple-choice",
+    question: "The hotel ___ we stayed was very comfortable.",
+    options: ["where", "which", "that", "who"],
+    correctAnswer: "where",
+    explanation: "Use 'where' for places instead of 'in which.'",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_006",
+    type: "multiple-choice",
+    question: "The reason ___ I called you is important.",
+    options: ["why", "which", "that", "when"],
+    correctAnswer: "why",
+    explanation: "Use 'why' after 'reason' in relative clauses.",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_007",
+    type: "multiple-choice",
+    question: "My brother, ___ works in London, is coming to visit.",
+    options: ["who", "that", "which", "whom"],
+    correctAnswer: "who",
+    explanation: "Non-defining clauses about people use 'who' (not 'that').",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_008",
+    type: "multiple-choice",
+    question: "The day ___ we met was unforgettable.",
+    options: ["when", "which", "that", "where"],
+    correctAnswer: "when",
+    explanation: "Use 'when' for times in relative clauses.",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_009",
+    type: "multiple-choice",
+    question: "The woman to ___ I spoke was very helpful.",
+    options: ["whom", "who", "which", "whose"],
+    correctAnswer: "whom",
+    explanation: "Use 'whom' after prepositions in formal English.",
+    category: "relative-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_RelativeClauses_010",
+    type: "multiple-choice",
+    question: "Everything ___ he said was true.",
+    options: ["that", "which", "who", "what"],
+    correctAnswer: "that",
+    explanation: "Use 'that' (not 'which') after 'everything, nothing, all.'",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_011",
+    type: "multiple-choice",
+    question: "The company ___ products I use is based in Japan.",
+    options: ["whose", "which", "that", "who"],
+    correctAnswer: "whose",
+    explanation: "'Whose' shows possession and can refer to things.",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_012",
+    type: "multiple-choice",
+    question: "She's the first person ___ understood my problem.",
+    options: ["that", "which", "who", "whom"],
+    correctAnswer: "that",
+    explanation: "Use 'that' after superlatives and ordinals (first, only, etc.).",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_013",
+    type: "multiple-choice",
+    question: "The restaurant, ___ we often go, has closed down.",
+    options: ["to which", "which", "that", "where"],
+    correctAnswer: "to which",
+    explanation: "Formal style: preposition + 'which' in non-defining clauses.",
+    category: "relative-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_RelativeClauses_014",
+    type: "multiple-choice",
+    question: "The students ___ passed the exam will receive certificates.",
+    options: ["who", "which", "whose", "whom"],
+    correctAnswer: "who",
+    explanation: "Use 'who' for people as subjects (defining clause).",
+    category: "relative-clauses",
+    difficulty: "easy"
+  },
+  {
+    id: "B2_RelativeClauses_015",
+    type: "multiple-choice",
+    question: "He didn't pass the test, ___ surprised everyone.",
+    options: ["which", "that", "what", "who"],
+    correctAnswer: "which",
+    explanation: "'Which' can refer to a whole clause in non-defining relatives.",
+    category: "relative-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_RelativeClauses_016",
+    type: "multiple-choice",
+    question: "The town ___ I grew up has changed a lot.",
+    options: ["where", "which", "that", "who"],
+    correctAnswer: "where",
+    explanation: "'Where' replaces 'in/at which' for places.",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_017",
+    type: "multiple-choice",
+    question: "The lawyer ___ I consulted gave me good advice.",
+    options: ["whom", "whose", "which", "where"],
+    correctAnswer: "whom",
+    explanation: "'Whom' is the object form for people (formal); 'who' also acceptable.",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_018",
+    type: "multiple-choice",
+    question: "There's nothing ___ we can do about it.",
+    options: ["that", "which", "what", "who"],
+    correctAnswer: "that",
+    explanation: "Use 'that' after 'nothing, something, anything, everything.'",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_019",
+    type: "multiple-choice",
+    question: "Dr. Smith, ___ book I read, is giving a lecture tomorrow.",
+    options: ["whose", "who", "which", "whom"],
+    correctAnswer: "whose",
+    explanation: "'Whose' for possession in non-defining clauses.",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_020",
+    type: "multiple-choice",
+    question: "The way ___ she handled the situation was impressive.",
+    options: ["in which", "which", "who", "where"],
+    correctAnswer: "in which",
+    explanation: "'The way in which' or 'the way that' describes manner.",
+    category: "relative-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_RelativeClauses_021",
+    type: "multiple-choice",
+    question: "He's the only one ___ can solve this problem.",
+    options: ["who", "which", "whose", "whom"],
+    correctAnswer: "who",
+    explanation: "Use 'who' or 'that' after 'the only one.'",
+    category: "relative-clauses",
+    difficulty: "easy"
+  },
+  {
+    id: "B2_RelativeClauses_022",
+    type: "multiple-choice",
+    question: "The film ___ we watched last night was boring.",
+    options: ["that", "who", "whose", "whom"],
+    correctAnswer: "that",
+    explanation: "'That' or 'which' for things; can be omitted when object.",
+    category: "relative-clauses",
+    difficulty: "easy"
+  },
+  {
+    id: "B2_RelativeClauses_023",
+    type: "multiple-choice",
+    question: "New York, ___ I have never visited, is on my bucket list.",
+    options: ["which", "that", "where", "who"],
+    correctAnswer: "which",
+    explanation: "Non-defining clauses use 'which' for places as objects.",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_024",
+    type: "multiple-choice",
+    question: "The teacher ___ classroom is next door teaches history.",
+    options: ["whose", "who", "which", "whom"],
+    correctAnswer: "whose",
+    explanation: "'Whose' indicates possession (the teacher's classroom).",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_025",
+    type: "multiple-choice",
+    question: "She married the man ___ she met on vacation.",
+    options: ["whom", "whose", "which", "where"],
+    correctAnswer: "whom",
+    explanation: "'Whom' as object; 'who' or omission also acceptable.",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_026",
+    type: "multiple-choice",
+    question: "This is the best pizza ___ I have ever eaten.",
+    options: ["that", "which", "who", "whose"],
+    correctAnswer: "that",
+    explanation: "Use 'that' (not 'which') after superlatives.",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_027",
+    type: "multiple-choice",
+    question: "The year ___ I graduated was 2015.",
+    options: ["when", "which", "that", "where"],
+    correctAnswer: "when",
+    explanation: "'When' for time expressions in relative clauses.",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_028",
+    type: "multiple-choice",
+    question: "My manager, ___ opinion I respect, approved the project.",
+    options: ["whose", "who", "which", "whom"],
+    correctAnswer: "whose",
+    explanation: "'Whose opinion' shows possession in non-defining clause.",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_029",
+    type: "multiple-choice",
+    question: "The café ___ we had coffee is around the corner.",
+    options: ["where", "which", "that", "who"],
+    correctAnswer: "where",
+    explanation: "'Where' for locations (= at/in which).",
+    category: "relative-clauses",
+    difficulty: "easy"
+  },
+  {
+    id: "B2_RelativeClauses_030",
+    type: "multiple-choice",
+    question: "He sold the car, ___ he had owned for ten years.",
+    options: ["which", "that", "who", "whose"],
+    correctAnswer: "which",
+    explanation: "Non-defining clause about a thing uses 'which.'",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_031",
+    type: "multiple-choice",
+    question: "The people with ___ I work are very friendly.",
+    options: ["whom", "who", "which", "whose"],
+    correctAnswer: "whom",
+    explanation: "Use 'whom' after prepositions in formal English.",
+    category: "relative-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_RelativeClauses_032",
+    type: "multiple-choice",
+    question: "Is there anything ___ I can help you with?",
+    options: ["that", "which", "who", "whose"],
+    correctAnswer: "that",
+    explanation: "'That' is preferred after 'anything, something, nothing.'",
+    category: "relative-clauses",
+    difficulty: "easy"
+  },
+  {
+    id: "B2_RelativeClauses_033",
+    type: "multiple-choice",
+    question: "The house ___ roof was damaged needs repairs.",
+    options: ["whose", "which", "that", "who"],
+    correctAnswer: "whose",
+    explanation: "'Whose' can refer to things (the house's roof).",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_034",
+    type: "multiple-choice",
+    question: "She explained the reason ___ she was late.",
+    options: ["why", "which", "that", "when"],
+    correctAnswer: "why",
+    explanation: "'Why' follows 'the reason' in relative clauses.",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_035",
+    type: "multiple-choice",
+    question: "The artist ___ paintings are displayed is famous worldwide.",
+    options: ["whose", "who", "which", "whom"],
+    correctAnswer: "whose",
+    explanation: "'Whose' shows the artist's paintings.",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_036",
+    type: "multiple-choice",
+    question: "She's someone ___ you can always rely on.",
+    options: ["who", "which", "whose", "where"],
+    correctAnswer: "who",
+    explanation: "'Who' for people; 'whom' also acceptable after preposition.",
+    category: "relative-clauses",
+    difficulty: "easy"
+  },
+  {
+    id: "B2_RelativeClauses_037",
+    type: "multiple-choice",
+    question: "They cancelled the event, ___ disappointed many people.",
+    options: ["which", "that", "what", "who"],
+    correctAnswer: "which",
+    explanation: "'Which' refers to the whole previous clause.",
+    category: "relative-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_RelativeClauses_038",
+    type: "multiple-choice",
+    question: "The moment ___ I saw her, I knew something was wrong.",
+    options: ["when", "which", "that", "where"],
+    correctAnswer: "when",
+    explanation: "'When' for specific moments in time.",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_039",
+    type: "multiple-choice",
+    question: "The computer ___ I bought last week has broken down.",
+    options: ["which", "who", "whose", "whom"],
+    correctAnswer: "which",
+    explanation: "'Which' or 'that' for things (object of clause).",
+    category: "relative-clauses",
+    difficulty: "easy"
+  },
+  {
+    id: "B2_RelativeClauses_040",
+    type: "multiple-choice",
+    question: "Einstein, ___ developed the theory of relativity, was a genius.",
+    options: ["who", "that", "which", "whom"],
+    correctAnswer: "who",
+    explanation: "Non-defining clauses about people use 'who.'",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_041",
+    type: "multiple-choice",
+    question: "The children ___ parents work here get a discount.",
+    options: ["whose", "who", "which", "whom"],
+    correctAnswer: "whose",
+    explanation: "'Whose' shows the relationship (the children's parents).",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_042",
+    type: "multiple-choice",
+    question: "This is the park ___ I used to play as a child.",
+    options: ["where", "which", "that", "who"],
+    correctAnswer: "where",
+    explanation: "'Where' for places (= in which).",
+    category: "relative-clauses",
+    difficulty: "easy"
+  },
+  {
+    id: "B2_RelativeClauses_043",
+    type: "multiple-choice",
+    question: "All ___ glitters is not gold.",
+    options: ["that", "which", "who", "what"],
+    correctAnswer: "that",
+    explanation: "Use 'that' after 'all, everything, nothing, something.'",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_RelativeClauses_044",
+    type: "multiple-choice",
+    question: "The period ___ I lived abroad was transformative.",
+    options: ["during which", "which", "when", "where"],
+    correctAnswer: "during which",
+    explanation: "'During which' for a period of time in formal style.",
+    category: "relative-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_RelativeClauses_045",
+    type: "multiple-choice",
+    question: "The man ___ was speaking wore a blue suit.",
+    options: ["who", "which", "whose", "whom"],
+    correctAnswer: "who",
+    explanation: "'Who' for people as subjects of the clause.",
+    category: "relative-clauses",
+    difficulty: "easy"
+  },
+  {
+    id: "B2_RelativeClauses_046",
+    type: "multiple-choice",
+    question: "She bought the dress ___ she had seen in the magazine.",
+    options: ["that", "who", "whose", "whom"],
+    correctAnswer: "that",
+    explanation: "'That' or 'which' for things as objects.",
+    category: "relative-clauses",
+    difficulty: "easy"
+  },
+  {
+    id: "B2_RelativeClauses_047",
+    type: "multiple-choice",
+    question: "The conference, at ___ I presented my research, was successful.",
+    options: ["which", "that", "where", "whom"],
+    correctAnswer: "which",
+    explanation: "Preposition + 'which' in formal non-defining clauses.",
+    category: "relative-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_RelativeClauses_048",
+    type: "multiple-choice",
+    question: "He's the kind of person ___ always helps others.",
+    options: ["who", "which", "whose", "whom"],
+    correctAnswer: "who",
+    explanation: "'Who' for people as subjects.",
+    category: "relative-clauses",
+    difficulty: "easy"
+  },
+  {
+    id: "B2_RelativeClauses_049",
+    type: "multiple-choice",
+    question: "The project on ___ we worked together was awarded.",
+    options: ["which", "that", "who", "whose"],
+    correctAnswer: "which",
+    explanation: "Preposition + 'which' in formal style.",
+    category: "relative-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_RelativeClauses_050",
+    type: "multiple-choice",
+    question: "I remember the summer ___ we first met.",
+    options: ["when", "which", "that", "where"],
+    correctAnswer: "when",
+    explanation: "'When' for seasons, years, and time periods.",
+    category: "relative-clauses",
+    difficulty: "medium"
+  },
 ];
 
 // ==================== C1 LEVEL EXERCISES (placeholder) ====================
