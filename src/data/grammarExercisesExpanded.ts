@@ -8530,6 +8530,507 @@ export const c1GrammarExercises: GrammarExercise[] = [
     category: "inversion",
     difficulty: "medium"
   },
+  // ===== SUBJUNCTIVE MOOD (50 exercises) =====
+  {
+    id: "C1_Subjunctive_001",
+    type: "multiple-choice",
+    question: "The manager demanded that he ___ on time.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "After 'demand' use subjunctive: base form 'be' regardless of subject.",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_002",
+    type: "multiple-choice",
+    question: "It is essential that she ___ the report by Friday.",
+    options: ["submit", "submits", "submitted", "submitting"],
+    correctAnswer: "submit",
+    explanation: "'It is essential that' requires subjunctive: base form without -s.",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_003",
+    type: "multiple-choice",
+    question: "The doctor recommended that he ___ more water.",
+    options: ["drink", "drinks", "drank", "drinking"],
+    correctAnswer: "drink",
+    explanation: "After 'recommend' use subjunctive: base form 'drink.'",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_004",
+    type: "multiple-choice",
+    question: "I suggest that she ___ a lawyer.",
+    options: ["consult", "consults", "consulted", "consulting"],
+    correctAnswer: "consult",
+    explanation: "'Suggest that' triggers subjunctive mood.",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_005",
+    type: "multiple-choice",
+    question: "It is important that everyone ___ informed.",
+    options: ["be", "is", "are", "being"],
+    correctAnswer: "be",
+    explanation: "'It is important that' requires subjunctive 'be.'",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_006",
+    type: "multiple-choice",
+    question: "The professor insisted that the student ___ the experiment.",
+    options: ["repeat", "repeats", "repeated", "repeating"],
+    correctAnswer: "repeat",
+    explanation: "'Insist that' requires subjunctive: base form.",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_007",
+    type: "multiple-choice",
+    question: "It is vital that the medicine ___ kept refrigerated.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'It is vital that' + passive subjunctive uses 'be.'",
+    category: "subjunctive",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Subjunctive_008",
+    type: "multiple-choice",
+    question: "The committee proposed that the plan ___ implemented.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'Propose that' + passive uses subjunctive 'be.'",
+    category: "subjunctive",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Subjunctive_009",
+    type: "multiple-choice",
+    question: "I wish I ___ taller.",
+    options: ["were", "was", "am", "be"],
+    correctAnswer: "were",
+    explanation: "'Wish' + past subjunctive: 'were' for unreal present.",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_010",
+    type: "multiple-choice",
+    question: "If I ___ you, I would accept the offer.",
+    options: ["were", "was", "am", "be"],
+    correctAnswer: "were",
+    explanation: "Subjunctive 'were' in second conditional for all persons.",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_011",
+    type: "multiple-choice",
+    question: "The law requires that every driver ___ a license.",
+    options: ["have", "has", "had", "having"],
+    correctAnswer: "have",
+    explanation: "'Require that' triggers subjunctive: base form 'have.'",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_012",
+    type: "multiple-choice",
+    question: "It is necessary that he ___ the truth.",
+    options: ["tell", "tells", "told", "telling"],
+    correctAnswer: "tell",
+    explanation: "'It is necessary that' requires subjunctive.",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_013",
+    type: "multiple-choice",
+    question: "She acts as if she ___ the boss.",
+    options: ["were", "is", "was", "be"],
+    correctAnswer: "were",
+    explanation: "'As if' + unreal situation uses past subjunctive 'were.'",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_014",
+    type: "multiple-choice",
+    question: "He talks as though he ___ everything.",
+    options: ["knew", "knows", "know", "knowing"],
+    correctAnswer: "knew",
+    explanation: "'As though' + unreal uses past subjunctive.",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_015",
+    type: "multiple-choice",
+    question: "The board requested that she ___ the meeting.",
+    options: ["attend", "attends", "attended", "attending"],
+    correctAnswer: "attend",
+    explanation: "'Request that' triggers subjunctive mood.",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_016",
+    type: "multiple-choice",
+    question: "If only she ___ here now.",
+    options: ["were", "is", "was", "be"],
+    correctAnswer: "were",
+    explanation: "'If only' + unreal present uses subjunctive 'were.'",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_017",
+    type: "multiple-choice",
+    question: "It is crucial that the data ___ accurate.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'It is crucial that' requires subjunctive 'be.'",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_018",
+    type: "multiple-choice",
+    question: "The judge ordered that the defendant ___ released.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'Order that' + passive requires subjunctive 'be.'",
+    category: "subjunctive",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Subjunctive_019",
+    type: "multiple-choice",
+    question: "I would rather you ___ later.",
+    options: ["came", "come", "comes", "coming"],
+    correctAnswer: "came",
+    explanation: "'Would rather + subject' uses past subjunctive.",
+    category: "subjunctive",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Subjunctive_020",
+    type: "multiple-choice",
+    question: "It's time we ___ home.",
+    options: ["went", "go", "goes", "going"],
+    correctAnswer: "went",
+    explanation: "'It's time + subject' uses past subjunctive.",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_021",
+    type: "multiple-choice",
+    question: "The director asked that the scene ___ reshot.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'Ask that' + passive uses subjunctive 'be.'",
+    category: "subjunctive",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Subjunctive_022",
+    type: "multiple-choice",
+    question: "It is imperative that he ___ immediately.",
+    options: ["leave", "leaves", "left", "leaving"],
+    correctAnswer: "leave",
+    explanation: "'It is imperative that' requires base form subjunctive.",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_023",
+    type: "multiple-choice",
+    question: "I wish he ___ stop making noise.",
+    options: ["would", "will", "can", "could have"],
+    correctAnswer: "would",
+    explanation: "'Wish + would' for desired change in behavior.",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_024",
+    type: "multiple-choice",
+    question: "The policy mandates that all employees ___ training.",
+    options: ["complete", "completes", "completed", "completing"],
+    correctAnswer: "complete",
+    explanation: "'Mandate that' triggers subjunctive: base form.",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_025",
+    type: "multiple-choice",
+    question: "If it ___ not for your help, I would have failed.",
+    options: ["were", "was", "is", "be"],
+    correctAnswer: "were",
+    explanation: "'If it were not for' is fixed subjunctive expression.",
+    category: "subjunctive",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Subjunctive_026",
+    type: "multiple-choice",
+    question: "The CEO urged that the company ___ green initiatives.",
+    options: ["adopt", "adopts", "adopted", "adopting"],
+    correctAnswer: "adopt",
+    explanation: "'Urge that' requires subjunctive: base form.",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_027",
+    type: "multiple-choice",
+    question: "It is desirable that she ___ present at the meeting.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'It is desirable that' requires subjunctive 'be.'",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_028",
+    type: "multiple-choice",
+    question: "He speaks as if he ___ a native speaker.",
+    options: ["were", "is", "was", "be"],
+    correctAnswer: "were",
+    explanation: "'As if' + unreal uses past subjunctive 'were.'",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_029",
+    type: "multiple-choice",
+    question: "I'd rather she ___ the decision herself.",
+    options: ["made", "makes", "make", "making"],
+    correctAnswer: "made",
+    explanation: "'Would rather + subject' uses past subjunctive.",
+    category: "subjunctive",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Subjunctive_030",
+    type: "multiple-choice",
+    question: "The contract stipulates that payment ___ made within 30 days.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'Stipulate that' + passive uses subjunctive 'be.'",
+    category: "subjunctive",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Subjunctive_031",
+    type: "multiple-choice",
+    question: "It is advisable that she ___ a second opinion.",
+    options: ["seek", "seeks", "sought", "seeking"],
+    correctAnswer: "seek",
+    explanation: "'It is advisable that' requires subjunctive.",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_032",
+    type: "multiple-choice",
+    question: "Long ___ the king!",
+    options: ["live", "lives", "lived", "living"],
+    correctAnswer: "live",
+    explanation: "Formulaic subjunctive expressing wishes: 'Long live...'",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_033",
+    type: "multiple-choice",
+    question: "God ___ the Queen!",
+    options: ["save", "saves", "saved", "saving"],
+    correctAnswer: "save",
+    explanation: "Formulaic subjunctive: 'God save...' for wishes.",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_034",
+    type: "multiple-choice",
+    question: "Be that as it ___.",
+    options: ["may", "might", "is", "be"],
+    correctAnswer: "may",
+    explanation: "Fixed subjunctive expression: 'Be that as it may.'",
+    category: "subjunctive",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Subjunctive_035",
+    type: "multiple-choice",
+    question: "I move that the meeting ___ adjourned.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'Move that' in formal contexts requires subjunctive.",
+    category: "subjunctive",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Subjunctive_036",
+    type: "multiple-choice",
+    question: "It is preferable that he ___ notified in advance.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'It is preferable that' + passive uses 'be.'",
+    category: "subjunctive",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Subjunctive_037",
+    type: "multiple-choice",
+    question: "The regulations specify that each form ___ signed.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'Specify that' + passive requires subjunctive 'be.'",
+    category: "subjunctive",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Subjunctive_038",
+    type: "multiple-choice",
+    question: "I wish I ___ studied harder last year.",
+    options: ["had", "have", "would", "could"],
+    correctAnswer: "had",
+    explanation: "'Wish' + past perfect for unreal past: 'had studied.'",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_039",
+    type: "multiple-choice",
+    question: "If only they ___ listened to the warnings.",
+    options: ["had", "have", "would", "did"],
+    correctAnswer: "had",
+    explanation: "'If only' + past perfect for regret about past.",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_040",
+    type: "multiple-choice",
+    question: "It's high time you ___ a decision.",
+    options: ["made", "make", "makes", "making"],
+    correctAnswer: "made",
+    explanation: "'It's high time + subject' uses past subjunctive.",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_041",
+    type: "multiple-choice",
+    question: "The treaty requires that all nations ___ to the terms.",
+    options: ["adhere", "adheres", "adhered", "adhering"],
+    correctAnswer: "adhere",
+    explanation: "'Require that' triggers subjunctive: base form.",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_042",
+    type: "multiple-choice",
+    question: "She looked at me as though I ___ crazy.",
+    options: ["were", "am", "was", "be"],
+    correctAnswer: "were",
+    explanation: "'As though' + unreal uses past subjunctive 'were.'",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_043",
+    type: "multiple-choice",
+    question: "I would rather he ___ told me the truth.",
+    options: ["had", "has", "have", "having"],
+    correctAnswer: "had",
+    explanation: "'Would rather + subject' + past perfect for past regret.",
+    category: "subjunctive",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Subjunctive_044",
+    type: "multiple-choice",
+    question: "The resolution calls for the president ___ resign.",
+    options: ["to", "that", "should", "will"],
+    correctAnswer: "to",
+    explanation: "'Call for + object + to-infinitive' is an alternative to subjunctive.",
+    category: "subjunctive",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Subjunctive_045",
+    type: "multiple-choice",
+    question: "Heaven ___ that anything bad should happen!",
+    options: ["forbid", "forbids", "forbidden", "forbidding"],
+    correctAnswer: "forbid",
+    explanation: "Formulaic subjunctive: 'Heaven forbid...'",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Subjunctive_046",
+    type: "multiple-choice",
+    question: "Far ___ it from me to criticize.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "Fixed subjunctive expression: 'Far be it from me.'",
+    category: "subjunctive",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Subjunctive_047",
+    type: "multiple-choice",
+    question: "If need ___, I will help you.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "Fixed subjunctive expression: 'If need be.'",
+    category: "subjunctive",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Subjunctive_048",
+    type: "multiple-choice",
+    question: "___ it noted that this decision is final.",
+    options: ["Be", "Is", "Was", "Being"],
+    correctAnswer: "Be",
+    explanation: "Formal subjunctive: 'Be it noted...' for official statements.",
+    category: "subjunctive",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Subjunctive_049",
+    type: "multiple-choice",
+    question: "The judge recommended that the sentence ___ reduced.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'Recommend that' + passive uses subjunctive 'be.'",
+    category: "subjunctive",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Subjunctive_050",
+    type: "multiple-choice",
+    question: "It is paramount that safety ___ the top priority.",
+    options: ["remain", "remains", "remained", "remaining"],
+    correctAnswer: "remain",
+    explanation: "'It is paramount that' requires subjunctive: base form.",
+    category: "subjunctive",
+    difficulty: "medium"
+  },
 ];
 
 // ==================== C2 LEVEL EXERCISES (placeholder) ====================
