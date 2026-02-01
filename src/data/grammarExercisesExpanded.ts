@@ -6021,6 +6021,507 @@ export const b2GrammarExercises: GrammarExercise[] = [
     category: "third-conditional",
     difficulty: "medium"
   },
+  // ===== REPORTED SPEECH (50 exercises) =====
+  {
+    id: "B2_ReportedSpeech_001",
+    type: "multiple-choice",
+    question: "She said that she ___ tired.",
+    options: ["was", "is", "be", "were"],
+    correctAnswer: "was",
+    explanation: "Reported speech: present 'am' becomes past 'was' after 'said.'",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_002",
+    type: "multiple-choice",
+    question: "He told me he ___ the next day.",
+    options: ["would come", "will come", "comes", "is coming"],
+    correctAnswer: "would come",
+    explanation: "Reported speech: 'will' becomes 'would' and 'tomorrow' becomes 'the next day.'",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_003",
+    type: "multiple-choice",
+    question: "They said they ___ already finished the project.",
+    options: ["had", "have", "has", "having"],
+    correctAnswer: "had",
+    explanation: "Present perfect 'have finished' becomes past perfect 'had finished.'",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_004",
+    type: "multiple-choice",
+    question: "She asked me where I ___.",
+    options: ["lived", "live", "living", "lives"],
+    correctAnswer: "lived",
+    explanation: "Reported questions: present becomes past, no question word order.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_005",
+    type: "multiple-choice",
+    question: "He asked ___ I could help him.",
+    options: ["if", "that", "what", "which"],
+    correctAnswer: "if",
+    explanation: "Yes/No questions use 'if' or 'whether' in reported speech.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_006",
+    type: "multiple-choice",
+    question: "She said she ___ there the day before.",
+    options: ["had been", "was been", "has been", "is"],
+    correctAnswer: "had been",
+    explanation: "'Yesterday' becomes 'the day before' and past becomes past perfect.",
+    category: "reported-speech",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_ReportedSpeech_007",
+    type: "multiple-choice",
+    question: "The teacher told us ___ quiet.",
+    options: ["to be", "be", "being", "been"],
+    correctAnswer: "to be",
+    explanation: "Reported commands use 'told + object + to + infinitive.'",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_008",
+    type: "multiple-choice",
+    question: "He said that he ___ English for five years.",
+    options: ["had been studying", "has been studying", "is studying", "studies"],
+    correctAnswer: "had been studying",
+    explanation: "Present perfect continuous becomes past perfect continuous.",
+    category: "reported-speech",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_ReportedSpeech_009",
+    type: "multiple-choice",
+    question: "She asked me what time the train ___.",
+    options: ["left", "leaves", "leaving", "leave"],
+    correctAnswer: "left",
+    explanation: "Reported questions use statement word order with backshifted tense.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_010",
+    type: "multiple-choice",
+    question: "They told me ___ to touch anything.",
+    options: ["not", "don't", "didn't", "no"],
+    correctAnswer: "not",
+    explanation: "Negative reported commands: told + object + not + to + infinitive.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_011",
+    type: "multiple-choice",
+    question: "He said he ___ the movie the previous week.",
+    options: ["had seen", "has seen", "saw", "sees"],
+    correctAnswer: "had seen",
+    explanation: "'Last week' becomes 'the previous week' with past perfect.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_012",
+    type: "multiple-choice",
+    question: "She asked ___ I wanted tea or coffee.",
+    options: ["whether", "that", "what", "how"],
+    correctAnswer: "whether",
+    explanation: "'Whether' introduces reported alternative questions.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_013",
+    type: "multiple-choice",
+    question: "He ___ that he would call me later.",
+    options: ["said", "told", "asked", "spoke"],
+    correctAnswer: "said",
+    explanation: "'Said' is followed by 'that' clause; 'told' needs an object.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_014",
+    type: "multiple-choice",
+    question: "She ___ me that she was leaving.",
+    options: ["told", "said", "spoke", "talked"],
+    correctAnswer: "told",
+    explanation: "'Told' requires a personal object before the clause.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_015",
+    type: "multiple-choice",
+    question: "He said he ___ help me if he had time.",
+    options: ["could", "can", "will", "may"],
+    correctAnswer: "could",
+    explanation: "'Can' becomes 'could' in reported speech.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_016",
+    type: "multiple-choice",
+    question: "She asked me how long I ___ there.",
+    options: ["had worked", "have worked", "am working", "work"],
+    correctAnswer: "had worked",
+    explanation: "Present perfect in questions becomes past perfect.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_017",
+    type: "multiple-choice",
+    question: "They said they ___ for us at the station.",
+    options: ["would wait", "will wait", "wait", "are waiting"],
+    correctAnswer: "would wait",
+    explanation: "'Will' becomes 'would' in reported speech.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_018",
+    type: "multiple-choice",
+    question: "He asked me ___ I was doing.",
+    options: ["what", "if", "whether", "that"],
+    correctAnswer: "what",
+    explanation: "Wh-questions keep their question word in reported speech.",
+    category: "reported-speech",
+    difficulty: "easy"
+  },
+  {
+    id: "B2_ReportedSpeech_019",
+    type: "multiple-choice",
+    question: "She told him ___ the door.",
+    options: ["to close", "close", "closing", "closed"],
+    correctAnswer: "to close",
+    explanation: "Reported requests/commands: tell + object + to + infinitive.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_020",
+    type: "multiple-choice",
+    question: "He said he ___ never been to Paris.",
+    options: ["had", "has", "have", "having"],
+    correctAnswer: "had",
+    explanation: "Present perfect 'have never been' becomes 'had never been.'",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_021",
+    type: "multiple-choice",
+    question: "She asked me where I ___ going.",
+    options: ["was", "am", "is", "were"],
+    correctAnswer: "was",
+    explanation: "Present continuous 'am going' becomes 'was going.'",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_022",
+    type: "multiple-choice",
+    question: "They said they ___ move to that city.",
+    options: ["might", "may", "can", "will"],
+    correctAnswer: "might",
+    explanation: "'May' becomes 'might' in reported speech.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_023",
+    type: "multiple-choice",
+    question: "He asked me ___ I had finished my work.",
+    options: ["if", "what", "how", "why"],
+    correctAnswer: "if",
+    explanation: "Yes/No questions are reported with 'if' or 'whether.'",
+    category: "reported-speech",
+    difficulty: "easy"
+  },
+  {
+    id: "B2_ReportedSpeech_024",
+    type: "multiple-choice",
+    question: "She said she ___ at home that day.",
+    options: ["was staying", "is staying", "stays", "stay"],
+    correctAnswer: "was staying",
+    explanation: "'Today' becomes 'that day' and present continuous becomes past.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_025",
+    type: "multiple-choice",
+    question: "He told us ___ to worry about the exam.",
+    options: ["not", "don't", "no", "didn't"],
+    correctAnswer: "not",
+    explanation: "Negative advice in reported speech: tell + not + to + infinitive.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_026",
+    type: "multiple-choice",
+    question: "She said she ___ see me the following week.",
+    options: ["would", "will", "can", "could"],
+    correctAnswer: "would",
+    explanation: "'Next week' becomes 'the following week' and 'will' becomes 'would.'",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_027",
+    type: "multiple-choice",
+    question: "He asked where the nearest bank ___.",
+    options: ["was", "is", "were", "be"],
+    correctAnswer: "was",
+    explanation: "Reported questions use statement word order with backshift.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_028",
+    type: "multiple-choice",
+    question: "They said they ___ arrived the night before.",
+    options: ["had", "have", "has", "having"],
+    correctAnswer: "had",
+    explanation: "'Last night' becomes 'the night before' with past perfect.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_029",
+    type: "multiple-choice",
+    question: "She asked me how much the jacket ___.",
+    options: ["cost", "costs", "costing", "costed"],
+    correctAnswer: "cost",
+    explanation: "Reported questions: past tense, statement word order.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_030",
+    type: "multiple-choice",
+    question: "He ___ apologized for being late.",
+    options: ["said he", "told he", "said", "told"],
+    correctAnswer: "said he",
+    explanation: "'Said' for statements without a direct object.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_031",
+    type: "multiple-choice",
+    question: "She said she ___ living in London at that time.",
+    options: ["was", "is", "were", "be"],
+    correctAnswer: "was",
+    explanation: "'At this time' becomes 'at that time' with past continuous.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_032",
+    type: "multiple-choice",
+    question: "He asked me why I ___ so upset.",
+    options: ["was", "am", "is", "were"],
+    correctAnswer: "was",
+    explanation: "Present 'am' becomes past 'was' in reported questions.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_033",
+    type: "multiple-choice",
+    question: "They said they ___ to stay longer.",
+    options: ["had wanted", "have wanted", "want", "wanting"],
+    correctAnswer: "had wanted",
+    explanation: "Past simple 'wanted' becomes past perfect 'had wanted.'",
+    category: "reported-speech",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_ReportedSpeech_034",
+    type: "multiple-choice",
+    question: "She asked me ___ I had seen the news.",
+    options: ["if", "that", "what", "when"],
+    correctAnswer: "if",
+    explanation: "Yes/No questions use 'if' or 'whether.'",
+    category: "reported-speech",
+    difficulty: "easy"
+  },
+  {
+    id: "B2_ReportedSpeech_035",
+    type: "multiple-choice",
+    question: "He told me that I ___ to leave immediately.",
+    options: ["had", "have", "has", "having"],
+    correctAnswer: "had",
+    explanation: "'Have to' becomes 'had to' in reported speech.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_036",
+    type: "multiple-choice",
+    question: "She said she ___ me there at 3 PM.",
+    options: ["would meet", "will meet", "meets", "meeting"],
+    correctAnswer: "would meet",
+    explanation: "Future 'will meet' becomes 'would meet.'",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_037",
+    type: "multiple-choice",
+    question: "He asked how long the journey ___.",
+    options: ["would take", "will take", "takes", "taking"],
+    correctAnswer: "would take",
+    explanation: "Reported questions about future use 'would.'",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_038",
+    type: "multiple-choice",
+    question: "They told us ___ to bring our passports.",
+    options: ["to remember", "remember", "remembering", "remembered"],
+    correctAnswer: "to remember",
+    explanation: "Reported advice: tell + object + to + infinitive.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_039",
+    type: "multiple-choice",
+    question: "She said she ___ been waiting for an hour.",
+    options: ["had", "has", "have", "was"],
+    correctAnswer: "had",
+    explanation: "Present perfect continuous becomes past perfect continuous.",
+    category: "reported-speech",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_ReportedSpeech_040",
+    type: "multiple-choice",
+    question: "He asked me what I ___ for a living.",
+    options: ["did", "do", "doing", "does"],
+    correctAnswer: "did",
+    explanation: "Present simple 'do' becomes past simple 'did.'",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_041",
+    type: "multiple-choice",
+    question: "She said that water ___ at 100 degrees Celsius.",
+    options: ["boils", "boiled", "boil", "boiling"],
+    correctAnswer: "boils",
+    explanation: "General truths and facts don't change tense in reported speech.",
+    category: "reported-speech",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_ReportedSpeech_042",
+    type: "multiple-choice",
+    question: "He asked me ___ I would be free that evening.",
+    options: ["whether", "that", "what", "how"],
+    correctAnswer: "whether",
+    explanation: "'Whether' for reported Yes/No questions.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_043",
+    type: "multiple-choice",
+    question: "They said they ___ going to the party later.",
+    options: ["were", "are", "is", "be"],
+    correctAnswer: "were",
+    explanation: "'Be going to' future becomes 'were going to.'",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_044",
+    type: "multiple-choice",
+    question: "She asked me who ___ broken the window.",
+    options: ["had", "has", "have", "was"],
+    correctAnswer: "had",
+    explanation: "Past simple 'broke' becomes past perfect 'had broken.'",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_045",
+    type: "multiple-choice",
+    question: "He told me ___ the door when I left.",
+    options: ["to lock", "lock", "locking", "locked"],
+    correctAnswer: "to lock",
+    explanation: "Reported instructions: tell + object + to + infinitive.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_046",
+    type: "multiple-choice",
+    question: "She said she ___ swim when she was five.",
+    options: ["could", "can", "will", "may"],
+    correctAnswer: "could",
+    explanation: "'Can' for past ability becomes 'could.'",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_047",
+    type: "multiple-choice",
+    question: "He asked what time the meeting ___ start.",
+    options: ["would", "will", "does", "did"],
+    correctAnswer: "would",
+    explanation: "Future reference in reported questions uses 'would.'",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_048",
+    type: "multiple-choice",
+    question: "They said they ___ already eaten dinner.",
+    options: ["had", "have", "has", "having"],
+    correctAnswer: "had",
+    explanation: "Present perfect 'have eaten' becomes 'had eaten.'",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_049",
+    type: "multiple-choice",
+    question: "She asked me where I ___ my keys.",
+    options: ["had put", "have put", "put", "putting"],
+    correctAnswer: "had put",
+    explanation: "Past simple 'put' becomes past perfect 'had put.'",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_ReportedSpeech_050",
+    type: "multiple-choice",
+    question: "He ___ me he was sorry for the misunderstanding.",
+    options: ["told", "said", "asked", "spoke"],
+    correctAnswer: "told",
+    explanation: "'Told' requires a personal object before the statement.",
+    category: "reported-speech",
+    difficulty: "medium"
+  },
 ];
 
 // ==================== C1 LEVEL EXERCISES (placeholder) ====================
