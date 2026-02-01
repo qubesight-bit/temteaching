@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Check, Lock, Play, Dumbbell } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { GrammarTopic } from "@/data/grammarData";
-import { getGrammarExercisesByCategory, grammarExerciseStats } from "@/data/grammarExercisesExpanded";
+import { getGrammarExercisesByCategory } from "@/data/grammarExercisesExpanded";
 
 type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
@@ -14,77 +14,19 @@ interface TopicRowWithLevelsProps {
   getLevelColor: (level: string) => string;
 }
 
-// Map topic IDs to exercise categories (with fallback matching)
-// Primary exact mappings, also supports partial matching in getExerciseCountForTopicLevel
-const topicToCategoryMap: Record<string, string[]> = {
-  // Verb Tenses
-  "present-simple": ["present-simple"],
-  "present-continuous": ["present-continuous"],
-  "past-simple": ["past-simple"],
-  "present-perfect": ["present-perfect"],
-  "past-continuous": ["past-continuous"],
-  "future-will": ["future-will", "future"],
-  "future-going-to": ["future-going-to", "going-to", "future"],
-  
-  // Modals
-  "can-could": ["modals", "modals-can"],
-  "must-have-to": ["modals"],
-  "should-ought-to": ["modals"],
-  
-  // Conditionals - match both specific and general category
-  "zero-conditional": ["zero-conditional", "conditionals"],
-  "first-conditional": ["first-conditional", "conditionals"],
-  "second-conditional": ["second-conditional", "conditionals"],
-  "third-conditional": ["third-conditional", "conditionals"],
-  
-  // Passive Voice
-  "passive-present": ["passive"],
-  "passive-past": ["passive"],
-  
-  // Phrasal Verbs
-  "phrasal-verbs-basic": ["phrasal-verbs"],
-  "phrasal-verbs-intermediate": ["phrasal-verbs"],
-  
-  // Other topics
-  "articles-basics": ["articles"],
-  "prepositions-time": ["prepositions-time", "prepositions"],
-  "prepositions-place": ["prepositions-place", "prepositions"],
-  "personal-pronouns": ["pronouns"],
-  "reported-speech-statements": ["reported-speech"],
-  "gerund-after-verbs": ["gerunds-infinitives"],
-  "infinitive-after-verbs": ["gerunds-infinitives"],
-  "relative-clauses-who-which": ["relative-clauses"],
-};
-
-// Get exercise count for a topic at a specific level
-function getExerciseCountForTopicLevel(topicId: string, level: CEFRLevel): number {
-  const categories = topicToCategoryMap[topicId];
-  if (!categories || categories.length === 0) return 0;
-  
-  // Try each category and sum up unique exercises
-  let totalCount = 0;
-  const seenIds = new Set<string>();
-  
-  for (const category of categories) {
-    const exercises = getGrammarExercisesByCategory(level, category);
-    for (const ex of exercises) {
-      if (!seenIds.has(ex.id)) {
-        seenIds.add(ex.id);
-        totalCount++;
-      }
-    }
-  }
-  
-  return totalCount;
+// Get exercise count for a topic at a specific level using the topic's exerciseCategory
+function getExerciseCountForTopicLevel(exerciseCategory: string, level: CEFRLevel): number {
+  const exercises = getGrammarExercisesByCategory(level, exerciseCategory);
+  return exercises.length;
 }
 
 // Check which levels have exercises for this topic
-function getAvailableLevels(topicId: string): { level: CEFRLevel; count: number }[] {
+function getAvailableLevels(exerciseCategory: string): { level: CEFRLevel; count: number }[] {
   const levels: CEFRLevel[] = ["A1", "A2", "B1", "B2", "C1", "C2"];
   const available: { level: CEFRLevel; count: number }[] = [];
   
   for (const level of levels) {
-    const count = getExerciseCountForTopicLevel(topicId, level);
+    const count = getExerciseCountForTopicLevel(exerciseCategory, level);
     if (count > 0) {
       available.push({ level, count });
     }
@@ -99,25 +41,19 @@ export function TopicRowWithLevels({
   onStartPractice, 
   getLevelColor 
 }: TopicRowWithLevelsProps) {
-  const [selectedLevel, setSelectedLevel] = useState<CEFRLevel>(topic.level as CEFRLevel);
+  const [selectedLevel, setSelectedLevel] = useState<CEFRLevel>(topic.level);
   const [isExpanded, setIsExpanded] = useState(false);
   
   // All topics are freely accessible - no locking
   const isLocked = false;
-  const availableLevels = getAvailableLevels(topic.id);
-  const currentExerciseCount = getExerciseCountForTopicLevel(topic.id, selectedLevel);
-  
-  // Get the first category from the mapping for practice modal
-  const categories = topicToCategoryMap[topic.id];
-  const primaryCategory = categories?.[0];
+  const availableLevels = getAvailableLevels(topic.exerciseCategory);
+  const currentExerciseCount = getExerciseCountForTopicLevel(topic.exerciseCategory, selectedLevel);
   
   // Get total exercises across all levels for this topic
   const totalExercises = availableLevels.reduce((sum, l) => sum + l.count, 0);
   
   const handleStartPractice = () => {
-    if (primaryCategory) {
-      onStartPractice(primaryCategory, selectedLevel);
-    }
+    onStartPractice(topic.exerciseCategory, selectedLevel);
   };
 
   return (
@@ -168,7 +104,7 @@ export function TopicRowWithLevels({
               </span>
               {totalExercises > 0 && (
                 <span className="text-xs text-muted-foreground">
-                  {totalExercises} exercises across {availableLevels.length} levels
+                  {totalExercises} exercises across {availableLevels.length} level{availableLevels.length > 1 ? 's' : ''}
                 </span>
               )}
               {topic.completed && (
