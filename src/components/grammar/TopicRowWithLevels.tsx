@@ -76,7 +76,8 @@ export function TopicRowWithLevels({
   const [selectedLevel, setSelectedLevel] = useState<CEFRLevel>(topic.level as CEFRLevel);
   const [isExpanded, setIsExpanded] = useState(false);
   
-  const isLocked = !topic.completed && index > 0;
+  // All topics are freely accessible - no locking
+  const isLocked = false;
   const availableLevels = getAvailableLevels(topic.id);
   const currentExerciseCount = getExerciseCountForTopicLevel(topic.id, selectedLevel);
   const category = topicToCategoryMap[topic.id];
