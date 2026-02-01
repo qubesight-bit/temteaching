@@ -3,7 +3,8 @@ import { Exercise } from "./exercisesData";
 
 // Vocabulary Exercises
 const a1VocabExercises: Record<string, Exercise[]> = {
-  "a1-vocab-1": [ // Números y colores
+  "a1-vocab-1": [ // Numbers and colors - ORGANIZED BY SUBSKILL
+    // === Numbers 1-20 (subSkill: a1-v1-1) ===
     {
       id: "a1-v1-e1",
       type: "multiple-choice",
@@ -12,57 +13,119 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       correctAnswer: "thirteen",
       explanation: "After twelve (12) comes thirteen (13).",
       difficulty: 1,
-      tags: ["numbers", "a1"]
+      tags: ["numbers", "a1", "subskill:a1-v1-1"]
     },
     {
       id: "a1-v1-e2",
-      type: "multiple-choice",
-      question: "What color is the sky on a sunny day?",
-      options: ["red", "green", "blue", "yellow"],
-      correctAnswer: "blue",
-      explanation: "The sky is blue on a sunny day.",
-      difficulty: 1,
-      tags: ["colors", "a1"]
-    },
-    {
-      id: "a1-v1-e3",
-      type: "fill-blank",
-      question: "The number after nineteen is _____.",
-      options: ["twenty", "eighteen", "thirty", "fifteen"],
-      correctAnswer: "twenty",
-      explanation: "After 19 comes 20 (twenty).",
-      difficulty: 1,
-      tags: ["numbers", "a1"]
-    },
-    {
-      id: "a1-v1-e4",
-      type: "multiple-choice",
-      question: "Bananas are _____.",
-      options: ["blue", "red", "yellow", "green"],
-      correctAnswer: "yellow",
-      explanation: "Bananas are yellow when ripe.",
-      difficulty: 1,
-      tags: ["colors", "a1"]
-    },
-    {
-      id: "a1-v1-e5",
       type: "multiple-choice",
       question: "What is 5 + 7?",
       options: ["eleven", "twelve", "thirteen", "ten"],
       correctAnswer: "twelve",
       explanation: "5 + 7 = 12 (twelve).",
       difficulty: 1,
-      tags: ["numbers", "a1"]
+      tags: ["numbers", "a1", "subskill:a1-v1-1"]
+    },
+    {
+      id: "a1-v1-e3",
+      type: "fill-blank",
+      question: "The number before fifteen is _____.",
+      options: ["fourteen", "sixteen", "thirteen", "twelve"],
+      correctAnswer: "fourteen",
+      explanation: "Before 15 comes 14 (fourteen).",
+      difficulty: 1,
+      tags: ["numbers", "a1", "subskill:a1-v1-1"]
+    },
+    {
+      id: "a1-v1-e4",
+      type: "multiple-choice",
+      question: "How do you write '17' in words?",
+      options: ["sixteen", "seventeen", "eighteen", "fifteen"],
+      correctAnswer: "seventeen",
+      explanation: "17 is written as 'seventeen'.",
+      difficulty: 1,
+      tags: ["numbers", "a1", "subskill:a1-v1-1"]
+    },
+    // === Numbers 20-100 (subSkill: a1-v1-2) ===
+    {
+      id: "a1-v1-e5",
+      type: "fill-blank",
+      question: "The number after nineteen is _____.",
+      options: ["twenty", "eighteen", "thirty", "fifteen"],
+      correctAnswer: "twenty",
+      explanation: "After 19 comes 20 (twenty).",
+      difficulty: 1,
+      tags: ["numbers", "a1", "subskill:a1-v1-2"]
     },
     {
       id: "a1-v1-e6",
+      type: "multiple-choice",
+      question: "What is 30 + 20?",
+      options: ["forty", "fifty", "sixty", "seventy"],
+      correctAnswer: "fifty",
+      explanation: "30 + 20 = 50 (fifty).",
+      difficulty: 1,
+      tags: ["numbers", "a1", "subskill:a1-v1-2"]
+    },
+    {
+      id: "a1-v1-e7",
+      type: "multiple-choice",
+      question: "How do you write '75' in words?",
+      options: ["sixty-five", "seventy-five", "eighty-five", "fifty-five"],
+      correctAnswer: "seventy-five",
+      explanation: "75 is written as 'seventy-five'.",
+      difficulty: 1,
+      tags: ["numbers", "a1", "subskill:a1-v1-2"]
+    },
+    {
+      id: "a1-v1-e8",
+      type: "fill-blank",
+      question: "The number after ninety-nine is _____.",
+      options: ["one hundred", "ninety-eight", "one thousand", "ninety"],
+      correctAnswer: "one hundred",
+      explanation: "After 99 comes 100 (one hundred).",
+      difficulty: 1,
+      tags: ["numbers", "a1", "subskill:a1-v1-2"]
+    },
+    // === Primary colors (subSkill: a1-v1-3) ===
+    {
+      id: "a1-v1-e9",
+      type: "multiple-choice",
+      question: "What color is the sky on a sunny day?",
+      options: ["red", "green", "blue", "yellow"],
+      correctAnswer: "blue",
+      explanation: "The sky is blue on a sunny day.",
+      difficulty: 1,
+      tags: ["colors", "a1", "subskill:a1-v1-3"]
+    },
+    {
+      id: "a1-v1-e10",
+      type: "multiple-choice",
+      question: "Bananas are _____.",
+      options: ["blue", "red", "yellow", "green"],
+      correctAnswer: "yellow",
+      explanation: "Bananas are yellow when ripe.",
+      difficulty: 1,
+      tags: ["colors", "a1", "subskill:a1-v1-3"]
+    },
+    {
+      id: "a1-v1-e11",
       type: "multiple-choice",
       question: "Grass is usually _____.",
       options: ["blue", "green", "red", "white"],
       correctAnswer: "green",
       explanation: "Grass is green.",
       difficulty: 1,
-      tags: ["colors", "a1"]
+      tags: ["colors", "a1", "subskill:a1-v1-3"]
+    },
+    {
+      id: "a1-v1-e12",
+      type: "multiple-choice",
+      question: "What color do you get when you mix red and yellow?",
+      options: ["purple", "green", "orange", "pink"],
+      correctAnswer: "orange",
+      explanation: "Red + Yellow = Orange.",
+      difficulty: 1,
+      tags: ["colors", "a1", "subskill:a1-v1-3"]
     },
   ],
   "a1-vocab-2": [ // Familia y personas
