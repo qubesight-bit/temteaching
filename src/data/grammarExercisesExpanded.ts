@@ -9532,10 +9532,1514 @@ export const c1GrammarExercises: GrammarExercise[] = [
     category: "cleft-sentences",
     difficulty: "medium"
   },
+  // ===== MIXED CONDITIONALS (50 exercises) =====
+  {
+    id: "C1_MixedConditionals_001",
+    type: "multiple-choice",
+    question: "If I had studied medicine, I ___ a doctor now.",
+    options: ["would be", "would have been", "will be", "am"],
+    correctAnswer: "would be",
+    explanation: "Mixed conditional: past condition → present result uses 'would + base.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_002",
+    type: "multiple-choice",
+    question: "If she were more careful, she ___ the accident yesterday.",
+    options: ["wouldn't have had", "wouldn't have", "won't have", "didn't have"],
+    correctAnswer: "wouldn't have had",
+    explanation: "Mixed conditional: present condition → past result uses 'would have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_003",
+    type: "multiple-choice",
+    question: "If he hadn't missed the train, he ___ here by now.",
+    options: ["would be", "would have been", "will be", "is"],
+    correctAnswer: "would be",
+    explanation: "Past condition affecting present: 'would be' for current state.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_004",
+    type: "multiple-choice",
+    question: "If I were you, I ___ accepted that offer last week.",
+    options: ["would have", "would", "will have", "had"],
+    correctAnswer: "would have",
+    explanation: "Present hypothetical giving past advice: 'would have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_005",
+    type: "multiple-choice",
+    question: "If they had planned better, they ___ in trouble now.",
+    options: ["wouldn't be", "wouldn't have been", "won't be", "aren't"],
+    correctAnswer: "wouldn't be",
+    explanation: "Past condition → present result: 'wouldn't be.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_006",
+    type: "multiple-choice",
+    question: "She ___ the job if she spoke better English.",
+    options: ["would have gotten", "would get", "will get", "gets"],
+    correctAnswer: "would have gotten",
+    explanation: "Present condition → past result: 'would have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_007",
+    type: "multiple-choice",
+    question: "If I hadn't eaten so much, I ___ so tired now.",
+    options: ["wouldn't feel", "wouldn't have felt", "won't feel", "don't feel"],
+    correctAnswer: "wouldn't feel",
+    explanation: "Past action affecting present feeling: 'wouldn't feel.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_008",
+    type: "multiple-choice",
+    question: "If he were a better driver, he ___ crashed the car.",
+    options: ["wouldn't have", "wouldn't", "won't have", "didn't"],
+    correctAnswer: "wouldn't have",
+    explanation: "Present characteristic → past event: 'wouldn't have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_009",
+    type: "multiple-choice",
+    question: "If she had saved money, she ___ afford the trip now.",
+    options: ["could", "could have", "can", "will"],
+    correctAnswer: "could",
+    explanation: "Past condition → present ability: 'could + base.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_010",
+    type: "multiple-choice",
+    question: "If I weren't so busy, I ___ helped you yesterday.",
+    options: ["would have", "would", "will have", "had"],
+    correctAnswer: "would have",
+    explanation: "Present state → past action: 'would have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_011",
+    type: "multiple-choice",
+    question: "If they had left earlier, they ___ still waiting.",
+    options: ["wouldn't be", "wouldn't have been", "won't be", "aren't"],
+    correctAnswer: "wouldn't be",
+    explanation: "Past departure → present situation: 'wouldn't be.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_012",
+    type: "multiple-choice",
+    question: "If she liked spicy food, she ___ enjoyed the meal.",
+    options: ["would have", "would", "will have", "had"],
+    correctAnswer: "would have",
+    explanation: "Present preference → past experience: 'would have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_013",
+    type: "multiple-choice",
+    question: "If I had learned to swim, I ___ join you at the beach today.",
+    options: ["could", "could have", "can", "will"],
+    correctAnswer: "could",
+    explanation: "Past learning → present possibility: 'could + base.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_014",
+    type: "multiple-choice",
+    question: "If he weren't so stubborn, he ___ listened to advice.",
+    options: ["would have", "would", "will have", "had"],
+    correctAnswer: "would have",
+    explanation: "Present trait → past behavior: 'would have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_015",
+    type: "multiple-choice",
+    question: "If we had booked in advance, we ___ have a room now.",
+    options: ["would", "would have", "will", "had"],
+    correctAnswer: "would",
+    explanation: "Past booking → present possession: 'would + base.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_016",
+    type: "multiple-choice",
+    question: "If I knew her address, I ___ sent her a card.",
+    options: ["would have", "would", "will have", "had"],
+    correctAnswer: "would have",
+    explanation: "Present knowledge → past action: 'would have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_017",
+    type: "multiple-choice",
+    question: "If she hadn't broken her leg, she ___ playing in the match today.",
+    options: ["would be", "would have been", "will be", "is"],
+    correctAnswer: "would be",
+    explanation: "Past injury → present activity: 'would be + -ing.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_018",
+    type: "multiple-choice",
+    question: "If he were more organized, he ___ forgotten the meeting.",
+    options: ["wouldn't have", "wouldn't", "won't have", "didn't"],
+    correctAnswer: "wouldn't have",
+    explanation: "Present trait → past mistake: 'wouldn't have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_019",
+    type: "multiple-choice",
+    question: "If I had taken that job, I ___ in London now.",
+    options: ["would be living", "would have lived", "will live", "live"],
+    correctAnswer: "would be living",
+    explanation: "Past decision → present continuous state: 'would be + -ing.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_020",
+    type: "multiple-choice",
+    question: "If she weren't afraid of flying, she ___ traveled more.",
+    options: ["would have", "would", "will have", "had"],
+    correctAnswer: "would have",
+    explanation: "Present fear → past travel: 'would have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_021",
+    type: "multiple-choice",
+    question: "If they had invested wisely, they ___ wealthy now.",
+    options: ["would be", "would have been", "will be", "are"],
+    correctAnswer: "would be",
+    explanation: "Past investment → present wealth: 'would be.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_022",
+    type: "multiple-choice",
+    question: "If I weren't allergic to cats, I ___ adopted one.",
+    options: ["would have", "would", "will have", "had"],
+    correctAnswer: "would have",
+    explanation: "Present condition → past action: 'would have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_023",
+    type: "multiple-choice",
+    question: "If he hadn't quit his job, he ___ have more security now.",
+    options: ["would", "would have", "will", "has"],
+    correctAnswer: "would",
+    explanation: "Past resignation → present security: 'would + base.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_024",
+    type: "multiple-choice",
+    question: "If she liked dancing, she ___ come to the party.",
+    options: ["would have", "would", "will have", "had"],
+    correctAnswer: "would have",
+    explanation: "Present preference → past attendance: 'would have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_025",
+    type: "multiple-choice",
+    question: "If I had finished university, I ___ have better options now.",
+    options: ["would", "would have", "will", "had"],
+    correctAnswer: "would",
+    explanation: "Past education → present options: 'would + base.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_026",
+    type: "multiple-choice",
+    question: "If he weren't so lazy, he ___ passed the exam.",
+    options: ["would have", "would", "will have", "had"],
+    correctAnswer: "would have",
+    explanation: "Present laziness → past failure: 'would have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_027",
+    type: "multiple-choice",
+    question: "If she had married him, she ___ happy now.",
+    options: ["might not be", "might not have been", "won't be", "isn't"],
+    correctAnswer: "might not be",
+    explanation: "Past marriage → present happiness: 'might not be.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_028",
+    type: "multiple-choice",
+    question: "If I were taller, I ___ made the basketball team.",
+    options: ["could have", "could", "can have", "had"],
+    correctAnswer: "could have",
+    explanation: "Present height → past team selection: 'could have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_029",
+    type: "multiple-choice",
+    question: "If they hadn't moved abroad, they ___ near us now.",
+    options: ["would still live", "would have lived", "will live", "live"],
+    correctAnswer: "would still live",
+    explanation: "Past move → present location: 'would still + base.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_030",
+    type: "multiple-choice",
+    question: "If he understood Spanish, he ___ enjoyed the film more.",
+    options: ["would have", "would", "will have", "had"],
+    correctAnswer: "would have",
+    explanation: "Present ability → past enjoyment: 'would have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_031",
+    type: "multiple-choice",
+    question: "If I had won the lottery, I ___ working here now.",
+    options: ["wouldn't be", "wouldn't have been", "won't be", "am not"],
+    correctAnswer: "wouldn't be",
+    explanation: "Past win → present work: 'wouldn't be + -ing.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_032",
+    type: "multiple-choice",
+    question: "If she were more patient, she ___ made fewer mistakes.",
+    options: ["would have", "would", "will have", "had"],
+    correctAnswer: "would have",
+    explanation: "Present patience → past mistakes: 'would have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_033",
+    type: "multiple-choice",
+    question: "If we had caught that flight, we ___ in Paris right now.",
+    options: ["would be", "would have been", "will be", "are"],
+    correctAnswer: "would be",
+    explanation: "Past flight → present location: 'would be.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_034",
+    type: "multiple-choice",
+    question: "If I knew how to code, I ___ built my own website.",
+    options: ["would have", "would", "will have", "had"],
+    correctAnswer: "would have",
+    explanation: "Present skill → past creation: 'would have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_035",
+    type: "multiple-choice",
+    question: "If he hadn't lied, we ___ trust him now.",
+    options: ["would", "would have", "will", "do"],
+    correctAnswer: "would",
+    explanation: "Past lie → present trust: 'would + base.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_036",
+    type: "multiple-choice",
+    question: "If she were a vegetarian, she ___ eaten the steak.",
+    options: ["wouldn't have", "wouldn't", "won't have", "didn't"],
+    correctAnswer: "wouldn't have",
+    explanation: "Present diet → past food choice: 'wouldn't have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_037",
+    type: "multiple-choice",
+    question: "If I had bought that house, I ___ mortgage payments now.",
+    options: ["would be making", "would have made", "will make", "make"],
+    correctAnswer: "would be making",
+    explanation: "Past purchase → present payments: 'would be + -ing.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_038",
+    type: "multiple-choice",
+    question: "If he weren't so shy, he ___ asked her out.",
+    options: ["would have", "would", "will have", "had"],
+    correctAnswer: "would have",
+    explanation: "Present shyness → past action: 'would have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_039",
+    type: "multiple-choice",
+    question: "If they had listened to us, they ___ in this mess now.",
+    options: ["wouldn't be", "wouldn't have been", "won't be", "aren't"],
+    correctAnswer: "wouldn't be",
+    explanation: "Past listening → present situation: 'wouldn't be.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_040",
+    type: "multiple-choice",
+    question: "If I liked horror films, I ___ watched it with you.",
+    options: ["would have", "would", "will have", "had"],
+    correctAnswer: "would have",
+    explanation: "Present taste → past activity: 'would have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_041",
+    type: "multiple-choice",
+    question: "If she had exercised more, she ___ fitter now.",
+    options: ["would be", "would have been", "will be", "is"],
+    correctAnswer: "would be",
+    explanation: "Past exercise → present fitness: 'would be.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_042",
+    type: "multiple-choice",
+    question: "If he weren't colorblind, he ___ become a pilot.",
+    options: ["could have", "could", "can have", "had"],
+    correctAnswer: "could have",
+    explanation: "Present condition → past career: 'could have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_043",
+    type: "multiple-choice",
+    question: "If I had read the instructions, I ___ know what to do now.",
+    options: ["would", "would have", "will", "knew"],
+    correctAnswer: "would",
+    explanation: "Past reading → present knowledge: 'would + base.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_044",
+    type: "multiple-choice",
+    question: "If she trusted him, she ___ lent him the money.",
+    options: ["would have", "would", "will have", "had"],
+    correctAnswer: "would have",
+    explanation: "Present trust → past loan: 'would have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_045",
+    type: "multiple-choice",
+    question: "If he hadn't drunk so much, he ___ have a hangover now.",
+    options: ["wouldn't", "wouldn't have", "won't", "doesn't"],
+    correctAnswer: "wouldn't",
+    explanation: "Past drinking → present hangover: 'wouldn't + base.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_046",
+    type: "multiple-choice",
+    question: "If I were good at math, I ___ studied engineering.",
+    options: ["would have", "would", "will have", "had"],
+    correctAnswer: "would have",
+    explanation: "Present ability → past study choice: 'would have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_047",
+    type: "multiple-choice",
+    question: "If they had prepared properly, they ___ so stressed now.",
+    options: ["wouldn't be", "wouldn't have been", "won't be", "aren't"],
+    correctAnswer: "wouldn't be",
+    explanation: "Past preparation → present stress: 'wouldn't be.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_048",
+    type: "multiple-choice",
+    question: "If she spoke French, she ___ applied for that job.",
+    options: ["could have", "could", "can have", "had"],
+    correctAnswer: "could have",
+    explanation: "Present skill → past application: 'could have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_049",
+    type: "multiple-choice",
+    question: "If I had set an alarm, I ___ late now.",
+    options: ["wouldn't be", "wouldn't have been", "won't be", "am not"],
+    correctAnswer: "wouldn't be",
+    explanation: "Past alarm → present lateness: 'wouldn't be.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_MixedConditionals_050",
+    type: "multiple-choice",
+    question: "If he were more ambitious, he ___ gone for the promotion.",
+    options: ["would have", "would", "will have", "had"],
+    correctAnswer: "would have",
+    explanation: "Present ambition → past action: 'would have + pp.'",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  // ===== PARTICIPLE CLAUSES (50 exercises) =====
+  {
+    id: "C1_ParticipleClauses_001",
+    type: "multiple-choice",
+    question: "___ the news, she burst into tears.",
+    options: ["Having heard", "Heard", "To hear", "Hearing"],
+    correctAnswer: "Having heard",
+    explanation: "Perfect participle for completed action before main verb.",
+    category: "participle-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_ParticipleClauses_002",
+    type: "multiple-choice",
+    question: "___ in Paris, she speaks excellent French.",
+    options: ["Having lived", "Lived", "To live", "Live"],
+    correctAnswer: "Having lived",
+    explanation: "Perfect participle shows past experience causing present ability.",
+    category: "participle-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_ParticipleClauses_003",
+    type: "multiple-choice",
+    question: "___ by the noise, the baby woke up.",
+    options: ["Disturbed", "Disturbing", "To disturb", "Having disturbed"],
+    correctAnswer: "Disturbed",
+    explanation: "Past participle for passive meaning: the baby was disturbed.",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_004",
+    type: "multiple-choice",
+    question: "___ along the beach, we found some shells.",
+    options: ["Walking", "Walked", "Having walked", "To walk"],
+    correctAnswer: "Walking",
+    explanation: "Present participle for simultaneous actions.",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_005",
+    type: "multiple-choice",
+    question: "___ with his work, he didn't notice the time.",
+    options: ["Absorbed", "Absorbing", "Having absorbed", "To absorb"],
+    correctAnswer: "Absorbed",
+    explanation: "Past participle: he was absorbed (passive state).",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_006",
+    type: "multiple-choice",
+    question: "___ the door, he entered the room.",
+    options: ["Opening", "Opened", "Having opened", "To open"],
+    correctAnswer: "Opening",
+    explanation: "Present participle for action immediately before main verb.",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_007",
+    type: "multiple-choice",
+    question: "___ from a wealthy family, she never worried about money.",
+    options: ["Coming", "Come", "Having come", "To come"],
+    correctAnswer: "Coming",
+    explanation: "Present participle for background/reason.",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_008",
+    type: "multiple-choice",
+    question: "___ no time to prepare, I gave an improvised speech.",
+    options: ["Having", "Had", "To have", "Have"],
+    correctAnswer: "Having",
+    explanation: "Present participle 'having' for reason/cause.",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_009",
+    type: "multiple-choice",
+    question: "___ carefully, the instructions were easy to follow.",
+    options: ["Written", "Writing", "Having written", "To write"],
+    correctAnswer: "Written",
+    explanation: "Past participle: the instructions were written carefully.",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_010",
+    type: "multiple-choice",
+    question: "Not ___ what to say, she remained silent.",
+    options: ["knowing", "known", "to know", "knew"],
+    correctAnswer: "knowing",
+    explanation: "Negative participle clause: Not + -ing form.",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_011",
+    type: "multiple-choice",
+    question: "___ all the evidence, the jury found him guilty.",
+    options: ["Having considered", "Considered", "Considering", "To consider"],
+    correctAnswer: "Having considered",
+    explanation: "Perfect participle: consideration completed before verdict.",
+    category: "participle-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_ParticipleClauses_012",
+    type: "multiple-choice",
+    question: "___ in 1920, the building is now a museum.",
+    options: ["Built", "Building", "Having built", "To build"],
+    correctAnswer: "Built",
+    explanation: "Past participle: the building was built (passive).",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_013",
+    type: "multiple-choice",
+    question: "___ the film, we went for dinner.",
+    options: ["Having watched", "Watched", "Watching", "To watch"],
+    correctAnswer: "Having watched",
+    explanation: "Perfect participle: watching completed before dinner.",
+    category: "participle-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_ParticipleClauses_014",
+    type: "multiple-choice",
+    question: "___ by her achievements, she gave an inspiring speech.",
+    options: ["Encouraged", "Encouraging", "Having encouraged", "To encourage"],
+    correctAnswer: "Encouraged",
+    explanation: "Past participle: she was encouraged (passive state).",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_015",
+    type: "multiple-choice",
+    question: "___ hard all day, he was exhausted.",
+    options: ["Having worked", "Worked", "Working", "To work"],
+    correctAnswer: "Having worked",
+    explanation: "Perfect participle: work completed before exhaustion.",
+    category: "participle-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_ParticipleClauses_016",
+    type: "multiple-choice",
+    question: "___ the bus, I had to walk home.",
+    options: ["Having missed", "Missed", "Missing", "To miss"],
+    correctAnswer: "Having missed",
+    explanation: "Perfect participle: missing happened before walking.",
+    category: "participle-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_ParticipleClauses_017",
+    type: "multiple-choice",
+    question: "___ at the edge of the cliff, he felt dizzy.",
+    options: ["Standing", "Stood", "Having stood", "To stand"],
+    correctAnswer: "Standing",
+    explanation: "Present participle: simultaneous actions.",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_018",
+    type: "multiple-choice",
+    question: "___ with care, the vase will last for years.",
+    options: ["Treated", "Treating", "Having treated", "To treat"],
+    correctAnswer: "Treated",
+    explanation: "Past participle with conditional meaning: if treated.",
+    category: "participle-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_ParticipleClauses_019",
+    type: "multiple-choice",
+    question: "___ never been abroad, she was excited about the trip.",
+    options: ["Having", "Have", "To have", "Had"],
+    correctAnswer: "Having",
+    explanation: "Perfect participle: 'Having never been' for prior experience.",
+    category: "participle-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_ParticipleClauses_020",
+    type: "multiple-choice",
+    question: "___ through the window, she saw the accident.",
+    options: ["Looking", "Looked", "Having looked", "To look"],
+    correctAnswer: "Looking",
+    explanation: "Present participle: simultaneous with seeing.",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_021",
+    type: "multiple-choice",
+    question: "___ to music, she didn't hear the doorbell.",
+    options: ["Listening", "Listened", "Having listened", "To listen"],
+    correctAnswer: "Listening",
+    explanation: "Present participle: reason for not hearing.",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_022",
+    type: "multiple-choice",
+    question: "___ from the original Greek, the poem loses some meaning.",
+    options: ["Translated", "Translating", "Having translated", "To translate"],
+    correctAnswer: "Translated",
+    explanation: "Past participle: when translated (passive conditional).",
+    category: "participle-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_ParticipleClauses_023",
+    type: "multiple-choice",
+    question: "___ nothing to do, we decided to go for a walk.",
+    options: ["Having", "Had", "To have", "Have"],
+    correctAnswer: "Having",
+    explanation: "Present participle 'having' for circumstance/reason.",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_024",
+    type: "multiple-choice",
+    question: "___ strictly, the rule applies to everyone.",
+    options: ["Speaking", "Spoken", "Having spoken", "To speak"],
+    correctAnswer: "Speaking",
+    explanation: "Fixed expression: 'Strictly speaking...'",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_025",
+    type: "multiple-choice",
+    question: "___ into account all factors, I made my decision.",
+    options: ["Taking", "Taken", "Having taken", "To take"],
+    correctAnswer: "Taking",
+    explanation: "Present participle with fixed expression: 'taking into account.'",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_026",
+    type: "multiple-choice",
+    question: "___ the circumstances, he did remarkably well.",
+    options: ["Given", "Giving", "Having given", "To give"],
+    correctAnswer: "Given",
+    explanation: "Fixed expression: 'Given the circumstances' = considering.",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_027",
+    type: "multiple-choice",
+    question: "___ from above, the city looked beautiful.",
+    options: ["Seen", "Seeing", "Having seen", "To see"],
+    correctAnswer: "Seen",
+    explanation: "Past participle: the city was seen from above (passive).",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_028",
+    type: "multiple-choice",
+    question: "___ his homework, he went out to play.",
+    options: ["Having finished", "Finished", "Finishing", "To finish"],
+    correctAnswer: "Having finished",
+    explanation: "Perfect participle: finishing completed before going out.",
+    category: "participle-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_ParticipleClauses_029",
+    type: "multiple-choice",
+    question: "___ in gold, the statue sparkled in the sunlight.",
+    options: ["Covered", "Covering", "Having covered", "To cover"],
+    correctAnswer: "Covered",
+    explanation: "Past participle: the statue was covered (passive state).",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_030",
+    type: "multiple-choice",
+    question: "___ of the risk, they proceeded anyway.",
+    options: ["Aware", "Being aware", "Having been aware", "To be aware"],
+    correctAnswer: "Being aware",
+    explanation: "Present participle with 'be': 'Being aware' for reason.",
+    category: "participle-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_ParticipleClauses_031",
+    type: "multiple-choice",
+    question: "___ that, I have nothing more to say.",
+    options: ["Having said", "Said", "Saying", "To say"],
+    correctAnswer: "Having said",
+    explanation: "Perfect participle: 'Having said that' = fixed expression.",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_032",
+    type: "multiple-choice",
+    question: "___ in such luxury, she found it hard to adapt.",
+    options: ["Not having lived", "Not lived", "Not living", "Not to live"],
+    correctAnswer: "Not having lived",
+    explanation: "Negative perfect participle for lack of prior experience.",
+    category: "participle-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_ParticipleClauses_033",
+    type: "multiple-choice",
+    question: "___ compared to others, this car is quite cheap.",
+    options: ["When", "While", "If", "Being"],
+    correctAnswer: "When",
+    explanation: "Participle clause with conjunction: 'When compared...'",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_034",
+    type: "multiple-choice",
+    question: "___ by many, the theory remains controversial.",
+    options: ["Criticized", "Criticizing", "Having criticized", "To criticize"],
+    correctAnswer: "Criticized",
+    explanation: "Past participle: the theory is criticized (passive).",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_035",
+    type: "multiple-choice",
+    question: "___ properly, the machine works efficiently.",
+    options: ["Maintained", "Maintaining", "Having maintained", "To maintain"],
+    correctAnswer: "Maintained",
+    explanation: "Past participle with conditional meaning: if maintained.",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_036",
+    type: "multiple-choice",
+    question: "___ so much money, they decided to invest.",
+    options: ["Having saved", "Saved", "Saving", "To save"],
+    correctAnswer: "Having saved",
+    explanation: "Perfect participle: saving completed before investing.",
+    category: "participle-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_ParticipleClauses_037",
+    type: "multiple-choice",
+    question: "___ alone at night, she felt scared.",
+    options: ["Being", "Been", "Having been", "To be"],
+    correctAnswer: "Being",
+    explanation: "Present participle 'Being' for state during which.",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_038",
+    type: "multiple-choice",
+    question: "___ what to expect, we were surprised.",
+    options: ["Not knowing", "Not known", "Not having known", "Not to know"],
+    correctAnswer: "Not knowing",
+    explanation: "Negative present participle: reason for surprise.",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_039",
+    type: "multiple-choice",
+    question: "___ tired, she went to bed early.",
+    options: ["Feeling", "Felt", "Having felt", "To feel"],
+    correctAnswer: "Feeling",
+    explanation: "Present participle: reason for going to bed.",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_040",
+    type: "multiple-choice",
+    question: "___ the consequences, he still went ahead.",
+    options: ["Knowing", "Known", "Having known", "To know"],
+    correctAnswer: "Knowing",
+    explanation: "Present participle: despite knowing (concessive).",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_041",
+    type: "multiple-choice",
+    question: "___ of its benefits, people still avoid exercise.",
+    options: ["Convinced", "Convincing", "Having convinced", "To convince"],
+    correctAnswer: "Convinced",
+    explanation: "Past participle: people are convinced (passive state).",
+    category: "participle-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_ParticipleClauses_042",
+    type: "multiple-choice",
+    question: "___ generally, the project was a success.",
+    options: ["Speaking", "Spoken", "Having spoken", "To speak"],
+    correctAnswer: "Speaking",
+    explanation: "Fixed expression: 'Generally speaking.'",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_043",
+    type: "multiple-choice",
+    question: "___ lost his job, he started his own business.",
+    options: ["Having", "Have", "Had", "To have"],
+    correctAnswer: "Having",
+    explanation: "Perfect participle: job loss before starting business.",
+    category: "participle-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_ParticipleClauses_044",
+    type: "multiple-choice",
+    question: "___ from a distance, the painting looks different.",
+    options: ["Viewed", "Viewing", "Having viewed", "To view"],
+    correctAnswer: "Viewed",
+    explanation: "Past participle: when viewed (passive conditional).",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_045",
+    type: "multiple-choice",
+    question: "___ the opportunity, she seized it immediately.",
+    options: ["Given", "Giving", "Having given", "To give"],
+    correctAnswer: "Given",
+    explanation: "Past participle: when given (passive conditional).",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_046",
+    type: "multiple-choice",
+    question: "___ arrived late, we missed the opening.",
+    options: ["Having", "Have", "Had", "To have"],
+    correctAnswer: "Having",
+    explanation: "Perfect participle: late arrival before missing.",
+    category: "participle-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_ParticipleClauses_047",
+    type: "multiple-choice",
+    question: "___ the weather, we'll have the party indoors.",
+    options: ["Considering", "Considered", "Having considered", "To consider"],
+    correctAnswer: "Considering",
+    explanation: "Present participle: fixed expression for taking into account.",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_048",
+    type: "multiple-choice",
+    question: "___ in haste, the letter contained several errors.",
+    options: ["Written", "Writing", "Having written", "To write"],
+    correctAnswer: "Written",
+    explanation: "Past participle: the letter was written (passive).",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_ParticipleClauses_049",
+    type: "multiple-choice",
+    question: "___ been warned, he should have been more careful.",
+    options: ["Having", "Have", "Had", "To have"],
+    correctAnswer: "Having",
+    explanation: "Perfect participle: warning happened before expected care.",
+    category: "participle-clauses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_ParticipleClauses_050",
+    type: "multiple-choice",
+    question: "___ no choice, we accepted the offer.",
+    options: ["Having", "Had", "To have", "Have"],
+    correctAnswer: "Having",
+    explanation: "Present participle 'Having' for reason/circumstance.",
+    category: "participle-clauses",
+    difficulty: "medium"
+  },
 ];
 
-// ==================== C2 LEVEL EXERCISES (placeholder) ====================
-export const c2GrammarExercises: GrammarExercise[] = [];
+// ==================== C2 LEVEL EXERCISES ====================
+export const c2GrammarExercises: GrammarExercise[] = [
+  // ===== ADVANCED CONNECTORS (50 exercises) =====
+  {
+    id: "C2_AdvancedConnectors_001",
+    type: "multiple-choice",
+    question: "The project failed; ___, we learned valuable lessons.",
+    options: ["nonetheless", "therefore", "moreover", "furthermore"],
+    correctAnswer: "nonetheless",
+    explanation: "'Nonetheless' = despite that; shows contrast.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_002",
+    type: "multiple-choice",
+    question: "She studied hard; ___, she passed with distinction.",
+    options: ["consequently", "nevertheless", "conversely", "otherwise"],
+    correctAnswer: "consequently",
+    explanation: "'Consequently' = as a result; shows cause-effect.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_003",
+    type: "multiple-choice",
+    question: "The weather was terrible. ___, we decided to stay home.",
+    options: ["Hence", "However", "Moreover", "Likewise"],
+    correctAnswer: "Hence",
+    explanation: "'Hence' = for this reason; formal cause-effect.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_004",
+    type: "multiple-choice",
+    question: "He's intelligent; ___, he lacks common sense.",
+    options: ["notwithstanding", "therefore", "likewise", "moreover"],
+    correctAnswer: "notwithstanding",
+    explanation: "'Notwithstanding' = in spite of that; formal contrast.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_005",
+    type: "multiple-choice",
+    question: "The evidence was circumstantial. ___, the jury convicted him.",
+    options: ["Nevertheless", "Therefore", "Furthermore", "Likewise"],
+    correctAnswer: "Nevertheless",
+    explanation: "'Nevertheless' = despite that; strong contrast.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_006",
+    type: "multiple-choice",
+    question: "Profits increased significantly; ___, staff morale improved.",
+    options: ["likewise", "conversely", "otherwise", "albeit"],
+    correctAnswer: "likewise",
+    explanation: "'Likewise' = similarly; shows parallel situations.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_007",
+    type: "multiple-choice",
+    question: "In urban areas crime fell; ___, rural crime increased.",
+    options: ["conversely", "similarly", "consequently", "moreover"],
+    correctAnswer: "conversely",
+    explanation: "'Conversely' = on the other hand; opposite situations.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_008",
+    type: "multiple-choice",
+    question: "The plan was risky, ___ promising.",
+    options: ["albeit", "hence", "thus", "therefore"],
+    correctAnswer: "albeit",
+    explanation: "'Albeit' = although; concessive within a clause.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_009",
+    type: "multiple-choice",
+    question: "We must act now; ___, the situation will worsen.",
+    options: ["otherwise", "moreover", "likewise", "hence"],
+    correctAnswer: "otherwise",
+    explanation: "'Otherwise' = if not; shows alternative consequence.",
+    category: "advanced-connectors",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_AdvancedConnectors_010",
+    type: "multiple-choice",
+    question: "She's highly qualified; ___, she has years of experience.",
+    options: ["moreover", "however", "nevertheless", "conversely"],
+    correctAnswer: "moreover",
+    explanation: "'Moreover' = in addition; adds supporting information.",
+    category: "advanced-connectors",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_AdvancedConnectors_011",
+    type: "multiple-choice",
+    question: "He apologized; ___, I don't trust him.",
+    options: ["even so", "therefore", "thus", "hence"],
+    correctAnswer: "even so",
+    explanation: "'Even so' = despite that; shows persisting doubt.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_012",
+    type: "multiple-choice",
+    question: "The theory, ___ disputed, has gained acceptance.",
+    options: ["though", "therefore", "hence", "thus"],
+    correctAnswer: "though",
+    explanation: "'Though' as a mid-sentence concessive connector.",
+    category: "advanced-connectors",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_AdvancedConnectors_013",
+    type: "multiple-choice",
+    question: "The data is incomplete; ___, it offers useful insights.",
+    options: ["that said", "therefore", "hence", "thus"],
+    correctAnswer: "that said",
+    explanation: "'That said' = however/nevertheless; introduces contrast.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_014",
+    type: "multiple-choice",
+    question: "He worked hard. ___, he achieved his goals.",
+    options: ["As a result", "On the contrary", "By contrast", "Even so"],
+    correctAnswer: "As a result",
+    explanation: "'As a result' = consequently; shows outcome.",
+    category: "advanced-connectors",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_AdvancedConnectors_015",
+    type: "multiple-choice",
+    question: "She didn't study; ___, she managed to pass.",
+    options: ["all the same", "therefore", "thus", "hence"],
+    correctAnswer: "all the same",
+    explanation: "'All the same' = nevertheless; informal contrast.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_016",
+    type: "multiple-choice",
+    question: "The proposal was rejected. ___, we will submit a revised version.",
+    options: ["Accordingly", "Conversely", "Likewise", "Even so"],
+    correctAnswer: "Accordingly",
+    explanation: "'Accordingly' = as appropriate to the circumstances.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_017",
+    type: "multiple-choice",
+    question: "It was raining; ___, the match continued.",
+    options: ["regardless", "therefore", "hence", "thus"],
+    correctAnswer: "regardless",
+    explanation: "'Regardless' = despite everything; shows continuation.",
+    category: "advanced-connectors",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_AdvancedConnectors_018",
+    type: "multiple-choice",
+    question: "She's young; ___, she's very mature.",
+    options: ["for all that", "therefore", "hence", "thus"],
+    correctAnswer: "for all that",
+    explanation: "'For all that' = despite that; literary contrast.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_019",
+    type: "multiple-choice",
+    question: "The test was difficult; ___, most students passed.",
+    options: ["that notwithstanding", "therefore", "hence", "thus"],
+    correctAnswer: "that notwithstanding",
+    explanation: "'That notwithstanding' = despite that; very formal.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_020",
+    type: "multiple-choice",
+    question: "He denied the allegations. ___, evidence suggests otherwise.",
+    options: ["Be that as it may", "Therefore", "Hence", "Thus"],
+    correctAnswer: "Be that as it may",
+    explanation: "'Be that as it may' = even if that's true; formal concession.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_021",
+    type: "multiple-choice",
+    question: "The economy is struggling; ___, unemployment remains low.",
+    options: ["paradoxically", "therefore", "hence", "thus"],
+    correctAnswer: "paradoxically",
+    explanation: "'Paradoxically' = contrary to expectation.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_022",
+    type: "multiple-choice",
+    question: "He's not qualified; ___, he got the job.",
+    options: ["bizarrely", "therefore", "hence", "accordingly"],
+    correctAnswer: "bizarrely",
+    explanation: "'Bizarrely' = strangely; shows unexpected outcome.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_023",
+    type: "multiple-choice",
+    question: "___ the rain, the event was a success.",
+    options: ["Notwithstanding", "Because of", "Due to", "Owing to"],
+    correctAnswer: "Notwithstanding",
+    explanation: "'Notwithstanding' = despite; formal preposition.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_024",
+    type: "multiple-choice",
+    question: "Costs are rising; ___, we must find savings.",
+    options: ["by the same token", "however", "nevertheless", "instead"],
+    correctAnswer: "by the same token",
+    explanation: "'By the same token' = for similar reasons.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_025",
+    type: "multiple-choice",
+    question: "The results were positive; ___, caution is advised.",
+    options: ["that being said", "therefore", "hence", "thus"],
+    correctAnswer: "that being said",
+    explanation: "'That being said' = however; introduces qualification.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_026",
+    type: "multiple-choice",
+    question: "She's dedicated; ___, she works weekends too.",
+    options: ["what's more", "however", "nevertheless", "conversely"],
+    correctAnswer: "what's more",
+    explanation: "'What's more' = moreover; adds emphasis.",
+    category: "advanced-connectors",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_AdvancedConnectors_027",
+    type: "multiple-choice",
+    question: "I didn't agree; ___, I kept quiet.",
+    options: ["still", "therefore", "hence", "accordingly"],
+    correctAnswer: "still",
+    explanation: "'Still' as connector = nevertheless; shows contrast.",
+    category: "advanced-connectors",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_AdvancedConnectors_028",
+    type: "multiple-choice",
+    question: "He claimed innocence; the evidence, ___, proved otherwise.",
+    options: ["however", "therefore", "hence", "moreover"],
+    correctAnswer: "however",
+    explanation: "'However' mid-sentence for strong contrast.",
+    category: "advanced-connectors",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_AdvancedConnectors_029",
+    type: "multiple-choice",
+    question: "The plan has merits. It is, ___, not without risks.",
+    options: ["admittedly", "therefore", "hence", "moreover"],
+    correctAnswer: "admittedly",
+    explanation: "'Admittedly' = it must be admitted; concessive.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_030",
+    type: "multiple-choice",
+    question: "Revenue fell 20%; ___, we avoided bankruptcy.",
+    options: ["mercifully", "therefore", "hence", "accordingly"],
+    correctAnswer: "mercifully",
+    explanation: "'Mercifully' = fortunately; positive unexpected outcome.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_031",
+    type: "multiple-choice",
+    question: "He was warned repeatedly. ___, he ignored the advice.",
+    options: ["Yet", "Therefore", "Hence", "Accordingly"],
+    correctAnswer: "Yet",
+    explanation: "'Yet' as connector = nevertheless; shows contrast.",
+    category: "advanced-connectors",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_AdvancedConnectors_032",
+    type: "multiple-choice",
+    question: "___ the obstacles, she persevered.",
+    options: ["In spite of", "Because of", "Due to", "Owing to"],
+    correctAnswer: "In spite of",
+    explanation: "'In spite of' = despite; shows overcoming.",
+    category: "advanced-connectors",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_AdvancedConnectors_033",
+    type: "multiple-choice",
+    question: "The theory is elegant. It is, ___, unproven.",
+    options: ["as yet", "therefore", "hence", "moreover"],
+    correctAnswer: "as yet",
+    explanation: "'As yet' = up to now; temporal qualifier.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_034",
+    type: "multiple-choice",
+    question: "He resigned; his deputy, ___, took over.",
+    options: ["in turn", "however", "nevertheless", "conversely"],
+    correctAnswer: "in turn",
+    explanation: "'In turn' = as a consequence; shows sequence.",
+    category: "advanced-connectors",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_AdvancedConnectors_035",
+    type: "multiple-choice",
+    question: "The book is long; ___, it's worth reading.",
+    options: ["be that as it may", "therefore", "hence", "thus"],
+    correctAnswer: "be that as it may",
+    explanation: "'Be that as it may' = even so; formal concession.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_036",
+    type: "multiple-choice",
+    question: "Sales increased; ___, profits did not.",
+    options: ["by contrast", "likewise", "moreover", "furthermore"],
+    correctAnswer: "by contrast",
+    explanation: "'By contrast' = on the other hand; shows difference.",
+    category: "advanced-connectors",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_AdvancedConnectors_037",
+    type: "multiple-choice",
+    question: "The situation is complex; ___ is the solution.",
+    options: ["so too", "however", "nevertheless", "conversely"],
+    correctAnswer: "so too",
+    explanation: "'So too' = similarly; shows parallel complexity.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_038",
+    type: "multiple-choice",
+    question: "He's experienced; ___, he's well-connected.",
+    options: ["not to mention", "however", "nevertheless", "conversely"],
+    correctAnswer: "not to mention",
+    explanation: "'Not to mention' = and also; adds emphasis.",
+    category: "advanced-connectors",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_AdvancedConnectors_039",
+    type: "multiple-choice",
+    question: "The task was challenging; ___, it was completed on time.",
+    options: ["that said", "therefore", "hence", "thus"],
+    correctAnswer: "that said",
+    explanation: "'That said' = however; introduces positive contrast.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_040",
+    type: "multiple-choice",
+    question: "Inflation rose; ___, interest rates were raised.",
+    options: ["as a consequence", "nevertheless", "conversely", "likewise"],
+    correctAnswer: "as a consequence",
+    explanation: "'As a consequence' = as a result; cause-effect.",
+    category: "advanced-connectors",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_AdvancedConnectors_041",
+    type: "multiple-choice",
+    question: "He made mistakes; ___, he was forgiven.",
+    options: ["in any event", "therefore", "hence", "thus"],
+    correctAnswer: "in any event",
+    explanation: "'In any event' = regardless; shows ultimate outcome.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_042",
+    type: "multiple-choice",
+    question: "The proposal was rejected; ___, they submitted a new one.",
+    options: ["undeterred", "therefore", "hence", "moreover"],
+    correctAnswer: "undeterred",
+    explanation: "'Undeterred' = not discouraged; shows perseverance.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_043",
+    type: "multiple-choice",
+    question: "It was expensive. ___, it was exactly what we needed.",
+    options: ["Then again", "Therefore", "Hence", "Accordingly"],
+    correctAnswer: "Then again",
+    explanation: "'Then again' = on the other hand; introduces balance.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_044",
+    type: "multiple-choice",
+    question: "The risks are known; ___, the benefits outweigh them.",
+    options: ["on balance", "therefore", "hence", "moreover"],
+    correctAnswer: "on balance",
+    explanation: "'On balance' = considering everything; judgment.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_045",
+    type: "multiple-choice",
+    question: "He seemed honest; ___, he was lying.",
+    options: ["in reality", "therefore", "hence", "moreover"],
+    correctAnswer: "in reality",
+    explanation: "'In reality' = actually; contradicts appearance.",
+    category: "advanced-connectors",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_AdvancedConnectors_046",
+    type: "multiple-choice",
+    question: "The experiment failed; ___, valuable data was collected.",
+    options: ["on the upside", "therefore", "hence", "accordingly"],
+    correctAnswer: "on the upside",
+    explanation: "'On the upside' = positively; introduces benefit.",
+    category: "advanced-connectors",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_AdvancedConnectors_047",
+    type: "multiple-choice",
+    question: "He's unreliable; ___, I won't hire him.",
+    options: ["for that reason", "nevertheless", "conversely", "likewise"],
+    correctAnswer: "for that reason",
+    explanation: "'For that reason' = therefore; states cause.",
+    category: "advanced-connectors",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_AdvancedConnectors_048",
+    type: "multiple-choice",
+    question: "She's strict; ___, she's fair.",
+    options: ["by the same token", "however", "therefore", "hence"],
+    correctAnswer: "by the same token",
+    explanation: "'By the same token' = equally; parallel quality.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_AdvancedConnectors_049",
+    type: "multiple-choice",
+    question: "Demand increased; ___, so did prices.",
+    options: ["predictably", "nevertheless", "conversely", "albeit"],
+    correctAnswer: "predictably",
+    explanation: "'Predictably' = as expected; shows expected result.",
+    category: "advanced-connectors",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_AdvancedConnectors_050",
+    type: "multiple-choice",
+    question: "He was sick; ___, he attended the meeting.",
+    options: ["even then", "therefore", "hence", "accordingly"],
+    correctAnswer: "even then",
+    explanation: "'Even then' = despite that; shows determination.",
+    category: "advanced-connectors",
+    difficulty: "hard"
+  },
+];
 
 // ==================== UTILITY FUNCTIONS ====================
 
