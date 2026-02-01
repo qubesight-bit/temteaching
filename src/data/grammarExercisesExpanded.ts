@@ -7526,8 +7526,510 @@ export const b2GrammarExercises: GrammarExercise[] = [
   },
 ];
 
-// ==================== C1 LEVEL EXERCISES (placeholder) ====================
-export const c1GrammarExercises: GrammarExercise[] = [];
+// ==================== C1 LEVEL EXERCISES ====================
+export const c1GrammarExercises: GrammarExercise[] = [
+  // ===== ADVANCED TENSES (50 exercises) =====
+  {
+    id: "C1_AdvancedTenses_001",
+    type: "multiple-choice",
+    question: "By next year, I ___ here for ten years.",
+    options: ["will have worked", "will work", "am working", "have worked"],
+    correctAnswer: "will have worked",
+    explanation: "Future Perfect: will have + past participle for completed future actions.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_002",
+    type: "multiple-choice",
+    question: "She ___ for two hours before you arrived.",
+    options: ["had been waiting", "has been waiting", "was waiting", "waited"],
+    correctAnswer: "had been waiting",
+    explanation: "Past Perfect Continuous: had been + -ing for duration before a past event.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_003",
+    type: "multiple-choice",
+    question: "By the time you get home, I ___ dinner.",
+    options: ["will have cooked", "will cook", "am cooking", "cook"],
+    correctAnswer: "will have cooked",
+    explanation: "Future Perfect for actions completed before another future point.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_004",
+    type: "multiple-choice",
+    question: "They ___ the project for months before it was cancelled.",
+    options: ["had been developing", "have been developing", "were developing", "developed"],
+    correctAnswer: "had been developing",
+    explanation: "Past Perfect Continuous emphasizes duration before a past event.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_005",
+    type: "multiple-choice",
+    question: "By 2030, scientists ___ a cure for the disease.",
+    options: ["will have discovered", "will discover", "are discovering", "discover"],
+    correctAnswer: "will have discovered",
+    explanation: "Future Perfect for predictions about completed future achievements.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_006",
+    type: "multiple-choice",
+    question: "He ___ all day, so he was exhausted.",
+    options: ["had been running", "has been running", "was running", "ran"],
+    correctAnswer: "had been running",
+    explanation: "Past Perfect Continuous explains the cause of a past state.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_007",
+    type: "multiple-choice",
+    question: "By midnight, we ___ for twelve hours straight.",
+    options: ["will have been driving", "will drive", "are driving", "have driven"],
+    correctAnswer: "will have been driving",
+    explanation: "Future Perfect Continuous: will have been + -ing for duration up to future point.",
+    category: "advanced-tenses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_AdvancedTenses_008",
+    type: "multiple-choice",
+    question: "I realized I ___ my keys at home.",
+    options: ["had left", "have left", "left", "was leaving"],
+    correctAnswer: "had left",
+    explanation: "Past Perfect for an action completed before another past action.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_009",
+    type: "multiple-choice",
+    question: "By the end of this course, you ___ all the grammar rules.",
+    options: ["will have learned", "will learn", "are learning", "learn"],
+    correctAnswer: "will have learned",
+    explanation: "Future Perfect for completion by a specific future time.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_010",
+    type: "multiple-choice",
+    question: "She ___ in the garden all morning when it started to rain.",
+    options: ["had been working", "has been working", "was working", "worked"],
+    correctAnswer: "had been working",
+    explanation: "Past Perfect Continuous for an activity interrupted by a past event.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_011",
+    type: "multiple-choice",
+    question: "By next month, they ___ married for 25 years.",
+    options: ["will have been", "will be", "are", "have been"],
+    correctAnswer: "will have been",
+    explanation: "Future Perfect for duration reaching a future milestone.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_012",
+    type: "multiple-choice",
+    question: "He ___ the book before the movie came out.",
+    options: ["had read", "has read", "read", "was reading"],
+    correctAnswer: "had read",
+    explanation: "Past Perfect shows the book was read first, then the movie released.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_013",
+    type: "multiple-choice",
+    question: "By 5 PM, I ___ for eight hours.",
+    options: ["will have been working", "will work", "am working", "have worked"],
+    correctAnswer: "will have been working",
+    explanation: "Future Perfect Continuous for continuous action up to a future time.",
+    category: "advanced-tenses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_AdvancedTenses_014",
+    type: "multiple-choice",
+    question: "The streets were wet because it ___.",
+    options: ["had been raining", "has been raining", "was raining", "rained"],
+    correctAnswer: "had been raining",
+    explanation: "Past Perfect Continuous explains evidence of a recent past activity.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_015",
+    type: "multiple-choice",
+    question: "By the time she arrives, we ___ everything.",
+    options: ["will have prepared", "will prepare", "are preparing", "prepare"],
+    correctAnswer: "will have prepared",
+    explanation: "Future Perfect for completion before someone's arrival.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_016",
+    type: "multiple-choice",
+    question: "I ___ to call you, but I forgot.",
+    options: ["had meant", "have meant", "meant", "was meaning"],
+    correctAnswer: "had meant",
+    explanation: "Past Perfect for unfulfilled past intentions.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_017",
+    type: "multiple-choice",
+    question: "Next week, she ___ at this company for five years.",
+    options: ["will have been working", "will work", "is working", "works"],
+    correctAnswer: "will have been working",
+    explanation: "Future Perfect Continuous for ongoing action reaching a milestone.",
+    category: "advanced-tenses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_AdvancedTenses_018",
+    type: "multiple-choice",
+    question: "They ___ the house before we made an offer.",
+    options: ["had sold", "have sold", "sold", "were selling"],
+    correctAnswer: "had sold",
+    explanation: "Past Perfect: the sale happened before our offer.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_019",
+    type: "multiple-choice",
+    question: "By tomorrow, I ___ the report.",
+    options: ["will have finished", "will finish", "am finishing", "finish"],
+    correctAnswer: "will have finished",
+    explanation: "Future Perfect for deadline-based completion.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_020",
+    type: "multiple-choice",
+    question: "She was tired because she ___ all night.",
+    options: ["had been studying", "has been studying", "was studying", "studied"],
+    correctAnswer: "had been studying",
+    explanation: "Past Perfect Continuous explains the reason for past tiredness.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_021",
+    type: "multiple-choice",
+    question: "By the end of the day, the snow ___.",
+    options: ["will have melted", "will melt", "is melting", "melts"],
+    correctAnswer: "will have melted",
+    explanation: "Future Perfect for natural processes completing by a future time.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_022",
+    type: "multiple-choice",
+    question: "He ___ there many times before he moved away.",
+    options: ["had been", "has been", "was", "went"],
+    correctAnswer: "had been",
+    explanation: "Past Perfect for repeated past experiences before another past event.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_023",
+    type: "multiple-choice",
+    question: "By 2025, I ___ English for twenty years.",
+    options: ["will have been teaching", "will teach", "am teaching", "teach"],
+    correctAnswer: "will have been teaching",
+    explanation: "Future Perfect Continuous for career duration by a future date.",
+    category: "advanced-tenses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_AdvancedTenses_024",
+    type: "multiple-choice",
+    question: "We ___ dinner when the power went out.",
+    options: ["had been cooking", "have been cooking", "were cooking", "cooked"],
+    correctAnswer: "had been cooking",
+    explanation: "Past Perfect Continuous for ongoing action interrupted by sudden event.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_025",
+    type: "multiple-choice",
+    question: "The plane ___ by the time we reach the airport.",
+    options: ["will have taken off", "will take off", "is taking off", "takes off"],
+    correctAnswer: "will have taken off",
+    explanation: "Future Perfect for actions completing before arrival.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_026",
+    type: "multiple-choice",
+    question: "I wish I ___ harder in school.",
+    options: ["had studied", "have studied", "studied", "was studying"],
+    correctAnswer: "had studied",
+    explanation: "Past Perfect in wishes about past regrets.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_027",
+    type: "multiple-choice",
+    question: "By July, we ___ this house for ten years.",
+    options: ["will have owned", "will own", "are owning", "own"],
+    correctAnswer: "will have owned",
+    explanation: "Future Perfect for ownership duration by a specific month.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_028",
+    type: "multiple-choice",
+    question: "She looked familiar. I felt I ___ her somewhere before.",
+    options: ["had seen", "have seen", "saw", "was seeing"],
+    correctAnswer: "had seen",
+    explanation: "Past Perfect for earlier experience recalled at a past moment.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_029",
+    type: "multiple-choice",
+    question: "By next Friday, I ___ on this essay for two weeks.",
+    options: ["will have been working", "will work", "am working", "work"],
+    correctAnswer: "will have been working",
+    explanation: "Future Perfect Continuous for extended effort up to a deadline.",
+    category: "advanced-tenses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_AdvancedTenses_030",
+    type: "multiple-choice",
+    question: "His eyes were red because he ___.",
+    options: ["had been crying", "has been crying", "was crying", "cried"],
+    correctAnswer: "had been crying",
+    explanation: "Past Perfect Continuous explains visible past evidence.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_031",
+    type: "multiple-choice",
+    question: "The guests ___ by the time we finished decorating.",
+    options: ["had arrived", "have arrived", "arrived", "were arriving"],
+    correctAnswer: "had arrived",
+    explanation: "Past Perfect: guests arrived before decorating finished.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_032",
+    type: "multiple-choice",
+    question: "By the time you wake up, I ___ to work.",
+    options: ["will have gone", "will go", "am going", "go"],
+    correctAnswer: "will have gone",
+    explanation: "Future Perfect for departure before someone wakes.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_033",
+    type: "multiple-choice",
+    question: "They ___ about it for hours before reaching a decision.",
+    options: ["had been arguing", "have been arguing", "were arguing", "argued"],
+    correctAnswer: "had been arguing",
+    explanation: "Past Perfect Continuous for prolonged discussion before resolution.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_034",
+    type: "multiple-choice",
+    question: "By 6 PM, the sun ___.",
+    options: ["will have set", "will set", "is setting", "sets"],
+    correctAnswer: "will have set",
+    explanation: "Future Perfect for natural events by a specific time.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_035",
+    type: "multiple-choice",
+    question: "I didn't recognize her because she ___ her hair.",
+    options: ["had changed", "has changed", "changed", "was changing"],
+    correctAnswer: "had changed",
+    explanation: "Past Perfect for a change that happened before the recognition moment.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_036",
+    type: "multiple-choice",
+    question: "By the end of this month, I ___ here for a year.",
+    options: ["will have been living", "will live", "am living", "live"],
+    correctAnswer: "will have been living",
+    explanation: "Future Perfect Continuous for residence duration.",
+    category: "advanced-tenses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_AdvancedTenses_037",
+    type: "multiple-choice",
+    question: "She ___ the news before I told her.",
+    options: ["had heard", "has heard", "heard", "was hearing"],
+    correctAnswer: "had heard",
+    explanation: "Past Perfect: she learned the news first.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_038",
+    type: "multiple-choice",
+    question: "The children ___ all afternoon, so they were hungry.",
+    options: ["had been playing", "have been playing", "were playing", "played"],
+    correctAnswer: "had been playing",
+    explanation: "Past Perfect Continuous explains why they were hungry.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_039",
+    type: "multiple-choice",
+    question: "By next summer, we ___ enough money for the trip.",
+    options: ["will have saved", "will save", "are saving", "save"],
+    correctAnswer: "will have saved",
+    explanation: "Future Perfect for savings goal achievement.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_040",
+    type: "multiple-choice",
+    question: "If only I ___ the truth earlier!",
+    options: ["had known", "have known", "knew", "was knowing"],
+    correctAnswer: "had known",
+    explanation: "Past Perfect in regrets with 'if only.'",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_041",
+    type: "multiple-choice",
+    question: "By tomorrow evening, I ___ the whole book.",
+    options: ["will have read", "will read", "am reading", "read"],
+    correctAnswer: "will have read",
+    explanation: "Future Perfect for book completion by tomorrow.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_042",
+    type: "multiple-choice",
+    question: "He ___ for the company for years before he got promoted.",
+    options: ["had been working", "has been working", "was working", "worked"],
+    correctAnswer: "had been working",
+    explanation: "Past Perfect Continuous for long service before promotion.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_043",
+    type: "multiple-choice",
+    question: "By this time next week, I ___ my exams.",
+    options: ["will have taken", "will take", "am taking", "take"],
+    correctAnswer: "will have taken",
+    explanation: "Future Perfect for exams completed by a week from now.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_044",
+    type: "multiple-choice",
+    question: "The ground was wet; it ___ earlier.",
+    options: ["had rained", "has rained", "rained", "was raining"],
+    correctAnswer: "had rained",
+    explanation: "Past Perfect explains past evidence (wet ground).",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_045",
+    type: "multiple-choice",
+    question: "By the end of the concert, we ___ for three hours.",
+    options: ["will have been standing", "will stand", "are standing", "stand"],
+    correctAnswer: "will have been standing",
+    explanation: "Future Perfect Continuous for duration during an event.",
+    category: "advanced-tenses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_AdvancedTenses_046",
+    type: "multiple-choice",
+    question: "I ___ never ___ such a beautiful sunset before that trip.",
+    options: ["had ... seen", "have ... seen", "did ... see", "was ... seeing"],
+    correctAnswer: "had ... seen",
+    explanation: "Past Perfect for first-time experiences before a past event.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_047",
+    type: "multiple-choice",
+    question: "By next month, the builders ___ the renovation.",
+    options: ["will have completed", "will complete", "are completing", "complete"],
+    correctAnswer: "will have completed",
+    explanation: "Future Perfect for project completion deadline.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_048",
+    type: "multiple-choice",
+    question: "She ___ at the window for an hour when she finally saw him.",
+    options: ["had been standing", "has been standing", "was standing", "stood"],
+    correctAnswer: "had been standing",
+    explanation: "Past Perfect Continuous for duration before the sighting.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_AdvancedTenses_049",
+    type: "multiple-choice",
+    question: "By the time the rescue team arrived, the survivors ___.",
+    options: ["had been found", "have been found", "were found", "are found"],
+    correctAnswer: "had been found",
+    explanation: "Past Perfect Passive for actions completed before arrival.",
+    category: "advanced-tenses",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_AdvancedTenses_050",
+    type: "multiple-choice",
+    question: "By midnight, I ___ this movie three times.",
+    options: ["will have watched", "will watch", "am watching", "watch"],
+    correctAnswer: "will have watched",
+    explanation: "Future Perfect for repeated viewing by a specific time.",
+    category: "advanced-tenses",
+    difficulty: "medium"
+  },
+];
 
 // ==================== C2 LEVEL EXERCISES (placeholder) ====================
 export const c2GrammarExercises: GrammarExercise[] = [];
