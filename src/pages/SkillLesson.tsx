@@ -745,14 +745,36 @@ export default function SkillLesson() {
 
               <Card>
                 <CardContent className="p-8">
-                  {/* Current SubSkill Context */}
-                  {skill.subSkills[currentExercise] && (
-                    <div className="flex items-center gap-2 mb-4">
-                      <Badge variant="secondary" className="text-xs">
-                        {skill.subSkills[currentExercise]?.title || `Exercise ${currentExercise + 1}`}
-                      </Badge>
-                    </div>
-                  )}
+                  {/* Current SubSkill Context - find from exercise tags */}
+                  {(() => {
+                    // Try to find subskill from exercise tags
+                    const subSkillTag = currentExerciseData.tags?.find(tag => tag.startsWith('subskill:'));
+                    if (subSkillTag) {
+                      const subSkillId = subSkillTag.replace('subskill:', '');
+                      const matchedSubSkill = skill.subSkills.find(ss => ss.id === subSkillId);
+                      if (matchedSubSkill) {
+                        return (
+                          <div className="flex items-center gap-2 mb-4">
+                            <Badge variant="secondary" className="text-xs">
+                              {matchedSubSkill.title}
+                            </Badge>
+                          </div>
+                        );
+                      }
+                    }
+                    // Fallback to index-based display if no subskill tag
+                    const fallbackSubSkill = skill.subSkills[currentExercise % skill.subSkills.length];
+                    if (fallbackSubSkill) {
+                      return (
+                        <div className="flex items-center gap-2 mb-4">
+                          <Badge variant="secondary" className="text-xs">
+                            {fallbackSubSkill.title}
+                          </Badge>
+                        </div>
+                      );
+                    }
+                    return null;
+                  })()}
 
                   {/* Pre-Exercise Teaching - Grammar rule WITHOUT giving the answer */}
                   {!showExplanation && (
