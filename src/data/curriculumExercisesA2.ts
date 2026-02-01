@@ -247,93 +247,145 @@ const a2GrammarExercises: Record<string, Exercise[]> = {
       tags: ["past-simple", "irregular", "a2"]
     },
   ],
-  "a2-gram-3": [ // Future with Will
+  // Note: a2-gram-3 is "Future with going to" in curriculumData.ts
+  // The "Future with Will" content has been moved to align with the curriculum
+  "a2-gram-3": [ // Future with Going to (FIXED: matches curriculumData.ts a2-gram-3)
     {
       id: "a2-g3-e1",
       type: "multiple-choice",
-      question: "I think it _____ rain tomorrow.",
-      options: ["will", "is going to", "is", "does"],
-      correctAnswer: "will",
-      explanation: "Use 'will' for predictions (I think...).",
+      question: "Look at those clouds! It _____ rain.",
+      options: ["is going to", "am going to", "are going to", "be going to"],
+      correctAnswer: "is going to",
+      explanation: "Use 'going to' for predictions based on evidence (clouds = evidence of rain).",
       difficulty: 1,
-      tags: ["future", "will", "a2"]
+      tags: ["future", "going-to", "a2"]
     },
     {
       id: "a2-g3-e2",
       type: "multiple-choice",
-      question: "Don't worry, I _____ help you.",
-      options: ["will", "am going to", "am", "do"],
-      correctAnswer: "will",
-      explanation: "Use 'will' for spontaneous decisions/offers.",
+      question: "I _____ study medicine next year. I've already applied.",
+      options: ["am going to", "is going to", "are going to", "be going to"],
+      correctAnswer: "am going to",
+      explanation: "Use 'am going to' with 'I' for decided/planned future actions.",
       difficulty: 1,
-      tags: ["future", "will", "a2"]
+      tags: ["future", "going-to", "a2"]
     },
     {
       id: "a2-g3-e3",
       type: "fill-blank",
-      question: "She _____ NOT be at the party tonight.",
-      options: ["will", "won't", "isn't", "doesn't"],
-      correctAnswer: "won't",
-      explanation: "Negative: will not = won't.",
+      question: "They _____ buy a new house next month.",
+      options: ["are going to", "is going to", "am going to", "going to"],
+      correctAnswer: "are going to",
+      explanation: "Use 'are going to' with they/we/you for future plans.",
       difficulty: 1,
-      tags: ["future", "will", "a2"]
+      tags: ["future", "going-to", "a2"]
     },
     {
       id: "a2-g3-e4",
       type: "multiple-choice",
-      question: "_____ you _____ me tomorrow?",
-      options: ["Will/call", "Are/call", "Do/call", "Have/called"],
-      correctAnswer: "Will/call",
-      explanation: "Questions: Will + subject + base verb.",
-      difficulty: 1,
-      tags: ["future", "will", "a2"]
-    },
-  ],
-  "a2-gram-4": [ // Going to
-    {
-      id: "a2-g4-e1",
-      type: "multiple-choice",
-      question: "Look at those clouds! It _____ rain.",
-      options: ["will", "is going to", "is", "does"],
-      correctAnswer: "is going to",
-      explanation: "Use 'going to' for predictions based on evidence.",
-      difficulty: 1,
-      tags: ["future", "going-to", "a2"]
-    },
-    {
-      id: "a2-g4-e2",
-      type: "multiple-choice",
-      question: "I _____ study medicine next year. I've already applied.",
-      options: ["will", "am going to", "am", "do"],
-      correctAnswer: "am going to",
-      explanation: "Use 'going to' for planned future actions.",
-      difficulty: 1,
-      tags: ["future", "going-to", "a2"]
-    },
-    {
-      id: "a2-g4-e3",
-      type: "fill-blank",
-      question: "They _____ _____ buy a new house.",
-      options: ["are going to", "will to", "is going to", "going to"],
-      correctAnswer: "are going to",
-      explanation: "Form: am/is/are + going to + verb.",
-      difficulty: 1,
-      tags: ["future", "going-to", "a2"]
-    },
-    {
-      id: "a2-g4-e4",
-      type: "multiple-choice",
       question: "What _____ you _____ do this weekend?",
-      options: ["are/going to", "will/going to", "do/going", "is/going to"],
-      correctAnswer: "are/going to",
+      options: ["are / going to", "is / going to", "am / going to", "be / going to"],
+      correctAnswer: "are / going to",
       explanation: "Questions: What are you going to do?",
       difficulty: 1,
       tags: ["future", "going-to", "a2"]
     },
+    {
+      id: "a2-g3-e5",
+      type: "multiple-choice",
+      question: "She _____ start a new job in January.",
+      options: ["is going to", "are going to", "am going to", "going to"],
+      correctAnswer: "is going to",
+      explanation: "Use 'is going to' with he/she/it for future plans.",
+      difficulty: 1,
+      tags: ["future", "going-to", "a2"]
+    },
+    {
+      id: "a2-g3-e6",
+      type: "multiple-choice",
+      question: "We _____ visit our grandparents next Sunday.",
+      options: ["are going to", "is going to", "am going to", "going to"],
+      correctAnswer: "are going to",
+      explanation: "Use 'are going to' with we for planned actions.",
+      difficulty: 1,
+      tags: ["future", "going-to", "a2"]
+    },
   ],
-  "a2-gram-5": [ // Comparatives
+  "a2-gram-5": [ // Countable and uncountable (FIXED: matches curriculumData.ts a2-gram-5)
     {
       id: "a2-g5-e1",
+      type: "multiple-choice",
+      question: "I need _____ apple from the shop.",
+      options: ["an", "a", "some", "any"],
+      correctAnswer: "an",
+      explanation: "Use 'an' before vowel sounds for singular countable nouns.",
+      difficulty: 1,
+      tags: ["countable-uncountable", "a2"]
+    },
+    {
+      id: "a2-g5-e2",
+      type: "multiple-choice",
+      question: "Do we have _____ milk in the fridge?",
+      options: ["any", "a", "an", "some"],
+      correctAnswer: "any",
+      explanation: "Use 'any' in questions and negatives with uncountable nouns.",
+      difficulty: 1,
+      tags: ["countable-uncountable", "a2"]
+    },
+    {
+      id: "a2-g5-e3",
+      type: "multiple-choice",
+      question: "I'd like _____ water, please.",
+      options: ["some", "a", "an", "many"],
+      correctAnswer: "some",
+      explanation: "Use 'some' in positive sentences with uncountable nouns.",
+      difficulty: 1,
+      tags: ["countable-uncountable", "a2"]
+    },
+    {
+      id: "a2-g5-e4",
+      type: "fill-blank",
+      question: "How _____ eggs do we need for the cake?",
+      options: ["many", "much", "any", "some"],
+      correctAnswer: "many",
+      explanation: "Use 'how many' with countable nouns (eggs can be counted).",
+      difficulty: 1,
+      tags: ["countable-uncountable", "a2"]
+    },
+    {
+      id: "a2-g5-e5",
+      type: "multiple-choice",
+      question: "How _____ sugar do you want in your tea?",
+      options: ["much", "many", "some", "any"],
+      correctAnswer: "much",
+      explanation: "Use 'how much' with uncountable nouns (sugar cannot be counted).",
+      difficulty: 1,
+      tags: ["countable-uncountable", "a2"]
+    },
+    {
+      id: "a2-g5-e6",
+      type: "multiple-choice",
+      question: "There are _____ oranges in the basket.",
+      options: ["some", "a", "an", "much"],
+      correctAnswer: "some",
+      explanation: "Use 'some' with plural countable nouns in positive sentences.",
+      difficulty: 1,
+      tags: ["countable-uncountable", "a2"]
+    },
+    {
+      id: "a2-g5-e7",
+      type: "multiple-choice",
+      question: "I don't have _____ bread at home.",
+      options: ["any", "some", "a", "many"],
+      correctAnswer: "any",
+      explanation: "Use 'any' in negative sentences with uncountable nouns.",
+      difficulty: 1,
+      tags: ["countable-uncountable", "a2"]
+    },
+  ],
+  "a2-gram-6": [ // Comparatives and superlatives (matches curriculumData.ts a2-gram-6)
+    {
+      id: "a2-g6-e1",
       type: "multiple-choice",
       question: "An elephant is _____ than a mouse.",
       options: ["big", "bigger", "biggest", "more big"],
@@ -343,7 +395,7 @@ const a2GrammarExercises: Record<string, Exercise[]> = {
       tags: ["comparatives", "a2"]
     },
     {
-      id: "a2-g5-e2",
+      id: "a2-g6-e2",
       type: "multiple-choice",
       question: "This book is _____ than that one.",
       options: ["interesting", "more interesting", "interestinger", "most interesting"],
@@ -353,7 +405,7 @@ const a2GrammarExercises: Record<string, Exercise[]> = {
       tags: ["comparatives", "a2"]
     },
     {
-      id: "a2-g5-e3",
+      id: "a2-g6-e3",
       type: "fill-blank",
       question: "My brother is _____ (tall) than me.",
       options: ["tall", "taller", "tallest", "more tall"],
@@ -363,19 +415,7 @@ const a2GrammarExercises: Record<string, Exercise[]> = {
       tags: ["comparatives", "a2"]
     },
     {
-      id: "a2-g5-e4",
-      type: "multiple-choice",
-      question: "This exercise is _____ than the last one.",
-      options: ["easy", "easier", "easiest", "more easy"],
-      correctAnswer: "easier",
-      explanation: "Easy → easier (y changes to i + er).",
-      difficulty: 1,
-      tags: ["comparatives", "a2"]
-    },
-  ],
-  "a2-gram-6": [ // Superlatives
-    {
-      id: "a2-g6-e1",
+      id: "a2-g6-e4",
       type: "multiple-choice",
       question: "This is the _____ movie I've ever seen!",
       options: ["good", "better", "best", "most good"],
@@ -385,7 +425,7 @@ const a2GrammarExercises: Record<string, Exercise[]> = {
       tags: ["superlatives", "a2"]
     },
     {
-      id: "a2-g6-e2",
+      id: "a2-g6-e5",
       type: "multiple-choice",
       question: "Mount Everest is the _____ mountain in the world.",
       options: ["high", "higher", "highest", "most high"],
@@ -395,7 +435,7 @@ const a2GrammarExercises: Record<string, Exercise[]> = {
       tags: ["superlatives", "a2"]
     },
     {
-      id: "a2-g6-e3",
+      id: "a2-g6-e6",
       type: "fill-blank",
       question: "She is the _____ (intelligent) student in the class.",
       options: ["intelligent", "more intelligent", "most intelligent", "intelligentest"],

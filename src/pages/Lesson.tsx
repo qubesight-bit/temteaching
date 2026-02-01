@@ -4,10 +4,12 @@ import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
+import { ExerciseQuestion } from "@/components/ExerciseQuestion";
 import { grammarCategories } from "@/data/grammarData";
-import { ArrowLeft, ArrowRight, CheckCircle2, XCircle, Volume2, BookOpen, Dumbbell, Trophy } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, XCircle, Volume2, BookOpen, Dumbbell, Trophy, Home } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
+import { cleanQuestionForTTS } from "@/lib/questionFormatter";
 
 type LessonStep = "explanation" | "exercises" | "complete";
 
@@ -66,7 +68,8 @@ export default function Lesson() {
   };
 
   const speakText = (text: string) => {
-    const utterance = new SpeechSynthesisUtterance(text);
+    const cleanedText = cleanQuestionForTTS(text);
+    const utterance = new SpeechSynthesisUtterance(cleanedText);
     utterance.lang = 'en-US';
     speechSynthesis.speak(utterance);
   };
@@ -147,15 +150,23 @@ export default function Lesson() {
       
       <main className="container py-8">
         <div className="max-w-3xl mx-auto">
-          {/* Header */}
-          <div className="mb-6">
+          {/* Header with navigation */}
+          <div className="mb-6 flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => navigate("/")}
+            >
+              <Home className="w-4 h-4 mr-2" />
+              Home
+            </Button>
+            <span className="text-muted-foreground">/</span>
             <Button
               variant="ghost"
               size="sm"
               onClick={() => navigate("/grammar")}
             >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Grammar
+              Grammar
             </Button>
           </div>
 
@@ -279,9 +290,10 @@ export default function Lesson() {
               <Card>
                 <CardContent className="p-8">
                   {/* Question */}
-                  <h2 className="font-display font-bold text-xl mb-6">
-                    {currentExerciseData.question}
-                  </h2>
+                  <ExerciseQuestion 
+                    question={currentExerciseData.question} 
+                    className="mb-6"
+                  />
 
                   {/* Options */}
                   <div className="space-y-3">
