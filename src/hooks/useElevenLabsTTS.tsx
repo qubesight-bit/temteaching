@@ -7,7 +7,7 @@ interface UseElevenLabsTTSOptions {
 }
 
 export function useElevenLabsTTS(options: UseElevenLabsTTSOptions = {}) {
-  const { voiceId = "JBFqnCBsd6RMkjVDRZzb" } = options; // George voice - clear British English
+  const { voiceId = "BAdH0bMfq6VleQGLXj38" } = options;
   const [isLoading, setIsLoading] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
