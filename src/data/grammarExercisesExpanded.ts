@@ -6522,6 +6522,507 @@ export const b2GrammarExercises: GrammarExercise[] = [
     category: "reported-speech",
     difficulty: "medium"
   },
+  // ===== MIXED CONDITIONALS (50 exercises) =====
+  {
+    id: "B2_MixedConditional_001",
+    type: "multiple-choice",
+    question: "If I had studied harder, I ___ a better job now.",
+    options: ["would have", "will have", "had", "would"],
+    correctAnswer: "would have",
+    explanation: "Mixed conditional: past condition (3rd) + present result (2nd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_002",
+    type: "multiple-choice",
+    question: "If she ___ more confident, she would have applied for the job.",
+    options: ["were", "was", "had been", "is"],
+    correctAnswer: "were",
+    explanation: "Mixed conditional: present condition (2nd) + past result (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_003",
+    type: "multiple-choice",
+    question: "If I hadn't missed the train, I ___ at the office now.",
+    options: ["would be", "will be", "had been", "am"],
+    correctAnswer: "would be",
+    explanation: "Past unreal condition with present unreal result.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_004",
+    type: "multiple-choice",
+    question: "If he ___ taller, he would have become a basketball player.",
+    options: ["were", "was", "had been", "is"],
+    correctAnswer: "were",
+    explanation: "Permanent trait (2nd conditional) affecting past possibility (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_005",
+    type: "multiple-choice",
+    question: "If they had saved more money, they ___ their own house today.",
+    options: ["would own", "will own", "owned", "had owned"],
+    correctAnswer: "would own",
+    explanation: "Past action affecting current situation.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_006",
+    type: "multiple-choice",
+    question: "If I ___ you, I would have accepted the offer.",
+    options: ["were", "am", "had been", "was"],
+    correctAnswer: "were",
+    explanation: "Giving hypothetical advice about a past decision.",
+    category: "mixed-conditionals",
+    difficulty: "medium"
+  },
+  {
+    id: "B2_MixedConditional_007",
+    type: "multiple-choice",
+    question: "If she hadn't eaten so much, she ___ sick now.",
+    options: ["wouldn't feel", "won't feel", "didn't feel", "hadn't felt"],
+    correctAnswer: "wouldn't feel",
+    explanation: "Past action causing present discomfort.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_008",
+    type: "multiple-choice",
+    question: "If he ___ more careful, he wouldn't have had the accident.",
+    options: ["were", "was", "had been", "is"],
+    correctAnswer: "were",
+    explanation: "General characteristic (2nd) affecting past event (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_009",
+    type: "multiple-choice",
+    question: "If I had taken that job, I ___ in New York right now.",
+    options: ["would be living", "will live", "lived", "had lived"],
+    correctAnswer: "would be living",
+    explanation: "Past decision affecting present continuous situation.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_010",
+    type: "multiple-choice",
+    question: "If she ___ afraid of flying, she would have visited more countries.",
+    options: ["weren't", "isn't", "hadn't been", "wasn't"],
+    correctAnswer: "weren't",
+    explanation: "Permanent fear (2nd) limiting past experiences (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_011",
+    type: "multiple-choice",
+    question: "If we hadn't moved to this city, we ___ such good friends now.",
+    options: ["wouldn't have", "won't have", "didn't have", "hadn't had"],
+    correctAnswer: "wouldn't have",
+    explanation: "Past move affecting current friendships.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_012",
+    type: "multiple-choice",
+    question: "If I ___ better at math, I would have become an engineer.",
+    options: ["were", "am", "had been", "was"],
+    correctAnswer: "were",
+    explanation: "Permanent ability affecting past career choice.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_013",
+    type: "multiple-choice",
+    question: "If he had listened to my advice, he ___ in trouble now.",
+    options: ["wouldn't be", "won't be", "isn't", "hadn't been"],
+    correctAnswer: "wouldn't be",
+    explanation: "Past ignoring of advice causing current problems.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_014",
+    type: "multiple-choice",
+    question: "If she ___ so stubborn, she would have apologized.",
+    options: ["weren't", "isn't", "hadn't been", "wasn't"],
+    correctAnswer: "weren't",
+    explanation: "Personality trait (2nd) preventing past action (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_015",
+    type: "multiple-choice",
+    question: "If I hadn't broken my leg, I ___ in the marathon today.",
+    options: ["would be running", "will run", "ran", "had run"],
+    correctAnswer: "would be running",
+    explanation: "Past injury affecting present activity.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_016",
+    type: "multiple-choice",
+    question: "If they ___ more organized, they wouldn't have missed the deadline.",
+    options: ["were", "are", "had been", "was"],
+    correctAnswer: "were",
+    explanation: "Ongoing trait (2nd) affecting past result (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_017",
+    type: "multiple-choice",
+    question: "If he had married her, he ___ much happier now.",
+    options: ["would be", "will be", "is", "had been"],
+    correctAnswer: "would be",
+    explanation: "Past decision affecting current emotional state.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_018",
+    type: "multiple-choice",
+    question: "If I ___ allergic to cats, I would have adopted one years ago.",
+    options: ["weren't", "am not", "hadn't been", "wasn't"],
+    correctAnswer: "weren't",
+    explanation: "Permanent condition (2nd) preventing past action (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_019",
+    type: "multiple-choice",
+    question: "If she hadn't studied abroad, she ___ such good English today.",
+    options: ["wouldn't speak", "won't speak", "didn't speak", "hadn't spoken"],
+    correctAnswer: "wouldn't speak",
+    explanation: "Past experience affecting current skill level.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_020",
+    type: "multiple-choice",
+    question: "If he ___ so lazy, he would have finished the project on time.",
+    options: ["weren't", "isn't", "hadn't been", "wasn't"],
+    correctAnswer: "weren't",
+    explanation: "Ongoing characteristic (2nd) affecting past performance (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_021",
+    type: "multiple-choice",
+    question: "If I had invested in that company, I ___ rich now.",
+    options: ["would be", "will be", "am", "had been"],
+    correctAnswer: "would be",
+    explanation: "Past investment decision affecting current wealth.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_022",
+    type: "multiple-choice",
+    question: "If she ___ more patient, she wouldn't have quit her job.",
+    options: ["were", "was", "had been", "is"],
+    correctAnswer: "were",
+    explanation: "Personality trait (2nd) leading to past action (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_023",
+    type: "multiple-choice",
+    question: "If we hadn't bought this house, we ___ more money to travel now.",
+    options: ["would have", "will have", "have", "had"],
+    correctAnswer: "would have",
+    explanation: "Past purchase affecting current finances.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_024",
+    type: "multiple-choice",
+    question: "If I ___ a morning person, I would have taken the early flight.",
+    options: ["were", "am", "had been", "was"],
+    correctAnswer: "were",
+    explanation: "Personal preference (2nd) affecting past choice (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_025",
+    type: "multiple-choice",
+    question: "If he hadn't wasted his money, he ___ afford the rent now.",
+    options: ["could", "can", "could have", "had"],
+    correctAnswer: "could",
+    explanation: "Past spending affecting current ability to pay.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_026",
+    type: "multiple-choice",
+    question: "If she ___ so shy, she would have made more friends at university.",
+    options: ["weren't", "isn't", "hadn't been", "wasn't"],
+    correctAnswer: "weren't",
+    explanation: "Ongoing shyness (2nd) limiting past social connections (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_027",
+    type: "multiple-choice",
+    question: "If I had learned to cook, I ___ on takeout every night now.",
+    options: ["wouldn't rely", "won't rely", "don't rely", "hadn't relied"],
+    correctAnswer: "wouldn't rely",
+    explanation: "Past skill acquisition affecting current habits.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_028",
+    type: "multiple-choice",
+    question: "If they ___ more adventurous, they would have tried skydiving.",
+    options: ["were", "are", "had been", "was"],
+    correctAnswer: "were",
+    explanation: "Personality trait (2nd) affecting past experience (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_029",
+    type: "multiple-choice",
+    question: "If she hadn't gotten the promotion, she ___ looking for a new job now.",
+    options: ["would be", "will be", "is", "had been"],
+    correctAnswer: "would be",
+    explanation: "Past career success affecting current situation.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_030",
+    type: "multiple-choice",
+    question: "If I ___ more outgoing, I would have asked her out.",
+    options: ["were", "am", "had been", "was"],
+    correctAnswer: "were",
+    explanation: "Personality (2nd) affecting past romantic action (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_031",
+    type: "multiple-choice",
+    question: "If he had exercised regularly, he ___ in better shape now.",
+    options: ["would be", "will be", "is", "had been"],
+    correctAnswer: "would be",
+    explanation: "Past exercise habits affecting current fitness.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_032",
+    type: "multiple-choice",
+    question: "If she ___ fluent in Spanish, she would have gotten the job in Madrid.",
+    options: ["were", "was", "had been", "is"],
+    correctAnswer: "were",
+    explanation: "Current skill level (2nd) affecting past opportunity (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_033",
+    type: "multiple-choice",
+    question: "If I hadn't lost my phone, I ___ able to contact you now.",
+    options: ["would be", "will be", "am", "had been"],
+    correctAnswer: "would be",
+    explanation: "Past loss affecting current communication ability.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_034",
+    type: "multiple-choice",
+    question: "If they ___ so traditional, they would have supported her decision.",
+    options: ["weren't", "aren't", "hadn't been", "wasn't"],
+    correctAnswer: "weren't",
+    explanation: "Ongoing values (2nd) affecting past support (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_035",
+    type: "multiple-choice",
+    question: "If he had taken the medicine, he ___ better today.",
+    options: ["would feel", "will feel", "feels", "had felt"],
+    correctAnswer: "would feel",
+    explanation: "Past medical compliance affecting current health.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_036",
+    type: "multiple-choice",
+    question: "If I ___ good at public speaking, I would have accepted the presentation.",
+    options: ["were", "am", "had been", "was"],
+    correctAnswer: "were",
+    explanation: "Current skill (2nd) affecting past decision (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_037",
+    type: "multiple-choice",
+    question: "If we hadn't adopted a dog, we ___ more freedom to travel now.",
+    options: ["would have", "will have", "have", "had"],
+    correctAnswer: "would have",
+    explanation: "Past decision affecting current lifestyle.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_038",
+    type: "multiple-choice",
+    question: "If he ___ more responsible, he wouldn't have lost his job.",
+    options: ["were", "was", "had been", "is"],
+    correctAnswer: "were",
+    explanation: "Character trait (2nd) causing past consequence (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_039",
+    type: "multiple-choice",
+    question: "If I had started saving earlier, I ___ worried about retirement now.",
+    options: ["wouldn't be", "won't be", "am not", "hadn't been"],
+    correctAnswer: "wouldn't be",
+    explanation: "Past financial habits affecting current concerns.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_040",
+    type: "multiple-choice",
+    question: "If she ___ so perfectionist, she would have finished the project faster.",
+    options: ["weren't", "isn't", "hadn't been", "wasn't"],
+    correctAnswer: "weren't",
+    explanation: "Ongoing perfectionism (2nd) slowing past work (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_041",
+    type: "multiple-choice",
+    question: "If they had learned English, they ___ able to understand the movie now.",
+    options: ["would be", "will be", "are", "had been"],
+    correctAnswer: "would be",
+    explanation: "Past learning affecting current comprehension.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_042",
+    type: "multiple-choice",
+    question: "If I ___ a better cook, I would have hosted more dinner parties.",
+    options: ["were", "am", "had been", "was"],
+    correctAnswer: "were",
+    explanation: "Current cooking skill (2nd) affecting past entertaining (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_043",
+    type: "multiple-choice",
+    question: "If he hadn't drunk so much coffee, he ___ sleeping now.",
+    options: ["would be", "will be", "is", "had been"],
+    correctAnswer: "would be",
+    explanation: "Past consumption affecting current sleep.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_044",
+    type: "multiple-choice",
+    question: "If they ___ more open-minded, they would have accepted the proposal.",
+    options: ["were", "are", "had been", "was"],
+    correctAnswer: "were",
+    explanation: "Attitude (2nd) affecting past decision (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_045",
+    type: "multiple-choice",
+    question: "If I had paid attention in class, I ___ struggling with this now.",
+    options: ["wouldn't be", "won't be", "am not", "hadn't been"],
+    correctAnswer: "wouldn't be",
+    explanation: "Past attention affecting current understanding.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_046",
+    type: "multiple-choice",
+    question: "If she ___ afraid of commitment, she would have said yes.",
+    options: ["weren't", "isn't", "hadn't been", "wasn't"],
+    correctAnswer: "weren't",
+    explanation: "Emotional state (2nd) affecting past response (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_047",
+    type: "multiple-choice",
+    question: "If we had fixed the roof, we ___ a leak problem now.",
+    options: ["wouldn't have", "won't have", "don't have", "hadn't had"],
+    correctAnswer: "wouldn't have",
+    explanation: "Past neglect causing current problem.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_048",
+    type: "multiple-choice",
+    question: "If he ___ better at managing money, he wouldn't have gone bankrupt.",
+    options: ["were", "was", "had been", "is"],
+    correctAnswer: "were",
+    explanation: "Financial skills (2nd) affecting past outcome (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_049",
+    type: "multiple-choice",
+    question: "If I hadn't forgotten the directions, we ___ lost now.",
+    options: ["wouldn't be", "won't be", "aren't", "hadn't been"],
+    correctAnswer: "wouldn't be",
+    explanation: "Past forgetfulness causing current situation.",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
+  {
+    id: "B2_MixedConditional_050",
+    type: "multiple-choice",
+    question: "If she ___ more tech-savvy, she would have figured out the app.",
+    options: ["were", "was", "had been", "is"],
+    correctAnswer: "were",
+    explanation: "Current tech skills (2nd) affecting past ability (3rd).",
+    category: "mixed-conditionals",
+    difficulty: "hard"
+  },
 ];
 
 // ==================== C1 LEVEL EXERCISES (placeholder) ====================
