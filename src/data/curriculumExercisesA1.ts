@@ -2,12 +2,11 @@
 import { Exercise } from "./exercisesData";
 
 // ====================================
-// VOCABULARY EXERCISES - A1 LEVEL
+// VOCABULARY EXERCISES - A1 LEVEL (20 themes)
 // ====================================
 const a1VocabExercises: Record<string, Exercise[]> = {
-  // a1-vocab-1: Numbers and colors
+  // a1-vocab-1: Numbers & Counting
   "a1-vocab-1": [
-    // === Numbers 1-20 (subSkill: a1-v1-1) ===
     {
       id: "a1-v1-e1",
       type: "multiple-choice",
@@ -16,7 +15,7 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       correctAnswer: "thirteen",
       explanation: "After twelve (12) comes thirteen (13).",
       difficulty: 1,
-      tags: ["numbers", "a1", "subskill:a1-v1-1"]
+      tags: ["numbers", "a1"]
     },
     {
       id: "a1-v1-e2",
@@ -26,7 +25,7 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       correctAnswer: "twelve",
       explanation: "5 + 7 = 12 (twelve).",
       difficulty: 1,
-      tags: ["numbers", "a1", "subskill:a1-v1-1"]
+      tags: ["numbers", "a1"]
     },
     {
       id: "a1-v1-e3",
@@ -36,7 +35,7 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       correctAnswer: "fourteen",
       explanation: "Before 15 comes 14 (fourteen).",
       difficulty: 1,
-      tags: ["numbers", "a1", "subskill:a1-v1-1"]
+      tags: ["numbers", "a1"]
     },
     {
       id: "a1-v1-e4",
@@ -46,136 +45,98 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       correctAnswer: "seventeen",
       explanation: "17 is written as 'seventeen'.",
       difficulty: 1,
-      tags: ["numbers", "a1", "subskill:a1-v1-1"]
+      tags: ["numbers", "a1"]
     },
     {
       id: "a1-v1-e5",
-      type: "multiple-choice",
-      question: "What is 8 + 3?",
-      options: ["ten", "eleven", "twelve", "nine"],
-      correctAnswer: "eleven",
-      explanation: "8 + 3 = 11 (eleven).",
-      difficulty: 1,
-      tags: ["numbers", "a1", "subskill:a1-v1-1"]
-    },
-    // === Numbers 20-100 (subSkill: a1-v1-2) ===
-    {
-      id: "a1-v1-e6",
-      type: "fill-blank",
-      question: "The number after nineteen is _____.",
-      options: ["twenty", "eighteen", "thirty", "fifteen"],
-      correctAnswer: "twenty",
-      explanation: "After 19 comes 20 (twenty).",
-      difficulty: 1,
-      tags: ["numbers", "a1", "subskill:a1-v1-2"]
-    },
-    {
-      id: "a1-v1-e7",
       type: "multiple-choice",
       question: "What is 30 + 20?",
       options: ["forty", "fifty", "sixty", "seventy"],
       correctAnswer: "fifty",
       explanation: "30 + 20 = 50 (fifty).",
       difficulty: 1,
-      tags: ["numbers", "a1", "subskill:a1-v1-2"]
+      tags: ["numbers", "a1"]
     },
     {
-      id: "a1-v1-e8",
-      type: "multiple-choice",
-      question: "How do you write '75' in words?",
-      options: ["sixty-five", "seventy-five", "eighty-five", "fifty-five"],
-      correctAnswer: "seventy-five",
-      explanation: "75 is written as 'seventy-five'.",
-      difficulty: 1,
-      tags: ["numbers", "a1", "subskill:a1-v1-2"]
-    },
-    {
-      id: "a1-v1-e9",
+      id: "a1-v1-e6",
       type: "fill-blank",
       question: "The number after ninety-nine is _____.",
       options: ["one hundred", "ninety-eight", "one thousand", "ninety"],
       correctAnswer: "one hundred",
       explanation: "After 99 comes 100 (one hundred).",
       difficulty: 1,
-      tags: ["numbers", "a1", "subskill:a1-v1-2"]
+      tags: ["numbers", "a1"]
     },
+  ],
+
+  // a1-vocab-2: Colors
+  "a1-vocab-2": [
     {
-      id: "a1-v1-e10",
-      type: "multiple-choice",
-      question: "What is 40 + 25?",
-      options: ["fifty-five", "sixty-five", "seventy-five", "forty-five"],
-      correctAnswer: "sixty-five",
-      explanation: "40 + 25 = 65 (sixty-five).",
-      difficulty: 1,
-      tags: ["numbers", "a1", "subskill:a1-v1-2"]
-    },
-    // === Primary colors (subSkill: a1-v1-3) ===
-    {
-      id: "a1-v1-e11",
+      id: "a1-v2-e1",
       type: "multiple-choice",
       question: "What color is the sky on a sunny day?",
       options: ["red", "green", "blue", "yellow"],
       correctAnswer: "blue",
       explanation: "The sky is blue on a sunny day.",
       difficulty: 1,
-      tags: ["colors", "a1", "subskill:a1-v1-3"]
+      tags: ["colors", "a1"]
     },
     {
-      id: "a1-v1-e12",
+      id: "a1-v2-e2",
       type: "multiple-choice",
       question: "Bananas are _____.",
       options: ["blue", "red", "yellow", "green"],
       correctAnswer: "yellow",
       explanation: "Bananas are yellow when ripe.",
       difficulty: 1,
-      tags: ["colors", "a1", "subskill:a1-v1-3"]
+      tags: ["colors", "a1"]
     },
     {
-      id: "a1-v1-e13",
+      id: "a1-v2-e3",
       type: "multiple-choice",
       question: "Grass is usually _____.",
       options: ["blue", "green", "red", "white"],
       correctAnswer: "green",
       explanation: "Grass is green.",
       difficulty: 1,
-      tags: ["colors", "a1", "subskill:a1-v1-3"]
+      tags: ["colors", "a1"]
     },
     {
-      id: "a1-v1-e14",
+      id: "a1-v2-e4",
       type: "multiple-choice",
       question: "What color do you get when you mix red and yellow?",
       options: ["purple", "green", "orange", "pink"],
       correctAnswer: "orange",
       explanation: "Red + Yellow = Orange.",
       difficulty: 1,
-      tags: ["colors", "a1", "subskill:a1-v1-3"]
+      tags: ["colors", "a1"]
     },
     {
-      id: "a1-v1-e15",
+      id: "a1-v2-e5",
       type: "fill-blank",
       question: "Snow is _____.",
       options: ["white", "black", "gray", "blue"],
       correctAnswer: "white",
       explanation: "Snow is white.",
       difficulty: 1,
-      tags: ["colors", "a1", "subskill:a1-v1-3"]
+      tags: ["colors", "a1"]
     },
     {
-      id: "a1-v1-e16",
+      id: "a1-v2-e6",
       type: "multiple-choice",
       question: "What color is a fire truck?",
       options: ["blue", "green", "red", "yellow"],
       correctAnswer: "red",
       explanation: "Fire trucks are typically red.",
       difficulty: 1,
-      tags: ["colors", "a1", "subskill:a1-v1-3"]
+      tags: ["colors", "a1"]
     },
   ],
 
-  // a1-vocab-2: Family and people
-  "a1-vocab-2": [
+  // a1-vocab-3: Family Members
+  "a1-vocab-3": [
     {
-      id: "a1-v2-e1",
+      id: "a1-v3-e1",
       type: "multiple-choice",
       question: "Your mother's mother is your _____.",
       options: ["aunt", "sister", "grandmother", "cousin"],
@@ -185,7 +146,7 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       tags: ["family", "a1"]
     },
     {
-      id: "a1-v2-e2",
+      id: "a1-v3-e2",
       type: "multiple-choice",
       question: "Your father's brother is your _____.",
       options: ["uncle", "cousin", "brother", "grandfather"],
@@ -195,27 +156,7 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       tags: ["family", "a1"]
     },
     {
-      id: "a1-v2-e3",
-      type: "multiple-choice",
-      question: "A person who teaches at school is a _____.",
-      options: ["doctor", "teacher", "driver", "singer"],
-      correctAnswer: "teacher",
-      explanation: "A teacher works at school and teaches students.",
-      difficulty: 1,
-      tags: ["professions", "a1"]
-    },
-    {
-      id: "a1-v2-e4",
-      type: "multiple-choice",
-      question: "A person who helps sick people is a _____.",
-      options: ["teacher", "chef", "doctor", "pilot"],
-      correctAnswer: "doctor",
-      explanation: "A doctor helps sick people get better.",
-      difficulty: 1,
-      tags: ["professions", "a1"]
-    },
-    {
-      id: "a1-v2-e5",
+      id: "a1-v3-e3",
       type: "fill-blank",
       question: "My mother and my father are my _____.",
       options: ["parents", "children", "siblings", "friends"],
@@ -225,7 +166,7 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       tags: ["family", "a1"]
     },
     {
-      id: "a1-v2-e6",
+      id: "a1-v3-e4",
       type: "multiple-choice",
       question: "Your sister's son is your _____.",
       options: ["cousin", "nephew", "son", "brother"],
@@ -235,17 +176,7 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       tags: ["family", "a1"]
     },
     {
-      id: "a1-v2-e7",
-      type: "multiple-choice",
-      question: "A person who flies airplanes is a _____.",
-      options: ["driver", "captain", "pilot", "mechanic"],
-      correctAnswer: "pilot",
-      explanation: "A pilot flies airplanes.",
-      difficulty: 1,
-      tags: ["professions", "a1"]
-    },
-    {
-      id: "a1-v2-e8",
+      id: "a1-v3-e5",
       type: "fill-blank",
       question: "My father's father is my _____.",
       options: ["grandfather", "grandmother", "uncle", "brother"],
@@ -254,93 +185,19 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       difficulty: 1,
       tags: ["family", "a1"]
     },
-  ],
-
-  // a1-vocab-3: Everyday objects
-  "a1-vocab-3": [
-    {
-      id: "a1-v3-e1",
-      type: "multiple-choice",
-      question: "You sleep in a _____.",
-      options: ["chair", "table", "bed", "desk"],
-      correctAnswer: "bed",
-      explanation: "A bed is for sleeping.",
-      difficulty: 1,
-      tags: ["objects", "a1"]
-    },
-    {
-      id: "a1-v3-e2",
-      type: "multiple-choice",
-      question: "You write with a _____.",
-      options: ["book", "pen", "ruler", "eraser"],
-      correctAnswer: "pen",
-      explanation: "We use a pen to write.",
-      difficulty: 1,
-      tags: ["objects", "a1"]
-    },
-    {
-      id: "a1-v3-e3",
-      type: "multiple-choice",
-      question: "You sit on a _____.",
-      options: ["table", "lamp", "chair", "window"],
-      correctAnswer: "chair",
-      explanation: "We sit on chairs.",
-      difficulty: 1,
-      tags: ["objects", "a1"]
-    },
-    {
-      id: "a1-v3-e4",
-      type: "fill-blank",
-      question: "I read a _____ to learn new things.",
-      options: ["book", "pencil", "chair", "clock"],
-      correctAnswer: "book",
-      explanation: "We read books to learn.",
-      difficulty: 1,
-      tags: ["objects", "a1"]
-    },
-    {
-      id: "a1-v3-e5",
-      type: "multiple-choice",
-      question: "You look at the _____ to know the time.",
-      options: ["door", "window", "clock", "floor"],
-      correctAnswer: "clock",
-      explanation: "A clock tells us the time.",
-      difficulty: 1,
-      tags: ["objects", "a1"]
-    },
     {
       id: "a1-v3-e6",
       type: "multiple-choice",
-      question: "You use a _____ to erase mistakes.",
-      options: ["pen", "pencil", "eraser", "ruler"],
-      correctAnswer: "eraser",
-      explanation: "An eraser removes pencil marks.",
+      question: "Your mother's sister is your _____.",
+      options: ["aunt", "grandmother", "sister", "cousin"],
+      correctAnswer: "aunt",
+      explanation: "Your mother's sister is your aunt.",
       difficulty: 1,
-      tags: ["objects", "a1"]
-    },
-    {
-      id: "a1-v3-e7",
-      type: "fill-blank",
-      question: "Students carry their books in a _____.",
-      options: ["backpack", "hat", "shoe", "glove"],
-      correctAnswer: "backpack",
-      explanation: "A backpack is a bag for carrying books.",
-      difficulty: 1,
-      tags: ["objects", "a1"]
-    },
-    {
-      id: "a1-v3-e8",
-      type: "multiple-choice",
-      question: "You open a _____ to enter a room.",
-      options: ["window", "door", "table", "floor"],
-      correctAnswer: "door",
-      explanation: "A door is the entrance to a room.",
-      difficulty: 1,
-      tags: ["objects", "a1"]
+      tags: ["family", "a1"]
     },
   ],
 
-  // a1-vocab-4: Basic food and drink
+  // a1-vocab-4: Basic Food
   "a1-vocab-4": [
     {
       id: "a1-v4-e1",
@@ -355,16 +212,6 @@ const a1VocabExercises: Record<string, Exercise[]> = {
     {
       id: "a1-v4-e2",
       type: "multiple-choice",
-      question: "We drink _____ in the morning with breakfast.",
-      options: ["pizza", "coffee", "salad", "chicken"],
-      correctAnswer: "coffee",
-      explanation: "Many people drink coffee in the morning.",
-      difficulty: 1,
-      tags: ["drinks", "a1"]
-    },
-    {
-      id: "a1-v4-e3",
-      type: "multiple-choice",
       question: "A carrot is a _____.",
       options: ["fruit", "vegetable", "drink", "dessert"],
       correctAnswer: "vegetable",
@@ -373,37 +220,7 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       tags: ["food", "a1"]
     },
     {
-      id: "a1-v4-e4",
-      type: "fill-blank",
-      question: "I drink _____ when I'm thirsty.",
-      options: ["water", "bread", "rice", "cheese"],
-      correctAnswer: "water",
-      explanation: "Water is the best drink when you're thirsty.",
-      difficulty: 1,
-      tags: ["drinks", "a1"]
-    },
-    {
-      id: "a1-v4-e5",
-      type: "multiple-choice",
-      question: "Milk comes from _____.",
-      options: ["trees", "cows", "fish", "birds"],
-      correctAnswer: "cows",
-      explanation: "Cows produce milk.",
-      difficulty: 1,
-      tags: ["drinks", "a1"]
-    },
-    {
-      id: "a1-v4-e6",
-      type: "multiple-choice",
-      question: "A banana is _____.",
-      options: ["red", "green", "yellow", "blue"],
-      correctAnswer: "yellow",
-      explanation: "Ripe bananas are yellow.",
-      difficulty: 1,
-      tags: ["food", "a1"]
-    },
-    {
-      id: "a1-v4-e7",
+      id: "a1-v4-e3",
       type: "fill-blank",
       question: "We make sandwiches with _____.",
       options: ["bread", "water", "juice", "milk"],
@@ -413,7 +230,71 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       tags: ["food", "a1"]
     },
     {
-      id: "a1-v4-e8",
+      id: "a1-v4-e4",
+      type: "multiple-choice",
+      question: "Eggs come from _____.",
+      options: ["cows", "pigs", "chickens", "dogs"],
+      correctAnswer: "chickens",
+      explanation: "Chickens lay eggs.",
+      difficulty: 1,
+      tags: ["food", "a1"]
+    },
+    {
+      id: "a1-v4-e5",
+      type: "multiple-choice",
+      question: "Rice is a popular food in _____.",
+      options: ["Asia", "only Japan", "only China", "Antarctica"],
+      correctAnswer: "Asia",
+      explanation: "Rice is popular in many Asian countries.",
+      difficulty: 1,
+      tags: ["food", "a1"]
+    },
+    {
+      id: "a1-v4-e6",
+      type: "fill-blank",
+      question: "For breakfast, many people eat _____ with milk.",
+      options: ["cereal", "pizza", "steak", "soup"],
+      correctAnswer: "cereal",
+      explanation: "Cereal with milk is a common breakfast.",
+      difficulty: 1,
+      tags: ["food", "a1"]
+    },
+  ],
+
+  // a1-vocab-5: Beverages
+  "a1-vocab-5": [
+    {
+      id: "a1-v5-e1",
+      type: "multiple-choice",
+      question: "We drink _____ in the morning with breakfast.",
+      options: ["pizza", "coffee", "salad", "chicken"],
+      correctAnswer: "coffee",
+      explanation: "Many people drink coffee in the morning.",
+      difficulty: 1,
+      tags: ["drinks", "a1"]
+    },
+    {
+      id: "a1-v5-e2",
+      type: "fill-blank",
+      question: "I drink _____ when I'm thirsty.",
+      options: ["water", "bread", "rice", "cheese"],
+      correctAnswer: "water",
+      explanation: "Water is the best drink when you're thirsty.",
+      difficulty: 1,
+      tags: ["drinks", "a1"]
+    },
+    {
+      id: "a1-v5-e3",
+      type: "multiple-choice",
+      question: "Milk comes from _____.",
+      options: ["trees", "cows", "fish", "birds"],
+      correctAnswer: "cows",
+      explanation: "Cows produce milk.",
+      difficulty: 1,
+      tags: ["drinks", "a1"]
+    },
+    {
+      id: "a1-v5-e4",
       type: "multiple-choice",
       question: "Orange juice comes from _____.",
       options: ["apples", "oranges", "grapes", "lemons"],
@@ -421,6 +302,986 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       explanation: "Orange juice is made from oranges.",
       difficulty: 1,
       tags: ["drinks", "a1"]
+    },
+    {
+      id: "a1-v5-e5",
+      type: "fill-blank",
+      question: "_____ is a hot drink made from leaves.",
+      options: ["Tea", "Soda", "Juice", "Milk"],
+      correctAnswer: "Tea",
+      explanation: "Tea is made by steeping tea leaves in hot water.",
+      difficulty: 1,
+      tags: ["drinks", "a1"]
+    },
+    {
+      id: "a1-v5-e6",
+      type: "multiple-choice",
+      question: "A fizzy, sweet drink is called _____.",
+      options: ["water", "milk", "soda", "tea"],
+      correctAnswer: "soda",
+      explanation: "Soda (or soft drink) is sweet and fizzy.",
+      difficulty: 1,
+      tags: ["drinks", "a1"]
+    },
+  ],
+
+  // a1-vocab-6: Common Animals
+  "a1-vocab-6": [
+    {
+      id: "a1-v6-e1",
+      type: "multiple-choice",
+      question: "A _____ barks.",
+      options: ["cat", "bird", "dog", "fish"],
+      correctAnswer: "dog",
+      explanation: "Dogs bark. Cats meow, birds chirp.",
+      difficulty: 1,
+      tags: ["animals", "a1"]
+    },
+    {
+      id: "a1-v6-e2",
+      type: "multiple-choice",
+      question: "A _____ meows.",
+      options: ["dog", "cat", "cow", "horse"],
+      correctAnswer: "cat",
+      explanation: "Cats meow.",
+      difficulty: 1,
+      tags: ["animals", "a1"]
+    },
+    {
+      id: "a1-v6-e3",
+      type: "fill-blank",
+      question: "_____ can fly.",
+      options: ["Birds", "Dogs", "Cats", "Fish"],
+      correctAnswer: "Birds",
+      explanation: "Birds have wings and can fly.",
+      difficulty: 1,
+      tags: ["animals", "a1"]
+    },
+    {
+      id: "a1-v6-e4",
+      type: "multiple-choice",
+      question: "_____ live in water.",
+      options: ["Dogs", "Cats", "Fish", "Birds"],
+      correctAnswer: "Fish",
+      explanation: "Fish live in water and breathe through gills.",
+      difficulty: 1,
+      tags: ["animals", "a1"]
+    },
+    {
+      id: "a1-v6-e5",
+      type: "multiple-choice",
+      question: "Cows give us _____.",
+      options: ["eggs", "milk", "wool", "honey"],
+      correctAnswer: "milk",
+      explanation: "Cows produce milk.",
+      difficulty: 1,
+      tags: ["animals", "a1"]
+    },
+    {
+      id: "a1-v6-e6",
+      type: "fill-blank",
+      question: "You can ride a _____.",
+      options: ["horse", "cat", "fish", "bird"],
+      correctAnswer: "horse",
+      explanation: "Horses are large animals you can ride.",
+      difficulty: 1,
+      tags: ["animals", "a1"]
+    },
+  ],
+
+  // a1-vocab-7: Body Parts
+  "a1-vocab-7": [
+    {
+      id: "a1-v7-e1",
+      type: "multiple-choice",
+      question: "You see with your _____.",
+      options: ["ears", "nose", "eyes", "mouth"],
+      correctAnswer: "eyes",
+      explanation: "We use our eyes to see.",
+      difficulty: 1,
+      tags: ["body", "a1"]
+    },
+    {
+      id: "a1-v7-e2",
+      type: "multiple-choice",
+      question: "You hear with your _____.",
+      options: ["eyes", "ears", "nose", "hands"],
+      correctAnswer: "ears",
+      explanation: "We use our ears to hear.",
+      difficulty: 1,
+      tags: ["body", "a1"]
+    },
+    {
+      id: "a1-v7-e3",
+      type: "fill-blank",
+      question: "You smell with your _____.",
+      options: ["nose", "ear", "hand", "foot"],
+      correctAnswer: "nose",
+      explanation: "We use our nose to smell.",
+      difficulty: 1,
+      tags: ["body", "a1"]
+    },
+    {
+      id: "a1-v7-e4",
+      type: "multiple-choice",
+      question: "You walk with your _____.",
+      options: ["hands", "head", "feet", "eyes"],
+      correctAnswer: "feet",
+      explanation: "We use our feet to walk.",
+      difficulty: 1,
+      tags: ["body", "a1"]
+    },
+    {
+      id: "a1-v7-e5",
+      type: "multiple-choice",
+      question: "The _____ is the top part of your body.",
+      options: ["foot", "hand", "head", "arm"],
+      correctAnswer: "head",
+      explanation: "The head is at the top of your body.",
+      difficulty: 1,
+      tags: ["body", "a1"]
+    },
+    {
+      id: "a1-v7-e6",
+      type: "fill-blank",
+      question: "Wash your _____ before eating.",
+      options: ["hands", "feet", "ears", "eyes"],
+      correctAnswer: "hands",
+      explanation: "We should wash our hands before eating.",
+      difficulty: 1,
+      tags: ["body", "a1"]
+    },
+  ],
+
+  // a1-vocab-8: Basic Clothing
+  "a1-vocab-8": [
+    {
+      id: "a1-v8-e1",
+      type: "multiple-choice",
+      question: "You wear a _____ on your head.",
+      options: ["shirt", "pants", "hat", "shoes"],
+      correctAnswer: "hat",
+      explanation: "A hat is worn on your head.",
+      difficulty: 1,
+      tags: ["clothing", "a1"]
+    },
+    {
+      id: "a1-v8-e2",
+      type: "multiple-choice",
+      question: "You wear _____ on your feet.",
+      options: ["gloves", "hats", "shirts", "shoes"],
+      correctAnswer: "shoes",
+      explanation: "Shoes are worn on your feet.",
+      difficulty: 1,
+      tags: ["clothing", "a1"]
+    },
+    {
+      id: "a1-v8-e3",
+      type: "fill-blank",
+      question: "A _____ is clothing for your legs.",
+      options: ["pants", "hat", "shirt", "scarf"],
+      correctAnswer: "pants",
+      explanation: "Pants (or trousers) cover your legs.",
+      difficulty: 1,
+      tags: ["clothing", "a1"]
+    },
+    {
+      id: "a1-v8-e4",
+      type: "multiple-choice",
+      question: "When it's cold, you wear a _____.",
+      options: ["swimsuit", "jacket", "shorts", "sandals"],
+      correctAnswer: "jacket",
+      explanation: "A jacket keeps you warm in cold weather.",
+      difficulty: 1,
+      tags: ["clothing", "a1"]
+    },
+    {
+      id: "a1-v8-e5",
+      type: "multiple-choice",
+      question: "A _____ is a one-piece garment for women.",
+      options: ["shirt", "pants", "dress", "hat"],
+      correctAnswer: "dress",
+      explanation: "A dress is a one-piece garment typically worn by women.",
+      difficulty: 1,
+      tags: ["clothing", "a1"]
+    },
+    {
+      id: "a1-v8-e6",
+      type: "fill-blank",
+      question: "Put on _____ to keep your hands warm.",
+      options: ["gloves", "shoes", "hat", "shirt"],
+      correctAnswer: "gloves",
+      explanation: "Gloves keep your hands warm.",
+      difficulty: 1,
+      tags: ["clothing", "a1"]
+    },
+  ],
+
+  // a1-vocab-9: Rooms & Home
+  "a1-vocab-9": [
+    {
+      id: "a1-v9-e1",
+      type: "multiple-choice",
+      question: "You sleep in the _____.",
+      options: ["kitchen", "bedroom", "bathroom", "garage"],
+      correctAnswer: "bedroom",
+      explanation: "The bedroom is for sleeping.",
+      difficulty: 1,
+      tags: ["home", "a1"]
+    },
+    {
+      id: "a1-v9-e2",
+      type: "multiple-choice",
+      question: "You cook food in the _____.",
+      options: ["bedroom", "bathroom", "kitchen", "living room"],
+      correctAnswer: "kitchen",
+      explanation: "The kitchen is for cooking.",
+      difficulty: 1,
+      tags: ["home", "a1"]
+    },
+    {
+      id: "a1-v9-e3",
+      type: "fill-blank",
+      question: "You take a shower in the _____.",
+      options: ["bathroom", "kitchen", "bedroom", "garden"],
+      correctAnswer: "bathroom",
+      explanation: "The bathroom has a shower and toilet.",
+      difficulty: 1,
+      tags: ["home", "a1"]
+    },
+    {
+      id: "a1-v9-e4",
+      type: "multiple-choice",
+      question: "The _____ is where you watch TV and relax.",
+      options: ["bathroom", "kitchen", "living room", "garage"],
+      correctAnswer: "living room",
+      explanation: "The living room is for relaxing.",
+      difficulty: 1,
+      tags: ["home", "a1"]
+    },
+    {
+      id: "a1-v9-e5",
+      type: "multiple-choice",
+      question: "You open a _____ to enter a room.",
+      options: ["window", "door", "table", "floor"],
+      correctAnswer: "door",
+      explanation: "A door is the entrance to a room.",
+      difficulty: 1,
+      tags: ["home", "a1"]
+    },
+    {
+      id: "a1-v9-e6",
+      type: "fill-blank",
+      question: "Open the _____ to let in fresh air.",
+      options: ["window", "door", "floor", "wall"],
+      correctAnswer: "window",
+      explanation: "Windows let in light and air.",
+      difficulty: 1,
+      tags: ["home", "a1"]
+    },
+  ],
+
+  // a1-vocab-10: Basic Furniture
+  "a1-vocab-10": [
+    {
+      id: "a1-v10-e1",
+      type: "multiple-choice",
+      question: "You sleep on a _____.",
+      options: ["chair", "table", "bed", "desk"],
+      correctAnswer: "bed",
+      explanation: "A bed is for sleeping.",
+      difficulty: 1,
+      tags: ["furniture", "a1"]
+    },
+    {
+      id: "a1-v10-e2",
+      type: "multiple-choice",
+      question: "You sit on a _____.",
+      options: ["table", "lamp", "chair", "window"],
+      correctAnswer: "chair",
+      explanation: "We sit on chairs.",
+      difficulty: 1,
+      tags: ["furniture", "a1"]
+    },
+    {
+      id: "a1-v10-e3",
+      type: "fill-blank",
+      question: "Put your books on the _____.",
+      options: ["table", "floor", "window", "door"],
+      correctAnswer: "table",
+      explanation: "A table has a flat top for putting things on.",
+      difficulty: 1,
+      tags: ["furniture", "a1"]
+    },
+    {
+      id: "a1-v10-e4",
+      type: "multiple-choice",
+      question: "A _____ gives light in a room.",
+      options: ["chair", "table", "lamp", "bed"],
+      correctAnswer: "lamp",
+      explanation: "A lamp provides light.",
+      difficulty: 1,
+      tags: ["furniture", "a1"]
+    },
+    {
+      id: "a1-v10-e5",
+      type: "multiple-choice",
+      question: "A long comfortable seat for two or more people is a _____.",
+      options: ["chair", "sofa", "stool", "desk"],
+      correctAnswer: "sofa",
+      explanation: "A sofa (or couch) seats multiple people.",
+      difficulty: 1,
+      tags: ["furniture", "a1"]
+    },
+    {
+      id: "a1-v10-e6",
+      type: "fill-blank",
+      question: "Students sit at a _____ in school.",
+      options: ["desk", "bed", "sofa", "lamp"],
+      correctAnswer: "desk",
+      explanation: "A desk is a table for working or studying.",
+      difficulty: 1,
+      tags: ["furniture", "a1"]
+    },
+  ],
+
+  // a1-vocab-11: Days of the Week
+  "a1-vocab-11": [
+    {
+      id: "a1-v11-e1",
+      type: "multiple-choice",
+      question: "The first day of the work week is _____.",
+      options: ["Sunday", "Monday", "Friday", "Saturday"],
+      correctAnswer: "Monday",
+      explanation: "Monday is the first day of the work week.",
+      difficulty: 1,
+      tags: ["days", "a1"]
+    },
+    {
+      id: "a1-v11-e2",
+      type: "multiple-choice",
+      question: "The day after Thursday is _____.",
+      options: ["Wednesday", "Friday", "Saturday", "Sunday"],
+      correctAnswer: "Friday",
+      explanation: "Friday comes after Thursday.",
+      difficulty: 1,
+      tags: ["days", "a1"]
+    },
+    {
+      id: "a1-v11-e3",
+      type: "fill-blank",
+      question: "The weekend days are Saturday and _____.",
+      options: ["Sunday", "Monday", "Friday", "Tuesday"],
+      correctAnswer: "Sunday",
+      explanation: "Saturday and Sunday are the weekend.",
+      difficulty: 1,
+      tags: ["days", "a1"]
+    },
+    {
+      id: "a1-v11-e4",
+      type: "multiple-choice",
+      question: "The day before Friday is _____.",
+      options: ["Saturday", "Thursday", "Wednesday", "Sunday"],
+      correctAnswer: "Thursday",
+      explanation: "Thursday comes before Friday.",
+      difficulty: 1,
+      tags: ["days", "a1"]
+    },
+    {
+      id: "a1-v11-e5",
+      type: "multiple-choice",
+      question: "_____ is in the middle of the work week.",
+      options: ["Monday", "Wednesday", "Friday", "Sunday"],
+      correctAnswer: "Wednesday",
+      explanation: "Wednesday is the middle of the work week.",
+      difficulty: 1,
+      tags: ["days", "a1"]
+    },
+    {
+      id: "a1-v11-e6",
+      type: "fill-blank",
+      question: "Today is Monday. Tomorrow is _____.",
+      options: ["Tuesday", "Sunday", "Wednesday", "Saturday"],
+      correctAnswer: "Tuesday",
+      explanation: "Tuesday comes after Monday.",
+      difficulty: 1,
+      tags: ["days", "a1"]
+    },
+  ],
+
+  // a1-vocab-12: Months of the Year
+  "a1-vocab-12": [
+    {
+      id: "a1-v12-e1",
+      type: "multiple-choice",
+      question: "The first month of the year is _____.",
+      options: ["December", "January", "February", "March"],
+      correctAnswer: "January",
+      explanation: "January is the first month.",
+      difficulty: 1,
+      tags: ["months", "a1"]
+    },
+    {
+      id: "a1-v12-e2",
+      type: "multiple-choice",
+      question: "The last month of the year is _____.",
+      options: ["November", "October", "December", "January"],
+      correctAnswer: "December",
+      explanation: "December is the last month.",
+      difficulty: 1,
+      tags: ["months", "a1"]
+    },
+    {
+      id: "a1-v12-e3",
+      type: "fill-blank",
+      question: "February has _____ days in most years.",
+      options: ["28", "30", "31", "29"],
+      correctAnswer: "28",
+      explanation: "February has 28 days (29 in leap years).",
+      difficulty: 1,
+      tags: ["months", "a1"]
+    },
+    {
+      id: "a1-v12-e4",
+      type: "multiple-choice",
+      question: "Christmas is in _____.",
+      options: ["January", "July", "December", "April"],
+      correctAnswer: "December",
+      explanation: "Christmas is celebrated in December.",
+      difficulty: 1,
+      tags: ["months", "a1"]
+    },
+    {
+      id: "a1-v12-e5",
+      type: "multiple-choice",
+      question: "Spring begins in _____.",
+      options: ["December", "March", "August", "November"],
+      correctAnswer: "March",
+      explanation: "Spring typically starts in March.",
+      difficulty: 1,
+      tags: ["months", "a1"]
+    },
+    {
+      id: "a1-v12-e6",
+      type: "fill-blank",
+      question: "The month after May is _____.",
+      options: ["June", "April", "July", "August"],
+      correctAnswer: "June",
+      explanation: "June comes after May.",
+      difficulty: 1,
+      tags: ["months", "a1"]
+    },
+  ],
+
+  // a1-vocab-13: Basic Weather
+  "a1-vocab-13": [
+    {
+      id: "a1-v13-e1",
+      type: "multiple-choice",
+      question: "When the sun is shining, it is _____.",
+      options: ["rainy", "cloudy", "sunny", "windy"],
+      correctAnswer: "sunny",
+      explanation: "Sunny means the sun is shining.",
+      difficulty: 1,
+      tags: ["weather", "a1"]
+    },
+    {
+      id: "a1-v13-e2",
+      type: "multiple-choice",
+      question: "Take an umbrella when it is _____.",
+      options: ["sunny", "rainy", "hot", "cold"],
+      correctAnswer: "rainy",
+      explanation: "An umbrella protects you from rain.",
+      difficulty: 1,
+      tags: ["weather", "a1"]
+    },
+    {
+      id: "a1-v13-e3",
+      type: "fill-blank",
+      question: "When it's _____, wear a jacket.",
+      options: ["cold", "hot", "sunny", "warm"],
+      correctAnswer: "cold",
+      explanation: "A jacket keeps you warm when it's cold.",
+      difficulty: 1,
+      tags: ["weather", "a1"]
+    },
+    {
+      id: "a1-v13-e4",
+      type: "multiple-choice",
+      question: "In summer, the weather is usually _____.",
+      options: ["cold", "hot", "snowy", "freezing"],
+      correctAnswer: "hot",
+      explanation: "Summer is typically hot.",
+      difficulty: 1,
+      tags: ["weather", "a1"]
+    },
+    {
+      id: "a1-v13-e5",
+      type: "multiple-choice",
+      question: "When the sky is gray with clouds, it is _____.",
+      options: ["sunny", "cloudy", "clear", "bright"],
+      correctAnswer: "cloudy",
+      explanation: "Cloudy means lots of clouds in the sky.",
+      difficulty: 1,
+      tags: ["weather", "a1"]
+    },
+    {
+      id: "a1-v13-e6",
+      type: "fill-blank",
+      question: "It's very _____ today - hold onto your hat!",
+      options: ["windy", "calm", "quiet", "still"],
+      correctAnswer: "windy",
+      explanation: "Windy means there is strong wind.",
+      difficulty: 1,
+      tags: ["weather", "a1"]
+    },
+  ],
+
+  // a1-vocab-14: School & Classroom
+  "a1-vocab-14": [
+    {
+      id: "a1-v14-e1",
+      type: "multiple-choice",
+      question: "A _____ teaches students at school.",
+      options: ["doctor", "teacher", "driver", "chef"],
+      correctAnswer: "teacher",
+      explanation: "A teacher teaches students.",
+      difficulty: 1,
+      tags: ["school", "a1"]
+    },
+    {
+      id: "a1-v14-e2",
+      type: "multiple-choice",
+      question: "A person who learns at school is a _____.",
+      options: ["teacher", "student", "doctor", "driver"],
+      correctAnswer: "student",
+      explanation: "Students learn at school.",
+      difficulty: 1,
+      tags: ["school", "a1"]
+    },
+    {
+      id: "a1-v14-e3",
+      type: "fill-blank",
+      question: "You write with a _____.",
+      options: ["pencil", "book", "chair", "window"],
+      correctAnswer: "pencil",
+      explanation: "A pencil is used for writing.",
+      difficulty: 1,
+      tags: ["school", "a1"]
+    },
+    {
+      id: "a1-v14-e4",
+      type: "multiple-choice",
+      question: "You read a _____ to learn new things.",
+      options: ["pencil", "eraser", "book", "ruler"],
+      correctAnswer: "book",
+      explanation: "Books contain information for learning.",
+      difficulty: 1,
+      tags: ["school", "a1"]
+    },
+    {
+      id: "a1-v14-e5",
+      type: "multiple-choice",
+      question: "Students have lessons in a _____.",
+      options: ["bathroom", "kitchen", "classroom", "bedroom"],
+      correctAnswer: "classroom",
+      explanation: "A classroom is where lessons take place.",
+      difficulty: 1,
+      tags: ["school", "a1"]
+    },
+    {
+      id: "a1-v14-e6",
+      type: "fill-blank",
+      question: "Use an _____ to remove pencil mistakes.",
+      options: ["eraser", "pen", "book", "ruler"],
+      correctAnswer: "eraser",
+      explanation: "An eraser removes pencil marks.",
+      difficulty: 1,
+      tags: ["school", "a1"]
+    },
+  ],
+
+  // a1-vocab-15: Basic Jobs
+  "a1-vocab-15": [
+    {
+      id: "a1-v15-e1",
+      type: "multiple-choice",
+      question: "A _____ helps sick people get better.",
+      options: ["teacher", "chef", "doctor", "pilot"],
+      correctAnswer: "doctor",
+      explanation: "Doctors treat sick people.",
+      difficulty: 1,
+      tags: ["jobs", "a1"]
+    },
+    {
+      id: "a1-v15-e2",
+      type: "multiple-choice",
+      question: "A _____ cooks food in a restaurant.",
+      options: ["doctor", "driver", "chef", "teacher"],
+      correctAnswer: "chef",
+      explanation: "A chef prepares food.",
+      difficulty: 1,
+      tags: ["jobs", "a1"]
+    },
+    {
+      id: "a1-v15-e3",
+      type: "fill-blank",
+      question: "A _____ flies airplanes.",
+      options: ["pilot", "driver", "captain", "doctor"],
+      correctAnswer: "pilot",
+      explanation: "Pilots fly airplanes.",
+      difficulty: 1,
+      tags: ["jobs", "a1"]
+    },
+    {
+      id: "a1-v15-e4",
+      type: "multiple-choice",
+      question: "A _____ keeps order and helps people in emergencies.",
+      options: ["chef", "police officer", "teacher", "pilot"],
+      correctAnswer: "police officer",
+      explanation: "Police officers protect people and maintain order.",
+      difficulty: 1,
+      tags: ["jobs", "a1"]
+    },
+    {
+      id: "a1-v15-e5",
+      type: "multiple-choice",
+      question: "A _____ cares for patients in a hospital.",
+      options: ["teacher", "nurse", "chef", "driver"],
+      correctAnswer: "nurse",
+      explanation: "Nurses care for sick patients.",
+      difficulty: 1,
+      tags: ["jobs", "a1"]
+    },
+    {
+      id: "a1-v15-e6",
+      type: "fill-blank",
+      question: "A taxi _____ takes passengers to their destination.",
+      options: ["driver", "pilot", "chef", "nurse"],
+      correctAnswer: "driver",
+      explanation: "Taxi drivers transport passengers.",
+      difficulty: 1,
+      tags: ["jobs", "a1"]
+    },
+  ],
+
+  // a1-vocab-16: Basic Transportation
+  "a1-vocab-16": [
+    {
+      id: "a1-v16-e1",
+      type: "multiple-choice",
+      question: "A _____ has four wheels and you drive it.",
+      options: ["bicycle", "train", "car", "airplane"],
+      correctAnswer: "car",
+      explanation: "A car is a four-wheeled vehicle.",
+      difficulty: 1,
+      tags: ["transport", "a1"]
+    },
+    {
+      id: "a1-v16-e2",
+      type: "multiple-choice",
+      question: "A _____ runs on rails.",
+      options: ["car", "bus", "bicycle", "train"],
+      correctAnswer: "train",
+      explanation: "Trains travel on railway tracks.",
+      difficulty: 1,
+      tags: ["transport", "a1"]
+    },
+    {
+      id: "a1-v16-e3",
+      type: "fill-blank",
+      question: "A _____ has two wheels and you pedal it.",
+      options: ["bicycle", "car", "bus", "airplane"],
+      correctAnswer: "bicycle",
+      explanation: "A bicycle (bike) has two wheels.",
+      difficulty: 1,
+      tags: ["transport", "a1"]
+    },
+    {
+      id: "a1-v16-e4",
+      type: "multiple-choice",
+      question: "An _____ flies in the sky.",
+      options: ["train", "bus", "airplane", "car"],
+      correctAnswer: "airplane",
+      explanation: "Airplanes fly through the air.",
+      difficulty: 1,
+      tags: ["transport", "a1"]
+    },
+    {
+      id: "a1-v16-e5",
+      type: "multiple-choice",
+      question: "A _____ is a large vehicle that carries many passengers.",
+      options: ["car", "bicycle", "bus", "motorcycle"],
+      correctAnswer: "bus",
+      explanation: "Buses carry many people.",
+      difficulty: 1,
+      tags: ["transport", "a1"]
+    },
+    {
+      id: "a1-v16-e6",
+      type: "fill-blank",
+      question: "Ships and boats travel on _____.",
+      options: ["water", "rails", "roads", "air"],
+      correctAnswer: "water",
+      explanation: "Boats and ships travel on water.",
+      difficulty: 1,
+      tags: ["transport", "a1"]
+    },
+  ],
+
+  // a1-vocab-17: Greetings & Phrases
+  "a1-vocab-17": [
+    {
+      id: "a1-v17-e1",
+      type: "multiple-choice",
+      question: "When you meet someone, you say _____.",
+      options: ["Goodbye", "Hello", "Sorry", "Thanks"],
+      correctAnswer: "Hello",
+      explanation: "Hello is a greeting when meeting someone.",
+      difficulty: 1,
+      tags: ["greetings", "a1"]
+    },
+    {
+      id: "a1-v17-e2",
+      type: "multiple-choice",
+      question: "When you leave, you say _____.",
+      options: ["Hello", "Goodbye", "Please", "Welcome"],
+      correctAnswer: "Goodbye",
+      explanation: "Goodbye is used when leaving.",
+      difficulty: 1,
+      tags: ["greetings", "a1"]
+    },
+    {
+      id: "a1-v17-e3",
+      type: "fill-blank",
+      question: "_____ can you help me, please?",
+      options: ["Excuse me", "Goodbye", "Thanks", "Hello"],
+      correctAnswer: "Excuse me",
+      explanation: "'Excuse me' is polite when asking for help.",
+      difficulty: 1,
+      tags: ["greetings", "a1"]
+    },
+    {
+      id: "a1-v17-e4",
+      type: "multiple-choice",
+      question: "When someone helps you, you say _____.",
+      options: ["Sorry", "Please", "Thank you", "Hello"],
+      correctAnswer: "Thank you",
+      explanation: "Thank you expresses gratitude.",
+      difficulty: 1,
+      tags: ["greetings", "a1"]
+    },
+    {
+      id: "a1-v17-e5",
+      type: "multiple-choice",
+      question: "When you make a mistake, you say _____.",
+      options: ["Thanks", "Please", "Hello", "Sorry"],
+      correctAnswer: "Sorry",
+      explanation: "Sorry expresses regret or apology.",
+      difficulty: 1,
+      tags: ["greetings", "a1"]
+    },
+    {
+      id: "a1-v17-e6",
+      type: "fill-blank",
+      question: "Can I have some water, _____?",
+      options: ["please", "sorry", "hello", "goodbye"],
+      correctAnswer: "please",
+      explanation: "'Please' makes requests polite.",
+      difficulty: 1,
+      tags: ["greetings", "a1"]
+    },
+  ],
+
+  // a1-vocab-18: Basic Places
+  "a1-vocab-18": [
+    {
+      id: "a1-v18-e1",
+      type: "multiple-choice",
+      question: "Children learn at _____.",
+      options: ["hospital", "school", "restaurant", "hotel"],
+      correctAnswer: "school",
+      explanation: "School is where children learn.",
+      difficulty: 1,
+      tags: ["places", "a1"]
+    },
+    {
+      id: "a1-v18-e2",
+      type: "multiple-choice",
+      question: "You buy food at a _____.",
+      options: ["hospital", "park", "store", "library"],
+      correctAnswer: "store",
+      explanation: "Stores sell food and other items.",
+      difficulty: 1,
+      tags: ["places", "a1"]
+    },
+    {
+      id: "a1-v18-e3",
+      type: "fill-blank",
+      question: "Sick people go to the _____.",
+      options: ["hospital", "school", "restaurant", "park"],
+      correctAnswer: "hospital",
+      explanation: "Hospitals treat sick people.",
+      difficulty: 1,
+      tags: ["places", "a1"]
+    },
+    {
+      id: "a1-v18-e4",
+      type: "multiple-choice",
+      question: "You eat food at a _____.",
+      options: ["library", "hospital", "restaurant", "school"],
+      correctAnswer: "restaurant",
+      explanation: "Restaurants serve food.",
+      difficulty: 1,
+      tags: ["places", "a1"]
+    },
+    {
+      id: "a1-v18-e5",
+      type: "multiple-choice",
+      question: "Children play outside in the _____.",
+      options: ["hospital", "library", "park", "store"],
+      correctAnswer: "park",
+      explanation: "Parks are outdoor areas for recreation.",
+      difficulty: 1,
+      tags: ["places", "a1"]
+    },
+    {
+      id: "a1-v18-e6",
+      type: "fill-blank",
+      question: "You borrow books from the _____.",
+      options: ["library", "restaurant", "hospital", "store"],
+      correctAnswer: "library",
+      explanation: "Libraries lend books to people.",
+      difficulty: 1,
+      tags: ["places", "a1"]
+    },
+  ],
+
+  // a1-vocab-19: Basic Action Verbs
+  "a1-vocab-19": [
+    {
+      id: "a1-v19-e1",
+      type: "multiple-choice",
+      question: "I _____ breakfast every morning.",
+      options: ["eat", "sleep", "run", "read"],
+      correctAnswer: "eat",
+      explanation: "We eat food like breakfast.",
+      difficulty: 1,
+      tags: ["verbs", "a1"]
+    },
+    {
+      id: "a1-v19-e2",
+      type: "multiple-choice",
+      question: "We _____ at night.",
+      options: ["run", "eat", "sleep", "walk"],
+      correctAnswer: "sleep",
+      explanation: "People sleep at night.",
+      difficulty: 1,
+      tags: ["verbs", "a1"]
+    },
+    {
+      id: "a1-v19-e3",
+      type: "fill-blank",
+      question: "I _____ to school every day.",
+      options: ["walk", "sleep", "eat", "drink"],
+      correctAnswer: "walk",
+      explanation: "Walk means to move on foot.",
+      difficulty: 1,
+      tags: ["verbs", "a1"]
+    },
+    {
+      id: "a1-v19-e4",
+      type: "multiple-choice",
+      question: "Athletes _____ very fast.",
+      options: ["sleep", "eat", "run", "sit"],
+      correctAnswer: "run",
+      explanation: "Athletes run quickly.",
+      difficulty: 1,
+      tags: ["verbs", "a1"]
+    },
+    {
+      id: "a1-v19-e5",
+      type: "multiple-choice",
+      question: "I _____ books to learn new things.",
+      options: ["eat", "drink", "read", "sleep"],
+      correctAnswer: "read",
+      explanation: "We read books to learn.",
+      difficulty: 1,
+      tags: ["verbs", "a1"]
+    },
+    {
+      id: "a1-v19-e6",
+      type: "fill-blank",
+      question: "I _____ water when I'm thirsty.",
+      options: ["drink", "eat", "read", "write"],
+      correctAnswer: "drink",
+      explanation: "We drink liquids like water.",
+      difficulty: 1,
+      tags: ["verbs", "a1"]
+    },
+  ],
+
+  // a1-vocab-20: Basic Adjectives
+  "a1-vocab-20": [
+    {
+      id: "a1-v20-e1",
+      type: "multiple-choice",
+      question: "An elephant is _____.",
+      options: ["small", "tiny", "big", "short"],
+      correctAnswer: "big",
+      explanation: "Elephants are very big animals.",
+      difficulty: 1,
+      tags: ["adjectives", "a1"]
+    },
+    {
+      id: "a1-v20-e2",
+      type: "multiple-choice",
+      question: "A mouse is _____.",
+      options: ["big", "large", "small", "huge"],
+      correctAnswer: "small",
+      explanation: "Mice are very small animals.",
+      difficulty: 1,
+      tags: ["adjectives", "a1"]
+    },
+    {
+      id: "a1-v20-e3",
+      type: "fill-blank",
+      question: "When I smile, I am _____.",
+      options: ["happy", "sad", "angry", "tired"],
+      correctAnswer: "happy",
+      explanation: "We smile when we're happy.",
+      difficulty: 1,
+      tags: ["adjectives", "a1"]
+    },
+    {
+      id: "a1-v20-e4",
+      type: "multiple-choice",
+      question: "When I cry, I am _____.",
+      options: ["happy", "sad", "excited", "glad"],
+      correctAnswer: "sad",
+      explanation: "We often cry when we're sad.",
+      difficulty: 1,
+      tags: ["adjectives", "a1"]
+    },
+    {
+      id: "a1-v20-e5",
+      type: "multiple-choice",
+      question: "The opposite of 'good' is _____.",
+      options: ["great", "nice", "bad", "fine"],
+      correctAnswer: "bad",
+      explanation: "Bad is the opposite of good.",
+      difficulty: 1,
+      tags: ["adjectives", "a1"]
+    },
+    {
+      id: "a1-v20-e6",
+      type: "fill-blank",
+      question: "Ice cream on a sunny day is _____!",
+      options: ["cold", "hot", "warm", "cool"],
+      correctAnswer: "cold",
+      explanation: "Ice cream is cold.",
+      difficulty: 1,
+      tags: ["adjectives", "a1"]
     },
   ],
 };
@@ -511,26 +1372,6 @@ const a1GrammarExercises: Record<string, Exercise[]> = {
       difficulty: 1,
       tags: ["to-be", "a1", "questions"]
     },
-    {
-      id: "a1-g1-e9",
-      type: "multiple-choice",
-      question: "I _____ NOT tired.",
-      options: ["am not", "is not", "are not", "be not"],
-      correctAnswer: "am not",
-      explanation: "Negative with 'I': I am not (I'm not) tired.",
-      difficulty: 1,
-      tags: ["to-be", "a1", "negative"]
-    },
-    {
-      id: "a1-g1-e10",
-      type: "fill-blank",
-      question: "_____ you from England?",
-      options: ["Am", "Is", "Are", "Be"],
-      correctAnswer: "Are",
-      explanation: "Questions with 'you': Are you from England?",
-      difficulty: 1,
-      tags: ["to-be", "a1", "questions"]
-    },
   ],
 
   // a1-gram-2: Present Simple
@@ -608,32 +1449,12 @@ const a1GrammarExercises: Record<string, Exercise[]> = {
     {
       id: "a1-g2-e8",
       type: "multiple-choice",
-      question: "We _____ NOT eat meat. (negative)",
-      options: ["do", "does", "don't", "doesn't"],
-      correctAnswer: "don't",
-      explanation: "Negative with we/I/you/they: don't + base verb.",
-      difficulty: 1,
-      tags: ["present-simple", "a1", "negative"]
-    },
-    {
-      id: "a1-g2-e9",
-      type: "multiple-choice",
       question: "She _____ NOT work on Saturdays.",
       options: ["do", "does", "don't", "doesn't"],
       correctAnswer: "doesn't",
       explanation: "Negative with he/she/it: doesn't + base verb.",
       difficulty: 1,
       tags: ["present-simple", "a1", "negative"]
-    },
-    {
-      id: "a1-g2-e10",
-      type: "fill-blank",
-      question: "The sun _____ in the east.",
-      options: ["rise", "rises", "rising", "risen"],
-      correctAnswer: "rises",
-      explanation: "The sun (it) → rises with -s. General facts use present simple.",
-      difficulty: 1,
-      tags: ["present-simple", "a1", "third-person"]
     },
   ],
 
@@ -691,26 +1512,6 @@ const a1GrammarExercises: Record<string, Exercise[]> = {
     },
     {
       id: "a1-g3-e6",
-      type: "multiple-choice",
-      question: "We _____ NOT sleeping. We are awake!",
-      options: ["am", "is", "are", "be"],
-      correctAnswer: "are",
-      explanation: "Negative: We are not (aren't) sleeping.",
-      difficulty: 1,
-      tags: ["present-continuous", "a1"]
-    },
-    {
-      id: "a1-g3-e7",
-      type: "fill-blank",
-      question: "The children are _____.",
-      options: ["play", "plays", "playing", "played"],
-      correctAnswer: "playing",
-      explanation: "Present Continuous: are + playing.",
-      difficulty: 1,
-      tags: ["present-continuous", "a1"]
-    },
-    {
-      id: "a1-g3-e8",
       type: "multiple-choice",
       question: "Look! It _____ raining outside.",
       options: ["am", "is", "are", "be"],
@@ -783,26 +1584,6 @@ const a1GrammarExercises: Record<string, Exercise[]> = {
       difficulty: 1,
       tags: ["pronouns", "a1"]
     },
-    {
-      id: "a1-g4-e7",
-      type: "multiple-choice",
-      question: "I need _____ umbrella. It's raining.",
-      options: ["a", "an", "the", "—"],
-      correctAnswer: "an",
-      explanation: "Use 'an' before vowel sounds: an umbrella.",
-      difficulty: 1,
-      tags: ["articles", "a1"]
-    },
-    {
-      id: "a1-g4-e8",
-      type: "multiple-choice",
-      question: "Tom and Sara are siblings. _____ live together.",
-      options: ["He", "She", "We", "They"],
-      correctAnswer: "They",
-      explanation: "Tom and Sara = They.",
-      difficulty: 1,
-      tags: ["pronouns", "a1"]
-    },
   ],
 };
 
@@ -862,16 +1643,6 @@ const a1SpeakingExercises: Record<string, Exercise[]> = {
       difficulty: 1,
       tags: ["introductions", "a1"]
     },
-    {
-      id: "a1-s1-e6",
-      type: "multiple-choice",
-      question: "How do you ask someone about their job?",
-      options: ["What do you do?", "What you work?", "How is job?", "Work what?"],
-      correctAnswer: "What do you do?",
-      explanation: "'What do you do?' means 'What is your job?'",
-      difficulty: 1,
-      tags: ["introductions", "a1"]
-    },
   ],
 
   // a1-speak-2: Greetings and farewells
@@ -918,16 +1689,6 @@ const a1SpeakingExercises: Record<string, Exercise[]> = {
     },
     {
       id: "a1-s2-e5",
-      type: "multiple-choice",
-      question: "It's 3 PM. What do you say?",
-      options: ["Good morning!", "Good afternoon!", "Good evening!", "Good night!"],
-      correctAnswer: "Good afternoon!",
-      explanation: "From 12 PM to 6 PM, we say: Good afternoon!",
-      difficulty: 1,
-      tags: ["greetings", "a1"]
-    },
-    {
-      id: "a1-s2-e6",
       type: "multiple-choice",
       question: "You're going to bed. What do you say?",
       options: ["Good morning!", "Good evening!", "Good night!", "Goodbye!"],
@@ -990,16 +1751,6 @@ const a1SpeakingExercises: Record<string, Exercise[]> = {
       difficulty: 1,
       tags: ["requests", "a1"]
     },
-    {
-      id: "a1-s3-e6",
-      type: "multiple-choice",
-      question: "You want to buy something. You ask: 'How much _____ this?'",
-      options: ["is", "are", "do", "have"],
-      correctAnswer: "is",
-      explanation: "To ask the price: How much is this?",
-      difficulty: 1,
-      tags: ["requests", "a1"]
-    },
   ],
 };
 
@@ -1058,16 +1809,6 @@ const a1ListeningExercises: Record<string, Exercise[]> = {
       explanation: "Forty = 40. Fourteen = 14.",
       difficulty: 1,
       tags: ["listening", "numbers", "a1"]
-    },
-    {
-      id: "a1-l1-e6",
-      type: "multiple-choice",
-      question: "You hear: 'My sister is ANNA'. What is the sister's name?",
-      options: ["Ana", "Anne", "Anna", "Annie"],
-      correctAnswer: "Anna",
-      explanation: "The sister's name is Anna.",
-      difficulty: 1,
-      tags: ["listening", "names", "a1"]
     },
   ],
 
@@ -1179,16 +1920,6 @@ const a1ReadingExercises: Record<string, Exercise[]> = {
       options: ["The place is open", "The place is not open", "Free entry", "Welcome"],
       correctAnswer: "The place is not open",
       explanation: "CLOSED means the place is not open.",
-      difficulty: 1,
-      tags: ["reading", "signs", "a1"]
-    },
-    {
-      id: "a1-r1-e6",
-      type: "fill-blank",
-      question: "You see: 'OUT OF _____'. The elevator doesn't work.",
-      options: ["ORDER", "TIME", "DATE", "PLACE"],
-      correctAnswer: "ORDER",
-      explanation: "'Out of order' means something is broken.",
       difficulty: 1,
       tags: ["reading", "signs", "a1"]
     },
@@ -1370,7 +2101,6 @@ const a1WritingExercises: Record<string, Exercise[]> = {
  * Get exercises by skill ID for A1 level
  */
 export function getA1ExercisesBySkillId(skillId: string): Exercise[] {
-  // Combine all exercise categories
   const allExercises: Record<string, Exercise[]> = {
     ...a1VocabExercises,
     ...a1GrammarExercises,
@@ -1412,7 +2142,6 @@ export function getRandomA1Exercises(count: number = 10): Exercise[] {
     ...Object.values(a1WritingExercises).flat(),
   ];
   
-  // Shuffle and return the requested count
   const shuffled = allExercises.sort(() => Math.random() - 0.5);
   return shuffled.slice(0, count);
 }
