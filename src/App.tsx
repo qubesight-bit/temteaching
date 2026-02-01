@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AppStateProvider } from "@/hooks/useAppState";
 import { GamificationProvider } from "@/hooks/useGamification";
 import { AdaptiveLearningProvider } from "@/hooks/useAdaptiveLearning";
@@ -28,7 +28,6 @@ import Articles from "./pages/Articles";
 import ArticleDetail from "./pages/ArticleDetail";
 import Karaoke from "./pages/Karaoke";
 import CustomExam from "./pages/CustomExam";
-import PendingApproval from "./pages/PendingApproval";
 import SessionExpired from "./pages/SessionExpired";
 import AdminUsers from "./pages/AdminUsers";
 import NotFound from "./pages/NotFound";
@@ -49,8 +48,8 @@ const App = () => (
                   {/* Public route - Auth page */}
                   <Route path="/auth" element={<Auth />} />
                   
-                  {/* Session/Approval pages - requires login but not approval */}
-                  <Route path="/pending-approval" element={<PendingApproval />} />
+                  {/* Legacy route: approval gate removed */}
+                  <Route path="/pending-approval" element={<Navigate to="/" replace />} />
                   <Route path="/session-expired" element={<SessionExpired />} />
                   
                   {/* Admin routes */}
