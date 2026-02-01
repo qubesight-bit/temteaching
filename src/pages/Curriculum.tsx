@@ -91,11 +91,9 @@ export default function Curriculum() {
     );
   };
 
-  const isLevelUnlocked = (level: CEFRLevel): boolean => {
-    const levelIndex = enhancedCurriculumData.findIndex(l => l.level === level);
-    if (levelIndex === 0) return true;
-    const previousLevel = enhancedCurriculumData[levelIndex - 1].level;
-    return getLevelProgress(previousLevel, completedSkills) >= 80;
+  // All levels are unlocked for free access
+  const isLevelUnlocked = (_level: CEFRLevel): boolean => {
+    return true;
   };
 
   return (

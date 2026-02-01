@@ -1,9 +1,12 @@
-// A1 Level Comprehensive Curriculum Exercises
+// A1 Level Comprehensive Curriculum Exercises - Fully aligned with skill IDs
 import { Exercise } from "./exercisesData";
 
-// Vocabulary Exercises
+// ====================================
+// VOCABULARY EXERCISES - A1 LEVEL
+// ====================================
 const a1VocabExercises: Record<string, Exercise[]> = {
-  "a1-vocab-1": [ // Numbers and colors - ORGANIZED BY SUBSKILL
+  // a1-vocab-1: Numbers and colors
+  "a1-vocab-1": [
     // === Numbers 1-20 (subSkill: a1-v1-1) ===
     {
       id: "a1-v1-e1",
@@ -45,9 +48,19 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       difficulty: 1,
       tags: ["numbers", "a1", "subskill:a1-v1-1"]
     },
-    // === Numbers 20-100 (subSkill: a1-v1-2) ===
     {
       id: "a1-v1-e5",
+      type: "multiple-choice",
+      question: "What is 8 + 3?",
+      options: ["ten", "eleven", "twelve", "nine"],
+      correctAnswer: "eleven",
+      explanation: "8 + 3 = 11 (eleven).",
+      difficulty: 1,
+      tags: ["numbers", "a1", "subskill:a1-v1-1"]
+    },
+    // === Numbers 20-100 (subSkill: a1-v1-2) ===
+    {
+      id: "a1-v1-e6",
       type: "fill-blank",
       question: "The number after nineteen is _____.",
       options: ["twenty", "eighteen", "thirty", "fifteen"],
@@ -57,7 +70,7 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       tags: ["numbers", "a1", "subskill:a1-v1-2"]
     },
     {
-      id: "a1-v1-e6",
+      id: "a1-v1-e7",
       type: "multiple-choice",
       question: "What is 30 + 20?",
       options: ["forty", "fifty", "sixty", "seventy"],
@@ -67,7 +80,7 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       tags: ["numbers", "a1", "subskill:a1-v1-2"]
     },
     {
-      id: "a1-v1-e7",
+      id: "a1-v1-e8",
       type: "multiple-choice",
       question: "How do you write '75' in words?",
       options: ["sixty-five", "seventy-five", "eighty-five", "fifty-five"],
@@ -77,7 +90,7 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       tags: ["numbers", "a1", "subskill:a1-v1-2"]
     },
     {
-      id: "a1-v1-e8",
+      id: "a1-v1-e9",
       type: "fill-blank",
       question: "The number after ninety-nine is _____.",
       options: ["one hundred", "ninety-eight", "one thousand", "ninety"],
@@ -86,9 +99,19 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       difficulty: 1,
       tags: ["numbers", "a1", "subskill:a1-v1-2"]
     },
+    {
+      id: "a1-v1-e10",
+      type: "multiple-choice",
+      question: "What is 40 + 25?",
+      options: ["fifty-five", "sixty-five", "seventy-five", "forty-five"],
+      correctAnswer: "sixty-five",
+      explanation: "40 + 25 = 65 (sixty-five).",
+      difficulty: 1,
+      tags: ["numbers", "a1", "subskill:a1-v1-2"]
+    },
     // === Primary colors (subSkill: a1-v1-3) ===
     {
-      id: "a1-v1-e9",
+      id: "a1-v1-e11",
       type: "multiple-choice",
       question: "What color is the sky on a sunny day?",
       options: ["red", "green", "blue", "yellow"],
@@ -98,7 +121,7 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       tags: ["colors", "a1", "subskill:a1-v1-3"]
     },
     {
-      id: "a1-v1-e10",
+      id: "a1-v1-e12",
       type: "multiple-choice",
       question: "Bananas are _____.",
       options: ["blue", "red", "yellow", "green"],
@@ -108,7 +131,7 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       tags: ["colors", "a1", "subskill:a1-v1-3"]
     },
     {
-      id: "a1-v1-e11",
+      id: "a1-v1-e13",
       type: "multiple-choice",
       question: "Grass is usually _____.",
       options: ["blue", "green", "red", "white"],
@@ -118,7 +141,7 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       tags: ["colors", "a1", "subskill:a1-v1-3"]
     },
     {
-      id: "a1-v1-e12",
+      id: "a1-v1-e14",
       type: "multiple-choice",
       question: "What color do you get when you mix red and yellow?",
       options: ["purple", "green", "orange", "pink"],
@@ -127,8 +150,30 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       difficulty: 1,
       tags: ["colors", "a1", "subskill:a1-v1-3"]
     },
+    {
+      id: "a1-v1-e15",
+      type: "fill-blank",
+      question: "Snow is _____.",
+      options: ["white", "black", "gray", "blue"],
+      correctAnswer: "white",
+      explanation: "Snow is white.",
+      difficulty: 1,
+      tags: ["colors", "a1", "subskill:a1-v1-3"]
+    },
+    {
+      id: "a1-v1-e16",
+      type: "multiple-choice",
+      question: "What color is a fire truck?",
+      options: ["blue", "green", "red", "yellow"],
+      correctAnswer: "red",
+      explanation: "Fire trucks are typically red.",
+      difficulty: 1,
+      tags: ["colors", "a1", "subskill:a1-v1-3"]
+    },
   ],
-  "a1-vocab-2": [ // Familia y personas
+
+  // a1-vocab-2: Family and people
+  "a1-vocab-2": [
     {
       id: "a1-v2-e1",
       type: "multiple-choice",
@@ -179,8 +224,40 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       difficulty: 1,
       tags: ["family", "a1"]
     },
+    {
+      id: "a1-v2-e6",
+      type: "multiple-choice",
+      question: "Your sister's son is your _____.",
+      options: ["cousin", "nephew", "son", "brother"],
+      correctAnswer: "nephew",
+      explanation: "Your sister's son is your nephew.",
+      difficulty: 1,
+      tags: ["family", "a1"]
+    },
+    {
+      id: "a1-v2-e7",
+      type: "multiple-choice",
+      question: "A person who flies airplanes is a _____.",
+      options: ["driver", "captain", "pilot", "mechanic"],
+      correctAnswer: "pilot",
+      explanation: "A pilot flies airplanes.",
+      difficulty: 1,
+      tags: ["professions", "a1"]
+    },
+    {
+      id: "a1-v2-e8",
+      type: "fill-blank",
+      question: "My father's father is my _____.",
+      options: ["grandfather", "grandmother", "uncle", "brother"],
+      correctAnswer: "grandfather",
+      explanation: "Your father's father is your grandfather.",
+      difficulty: 1,
+      tags: ["family", "a1"]
+    },
   ],
-  "a1-vocab-3": [ // Objetos cotidianos
+
+  // a1-vocab-3: Everyday objects
+  "a1-vocab-3": [
     {
       id: "a1-v3-e1",
       type: "multiple-choice",
@@ -231,8 +308,40 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       difficulty: 1,
       tags: ["objects", "a1"]
     },
+    {
+      id: "a1-v3-e6",
+      type: "multiple-choice",
+      question: "You use a _____ to erase mistakes.",
+      options: ["pen", "pencil", "eraser", "ruler"],
+      correctAnswer: "eraser",
+      explanation: "An eraser removes pencil marks.",
+      difficulty: 1,
+      tags: ["objects", "a1"]
+    },
+    {
+      id: "a1-v3-e7",
+      type: "fill-blank",
+      question: "Students carry their books in a _____.",
+      options: ["backpack", "hat", "shoe", "glove"],
+      correctAnswer: "backpack",
+      explanation: "A backpack is a bag for carrying books.",
+      difficulty: 1,
+      tags: ["objects", "a1"]
+    },
+    {
+      id: "a1-v3-e8",
+      type: "multiple-choice",
+      question: "You open a _____ to enter a room.",
+      options: ["window", "door", "table", "floor"],
+      correctAnswer: "door",
+      explanation: "A door is the entrance to a room.",
+      difficulty: 1,
+      tags: ["objects", "a1"]
+    },
   ],
-  "a1-vocab-4": [ // Comida y bebida
+
+  // a1-vocab-4: Basic food and drink
+  "a1-vocab-4": [
     {
       id: "a1-v4-e1",
       type: "multiple-choice",
@@ -283,12 +392,45 @@ const a1VocabExercises: Record<string, Exercise[]> = {
       difficulty: 1,
       tags: ["drinks", "a1"]
     },
+    {
+      id: "a1-v4-e6",
+      type: "multiple-choice",
+      question: "A banana is _____.",
+      options: ["red", "green", "yellow", "blue"],
+      correctAnswer: "yellow",
+      explanation: "Ripe bananas are yellow.",
+      difficulty: 1,
+      tags: ["food", "a1"]
+    },
+    {
+      id: "a1-v4-e7",
+      type: "fill-blank",
+      question: "We make sandwiches with _____.",
+      options: ["bread", "water", "juice", "milk"],
+      correctAnswer: "bread",
+      explanation: "Sandwiches are made with bread.",
+      difficulty: 1,
+      tags: ["food", "a1"]
+    },
+    {
+      id: "a1-v4-e8",
+      type: "multiple-choice",
+      question: "Orange juice comes from _____.",
+      options: ["apples", "oranges", "grapes", "lemons"],
+      correctAnswer: "oranges",
+      explanation: "Orange juice is made from oranges.",
+      difficulty: 1,
+      tags: ["drinks", "a1"]
+    },
   ],
 };
 
-// Grammar Exercises
+// ====================================
+// GRAMMAR EXERCISES - A1 LEVEL
+// ====================================
 const a1GrammarExercises: Record<string, Exercise[]> = {
-  "a1-gram-1": [ // Verbo To Be
+  // a1-gram-1: Verb To Be
+  "a1-gram-1": [
     {
       id: "a1-g1-e1",
       type: "multiple-choice",
@@ -297,7 +439,7 @@ const a1GrammarExercises: Record<string, Exercise[]> = {
       correctAnswer: "am",
       explanation: "We use 'am' with 'I': I am a student.",
       difficulty: 1,
-      tags: ["to-be", "a1"]
+      tags: ["to-be", "a1", "affirmative"]
     },
     {
       id: "a1-g1-e2",
@@ -307,7 +449,7 @@ const a1GrammarExercises: Record<string, Exercise[]> = {
       correctAnswer: "is",
       explanation: "We use 'is' with he/she/it: She is my sister.",
       difficulty: 1,
-      tags: ["to-be", "a1"]
+      tags: ["to-be", "a1", "affirmative"]
     },
     {
       id: "a1-g1-e3",
@@ -317,7 +459,7 @@ const a1GrammarExercises: Record<string, Exercise[]> = {
       correctAnswer: "are",
       explanation: "We use 'are' with they/we/you: They are from Spain.",
       difficulty: 1,
-      tags: ["to-be", "a1"]
+      tags: ["to-be", "a1", "affirmative"]
     },
     {
       id: "a1-g1-e4",
@@ -327,7 +469,7 @@ const a1GrammarExercises: Record<string, Exercise[]> = {
       correctAnswer: "is",
       explanation: "We use 'is' with singular nouns: The cat is on the table.",
       difficulty: 1,
-      tags: ["to-be", "a1"]
+      tags: ["to-be", "a1", "affirmative"]
     },
     {
       id: "a1-g1-e5",
@@ -337,7 +479,7 @@ const a1GrammarExercises: Record<string, Exercise[]> = {
       correctAnswer: "are",
       explanation: "We use 'are' with 'we': We are happy.",
       difficulty: 1,
-      tags: ["to-be", "a1"]
+      tags: ["to-be", "a1", "affirmative"]
     },
     {
       id: "a1-g1-e6",
@@ -347,7 +489,7 @@ const a1GrammarExercises: Record<string, Exercise[]> = {
       correctAnswer: "are",
       explanation: "We use 'are' with 'you': You are my best friend.",
       difficulty: 1,
-      tags: ["to-be", "a1"]
+      tags: ["to-be", "a1", "affirmative"]
     },
     {
       id: "a1-g1-e7",
@@ -357,7 +499,7 @@ const a1GrammarExercises: Record<string, Exercise[]> = {
       correctAnswer: "is not",
       explanation: "Negative form with 'he': He is not (isn't) a doctor.",
       difficulty: 1,
-      tags: ["to-be", "a1"]
+      tags: ["to-be", "a1", "negative"]
     },
     {
       id: "a1-g1-e8",
@@ -367,10 +509,32 @@ const a1GrammarExercises: Record<string, Exercise[]> = {
       correctAnswer: "Is",
       explanation: "Questions with 'she': Is she your teacher?",
       difficulty: 1,
-      tags: ["to-be", "a1"]
+      tags: ["to-be", "a1", "questions"]
+    },
+    {
+      id: "a1-g1-e9",
+      type: "multiple-choice",
+      question: "I _____ NOT tired.",
+      options: ["am not", "is not", "are not", "be not"],
+      correctAnswer: "am not",
+      explanation: "Negative with 'I': I am not (I'm not) tired.",
+      difficulty: 1,
+      tags: ["to-be", "a1", "negative"]
+    },
+    {
+      id: "a1-g1-e10",
+      type: "fill-blank",
+      question: "_____ you from England?",
+      options: ["Am", "Is", "Are", "Be"],
+      correctAnswer: "Are",
+      explanation: "Questions with 'you': Are you from England?",
+      difficulty: 1,
+      tags: ["to-be", "a1", "questions"]
     },
   ],
-  "a1-gram-2": [ // Present Simple
+
+  // a1-gram-2: Present Simple
+  "a1-gram-2": [
     {
       id: "a1-g2-e1",
       type: "multiple-choice",
@@ -379,7 +543,7 @@ const a1GrammarExercises: Record<string, Exercise[]> = {
       correctAnswer: "drinks",
       explanation: "Third person singular (she/he/it) adds -s: She drinks.",
       difficulty: 1,
-      tags: ["present-simple", "a1"]
+      tags: ["present-simple", "a1", "third-person"]
     },
     {
       id: "a1-g2-e2",
@@ -399,7 +563,7 @@ const a1GrammarExercises: Record<string, Exercise[]> = {
       correctAnswer: "speaks",
       explanation: "Third person singular adds -s: He speaks.",
       difficulty: 1,
-      tags: ["present-simple", "a1"]
+      tags: ["present-simple", "a1", "third-person"]
     },
     {
       id: "a1-g2-e4",
@@ -419,7 +583,7 @@ const a1GrammarExercises: Record<string, Exercise[]> = {
       correctAnswer: "Do",
       explanation: "Questions with you/I/we/they use 'Do': Do you like...?",
       difficulty: 1,
-      tags: ["present-simple", "a1"]
+      tags: ["present-simple", "a1", "questions"]
     },
     {
       id: "a1-g2-e6",
@@ -429,20 +593,52 @@ const a1GrammarExercises: Record<string, Exercise[]> = {
       correctAnswer: "Does",
       explanation: "Questions with he/she/it use 'Does': Does she live...?",
       difficulty: 1,
-      tags: ["present-simple", "a1"]
+      tags: ["present-simple", "a1", "questions"]
     },
     {
       id: "a1-g2-e7",
       type: "fill-blank",
-      question: "My cat _____ (sleep) all day.",
+      question: "My cat _____ all day.",
       options: ["sleep", "sleeps", "sleeping", "slept"],
       correctAnswer: "sleeps",
       explanation: "The cat (it) → sleeps with -s.",
       difficulty: 1,
-      tags: ["present-simple", "a1"]
+      tags: ["present-simple", "a1", "third-person"]
+    },
+    {
+      id: "a1-g2-e8",
+      type: "multiple-choice",
+      question: "We _____ NOT eat meat. (negative)",
+      options: ["do", "does", "don't", "doesn't"],
+      correctAnswer: "don't",
+      explanation: "Negative with we/I/you/they: don't + base verb.",
+      difficulty: 1,
+      tags: ["present-simple", "a1", "negative"]
+    },
+    {
+      id: "a1-g2-e9",
+      type: "multiple-choice",
+      question: "She _____ NOT work on Saturdays.",
+      options: ["do", "does", "don't", "doesn't"],
+      correctAnswer: "doesn't",
+      explanation: "Negative with he/she/it: doesn't + base verb.",
+      difficulty: 1,
+      tags: ["present-simple", "a1", "negative"]
+    },
+    {
+      id: "a1-g2-e10",
+      type: "fill-blank",
+      question: "The sun _____ in the east.",
+      options: ["rise", "rises", "rising", "risen"],
+      correctAnswer: "rises",
+      explanation: "The sun (it) → rises with -s. General facts use present simple.",
+      difficulty: 1,
+      tags: ["present-simple", "a1", "third-person"]
     },
   ],
-  "a1-gram-3": [ // Present Continuous
+
+  // a1-gram-3: Present Continuous
+  "a1-gram-3": [
     {
       id: "a1-g3-e1",
       type: "multiple-choice",
@@ -486,7 +682,7 @@ const a1GrammarExercises: Record<string, Exercise[]> = {
     {
       id: "a1-g3-e5",
       type: "fill-blank",
-      question: "He is _____ (watch) TV right now.",
+      question: "He is _____ TV right now.",
       options: ["watch", "watches", "watching", "watched"],
       correctAnswer: "watching",
       explanation: "Present Continuous uses the -ing form: watching.",
@@ -503,8 +699,30 @@ const a1GrammarExercises: Record<string, Exercise[]> = {
       difficulty: 1,
       tags: ["present-continuous", "a1"]
     },
+    {
+      id: "a1-g3-e7",
+      type: "fill-blank",
+      question: "The children are _____.",
+      options: ["play", "plays", "playing", "played"],
+      correctAnswer: "playing",
+      explanation: "Present Continuous: are + playing.",
+      difficulty: 1,
+      tags: ["present-continuous", "a1"]
+    },
+    {
+      id: "a1-g3-e8",
+      type: "multiple-choice",
+      question: "Look! It _____ raining outside.",
+      options: ["am", "is", "are", "be"],
+      correctAnswer: "is",
+      explanation: "Present Continuous with 'it': It is raining.",
+      difficulty: 1,
+      tags: ["present-continuous", "a1"]
+    },
   ],
-  "a1-gram-4": [ // Artículos y pronombres
+
+  // a1-gram-4: Articles and pronouns
+  "a1-gram-4": [
     {
       id: "a1-g4-e1",
       type: "multiple-choice",
@@ -565,12 +783,35 @@ const a1GrammarExercises: Record<string, Exercise[]> = {
       difficulty: 1,
       tags: ["pronouns", "a1"]
     },
+    {
+      id: "a1-g4-e7",
+      type: "multiple-choice",
+      question: "I need _____ umbrella. It's raining.",
+      options: ["a", "an", "the", "—"],
+      correctAnswer: "an",
+      explanation: "Use 'an' before vowel sounds: an umbrella.",
+      difficulty: 1,
+      tags: ["articles", "a1"]
+    },
+    {
+      id: "a1-g4-e8",
+      type: "multiple-choice",
+      question: "Tom and Sara are siblings. _____ live together.",
+      options: ["He", "She", "We", "They"],
+      correctAnswer: "They",
+      explanation: "Tom and Sara = They.",
+      difficulty: 1,
+      tags: ["pronouns", "a1"]
+    },
   ],
 };
 
-// Speaking Exercises
+// ====================================
+// SPEAKING EXERCISES - A1 LEVEL
+// ====================================
 const a1SpeakingExercises: Record<string, Exercise[]> = {
-  "a1-speak-1": [ // Presentarse
+  // a1-speak-1: Introduce yourself
+  "a1-speak-1": [
     {
       id: "a1-s1-e1",
       type: "multiple-choice",
@@ -621,8 +862,20 @@ const a1SpeakingExercises: Record<string, Exercise[]> = {
       difficulty: 1,
       tags: ["introductions", "a1"]
     },
+    {
+      id: "a1-s1-e6",
+      type: "multiple-choice",
+      question: "How do you ask someone about their job?",
+      options: ["What do you do?", "What you work?", "How is job?", "Work what?"],
+      correctAnswer: "What do you do?",
+      explanation: "'What do you do?' means 'What is your job?'",
+      difficulty: 1,
+      tags: ["introductions", "a1"]
+    },
   ],
-  "a1-speak-2": [ // Saludos y despedidas
+
+  // a1-speak-2: Greetings and farewells
+  "a1-speak-2": [
     {
       id: "a1-s2-e1",
       type: "multiple-choice",
@@ -663,8 +916,30 @@ const a1SpeakingExercises: Record<string, Exercise[]> = {
       difficulty: 1,
       tags: ["greetings", "a1"]
     },
+    {
+      id: "a1-s2-e5",
+      type: "multiple-choice",
+      question: "It's 3 PM. What do you say?",
+      options: ["Good morning!", "Good afternoon!", "Good evening!", "Good night!"],
+      correctAnswer: "Good afternoon!",
+      explanation: "From 12 PM to 6 PM, we say: Good afternoon!",
+      difficulty: 1,
+      tags: ["greetings", "a1"]
+    },
+    {
+      id: "a1-s2-e6",
+      type: "multiple-choice",
+      question: "You're going to bed. What do you say?",
+      options: ["Good morning!", "Good evening!", "Good night!", "Goodbye!"],
+      correctAnswer: "Good night!",
+      explanation: "Before sleeping, we say: Good night!",
+      difficulty: 1,
+      tags: ["greetings", "a1"]
+    },
   ],
-  "a1-speak-3": [ // Pedir cosas básicas
+
+  // a1-speak-3: Ask for basic things
+  "a1-speak-3": [
     {
       id: "a1-s3-e1",
       type: "multiple-choice",
@@ -705,12 +980,35 @@ const a1SpeakingExercises: Record<string, Exercise[]> = {
       difficulty: 1,
       tags: ["requests", "a1"]
     },
+    {
+      id: "a1-s3-e5",
+      type: "multiple-choice",
+      question: "You don't understand. You say:",
+      options: ["Can you repeat that, please?", "What you say?", "Again!", "No understand!"],
+      correctAnswer: "Can you repeat that, please?",
+      explanation: "Politely ask: Can you repeat that, please?",
+      difficulty: 1,
+      tags: ["requests", "a1"]
+    },
+    {
+      id: "a1-s3-e6",
+      type: "multiple-choice",
+      question: "You want to buy something. You ask: 'How much _____ this?'",
+      options: ["is", "are", "do", "have"],
+      correctAnswer: "is",
+      explanation: "To ask the price: How much is this?",
+      difficulty: 1,
+      tags: ["requests", "a1"]
+    },
   ],
 };
 
-// Listening Exercises  
+// ====================================
+// LISTENING EXERCISES - A1 LEVEL
+// ====================================
 const a1ListeningExercises: Record<string, Exercise[]> = {
-  "a1-list-1": [ // Palabras individuales
+  // a1-list-1: Individual words
+  "a1-list-1": [
     {
       id: "a1-l1-e1",
       type: "multiple-choice",
@@ -751,8 +1049,30 @@ const a1ListeningExercises: Record<string, Exercise[]> = {
       difficulty: 1,
       tags: ["listening", "places", "a1"]
     },
+    {
+      id: "a1-l1-e5",
+      type: "multiple-choice",
+      question: "You hear: 'FORTY'. Which number is it?",
+      options: ["14", "40", "44", "4"],
+      correctAnswer: "40",
+      explanation: "Forty = 40. Fourteen = 14.",
+      difficulty: 1,
+      tags: ["listening", "numbers", "a1"]
+    },
+    {
+      id: "a1-l1-e6",
+      type: "multiple-choice",
+      question: "You hear: 'My sister is ANNA'. What is the sister's name?",
+      options: ["Ana", "Anne", "Anna", "Annie"],
+      correctAnswer: "Anna",
+      explanation: "The sister's name is Anna.",
+      difficulty: 1,
+      tags: ["listening", "names", "a1"]
+    },
   ],
-  "a1-list-2": [ // Instrucciones simples
+
+  // a1-list-2: Simple instructions
+  "a1-list-2": [
     {
       id: "a1-l2-e1",
       type: "multiple-choice",
@@ -783,12 +1103,35 @@ const a1ListeningExercises: Record<string, Exercise[]> = {
       difficulty: 1,
       tags: ["listening", "instructions", "a1"]
     },
+    {
+      id: "a1-l2-e4",
+      type: "multiple-choice",
+      question: "Teacher says: 'Listen carefully'. What should you do?",
+      options: ["Talk more", "Pay attention", "Close your eyes", "Write quickly"],
+      correctAnswer: "Pay attention",
+      explanation: "'Listen carefully' means focus and pay attention.",
+      difficulty: 1,
+      tags: ["listening", "instructions", "a1"]
+    },
+    {
+      id: "a1-l2-e5",
+      type: "fill-blank",
+      question: "Teacher says: 'Please _____ your hand'. What word fits?",
+      options: ["raise", "put", "take", "give"],
+      correctAnswer: "raise",
+      explanation: "'Raise your hand' means lift your hand up.",
+      difficulty: 1,
+      tags: ["listening", "instructions", "a1"]
+    },
   ],
 };
 
-// Reading Exercises
+// ====================================
+// READING EXERCISES - A1 LEVEL
+// ====================================
 const a1ReadingExercises: Record<string, Exercise[]> = {
-  "a1-read-1": [ // Señales y letreros
+  // a1-read-1: Signs and notices
+  "a1-read-1": [
     {
       id: "a1-r1-e1",
       type: "multiple-choice",
@@ -819,8 +1162,40 @@ const a1ReadingExercises: Record<string, Exercise[]> = {
       difficulty: 1,
       tags: ["reading", "signs", "a1"]
     },
+    {
+      id: "a1-r1-e4",
+      type: "multiple-choice",
+      question: "You see: 'ENTRANCE'. What is it?",
+      options: ["Way out", "Way in", "Elevator", "Stairs"],
+      correctAnswer: "Way in",
+      explanation: "ENTRANCE is where you enter a building.",
+      difficulty: 1,
+      tags: ["reading", "signs", "a1"]
+    },
+    {
+      id: "a1-r1-e5",
+      type: "multiple-choice",
+      question: "You see: 'CLOSED'. What does it mean?",
+      options: ["The place is open", "The place is not open", "Free entry", "Welcome"],
+      correctAnswer: "The place is not open",
+      explanation: "CLOSED means the place is not open.",
+      difficulty: 1,
+      tags: ["reading", "signs", "a1"]
+    },
+    {
+      id: "a1-r1-e6",
+      type: "fill-blank",
+      question: "You see: 'OUT OF _____'. The elevator doesn't work.",
+      options: ["ORDER", "TIME", "DATE", "PLACE"],
+      correctAnswer: "ORDER",
+      explanation: "'Out of order' means something is broken.",
+      difficulty: 1,
+      tags: ["reading", "signs", "a1"]
+    },
   ],
-  "a1-read-2": [ // Textos muy cortos
+
+  // a1-read-2: Simple forms
+  "a1-read-2": [
     {
       id: "a1-r2-e1",
       type: "multiple-choice",
@@ -841,44 +1216,99 @@ const a1ReadingExercises: Record<string, Exercise[]> = {
       difficulty: 1,
       tags: ["reading", "short-texts", "a1"]
     },
-  ],
-};
-
-// Writing Exercises
-const a1WritingExercises: Record<string, Exercise[]> = {
-  "a1-write-1": [ // Formularios básicos
     {
-      id: "a1-w1-e1",
+      id: "a1-r2-e3",
       type: "multiple-choice",
       question: "On a form, 'First name' means your _____.",
       options: ["family name", "given name", "nickname", "middle name"],
       correctAnswer: "given name",
       explanation: "First name = your given/personal name (e.g., John, Maria).",
       difficulty: 1,
-      tags: ["writing", "forms", "a1"]
+      tags: ["reading", "forms", "a1"]
     },
     {
-      id: "a1-w1-e2",
+      id: "a1-r2-e4",
       type: "multiple-choice",
       question: "On a form, 'Surname' means your _____.",
       options: ["first name", "family name", "nickname", "title"],
       correctAnswer: "family name",
       explanation: "Surname = family name/last name.",
       difficulty: 1,
-      tags: ["writing", "forms", "a1"]
+      tags: ["reading", "forms", "a1"]
     },
     {
-      id: "a1-w1-e3",
+      id: "a1-r2-e5",
       type: "fill-blank",
       question: "On a form, 'DOB' means Date of _____.",
       options: ["Birth", "Booking", "Business", "Billing"],
       correctAnswer: "Birth",
       explanation: "DOB = Date of Birth (your birthday).",
       difficulty: 1,
+      tags: ["reading", "forms", "a1"]
+    },
+  ],
+};
+
+// ====================================
+// WRITING EXERCISES - A1 LEVEL
+// ====================================
+const a1WritingExercises: Record<string, Exercise[]> = {
+  // a1-write-1: Personal data
+  "a1-write-1": [
+    {
+      id: "a1-w1-e1",
+      type: "multiple-choice",
+      question: "How do you write your email correctly?",
+      options: ["john@example.com", "john.example.com", "john example com", "@john.example"],
+      correctAnswer: "john@example.com",
+      explanation: "Email format: name@domain.com",
+      difficulty: 1,
+      tags: ["writing", "forms", "a1"]
+    },
+    {
+      id: "a1-w1-e2",
+      type: "multiple-choice",
+      question: "What goes in the 'Address' field on a form?",
+      options: ["Your phone number", "Where you live", "Your email", "Your birthday"],
+      correctAnswer: "Where you live",
+      explanation: "Address = where you live (street, city, country).",
+      difficulty: 1,
+      tags: ["writing", "forms", "a1"]
+    },
+    {
+      id: "a1-w1-e3",
+      type: "fill-blank",
+      question: "To write the date '15/06/2024', in words: June _____, 2024.",
+      options: ["15th", "fifteen", "15", "fifteenth"],
+      correctAnswer: "15th",
+      explanation: "In dates, we use ordinal numbers: 15th (fifteenth).",
+      difficulty: 1,
+      tags: ["writing", "forms", "a1"]
+    },
+    {
+      id: "a1-w1-e4",
+      type: "multiple-choice",
+      question: "What is 'Nationality' on a form?",
+      options: ["Your age", "Your country", "Your job", "Your language"],
+      correctAnswer: "Your country",
+      explanation: "Nationality = your country (e.g., Spanish, American).",
+      difficulty: 1,
+      tags: ["writing", "forms", "a1"]
+    },
+    {
+      id: "a1-w1-e5",
+      type: "multiple-choice",
+      question: "What does 'Occupation' mean on a form?",
+      options: ["Your hobby", "Your job", "Your age", "Your address"],
+      correctAnswer: "Your job",
+      explanation: "Occupation = your job or profession.",
+      difficulty: 1,
       tags: ["writing", "forms", "a1"]
     },
   ],
-  "a1-write-2": [ // Mensajes simples
+
+  // a1-write-2: Short sentences
+  "a1-write-2": [
     {
       id: "a1-w2-e1",
       type: "multiple-choice",
@@ -899,12 +1329,48 @@ const a1WritingExercises: Record<string, Exercise[]> = {
       difficulty: 1,
       tags: ["writing", "messages", "a1"]
     },
+    {
+      id: "a1-w2-e3",
+      type: "fill-blank",
+      question: "Complete the sentence: 'I _____ a student.'",
+      options: ["am", "is", "are", "be"],
+      correctAnswer: "am",
+      explanation: "With 'I', we always use 'am'.",
+      difficulty: 1,
+      tags: ["writing", "sentences", "a1"]
+    },
+    {
+      id: "a1-w2-e4",
+      type: "multiple-choice",
+      question: "Which sentence is correct?",
+      options: ["She is teacher.", "She is a teacher.", "She a is teacher.", "Is she teacher."],
+      correctAnswer: "She is a teacher.",
+      explanation: "We need the article 'a' before the profession.",
+      difficulty: 1,
+      tags: ["writing", "sentences", "a1"]
+    },
+    {
+      id: "a1-w2-e5",
+      type: "multiple-choice",
+      question: "Which sentence has correct word order?",
+      options: ["Like I pizza.", "I pizza like.", "I like pizza.", "Pizza I like."],
+      correctAnswer: "I like pizza.",
+      explanation: "English word order: Subject + Verb + Object.",
+      difficulty: 1,
+      tags: ["writing", "sentences", "a1"]
+    },
   ],
 };
 
-// Export function to get exercises by skill ID
+// ====================================
+// EXPORT FUNCTIONS
+// ====================================
+
+/**
+ * Get exercises by skill ID for A1 level
+ */
 export function getA1ExercisesBySkillId(skillId: string): Exercise[] {
-  // Check all categories
+  // Combine all exercise categories
   const allExercises: Record<string, Exercise[]> = {
     ...a1VocabExercises,
     ...a1GrammarExercises,
@@ -917,6 +1383,40 @@ export function getA1ExercisesBySkillId(skillId: string): Exercise[] {
   return allExercises[skillId] || [];
 }
 
+/**
+ * Get all A1 exercises for a specific category
+ */
+export function getA1ExercisesByCategory(category: 'vocabulary' | 'grammar' | 'speaking' | 'listening' | 'reading' | 'writing'): Exercise[] {
+  const categoryMap = {
+    vocabulary: a1VocabExercises,
+    grammar: a1GrammarExercises,
+    speaking: a1SpeakingExercises,
+    listening: a1ListeningExercises,
+    reading: a1ReadingExercises,
+    writing: a1WritingExercises,
+  };
+  
+  return Object.values(categoryMap[category]).flat();
+}
+
+/**
+ * Get random A1 exercises
+ */
+export function getRandomA1Exercises(count: number = 10): Exercise[] {
+  const allExercises = [
+    ...Object.values(a1VocabExercises).flat(),
+    ...Object.values(a1GrammarExercises).flat(),
+    ...Object.values(a1SpeakingExercises).flat(),
+    ...Object.values(a1ListeningExercises).flat(),
+    ...Object.values(a1ReadingExercises).flat(),
+    ...Object.values(a1WritingExercises).flat(),
+  ];
+  
+  // Shuffle and return the requested count
+  const shuffled = allExercises.sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, count);
+}
+
 // Export all exercises for the level
 export const allA1CurriculumExercises = {
   vocabulary: a1VocabExercises,
@@ -926,3 +1426,11 @@ export const allA1CurriculumExercises = {
   reading: a1ReadingExercises,
   writing: a1WritingExercises,
 };
+
+// Count total exercises
+export const a1ExerciseCount = Object.values(a1VocabExercises).flat().length +
+  Object.values(a1GrammarExercises).flat().length +
+  Object.values(a1SpeakingExercises).flat().length +
+  Object.values(a1ListeningExercises).flat().length +
+  Object.values(a1ReadingExercises).flat().length +
+  Object.values(a1WritingExercises).flat().length;
