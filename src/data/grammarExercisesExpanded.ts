@@ -8029,6 +8029,507 @@ export const c1GrammarExercises: GrammarExercise[] = [
     category: "advanced-tenses",
     difficulty: "medium"
   },
+  // ===== INVERSION (50 exercises) =====
+  {
+    id: "C1_Inversion_001",
+    type: "multiple-choice",
+    question: "Never ___ such a beautiful place.",
+    options: ["have I seen", "I have seen", "I saw", "did I saw"],
+    correctAnswer: "have I seen",
+    explanation: "After 'never' at the start, use inverted word order: auxiliary + subject.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_002",
+    type: "multiple-choice",
+    question: "Rarely ___ on time.",
+    options: ["does he arrive", "he arrives", "he does arrive", "arrives he"],
+    correctAnswer: "does he arrive",
+    explanation: "After 'rarely' at the start, invert with auxiliary 'does.'",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_003",
+    type: "multiple-choice",
+    question: "Not only ___ intelligent, but she is also kind.",
+    options: ["is she", "she is", "does she", "she does"],
+    correctAnswer: "is she",
+    explanation: "'Not only' at the start requires inversion in the first clause.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_004",
+    type: "multiple-choice",
+    question: "Hardly ___ the phone when it rang again.",
+    options: ["had I put down", "I had put down", "did I put down", "I put down"],
+    correctAnswer: "had I put down",
+    explanation: "'Hardly' + past perfect inversion for immediate sequence.",
+    category: "inversion",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Inversion_005",
+    type: "multiple-choice",
+    question: "No sooner ___ than it started to rain.",
+    options: ["had we arrived", "we had arrived", "did we arrive", "we arrived"],
+    correctAnswer: "had we arrived",
+    explanation: "'No sooner...than' requires past perfect with inversion.",
+    category: "inversion",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Inversion_006",
+    type: "multiple-choice",
+    question: "Seldom ___ so moved by a speech.",
+    options: ["have I been", "I have been", "I was", "was I been"],
+    correctAnswer: "have I been",
+    explanation: "'Seldom' triggers inversion with present perfect.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_007",
+    type: "multiple-choice",
+    question: "Only after finishing the exam ___ leave.",
+    options: ["could we", "we could", "can we", "we can"],
+    correctAnswer: "could we",
+    explanation: "'Only after' + clause requires inversion in the main clause.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_008",
+    type: "multiple-choice",
+    question: "Under no circumstances ___ the building.",
+    options: ["should you enter", "you should enter", "you enter", "enter you"],
+    correctAnswer: "should you enter",
+    explanation: "'Under no circumstances' requires modal + subject inversion.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_009",
+    type: "multiple-choice",
+    question: "Little ___ that he would become famous.",
+    options: ["did he know", "he knew", "he did know", "knew he"],
+    correctAnswer: "did he know",
+    explanation: "'Little' with negative meaning requires inversion.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_010",
+    type: "multiple-choice",
+    question: "So beautiful ___ that everyone stopped to look.",
+    options: ["was the painting", "the painting was", "did the painting", "the painting did"],
+    correctAnswer: "was the painting",
+    explanation: "'So + adjective' at the start requires inversion with 'be.'",
+    category: "inversion",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Inversion_011",
+    type: "multiple-choice",
+    question: "In no way ___ responsible for the accident.",
+    options: ["was he", "he was", "did he", "he did"],
+    correctAnswer: "was he",
+    explanation: "'In no way' is a negative adverbial requiring inversion.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_012",
+    type: "multiple-choice",
+    question: "At no time ___ about leaving the company.",
+    options: ["did she think", "she thought", "she did think", "thought she"],
+    correctAnswer: "did she think",
+    explanation: "'At no time' triggers inversion with auxiliary 'did.'",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_013",
+    type: "multiple-choice",
+    question: "Only when ___ home did I realize my mistake.",
+    options: ["I got", "got I", "did I get", "I did get"],
+    correctAnswer: "I got",
+    explanation: "In 'only when' clauses, inversion is in the main clause, not the 'when' clause.",
+    category: "inversion",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Inversion_014",
+    type: "multiple-choice",
+    question: "Not until the meeting ended ___ the truth.",
+    options: ["did we learn", "we learned", "we did learn", "learned we"],
+    correctAnswer: "did we learn",
+    explanation: "'Not until' requires inversion in the main clause.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_015",
+    type: "multiple-choice",
+    question: "Such ___ his anger that he couldn't speak.",
+    options: ["was", "is", "did", "had"],
+    correctAnswer: "was",
+    explanation: "'Such was/is' for emphasis requires inverted structure.",
+    category: "inversion",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Inversion_016",
+    type: "multiple-choice",
+    question: "Nowhere ___ a better restaurant.",
+    options: ["will you find", "you will find", "you find", "find you"],
+    correctAnswer: "will you find",
+    explanation: "'Nowhere' is a negative adverbial requiring inversion.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_017",
+    type: "multiple-choice",
+    question: "Only by working hard ___ success.",
+    options: ["can you achieve", "you can achieve", "you achieve", "achieve you"],
+    correctAnswer: "can you achieve",
+    explanation: "'Only by + gerund' requires inversion in the main clause.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_018",
+    type: "multiple-choice",
+    question: "Scarcely ___ asleep when the alarm went off.",
+    options: ["had I fallen", "I had fallen", "did I fall", "I fell"],
+    correctAnswer: "had I fallen",
+    explanation: "'Scarcely...when' uses past perfect with inversion.",
+    category: "inversion",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Inversion_019",
+    type: "multiple-choice",
+    question: "On no account ___ this information.",
+    options: ["must you share", "you must share", "you share", "share you"],
+    correctAnswer: "must you share",
+    explanation: "'On no account' requires modal inversion for prohibition.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_020",
+    type: "multiple-choice",
+    question: "So quickly ___ that I couldn't follow.",
+    options: ["did he speak", "he spoke", "he did speak", "spoke he"],
+    correctAnswer: "did he speak",
+    explanation: "'So + adverb' at the start requires inversion.",
+    category: "inversion",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Inversion_021",
+    type: "multiple-choice",
+    question: "Not a word ___ during the entire meeting.",
+    options: ["did she say", "she said", "she did say", "said she"],
+    correctAnswer: "did she say",
+    explanation: "'Not a + noun' as object requires inversion.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_022",
+    type: "multiple-choice",
+    question: "Had I known, I ___ have helped.",
+    options: ["would", "will", "can", "did"],
+    correctAnswer: "would",
+    explanation: "Inverted conditional: 'Had I known' = 'If I had known.'",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_023",
+    type: "multiple-choice",
+    question: "Were she here, she ___ know what to do.",
+    options: ["would", "will", "can", "did"],
+    correctAnswer: "would",
+    explanation: "Inverted second conditional: 'Were she' = 'If she were.'",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_024",
+    type: "multiple-choice",
+    question: "Should you need help, ___ hesitate to ask.",
+    options: ["don't", "doesn't", "didn't", "won't"],
+    correctAnswer: "don't",
+    explanation: "Inverted first conditional: 'Should you' = 'If you should.'",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_025",
+    type: "multiple-choice",
+    question: "Only then ___ the seriousness of the situation.",
+    options: ["did I realize", "I realized", "I did realize", "realized I"],
+    correctAnswer: "did I realize",
+    explanation: "'Only then' requires inversion in the main clause.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_026",
+    type: "multiple-choice",
+    question: "In the garden ___ a beautiful fountain.",
+    options: ["stood", "stands", "standing", "stand"],
+    correctAnswer: "stood",
+    explanation: "Place adverbials can trigger subject-verb inversion for literary effect.",
+    category: "inversion",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Inversion_027",
+    type: "multiple-choice",
+    question: "Here ___ the bus!",
+    options: ["comes", "come", "coming", "came"],
+    correctAnswer: "comes",
+    explanation: "'Here' + verb + subject for exclamations (with noun subjects).",
+    category: "inversion",
+    difficulty: "easy"
+  },
+  {
+    id: "C1_Inversion_028",
+    type: "multiple-choice",
+    question: "Not once ___ to apologize.",
+    options: ["did he try", "he tried", "he did try", "tried he"],
+    correctAnswer: "did he try",
+    explanation: "'Not once' requires negative inversion.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_029",
+    type: "multiple-choice",
+    question: "Only in emergencies ___ this exit.",
+    options: ["should you use", "you should use", "you use", "use you"],
+    correctAnswer: "should you use",
+    explanation: "'Only in + noun' requires inversion in the main clause.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_030",
+    type: "multiple-choice",
+    question: "So tired ___ that she fell asleep immediately.",
+    options: ["was she", "she was", "did she", "she did"],
+    correctAnswer: "was she",
+    explanation: "'So + adjective' with 'be' requires inversion.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_031",
+    type: "multiple-choice",
+    question: "Not for a moment ___ giving up.",
+    options: ["did I consider", "I considered", "I did consider", "considered I"],
+    correctAnswer: "did I consider",
+    explanation: "'Not for a moment' requires negative inversion.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_032",
+    type: "multiple-choice",
+    question: "Had we left earlier, we ___ the traffic.",
+    options: ["would have avoided", "will avoid", "avoided", "avoid"],
+    correctAnswer: "would have avoided",
+    explanation: "Inverted third conditional with past perfect result.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_033",
+    type: "multiple-choice",
+    question: "Only later ___ how important it was.",
+    options: ["did she understand", "she understood", "she did understand", "understood she"],
+    correctAnswer: "did she understand",
+    explanation: "'Only later' triggers inversion.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_034",
+    type: "multiple-choice",
+    question: "So heavily ___ that we couldn't see the road.",
+    options: ["was it raining", "it was raining", "did it rain", "it rained"],
+    correctAnswer: "was it raining",
+    explanation: "'So + adverb' with continuous tense requires inversion.",
+    category: "inversion",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Inversion_035",
+    type: "multiple-choice",
+    question: "In front of the building ___ a large crowd.",
+    options: ["gathered", "gather", "gathering", "gathers"],
+    correctAnswer: "gathered",
+    explanation: "Place adverbial inversion for literary or formal style.",
+    category: "inversion",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Inversion_036",
+    type: "multiple-choice",
+    question: "Never before ___ so many people at the concert.",
+    options: ["had there been", "there had been", "there were", "were there"],
+    correctAnswer: "had there been",
+    explanation: "'Never before' requires inverted existential structure.",
+    category: "inversion",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Inversion_037",
+    type: "multiple-choice",
+    question: "Only if you promise ___ tell you the secret.",
+    options: ["will I", "I will", "I can", "can I"],
+    correctAnswer: "will I",
+    explanation: "'Only if' requires inversion in the main clause.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_038",
+    type: "multiple-choice",
+    question: "Barely ___ out of bed when the phone rang.",
+    options: ["had I gotten", "I had gotten", "did I get", "I got"],
+    correctAnswer: "had I gotten",
+    explanation: "'Barely' with past perfect for immediate sequence.",
+    category: "inversion",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Inversion_039",
+    type: "multiple-choice",
+    question: "So popular ___ the show that tickets sold out in minutes.",
+    options: ["was", "is", "did", "does"],
+    correctAnswer: "was",
+    explanation: "'So + adjective + be' triggers inversion.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_040",
+    type: "multiple-choice",
+    question: "Not only ___ the test, but he got the highest score.",
+    options: ["did he pass", "he passed", "he did pass", "passed he"],
+    correctAnswer: "did he pass",
+    explanation: "'Not only...but also' requires inversion in the first clause.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_041",
+    type: "multiple-choice",
+    question: "Down ___ the tree when it was struck by lightning.",
+    options: ["came", "comes", "coming", "come"],
+    correctAnswer: "came",
+    explanation: "Directional adverb + verb + subject for dramatic effect.",
+    category: "inversion",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Inversion_042",
+    type: "multiple-choice",
+    question: "At no point ___ we in any danger.",
+    options: ["were", "was", "did", "are"],
+    correctAnswer: "were",
+    explanation: "'At no point' triggers negative inversion with 'be.'",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_043",
+    type: "multiple-choice",
+    question: "Were I to win the lottery, I ___ quit my job.",
+    options: ["would", "will", "can", "could have"],
+    correctAnswer: "would",
+    explanation: "Inverted hypothetical: 'Were I to' = 'If I were to.'",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_044",
+    type: "multiple-choice",
+    question: "Only when the sun set ___ we leave.",
+    options: ["did", "do", "we", "were"],
+    correctAnswer: "did",
+    explanation: "'Only when' + past: inversion in the main clause with 'did.'",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_045",
+    type: "multiple-choice",
+    question: "Such ___ his dedication that he worked weekends.",
+    options: ["was", "is", "did", "had"],
+    correctAnswer: "was",
+    explanation: "'Such was' for emphasis on degree.",
+    category: "inversion",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Inversion_046",
+    type: "multiple-choice",
+    question: "Off ___ the rocket into space.",
+    options: ["went", "goes", "going", "go"],
+    correctAnswer: "went",
+    explanation: "Directional adverb inversion for vivid description.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_047",
+    type: "multiple-choice",
+    question: "In vain ___ to convince them.",
+    options: ["did we try", "we tried", "we did try", "tried we"],
+    correctAnswer: "did we try",
+    explanation: "'In vain' can trigger literary inversion.",
+    category: "inversion",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Inversion_048",
+    type: "multiple-choice",
+    question: "Only with great difficulty ___ the puzzle.",
+    options: ["did she solve", "she solved", "she did solve", "solved she"],
+    correctAnswer: "did she solve",
+    explanation: "'Only with + noun' triggers inversion in the main clause.",
+    category: "inversion",
+    difficulty: "medium"
+  },
+  {
+    id: "C1_Inversion_049",
+    type: "multiple-choice",
+    question: "So impressed ___ that they offered her the job immediately.",
+    options: ["were they", "they were", "did they", "they did"],
+    correctAnswer: "were they",
+    explanation: "'So + adjective' with 'be' requires subject-verb inversion.",
+    category: "inversion",
+    difficulty: "hard"
+  },
+  {
+    id: "C1_Inversion_050",
+    type: "multiple-choice",
+    question: "No longer ___ tolerate such behavior.",
+    options: ["will we", "we will", "we do", "do we"],
+    correctAnswer: "will we",
+    explanation: "'No longer' at the start requires inversion.",
+    category: "inversion",
+    difficulty: "medium"
+  },
 ];
 
 // ==================== C2 LEVEL EXERCISES (placeholder) ====================
