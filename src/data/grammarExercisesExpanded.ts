@@ -11039,9 +11039,1510 @@ export const c2GrammarExercises: GrammarExercise[] = [
     category: "advanced-connectors",
     difficulty: "hard"
   },
+  // ===== SUBJUNCTIVE ADVANCED (50 exercises) =====
+  {
+    id: "C2_SubjunctiveAdv_001",
+    type: "multiple-choice",
+    question: "The board insisted that the CEO ___ immediately.",
+    options: ["resign", "resigns", "resigned", "resigning"],
+    correctAnswer: "resign",
+    explanation: "Mandative subjunctive after 'insist': base form.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_002",
+    type: "multiple-choice",
+    question: "It is imperative that every precaution ___ taken.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'It is imperative that' + passive subjunctive uses 'be.'",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_003",
+    type: "multiple-choice",
+    question: "The treaty demands that each nation ___ to the agreement.",
+    options: ["adhere", "adheres", "adhered", "adhering"],
+    correctAnswer: "adhere",
+    explanation: "Mandative subjunctive after 'demand': base form.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_004",
+    type: "multiple-choice",
+    question: "Lest he ___ forgotten, we erected a monument.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'Lest' requires subjunctive 'be' (formal/literary).",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_005",
+    type: "multiple-choice",
+    question: "The motion requires that the matter ___ tabled.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "Formal parliamentary language uses subjunctive.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_006",
+    type: "multiple-choice",
+    question: "It is essential that not a word ___ spoken.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "Negative subjunctive: 'not a word be spoken.'",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_007",
+    type: "multiple-choice",
+    question: "The will stipulates that the estate ___ divided equally.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "Legal language uses mandative subjunctive.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_008",
+    type: "multiple-choice",
+    question: "Suffice it to ___ that we disagree.",
+    options: ["say", "says", "said", "saying"],
+    correctAnswer: "say",
+    explanation: "Fixed subjunctive expression: 'Suffice it to say.'",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_009",
+    type: "multiple-choice",
+    question: "___ it be known that the court finds the defendant guilty.",
+    options: ["Let", "Lets", "Letting", "To let"],
+    correctAnswer: "Let",
+    explanation: "'Let it be known' = formal announcement subjunctive.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_010",
+    type: "multiple-choice",
+    question: "The professor recommended that each student ___ the reading.",
+    options: ["complete", "completes", "completed", "completing"],
+    correctAnswer: "complete",
+    explanation: "Mandative subjunctive after 'recommend.'",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_011",
+    type: "multiple-choice",
+    question: "Come what ___, we will persevere.",
+    options: ["may", "might", "will", "can"],
+    correctAnswer: "may",
+    explanation: "Fixed subjunctive expression: 'Come what may.'",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_012",
+    type: "multiple-choice",
+    question: "If truth ___ told, I never liked him.",
+    options: ["be", "is", "was", "were"],
+    correctAnswer: "be",
+    explanation: "Fixed expression: 'If truth be told.'",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_013",
+    type: "multiple-choice",
+    question: "The resolution calls for the president ___ impeached.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "Formal political language uses subjunctive.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_014",
+    type: "multiple-choice",
+    question: "___ that as it may, we must proceed.",
+    options: ["Be", "Is", "Was", "Being"],
+    correctAnswer: "Be",
+    explanation: "Fixed expression: 'Be that as it may.'",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_015",
+    type: "multiple-choice",
+    question: "I move that the meeting ___ adjourned.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "Parliamentary procedure uses subjunctive.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_016",
+    type: "multiple-choice",
+    question: "The statute mandates that all documents ___ notarized.",
+    options: ["be", "are", "were", "being"],
+    correctAnswer: "be",
+    explanation: "Legal mandate requires subjunctive.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_017",
+    type: "multiple-choice",
+    question: "Far ___ it from me to criticize your decision.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "Fixed expression: 'Far be it from me.'",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_018",
+    type: "multiple-choice",
+    question: "Would that he ___ here to see this!",
+    options: ["were", "is", "was", "be"],
+    correctAnswer: "were",
+    explanation: "'Would that' expresses wish with past subjunctive.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_019",
+    type: "multiple-choice",
+    question: "The committee urges that immediate action ___.",
+    options: ["be taken", "is taken", "was taken", "taking"],
+    correctAnswer: "be taken",
+    explanation: "'Urge that' + passive requires 'be + pp.'",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_020",
+    type: "multiple-choice",
+    question: "If it ___ not for you, I would have failed.",
+    options: ["were", "was", "is", "be"],
+    correctAnswer: "were",
+    explanation: "'If it were not for' = fixed subjunctive expression.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_021",
+    type: "multiple-choice",
+    question: "The directive specifies that no employee ___ overtime without approval.",
+    options: ["work", "works", "worked", "working"],
+    correctAnswer: "work",
+    explanation: "Mandative subjunctive with negative: base form.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_022",
+    type: "multiple-choice",
+    question: "Heaven ___ that anything should happen to you!",
+    options: ["forbid", "forbids", "forbidden", "forbidding"],
+    correctAnswer: "forbid",
+    explanation: "Fixed expression: 'Heaven forbid.'",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_023",
+    type: "multiple-choice",
+    question: "The court ordered that he ___ detained pending trial.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "Legal orders use mandative subjunctive.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_024",
+    type: "multiple-choice",
+    question: "Perish the ___ that we should abandon our principles!",
+    options: ["thought", "think", "thinking", "thoughts"],
+    correctAnswer: "thought",
+    explanation: "'Perish the thought' = fixed subjunctive expression.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_025",
+    type: "multiple-choice",
+    question: "It is vital that the witness ___ protected.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'It is vital that' + passive uses subjunctive 'be.'",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_026",
+    type: "multiple-choice",
+    question: "The proposal demands that funding ___ increased.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "Mandative subjunctive in passive voice.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_027",
+    type: "multiple-choice",
+    question: "___ as it were, a turning point in history.",
+    options: ["It was", "It is", "Being", "Were it"],
+    correctAnswer: "It was",
+    explanation: "'As it were' = so to speak; not a subjunctive trigger.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_028",
+    type: "multiple-choice",
+    question: "The ancient texts decreed that the ritual ___ performed at dawn.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "Formal/archaic decrees use subjunctive.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_029",
+    type: "multiple-choice",
+    question: "It is critical that every vote ___.",
+    options: ["count", "counts", "counted", "counting"],
+    correctAnswer: "count",
+    explanation: "'It is critical that' requires subjunctive base form.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_030",
+    type: "multiple-choice",
+    question: "___ God willing, we will meet again.",
+    options: ["If", "Should", "Were", "—"],
+    correctAnswer: "—",
+    explanation: "'God willing' is a fixed expression (no 'if' needed).",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_031",
+    type: "multiple-choice",
+    question: "The regulation requires that each applicant ___ a background check.",
+    options: ["undergo", "undergoes", "underwent", "undergoing"],
+    correctAnswer: "undergo",
+    explanation: "Mandative subjunctive: base form 'undergo.'",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_032",
+    type: "multiple-choice",
+    question: "If need ___,  I will help personally.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'If need be' = fixed subjunctive expression.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_033",
+    type: "multiple-choice",
+    question: "The doctrine holds that all beings ___ treated equally.",
+    options: ["be", "are", "were", "being"],
+    correctAnswer: "be",
+    explanation: "Philosophical tenets use mandative subjunctive.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_034",
+    type: "multiple-choice",
+    question: "It is essential that this information ___ remain confidential.",
+    options: ["—", "does", "should", "will"],
+    correctAnswer: "—",
+    explanation: "Subjunctive: 'that this information remain' (no auxiliary).",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_035",
+    type: "multiple-choice",
+    question: "The judge recommended that leniency ___ shown.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'Recommend that' + passive uses 'be.'",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_036",
+    type: "multiple-choice",
+    question: "So ___ it!",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'So be it' = accepting fate; fixed subjunctive.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_037",
+    type: "multiple-choice",
+    question: "The constitution mandates that the president ___ a natural-born citizen.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "Constitutional requirements use mandative subjunctive.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_038",
+    type: "multiple-choice",
+    question: "The proposal suggests that each member ___ given a vote.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'Suggest that' + passive requires 'be.'",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_039",
+    type: "multiple-choice",
+    question: "Albeit ___ difficult, the task was completed.",
+    options: ["it was", "it be", "being", "it is"],
+    correctAnswer: "it was",
+    explanation: "'Albeit' = although; takes indicative, not subjunctive.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_040",
+    type: "multiple-choice",
+    question: "It is paramount that safety ___ paramount.",
+    options: ["remain", "remains", "remained", "remaining"],
+    correctAnswer: "remain",
+    explanation: "'It is paramount that' requires subjunctive.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_041",
+    type: "multiple-choice",
+    question: "The protocols dictate that all samples ___ properly labeled.",
+    options: ["be", "are", "were", "being"],
+    correctAnswer: "be",
+    explanation: "Scientific protocols use mandative subjunctive.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_042",
+    type: "multiple-choice",
+    question: "The charter requires that meetings ___ held quarterly.",
+    options: ["be", "are", "were", "being"],
+    correctAnswer: "be",
+    explanation: "Organizational charters use mandative subjunctive.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_043",
+    type: "multiple-choice",
+    question: "It is crucial that the deadline ___ met.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'It is crucial that' + passive uses 'be.'",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_044",
+    type: "multiple-choice",
+    question: "The editor insists that the article ___ rewritten.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'Insist that' + passive requires 'be.'",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_045",
+    type: "multiple-choice",
+    question: "The agreement stipulates that neither party ___ withdraw.",
+    options: ["—", "may", "can", "will"],
+    correctAnswer: "—",
+    explanation: "Subjunctive: 'neither party withdraw' (no auxiliary).",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_046",
+    type: "multiple-choice",
+    question: "It was recommended that he ___ the position.",
+    options: ["accept", "accepts", "accepted", "accepting"],
+    correctAnswer: "accept",
+    explanation: "Past reporting + subjunctive: 'It was recommended that he accept.'",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_047",
+    type: "multiple-choice",
+    question: "The bylaws require that a quorum ___ present.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "Organizational rules use mandative subjunctive.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_048",
+    type: "multiple-choice",
+    question: "I demand that this matter ___ investigated immediately.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'Demand that' + passive requires 'be.'",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_049",
+    type: "multiple-choice",
+    question: "The policy states that all complaints ___ documented.",
+    options: ["be", "are", "were", "being"],
+    correctAnswer: "be",
+    explanation: "Official policies use mandative subjunctive.",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_SubjunctiveAdv_050",
+    type: "multiple-choice",
+    question: "It is necessary that truth ___ served.",
+    options: ["be", "is", "was", "being"],
+    correctAnswer: "be",
+    explanation: "'It is necessary that' + passive uses 'be.'",
+    category: "subjunctive-advanced",
+    difficulty: "hard"
+  },
+  // ===== COMPLEX INVERSIONS (50 exercises) =====
+  {
+    id: "C2_ComplexInversions_001",
+    type: "multiple-choice",
+    question: "So severe ___ the storm that the town was evacuated.",
+    options: ["was", "is", "did", "had"],
+    correctAnswer: "was",
+    explanation: "'So + adjective' at the start triggers inversion with 'be.'",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_002",
+    type: "multiple-choice",
+    question: "Such ___ his reputation that everyone trusted him.",
+    options: ["was", "is", "did", "had"],
+    correctAnswer: "was",
+    explanation: "'Such was' for emphasis on degree.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_003",
+    type: "multiple-choice",
+    question: "On the hill ___ an ancient castle.",
+    options: ["stood", "stands", "standing", "stand"],
+    correctAnswer: "stood",
+    explanation: "Place adverbial triggers literary subject-verb inversion.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_004",
+    type: "multiple-choice",
+    question: "Not until the last moment ___ the truth revealed.",
+    options: ["was", "is", "did", "had"],
+    correctAnswer: "was",
+    explanation: "'Not until' + passive requires 'was' inversion.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_005",
+    type: "multiple-choice",
+    question: "Little ___ they know what awaited them.",
+    options: ["did", "do", "had", "were"],
+    correctAnswer: "did",
+    explanation: "'Little' (negative) triggers inversion with 'did.'",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_006",
+    type: "multiple-choice",
+    question: "Only when the fog lifted ___ see the path.",
+    options: ["could we", "we could", "can we", "we can"],
+    correctAnswer: "could we",
+    explanation: "'Only when' triggers inversion in main clause.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_007",
+    type: "multiple-choice",
+    question: "Down from the sky ___ the eagles.",
+    options: ["swooped", "swoop", "swooping", "swoops"],
+    correctAnswer: "swooped",
+    explanation: "Directional adverb + verb + subject for dramatic effect.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_008",
+    type: "multiple-choice",
+    question: "In walked ___ with a mysterious smile.",
+    options: ["she", "her", "hers", "herself"],
+    correctAnswer: "she",
+    explanation: "Place adverbial inversion: subject follows verb.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_009",
+    type: "multiple-choice",
+    question: "So dense ___ the crowd that movement was impossible.",
+    options: ["was", "is", "did", "had"],
+    correctAnswer: "was",
+    explanation: "'So + adjective' triggers inversion with 'be.'",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_010",
+    type: "multiple-choice",
+    question: "At no time during the trial ___ the defendant show remorse.",
+    options: ["did", "does", "had", "was"],
+    correctAnswer: "did",
+    explanation: "'At no time' triggers negative inversion.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_011",
+    type: "multiple-choice",
+    question: "Not a single word ___ throughout the ceremony.",
+    options: ["was spoken", "spoken", "speaking", "speaks"],
+    correctAnswer: "was spoken",
+    explanation: "'Not a single' triggers inversion with passive.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_012",
+    type: "multiple-choice",
+    question: "Away ___ the children, laughing and shouting.",
+    options: ["ran", "run", "running", "runs"],
+    correctAnswer: "ran",
+    explanation: "Directional adverb inversion for vivid description.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_013",
+    type: "multiple-choice",
+    question: "Under no circumstances ___ classified information be shared.",
+    options: ["should", "it should", "should it", "shouldn't"],
+    correctAnswer: "should",
+    explanation: "'Under no circumstances' + modal inversion.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_014",
+    type: "multiple-choice",
+    question: "So profound ___ the silence that one could hear a pin drop.",
+    options: ["was", "is", "did", "had"],
+    correctAnswer: "was",
+    explanation: "'So + adjective' for literary emphasis.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_015",
+    type: "multiple-choice",
+    question: "There on the horizon ___ the mountains.",
+    options: ["rose", "rise", "rising", "rises"],
+    correctAnswer: "rose",
+    explanation: "Place expression + verb + subject for literary effect.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_016",
+    type: "multiple-choice",
+    question: "Barely ___ finished speaking when the protests began.",
+    options: ["had he", "he had", "did he", "he did"],
+    correctAnswer: "had he",
+    explanation: "'Barely' + past perfect for immediate sequence.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_017",
+    type: "multiple-choice",
+    question: "On the mantelpiece ___ a faded photograph.",
+    options: ["sat", "sits", "sitting", "sit"],
+    correctAnswer: "sat",
+    explanation: "Place adverbial triggers subject-verb inversion.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_018",
+    type: "multiple-choice",
+    question: "So eloquently ___ speak that the jury was moved.",
+    options: ["did she", "she did", "she spoke", "spoke she"],
+    correctAnswer: "did she",
+    explanation: "'So + adverb' triggers inversion with 'did.'",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_019",
+    type: "multiple-choice",
+    question: "Nowhere in the document ___ any mention of compensation.",
+    options: ["is there", "there is", "is it", "it is"],
+    correctAnswer: "is there",
+    explanation: "'Nowhere' triggers negative inversion with existential.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_020",
+    type: "multiple-choice",
+    question: "Into the room ___ with an air of importance.",
+    options: ["strode he", "he strode", "strode", "striding"],
+    correctAnswer: "strode he",
+    explanation: "Directional phrase + verb + subject (formal/literary).",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_021",
+    type: "multiple-choice",
+    question: "No sooner ___ asleep than the baby started crying.",
+    options: ["had I fallen", "I had fallen", "did I fall", "I fell"],
+    correctAnswer: "had I fallen",
+    explanation: "'No sooner...than' requires past perfect inversion.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_022",
+    type: "multiple-choice",
+    question: "Such ___ the complexity of the case that it took years to resolve.",
+    options: ["was", "is", "did", "had"],
+    correctAnswer: "was",
+    explanation: "'Such was' for emphasis on degree.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_023",
+    type: "multiple-choice",
+    question: "Beyond the forest ___ a hidden valley.",
+    options: ["lay", "lies", "lying", "laid"],
+    correctAnswer: "lay",
+    explanation: "Place adverbial + verb + subject for description.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_024",
+    type: "multiple-choice",
+    question: "Not only ___ late, but he also forgot the documents.",
+    options: ["was he", "he was", "did he", "he did"],
+    correctAnswer: "was he",
+    explanation: "'Not only' triggers inversion in first clause.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_025",
+    type: "multiple-choice",
+    question: "Up ___ the rocket into the night sky.",
+    options: ["soared", "soars", "soaring", "soar"],
+    correctAnswer: "soared",
+    explanation: "Directional adverb inversion for dramatic effect.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_026",
+    type: "multiple-choice",
+    question: "Rarely in history ___ such courage been displayed.",
+    options: ["has", "have", "had", "was"],
+    correctAnswer: "has",
+    explanation: "'Rarely' triggers inversion with present perfect.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_027",
+    type: "multiple-choice",
+    question: "So fierce ___ the wind that trees were uprooted.",
+    options: ["was", "is", "did", "had"],
+    correctAnswer: "was",
+    explanation: "'So + adjective' for intensity emphasis.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_028",
+    type: "multiple-choice",
+    question: "Here in this very spot ___ the famous treaty signed.",
+    options: ["was", "is", "did", "had"],
+    correctAnswer: "was",
+    explanation: "Place emphasis with passive inversion.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_029",
+    type: "multiple-choice",
+    question: "Not for one moment ___ consider giving up.",
+    options: ["did I", "I did", "I would", "would I"],
+    correctAnswer: "did I",
+    explanation: "'Not for one moment' triggers negative inversion.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_030",
+    type: "multiple-choice",
+    question: "Out of the shadows ___ a mysterious figure.",
+    options: ["emerged", "emerges", "emerging", "emerge"],
+    correctAnswer: "emerged",
+    explanation: "Place phrase + verb + subject for suspense.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_031",
+    type: "multiple-choice",
+    question: "Scarcely ___ recovered from one crisis before another struck.",
+    options: ["had we", "we had", "did we", "we did"],
+    correctAnswer: "had we",
+    explanation: "'Scarcely' + past perfect for sequence.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_032",
+    type: "multiple-choice",
+    question: "Seldom in my career ___ such a challenging project.",
+    options: ["have I faced", "I have faced", "did I face", "I faced"],
+    correctAnswer: "have I faced",
+    explanation: "'Seldom' triggers inversion with present perfect.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_033",
+    type: "multiple-choice",
+    question: "So vast ___ the desert that we felt insignificant.",
+    options: ["was", "is", "did", "had"],
+    correctAnswer: "was",
+    explanation: "'So + adjective' emphasizes scale.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_034",
+    type: "multiple-choice",
+    question: "Behind the curtain ___ the puppeteer.",
+    options: ["hid", "hides", "hiding", "hidden"],
+    correctAnswer: "hid",
+    explanation: "Place adverbial + verb + subject.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_035",
+    type: "multiple-choice",
+    question: "In no way ___ this be interpreted as approval.",
+    options: ["should", "it should", "should it", "shouldn't"],
+    correctAnswer: "should",
+    explanation: "'In no way' + modal inversion.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_036",
+    type: "multiple-choice",
+    question: "So rapidly ___ the disease spread that containment was impossible.",
+    options: ["did", "does", "was", "had"],
+    correctAnswer: "did",
+    explanation: "'So + adverb' triggers inversion with 'did.'",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_037",
+    type: "multiple-choice",
+    question: "There beneath the surface ___ the answer.",
+    options: ["lay", "lies", "lying", "laid"],
+    correctAnswer: "lay",
+    explanation: "Place expression + verb + subject (literary).",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_038",
+    type: "multiple-choice",
+    question: "Only through cooperation ___ we succeed.",
+    options: ["can", "we can", "could", "we could"],
+    correctAnswer: "can",
+    explanation: "'Only through' triggers modal inversion.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_039",
+    type: "multiple-choice",
+    question: "Round and round ___ the dancers.",
+    options: ["spun", "spin", "spinning", "spins"],
+    correctAnswer: "spun",
+    explanation: "Adverbial phrase + verb + subject for movement.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_040",
+    type: "multiple-choice",
+    question: "Never again ___ such a mistake.",
+    options: ["will I make", "I will make", "I make", "make I"],
+    correctAnswer: "will I make",
+    explanation: "'Never again' triggers future inversion.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_041",
+    type: "multiple-choice",
+    question: "So moved ___ by the speech that tears streamed down her face.",
+    options: ["was she", "she was", "did she", "she did"],
+    correctAnswer: "was she",
+    explanation: "'So + adjective' with passive meaning.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_042",
+    type: "multiple-choice",
+    question: "Along the path ___ a procession of monks.",
+    options: ["came", "come", "coming", "comes"],
+    correctAnswer: "came",
+    explanation: "Place adverbial + verb + subject.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_043",
+    type: "multiple-choice",
+    question: "Not once during the interview ___ she hesitate.",
+    options: ["did", "does", "had", "was"],
+    correctAnswer: "did",
+    explanation: "'Not once' triggers negative inversion.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_044",
+    type: "multiple-choice",
+    question: "So absolute ___ his power that none dared oppose him.",
+    options: ["was", "is", "did", "had"],
+    correctAnswer: "was",
+    explanation: "'So + adjective' for degree emphasis.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_045",
+    type: "multiple-choice",
+    question: "Through the gate ___ a magnificent stallion.",
+    options: ["galloped", "gallops", "galloping", "gallop"],
+    correctAnswer: "galloped",
+    explanation: "Place phrase + verb + subject for drama.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_046",
+    type: "multiple-choice",
+    question: "Only in times of crisis ___ true leadership emerge.",
+    options: ["does", "do", "did", "has"],
+    correctAnswer: "does",
+    explanation: "'Only in' triggers modal/auxiliary inversion.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_047",
+    type: "multiple-choice",
+    question: "So intricate ___ the design that it took months to complete.",
+    options: ["was", "is", "did", "had"],
+    correctAnswer: "was",
+    explanation: "'So + adjective' for complexity emphasis.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_048",
+    type: "multiple-choice",
+    question: "Across the field ___ the soldiers.",
+    options: ["marched", "march", "marching", "marches"],
+    correctAnswer: "marched",
+    explanation: "Place adverbial + verb + subject (literary).",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_049",
+    type: "multiple-choice",
+    question: "At no point in the negotiations ___ willing to compromise.",
+    options: ["were they", "they were", "did they", "they did"],
+    correctAnswer: "were they",
+    explanation: "'At no point' triggers negative inversion.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_ComplexInversions_050",
+    type: "multiple-choice",
+    question: "Such ___ the demand that supplies ran out immediately.",
+    options: ["was", "is", "did", "had"],
+    correctAnswer: "was",
+    explanation: "'Such was' for emphasis on extent.",
+    category: "complex-inversions",
+    difficulty: "hard"
+  },
+  // ===== ELLIPSIS AND SUBSTITUTION (50 exercises) =====
+  {
+    id: "C2_Ellipsis_001",
+    type: "multiple-choice",
+    question: "'Would you like to come?' 'I'd love ___.'",
+    options: ["to", "it", "that", "so"],
+    correctAnswer: "to",
+    explanation: "Ellipsis: 'to' substitutes for 'to come.'",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_002",
+    type: "multiple-choice",
+    question: "'Is it going to rain?' 'I hope ___.'",
+    options: ["not", "so", "it", "that"],
+    correctAnswer: "not",
+    explanation: "'I hope not' = 'I hope it isn't going to rain.'",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_003",
+    type: "multiple-choice",
+    question: "'She can speak French.' 'So ___ I.'",
+    options: ["can", "do", "am", "have"],
+    correctAnswer: "can",
+    explanation: "'So can I' = I can speak French too.",
+    category: "ellipsis-substitution",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_Ellipsis_004",
+    type: "multiple-choice",
+    question: "'He won't help.' 'Neither ___ she.'",
+    options: ["will", "does", "is", "has"],
+    correctAnswer: "will",
+    explanation: "'Neither will she' = She won't help either.",
+    category: "ellipsis-substitution",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_Ellipsis_005",
+    type: "multiple-choice",
+    question: "'Did you finish?' 'Yes, I ___.'",
+    options: ["did", "do", "have", "finished"],
+    correctAnswer: "did",
+    explanation: "Auxiliary substitution: 'did' replaces 'finished.'",
+    category: "ellipsis-substitution",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_Ellipsis_006",
+    type: "multiple-choice",
+    question: "'Is the report ready?' 'I believe ___.'",
+    options: ["so", "it", "that", "this"],
+    correctAnswer: "so",
+    explanation: "'I believe so' = I believe it is ready.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_007",
+    type: "multiple-choice",
+    question: "'You should have called.' 'I know I should ___.'",
+    options: ["have", "do", "be", "had"],
+    correctAnswer: "have",
+    explanation: "Ellipsis after 'should': 'have' retained.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_008",
+    type: "multiple-choice",
+    question: "'Will they come?' 'They might ___.'",
+    options: ["do", "come", "—", "it"],
+    correctAnswer: "—",
+    explanation: "Full ellipsis after 'might': nothing needed.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_009",
+    type: "multiple-choice",
+    question: "'I've been to Paris.' 'I haven't ___ yet.'",
+    options: ["—", "been", "gone", "it"],
+    correctAnswer: "—",
+    explanation: "Ellipsis: 'yet' implies 'been to Paris.'",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_010",
+    type: "multiple-choice",
+    question: "'She works hard and ___ does he.'",
+    options: ["so", "too", "also", "as"],
+    correctAnswer: "so",
+    explanation: "'So does he' = He works hard too.",
+    category: "ellipsis-substitution",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_Ellipsis_011",
+    type: "multiple-choice",
+    question: "'Can you help me?' 'I'll try ___.'",
+    options: ["to", "it", "so", "that"],
+    correctAnswer: "to",
+    explanation: "Ellipsis: 'to' substitutes for 'to help you.'",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_012",
+    type: "multiple-choice",
+    question: "'Are they arriving today?' 'It appears ___.'",
+    options: ["so", "it", "that", "this"],
+    correctAnswer: "so",
+    explanation: "'It appears so' = It appears they are.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_013",
+    type: "multiple-choice",
+    question: "'I haven't read the book.' 'I have ___.'",
+    options: ["—", "it", "done", "read"],
+    correctAnswer: "—",
+    explanation: "Ellipsis: 'have' alone implies 'read the book.'",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_014",
+    type: "multiple-choice",
+    question: "'Will it work?' 'I doubt ___.'",
+    options: ["it", "so", "that", "this"],
+    correctAnswer: "it",
+    explanation: "'I doubt it' = I doubt it will work.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_015",
+    type: "multiple-choice",
+    question: "'She didn't come and neither ___ her sister.'",
+    options: ["did", "does", "was", "had"],
+    correctAnswer: "did",
+    explanation: "'Neither did her sister' = parallel negative.",
+    category: "ellipsis-substitution",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_Ellipsis_016",
+    type: "multiple-choice",
+    question: "'Would you like tea or coffee?' 'Either ___ do.'",
+    options: ["will", "would", "can", "does"],
+    correctAnswer: "will",
+    explanation: "'Either will do' = Either is acceptable.",
+    category: "ellipsis-substitution",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_Ellipsis_017",
+    type: "multiple-choice",
+    question: "'Has she left?' 'I think ___.'",
+    options: ["so", "it", "that", "this"],
+    correctAnswer: "so",
+    explanation: "'I think so' = I think she has left.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_018",
+    type: "multiple-choice",
+    question: "'You could have warned me.' 'I meant ___.'",
+    options: ["to", "it", "so", "that"],
+    correctAnswer: "to",
+    explanation: "'I meant to' = I meant to warn you.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_019",
+    type: "multiple-choice",
+    question: "'He's not coming.' 'If ___, we'll proceed without him.'",
+    options: ["so", "not", "he", "that"],
+    correctAnswer: "so",
+    explanation: "'If so' = If that is the case.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_020",
+    type: "multiple-choice",
+    question: "'They're leaving tomorrow.' 'I suppose ___.'",
+    options: ["so", "it", "that", "this"],
+    correctAnswer: "so",
+    explanation: "'I suppose so' = I suppose they are.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_021",
+    type: "multiple-choice",
+    question: "'She can't swim.' 'Nor ___ I.'",
+    options: ["can", "do", "am", "have"],
+    correctAnswer: "can",
+    explanation: "'Nor can I' = I can't swim either.",
+    category: "ellipsis-substitution",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_Ellipsis_022",
+    type: "multiple-choice",
+    question: "'Why didn't you ask?' 'I was going ___.'",
+    options: ["to", "it", "so", "that"],
+    correctAnswer: "to",
+    explanation: "'I was going to' = I was going to ask.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_023",
+    type: "multiple-choice",
+    question: "'Is she qualified?' 'I don't think ___.'",
+    options: ["so", "it", "that", "this"],
+    correctAnswer: "so",
+    explanation: "'I don't think so' = I don't think she is.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_024",
+    type: "multiple-choice",
+    question: "'Take an umbrella.' 'I intend ___.'",
+    options: ["to", "it", "so", "that"],
+    correctAnswer: "to",
+    explanation: "'I intend to' = I intend to take one.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_025",
+    type: "multiple-choice",
+    question: "'He loves her.' '___ does she love him.'",
+    options: ["And so", "And too", "And also", "And as"],
+    correctAnswer: "And so",
+    explanation: "'And so does she' = reciprocal emphasis.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_026",
+    type: "multiple-choice",
+    question: "'Could you help?' 'I'd be happy ___.'",
+    options: ["to", "it", "so", "that"],
+    correctAnswer: "to",
+    explanation: "'Happy to' = happy to help.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_027",
+    type: "multiple-choice",
+    question: "'The project succeeded.' 'Yes, it would ___.'",
+    options: ["seem so", "seem it", "seem that", "seem this"],
+    correctAnswer: "seem so",
+    explanation: "'It would seem so' = It appears that way.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_028",
+    type: "multiple-choice",
+    question: "'Are you staying?' 'I'm afraid ___.'",
+    options: ["not", "so", "it", "that"],
+    correctAnswer: "not",
+    explanation: "'I'm afraid not' = I'm not staying.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_029",
+    type: "multiple-choice",
+    question: "'She hasn't arrived.' 'She may have ___ by now.'",
+    options: ["—", "done", "arrived", "it"],
+    correctAnswer: "—",
+    explanation: "Ellipsis after 'may have': context supplies meaning.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_030",
+    type: "multiple-choice",
+    question: "'Did you know about this?' 'Nobody told me, if that's what you ___.'",
+    options: ["mean", "meant", "meaning", "means"],
+    correctAnswer: "mean",
+    explanation: "Ellipsis: 'mean' implies 'mean to ask.'",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_031",
+    type: "multiple-choice",
+    question: "'He won't change.' 'I expect ___.'",
+    options: ["not", "so", "it", "that"],
+    correctAnswer: "not",
+    explanation: "'I expect not' = I expect he won't.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_032",
+    type: "multiple-choice",
+    question: "'You should apologize.' 'I refuse ___.'",
+    options: ["to", "it", "so", "that"],
+    correctAnswer: "to",
+    explanation: "'I refuse to' = I refuse to apologize.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_033",
+    type: "multiple-choice",
+    question: "'He didn't notice.' 'I'm surprised he didn't ___.'",
+    options: ["—", "do", "it", "so"],
+    correctAnswer: "—",
+    explanation: "Ellipsis: 'didn't' alone is sufficient.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_034",
+    type: "multiple-choice",
+    question: "'Are you happy here?' 'More or less ___.'",
+    options: ["so", "it", "—", "that"],
+    correctAnswer: "—",
+    explanation: "'More or less' implies 'happy.'",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_035",
+    type: "multiple-choice",
+    question: "'She's been promoted.' 'So I ___.'",
+    options: ["hear", "heard", "hearing", "hears"],
+    correctAnswer: "hear",
+    explanation: "'So I hear' = I have heard that.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_036",
+    type: "multiple-choice",
+    question: "'Will they agree?' 'Time will ___.'",
+    options: ["tell", "say", "show", "prove"],
+    correctAnswer: "tell",
+    explanation: "'Time will tell' = fixed expression for uncertainty.",
+    category: "ellipsis-substitution",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_Ellipsis_037",
+    type: "multiple-choice",
+    question: "'You must try harder.' 'I'm trying as hard as I ___.'",
+    options: ["can", "do", "am", "have"],
+    correctAnswer: "can",
+    explanation: "'As hard as I can' = maximum effort.",
+    category: "ellipsis-substitution",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_Ellipsis_038",
+    type: "multiple-choice",
+    question: "'Have you been to Japan?' 'Not ___.'",
+    options: ["yet", "so", "it", "that"],
+    correctAnswer: "yet",
+    explanation: "'Not yet' = I haven't been yet.",
+    category: "ellipsis-substitution",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_Ellipsis_039",
+    type: "multiple-choice",
+    question: "'She promised to help.' 'And help she ___.'",
+    options: ["did", "does", "has", "will"],
+    correctAnswer: "did",
+    explanation: "Emphatic inversion: 'And help she did.'",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_040",
+    type: "multiple-choice",
+    question: "'Do you understand?' 'Perfectly ___.'",
+    options: ["—", "so", "it", "well"],
+    correctAnswer: "—",
+    explanation: "'Perfectly' alone implies understanding.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_041",
+    type: "multiple-choice",
+    question: "'He never listens.' 'He used ___.'",
+    options: ["to", "it", "so", "that"],
+    correctAnswer: "to",
+    explanation: "'He used to' = He used to listen.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_042",
+    type: "multiple-choice",
+    question: "'Are you enjoying the book?' 'Very much ___.'",
+    options: ["so", "it", "—", "that"],
+    correctAnswer: "so",
+    explanation: "'Very much so' = Very much indeed.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_043",
+    type: "multiple-choice",
+    question: "'She should have been notified.' 'She may have ___.'",
+    options: ["been", "—", "it", "so"],
+    correctAnswer: "been",
+    explanation: "'May have been' retains passive auxiliary.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_044",
+    type: "multiple-choice",
+    question: "'Will you marry me?' 'I thought you'd never ___.'",
+    options: ["ask", "asked", "asking", "asks"],
+    correctAnswer: "ask",
+    explanation: "Ellipsis: 'never ask' is implied from context.",
+    category: "ellipsis-substitution",
+    difficulty: "medium"
+  },
+  {
+    id: "C2_Ellipsis_045",
+    type: "multiple-choice",
+    question: "'He denied everything.' 'As well he ___.'",
+    options: ["might", "may", "could", "would"],
+    correctAnswer: "might",
+    explanation: "'As well he might' = He had good reason to.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_046",
+    type: "multiple-choice",
+    question: "'Is it true?' 'It would appear ___.'",
+    options: ["so", "it", "that", "this"],
+    correctAnswer: "so",
+    explanation: "'It would appear so' = It seems to be true.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_047",
+    type: "multiple-choice",
+    question: "'You ought to exercise more.' 'I know I ___.'",
+    options: ["ought", "should", "must", "have"],
+    correctAnswer: "ought",
+    explanation: "'I ought' retains the modal from the prompt.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_048",
+    type: "multiple-choice",
+    question: "'They haven't confirmed.' 'They're bound ___.'",
+    options: ["to", "it", "so", "that"],
+    correctAnswer: "to",
+    explanation: "'Bound to' = They will certainly confirm.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_049",
+    type: "multiple-choice",
+    question: "'Did she agree?' 'Reluctantly ___.'",
+    options: ["so", "—", "it", "yes"],
+    correctAnswer: "so",
+    explanation: "'Reluctantly so' = She agreed reluctantly.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
+  {
+    id: "C2_Ellipsis_050",
+    type: "multiple-choice",
+    question: "'He's leaving the company.' 'So I've been ___.'",
+    options: ["told", "said", "heard", "informed"],
+    correctAnswer: "told",
+    explanation: "'So I've been told' = I have heard that.",
+    category: "ellipsis-substitution",
+    difficulty: "hard"
+  },
 ];
-
-// ==================== UTILITY FUNCTIONS ====================
 
 // Get all exercises for a specific level
 export function getGrammarExercisesByLevel(level: string): GrammarExercise[] {
