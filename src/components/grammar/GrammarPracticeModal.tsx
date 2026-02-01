@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle2, XCircle, ArrowRight, Trophy, RotateCcw, Volume2 } from "lucide-react";
+import { CheckCircle2, XCircle, ArrowRight, Trophy, RotateCcw, Volume2, Loader2, Square } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
 import { 
   GrammarExercise, 
   getGrammarExercisesByLevel, 
@@ -36,6 +37,8 @@ export function GrammarPracticeModal({
   const [isCompleted, setIsCompleted] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
 
+  // ElevenLabs TTS hook for natural voice
+  const { speak, stopAudio, isLoading: isSpeaking, isPlaying } = useElevenLabsTTS();
   const startPractice = () => {
     let exerciseList: GrammarExercise[];
     if (category) {
@@ -84,6 +87,7 @@ export function GrammarPracticeModal({
   };
 
   const handleClose = () => {
+    stopAudio(); // Stop any playing audio
     setHasStarted(false);
     setIsCompleted(false);
     setExercises([]);
@@ -95,10 +99,14 @@ export function GrammarPracticeModal({
   };
 
   const speakText = (text: string) => {
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = "en-US";
-    utterance.rate = 0.9;
-    speechSynthesis.speak(utterance);
+    // Clean the text for TTS - remove blanks placeholder
+    const cleanText = text.replace(/___/g, "blank");
+    
+    if (isPlaying) {
+      stopAudio();
+    } else {
+      speak(cleanText);
+    }
   };
 
   const getLevelColor = (lvl: string) => {
@@ -221,9 +229,17 @@ export function GrammarPracticeModal({
                   <Button
                     variant="ghost"
                     size="icon"
-                    onClick={() => speakText(currentExercise.question.replace("___", "blank"))}
+                    onClick={() => speakText(currentExercise.question)}
+                    disabled={isSpeaking}
+                    className={cn(isPlaying && "text-primary")}
                   >
-                    <Volume2 className="w-5 h-5" />
+                    {isSpeaking ? (
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                    ) : isPlaying ? (
+                      <Square className="w-5 h-5" />
+                    ) : (
+                      <Volume2 className="w-5 h-5" />
+                    )}
                   </Button>
                 </div>
               </CardContent>
