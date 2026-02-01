@@ -5,6 +5,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
+import { ExerciseQuestion } from "@/components/ExerciseQuestion";
+import { cleanQuestionForTTS } from "@/lib/questionFormatter";
 import { curriculumData, Skill, CEFRLevel } from "@/data/curriculumData";
 import { getExercisesBySkillId, Exercise } from "@/data/exercisesData";
 import { getAdvancedExercisesBySkillId } from "@/data/exercisesDataAdvanced";
@@ -24,7 +26,7 @@ import { getCurriculumArticleById, searchCurriculumArticles } from "@/data/curri
 import { getThemesByLevel, generateVocabularyExercises } from "@/data/vocabularyCurriculumComplete";
 import { 
   ArrowLeft, ArrowRight, CheckCircle2, XCircle, Volume2, 
-  BookOpen, Dumbbell, Trophy, Target, Lightbulb, Star, Image, FileText, ExternalLink
+  BookOpen, Dumbbell, Trophy, Target, Lightbulb, Star, Image, FileText, ExternalLink, Home
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
@@ -589,15 +591,23 @@ export default function SkillLesson() {
       
       <main className="container py-8">
         <div className="max-w-3xl mx-auto">
-          {/* Header */}
-          <div className="mb-6">
+          {/* Header with navigation */}
+          <div className="mb-6 flex items-center gap-2">
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => navigate(-1)}
+              onClick={() => navigate("/")}
             >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back
+              <Home className="w-4 h-4 mr-2" />
+              Home
+            </Button>
+            <span className="text-muted-foreground">/</span>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => navigate("/curriculum")}
+            >
+              Curriculum
             </Button>
           </div>
 
@@ -808,9 +818,10 @@ export default function SkillLesson() {
                         </Badge>
                       </div>
                     )}
-                    <h2 className="font-display font-bold text-xl text-center">
-                      {currentExerciseData.question}
-                    </h2>
+                    <ExerciseQuestion 
+                      question={currentExerciseData.question}
+                      className="text-center"
+                    />
                   </div>
 
                   {/* Audio button and Article link */}
@@ -818,7 +829,7 @@ export default function SkillLesson() {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => speakText(currentExerciseData.question)}
+                      onClick={() => speakText(cleanQuestionForTTS(currentExerciseData.question))}
                       className="text-xs"
                     >
                       <Volume2 className="w-4 h-4 mr-1" />
