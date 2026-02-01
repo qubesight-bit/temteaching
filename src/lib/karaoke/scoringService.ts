@@ -113,6 +113,8 @@ export const calculateSessionScore = (lineScores: KaraokeScore[]): KaraokeScore 
 };
 
 export const getScoreEmoji = (score: number): string => {
+  // Handle edge cases: NaN, undefined, null
+  if (score == null || isNaN(score)) return '💪';
   if (score >= 95) return '🌟';
   if (score >= 85) return '⭐';
   if (score >= 75) return '👍';
@@ -121,6 +123,8 @@ export const getScoreEmoji = (score: number): string => {
 };
 
 export const getScoreMessage = (score: number): string => {
+  // Handle edge cases: NaN, undefined, null - return empty string to avoid TTS issues
+  if (score == null || isNaN(score)) return '';
   if (score >= 95) return '¡Increíble! ¡Eres una estrella!';
   if (score >= 85) return '¡Excelente trabajo!';
   if (score >= 75) return '¡Muy bien! Sigue practicando';
