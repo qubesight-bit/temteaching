@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { ExerciseQuestion } from "@/components/ExerciseQuestion";
 import { grammarCategories } from "@/data/grammarData";
-import { getGrammarExercisesByCategory, GrammarExercise } from "@/data/grammarExercisesExpanded";
 import { ArrowLeft, ArrowRight, CheckCircle2, XCircle, Volume2, BookOpen, Dumbbell, Trophy, Home } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
@@ -27,11 +26,6 @@ export default function Lesson() {
   const category = grammarCategories.find(c => c.id === categoryId);
   const topic = category?.topics.find(t => t.id === topicId);
 
-  // Get exercises from the expanded database using the topic's exerciseCategory
-  const exercises: GrammarExercise[] = topic 
-    ? getGrammarExercisesByCategory(topic.level, topic.exerciseCategory).slice(0, 10)
-    : [];
-
   useEffect(() => {
     if (!topic) {
       navigate("/grammar");
@@ -42,6 +36,7 @@ export default function Lesson() {
     return null;
   }
 
+  const exercises = topic.exercises;
   const currentExerciseData = exercises[currentExercise];
   const isCorrect = selectedAnswer === currentExerciseData?.correctAnswer;
 
@@ -86,15 +81,12 @@ export default function Lesson() {
       B1: "bg-level-b1",
       B2: "bg-level-b2",
       C1: "bg-level-c1",
-      C2: "bg-level-c2",
     };
     return colors[level] || "bg-primary";
   };
 
   if (currentStep === "complete") {
-    const percentage = exercises.length > 0 
-      ? Math.round((score.correct / exercises.length) * 100) 
-      : 0;
+    const percentage = Math.round((score.correct / exercises.length) * 100);
     
     return (
       <div className="min-h-screen bg-background">
@@ -204,7 +196,7 @@ export default function Lesson() {
               onClick={() => setCurrentStep("explanation")}
             >
               <BookOpen className="w-4 h-4" />
-              About
+              Explanation
             </button>
             <button
               className={cn(
@@ -224,48 +216,55 @@ export default function Lesson() {
           {currentStep === "explanation" && (
             <Card>
               <CardContent className="p-8">
-                {/* Topic Description */}
+                {/* Explanation */}
                 <div className="prose prose-sm max-w-none mb-8">
                   <h3 className="font-display font-semibold text-lg mb-4">What is {topic.title}?</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    {topic.description}
+                    {topic.explanation}
                   </p>
                 </div>
 
-                {/* Exercise Preview */}
+                {/* Examples */}
                 <div className="mb-8">
-                  <h3 className="font-display font-semibold text-lg mb-4">Practice Available</h3>
-                  <div className="p-4 rounded-xl bg-secondary/50 border">
-                    <p className="font-medium text-foreground">
-                      {exercises.length} exercises available for {topic.level} level
-                    </p>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      Category: {topic.exerciseCategory}
-                    </p>
+                  <h3 className="font-display font-semibold text-lg mb-4">Examples</h3>
+                  <div className="space-y-3">
+                    {topic.examples.map((example, index) => (
+                      <div
+                        key={index}
+                        className="p-4 rounded-xl bg-secondary/50 border"
+                      >
+                        <div className="flex items-center justify-between">
+                          <p className="font-medium text-foreground">{example.english}</p>
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="h-8 w-8"
+                            onClick={() => speakText(example.english)}
+                          >
+                            <Volume2 className="w-4 h-4" />
+                          </Button>
+                        </div>
+                        <p className="text-sm text-muted-foreground mt-1">{example.context}</p>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
                 {/* Start Exercises Button */}
-                {exercises.length > 0 ? (
-                  <Button
-                    variant="hero"
-                    size="lg"
-                    className="w-full"
-                    onClick={() => {
-                      setCurrentStep("exercises");
-                      setCurrentExercise(0);
-                      setScore({ correct: 0, incorrect: 0 });
-                    }}
-                  >
-                    <Dumbbell className="w-5 h-5 mr-2" />
-                    Start {exercises.length} Exercises
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-                ) : (
-                  <div className="text-center text-muted-foreground py-4">
-                    No exercises available for this topic yet.
-                  </div>
-                )}
+                <Button
+                  variant="hero"
+                  size="lg"
+                  className="w-full"
+                  onClick={() => {
+                    setCurrentStep("exercises");
+                    setCurrentExercise(0);
+                    setScore({ correct: 0, incorrect: 0 });
+                  }}
+                >
+                  <Dumbbell className="w-5 h-5 mr-2" />
+                  Start Exercises
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
               </CardContent>
             </Card>
           )}

@@ -14,10 +14,9 @@ import {
   Skill,
   getLevelProgress,
   getCategoryProgress,
-  getSkillProgress,
-  curriculumData
+  getSkillProgress
 } from "@/data/curriculumData";
-// Using curriculumData directly - no enhancement layer needed
+import { enhancedCurriculumData } from "@/data/enhancedCurriculumData";
 
 const levelColors: Record<CEFRLevel, string> = {
   A1: "level-a1",
@@ -65,7 +64,7 @@ export default function Curriculum() {
     localStorage.setItem("curriculum-progress", JSON.stringify(completedSkills));
   }, [completedSkills]);
 
-  const currentLevelData = curriculumData.find(l => l.level === selectedLevel)!;
+  const currentLevelData = enhancedCurriculumData.find(l => l.level === selectedLevel)!;
   const levelProgress = getLevelProgress(selectedLevel, completedSkills);
 
   const toggleCategory = (categoryId: string) => {
@@ -93,9 +92,9 @@ export default function Curriculum() {
   };
 
   const isLevelUnlocked = (level: CEFRLevel): boolean => {
-    const levelIndex = curriculumData.findIndex(l => l.level === level);
+    const levelIndex = enhancedCurriculumData.findIndex(l => l.level === level);
     if (levelIndex === 0) return true;
-    const previousLevel = curriculumData[levelIndex - 1].level;
+    const previousLevel = enhancedCurriculumData[levelIndex - 1].level;
     return getLevelProgress(previousLevel, completedSkills) >= 80;
   };
 
@@ -120,7 +119,7 @@ export default function Curriculum() {
 
         {/* Level selector */}
         <div className="flex gap-2 overflow-x-auto pb-2">
-          {curriculumData.map((level) => {
+          {enhancedCurriculumData.map((level) => {
             const unlocked = isLevelUnlocked(level.level);
             const progress = getLevelProgress(level.level, completedSkills);
             

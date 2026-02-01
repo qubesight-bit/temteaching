@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Check, Lock, Play, Dumbbell } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { GrammarTopic } from "@/data/grammarData";
-import { getGrammarExercisesByCategory } from "@/data/grammarExercisesExpanded";
+import { getGrammarExercisesByCategory, grammarExerciseStats } from "@/data/grammarExercisesExpanded";
 
 type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
@@ -14,19 +14,51 @@ interface TopicRowWithLevelsProps {
   getLevelColor: (level: string) => string;
 }
 
-// Get exercise count for a topic at a specific level using the topic's exerciseCategory
-function getExerciseCountForTopicLevel(exerciseCategory: string, level: CEFRLevel): number {
-  const exercises = getGrammarExercisesByCategory(level, exerciseCategory);
+// Map topic IDs to exercise categories
+const topicToCategoryMap: Record<string, string> = {
+  "present-simple": "present-simple",
+  "present-continuous": "present-continuous",
+  "past-simple": "past-simple",
+  "present-perfect": "present-perfect",
+  "past-continuous": "past-continuous",
+  "future-will": "future-will",
+  "future-going-to": "future-going-to",
+  "can-could": "modals",
+  "must-have-to": "modals",
+  "should-ought-to": "modals",
+  "zero-conditional": "zero-conditional",
+  "first-conditional": "first-conditional",
+  "second-conditional": "second-conditional",
+  "third-conditional": "third-conditional",
+  "passive-present": "passive",
+  "passive-past": "passive",
+  "phrasal-verbs-basic": "phrasal-verbs",
+  "phrasal-verbs-intermediate": "phrasal-verbs",
+  "articles-basics": "articles",
+  "prepositions-time": "prepositions-time",
+  "prepositions-place": "prepositions-place",
+  "personal-pronouns": "pronouns",
+  "reported-speech-statements": "reported-speech",
+  "gerund-after-verbs": "gerunds-infinitives",
+  "infinitive-after-verbs": "gerunds-infinitives",
+};
+
+// Get exercise count for a topic at a specific level
+function getExerciseCountForTopicLevel(topicId: string, level: CEFRLevel): number {
+  const category = topicToCategoryMap[topicId];
+  if (!category) return 0;
+  
+  const exercises = getGrammarExercisesByCategory(level, category);
   return exercises.length;
 }
 
 // Check which levels have exercises for this topic
-function getAvailableLevels(exerciseCategory: string): { level: CEFRLevel; count: number }[] {
+function getAvailableLevels(topicId: string): { level: CEFRLevel; count: number }[] {
   const levels: CEFRLevel[] = ["A1", "A2", "B1", "B2", "C1", "C2"];
   const available: { level: CEFRLevel; count: number }[] = [];
   
   for (const level of levels) {
-    const count = getExerciseCountForTopicLevel(exerciseCategory, level);
+    const count = getExerciseCountForTopicLevel(topicId, level);
     if (count > 0) {
       available.push({ level, count });
     }
@@ -41,19 +73,22 @@ export function TopicRowWithLevels({
   onStartPractice, 
   getLevelColor 
 }: TopicRowWithLevelsProps) {
-  const [selectedLevel, setSelectedLevel] = useState<CEFRLevel>(topic.level);
+  const [selectedLevel, setSelectedLevel] = useState<CEFRLevel>(topic.level as CEFRLevel);
   const [isExpanded, setIsExpanded] = useState(false);
   
   // All topics are freely accessible - no locking
   const isLocked = false;
-  const availableLevels = getAvailableLevels(topic.exerciseCategory);
-  const currentExerciseCount = getExerciseCountForTopicLevel(topic.exerciseCategory, selectedLevel);
+  const availableLevels = getAvailableLevels(topic.id);
+  const currentExerciseCount = getExerciseCountForTopicLevel(topic.id, selectedLevel);
+  const category = topicToCategoryMap[topic.id];
   
   // Get total exercises across all levels for this topic
   const totalExercises = availableLevels.reduce((sum, l) => sum + l.count, 0);
   
   const handleStartPractice = () => {
-    onStartPractice(topic.exerciseCategory, selectedLevel);
+    if (category) {
+      onStartPractice(category, selectedLevel);
+    }
   };
 
   return (
@@ -104,7 +139,7 @@ export function TopicRowWithLevels({
               </span>
               {totalExercises > 0 && (
                 <span className="text-xs text-muted-foreground">
-                  {totalExercises} exercises across {availableLevels.length} level{availableLevels.length > 1 ? 's' : ''}
+                  {totalExercises} exercises across {availableLevels.length} levels
                 </span>
               )}
               {topic.completed && (

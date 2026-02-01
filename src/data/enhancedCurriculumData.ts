@@ -1,43 +1,68 @@
-// Enhanced curriculum data - direct export from base curriculum
-// The base curriculumData now contains all the exercise-aligned content
+// Enhanced curriculum data with expanded vocabulary themes
+// This file enriches the base curriculum with 20+ vocabulary themes per level
 
-import { curriculumData, LevelCurriculum, CEFRLevel } from "./curriculumData";
+import { curriculumData as baseCurriculumData, LevelCurriculum, SkillCategory, CEFRLevel } from "./curriculumData";
+import { 
+  a1VocabularySkills,
+  a2VocabularySkills,
+  b1VocabularySkills,
+  b2VocabularySkills,
+  c1VocabularySkills,
+  c2VocabularySkills,
+  getVocabularySkillsByLevel
+} from "./curriculumVocabularySkills";
 
-// Export enhanced curriculum as the base curriculum (no modifications needed)
-export const enhancedCurriculumData = curriculumData;
-
-// Re-export types for convenience
-export type { LevelCurriculum, CEFRLevel };
-
-// Helper to get vocabulary theme count by level (from curriculum)
-export const getVocabularyThemeCount = (level: CEFRLevel): number => {
-  const levelData = curriculumData.find(l => l.level === level);
-  if (!levelData) return 0;
+// Get vocabulary category with expanded themes for a specific level
+const getEnhancedVocabularyCategory = (level: CEFRLevel): SkillCategory => {
+  const skills = getVocabularySkillsByLevel(level);
   
-  const vocabCategory = levelData.categories.find(c => c.id.includes('vocabulary'));
-  return vocabCategory ? vocabCategory.skills.length : 0;
+  const descriptions: Record<CEFRLevel, string> = {
+    A1: "20+ essential vocabulary themes for beginners",
+    A2: "20+ everyday vocabulary themes for elementary learners",
+    B1: "20+ intermediate vocabulary themes for independent users",
+    B2: "20+ upper-intermediate vocabulary themes",
+    C1: "20+ advanced vocabulary themes for proficient users",
+    C2: "20+ mastery-level vocabulary themes"
+  };
+
+  return {
+    id: `${level.toLowerCase()}-vocabulary`,
+    title: "Vocabulary",
+    icon: "📚",
+    description: descriptions[level],
+    skills: skills
+  };
 };
 
-// Get grammar skill count by level
-export const getGrammarSkillCount = (level: CEFRLevel): number => {
-  const levelData = curriculumData.find(l => l.level === level);
-  if (!levelData) return 0;
-  
-  const grammarCategory = levelData.categories.find(c => c.id.includes('grammar'));
-  return grammarCategory ? grammarCategory.skills.length : 0;
-};
-
-// Get total exercises by level
-export const getLevelExercises = (level: CEFRLevel): number => {
-  const levelData = curriculumData.find(l => l.level === level);
-  if (!levelData) return 0;
-  
-  let count = 0;
-  levelData.categories.forEach(category => {
-    category.skills.forEach(skill => {
-      count += skill.exerciseCount || 0;
+// Enhance curriculum data with expanded vocabulary
+export const getEnhancedCurriculumData = (): LevelCurriculum[] => {
+  return baseCurriculumData.map(levelData => {
+    // Replace the vocabulary category with enhanced version
+    const enhancedCategories = levelData.categories.map(category => {
+      if (category.id.includes('vocabulary')) {
+        return getEnhancedVocabularyCategory(levelData.level);
+      }
+      return category;
     });
+
+    return {
+      ...levelData,
+      categories: enhancedCategories
+    };
   });
-  
-  return count;
+};
+
+// Export enhanced curriculum as default
+export const enhancedCurriculumData = getEnhancedCurriculumData();
+
+// Helper to get vocabulary theme count by level
+export const getVocabularyThemeCount = (level: CEFRLevel): number => {
+  return getVocabularySkillsByLevel(level).length;
+};
+
+// Get total vocabulary exercises available
+export const getTotalVocabularyExercises = (level: CEFRLevel): number => {
+  const skills = getVocabularySkillsByLevel(level);
+  // Each theme generates approximately 15-18 exercises (3 types × 5-6 words)
+  return skills.length * 15;
 };
