@@ -5,9 +5,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
-import { grammarCategories, GrammarCategory } from "@/data/grammarData";
+import { grammarCategories, GrammarCategory, countTopicsPerLevel } from "@/data/grammarData";
 import { grammarExerciseStats } from "@/data/grammarExercisesExpanded";
-import { grammarCurriculumStats } from "@/data/grammarCurriculumComplete";
 import { ChevronDown, ChevronRight, ArrowLeft, Dumbbell } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TopicRowWithLevels } from "@/components/grammar/TopicRowWithLevels";
@@ -36,22 +35,13 @@ export default function Grammar() {
     }
   }, [levelParam]);
 
-  const currentLevel = (userProgress?.currentLevel as CEFRLevel) || "A1";
-
-  // Filter categories based on selected level - show only categories that have topics at that level
+  // Filter categories based on selected level
   const filteredCategories = filterLevel === "all" 
     ? grammarCategories 
     : grammarCategories.map(category => ({
         ...category,
         topics: category.topics.filter(topic => topic.level === filterLevel)
       })).filter(category => category.topics.length > 0);
-
-  // Get counts per level
-  const getTopicCountForLevel = (level: CEFRLevel) => {
-    return grammarCategories.reduce((count, cat) => 
-      count + cat.topics.filter(t => t.level === level).length, 0
-    );
-  };
 
   const toggleCategory = (categoryId: string) => {
     setExpandedCategories(prev =>
@@ -93,6 +83,7 @@ export default function Grammar() {
   };
 
   const levels: CEFRLevel[] = ["A1", "A2", "B1", "B2", "C1", "C2"];
+  const topicCounts = countTopicsPerLevel();
 
   return (
     <div className="min-h-screen bg-background">
