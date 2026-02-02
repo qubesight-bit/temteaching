@@ -4,12 +4,13 @@ import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowLeft, Clock, BookOpen, Volume2, CheckCircle2, MessageSquare, Headphones } from "lucide-react";
+import { ArrowLeft, Clock, BookOpen, Volume2, CheckCircle2, MessageSquare, Headphones, Loader2, Square } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { newsArticles, NewsArticle } from "@/data/newsData";
 import { useGamification } from "@/hooks/useGamification";
 import { toast } from "@/hooks/use-toast";
 import { NewsExercises } from "@/components/news/NewsExercises";
+import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
 
 export default function News() {
   const navigate = useNavigate();
@@ -19,15 +20,18 @@ export default function News() {
   const [activeSection, setActiveSection] = useState<"read" | "comprehension" | "exercises">("read");
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [showResults, setShowResults] = useState(false);
+  
+  // ElevenLabs TTS
+  const { speak, stopAudio, isLoading: isSpeaking, isPlaying } = useElevenLabsTTS();
 
   const filteredArticles = selectedLevel ? newsArticles.filter(a => a.level === selectedLevel) : newsArticles;
 
   const speakText = (text: string) => {
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'en-US';
-    utterance.rate = 0.85;
-    speechSynthesis.speak(utterance);
+    if (isPlaying) {
+      stopAudio();
+    } else {
+      speak(text);
+    }
   };
 
   const handleCheckAnswers = () => {
@@ -98,12 +102,27 @@ export default function News() {
               <Card>
                 <CardContent className="p-6">
                   <div className="flex gap-2 mb-6">
-                    <Button variant="outline" size="sm" onClick={() => speakText(selectedArticle.content)}>
-                      <Volume2 className="w-4 h-4 mr-2" />Listen to Article
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      onClick={() => speakText(selectedArticle.content)}
+                      disabled={isSpeaking}
+                      className={cn(isPlaying && "text-primary")}
+                    >
+                      {isSpeaking ? (
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                      ) : isPlaying ? (
+                        <Square className="w-4 h-4 mr-2" />
+                      ) : (
+                        <Volume2 className="w-4 h-4 mr-2" />
+                      )}
+                      {isPlaying ? "Stop" : "Listen to Article"}
                     </Button>
-                    <Button variant="ghost" size="sm" onClick={() => window.speechSynthesis.cancel()}>
-                      Stop
-                    </Button>
+                    {isPlaying && (
+                      <Button variant="ghost" size="sm" onClick={stopAudio}>
+                        Stop
+                      </Button>
+                    )}
                   </div>
 
                   <div className="prose prose-sm max-w-none mb-6">
@@ -122,10 +141,17 @@ export default function News() {
                             <Button 
                               variant="ghost" 
                               size="sm" 
-                              className="h-6 w-6 p-0"
+                              className={cn("h-6 w-6 p-0", isPlaying && "text-primary")}
                               onClick={() => speakText(item.word)}
+                              disabled={isSpeaking}
                             >
-                              <Volume2 className="w-3 h-3" />
+                              {isSpeaking ? (
+                                <Loader2 className="w-3 h-3 animate-spin" />
+                              ) : isPlaying ? (
+                                <Square className="w-3 h-3" />
+                              ) : (
+                                <Volume2 className="w-3 h-3" />
+                              )}
                             </Button>
                           </div>
                           <p className="text-sm text-muted-foreground">{item.definition}</p>

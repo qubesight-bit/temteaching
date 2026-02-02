@@ -5,12 +5,13 @@ import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { 
   CheckCircle2, XCircle, BookOpen, MessageSquare, 
-  RotateCcw, Trophy, ArrowRight, Volume2
+  RotateCcw, Trophy, ArrowRight, Volume2, Loader2, Square
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { GrammarExercise, VocabularyExercise } from "@/data/newsData";
 import { useGamification } from "@/hooks/useGamification";
 import { toast } from "@/hooks/use-toast";
+import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
 
 interface NewsExercisesProps {
   grammarExercises?: GrammarExercise[];
@@ -39,13 +40,14 @@ export function NewsExercises({
   const currentExercise = currentExercises[currentIndex];
   const totalExercises = currentExercises.length;
 
+  // ElevenLabs TTS
+  const { speak, stopAudio, isLoading: isSpeaking, isPlaying } = useElevenLabsTTS();
+
   const speakText = (text: string) => {
-    if ('speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'en-US';
-      utterance.rate = 0.85;
-      window.speechSynthesis.speak(utterance);
+    if (isPlaying) {
+      stopAudio();
+    } else {
+      speak(text);
     }
   };
 
@@ -199,9 +201,16 @@ export function NewsExercises({
                   ? (currentExercise as GrammarExercise).sentence.replace('_____', currentExercise.correctAnswer)
                   : currentExercise.correctAnswer
               )}
-              className="h-8 w-8 p-0"
+              disabled={isSpeaking}
+              className={cn("h-8 w-8 p-0", isPlaying && "text-primary")}
             >
-              <Volume2 className="w-4 h-4" />
+              {isSpeaking ? (
+                <Loader2 className="w-4 h-4 animate-spin" />
+              ) : isPlaying ? (
+                <Square className="w-4 h-4" />
+              ) : (
+                <Volume2 className="w-4 h-4" />
+              )}
             </Button>
           </div>
         </div>

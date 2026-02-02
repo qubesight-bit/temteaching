@@ -26,11 +26,12 @@ import { getCurriculumArticleById, searchCurriculumArticles } from "@/data/curri
 import { getThemesByLevel, generateVocabularyExercises } from "@/data/vocabularyCurriculumComplete";
 import { 
   ArrowLeft, ArrowRight, CheckCircle2, XCircle, Volume2, 
-  BookOpen, Dumbbell, Trophy, Target, Lightbulb, Star, Image, FileText, ExternalLink, Home
+  BookOpen, Dumbbell, Trophy, Target, Lightbulb, Star, Image, FileText, ExternalLink, Home, Loader2, Square
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
 import { useExerciseFeedback } from "@/hooks/useExerciseFeedback";
+import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
 
 type LessonStep = "overview" | "exercises" | "complete";
 
@@ -517,10 +518,15 @@ export default function SkillLesson() {
     }
   };
 
+  // ElevenLabs TTS
+  const { speak, stopAudio, isLoading: isSpeaking, isPlaying } = useElevenLabsTTS();
+
   const speakText = (text: string) => {
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'en-US';
-    speechSynthesis.speak(utterance);
+    if (isPlaying) {
+      stopAudio();
+    } else {
+      speak(text);
+    }
   };
 
   if (currentStep === "complete") {
