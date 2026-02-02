@@ -9,12 +9,12 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { 
   ArrowLeft, BookOpen, Clock, CheckCircle2, XCircle, 
   Lightbulb, AlertTriangle, BookText, ChevronRight,
-  Volume2, GraduationCap, Headphones
+  Volume2, GraduationCap, Headphones, Loader2, Square
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getArticleById, Article, getArticlesByTag } from "@/data/articlesData";
 import { ArticleAudioQuiz } from "@/components/articles/ArticleAudioQuiz";
-
+import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
 const levelColors: Record<string, string> = {
   A1: "bg-level-a1",
   A2: "bg-level-a2",
@@ -33,16 +33,7 @@ const levelLabels: Record<string, string> = {
   C2: "Mastery",
 };
 
-// Text-to-speech helper
-const speakText = (text: string) => {
-  if ('speechSynthesis' in window) {
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'en-US';
-    utterance.rate = 0.85;
-    window.speechSynthesis.speak(utterance);
-  }
-};
+// speakText is now handled by the useElevenLabsTTS hook inside the component
 
 export default function ArticleDetail() {
   const navigate = useNavigate();
@@ -51,6 +42,17 @@ export default function ArticleDetail() {
   const [relatedArticles, setRelatedArticles] = useState<Article[]>([]);
   const [activeSection, setActiveSection] = useState<string>("");
   const [showPracticeAnswers, setShowPracticeAnswers] = useState<Record<number, boolean>>({});
+  
+  // ElevenLabs TTS for natural voice
+  const { speak, stopAudio, isLoading: isSpeaking, isPlaying } = useElevenLabsTTS();
+  
+  const speakText = (text: string) => {
+    if (isPlaying) {
+      stopAudio();
+    } else {
+      speak(text);
+    }
+  };
 
   useEffect(() => {
     if (articleId) {
@@ -231,9 +233,16 @@ export default function ArticleDetail() {
                               variant="ghost"
                               size="sm"
                               onClick={() => speakText(example.english)}
-                              className="h-6 w-6 p-0"
+                              disabled={isSpeaking}
+                              className={cn("h-6 w-6 p-0", isPlaying && "text-primary")}
                             >
-                              <Volume2 className="w-4 h-4" />
+                              {isSpeaking ? (
+                                <Loader2 className="w-4 h-4 animate-spin" />
+                              ) : isPlaying ? (
+                                <Square className="w-4 h-4" />
+                              ) : (
+                                <Volume2 className="w-4 h-4" />
+                              )}
                             </Button>
                           </div>
                           <p className="text-muted-foreground text-sm">
