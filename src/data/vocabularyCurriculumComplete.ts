@@ -1666,9 +1666,22 @@ export const getVocabularyExercisesForSkill = (skillId: string): Exercise[] => {
   const level = levelMatch[1].toUpperCase();
   const themes = getThemesByLevel(level);
   
-  // Get theme index from skill ID if possible
-  const themeIndex = parseInt(skillId.split('-').pop() || '0') % themes.length;
-  const selectedTheme = themes[themeIndex] || themes[0];
+  // First try to find theme by matching ID directly
+  const matchingTheme = themes.find(t => t.id === skillId);
+  if (matchingTheme) {
+    return generateVocabularyExercises(matchingTheme);
+  }
   
-  return generateVocabularyExercises(selectedTheme);
+  // Get theme index from skill ID - subtract 1 for 0-based indexing
+  // a1-vocab-1 should map to index 0, a1-vocab-2 to index 1, etc.
+  const indexMatch = skillId.match(/-(\d+)$/);
+  if (indexMatch) {
+    const themeIndex = (parseInt(indexMatch[1]) - 1) % themes.length;
+    const selectedTheme = themes[themeIndex >= 0 ? themeIndex : 0];
+    if (selectedTheme) {
+      return generateVocabularyExercises(selectedTheme);
+    }
+  }
+  
+  return themes.length > 0 ? generateVocabularyExercises(themes[0]) : [];
 };

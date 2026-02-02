@@ -89,11 +89,21 @@ const getExercisesForSkill = (skill: Skill, level: CEFRLevel, categoryType: stri
   }
   
   // For vocabulary, use the comprehensive vocabulary curriculum
-  if (categoryType.includes('vocab')) {
+  if (categoryType.includes('vocab') && exercises.length === 0) {
     // Try to get theme-based exercises from the new vocabulary system
     const themes = getThemesByLevel(level);
-    const skillIndex = parseInt(skill.id.split('-').pop() || '1') - 1;
-    const selectedTheme = themes[skillIndex % themes.length];
+    
+    // Find matching theme by ID first
+    let selectedTheme = themes.find(t => t.id === skill.id);
+    
+    // If not found by ID, use index-based matching (subtract 1 for 0-based indexing)
+    if (!selectedTheme) {
+      const indexMatch = skill.id.match(/-(\d+)$/);
+      if (indexMatch) {
+        const themeIndex = (parseInt(indexMatch[1]) - 1) % themes.length;
+        selectedTheme = themes[themeIndex >= 0 ? themeIndex : 0];
+      }
+    }
     
     if (selectedTheme) {
       const themeExercises = generateVocabularyExercises(selectedTheme);
