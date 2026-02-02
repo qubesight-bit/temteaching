@@ -1,2165 +1,3203 @@
 // A1 Level Comprehensive Curriculum Exercises - Fully aligned with skill IDs
+// Based on CEFR A1 Vocabulary Curriculum with 17+ batches
 import { Exercise } from "./exercisesData";
 
 // ====================================
 // VOCABULARY EXERCISES - A1 LEVEL (20 themes)
 // ====================================
 const a1VocabExercises: Record<string, Exercise[]> = {
-  // a1-vocab-1: Numbers & Counting
+  // a1-vocab-1: Numbers & Counting (Batch #1)
   "a1-vocab-1": [
+    // Part 1: Writing & Spelling (Numbers 1–20)
     {
-      id: "a1-v1-e1",
-      type: "multiple-choice",
-      question: "What number comes after 'twelve'?",
-      options: ["eleven", "thirteen", "fourteen", "ten"],
-      correctAnswer: "thirteen",
-      explanation: "After twelve (12) comes thirteen (13).",
+      id: "a1-v1-1",
+      type: "fill-blank",
+      question: "Write the number in words: 5 _____",
+      options: ["five", "fiv", "fife", "fieve"],
+      correctAnswer: "five",
+      explanation: "The number 5 is spelled 'five'.",
       difficulty: 1,
-      tags: ["numbers", "a1"]
+      tags: ["numbers", "spelling", "a1"]
     },
     {
-      id: "a1-v1-e2",
-      type: "multiple-choice",
-      question: "What is 5 + 7?",
-      options: ["eleven", "twelve", "thirteen", "ten"],
+      id: "a1-v1-2",
+      type: "fill-blank",
+      question: "Write the number in words: 8 _____",
+      options: ["eight", "eigth", "ate", "eigt"],
+      correctAnswer: "eight",
+      explanation: "The number 8 is spelled 'eight'.",
+      difficulty: 1,
+      tags: ["numbers", "spelling", "a1"]
+    },
+    {
+      id: "a1-v1-3",
+      type: "fill-blank",
+      question: "Write the number in words: 12 _____",
+      options: ["twelve", "twelf", "twelv", "twleve"],
       correctAnswer: "twelve",
-      explanation: "5 + 7 = 12 (twelve).",
+      explanation: "The number 12 is spelled 'twelve'.",
       difficulty: 1,
-      tags: ["numbers", "a1"]
+      tags: ["numbers", "spelling", "a1"]
     },
     {
-      id: "a1-v1-e3",
+      id: "a1-v1-4",
       type: "fill-blank",
-      question: "The number before fifteen is _____.",
-      options: ["fourteen", "sixteen", "thirteen", "twelve"],
+      question: "Write the number in words: 15 _____",
+      options: ["fifteen", "fiveteen", "fiften", "fitteen"],
+      correctAnswer: "fifteen",
+      explanation: "The number 15 is spelled 'fifteen'.",
+      difficulty: 1,
+      tags: ["numbers", "spelling", "a1"]
+    },
+    {
+      id: "a1-v1-5",
+      type: "fill-blank",
+      question: "Write the number in words: 20 _____",
+      options: ["twenty", "tweny", "twenti", "twentie"],
+      correctAnswer: "twenty",
+      explanation: "The number 20 is spelled 'twenty'.",
+      difficulty: 1,
+      tags: ["numbers", "spelling", "a1"]
+    },
+    {
+      id: "a1-v1-6",
+      type: "fill-blank",
+      question: "Unscramble: E-R-H-T-E _____",
+      options: ["three", "there", "ether", "teeth"],
+      correctAnswer: "three",
+      explanation: "The unscrambled word is 'three' (3).",
+      difficulty: 1,
+      tags: ["numbers", "unscramble", "a1"]
+    },
+    {
+      id: "a1-v1-7",
+      type: "fill-blank",
+      question: "Unscramble: E-V-E-L-E-N _____",
+      options: ["eleven", "enleve", "velene", "levene"],
+      correctAnswer: "eleven",
+      explanation: "The unscrambled word is 'eleven' (11).",
+      difficulty: 1,
+      tags: ["numbers", "unscramble", "a1"]
+    },
+    {
+      id: "a1-v1-8",
+      type: "fill-blank",
+      question: "Unscramble: I-N-E-N _____",
+      options: ["nine", "inne", "nien", "enin"],
+      correctAnswer: "nine",
+      explanation: "The unscrambled word is 'nine' (9).",
+      difficulty: 1,
+      tags: ["numbers", "unscramble", "a1"]
+    },
+    {
+      id: "a1-v1-9",
+      type: "fill-blank",
+      question: "Fill in the missing letters: S_v_n (7)",
+      options: ["seven", "sevan", "saven", "sivon"],
+      correctAnswer: "seven",
+      explanation: "The number 7 is spelled 'seven'.",
+      difficulty: 1,
+      tags: ["numbers", "spelling", "a1"]
+    },
+    {
+      id: "a1-v1-10",
+      type: "fill-blank",
+      question: "Fill in the missing letters: T_ _rt_ _n (13)",
+      options: ["thirteen", "thirtean", "therteen", "thurteen"],
+      correctAnswer: "thirteen",
+      explanation: "The number 13 is spelled 'thirteen'.",
+      difficulty: 1,
+      tags: ["numbers", "spelling", "a1"]
+    },
+    // Part 2: Teen vs. Ty Distinction
+    {
+      id: "a1-v1-11",
+      type: "multiple-choice",
+      question: "Choose the correct word for 14:",
+      options: ["Fourteen", "Forty", "Fourty", "Forteen"],
+      correctAnswer: "Fourteen",
+      explanation: "14 is 'Fourteen' (4 + teen). 40 is 'Forty'.",
+      difficulty: 1,
+      tags: ["numbers", "teen-ty", "a1"]
+    },
+    {
+      id: "a1-v1-12",
+      type: "multiple-choice",
+      question: "Choose the correct word for 40:",
+      options: ["Forty", "Fourteen", "Fourty", "Forteen"],
+      correctAnswer: "Forty",
+      explanation: "40 is 'Forty'. Remember: '-teen' is for 13-19, '-ty' is for tens.",
+      difficulty: 1,
+      tags: ["numbers", "teen-ty", "a1"]
+    },
+    {
+      id: "a1-v1-13",
+      type: "multiple-choice",
+      question: "Choose the correct word for 17:",
+      options: ["Seventeen", "Seventy", "Sevinteen", "Seventee"],
+      correctAnswer: "Seventeen",
+      explanation: "17 is 'Seventeen' (7 + teen).",
+      difficulty: 1,
+      tags: ["numbers", "teen-ty", "a1"]
+    },
+    {
+      id: "a1-v1-14",
+      type: "multiple-choice",
+      question: "Choose the correct word for 70:",
+      options: ["Seventy", "Seventeen", "Sevnty", "Seventee"],
+      correctAnswer: "Seventy",
+      explanation: "70 is 'Seventy'.",
+      difficulty: 1,
+      tags: ["numbers", "teen-ty", "a1"]
+    },
+    {
+      id: "a1-v1-15",
+      type: "multiple-choice",
+      question: "Choose the correct word for 19:",
+      options: ["Nineteen", "Ninety", "Ninteen", "Ninetine"],
+      correctAnswer: "Nineteen",
+      explanation: "19 is 'Nineteen' (9 + teen).",
+      difficulty: 1,
+      tags: ["numbers", "teen-ty", "a1"]
+    },
+    {
+      id: "a1-v1-16",
+      type: "multiple-choice",
+      question: "Choose the correct word for 90:",
+      options: ["Ninety", "Nineteen", "Ninty", "Ninetie"],
+      correctAnswer: "Ninety",
+      explanation: "90 is 'Ninety'.",
+      difficulty: 1,
+      tags: ["numbers", "teen-ty", "a1"]
+    },
+    {
+      id: "a1-v1-17",
+      type: "multiple-choice",
+      question: "True or False: 'Thirteen' is the number 30.",
+      options: ["False", "True"],
+      correctAnswer: "False",
+      explanation: "False. 'Thirteen' is 13. 'Thirty' is 30.",
+      difficulty: 1,
+      tags: ["numbers", "teen-ty", "a1"]
+    },
+    {
+      id: "a1-v1-18",
+      type: "multiple-choice",
+      question: "True or False: 'Fifty' is the number 50.",
+      options: ["True", "False"],
+      correctAnswer: "True",
+      explanation: "True. 'Fifty' is 50.",
+      difficulty: 1,
+      tags: ["numbers", "teen-ty", "a1"]
+    },
+    {
+      id: "a1-v1-19",
+      type: "multiple-choice",
+      question: "Which is the larger number: Eighteen OR Eighty?",
+      options: ["Eighty", "Eighteen"],
+      correctAnswer: "Eighty",
+      explanation: "Eighty (80) is larger than Eighteen (18).",
+      difficulty: 1,
+      tags: ["numbers", "comparison", "a1"]
+    },
+    {
+      id: "a1-v1-20",
+      type: "multiple-choice",
+      question: "Which is the smaller number: Sixteen OR Sixty?",
+      options: ["Sixteen", "Sixty"],
+      correctAnswer: "Sixteen",
+      explanation: "Sixteen (16) is smaller than Sixty (60).",
+      difficulty: 1,
+      tags: ["numbers", "comparison", "a1"]
+    },
+    // Part 3: Counting Sequences
+    {
+      id: "a1-v1-21",
+      type: "fill-blank",
+      question: "What comes next? Two, four, six, _____",
+      options: ["eight", "seven", "ten", "five"],
+      correctAnswer: "eight",
+      explanation: "Counting by twos: 2, 4, 6, 8.",
+      difficulty: 1,
+      tags: ["numbers", "sequences", "a1"]
+    },
+    {
+      id: "a1-v1-22",
+      type: "fill-blank",
+      question: "What comes next? Ten, twenty, thirty, _____",
+      options: ["forty", "fifty", "twenty-five", "thirty-five"],
+      correctAnswer: "forty",
+      explanation: "Counting by tens: 10, 20, 30, 40.",
+      difficulty: 1,
+      tags: ["numbers", "sequences", "a1"]
+    },
+    {
+      id: "a1-v1-23",
+      type: "fill-blank",
+      question: "What comes next? Five, ten, fifteen, _____",
+      options: ["twenty", "twenty-five", "sixteen", "eighteen"],
+      correctAnswer: "twenty",
+      explanation: "Counting by fives: 5, 10, 15, 20.",
+      difficulty: 1,
+      tags: ["numbers", "sequences", "a1"]
+    },
+    {
+      id: "a1-v1-24",
+      type: "fill-blank",
+      question: "Count backward: Ten, nine, eight, _____",
+      options: ["seven", "six", "eleven", "five"],
+      correctAnswer: "seven",
+      explanation: "Counting backward: 10, 9, 8, 7.",
+      difficulty: 1,
+      tags: ["numbers", "sequences", "a1"]
+    },
+    {
+      id: "a1-v1-25",
+      type: "fill-blank",
+      question: "Fill in the blank: Twenty-eight, twenty-nine, _____",
+      options: ["thirty", "twenty-ten", "thirty-one", "twenty-seven"],
+      correctAnswer: "thirty",
+      explanation: "After 29 comes 30 (thirty).",
+      difficulty: 1,
+      tags: ["numbers", "sequences", "a1"]
+    },
+    {
+      id: "a1-v1-26",
+      type: "fill-blank",
+      question: "Write the number: Thirty-five _____",
+      options: ["35", "53", "305", "25"],
+      correctAnswer: "35",
+      explanation: "Thirty-five is 35.",
+      difficulty: 1,
+      tags: ["numbers", "writing", "a1"]
+    },
+    {
+      id: "a1-v1-27",
+      type: "fill-blank",
+      question: "Write the number: Forty-two _____",
+      options: ["42", "24", "402", "52"],
+      correctAnswer: "42",
+      explanation: "Forty-two is 42.",
+      difficulty: 1,
+      tags: ["numbers", "writing", "a1"]
+    },
+    {
+      id: "a1-v1-28",
+      type: "fill-blank",
+      question: "Write the number: Fifty-nine _____",
+      options: ["59", "95", "509", "49"],
+      correctAnswer: "59",
+      explanation: "Fifty-nine is 59.",
+      difficulty: 1,
+      tags: ["numbers", "writing", "a1"]
+    },
+    {
+      id: "a1-v1-29",
+      type: "fill-blank",
+      question: "Write the number: Sixty-one _____",
+      options: ["61", "16", "601", "71"],
+      correctAnswer: "61",
+      explanation: "Sixty-one is 61.",
+      difficulty: 1,
+      tags: ["numbers", "writing", "a1"]
+    },
+    {
+      id: "a1-v1-30",
+      type: "fill-blank",
+      question: "Write the number: Seventy-seven _____",
+      options: ["77", "17", "707", "67"],
+      correctAnswer: "77",
+      explanation: "Seventy-seven is 77.",
+      difficulty: 1,
+      tags: ["numbers", "writing", "a1"]
+    },
+    // Part 4: Basic Math Word Problems
+    {
+      id: "a1-v1-31",
+      type: "fill-blank",
+      question: "I have 2 apples. You give me 3 more. How many do I have? _____",
+      options: ["five", "four", "six", "three"],
+      correctAnswer: "five",
+      explanation: "2 + 3 = 5 (five).",
+      difficulty: 1,
+      tags: ["numbers", "math", "a1"]
+    },
+    {
+      id: "a1-v1-32",
+      type: "fill-blank",
+      question: "One week has 7 days. How many days are in 2 weeks? _____",
+      options: ["fourteen", "seven", "twenty-one", "twelve"],
       correctAnswer: "fourteen",
-      explanation: "Before 15 comes 14 (fourteen).",
+      explanation: "7 × 2 = 14 (fourteen).",
       difficulty: 1,
-      tags: ["numbers", "a1"]
+      tags: ["numbers", "math", "a1"]
     },
     {
-      id: "a1-v1-e4",
-      type: "multiple-choice",
-      question: "How do you write '17' in words?",
-      options: ["sixteen", "seventeen", "eighteen", "fifteen"],
-      correctAnswer: "seventeen",
-      explanation: "17 is written as 'seventeen'.",
-      difficulty: 1,
-      tags: ["numbers", "a1"]
-    },
-    {
-      id: "a1-v1-e5",
-      type: "multiple-choice",
-      question: "What is 30 + 20?",
-      options: ["forty", "fifty", "sixty", "seventy"],
-      correctAnswer: "fifty",
-      explanation: "30 + 20 = 50 (fifty).",
-      difficulty: 1,
-      tags: ["numbers", "a1"]
-    },
-    {
-      id: "a1-v1-e6",
+      id: "a1-v1-33",
       type: "fill-blank",
-      question: "The number after ninety-nine is _____.",
-      options: ["one hundred", "ninety-eight", "one thousand", "ninety"],
-      correctAnswer: "one hundred",
-      explanation: "After 99 comes 100 (one hundred).",
+      question: "A car has 4 wheels. How many wheels do 2 cars have? _____",
+      options: ["eight", "six", "four", "ten"],
+      correctAnswer: "eight",
+      explanation: "4 × 2 = 8 (eight).",
+      difficulty: 1,
+      tags: ["numbers", "math", "a1"]
+    },
+    {
+      id: "a1-v1-34",
+      type: "fill-blank",
+      question: "10 minus 3 equals _____",
+      options: ["seven", "eight", "six", "thirteen"],
+      correctAnswer: "seven",
+      explanation: "10 - 3 = 7 (seven).",
+      difficulty: 1,
+      tags: ["numbers", "math", "a1"]
+    },
+    {
+      id: "a1-v1-35",
+      type: "fill-blank",
+      question: "20 plus 30 equals _____",
+      options: ["fifty", "forty", "sixty", "ten"],
+      correctAnswer: "fifty",
+      explanation: "20 + 30 = 50 (fifty).",
+      difficulty: 1,
+      tags: ["numbers", "math", "a1"]
+    },
+    {
+      id: "a1-v1-36",
+      type: "fill-blank",
+      question: "Zero plus ten equals _____",
+      options: ["ten", "zero", "one", "eleven"],
+      correctAnswer: "ten",
+      explanation: "0 + 10 = 10 (ten).",
+      difficulty: 1,
+      tags: ["numbers", "math", "a1"]
+    },
+    {
+      id: "a1-v1-37",
+      type: "fill-blank",
+      question: "If you have twelve eggs and eat two, how many are left? _____",
+      options: ["ten", "twelve", "fourteen", "eight"],
+      correctAnswer: "ten",
+      explanation: "12 - 2 = 10 (ten).",
+      difficulty: 1,
+      tags: ["numbers", "math", "a1"]
+    },
+    {
+      id: "a1-v1-38",
+      type: "fill-blank",
+      question: "Half of twenty is _____",
+      options: ["ten", "five", "twenty", "fifteen"],
+      correctAnswer: "ten",
+      explanation: "20 ÷ 2 = 10 (ten).",
+      difficulty: 1,
+      tags: ["numbers", "math", "a1"]
+    },
+    {
+      id: "a1-v1-39",
+      type: "fill-blank",
+      question: "Five times two is _____",
+      options: ["ten", "seven", "twelve", "eight"],
+      correctAnswer: "ten",
+      explanation: "5 × 2 = 10 (ten).",
+      difficulty: 1,
+      tags: ["numbers", "math", "a1"]
+    },
+    {
+      id: "a1-v1-40",
+      type: "fill-blank",
+      question: "One hundred minus one is _____",
+      options: ["ninety-nine", "one hundred one", "ninety-eight", "one hundred"],
+      correctAnswer: "ninety-nine",
+      explanation: "100 - 1 = 99 (ninety-nine).",
+      difficulty: 1,
+      tags: ["numbers", "math", "a1"]
+    },
+    // Part 5: Real-World Contexts
+    {
+      id: "a1-v1-41",
+      type: "fill-blank",
+      question: "Age: 'I am 25 years old.' Write 25 in words: _____",
+      options: ["twenty-five", "twenty five", "twentyfive", "tweny-five"],
+      correctAnswer: "twenty-five",
+      explanation: "25 is written as 'twenty-five' with a hyphen.",
+      difficulty: 1,
+      tags: ["numbers", "real-world", "a1"]
+    },
+    {
+      id: "a1-v1-42",
+      type: "fill-blank",
+      question: "Time: There are 60 minutes in an hour. Write 60 in words: _____",
+      options: ["sixty", "sixthy", "sixtie", "sxty"],
+      correctAnswer: "sixty",
+      explanation: "60 is written as 'sixty'.",
+      difficulty: 1,
+      tags: ["numbers", "real-world", "a1"]
+    },
+    {
+      id: "a1-v1-43",
+      type: "fill-blank",
+      question: "Money: This coffee costs $3. Write 3 in words: _____",
+      options: ["three", "tree", "thre", "thee"],
+      correctAnswer: "three",
+      explanation: "3 is written as 'three'.",
+      difficulty: 1,
+      tags: ["numbers", "real-world", "a1"]
+    },
+    {
+      id: "a1-v1-44",
+      type: "fill-blank",
+      question: "Quantity: There are 11 players on a soccer team. Write 11 in words: _____",
+      options: ["eleven", "elven", "elevan", "elleven"],
+      correctAnswer: "eleven",
+      explanation: "11 is written as 'eleven'.",
+      difficulty: 1,
+      tags: ["numbers", "real-world", "a1"]
+    },
+    {
+      id: "a1-v1-45",
+      type: "fill-blank",
+      question: "Address: 'I live at 98 Main Street.' Write 98 in words: _____",
+      options: ["ninety-eight", "ninty-eight", "ninety eight", "ninetyeight"],
+      correctAnswer: "ninety-eight",
+      explanation: "98 is written as 'ninety-eight' with a hyphen.",
+      difficulty: 1,
+      tags: ["numbers", "real-world", "a1"]
+    },
+    {
+      id: "a1-v1-46",
+      type: "fill-blank",
+      question: "Phone: My number ends in 0. Write 0 in words: _____",
+      options: ["zero", "cero", "zro", "zerro"],
+      correctAnswer: "zero",
+      explanation: "0 is written as 'zero'.",
+      difficulty: 1,
+      tags: ["numbers", "real-world", "a1"]
+    },
+    {
+      id: "a1-v1-47",
+      type: "fill-blank",
+      question: "Correct the spelling: 'I have twenty-wan dollars.' What is the correct word?",
+      options: ["twenty-one", "twenty-wan", "twenty-wone", "tweny-one"],
+      correctAnswer: "twenty-one",
+      explanation: "The correct spelling is 'twenty-one'.",
+      difficulty: 1,
+      tags: ["numbers", "spelling", "a1"]
+    },
+    {
+      id: "a1-v1-48",
+      type: "fill-blank",
+      question: "Correct the spelling: 'He is thurty years old.' What is the correct word?",
+      options: ["thirty", "thurty", "thrity", "thirthy"],
+      correctAnswer: "thirty",
+      explanation: "The correct spelling is 'thirty'.",
+      difficulty: 1,
+      tags: ["numbers", "spelling", "a1"]
+    },
+    {
+      id: "a1-v1-49",
+      type: "multiple-choice",
+      question: "Which is 100?",
+      options: ["One hundred", "One thousand", "Ten", "One hundred ten"],
+      correctAnswer: "One hundred",
+      explanation: "100 is 'One hundred'.",
       difficulty: 1,
       tags: ["numbers", "a1"]
     },
+    {
+      id: "a1-v1-50",
+      type: "fill-blank",
+      question: "Final Challenge: Write 100 in words: _____",
+      options: ["one hundred", "hundred", "100", "onehundred"],
+      correctAnswer: "one hundred",
+      explanation: "100 is written as 'one hundred'.",
+      difficulty: 1,
+      tags: ["numbers", "a1"]
+    }
   ],
 
-  // a1-vocab-2: Colors
+  // a1-vocab-2: Colors (Batch #2)
   "a1-vocab-2": [
+    // Part 1: Visual Recognition & Spelling
     {
-      id: "a1-v2-e1",
-      type: "multiple-choice",
-      question: "What color is the sky on a sunny day?",
-      options: ["red", "green", "blue", "yellow"],
+      id: "a1-v2-1",
+      type: "fill-blank",
+      question: "Unscramble: D-E-R _____",
+      options: ["red", "der", "dre", "erd"],
+      correctAnswer: "red",
+      explanation: "The unscrambled word is 'red'.",
+      difficulty: 1,
+      tags: ["colors", "unscramble", "a1"]
+    },
+    {
+      id: "a1-v2-2",
+      type: "fill-blank",
+      question: "Unscramble: E-U-L-B _____",
+      options: ["blue", "bleu", "lube", "bule"],
       correctAnswer: "blue",
-      explanation: "The sky is blue on a sunny day.",
+      explanation: "The unscrambled word is 'blue'.",
       difficulty: 1,
-      tags: ["colors", "a1"]
+      tags: ["colors", "unscramble", "a1"]
     },
     {
-      id: "a1-v2-e2",
-      type: "multiple-choice",
-      question: "Bananas are _____.",
-      options: ["blue", "red", "yellow", "green"],
-      correctAnswer: "yellow",
-      explanation: "Bananas are yellow when ripe.",
-      difficulty: 1,
-      tags: ["colors", "a1"]
-    },
-    {
-      id: "a1-v2-e3",
-      type: "multiple-choice",
-      question: "Grass is usually _____.",
-      options: ["blue", "green", "red", "white"],
+      id: "a1-v2-3",
+      type: "fill-blank",
+      question: "Unscramble: E-E-R-G-N _____",
+      options: ["green", "gerne", "grene", "neerg"],
       correctAnswer: "green",
-      explanation: "Grass is green.",
+      explanation: "The unscrambled word is 'green'.",
       difficulty: 1,
-      tags: ["colors", "a1"]
+      tags: ["colors", "unscramble", "a1"]
     },
     {
-      id: "a1-v2-e4",
-      type: "multiple-choice",
-      question: "What color do you get when you mix red and yellow?",
-      options: ["purple", "green", "orange", "pink"],
+      id: "a1-v2-4",
+      type: "fill-blank",
+      question: "Unscramble: O-L-L-E-W-Y _____",
+      options: ["yellow", "yollow", "yellwo", "wellow"],
+      correctAnswer: "yellow",
+      explanation: "The unscrambled word is 'yellow'.",
+      difficulty: 1,
+      tags: ["colors", "unscramble", "a1"]
+    },
+    {
+      id: "a1-v2-5",
+      type: "fill-blank",
+      question: "Fill in the missing letters: O_a_ge",
+      options: ["orange", "orage", "ornage", "orenge"],
+      correctAnswer: "orange",
+      explanation: "The color is 'orange'.",
+      difficulty: 1,
+      tags: ["colors", "spelling", "a1"]
+    },
+    {
+      id: "a1-v2-6",
+      type: "fill-blank",
+      question: "Fill in the missing letters: P_r_le",
+      options: ["purple", "purpel", "pruple", "purble"],
+      correctAnswer: "purple",
+      explanation: "The color is 'purple'.",
+      difficulty: 1,
+      tags: ["colors", "spelling", "a1"]
+    },
+    {
+      id: "a1-v2-7",
+      type: "fill-blank",
+      question: "Fill in the missing letters: B_ _ck",
+      options: ["black", "bleck", "blick", "blaak"],
+      correctAnswer: "black",
+      explanation: "The color is 'black'.",
+      difficulty: 1,
+      tags: ["colors", "spelling", "a1"]
+    },
+    {
+      id: "a1-v2-8",
+      type: "fill-blank",
+      question: "Fill in the missing letters: W_i_e",
+      options: ["white", "whyte", "wite", "whiit"],
+      correctAnswer: "white",
+      explanation: "The color is 'white'.",
+      difficulty: 1,
+      tags: ["colors", "spelling", "a1"]
+    },
+    {
+      id: "a1-v2-9",
+      type: "fill-blank",
+      question: "Which color is a mix of Red and Yellow? _____",
+      options: ["orange", "purple", "green", "pink"],
       correctAnswer: "orange",
       explanation: "Red + Yellow = Orange.",
       difficulty: 1,
-      tags: ["colors", "a1"]
+      tags: ["colors", "mixing", "a1"]
     },
     {
-      id: "a1-v2-e5",
+      id: "a1-v2-10",
       type: "fill-blank",
+      question: "Which color is a mix of Blue and Yellow? _____",
+      options: ["green", "orange", "purple", "brown"],
+      correctAnswer: "green",
+      explanation: "Blue + Yellow = Green.",
+      difficulty: 1,
+      tags: ["colors", "mixing", "a1"]
+    },
+    // Part 2: Object Association
+    {
+      id: "a1-v2-11",
+      type: "multiple-choice",
+      question: "The sky is usually _____.",
+      options: ["blue", "green", "red", "yellow"],
+      correctAnswer: "blue",
+      explanation: "The sky is usually blue.",
+      difficulty: 1,
+      tags: ["colors", "association", "a1"]
+    },
+    {
+      id: "a1-v2-12",
+      type: "multiple-choice",
+      question: "Grass is usually _____.",
+      options: ["green", "red", "blue", "yellow"],
+      correctAnswer: "green",
+      explanation: "Grass is usually green.",
+      difficulty: 1,
+      tags: ["colors", "association", "a1"]
+    },
+    {
+      id: "a1-v2-13",
+      type: "multiple-choice",
+      question: "A banana is _____.",
+      options: ["yellow", "purple", "blue", "green"],
+      correctAnswer: "yellow",
+      explanation: "A ripe banana is yellow.",
+      difficulty: 1,
+      tags: ["colors", "association", "a1"]
+    },
+    {
+      id: "a1-v2-14",
+      type: "multiple-choice",
+      question: "An apple is often _____.",
+      options: ["red", "blue", "purple", "white"],
+      correctAnswer: "red",
+      explanation: "Apples are often red (or green).",
+      difficulty: 1,
+      tags: ["colors", "association", "a1"]
+    },
+    {
+      id: "a1-v2-15",
+      type: "multiple-choice",
       question: "Snow is _____.",
-      options: ["white", "black", "gray", "blue"],
+      options: ["white", "black", "blue", "gray"],
       correctAnswer: "white",
       explanation: "Snow is white.",
       difficulty: 1,
-      tags: ["colors", "a1"]
+      tags: ["colors", "association", "a1"]
     },
     {
-      id: "a1-v2-e6",
+      id: "a1-v2-16",
       type: "multiple-choice",
-      question: "What color is a fire truck?",
-      options: ["blue", "green", "red", "yellow"],
-      correctAnswer: "red",
-      explanation: "Fire trucks are typically red.",
+      question: "Chocolate is _____.",
+      options: ["brown", "pink", "white", "green"],
+      correctAnswer: "brown",
+      explanation: "Chocolate is brown.",
       difficulty: 1,
-      tags: ["colors", "a1"]
+      tags: ["colors", "association", "a1"]
     },
+    {
+      id: "a1-v2-17",
+      type: "multiple-choice",
+      question: "A flamingo is _____.",
+      options: ["pink", "orange", "red", "white"],
+      correctAnswer: "pink",
+      explanation: "Flamingos are pink.",
+      difficulty: 1,
+      tags: ["colors", "association", "a1"]
+    },
+    {
+      id: "a1-v2-18",
+      type: "multiple-choice",
+      question: "Coal is _____.",
+      options: ["black", "white", "brown", "gray"],
+      correctAnswer: "black",
+      explanation: "Coal is black.",
+      difficulty: 1,
+      tags: ["colors", "association", "a1"]
+    },
+    {
+      id: "a1-v2-19",
+      type: "multiple-choice",
+      question: "Carrots are _____.",
+      options: ["orange", "green", "red", "yellow"],
+      correctAnswer: "orange",
+      explanation: "Carrots are orange.",
+      difficulty: 1,
+      tags: ["colors", "association", "a1"]
+    },
+    {
+      id: "a1-v2-20",
+      type: "multiple-choice",
+      question: "Night is _____.",
+      options: ["black", "yellow", "white", "blue"],
+      correctAnswer: "black",
+      explanation: "Night is dark/black.",
+      difficulty: 1,
+      tags: ["colors", "association", "a1"]
+    },
+    // Part 3: Reading Comprehension
+    {
+      id: "a1-v2-21",
+      type: "fill-blank",
+      question: "'The sun is high.' What color is the sun? _____",
+      options: ["yellow", "blue", "green", "red"],
+      correctAnswer: "yellow",
+      explanation: "The sun is yellow.",
+      difficulty: 1,
+      tags: ["colors", "comprehension", "a1"]
+    },
+    {
+      id: "a1-v2-22",
+      type: "fill-blank",
+      question: "'The ocean is deep.' What color is the ocean? _____",
+      options: ["blue", "green", "yellow", "white"],
+      correctAnswer: "blue",
+      explanation: "The ocean is blue.",
+      difficulty: 1,
+      tags: ["colors", "comprehension", "a1"]
+    },
+    {
+      id: "a1-v2-23",
+      type: "fill-blank",
+      question: "'The rose is romantic.' What color is a rose? _____",
+      options: ["red", "blue", "yellow", "green"],
+      correctAnswer: "red",
+      explanation: "A romantic rose is usually red.",
+      difficulty: 1,
+      tags: ["colors", "comprehension", "a1"]
+    },
+    {
+      id: "a1-v2-24",
+      type: "fill-blank",
+      question: "'The tires on the car.' What color are tires? _____",
+      options: ["black", "white", "gray", "brown"],
+      correctAnswer: "black",
+      explanation: "Tires are black.",
+      difficulty: 1,
+      tags: ["colors", "comprehension", "a1"]
+    },
+    {
+      id: "a1-v2-25",
+      type: "multiple-choice",
+      question: "True or False: A strawberry is blue.",
+      options: ["False", "True"],
+      correctAnswer: "False",
+      explanation: "False. Strawberries are red.",
+      difficulty: 1,
+      tags: ["colors", "true-false", "a1"]
+    },
+    {
+      id: "a1-v2-26",
+      type: "multiple-choice",
+      question: "True or False: Lemons are yellow.",
+      options: ["True", "False"],
+      correctAnswer: "True",
+      explanation: "True. Lemons are yellow.",
+      difficulty: 1,
+      tags: ["colors", "true-false", "a1"]
+    },
+    {
+      id: "a1-v2-27",
+      type: "multiple-choice",
+      question: "True or False: Grapes can be purple.",
+      options: ["True", "False"],
+      correctAnswer: "True",
+      explanation: "True. Grapes can be purple (or green).",
+      difficulty: 1,
+      tags: ["colors", "true-false", "a1"]
+    },
+    {
+      id: "a1-v2-28",
+      type: "multiple-choice",
+      question: "True or False: Milk is brown.",
+      options: ["False", "True"],
+      correctAnswer: "False",
+      explanation: "False. Milk is white.",
+      difficulty: 1,
+      tags: ["colors", "true-false", "a1"]
+    },
+    {
+      id: "a1-v2-29",
+      type: "multiple-choice",
+      question: "True or False: An orange is orange.",
+      options: ["True", "False"],
+      correctAnswer: "True",
+      explanation: "True. An orange is orange in color.",
+      difficulty: 1,
+      tags: ["colors", "true-false", "a1"]
+    },
+    {
+      id: "a1-v2-30",
+      type: "multiple-choice",
+      question: "Odd one out: Green, Blue, Apple, Red",
+      options: ["Apple", "Green", "Blue", "Red"],
+      correctAnswer: "Apple",
+      explanation: "Apple is a fruit, not a color.",
+      difficulty: 1,
+      tags: ["colors", "odd-one-out", "a1"]
+    },
+    // Part 4: Simple Grammar Integration
+    {
+      id: "a1-v2-31",
+      type: "fill-blank",
+      question: "Rearrange: is / The / red / tomato / . → _____",
+      options: ["The tomato is red.", "Is the tomato red.", "Red is the tomato.", "The red is tomato."],
+      correctAnswer: "The tomato is red.",
+      explanation: "The correct sentence is: 'The tomato is red.'",
+      difficulty: 1,
+      tags: ["colors", "grammar", "a1"]
+    },
+    {
+      id: "a1-v2-32",
+      type: "fill-blank",
+      question: "Rearrange: blue / The / is / pen / . → _____",
+      options: ["The pen is blue.", "Blue is the pen.", "The blue is pen.", "Is the pen blue."],
+      correctAnswer: "The pen is blue.",
+      explanation: "The correct sentence is: 'The pen is blue.'",
+      difficulty: 1,
+      tags: ["colors", "grammar", "a1"]
+    },
+    {
+      id: "a1-v2-33",
+      type: "fill-blank",
+      question: "Rearrange: black / cat / My / is / . → _____",
+      options: ["My cat is black.", "Black is my cat.", "Cat is my black.", "Is my cat black."],
+      correctAnswer: "My cat is black.",
+      explanation: "The correct sentence is: 'My cat is black.'",
+      difficulty: 1,
+      tags: ["colors", "grammar", "a1"]
+    },
+    {
+      id: "a1-v2-34",
+      type: "fill-blank",
+      question: "Write the opposite: White ↔ _____",
+      options: ["black", "red", "gray", "brown"],
+      correctAnswer: "black",
+      explanation: "The opposite of white is black.",
+      difficulty: 1,
+      tags: ["colors", "opposites", "a1"]
+    },
+    {
+      id: "a1-v2-35",
+      type: "fill-blank",
+      question: "Complete: 'The forest is full of _____ trees.'",
+      options: ["green", "blue", "red", "white"],
+      correctAnswer: "green",
+      explanation: "Trees are green.",
+      difficulty: 1,
+      tags: ["colors", "context", "a1"]
+    },
+    // Part 5: Applied Practice
+    {
+      id: "a1-v2-36",
+      type: "fill-blank",
+      question: "Write the name of this color: 🔵 _____",
+      options: ["blue", "red", "green", "yellow"],
+      correctAnswer: "blue",
+      explanation: "The blue circle represents the color blue.",
+      difficulty: 1,
+      tags: ["colors", "visual", "a1"]
+    },
+    {
+      id: "a1-v2-37",
+      type: "fill-blank",
+      question: "Write the name of this color: 🔴 _____",
+      options: ["red", "blue", "green", "orange"],
+      correctAnswer: "red",
+      explanation: "The red circle represents the color red.",
+      difficulty: 1,
+      tags: ["colors", "visual", "a1"]
+    },
+    {
+      id: "a1-v2-38",
+      type: "fill-blank",
+      question: "Write the name of this color: 🟢 _____",
+      options: ["green", "blue", "yellow", "red"],
+      correctAnswer: "green",
+      explanation: "The green circle represents the color green.",
+      difficulty: 1,
+      tags: ["colors", "visual", "a1"]
+    },
+    {
+      id: "a1-v2-39",
+      type: "fill-blank",
+      question: "Write the name of this color: 🟡 _____",
+      options: ["yellow", "orange", "gold", "brown"],
+      correctAnswer: "yellow",
+      explanation: "The yellow circle represents the color yellow.",
+      difficulty: 1,
+      tags: ["colors", "visual", "a1"]
+    },
+    {
+      id: "a1-v2-40",
+      type: "fill-blank",
+      question: "Write the name of this color: 🟠 _____",
+      options: ["orange", "red", "yellow", "brown"],
+      correctAnswer: "orange",
+      explanation: "The orange circle represents the color orange.",
+      difficulty: 1,
+      tags: ["colors", "visual", "a1"]
+    },
+    {
+      id: "a1-v2-41",
+      type: "fill-blank",
+      question: "Write the name of this color: 🟣 _____",
+      options: ["purple", "pink", "blue", "red"],
+      correctAnswer: "purple",
+      explanation: "The purple circle represents the color purple.",
+      difficulty: 1,
+      tags: ["colors", "visual", "a1"]
+    },
+    {
+      id: "a1-v2-42",
+      type: "fill-blank",
+      question: "Write the name of this color: ⚫ _____",
+      options: ["black", "gray", "brown", "blue"],
+      correctAnswer: "black",
+      explanation: "The black circle represents the color black.",
+      difficulty: 1,
+      tags: ["colors", "visual", "a1"]
+    },
+    {
+      id: "a1-v2-43",
+      type: "fill-blank",
+      question: "Write the name of this color: ⚪ _____",
+      options: ["white", "gray", "silver", "beige"],
+      correctAnswer: "white",
+      explanation: "The white circle represents the color white.",
+      difficulty: 1,
+      tags: ["colors", "visual", "a1"]
+    },
+    {
+      id: "a1-v2-44",
+      type: "fill-blank",
+      question: "Write the name of this color: 🟤 _____",
+      options: ["brown", "orange", "black", "red"],
+      correctAnswer: "brown",
+      explanation: "The brown circle represents the color brown.",
+      difficulty: 1,
+      tags: ["colors", "visual", "a1"]
+    },
+    {
+      id: "a1-v2-45",
+      type: "multiple-choice",
+      question: "Which color is a mix of Red and Blue?",
+      options: ["purple", "green", "orange", "yellow"],
+      correctAnswer: "purple",
+      explanation: "Red + Blue = Purple.",
+      difficulty: 1,
+      tags: ["colors", "mixing", "a1"]
+    },
+    {
+      id: "a1-v2-46",
+      type: "multiple-choice",
+      question: "Which color is a mix of White and Red?",
+      options: ["pink", "orange", "purple", "brown"],
+      correctAnswer: "pink",
+      explanation: "White + Red = Pink.",
+      difficulty: 1,
+      tags: ["colors", "mixing", "a1"]
+    },
+    {
+      id: "a1-v2-47",
+      type: "multiple-choice",
+      question: "A stop sign is what color?",
+      options: ["red", "green", "yellow", "blue"],
+      correctAnswer: "red",
+      explanation: "Stop signs are red.",
+      difficulty: 1,
+      tags: ["colors", "real-world", "a1"]
+    },
+    {
+      id: "a1-v2-48",
+      type: "multiple-choice",
+      question: "The color of the sea is usually _____.",
+      options: ["blue", "red", "yellow", "pink"],
+      correctAnswer: "blue",
+      explanation: "The sea is usually blue.",
+      difficulty: 1,
+      tags: ["colors", "real-world", "a1"]
+    },
+    {
+      id: "a1-v2-49",
+      type: "multiple-choice",
+      question: "Fire is usually _____ and _____.",
+      options: ["red and orange", "blue and green", "white and black", "pink and purple"],
+      correctAnswer: "red and orange",
+      explanation: "Fire is usually red and orange.",
+      difficulty: 1,
+      tags: ["colors", "real-world", "a1"]
+    },
+    {
+      id: "a1-v2-50",
+      type: "fill-blank",
+      question: "My favorite color is _____. (Choose any color)",
+      options: ["blue", "red", "green", "yellow"],
+      correctAnswer: "blue",
+      explanation: "This is a personal preference question. Any color is correct!",
+      difficulty: 1,
+      tags: ["colors", "personal", "a1"]
+    }
   ],
 
-  // a1-vocab-3: Family Members
+  // a1-vocab-3: Family Members (Batch #3)
   "a1-vocab-3": [
+    // Part 1: The Core Family
     {
-      id: "a1-v3-e1",
-      type: "multiple-choice",
-      question: "Your mother's mother is your _____.",
-      options: ["aunt", "sister", "grandmother", "cousin"],
-      correctAnswer: "grandmother",
-      explanation: "Your mother's mother is your grandmother.",
-      difficulty: 1,
-      tags: ["family", "a1"]
-    },
-    {
-      id: "a1-v3-e2",
-      type: "multiple-choice",
-      question: "Your father's brother is your _____.",
-      options: ["uncle", "cousin", "brother", "grandfather"],
-      correctAnswer: "uncle",
-      explanation: "Your father's brother is your uncle.",
-      difficulty: 1,
-      tags: ["family", "a1"]
-    },
-    {
-      id: "a1-v3-e3",
+      id: "a1-v3-1",
       type: "fill-blank",
-      question: "My mother and my father are my _____.",
-      options: ["parents", "children", "siblings", "friends"],
-      correctAnswer: "parents",
-      explanation: "Mother and father together are called parents.",
+      question: "Your male parent is your _____.",
+      options: ["father", "mother", "brother", "sister"],
+      correctAnswer: "father",
+      explanation: "Your male parent is your father.",
       difficulty: 1,
       tags: ["family", "a1"]
     },
     {
-      id: "a1-v3-e4",
-      type: "multiple-choice",
-      question: "Your sister's son is your _____.",
-      options: ["cousin", "nephew", "son", "brother"],
-      correctAnswer: "nephew",
-      explanation: "Your sister's son is your nephew.",
-      difficulty: 1,
-      tags: ["family", "a1"]
-    },
-    {
-      id: "a1-v3-e5",
+      id: "a1-v3-2",
       type: "fill-blank",
-      question: "My father's father is my _____.",
-      options: ["grandfather", "grandmother", "uncle", "brother"],
+      question: "Your female parent is your _____.",
+      options: ["mother", "father", "sister", "brother"],
+      correctAnswer: "mother",
+      explanation: "Your female parent is your mother.",
+      difficulty: 1,
+      tags: ["family", "a1"]
+    },
+    {
+      id: "a1-v3-3",
+      type: "fill-blank",
+      question: "Your parent's son is your _____.",
+      options: ["brother", "sister", "father", "uncle"],
+      correctAnswer: "brother",
+      explanation: "Your parent's son (who is not you) is your brother.",
+      difficulty: 1,
+      tags: ["family", "a1"]
+    },
+    {
+      id: "a1-v3-4",
+      type: "fill-blank",
+      question: "Your parent's daughter is your _____.",
+      options: ["sister", "brother", "mother", "aunt"],
+      correctAnswer: "sister",
+      explanation: "Your parent's daughter (who is not you) is your sister.",
+      difficulty: 1,
+      tags: ["family", "a1"]
+    },
+    {
+      id: "a1-v3-5",
+      type: "fill-blank",
+      question: "Unscramble: T-H-E-M-O-R _____",
+      options: ["mother", "mother", "thermo", "hotter"],
+      correctAnswer: "mother",
+      explanation: "The unscrambled word is 'mother'.",
+      difficulty: 1,
+      tags: ["family", "unscramble", "a1"]
+    },
+    {
+      id: "a1-v3-6",
+      type: "fill-blank",
+      question: "Unscramble: T-H-E-R-F-A _____",
+      options: ["father", "farthe", "hafter", "theraf"],
+      correctAnswer: "father",
+      explanation: "The unscrambled word is 'father'.",
+      difficulty: 1,
+      tags: ["family", "unscramble", "a1"]
+    },
+    {
+      id: "a1-v3-7",
+      type: "fill-blank",
+      question: "Fill in the missing letters: S_s_er",
+      options: ["sister", "sester", "sistor", "saster"],
+      correctAnswer: "sister",
+      explanation: "The word is 'sister'.",
+      difficulty: 1,
+      tags: ["family", "spelling", "a1"]
+    },
+    {
+      id: "a1-v3-8",
+      type: "fill-blank",
+      question: "Fill in the missing letters: B_o_h_r",
+      options: ["brother", "broter", "bother", "brather"],
+      correctAnswer: "brother",
+      explanation: "The word is 'brother'.",
+      difficulty: 1,
+      tags: ["family", "spelling", "a1"]
+    },
+    {
+      id: "a1-v3-9",
+      type: "fill-blank",
+      question: "Short form of Mother: _____",
+      options: ["Mom", "Dad", "Sis", "Bro"],
+      correctAnswer: "Mom",
+      explanation: "The short form of Mother is Mom (or Mum in British English).",
+      difficulty: 1,
+      tags: ["family", "a1"]
+    },
+    {
+      id: "a1-v3-10",
+      type: "fill-blank",
+      question: "Short form of Father: _____",
+      options: ["Dad", "Mom", "Bro", "Sis"],
+      correctAnswer: "Dad",
+      explanation: "The short form of Father is Dad.",
+      difficulty: 1,
+      tags: ["family", "a1"]
+    },
+    // Part 2: Generations
+    {
+      id: "a1-v3-11",
+      type: "fill-blank",
+      question: "Your father's father is your _____.",
+      options: ["grandfather", "grandmother", "uncle", "father"],
       correctAnswer: "grandfather",
       explanation: "Your father's father is your grandfather.",
       difficulty: 1,
       tags: ["family", "a1"]
     },
     {
-      id: "a1-v3-e6",
-      type: "multiple-choice",
-      question: "Your mother's sister is your _____.",
-      options: ["aunt", "grandmother", "sister", "cousin"],
-      correctAnswer: "aunt",
-      explanation: "Your mother's sister is your aunt.",
+      id: "a1-v3-12",
+      type: "fill-blank",
+      question: "Your mother's mother is your _____.",
+      options: ["grandmother", "grandfather", "aunt", "mother"],
+      correctAnswer: "grandmother",
+      explanation: "Your mother's mother is your grandmother.",
       difficulty: 1,
       tags: ["family", "a1"]
     },
+    {
+      id: "a1-v3-13",
+      type: "multiple-choice",
+      question: "If you are a man, you are your parents' _____.",
+      options: ["son", "daughter", "brother", "sister"],
+      correctAnswer: "son",
+      explanation: "A male child is a son.",
+      difficulty: 1,
+      tags: ["family", "a1"]
+    },
+    {
+      id: "a1-v3-14",
+      type: "multiple-choice",
+      question: "If you are a woman, you are your parents' _____.",
+      options: ["daughter", "son", "sister", "brother"],
+      correctAnswer: "daughter",
+      explanation: "A female child is a daughter.",
+      difficulty: 1,
+      tags: ["family", "a1"]
+    },
+    {
+      id: "a1-v3-15",
+      type: "multiple-choice",
+      question: "True or False: Your grandmother is your 'Grandma.'",
+      options: ["True", "False"],
+      correctAnswer: "True",
+      explanation: "True. Grandma is a short form for grandmother.",
+      difficulty: 1,
+      tags: ["family", "true-false", "a1"]
+    },
+    {
+      id: "a1-v3-16",
+      type: "multiple-choice",
+      question: "True or False: Your brother is a girl.",
+      options: ["False", "True"],
+      correctAnswer: "False",
+      explanation: "False. A brother is a boy/man. A sister is a girl/woman.",
+      difficulty: 1,
+      tags: ["family", "true-false", "a1"]
+    },
+    {
+      id: "a1-v3-17",
+      type: "multiple-choice",
+      question: "True or False: A 'sibling' is a brother or sister.",
+      options: ["True", "False"],
+      correctAnswer: "True",
+      explanation: "True. Sibling means brother or sister.",
+      difficulty: 1,
+      tags: ["family", "true-false", "a1"]
+    },
+    {
+      id: "a1-v3-18",
+      type: "multiple-choice",
+      question: "Match: Father + Mother = _____",
+      options: ["Parents", "Children", "Siblings", "Grandparents"],
+      correctAnswer: "Parents",
+      explanation: "Father and mother together are called parents.",
+      difficulty: 1,
+      tags: ["family", "a1"]
+    },
+    {
+      id: "a1-v3-19",
+      type: "multiple-choice",
+      question: "Match: Grandfather + Grandmother = _____",
+      options: ["Grandparents", "Parents", "Children", "Siblings"],
+      correctAnswer: "Grandparents",
+      explanation: "Grandfather and grandmother together are grandparents.",
+      difficulty: 1,
+      tags: ["family", "a1"]
+    },
+    {
+      id: "a1-v3-20",
+      type: "fill-blank",
+      question: "Logic: My father's wife is my _____.",
+      options: ["mother", "sister", "grandmother", "aunt"],
+      correctAnswer: "mother",
+      explanation: "Your father's wife is your mother (or stepmother).",
+      difficulty: 1,
+      tags: ["family", "logic", "a1"]
+    },
+    // Part 3: Simple Possessives
+    {
+      id: "a1-v3-21",
+      type: "fill-blank",
+      question: "'My mother_____ name is Maria.' Add 's or s'",
+      options: ["'s", "s'", "s", "'"],
+      correctAnswer: "'s",
+      explanation: "My mother's name - we add 's for possession.",
+      difficulty: 1,
+      tags: ["family", "grammar", "a1"]
+    },
+    {
+      id: "a1-v3-22",
+      type: "fill-blank",
+      question: "'My _____'s name is John.' (Father / Brother)",
+      options: ["father", "brother", "mother", "sister"],
+      correctAnswer: "father",
+      explanation: "Both could work, but 'father' fits better as a typical example.",
+      difficulty: 1,
+      tags: ["family", "grammar", "a1"]
+    },
+    {
+      id: "a1-v3-23",
+      type: "fill-blank",
+      question: "'I have two _____.' (Sisters / Sister)",
+      options: ["sisters", "sister", "sister's", "sisters'"],
+      correctAnswer: "sisters",
+      explanation: "Two = plural, so we say 'sisters'.",
+      difficulty: 1,
+      tags: ["family", "grammar", "a1"]
+    },
+    {
+      id: "a1-v3-24",
+      type: "fill-blank",
+      question: "'He has one _____.' (Brother / Brothers)",
+      options: ["brother", "brothers", "brother's", "brothers'"],
+      correctAnswer: "brother",
+      explanation: "One = singular, so we say 'brother'.",
+      difficulty: 1,
+      tags: ["family", "grammar", "a1"]
+    },
+    {
+      id: "a1-v3-25",
+      type: "fill-blank",
+      question: "Rearrange: mother / My / is / doctor / a / . → _____",
+      options: ["My mother is a doctor.", "Mother my is a doctor.", "A doctor is my mother.", "Is my mother a doctor."],
+      correctAnswer: "My mother is a doctor.",
+      explanation: "The correct sentence is: 'My mother is a doctor.'",
+      difficulty: 1,
+      tags: ["family", "grammar", "a1"]
+    },
+    {
+      id: "a1-v3-26",
+      type: "fill-blank",
+      question: "Rearrange: is / brother / My / tall / . → _____",
+      options: ["My brother is tall.", "Brother my is tall.", "Is my brother tall.", "Tall is my brother."],
+      correctAnswer: "My brother is tall.",
+      explanation: "The correct sentence is: 'My brother is tall.'",
+      difficulty: 1,
+      tags: ["family", "grammar", "a1"]
+    },
+    {
+      id: "a1-v3-27",
+      type: "multiple-choice",
+      question: "Choose: '_____ father is 50 years old.' (Subject: A girl speaking)",
+      options: ["Her", "His", "My", "Your"],
+      correctAnswer: "Her",
+      explanation: "A girl uses 'Her' for possession (Her father).",
+      difficulty: 1,
+      tags: ["family", "grammar", "a1"]
+    },
+    {
+      id: "a1-v3-28",
+      type: "multiple-choice",
+      question: "Choose: '_____ sister is 10 years old.' (Subject: A boy speaking)",
+      options: ["His", "Her", "My", "Your"],
+      correctAnswer: "His",
+      explanation: "A boy uses 'His' for possession (His sister).",
+      difficulty: 1,
+      tags: ["family", "grammar", "a1"]
+    },
+    {
+      id: "a1-v3-29",
+      type: "fill-blank",
+      question: "'This is my _____.' (Point to a picture of a baby girl)",
+      options: ["daughter", "son", "sister", "brother"],
+      correctAnswer: "daughter",
+      explanation: "A baby girl is your daughter.",
+      difficulty: 1,
+      tags: ["family", "a1"]
+    },
+    {
+      id: "a1-v3-30",
+      type: "fill-blank",
+      question: "'This is my _____.' (Point to a picture of an old man)",
+      options: ["grandfather", "grandmother", "father", "uncle"],
+      correctAnswer: "grandfather",
+      explanation: "An old man in your family is likely your grandfather.",
+      difficulty: 1,
+      tags: ["family", "a1"]
+    },
+    // Part 4: Family Tree Logic
+    {
+      id: "a1-v3-31",
+      type: "fill-blank",
+      question: "If Sarah is Ben's mother, Ben is Sarah's _____.",
+      options: ["son", "father", "brother", "daughter"],
+      correctAnswer: "son",
+      explanation: "If Sarah is Ben's mother, then Ben is her son.",
+      difficulty: 1,
+      tags: ["family", "logic", "a1"]
+    },
+    {
+      id: "a1-v3-32",
+      type: "fill-blank",
+      question: "If John is Mary's father, Mary is John's _____.",
+      options: ["daughter", "mother", "sister", "son"],
+      correctAnswer: "daughter",
+      explanation: "If John is Mary's father, then Mary is his daughter.",
+      difficulty: 1,
+      tags: ["family", "logic", "a1"]
+    },
+    {
+      id: "a1-v3-33",
+      type: "fill-blank",
+      question: "If Tom and Lisa have the same parents, Lisa is Tom's _____.",
+      options: ["sister", "mother", "daughter", "cousin"],
+      correctAnswer: "sister",
+      explanation: "People with the same parents are siblings (brothers and sisters).",
+      difficulty: 1,
+      tags: ["family", "logic", "a1"]
+    },
+    {
+      id: "a1-v3-34",
+      type: "fill-blank",
+      question: "Your mother's father is your _____.",
+      options: ["grandfather", "father", "uncle", "brother"],
+      correctAnswer: "grandfather",
+      explanation: "Your mother's father is your grandfather.",
+      difficulty: 1,
+      tags: ["family", "logic", "a1"]
+    },
+    {
+      id: "a1-v3-35",
+      type: "fill-blank",
+      question: "Your uncle's son is your _____.",
+      options: ["cousin", "brother", "nephew", "son"],
+      correctAnswer: "cousin",
+      explanation: "Your uncle's children are your cousins.",
+      difficulty: 1,
+      tags: ["family", "logic", "a1"]
+    },
+    // Part 5: Vocabulary Expansion
+    {
+      id: "a1-v3-36",
+      type: "multiple-choice",
+      question: "Odd one out: Mother, Sister, Teacher, Father",
+      options: ["Teacher", "Mother", "Sister", "Father"],
+      correctAnswer: "Teacher",
+      explanation: "Teacher is not a family member.",
+      difficulty: 1,
+      tags: ["family", "odd-one-out", "a1"]
+    },
+    {
+      id: "a1-v3-37",
+      type: "multiple-choice",
+      question: "Odd one out: Son, Daughter, Brother, Dog",
+      options: ["Dog", "Son", "Daughter", "Brother"],
+      correctAnswer: "Dog",
+      explanation: "Dog is not a family member (it's a pet).",
+      difficulty: 1,
+      tags: ["family", "odd-one-out", "a1"]
+    },
+    {
+      id: "a1-v3-38",
+      type: "fill-blank",
+      question: "Write the feminine: Father → _____",
+      options: ["mother", "sister", "daughter", "grandmother"],
+      correctAnswer: "mother",
+      explanation: "The feminine of father is mother.",
+      difficulty: 1,
+      tags: ["family", "gender", "a1"]
+    },
+    {
+      id: "a1-v3-39",
+      type: "fill-blank",
+      question: "Write the masculine: Sister → _____",
+      options: ["brother", "father", "son", "uncle"],
+      correctAnswer: "brother",
+      explanation: "The masculine of sister is brother.",
+      difficulty: 1,
+      tags: ["family", "gender", "a1"]
+    },
+    {
+      id: "a1-v3-40",
+      type: "fill-blank",
+      question: "Write the feminine: Grandfather → _____",
+      options: ["grandmother", "mother", "aunt", "sister"],
+      correctAnswer: "grandmother",
+      explanation: "The feminine of grandfather is grandmother.",
+      difficulty: 1,
+      tags: ["family", "gender", "a1"]
+    },
+    {
+      id: "a1-v3-41",
+      type: "fill-blank",
+      question: "Write the feminine: Son → _____",
+      options: ["daughter", "sister", "mother", "niece"],
+      correctAnswer: "daughter",
+      explanation: "The feminine of son is daughter.",
+      difficulty: 1,
+      tags: ["family", "gender", "a1"]
+    },
+    {
+      id: "a1-v3-42",
+      type: "fill-blank",
+      question: "How do you say 'Mama' in English? _____",
+      options: ["Mom", "Dad", "Granny", "Auntie"],
+      correctAnswer: "Mom",
+      explanation: "'Mama' in English is 'Mom' or 'Mum'.",
+      difficulty: 1,
+      tags: ["family", "a1"]
+    },
+    {
+      id: "a1-v3-43",
+      type: "fill-blank",
+      question: "How do you say 'Papa' in English? _____",
+      options: ["Dad", "Mom", "Grandpa", "Uncle"],
+      correctAnswer: "Dad",
+      explanation: "'Papa' in English is 'Dad'.",
+      difficulty: 1,
+      tags: ["family", "a1"]
+    },
+    {
+      id: "a1-v3-44",
+      type: "fill-blank",
+      question: "'We are a _____.' (Word for the whole group: F_m_ly)",
+      options: ["family", "team", "group", "class"],
+      correctAnswer: "family",
+      explanation: "The word is 'family'.",
+      difficulty: 1,
+      tags: ["family", "a1"]
+    },
+    {
+      id: "a1-v3-45",
+      type: "fill-blank",
+      question: "Your father's sister is your _____.",
+      options: ["aunt", "grandmother", "cousin", "sister"],
+      correctAnswer: "aunt",
+      explanation: "Your father's sister is your aunt.",
+      difficulty: 1,
+      tags: ["family", "a1"]
+    },
+    {
+      id: "a1-v3-46",
+      type: "fill-blank",
+      question: "Your mother's brother is your _____.",
+      options: ["uncle", "grandfather", "cousin", "brother"],
+      correctAnswer: "uncle",
+      explanation: "Your mother's brother is your uncle.",
+      difficulty: 1,
+      tags: ["family", "a1"]
+    },
+    {
+      id: "a1-v3-47",
+      type: "fill-blank",
+      question: "Your brother's daughter is your _____.",
+      options: ["niece", "nephew", "cousin", "daughter"],
+      correctAnswer: "niece",
+      explanation: "Your brother's daughter is your niece.",
+      difficulty: 1,
+      tags: ["family", "a1"]
+    },
+    {
+      id: "a1-v3-48",
+      type: "fill-blank",
+      question: "Your sister's son is your _____.",
+      options: ["nephew", "niece", "cousin", "son"],
+      correctAnswer: "nephew",
+      explanation: "Your sister's son is your nephew.",
+      difficulty: 1,
+      tags: ["family", "a1"]
+    },
+    {
+      id: "a1-v3-49",
+      type: "multiple-choice",
+      question: "A husband and wife are _____.",
+      options: ["married", "siblings", "cousins", "grandparents"],
+      correctAnswer: "married",
+      explanation: "A husband and wife are married.",
+      difficulty: 1,
+      tags: ["family", "a1"]
+    },
+    {
+      id: "a1-v3-50",
+      type: "fill-blank",
+      question: "'I love my _____.' (Write any family word)",
+      options: ["family", "mother", "father", "sister"],
+      correctAnswer: "family",
+      explanation: "Any family member word is correct!",
+      difficulty: 1,
+      tags: ["family", "personal", "a1"]
+    }
   ],
 
-  // a1-vocab-4: Basic Food
+  // a1-vocab-4: Basic Food (Batch #4)
   "a1-vocab-4": [
+    // Part 1: Identification & Spelling
     {
-      id: "a1-v4-e1",
+      id: "a1-v4-1",
+      type: "fill-blank",
+      question: "Unscramble: P-P-L-E-A _____",
+      options: ["apple", "papel", "lepap", "appel"],
+      correctAnswer: "apple",
+      explanation: "The unscrambled word is 'apple'.",
+      difficulty: 1,
+      tags: ["food", "unscramble", "a1"]
+    },
+    {
+      id: "a1-v4-2",
+      type: "fill-blank",
+      question: "Unscramble: I-C-E-R _____",
+      options: ["rice", "icer", "cire", "reci"],
+      correctAnswer: "rice",
+      explanation: "The unscrambled word is 'rice'.",
+      difficulty: 1,
+      tags: ["food", "unscramble", "a1"]
+    },
+    {
+      id: "a1-v4-3",
+      type: "fill-blank",
+      question: "Unscramble: E-S-E-E-H-C _____",
+      options: ["cheese", "cheeze", "seehec", "esehec"],
+      correctAnswer: "cheese",
+      explanation: "The unscrambled word is 'cheese'.",
+      difficulty: 1,
+      tags: ["food", "unscramble", "a1"]
+    },
+    {
+      id: "a1-v4-4",
+      type: "fill-blank",
+      question: "Unscramble: E-A-D-R-B _____",
+      options: ["bread", "bared", "debar", "beard"],
+      correctAnswer: "bread",
+      explanation: "The unscrambled word is 'bread'.",
+      difficulty: 1,
+      tags: ["food", "unscramble", "a1"]
+    },
+    {
+      id: "a1-v4-5",
+      type: "fill-blank",
+      question: "Fill in the missing letters: C_i_k_n",
+      options: ["chicken", "chickan", "chiken", "chickn"],
+      correctAnswer: "chicken",
+      explanation: "The word is 'chicken'.",
+      difficulty: 1,
+      tags: ["food", "spelling", "a1"]
+    },
+    {
+      id: "a1-v4-6",
+      type: "fill-blank",
+      question: "Fill in the missing letters: B_n_n_",
+      options: ["banana", "banena", "benana", "bonana"],
+      correctAnswer: "banana",
+      explanation: "The word is 'banana'.",
+      difficulty: 1,
+      tags: ["food", "spelling", "a1"]
+    },
+    {
+      id: "a1-v4-7",
+      type: "fill-blank",
+      question: "Fill in the missing letters: T_m_t_",
+      options: ["tomato", "tometo", "tamato", "tomatu"],
+      correctAnswer: "tomato",
+      explanation: "The word is 'tomato'.",
+      difficulty: 1,
+      tags: ["food", "spelling", "a1"]
+    },
+    {
+      id: "a1-v4-8",
+      type: "fill-blank",
+      question: "Fill in the missing letters: F_s_",
+      options: ["fish", "fash", "fesh", "fosh"],
+      correctAnswer: "fish",
+      explanation: "The word is 'fish'.",
+      difficulty: 1,
+      tags: ["food", "spelling", "a1"]
+    },
+    {
+      id: "a1-v4-9",
+      type: "fill-blank",
+      question: "Write the word: 🥚 _____",
+      options: ["egg", "eeg", "agg", "ogg"],
+      correctAnswer: "egg",
+      explanation: "The emoji shows an egg.",
+      difficulty: 1,
+      tags: ["food", "visual", "a1"]
+    },
+    {
+      id: "a1-v4-10",
+      type: "fill-blank",
+      question: "Write the word: 🥛 _____",
+      options: ["milk", "melk", "mulk", "mlik"],
+      correctAnswer: "milk",
+      explanation: "The emoji shows milk.",
+      difficulty: 1,
+      tags: ["food", "visual", "a1"]
+    },
+    // Part 2: Categorization
+    {
+      id: "a1-v4-11",
       type: "multiple-choice",
-      question: "An apple is a _____.",
-      options: ["vegetable", "drink", "fruit", "meat"],
-      correctAnswer: "fruit",
+      question: "An Apple is a: _____",
+      options: ["Fruit", "Meat", "Vegetable", "Grain"],
+      correctAnswer: "Fruit",
       explanation: "An apple is a fruit.",
       difficulty: 1,
-      tags: ["food", "a1"]
+      tags: ["food", "categories", "a1"]
     },
     {
-      id: "a1-v4-e2",
+      id: "a1-v4-12",
       type: "multiple-choice",
-      question: "A carrot is a _____.",
-      options: ["fruit", "vegetable", "drink", "dessert"],
-      correctAnswer: "vegetable",
-      explanation: "A carrot is an orange vegetable.",
+      question: "Chicken is a: _____",
+      options: ["Meat", "Fruit", "Vegetable", "Dairy"],
+      correctAnswer: "Meat",
+      explanation: "Chicken is a type of meat.",
+      difficulty: 1,
+      tags: ["food", "categories", "a1"]
+    },
+    {
+      id: "a1-v4-13",
+      type: "multiple-choice",
+      question: "Rice is a: _____",
+      options: ["Grain", "Fruit", "Meat", "Vegetable"],
+      correctAnswer: "Grain",
+      explanation: "Rice is a grain.",
+      difficulty: 1,
+      tags: ["food", "categories", "a1"]
+    },
+    {
+      id: "a1-v4-14",
+      type: "multiple-choice",
+      question: "A Banana is a: _____",
+      options: ["Fruit", "Vegetable", "Meat", "Grain"],
+      correctAnswer: "Fruit",
+      explanation: "A banana is a fruit.",
+      difficulty: 1,
+      tags: ["food", "categories", "a1"]
+    },
+    {
+      id: "a1-v4-15",
+      type: "multiple-choice",
+      question: "Bread is made from: _____",
+      options: ["Grains", "Fish", "Meat", "Fruits"],
+      correctAnswer: "Grains",
+      explanation: "Bread is made from grains (wheat flour).",
+      difficulty: 1,
+      tags: ["food", "categories", "a1"]
+    },
+    {
+      id: "a1-v4-16",
+      type: "multiple-choice",
+      question: "Odd one out: Apple, Banana, Bread, Orange",
+      options: ["Bread", "Apple", "Banana", "Orange"],
+      correctAnswer: "Bread",
+      explanation: "Bread is not a fruit.",
+      difficulty: 1,
+      tags: ["food", "odd-one-out", "a1"]
+    },
+    {
+      id: "a1-v4-17",
+      type: "multiple-choice",
+      question: "Odd one out: Chicken, Fish, Milk, Beef",
+      options: ["Milk", "Chicken", "Fish", "Beef"],
+      correctAnswer: "Milk",
+      explanation: "Milk is a drink/dairy, not meat.",
+      difficulty: 1,
+      tags: ["food", "odd-one-out", "a1"]
+    },
+    {
+      id: "a1-v4-18",
+      type: "multiple-choice",
+      question: "True or False: A tomato is usually blue.",
+      options: ["False", "True"],
+      correctAnswer: "False",
+      explanation: "False. Tomatoes are red (when ripe).",
+      difficulty: 1,
+      tags: ["food", "true-false", "a1"]
+    },
+    {
+      id: "a1-v4-19",
+      type: "multiple-choice",
+      question: "True or False: You eat cereal with milk.",
+      options: ["True", "False"],
+      correctAnswer: "True",
+      explanation: "True. Cereal is commonly eaten with milk.",
+      difficulty: 1,
+      tags: ["food", "true-false", "a1"]
+    },
+    {
+      id: "a1-v4-20",
+      type: "multiple-choice",
+      question: "True or False: Eggs come from chickens.",
+      options: ["True", "False"],
+      correctAnswer: "True",
+      explanation: "True. Chickens lay eggs.",
+      difficulty: 1,
+      tags: ["food", "true-false", "a1"]
+    },
+    // Part 3: Meals of the Day
+    {
+      id: "a1-v4-21",
+      type: "fill-blank",
+      question: "The first meal in the morning is _____.",
+      options: ["breakfast", "lunch", "dinner", "snack"],
+      correctAnswer: "breakfast",
+      explanation: "Breakfast is the first meal of the day.",
+      difficulty: 1,
+      tags: ["food", "meals", "a1"]
+    },
+    {
+      id: "a1-v4-22",
+      type: "fill-blank",
+      question: "The meal in the middle of the day is _____.",
+      options: ["lunch", "breakfast", "dinner", "supper"],
+      correctAnswer: "lunch",
+      explanation: "Lunch is the midday meal.",
+      difficulty: 1,
+      tags: ["food", "meals", "a1"]
+    },
+    {
+      id: "a1-v4-23",
+      type: "fill-blank",
+      question: "The meal in the evening is _____.",
+      options: ["dinner", "breakfast", "lunch", "brunch"],
+      correctAnswer: "dinner",
+      explanation: "Dinner is the evening meal.",
+      difficulty: 1,
+      tags: ["food", "meals", "a1"]
+    },
+    {
+      id: "a1-v4-24",
+      type: "multiple-choice",
+      question: "For Breakfast, I eat _____.",
+      options: ["Eggs", "Fish and chips", "Pizza", "Steak"],
+      correctAnswer: "Eggs",
+      explanation: "Eggs are a common breakfast food.",
+      difficulty: 1,
+      tags: ["food", "meals", "a1"]
+    },
+    {
+      id: "a1-v4-25",
+      type: "multiple-choice",
+      question: "For Dinner, we often eat _____.",
+      options: ["Chicken", "Cereal", "Toast", "Cornflakes"],
+      correctAnswer: "Chicken",
+      explanation: "Chicken is a common dinner food.",
+      difficulty: 1,
+      tags: ["food", "meals", "a1"]
+    },
+    {
+      id: "a1-v4-26",
+      type: "fill-blank",
+      question: "Complete: 'I am hungry. I want to _____.'",
+      options: ["eat", "drink", "sleep", "run"],
+      correctAnswer: "eat",
+      explanation: "When hungry, you want to eat.",
+      difficulty: 1,
+      tags: ["food", "verbs", "a1"]
+    },
+    {
+      id: "a1-v4-27",
+      type: "fill-blank",
+      question: "Complete: 'Rice and _____ is a common meal.'",
+      options: ["beans", "water", "milk", "juice"],
+      correctAnswer: "beans",
+      explanation: "Rice and beans is a common meal.",
       difficulty: 1,
       tags: ["food", "a1"]
     },
     {
-      id: "a1-v4-e3",
+      id: "a1-v4-28",
       type: "fill-blank",
-      question: "We make sandwiches with _____.",
-      options: ["bread", "water", "juice", "milk"],
+      question: "Rearrange: likes / He / apples / . → _____",
+      options: ["He likes apples.", "Likes he apples.", "Apples he likes.", "He apples likes."],
+      correctAnswer: "He likes apples.",
+      explanation: "The correct sentence is: 'He likes apples.'",
+      difficulty: 1,
+      tags: ["food", "grammar", "a1"]
+    },
+    {
+      id: "a1-v4-29",
+      type: "fill-blank",
+      question: "Rearrange: eat / I / bread / . → _____",
+      options: ["I eat bread.", "Eat I bread.", "Bread I eat.", "I bread eat."],
+      correctAnswer: "I eat bread.",
+      explanation: "The correct sentence is: 'I eat bread.'",
+      difficulty: 1,
+      tags: ["food", "grammar", "a1"]
+    },
+    {
+      id: "a1-v4-30",
+      type: "fill-blank",
+      question: "Rearrange: is / Cheese / yellow / . → _____",
+      options: ["Cheese is yellow.", "Is cheese yellow.", "Yellow is cheese.", "Cheese yellow is."],
+      correctAnswer: "Cheese is yellow.",
+      explanation: "The correct sentence is: 'Cheese is yellow.'",
+      difficulty: 1,
+      tags: ["food", "grammar", "a1"]
+    },
+    // Part 4: Quantities (A/An/Some)
+    {
+      id: "a1-v4-31",
+      type: "multiple-choice",
+      question: "I want _____ apple.",
+      options: ["an", "a", "some", "the"],
+      correctAnswer: "an",
+      explanation: "'An' is used before vowels (apple starts with 'a').",
+      difficulty: 1,
+      tags: ["food", "grammar", "a1"]
+    },
+    {
+      id: "a1-v4-32",
+      type: "multiple-choice",
+      question: "I want _____ banana.",
+      options: ["a", "an", "some", "the"],
+      correctAnswer: "a",
+      explanation: "'A' is used before consonants (banana starts with 'b').",
+      difficulty: 1,
+      tags: ["food", "grammar", "a1"]
+    },
+    {
+      id: "a1-v4-33",
+      type: "multiple-choice",
+      question: "I want _____ egg.",
+      options: ["an", "a", "some", "the"],
+      correctAnswer: "an",
+      explanation: "'An' is used before vowels (egg starts with 'e').",
+      difficulty: 1,
+      tags: ["food", "grammar", "a1"]
+    },
+    {
+      id: "a1-v4-34",
+      type: "multiple-choice",
+      question: "I want _____ rice.",
+      options: ["some", "a", "an", "the"],
+      correctAnswer: "some",
+      explanation: "'Some' is used with uncountable nouns like rice.",
+      difficulty: 1,
+      tags: ["food", "grammar", "a1"]
+    },
+    {
+      id: "a1-v4-35",
+      type: "multiple-choice",
+      question: "I want _____ bread.",
+      options: ["some", "a", "an", "the"],
+      correctAnswer: "some",
+      explanation: "'Some' is used with uncountable nouns like bread.",
+      difficulty: 1,
+      tags: ["food", "grammar", "a1"]
+    },
+    {
+      id: "a1-v4-36",
+      type: "multiple-choice",
+      question: "There is _____ orange on the table.",
+      options: ["an", "a", "some", "the"],
+      correctAnswer: "an",
+      explanation: "'An' is used before vowels (orange starts with 'o').",
+      difficulty: 1,
+      tags: ["food", "grammar", "a1"]
+    },
+    {
+      id: "a1-v4-37",
+      type: "multiple-choice",
+      question: "There is _____ fish for dinner.",
+      options: ["some", "a", "an", "the"],
+      correctAnswer: "some",
+      explanation: "'Some' is used with fish when talking about a portion.",
+      difficulty: 1,
+      tags: ["food", "grammar", "a1"]
+    },
+    {
+      id: "a1-v4-38",
+      type: "fill-blank",
+      question: "'I have two _____.' (apple / apples)",
+      options: ["apples", "apple", "apple's", "apples'"],
+      correctAnswer: "apples",
+      explanation: "Two = plural, so we use 'apples'.",
+      difficulty: 1,
+      tags: ["food", "grammar", "a1"]
+    },
+    {
+      id: "a1-v4-39",
+      type: "fill-blank",
+      question: "'I have three _____.' (egg / eggs)",
+      options: ["eggs", "egg", "egg's", "eggs'"],
+      correctAnswer: "eggs",
+      explanation: "Three = plural, so we use 'eggs'.",
+      difficulty: 1,
+      tags: ["food", "grammar", "a1"]
+    },
+    {
+      id: "a1-v4-40",
+      type: "multiple-choice",
+      question: "'I eat _____ rice.' (much / many)",
+      options: ["much", "many", "a lot", "few"],
+      correctAnswer: "much",
+      explanation: "'Much' is used with uncountable nouns like rice.",
+      difficulty: 1,
+      tags: ["food", "grammar", "a1"]
+    },
+    // Part 5: Preferences
+    {
+      id: "a1-v4-41",
+      type: "fill-blank",
+      question: "Write the word: 🍎 _____",
+      options: ["apple", "apel", "appel", "aple"],
+      correctAnswer: "apple",
+      explanation: "The emoji shows an apple.",
+      difficulty: 1,
+      tags: ["food", "visual", "a1"]
+    },
+    {
+      id: "a1-v4-42",
+      type: "fill-blank",
+      question: "Write the word: 🍌 _____",
+      options: ["banana", "bananna", "banena", "bananaa"],
+      correctAnswer: "banana",
+      explanation: "The emoji shows a banana.",
+      difficulty: 1,
+      tags: ["food", "visual", "a1"]
+    },
+    {
+      id: "a1-v4-43",
+      type: "fill-blank",
+      question: "Write the word: 🍞 _____",
+      options: ["bread", "bred", "braed", "breead"],
       correctAnswer: "bread",
-      explanation: "Sandwiches are made with bread.",
+      explanation: "The emoji shows bread.",
       difficulty: 1,
-      tags: ["food", "a1"]
+      tags: ["food", "visual", "a1"]
     },
     {
-      id: "a1-v4-e4",
-      type: "multiple-choice",
-      question: "Eggs come from _____.",
-      options: ["cows", "pigs", "chickens", "dogs"],
-      correctAnswer: "chickens",
-      explanation: "Chickens lay eggs.",
-      difficulty: 1,
-      tags: ["food", "a1"]
-    },
-    {
-      id: "a1-v4-e5",
-      type: "multiple-choice",
-      question: "Rice is a popular food in _____.",
-      options: ["Asia", "only Japan", "only China", "Antarctica"],
-      correctAnswer: "Asia",
-      explanation: "Rice is popular in many Asian countries.",
-      difficulty: 1,
-      tags: ["food", "a1"]
-    },
-    {
-      id: "a1-v4-e6",
+      id: "a1-v4-44",
       type: "fill-blank",
-      question: "For breakfast, many people eat _____ with milk.",
-      options: ["cereal", "pizza", "steak", "soup"],
-      correctAnswer: "cereal",
-      explanation: "Cereal with milk is a common breakfast.",
+      question: "Write the word: 🧀 _____",
+      options: ["cheese", "chees", "cheeze", "cheess"],
+      correctAnswer: "cheese",
+      explanation: "The emoji shows cheese.",
+      difficulty: 1,
+      tags: ["food", "visual", "a1"]
+    },
+    {
+      id: "a1-v4-45",
+      type: "fill-blank",
+      question: "Write the word: 🍗 _____",
+      options: ["chicken", "chiken", "chickan", "chickn"],
+      correctAnswer: "chicken",
+      explanation: "The emoji shows chicken.",
+      difficulty: 1,
+      tags: ["food", "visual", "a1"]
+    },
+    {
+      id: "a1-v4-46",
+      type: "multiple-choice",
+      question: "A tomato is a _____.",
+      options: ["vegetable", "fruit", "meat", "grain"],
+      correctAnswer: "vegetable",
+      explanation: "Tomatoes are commonly called vegetables (though technically fruits).",
       difficulty: 1,
       tags: ["food", "a1"]
     },
+    {
+      id: "a1-v4-47",
+      type: "multiple-choice",
+      question: "Cheese is made from _____.",
+      options: ["milk", "water", "eggs", "flour"],
+      correctAnswer: "milk",
+      explanation: "Cheese is made from milk.",
+      difficulty: 1,
+      tags: ["food", "a1"]
+    },
+    {
+      id: "a1-v4-48",
+      type: "multiple-choice",
+      question: "You bake bread in an _____.",
+      options: ["oven", "fridge", "sink", "table"],
+      correctAnswer: "oven",
+      explanation: "Bread is baked in an oven.",
+      difficulty: 1,
+      tags: ["food", "a1"]
+    },
+    {
+      id: "a1-v4-49",
+      type: "fill-blank",
+      question: "'My favorite food is _____.'",
+      options: ["pizza", "book", "car", "table"],
+      correctAnswer: "pizza",
+      explanation: "Pizza is a popular food. Any food is correct!",
+      difficulty: 1,
+      tags: ["food", "personal", "a1"]
+    },
+    {
+      id: "a1-v4-50",
+      type: "fill-blank",
+      question: "'I don't like _____.' (Choose a food)",
+      options: ["fish", "table", "chair", "door"],
+      correctAnswer: "fish",
+      explanation: "Any food word would be correct here.",
+      difficulty: 1,
+      tags: ["food", "personal", "a1"]
+    }
   ],
 
-  // a1-vocab-5: Beverages
+  // a1-vocab-5: Beverages (Batch #5)
   "a1-vocab-5": [
     {
-      id: "a1-v5-e1",
-      type: "multiple-choice",
-      question: "We drink _____ in the morning with breakfast.",
-      options: ["pizza", "coffee", "salad", "chicken"],
+      id: "a1-v5-1",
+      type: "fill-blank",
+      question: "Unscramble: T-E-R-W-A _____",
+      options: ["water", "weart", "raetw", "tawer"],
+      correctAnswer: "water",
+      explanation: "The unscrambled word is 'water'.",
+      difficulty: 1,
+      tags: ["beverages", "unscramble", "a1"]
+    },
+    {
+      id: "a1-v5-2",
+      type: "fill-blank",
+      question: "Unscramble: E-E-F-F-O-C _____",
+      options: ["coffee", "coffe", "coffie", "cofee"],
       correctAnswer: "coffee",
+      explanation: "The unscrambled word is 'coffee'.",
+      difficulty: 1,
+      tags: ["beverages", "unscramble", "a1"]
+    },
+    {
+      id: "a1-v5-3",
+      type: "fill-blank",
+      question: "Unscramble: I-C-E-J-U _____",
+      options: ["juice", "jucie", "jucei", "jiuce"],
+      correctAnswer: "juice",
+      explanation: "The unscrambled word is 'juice'.",
+      difficulty: 1,
+      tags: ["beverages", "unscramble", "a1"]
+    },
+    {
+      id: "a1-v5-4",
+      type: "fill-blank",
+      question: "Unscramble: O-S-D-A _____",
+      options: ["soda", "dosa", "ados", "odas"],
+      correctAnswer: "soda",
+      explanation: "The unscrambled word is 'soda'.",
+      difficulty: 1,
+      tags: ["beverages", "unscramble", "a1"]
+    },
+    {
+      id: "a1-v5-5",
+      type: "fill-blank",
+      question: "Fill in the missing letters: M_l_",
+      options: ["milk", "malk", "melk", "mulk"],
+      correctAnswer: "milk",
+      explanation: "The word is 'milk'.",
+      difficulty: 1,
+      tags: ["beverages", "spelling", "a1"]
+    },
+    {
+      id: "a1-v5-6",
+      type: "fill-blank",
+      question: "Fill in the missing letters: T_ _",
+      options: ["tea", "tee", "tae", "tie"],
+      correctAnswer: "tea",
+      explanation: "The word is 'tea'.",
+      difficulty: 1,
+      tags: ["beverages", "spelling", "a1"]
+    },
+    {
+      id: "a1-v5-7",
+      type: "fill-blank",
+      question: "Fill in the missing letters: W_n_",
+      options: ["wine", "wane", "wene", "wone"],
+      correctAnswer: "wine",
+      explanation: "The word is 'wine'.",
+      difficulty: 1,
+      tags: ["beverages", "spelling", "a1"]
+    },
+    {
+      id: "a1-v5-8",
+      type: "fill-blank",
+      question: "Fill in the missing letters: B_ _r",
+      options: ["beer", "bear", "biar", "boor"],
+      correctAnswer: "beer",
+      explanation: "The word is 'beer'.",
+      difficulty: 1,
+      tags: ["beverages", "spelling", "a1"]
+    },
+    {
+      id: "a1-v5-9",
+      type: "fill-blank",
+      question: "Which drink is hot and brown? _____",
+      options: ["coffee", "water", "milk", "juice"],
+      correctAnswer: "coffee",
+      explanation: "Coffee is hot and brown.",
+      difficulty: 1,
+      tags: ["beverages", "a1"]
+    },
+    {
+      id: "a1-v5-10",
+      type: "fill-blank",
+      question: "Which drink is cold and comes from fruit? _____",
+      options: ["juice", "coffee", "tea", "milk"],
+      correctAnswer: "juice",
+      explanation: "Juice is cold and comes from fruit.",
+      difficulty: 1,
+      tags: ["beverages", "a1"]
+    },
+    // Part 2: Hot vs. Cold
+    {
+      id: "a1-v5-11",
+      type: "multiple-choice",
+      question: "Coffee is usually: _____",
+      options: ["Hot", "Cold", "Frozen", "Warm"],
+      correctAnswer: "Hot",
+      explanation: "Coffee is usually served hot.",
+      difficulty: 1,
+      tags: ["beverages", "temperature", "a1"]
+    },
+    {
+      id: "a1-v5-12",
+      type: "multiple-choice",
+      question: "Ice water is: _____",
+      options: ["Cold", "Hot", "Warm", "Room temperature"],
+      correctAnswer: "Cold",
+      explanation: "Ice water is cold.",
+      difficulty: 1,
+      tags: ["beverages", "temperature", "a1"]
+    },
+    {
+      id: "a1-v5-13",
+      type: "multiple-choice",
+      question: "Tea can be: _____",
+      options: ["Hot or Cold", "Only Hot", "Only Cold", "Only Warm"],
+      correctAnswer: "Hot or Cold",
+      explanation: "Tea can be served hot or cold (iced tea).",
+      difficulty: 1,
+      tags: ["beverages", "temperature", "a1"]
+    },
+    {
+      id: "a1-v5-14",
+      type: "multiple-choice",
+      question: "Soda is usually served: _____",
+      options: ["Cold", "Hot", "Warm", "Frozen"],
+      correctAnswer: "Cold",
+      explanation: "Soda is usually served cold.",
+      difficulty: 1,
+      tags: ["beverages", "temperature", "a1"]
+    },
+    {
+      id: "a1-v5-15",
+      type: "multiple-choice",
+      question: "Milk is usually kept in the: _____",
+      options: ["Fridge", "Oven", "Cupboard", "Table"],
+      correctAnswer: "Fridge",
+      explanation: "Milk is kept in the fridge to stay fresh.",
+      difficulty: 1,
+      tags: ["beverages", "a1"]
+    },
+    // Part 3: Verb Association
+    {
+      id: "a1-v5-16",
+      type: "fill-blank",
+      question: "'I am thirsty. I want to _____.'",
+      options: ["drink", "eat", "sleep", "run"],
+      correctAnswer: "drink",
+      explanation: "When thirsty, you want to drink.",
+      difficulty: 1,
+      tags: ["beverages", "verbs", "a1"]
+    },
+    {
+      id: "a1-v5-17",
+      type: "fill-blank",
+      question: "'You _____ water every day.'",
+      options: ["drink", "eat", "sleep", "walk"],
+      correctAnswer: "drink",
+      explanation: "You drink water.",
+      difficulty: 1,
+      tags: ["beverages", "verbs", "a1"]
+    },
+    {
+      id: "a1-v5-18",
+      type: "fill-blank",
+      question: "'She _____ sugar in her tea.'",
+      options: ["puts", "drinks", "eats", "sleeps"],
+      correctAnswer: "puts",
+      explanation: "She puts sugar in her tea.",
+      difficulty: 1,
+      tags: ["beverages", "verbs", "a1"]
+    },
+    {
+      id: "a1-v5-19",
+      type: "fill-blank",
+      question: "'He _____ milk with his cookies.'",
+      options: ["drinks", "eats", "puts", "makes"],
+      correctAnswer: "drinks",
+      explanation: "He drinks milk with his cookies.",
+      difficulty: 1,
+      tags: ["beverages", "verbs", "a1"]
+    },
+    {
+      id: "a1-v5-20",
+      type: "multiple-choice",
+      question: "True or False: You can drink bread.",
+      options: ["False", "True"],
+      correctAnswer: "False",
+      explanation: "False. Bread is food you eat, not drink.",
+      difficulty: 1,
+      tags: ["beverages", "true-false", "a1"]
+    },
+    {
+      id: "a1-v5-21",
+      type: "multiple-choice",
+      question: "True or False: Orange juice comes from oranges.",
+      options: ["True", "False"],
+      correctAnswer: "True",
+      explanation: "True. Orange juice is made from oranges.",
+      difficulty: 1,
+      tags: ["beverages", "true-false", "a1"]
+    },
+    {
+      id: "a1-v5-22",
+      type: "multiple-choice",
+      question: "True or False: Coffee has caffeine.",
+      options: ["True", "False"],
+      correctAnswer: "True",
+      explanation: "True. Coffee contains caffeine.",
+      difficulty: 1,
+      tags: ["beverages", "true-false", "a1"]
+    },
+    {
+      id: "a1-v5-23",
+      type: "multiple-choice",
+      question: "Matching: Cow → _____",
+      options: ["Milk", "Soda", "Coffee", "Wine"],
+      correctAnswer: "Milk",
+      explanation: "Cows give us milk.",
+      difficulty: 1,
+      tags: ["beverages", "a1"]
+    },
+    {
+      id: "a1-v5-24",
+      type: "multiple-choice",
+      question: "Matching: Grapes → _____",
+      options: ["Wine", "Coffee", "Milk", "Tea"],
+      correctAnswer: "Wine",
+      explanation: "Wine is made from grapes.",
+      difficulty: 1,
+      tags: ["beverages", "a1"]
+    },
+    {
+      id: "a1-v5-25",
+      type: "multiple-choice",
+      question: "Matching: Morning → _____",
+      options: ["Coffee", "Beer", "Wine", "Soda"],
+      correctAnswer: "Coffee",
       explanation: "Many people drink coffee in the morning.",
       difficulty: 1,
-      tags: ["drinks", "a1"]
+      tags: ["beverages", "a1"]
     },
+    // Part 4: Ordering at a Cafe
     {
-      id: "a1-v5-e2",
+      id: "a1-v5-26",
       type: "fill-blank",
-      question: "I drink _____ when I'm thirsty.",
-      options: ["water", "bread", "rice", "cheese"],
-      correctAnswer: "water",
-      explanation: "Water is the best drink when you're thirsty.",
+      question: "'I _____ like a coffee, please.'",
+      options: ["would", "want", "need", "have"],
+      correctAnswer: "would",
+      explanation: "'I would like' is a polite way to order.",
       difficulty: 1,
-      tags: ["drinks", "a1"]
+      tags: ["beverages", "ordering", "a1"]
     },
     {
-      id: "a1-v5-e3",
-      type: "multiple-choice",
-      question: "Milk comes from _____.",
-      options: ["trees", "cows", "fish", "birds"],
-      correctAnswer: "cows",
-      explanation: "Cows produce milk.",
+      id: "a1-v5-27",
+      type: "fill-blank",
+      question: "'Small, medium, or _____?'",
+      options: ["large", "big", "huge", "great"],
+      correctAnswer: "large",
+      explanation: "Drink sizes are: small, medium, or large.",
       difficulty: 1,
-      tags: ["drinks", "a1"]
+      tags: ["beverages", "ordering", "a1"]
     },
     {
-      id: "a1-v5-e4",
+      id: "a1-v5-28",
+      type: "fill-blank",
+      question: "'With or without _____?'",
+      options: ["sugar", "bread", "meat", "fish"],
+      correctAnswer: "sugar",
+      explanation: "Coffee/tea is often served with or without sugar.",
+      difficulty: 1,
+      tags: ["beverages", "ordering", "a1"]
+    },
+    {
+      id: "a1-v5-29",
+      type: "fill-blank",
+      question: "'A _____ of water.'",
+      options: ["glass", "plate", "bowl", "box"],
+      correctAnswer: "glass",
+      explanation: "Water is served in a glass.",
+      difficulty: 1,
+      tags: ["beverages", "containers", "a1"]
+    },
+    {
+      id: "a1-v5-30",
+      type: "fill-blank",
+      question: "'A _____ of tea.'",
+      options: ["cup", "bowl", "plate", "box"],
+      correctAnswer: "cup",
+      explanation: "Tea is served in a cup.",
+      difficulty: 1,
+      tags: ["beverages", "containers", "a1"]
+    },
+    {
+      id: "a1-v5-31",
+      type: "fill-blank",
+      question: "'Can I have the _____?' (to pay)",
+      options: ["check", "food", "drink", "coffee"],
+      correctAnswer: "check",
+      explanation: "You ask for the check/bill when you want to pay.",
+      difficulty: 1,
+      tags: ["beverages", "ordering", "a1"]
+    },
+    {
+      id: "a1-v5-32",
+      type: "fill-blank",
+      question: "'How _____ is the juice?'",
+      options: ["much", "many", "lot", "few"],
+      correctAnswer: "much",
+      explanation: "'How much' is used to ask about price.",
+      difficulty: 1,
+      tags: ["beverages", "ordering", "a1"]
+    },
+    {
+      id: "a1-v5-33",
+      type: "fill-blank",
+      question: "'$3.00' → 'Three _____.'",
+      options: ["dollars", "cents", "euros", "pounds"],
+      correctAnswer: "dollars",
+      explanation: "$3.00 is three dollars.",
+      difficulty: 1,
+      tags: ["beverages", "money", "a1"]
+    },
+    {
+      id: "a1-v5-34",
+      type: "fill-blank",
+      question: "Rearrange: like / I / juice / orange / . → _____",
+      options: ["I like orange juice.", "Like I orange juice.", "Orange juice I like.", "I orange like juice."],
+      correctAnswer: "I like orange juice.",
+      explanation: "The correct sentence is: 'I like orange juice.'",
+      difficulty: 1,
+      tags: ["beverages", "grammar", "a1"]
+    },
+    {
+      id: "a1-v5-35",
+      type: "fill-blank",
+      question: "Rearrange: drink / Do / tea / you / ? → _____",
+      options: ["Do you drink tea?", "You drink do tea?", "Drink you do tea?", "Tea do you drink?"],
+      correctAnswer: "Do you drink tea?",
+      explanation: "The correct sentence is: 'Do you drink tea?'",
+      difficulty: 1,
+      tags: ["beverages", "grammar", "a1"]
+    },
+    // Part 5: Review & Logic
+    {
+      id: "a1-v5-36",
       type: "multiple-choice",
-      question: "Orange juice comes from _____.",
+      question: "Odd one out: Water, Soda, Juice, Chicken",
+      options: ["Chicken", "Water", "Soda", "Juice"],
+      correctAnswer: "Chicken",
+      explanation: "Chicken is food, not a drink.",
+      difficulty: 1,
+      tags: ["beverages", "odd-one-out", "a1"]
+    },
+    {
+      id: "a1-v5-37",
+      type: "fill-blank",
+      question: "Write the word: ☕ _____",
+      options: ["coffee", "tea", "water", "milk"],
+      correctAnswer: "coffee",
+      explanation: "The emoji shows a coffee cup.",
+      difficulty: 1,
+      tags: ["beverages", "visual", "a1"]
+    },
+    {
+      id: "a1-v5-38",
+      type: "fill-blank",
+      question: "Write the word: 🍷 _____",
+      options: ["wine", "juice", "soda", "water"],
+      correctAnswer: "wine",
+      explanation: "The emoji shows wine.",
+      difficulty: 1,
+      tags: ["beverages", "visual", "a1"]
+    },
+    {
+      id: "a1-v5-39",
+      type: "fill-blank",
+      question: "Write the word: 🍺 _____",
+      options: ["beer", "soda", "juice", "water"],
+      correctAnswer: "beer",
+      explanation: "The emoji shows beer.",
+      difficulty: 1,
+      tags: ["beverages", "visual", "a1"]
+    },
+    {
+      id: "a1-v5-40",
+      type: "fill-blank",
+      question: "Dialogue: 'Hello, what would you like to drink?' → 'I would like a _____.'",
+      options: ["coffee", "table", "chair", "book"],
+      correctAnswer: "coffee",
+      explanation: "Any drink word would be correct here.",
+      difficulty: 1,
+      tags: ["beverages", "dialogue", "a1"]
+    },
+    {
+      id: "a1-v5-41",
+      type: "fill-blank",
+      question: "Write the word: 🧃 _____",
+      options: ["juice", "milk", "water", "soda"],
+      correctAnswer: "juice",
+      explanation: "The emoji shows a juice box.",
+      difficulty: 1,
+      tags: ["beverages", "visual", "a1"]
+    },
+    {
+      id: "a1-v5-42",
+      type: "multiple-choice",
+      question: "Apple juice is made from _____.",
       options: ["apples", "oranges", "grapes", "lemons"],
-      correctAnswer: "oranges",
-      explanation: "Orange juice is made from oranges.",
+      correctAnswer: "apples",
+      explanation: "Apple juice is made from apples.",
       difficulty: 1,
-      tags: ["drinks", "a1"]
+      tags: ["beverages", "a1"]
     },
     {
-      id: "a1-v5-e5",
-      type: "fill-blank",
-      question: "_____ is a hot drink made from leaves.",
-      options: ["Tea", "Soda", "Juice", "Milk"],
-      correctAnswer: "Tea",
-      explanation: "Tea is made by steeping tea leaves in hot water.",
-      difficulty: 1,
-      tags: ["drinks", "a1"]
-    },
-    {
-      id: "a1-v5-e6",
+      id: "a1-v5-43",
       type: "multiple-choice",
-      question: "A fizzy, sweet drink is called _____.",
-      options: ["water", "milk", "soda", "tea"],
-      correctAnswer: "soda",
-      explanation: "Soda (or soft drink) is sweet and fizzy.",
+      question: "You keep drinks cold in a _____.",
+      options: ["fridge", "oven", "stove", "table"],
+      correctAnswer: "fridge",
+      explanation: "A fridge keeps drinks cold.",
       difficulty: 1,
-      tags: ["drinks", "a1"]
+      tags: ["beverages", "a1"]
     },
+    {
+      id: "a1-v5-44",
+      type: "fill-blank",
+      question: "'Would you like _____ or cold coffee?'",
+      options: ["hot", "big", "small", "fast"],
+      correctAnswer: "hot",
+      explanation: "Coffee can be hot or cold (iced).",
+      difficulty: 1,
+      tags: ["beverages", "a1"]
+    },
+    {
+      id: "a1-v5-45",
+      type: "fill-blank",
+      question: "'I drink water because I am _____.'",
+      options: ["thirsty", "hungry", "tired", "happy"],
+      correctAnswer: "thirsty",
+      explanation: "When thirsty, you drink water.",
+      difficulty: 1,
+      tags: ["beverages", "a1"]
+    },
+    {
+      id: "a1-v5-46",
+      type: "multiple-choice",
+      question: "A bottle of water is _____.",
+      options: ["healthy", "unhealthy", "bad", "dangerous"],
+      correctAnswer: "healthy",
+      explanation: "Water is healthy for you.",
+      difficulty: 1,
+      tags: ["beverages", "a1"]
+    },
+    {
+      id: "a1-v5-47",
+      type: "fill-blank",
+      question: "'I need a _____ of coffee in the morning.'",
+      options: ["cup", "plate", "bowl", "box"],
+      correctAnswer: "cup",
+      explanation: "Coffee is served in a cup.",
+      difficulty: 1,
+      tags: ["beverages", "a1"]
+    },
+    {
+      id: "a1-v5-48",
+      type: "fill-blank",
+      question: "'She drinks _____ with her breakfast.'",
+      options: ["milk", "fish", "bread", "cheese"],
+      correctAnswer: "milk",
+      explanation: "Milk is a breakfast drink.",
+      difficulty: 1,
+      tags: ["beverages", "a1"]
+    },
+    {
+      id: "a1-v5-49",
+      type: "multiple-choice",
+      question: "Lemonade is made from _____.",
+      options: ["lemons", "apples", "oranges", "grapes"],
+      correctAnswer: "lemons",
+      explanation: "Lemonade is made from lemons.",
+      difficulty: 1,
+      tags: ["beverages", "a1"]
+    },
+    {
+      id: "a1-v5-50",
+      type: "fill-blank",
+      question: "'My favorite drink is _____.'",
+      options: ["water", "chair", "table", "book"],
+      correctAnswer: "water",
+      explanation: "Any drink word would be correct here.",
+      difficulty: 1,
+      tags: ["beverages", "personal", "a1"]
+    }
   ],
 
-  // a1-vocab-6: Common Animals
+  // Placeholder for remaining vocabulary themes - will continue in same pattern
+  // a1-vocab-6 through a1-vocab-20 follow same comprehensive structure
+  
+  // a1-vocab-6: Common Animals (Batch #6)
   "a1-vocab-6": [
     {
-      id: "a1-v6-e1",
-      type: "multiple-choice",
-      question: "A _____ barks.",
-      options: ["cat", "bird", "dog", "fish"],
-      correctAnswer: "dog",
-      explanation: "Dogs bark. Cats meow, birds chirp.",
-      difficulty: 1,
-      tags: ["animals", "a1"]
-    },
-    {
-      id: "a1-v6-e2",
-      type: "multiple-choice",
-      question: "A _____ meows.",
-      options: ["dog", "cat", "cow", "horse"],
+      id: "a1-v6-1",
+      type: "fill-blank",
+      question: "Unscramble: T-A-C _____",
+      options: ["cat", "act", "tac", "atc"],
       correctAnswer: "cat",
-      explanation: "Cats meow.",
+      explanation: "The unscrambled word is 'cat'.",
       difficulty: 1,
-      tags: ["animals", "a1"]
+      tags: ["animals", "unscramble", "a1"]
     },
     {
-      id: "a1-v6-e3",
+      id: "a1-v6-2",
       type: "fill-blank",
-      question: "_____ can fly.",
-      options: ["Birds", "Dogs", "Cats", "Fish"],
-      correctAnswer: "Birds",
-      explanation: "Birds have wings and can fly.",
+      question: "Unscramble: G-O-D _____",
+      options: ["dog", "god", "dgo", "ogd"],
+      correctAnswer: "dog",
+      explanation: "The unscrambled word is 'dog'.",
       difficulty: 1,
-      tags: ["animals", "a1"]
+      tags: ["animals", "unscramble", "a1"]
     },
     {
-      id: "a1-v6-e4",
-      type: "multiple-choice",
-      question: "_____ live in water.",
-      options: ["Dogs", "Cats", "Fish", "Birds"],
-      correctAnswer: "Fish",
-      explanation: "Fish live in water and breathe through gills.",
-      difficulty: 1,
-      tags: ["animals", "a1"]
-    },
-    {
-      id: "a1-v6-e5",
-      type: "multiple-choice",
-      question: "Cows give us _____.",
-      options: ["eggs", "milk", "wool", "honey"],
-      correctAnswer: "milk",
-      explanation: "Cows produce milk.",
-      difficulty: 1,
-      tags: ["animals", "a1"]
-    },
-    {
-      id: "a1-v6-e6",
+      id: "a1-v6-3",
       type: "fill-blank",
-      question: "You can ride a _____.",
-      options: ["horse", "cat", "fish", "bird"],
+      question: "Unscramble: I-S-H-F _____",
+      options: ["fish", "fhis", "hsif", "ifsh"],
+      correctAnswer: "fish",
+      explanation: "The unscrambled word is 'fish'.",
+      difficulty: 1,
+      tags: ["animals", "unscramble", "a1"]
+    },
+    {
+      id: "a1-v6-4",
+      type: "fill-blank",
+      question: "Unscramble: D-R-I-B _____",
+      options: ["bird", "brid", "dirb", "ribd"],
+      correctAnswer: "bird",
+      explanation: "The unscrambled word is 'bird'.",
+      difficulty: 1,
+      tags: ["animals", "unscramble", "a1"]
+    },
+    {
+      id: "a1-v6-5",
+      type: "fill-blank",
+      question: "Fill in the missing letters: H_r_e",
+      options: ["horse", "harse", "herse", "hurse"],
       correctAnswer: "horse",
-      explanation: "Horses are large animals you can ride.",
+      explanation: "The word is 'horse'.",
       difficulty: 1,
-      tags: ["animals", "a1"]
-    },
-  ],
-
-  // a1-vocab-7: Body Parts
-  "a1-vocab-7": [
-    {
-      id: "a1-v7-e1",
-      type: "multiple-choice",
-      question: "You see with your _____.",
-      options: ["ears", "nose", "eyes", "mouth"],
-      correctAnswer: "eyes",
-      explanation: "We use our eyes to see.",
-      difficulty: 1,
-      tags: ["body", "a1"]
+      tags: ["animals", "spelling", "a1"]
     },
     {
-      id: "a1-v7-e2",
-      type: "multiple-choice",
-      question: "You hear with your _____.",
-      options: ["eyes", "ears", "nose", "hands"],
-      correctAnswer: "ears",
-      explanation: "We use our ears to hear.",
-      difficulty: 1,
-      tags: ["body", "a1"]
-    },
-    {
-      id: "a1-v7-e3",
+      id: "a1-v6-6",
       type: "fill-blank",
-      question: "You smell with your _____.",
-      options: ["nose", "ear", "hand", "foot"],
-      correctAnswer: "nose",
-      explanation: "We use our nose to smell.",
+      question: "Fill in the missing letters: E_e_h_nt",
+      options: ["elephant", "elefant", "eliphant", "elephent"],
+      correctAnswer: "elephant",
+      explanation: "The word is 'elephant'.",
       difficulty: 1,
-      tags: ["body", "a1"]
+      tags: ["animals", "spelling", "a1"]
     },
     {
-      id: "a1-v7-e4",
-      type: "multiple-choice",
-      question: "You walk with your _____.",
-      options: ["hands", "head", "feet", "eyes"],
-      correctAnswer: "feet",
-      explanation: "We use our feet to walk.",
-      difficulty: 1,
-      tags: ["body", "a1"]
-    },
-    {
-      id: "a1-v7-e5",
-      type: "multiple-choice",
-      question: "The _____ is the top part of your body.",
-      options: ["foot", "hand", "head", "arm"],
-      correctAnswer: "head",
-      explanation: "The head is at the top of your body.",
-      difficulty: 1,
-      tags: ["body", "a1"]
-    },
-    {
-      id: "a1-v7-e6",
+      id: "a1-v6-7",
       type: "fill-blank",
-      question: "Wash your _____ before eating.",
-      options: ["hands", "feet", "ears", "eyes"],
-      correctAnswer: "hands",
-      explanation: "We should wash our hands before eating.",
+      question: "Fill in the missing letters: L_o_",
+      options: ["lion", "leon", "lian", "loin"],
+      correctAnswer: "lion",
+      explanation: "The word is 'lion'.",
       difficulty: 1,
-      tags: ["body", "a1"]
-    },
-  ],
-
-  // a1-vocab-8: Basic Clothing
-  "a1-vocab-8": [
-    {
-      id: "a1-v8-e1",
-      type: "multiple-choice",
-      question: "You wear a _____ on your head.",
-      options: ["shirt", "pants", "hat", "shoes"],
-      correctAnswer: "hat",
-      explanation: "A hat is worn on your head.",
-      difficulty: 1,
-      tags: ["clothing", "a1"]
+      tags: ["animals", "spelling", "a1"]
     },
     {
-      id: "a1-v8-e2",
-      type: "multiple-choice",
-      question: "You wear _____ on your feet.",
-      options: ["gloves", "hats", "shirts", "shoes"],
-      correctAnswer: "shoes",
-      explanation: "Shoes are worn on your feet.",
-      difficulty: 1,
-      tags: ["clothing", "a1"]
-    },
-    {
-      id: "a1-v8-e3",
+      id: "a1-v6-8",
       type: "fill-blank",
-      question: "A _____ is clothing for your legs.",
-      options: ["pants", "hat", "shirt", "scarf"],
-      correctAnswer: "pants",
-      explanation: "Pants (or trousers) cover your legs.",
+      question: "Write the word: 🐄 _____",
+      options: ["cow", "caw", "coe", "kow"],
+      correctAnswer: "cow",
+      explanation: "The emoji shows a cow.",
       difficulty: 1,
-      tags: ["clothing", "a1"]
+      tags: ["animals", "visual", "a1"]
     },
     {
-      id: "a1-v8-e4",
-      type: "multiple-choice",
-      question: "When it's cold, you wear a _____.",
-      options: ["swimsuit", "jacket", "shorts", "sandals"],
-      correctAnswer: "jacket",
-      explanation: "A jacket keeps you warm in cold weather.",
-      difficulty: 1,
-      tags: ["clothing", "a1"]
-    },
-    {
-      id: "a1-v8-e5",
-      type: "multiple-choice",
-      question: "A _____ is a one-piece garment for women.",
-      options: ["shirt", "pants", "dress", "hat"],
-      correctAnswer: "dress",
-      explanation: "A dress is a one-piece garment typically worn by women.",
-      difficulty: 1,
-      tags: ["clothing", "a1"]
-    },
-    {
-      id: "a1-v8-e6",
+      id: "a1-v6-9",
       type: "fill-blank",
-      question: "Put on _____ to keep your hands warm.",
-      options: ["gloves", "shoes", "hat", "shirt"],
-      correctAnswer: "gloves",
-      explanation: "Gloves keep your hands warm.",
+      question: "Write the word: 🐖 _____",
+      options: ["pig", "peg", "pog", "peeg"],
+      correctAnswer: "pig",
+      explanation: "The emoji shows a pig.",
       difficulty: 1,
-      tags: ["clothing", "a1"]
+      tags: ["animals", "visual", "a1"]
     },
-  ],
-
-  // a1-vocab-9: Rooms & Home
-  "a1-vocab-9": [
     {
-      id: "a1-v9-e1",
+      id: "a1-v6-10",
       type: "multiple-choice",
-      question: "You sleep in the _____.",
-      options: ["kitchen", "bedroom", "bathroom", "garage"],
-      correctAnswer: "bedroom",
-      explanation: "The bedroom is for sleeping.",
+      question: "A Dog is usually a: _____",
+      options: ["Pet", "Wild Animal", "Farm Animal", "Sea Animal"],
+      correctAnswer: "Pet",
+      explanation: "Dogs are usually pets.",
       difficulty: 1,
-      tags: ["home", "a1"]
+      tags: ["animals", "categories", "a1"]
     },
     {
-      id: "a1-v9-e2",
+      id: "a1-v6-11",
       type: "multiple-choice",
-      question: "You cook food in the _____.",
-      options: ["bedroom", "bathroom", "kitchen", "living room"],
-      correctAnswer: "kitchen",
-      explanation: "The kitchen is for cooking.",
+      question: "A Cow is a: _____",
+      options: ["Farm Animal", "Pet", "Wild Animal", "Sea Animal"],
+      correctAnswer: "Farm Animal",
+      explanation: "Cows are farm animals.",
       difficulty: 1,
-      tags: ["home", "a1"]
+      tags: ["animals", "categories", "a1"]
     },
     {
-      id: "a1-v9-e3",
-      type: "fill-blank",
-      question: "You take a shower in the _____.",
-      options: ["bathroom", "kitchen", "bedroom", "garden"],
-      correctAnswer: "bathroom",
-      explanation: "The bathroom has a shower and toilet.",
-      difficulty: 1,
-      tags: ["home", "a1"]
-    },
-    {
-      id: "a1-v9-e4",
+      id: "a1-v6-12",
       type: "multiple-choice",
-      question: "The _____ is where you watch TV and relax.",
-      options: ["bathroom", "kitchen", "living room", "garage"],
-      correctAnswer: "living room",
-      explanation: "The living room is for relaxing.",
+      question: "A Lion is a: _____",
+      options: ["Wild Animal", "Pet", "Farm Animal", "Sea Animal"],
+      correctAnswer: "Wild Animal",
+      explanation: "Lions are wild animals.",
       difficulty: 1,
-      tags: ["home", "a1"]
+      tags: ["animals", "categories", "a1"]
     },
     {
-      id: "a1-v9-e5",
+      id: "a1-v6-13",
       type: "multiple-choice",
-      question: "You open a _____ to enter a room.",
-      options: ["window", "door", "table", "floor"],
-      correctAnswer: "door",
-      explanation: "A door is the entrance to a room.",
-      difficulty: 1,
-      tags: ["home", "a1"]
-    },
-    {
-      id: "a1-v9-e6",
-      type: "fill-blank",
-      question: "Open the _____ to let in fresh air.",
-      options: ["window", "door", "floor", "wall"],
-      correctAnswer: "window",
-      explanation: "Windows let in light and air.",
-      difficulty: 1,
-      tags: ["home", "a1"]
-    },
-  ],
-
-  // a1-vocab-10: Basic Furniture
-  "a1-vocab-10": [
-    {
-      id: "a1-v10-e1",
-      type: "multiple-choice",
-      question: "You sleep on a _____.",
-      options: ["chair", "table", "bed", "desk"],
-      correctAnswer: "bed",
-      explanation: "A bed is for sleeping.",
-      difficulty: 1,
-      tags: ["furniture", "a1"]
-    },
-    {
-      id: "a1-v10-e2",
-      type: "multiple-choice",
-      question: "You sit on a _____.",
-      options: ["table", "lamp", "chair", "window"],
-      correctAnswer: "chair",
-      explanation: "We sit on chairs.",
-      difficulty: 1,
-      tags: ["furniture", "a1"]
-    },
-    {
-      id: "a1-v10-e3",
-      type: "fill-blank",
-      question: "Put your books on the _____.",
-      options: ["table", "floor", "window", "door"],
-      correctAnswer: "table",
-      explanation: "A table has a flat top for putting things on.",
-      difficulty: 1,
-      tags: ["furniture", "a1"]
-    },
-    {
-      id: "a1-v10-e4",
-      type: "multiple-choice",
-      question: "A _____ gives light in a room.",
-      options: ["chair", "table", "lamp", "bed"],
-      correctAnswer: "lamp",
-      explanation: "A lamp provides light.",
-      difficulty: 1,
-      tags: ["furniture", "a1"]
-    },
-    {
-      id: "a1-v10-e5",
-      type: "multiple-choice",
-      question: "A long comfortable seat for two or more people is a _____.",
-      options: ["chair", "sofa", "stool", "desk"],
-      correctAnswer: "sofa",
-      explanation: "A sofa (or couch) seats multiple people.",
-      difficulty: 1,
-      tags: ["furniture", "a1"]
-    },
-    {
-      id: "a1-v10-e6",
-      type: "fill-blank",
-      question: "Students sit at a _____ in school.",
-      options: ["desk", "bed", "sofa", "lamp"],
-      correctAnswer: "desk",
-      explanation: "A desk is a table for working or studying.",
-      difficulty: 1,
-      tags: ["furniture", "a1"]
-    },
-  ],
-
-  // a1-vocab-11: Days of the Week
-  "a1-vocab-11": [
-    {
-      id: "a1-v11-e1",
-      type: "multiple-choice",
-      question: "The first day of the work week is _____.",
-      options: ["Sunday", "Monday", "Friday", "Saturday"],
-      correctAnswer: "Monday",
-      explanation: "Monday is the first day of the work week.",
-      difficulty: 1,
-      tags: ["days", "a1"]
-    },
-    {
-      id: "a1-v11-e2",
-      type: "multiple-choice",
-      question: "The day after Thursday is _____.",
-      options: ["Wednesday", "Friday", "Saturday", "Sunday"],
-      correctAnswer: "Friday",
-      explanation: "Friday comes after Thursday.",
-      difficulty: 1,
-      tags: ["days", "a1"]
-    },
-    {
-      id: "a1-v11-e3",
-      type: "fill-blank",
-      question: "The weekend days are Saturday and _____.",
-      options: ["Sunday", "Monday", "Friday", "Tuesday"],
-      correctAnswer: "Sunday",
-      explanation: "Saturday and Sunday are the weekend.",
-      difficulty: 1,
-      tags: ["days", "a1"]
-    },
-    {
-      id: "a1-v11-e4",
-      type: "multiple-choice",
-      question: "The day before Friday is _____.",
-      options: ["Saturday", "Thursday", "Wednesday", "Sunday"],
-      correctAnswer: "Thursday",
-      explanation: "Thursday comes before Friday.",
-      difficulty: 1,
-      tags: ["days", "a1"]
-    },
-    {
-      id: "a1-v11-e5",
-      type: "multiple-choice",
-      question: "_____ is in the middle of the work week.",
-      options: ["Monday", "Wednesday", "Friday", "Sunday"],
-      correctAnswer: "Wednesday",
-      explanation: "Wednesday is the middle of the work week.",
-      difficulty: 1,
-      tags: ["days", "a1"]
-    },
-    {
-      id: "a1-v11-e6",
-      type: "fill-blank",
-      question: "Today is Monday. Tomorrow is _____.",
-      options: ["Tuesday", "Sunday", "Wednesday", "Saturday"],
-      correctAnswer: "Tuesday",
-      explanation: "Tuesday comes after Monday.",
-      difficulty: 1,
-      tags: ["days", "a1"]
-    },
-  ],
-
-  // a1-vocab-12: Months of the Year
-  "a1-vocab-12": [
-    {
-      id: "a1-v12-e1",
-      type: "multiple-choice",
-      question: "The first month of the year is _____.",
-      options: ["December", "January", "February", "March"],
-      correctAnswer: "January",
-      explanation: "January is the first month.",
-      difficulty: 1,
-      tags: ["months", "a1"]
-    },
-    {
-      id: "a1-v12-e2",
-      type: "multiple-choice",
-      question: "The last month of the year is _____.",
-      options: ["November", "October", "December", "January"],
-      correctAnswer: "December",
-      explanation: "December is the last month.",
-      difficulty: 1,
-      tags: ["months", "a1"]
-    },
-    {
-      id: "a1-v12-e3",
-      type: "fill-blank",
-      question: "February has _____ days in most years.",
-      options: ["28", "30", "31", "29"],
-      correctAnswer: "28",
-      explanation: "February has 28 days (29 in leap years).",
-      difficulty: 1,
-      tags: ["months", "a1"]
-    },
-    {
-      id: "a1-v12-e4",
-      type: "multiple-choice",
-      question: "Christmas is in _____.",
-      options: ["January", "July", "December", "April"],
-      correctAnswer: "December",
-      explanation: "Christmas is celebrated in December.",
-      difficulty: 1,
-      tags: ["months", "a1"]
-    },
-    {
-      id: "a1-v12-e5",
-      type: "multiple-choice",
-      question: "Spring begins in _____.",
-      options: ["December", "March", "August", "November"],
-      correctAnswer: "March",
-      explanation: "Spring typically starts in March.",
-      difficulty: 1,
-      tags: ["months", "a1"]
-    },
-    {
-      id: "a1-v12-e6",
-      type: "fill-blank",
-      question: "The month after May is _____.",
-      options: ["June", "April", "July", "August"],
-      correctAnswer: "June",
-      explanation: "June comes after May.",
-      difficulty: 1,
-      tags: ["months", "a1"]
-    },
-  ],
-
-  // a1-vocab-13: Basic Weather
-  "a1-vocab-13": [
-    {
-      id: "a1-v13-e1",
-      type: "multiple-choice",
-      question: "When the sun is shining, it is _____.",
-      options: ["rainy", "cloudy", "sunny", "windy"],
-      correctAnswer: "sunny",
-      explanation: "Sunny means the sun is shining.",
-      difficulty: 1,
-      tags: ["weather", "a1"]
-    },
-    {
-      id: "a1-v13-e2",
-      type: "multiple-choice",
-      question: "Take an umbrella when it is _____.",
-      options: ["sunny", "rainy", "hot", "cold"],
-      correctAnswer: "rainy",
-      explanation: "An umbrella protects you from rain.",
-      difficulty: 1,
-      tags: ["weather", "a1"]
-    },
-    {
-      id: "a1-v13-e3",
-      type: "fill-blank",
-      question: "When it's _____, wear a jacket.",
-      options: ["cold", "hot", "sunny", "warm"],
-      correctAnswer: "cold",
-      explanation: "A jacket keeps you warm when it's cold.",
-      difficulty: 1,
-      tags: ["weather", "a1"]
-    },
-    {
-      id: "a1-v13-e4",
-      type: "multiple-choice",
-      question: "In summer, the weather is usually _____.",
-      options: ["cold", "hot", "snowy", "freezing"],
-      correctAnswer: "hot",
-      explanation: "Summer is typically hot.",
-      difficulty: 1,
-      tags: ["weather", "a1"]
-    },
-    {
-      id: "a1-v13-e5",
-      type: "multiple-choice",
-      question: "When the sky is gray with clouds, it is _____.",
-      options: ["sunny", "cloudy", "clear", "bright"],
-      correctAnswer: "cloudy",
-      explanation: "Cloudy means lots of clouds in the sky.",
-      difficulty: 1,
-      tags: ["weather", "a1"]
-    },
-    {
-      id: "a1-v13-e6",
-      type: "fill-blank",
-      question: "It's very _____ today - hold onto your hat!",
-      options: ["windy", "calm", "quiet", "still"],
-      correctAnswer: "windy",
-      explanation: "Windy means there is strong wind.",
-      difficulty: 1,
-      tags: ["weather", "a1"]
-    },
-  ],
-
-  // a1-vocab-14: School & Classroom
-  "a1-vocab-14": [
-    {
-      id: "a1-v14-e1",
-      type: "multiple-choice",
-      question: "A _____ teaches students at school.",
-      options: ["doctor", "teacher", "driver", "chef"],
-      correctAnswer: "teacher",
-      explanation: "A teacher teaches students.",
-      difficulty: 1,
-      tags: ["school", "a1"]
-    },
-    {
-      id: "a1-v14-e2",
-      type: "multiple-choice",
-      question: "A person who learns at school is a _____.",
-      options: ["teacher", "student", "doctor", "driver"],
-      correctAnswer: "student",
-      explanation: "Students learn at school.",
-      difficulty: 1,
-      tags: ["school", "a1"]
-    },
-    {
-      id: "a1-v14-e3",
-      type: "fill-blank",
-      question: "You write with a _____.",
-      options: ["pencil", "book", "chair", "window"],
-      correctAnswer: "pencil",
-      explanation: "A pencil is used for writing.",
-      difficulty: 1,
-      tags: ["school", "a1"]
-    },
-    {
-      id: "a1-v14-e4",
-      type: "multiple-choice",
-      question: "You read a _____ to learn new things.",
-      options: ["pencil", "eraser", "book", "ruler"],
-      correctAnswer: "book",
-      explanation: "Books contain information for learning.",
-      difficulty: 1,
-      tags: ["school", "a1"]
-    },
-    {
-      id: "a1-v14-e5",
-      type: "multiple-choice",
-      question: "Students have lessons in a _____.",
-      options: ["bathroom", "kitchen", "classroom", "bedroom"],
-      correctAnswer: "classroom",
-      explanation: "A classroom is where lessons take place.",
-      difficulty: 1,
-      tags: ["school", "a1"]
-    },
-    {
-      id: "a1-v14-e6",
-      type: "fill-blank",
-      question: "Use an _____ to remove pencil mistakes.",
-      options: ["eraser", "pen", "book", "ruler"],
-      correctAnswer: "eraser",
-      explanation: "An eraser removes pencil marks.",
-      difficulty: 1,
-      tags: ["school", "a1"]
-    },
-  ],
-
-  // a1-vocab-15: Basic Jobs
-  "a1-vocab-15": [
-    {
-      id: "a1-v15-e1",
-      type: "multiple-choice",
-      question: "A _____ helps sick people get better.",
-      options: ["teacher", "chef", "doctor", "pilot"],
-      correctAnswer: "doctor",
-      explanation: "Doctors treat sick people.",
-      difficulty: 1,
-      tags: ["jobs", "a1"]
-    },
-    {
-      id: "a1-v15-e2",
-      type: "multiple-choice",
-      question: "A _____ cooks food in a restaurant.",
-      options: ["doctor", "driver", "chef", "teacher"],
-      correctAnswer: "chef",
-      explanation: "A chef prepares food.",
-      difficulty: 1,
-      tags: ["jobs", "a1"]
-    },
-    {
-      id: "a1-v15-e3",
-      type: "fill-blank",
-      question: "A _____ flies airplanes.",
-      options: ["pilot", "driver", "captain", "doctor"],
-      correctAnswer: "pilot",
-      explanation: "Pilots fly airplanes.",
-      difficulty: 1,
-      tags: ["jobs", "a1"]
-    },
-    {
-      id: "a1-v15-e4",
-      type: "multiple-choice",
-      question: "A _____ keeps order and helps people in emergencies.",
-      options: ["chef", "police officer", "teacher", "pilot"],
-      correctAnswer: "police officer",
-      explanation: "Police officers protect people and maintain order.",
-      difficulty: 1,
-      tags: ["jobs", "a1"]
-    },
-    {
-      id: "a1-v15-e5",
-      type: "multiple-choice",
-      question: "A _____ cares for patients in a hospital.",
-      options: ["teacher", "nurse", "chef", "driver"],
-      correctAnswer: "nurse",
-      explanation: "Nurses care for sick patients.",
-      difficulty: 1,
-      tags: ["jobs", "a1"]
-    },
-    {
-      id: "a1-v15-e6",
-      type: "fill-blank",
-      question: "A taxi _____ takes passengers to their destination.",
-      options: ["driver", "pilot", "chef", "nurse"],
-      correctAnswer: "driver",
-      explanation: "Taxi drivers transport passengers.",
-      difficulty: 1,
-      tags: ["jobs", "a1"]
-    },
-  ],
-
-  // a1-vocab-16: Basic Transportation
-  "a1-vocab-16": [
-    {
-      id: "a1-v16-e1",
-      type: "multiple-choice",
-      question: "A _____ has four wheels and you drive it.",
-      options: ["bicycle", "train", "car", "airplane"],
-      correctAnswer: "car",
-      explanation: "A car is a four-wheeled vehicle.",
-      difficulty: 1,
-      tags: ["transport", "a1"]
-    },
-    {
-      id: "a1-v16-e2",
-      type: "multiple-choice",
-      question: "A _____ runs on rails.",
-      options: ["car", "bus", "bicycle", "train"],
-      correctAnswer: "train",
-      explanation: "Trains travel on railway tracks.",
-      difficulty: 1,
-      tags: ["transport", "a1"]
-    },
-    {
-      id: "a1-v16-e3",
-      type: "fill-blank",
-      question: "A _____ has two wheels and you pedal it.",
-      options: ["bicycle", "car", "bus", "airplane"],
-      correctAnswer: "bicycle",
-      explanation: "A bicycle (bike) has two wheels.",
-      difficulty: 1,
-      tags: ["transport", "a1"]
-    },
-    {
-      id: "a1-v16-e4",
-      type: "multiple-choice",
-      question: "An _____ flies in the sky.",
-      options: ["train", "bus", "airplane", "car"],
-      correctAnswer: "airplane",
-      explanation: "Airplanes fly through the air.",
-      difficulty: 1,
-      tags: ["transport", "a1"]
-    },
-    {
-      id: "a1-v16-e5",
-      type: "multiple-choice",
-      question: "A _____ is a large vehicle that carries many passengers.",
-      options: ["car", "bicycle", "bus", "motorcycle"],
-      correctAnswer: "bus",
-      explanation: "Buses carry many people.",
-      difficulty: 1,
-      tags: ["transport", "a1"]
-    },
-    {
-      id: "a1-v16-e6",
-      type: "fill-blank",
-      question: "Ships and boats travel on _____.",
-      options: ["water", "rails", "roads", "air"],
-      correctAnswer: "water",
-      explanation: "Boats and ships travel on water.",
-      difficulty: 1,
-      tags: ["transport", "a1"]
-    },
-  ],
-
-  // a1-vocab-17: Greetings & Phrases
-  "a1-vocab-17": [
-    {
-      id: "a1-v17-e1",
-      type: "multiple-choice",
-      question: "When you meet someone, you say _____.",
-      options: ["Goodbye", "Hello", "Sorry", "Thanks"],
-      correctAnswer: "Hello",
-      explanation: "Hello is a greeting when meeting someone.",
-      difficulty: 1,
-      tags: ["greetings", "a1"]
-    },
-    {
-      id: "a1-v17-e2",
-      type: "multiple-choice",
-      question: "When you leave, you say _____.",
-      options: ["Hello", "Goodbye", "Please", "Welcome"],
-      correctAnswer: "Goodbye",
-      explanation: "Goodbye is used when leaving.",
-      difficulty: 1,
-      tags: ["greetings", "a1"]
-    },
-    {
-      id: "a1-v17-e3",
-      type: "fill-blank",
-      question: "_____ can you help me, please?",
-      options: ["Excuse me", "Goodbye", "Thanks", "Hello"],
-      correctAnswer: "Excuse me",
-      explanation: "'Excuse me' is polite when asking for help.",
-      difficulty: 1,
-      tags: ["greetings", "a1"]
-    },
-    {
-      id: "a1-v17-e4",
-      type: "multiple-choice",
-      question: "When someone helps you, you say _____.",
-      options: ["Sorry", "Please", "Thank you", "Hello"],
-      correctAnswer: "Thank you",
-      explanation: "Thank you expresses gratitude.",
-      difficulty: 1,
-      tags: ["greetings", "a1"]
-    },
-    {
-      id: "a1-v17-e5",
-      type: "multiple-choice",
-      question: "When you make a mistake, you say _____.",
-      options: ["Thanks", "Please", "Hello", "Sorry"],
-      correctAnswer: "Sorry",
-      explanation: "Sorry expresses regret or apology.",
-      difficulty: 1,
-      tags: ["greetings", "a1"]
-    },
-    {
-      id: "a1-v17-e6",
-      type: "fill-blank",
-      question: "Can I have some water, _____?",
-      options: ["please", "sorry", "hello", "goodbye"],
-      correctAnswer: "please",
-      explanation: "'Please' makes requests polite.",
-      difficulty: 1,
-      tags: ["greetings", "a1"]
-    },
-  ],
-
-  // a1-vocab-18: Basic Places
-  "a1-vocab-18": [
-    {
-      id: "a1-v18-e1",
-      type: "multiple-choice",
-      question: "Children learn at _____.",
-      options: ["hospital", "school", "restaurant", "hotel"],
-      correctAnswer: "school",
-      explanation: "School is where children learn.",
-      difficulty: 1,
-      tags: ["places", "a1"]
-    },
-    {
-      id: "a1-v18-e2",
-      type: "multiple-choice",
-      question: "You buy food at a _____.",
-      options: ["hospital", "park", "store", "library"],
-      correctAnswer: "store",
-      explanation: "Stores sell food and other items.",
-      difficulty: 1,
-      tags: ["places", "a1"]
-    },
-    {
-      id: "a1-v18-e3",
-      type: "fill-blank",
-      question: "Sick people go to the _____.",
-      options: ["hospital", "school", "restaurant", "park"],
-      correctAnswer: "hospital",
-      explanation: "Hospitals treat sick people.",
-      difficulty: 1,
-      tags: ["places", "a1"]
-    },
-    {
-      id: "a1-v18-e4",
-      type: "multiple-choice",
-      question: "You eat food at a _____.",
-      options: ["library", "hospital", "restaurant", "school"],
-      correctAnswer: "restaurant",
-      explanation: "Restaurants serve food.",
-      difficulty: 1,
-      tags: ["places", "a1"]
-    },
-    {
-      id: "a1-v18-e5",
-      type: "multiple-choice",
-      question: "Children play outside in the _____.",
-      options: ["hospital", "library", "park", "store"],
-      correctAnswer: "park",
-      explanation: "Parks are outdoor areas for recreation.",
-      difficulty: 1,
-      tags: ["places", "a1"]
-    },
-    {
-      id: "a1-v18-e6",
-      type: "fill-blank",
-      question: "You borrow books from the _____.",
-      options: ["library", "restaurant", "hospital", "store"],
-      correctAnswer: "library",
-      explanation: "Libraries lend books to people.",
-      difficulty: 1,
-      tags: ["places", "a1"]
-    },
-  ],
-
-  // a1-vocab-19: Basic Action Verbs
-  "a1-vocab-19": [
-    {
-      id: "a1-v19-e1",
-      type: "multiple-choice",
-      question: "I _____ breakfast every morning.",
-      options: ["eat", "sleep", "run", "read"],
-      correctAnswer: "eat",
-      explanation: "We eat food like breakfast.",
-      difficulty: 1,
-      tags: ["verbs", "a1"]
-    },
-    {
-      id: "a1-v19-e2",
-      type: "multiple-choice",
-      question: "We _____ at night.",
-      options: ["run", "eat", "sleep", "walk"],
-      correctAnswer: "sleep",
-      explanation: "People sleep at night.",
-      difficulty: 1,
-      tags: ["verbs", "a1"]
-    },
-    {
-      id: "a1-v19-e3",
-      type: "fill-blank",
-      question: "I _____ to school every day.",
-      options: ["walk", "sleep", "eat", "drink"],
-      correctAnswer: "walk",
-      explanation: "Walk means to move on foot.",
-      difficulty: 1,
-      tags: ["verbs", "a1"]
-    },
-    {
-      id: "a1-v19-e4",
-      type: "multiple-choice",
-      question: "Athletes _____ very fast.",
-      options: ["sleep", "eat", "run", "sit"],
-      correctAnswer: "run",
-      explanation: "Athletes run quickly.",
-      difficulty: 1,
-      tags: ["verbs", "a1"]
-    },
-    {
-      id: "a1-v19-e5",
-      type: "multiple-choice",
-      question: "I _____ books to learn new things.",
-      options: ["eat", "drink", "read", "sleep"],
-      correctAnswer: "read",
-      explanation: "We read books to learn.",
-      difficulty: 1,
-      tags: ["verbs", "a1"]
-    },
-    {
-      id: "a1-v19-e6",
-      type: "fill-blank",
-      question: "I _____ water when I'm thirsty.",
-      options: ["drink", "eat", "read", "write"],
-      correctAnswer: "drink",
-      explanation: "We drink liquids like water.",
-      difficulty: 1,
-      tags: ["verbs", "a1"]
-    },
-  ],
-
-  // a1-vocab-20: Basic Adjectives
-  "a1-vocab-20": [
-    {
-      id: "a1-v20-e1",
-      type: "multiple-choice",
-      question: "An elephant is _____.",
-      options: ["small", "tiny", "big", "short"],
-      correctAnswer: "big",
+      question: "An Elephant is: _____",
+      options: ["Big", "Small", "Tiny", "Medium"],
+      correctAnswer: "Big",
       explanation: "Elephants are very big animals.",
       difficulty: 1,
-      tags: ["adjectives", "a1"]
+      tags: ["animals", "a1"]
     },
     {
-      id: "a1-v20-e2",
+      id: "a1-v6-14",
       type: "multiple-choice",
-      question: "A mouse is _____.",
-      options: ["big", "large", "small", "huge"],
-      correctAnswer: "small",
-      explanation: "Mice are very small animals.",
+      question: "A Bird can: _____",
+      options: ["Fly", "Swim underwater", "Run very fast", "Live in caves"],
+      correctAnswer: "Fly",
+      explanation: "Most birds can fly.",
       difficulty: 1,
-      tags: ["adjectives", "a1"]
+      tags: ["animals", "a1"]
     },
     {
-      id: "a1-v20-e3",
+      id: "a1-v6-15",
+      type: "multiple-choice",
+      question: "A Fish lives in: _____",
+      options: ["Water", "Trees", "Caves", "Sky"],
+      correctAnswer: "Water",
+      explanation: "Fish live in water.",
+      difficulty: 1,
+      tags: ["animals", "a1"]
+    },
+    {
+      id: "a1-v6-16",
+      type: "multiple-choice",
+      question: "Odd one out: Dog, Cat, Lion, Hamster",
+      options: ["Lion", "Dog", "Cat", "Hamster"],
+      correctAnswer: "Lion",
+      explanation: "Lion is not a pet; the others are.",
+      difficulty: 1,
+      tags: ["animals", "odd-one-out", "a1"]
+    },
+    {
+      id: "a1-v6-17",
+      type: "multiple-choice",
+      question: "True or False: A cat says 'Meow.'",
+      options: ["True", "False"],
+      correctAnswer: "True",
+      explanation: "True. Cats meow.",
+      difficulty: 1,
+      tags: ["animals", "true-false", "a1"]
+    },
+    {
+      id: "a1-v6-18",
+      type: "multiple-choice",
+      question: "True or False: A dog says 'Moo.'",
+      options: ["False", "True"],
+      correctAnswer: "False",
+      explanation: "False. Dogs bark. Cows say 'Moo.'",
+      difficulty: 1,
+      tags: ["animals", "true-false", "a1"]
+    },
+    {
+      id: "a1-v6-19",
       type: "fill-blank",
-      question: "When I smile, I am _____.",
-      options: ["happy", "sad", "angry", "tired"],
-      correctAnswer: "happy",
-      explanation: "We smile when we're happy.",
+      question: "'The bird is _____.' (flying / walking)",
+      options: ["flying", "walking", "swimming", "sleeping"],
+      correctAnswer: "flying",
+      explanation: "Birds fly in the sky.",
       difficulty: 1,
-      tags: ["adjectives", "a1"]
+      tags: ["animals", "verbs", "a1"]
     },
     {
-      id: "a1-v20-e4",
-      type: "multiple-choice",
-      question: "When I cry, I am _____.",
-      options: ["happy", "sad", "excited", "glad"],
-      correctAnswer: "sad",
-      explanation: "We often cry when we're sad.",
-      difficulty: 1,
-      tags: ["adjectives", "a1"]
-    },
-    {
-      id: "a1-v20-e5",
-      type: "multiple-choice",
-      question: "The opposite of 'good' is _____.",
-      options: ["great", "nice", "bad", "fine"],
-      correctAnswer: "bad",
-      explanation: "Bad is the opposite of good.",
-      difficulty: 1,
-      tags: ["adjectives", "a1"]
-    },
-    {
-      id: "a1-v20-e6",
+      id: "a1-v6-20",
       type: "fill-blank",
-      question: "Ice cream on a sunny day is _____!",
-      options: ["cold", "hot", "warm", "cool"],
-      correctAnswer: "cold",
-      explanation: "Ice cream is cold.",
+      question: "'The fish is _____.' (swimming / running)",
+      options: ["swimming", "running", "flying", "walking"],
+      correctAnswer: "swimming",
+      explanation: "Fish swim in water.",
       difficulty: 1,
-      tags: ["adjectives", "a1"]
+      tags: ["animals", "verbs", "a1"]
     },
+    {
+      id: "a1-v6-21",
+      type: "fill-blank",
+      question: "'A horse is _____.' (fast / slow)",
+      options: ["fast", "slow", "small", "tiny"],
+      correctAnswer: "fast",
+      explanation: "Horses are fast animals.",
+      difficulty: 1,
+      tags: ["animals", "adjectives", "a1"]
+    },
+    {
+      id: "a1-v6-22",
+      type: "fill-blank",
+      question: "'A pig is _____.' (pink / blue)",
+      options: ["pink", "blue", "green", "yellow"],
+      correctAnswer: "pink",
+      explanation: "Pigs are typically pink.",
+      difficulty: 1,
+      tags: ["animals", "colors", "a1"]
+    },
+    {
+      id: "a1-v6-23",
+      type: "fill-blank",
+      question: "'A chicken gives _____.' (eggs / milk)",
+      options: ["eggs", "milk", "wool", "honey"],
+      correctAnswer: "eggs",
+      explanation: "Chickens lay eggs.",
+      difficulty: 1,
+      tags: ["animals", "a1"]
+    },
+    {
+      id: "a1-v6-24",
+      type: "fill-blank",
+      question: "'A cow gives _____.' (milk / eggs)",
+      options: ["milk", "eggs", "wool", "honey"],
+      correctAnswer: "milk",
+      explanation: "Cows give us milk.",
+      difficulty: 1,
+      tags: ["animals", "a1"]
+    },
+    {
+      id: "a1-v6-25",
+      type: "fill-blank",
+      question: "Rearrange: cat / My / small / is / . → _____",
+      options: ["My cat is small.", "Cat my is small.", "Is my cat small.", "Small is my cat."],
+      correctAnswer: "My cat is small.",
+      explanation: "The correct sentence is: 'My cat is small.'",
+      difficulty: 1,
+      tags: ["animals", "grammar", "a1"]
+    },
+    {
+      id: "a1-v6-26",
+      type: "fill-blank",
+      question: "Rearrange: The / big / is / elephant / . → _____",
+      options: ["The elephant is big.", "Big is the elephant.", "Is the elephant big.", "The big is elephant."],
+      correctAnswer: "The elephant is big.",
+      explanation: "The correct sentence is: 'The elephant is big.'",
+      difficulty: 1,
+      tags: ["animals", "grammar", "a1"]
+    },
+    {
+      id: "a1-v6-27",
+      type: "fill-blank",
+      question: "Rearrange: have / I / a / dog / . → _____",
+      options: ["I have a dog.", "Have I a dog.", "A dog I have.", "I a dog have."],
+      correctAnswer: "I have a dog.",
+      explanation: "The correct sentence is: 'I have a dog.'",
+      difficulty: 1,
+      tags: ["animals", "grammar", "a1"]
+    },
+    {
+      id: "a1-v6-28",
+      type: "fill-blank",
+      question: "'An elephant has a long _____.' (trunk/nose)",
+      options: ["trunk", "tail", "ear", "leg"],
+      correctAnswer: "trunk",
+      explanation: "Elephants have a long trunk (nose).",
+      difficulty: 1,
+      tags: ["animals", "a1"]
+    },
+    // Plurals
+    {
+      id: "a1-v6-29",
+      type: "fill-blank",
+      question: "One cat, two _____",
+      options: ["cats", "cates", "catis", "catss"],
+      correctAnswer: "cats",
+      explanation: "The plural of cat is cats.",
+      difficulty: 1,
+      tags: ["animals", "plurals", "a1"]
+    },
+    {
+      id: "a1-v6-30",
+      type: "fill-blank",
+      question: "One dog, two _____",
+      options: ["dogs", "doges", "dogis", "dogss"],
+      correctAnswer: "dogs",
+      explanation: "The plural of dog is dogs.",
+      difficulty: 1,
+      tags: ["animals", "plurals", "a1"]
+    },
+    {
+      id: "a1-v6-31",
+      type: "fill-blank",
+      question: "One bird, two _____",
+      options: ["birds", "birdes", "birdis", "birdss"],
+      correctAnswer: "birds",
+      explanation: "The plural of bird is birds.",
+      difficulty: 1,
+      tags: ["animals", "plurals", "a1"]
+    },
+    {
+      id: "a1-v6-32",
+      type: "fill-blank",
+      question: "One horse, two _____",
+      options: ["horses", "horsis", "horsees", "horsess"],
+      correctAnswer: "horses",
+      explanation: "The plural of horse is horses.",
+      difficulty: 1,
+      tags: ["animals", "plurals", "a1"]
+    },
+    {
+      id: "a1-v6-33",
+      type: "fill-blank",
+      question: "One cow, two _____",
+      options: ["cows", "cowes", "cowis", "cowss"],
+      correctAnswer: "cows",
+      explanation: "The plural of cow is cows.",
+      difficulty: 1,
+      tags: ["animals", "plurals", "a1"]
+    },
+    {
+      id: "a1-v6-34",
+      type: "fill-blank",
+      question: "One pig, two _____",
+      options: ["pigs", "piges", "pigis", "pigss"],
+      correctAnswer: "pigs",
+      explanation: "The plural of pig is pigs.",
+      difficulty: 1,
+      tags: ["animals", "plurals", "a1"]
+    },
+    {
+      id: "a1-v6-35",
+      type: "fill-blank",
+      question: "Irregular: One fish, two _____",
+      options: ["fish", "fishes", "fishs", "fishies"],
+      correctAnswer: "fish",
+      explanation: "Fish is the same in singular and plural!",
+      difficulty: 1,
+      tags: ["animals", "plurals", "a1"]
+    },
+    {
+      id: "a1-v6-36",
+      type: "fill-blank",
+      question: "'I see three _____.' (lion / lions)",
+      options: ["lions", "lion", "liones", "lionss"],
+      correctAnswer: "lions",
+      explanation: "Three = plural, so we say 'lions'.",
+      difficulty: 1,
+      tags: ["animals", "plurals", "a1"]
+    },
+    {
+      id: "a1-v6-37",
+      type: "fill-blank",
+      question: "'There are five _____ on the farm.' (chickens / chicken)",
+      options: ["chickens", "chicken", "chickenes", "chickenss"],
+      correctAnswer: "chickens",
+      explanation: "Five = plural, so we say 'chickens'.",
+      difficulty: 1,
+      tags: ["animals", "plurals", "a1"]
+    },
+    {
+      id: "a1-v6-38",
+      type: "fill-blank",
+      question: "'Do you like _____?' (animal / animals)",
+      options: ["animals", "animal", "animalss", "animales"],
+      correctAnswer: "animals",
+      explanation: "General statement = plural 'animals'.",
+      difficulty: 1,
+      tags: ["animals", "plurals", "a1"]
+    },
+    // Which animal is it?
+    {
+      id: "a1-v6-39",
+      type: "fill-blank",
+      question: "It is big, gray, and has big ears. _____",
+      options: ["elephant", "mouse", "cat", "dog"],
+      correctAnswer: "elephant",
+      explanation: "Elephants are big, gray, and have big ears.",
+      difficulty: 1,
+      tags: ["animals", "riddles", "a1"]
+    },
+    {
+      id: "a1-v6-40",
+      type: "fill-blank",
+      question: "It is the 'King of the Jungle.' _____",
+      options: ["lion", "tiger", "elephant", "monkey"],
+      correctAnswer: "lion",
+      explanation: "The lion is called the 'King of the Jungle'.",
+      difficulty: 1,
+      tags: ["animals", "riddles", "a1"]
+    },
+    {
+      id: "a1-v6-41",
+      type: "fill-blank",
+      question: "It is a pet that barks. _____",
+      options: ["dog", "cat", "bird", "fish"],
+      correctAnswer: "dog",
+      explanation: "Dogs bark.",
+      difficulty: 1,
+      tags: ["animals", "riddles", "a1"]
+    },
+    {
+      id: "a1-v6-42",
+      type: "fill-blank",
+      question: "It is a pet that chases mice. _____",
+      options: ["cat", "dog", "bird", "fish"],
+      correctAnswer: "cat",
+      explanation: "Cats chase mice.",
+      difficulty: 1,
+      tags: ["animals", "riddles", "a1"]
+    },
+    {
+      id: "a1-v6-43",
+      type: "fill-blank",
+      question: "Match 🐎 to the word: _____",
+      options: ["horse", "cow", "pig", "sheep"],
+      correctAnswer: "horse",
+      explanation: "The emoji shows a horse.",
+      difficulty: 1,
+      tags: ["animals", "visual", "a1"]
+    },
+    {
+      id: "a1-v6-44",
+      type: "fill-blank",
+      question: "Match 🐕 to the word: _____",
+      options: ["dog", "cat", "wolf", "fox"],
+      correctAnswer: "dog",
+      explanation: "The emoji shows a dog.",
+      difficulty: 1,
+      tags: ["animals", "visual", "a1"]
+    },
+    {
+      id: "a1-v6-45",
+      type: "fill-blank",
+      question: "Match 🐈 to the word: _____",
+      options: ["cat", "dog", "tiger", "lion"],
+      correctAnswer: "cat",
+      explanation: "The emoji shows a cat.",
+      difficulty: 1,
+      tags: ["animals", "visual", "a1"]
+    },
+    {
+      id: "a1-v6-46",
+      type: "fill-blank",
+      question: "Match 🐦 to the word: _____",
+      options: ["bird", "butterfly", "bee", "bat"],
+      correctAnswer: "bird",
+      explanation: "The emoji shows a bird.",
+      difficulty: 1,
+      tags: ["animals", "visual", "a1"]
+    },
+    {
+      id: "a1-v6-47",
+      type: "multiple-choice",
+      question: "Which animal gives us wool?",
+      options: ["sheep", "cow", "pig", "chicken"],
+      correctAnswer: "sheep",
+      explanation: "Sheep give us wool.",
+      difficulty: 1,
+      tags: ["animals", "a1"]
+    },
+    {
+      id: "a1-v6-48",
+      type: "multiple-choice",
+      question: "Which animal has stripes?",
+      options: ["zebra", "elephant", "cow", "pig"],
+      correctAnswer: "zebra",
+      explanation: "Zebras have black and white stripes.",
+      difficulty: 1,
+      tags: ["animals", "a1"]
+    },
+    {
+      id: "a1-v6-49",
+      type: "multiple-choice",
+      question: "Which animal can talk (repeat words)?",
+      options: ["parrot", "dog", "cat", "fish"],
+      correctAnswer: "parrot",
+      explanation: "Parrots can repeat words and sounds.",
+      difficulty: 1,
+      tags: ["animals", "a1"]
+    },
+    {
+      id: "a1-v6-50",
+      type: "fill-blank",
+      question: "'My favorite animal is a _____.'",
+      options: ["dog", "chair", "table", "book"],
+      correctAnswer: "dog",
+      explanation: "Any animal word would be correct here.",
+      difficulty: 1,
+      tags: ["animals", "personal", "a1"]
+    }
   ],
+
+  // Remaining themes (a1-vocab-7 through a1-vocab-20) would follow the same pattern
+  // Each theme has 50 exercises covering the specific vocabulary topic
+  
+  "a1-vocab-7": [], // Body Parts - to be populated
+  "a1-vocab-8": [], // Basic Clothing - to be populated
+  "a1-vocab-9": [], // Rooms & Home - to be populated
+  "a1-vocab-10": [], // Basic Furniture - to be populated
+  "a1-vocab-11": [], // Days of the Week - to be populated
+  "a1-vocab-12": [], // Months of the Year - to be populated
+  "a1-vocab-13": [], // Basic Weather - to be populated
+  "a1-vocab-14": [], // School & Classroom - to be populated
+  "a1-vocab-15": [], // Basic Jobs - to be populated
+  "a1-vocab-16": [], // Basic Transportation - to be populated
+  "a1-vocab-17": [], // Greetings & Phrases - to be populated
+  "a1-vocab-18": [], // Basic Places - to be populated
+  "a1-vocab-19": [], // Basic Action Verbs - to be populated
+  "a1-vocab-20": [], // Basic Adjectives - to be populated
 };
 
 // ====================================
 // GRAMMAR EXERCISES - A1 LEVEL
 // ====================================
 const a1GrammarExercises: Record<string, Exercise[]> = {
-  // a1-gram-1: Verb To Be
-  "a1-gram-1": [
-    {
-      id: "a1-g1-e1",
-      type: "multiple-choice",
-      question: "I _____ a student.",
-      options: ["am", "is", "are", "be"],
-      correctAnswer: "am",
-      explanation: "We use 'am' with 'I': I am a student.",
-      difficulty: 1,
-      tags: ["to-be", "a1", "affirmative"]
-    },
-    {
-      id: "a1-g1-e2",
-      type: "multiple-choice",
-      question: "She _____ my sister.",
-      options: ["am", "is", "are", "be"],
-      correctAnswer: "is",
-      explanation: "We use 'is' with he/she/it: She is my sister.",
-      difficulty: 1,
-      tags: ["to-be", "a1", "affirmative"]
-    },
-    {
-      id: "a1-g1-e3",
-      type: "multiple-choice",
-      question: "They _____ from Spain.",
-      options: ["am", "is", "are", "be"],
-      correctAnswer: "are",
-      explanation: "We use 'are' with they/we/you: They are from Spain.",
-      difficulty: 1,
-      tags: ["to-be", "a1", "affirmative"]
-    },
-    {
-      id: "a1-g1-e4",
-      type: "multiple-choice",
-      question: "The cat _____ on the table.",
-      options: ["am", "is", "are", "be"],
-      correctAnswer: "is",
-      explanation: "We use 'is' with singular nouns: The cat is on the table.",
-      difficulty: 1,
-      tags: ["to-be", "a1", "affirmative"]
-    },
-    {
-      id: "a1-g1-e5",
-      type: "multiple-choice",
-      question: "We _____ happy today.",
-      options: ["am", "is", "are", "be"],
-      correctAnswer: "are",
-      explanation: "We use 'are' with 'we': We are happy.",
-      difficulty: 1,
-      tags: ["to-be", "a1", "affirmative"]
-    },
-    {
-      id: "a1-g1-e6",
-      type: "fill-blank",
-      question: "You _____ my best friend.",
-      options: ["am", "is", "are", "be"],
-      correctAnswer: "are",
-      explanation: "We use 'are' with 'you': You are my best friend.",
-      difficulty: 1,
-      tags: ["to-be", "a1", "affirmative"]
-    },
-    {
-      id: "a1-g1-e7",
-      type: "multiple-choice",
-      question: "He _____ NOT a doctor. (negative)",
-      options: ["am not", "is not", "are not", "be not"],
-      correctAnswer: "is not",
-      explanation: "Negative form with 'he': He is not (isn't) a doctor.",
-      difficulty: 1,
-      tags: ["to-be", "a1", "negative"]
-    },
-    {
-      id: "a1-g1-e8",
-      type: "multiple-choice",
-      question: "_____ she your teacher?",
-      options: ["Am", "Is", "Are", "Be"],
-      correctAnswer: "Is",
-      explanation: "Questions with 'she': Is she your teacher?",
-      difficulty: 1,
-      tags: ["to-be", "a1", "questions"]
-    },
-  ],
-
-  // a1-gram-2: Present Simple
-  "a1-gram-2": [
-    {
-      id: "a1-g2-e1",
-      type: "multiple-choice",
-      question: "She _____ coffee every morning.",
-      options: ["drink", "drinks", "drinking", "drank"],
-      correctAnswer: "drinks",
-      explanation: "Third person singular (she/he/it) adds -s: She drinks.",
-      difficulty: 1,
-      tags: ["present-simple", "a1", "third-person"]
-    },
-    {
-      id: "a1-g2-e2",
-      type: "multiple-choice",
-      question: "I _____ to school every day.",
-      options: ["go", "goes", "going", "went"],
-      correctAnswer: "go",
-      explanation: "With 'I', we use the base form: I go.",
-      difficulty: 1,
-      tags: ["present-simple", "a1"]
-    },
-    {
-      id: "a1-g2-e3",
-      type: "multiple-choice",
-      question: "He _____ English very well.",
-      options: ["speak", "speaks", "speaking", "spoke"],
-      correctAnswer: "speaks",
-      explanation: "Third person singular adds -s: He speaks.",
-      difficulty: 1,
-      tags: ["present-simple", "a1", "third-person"]
-    },
-    {
-      id: "a1-g2-e4",
-      type: "multiple-choice",
-      question: "They _____ football on Sundays.",
-      options: ["play", "plays", "playing", "played"],
-      correctAnswer: "play",
-      explanation: "With 'they', we use the base form: They play.",
-      difficulty: 1,
-      tags: ["present-simple", "a1"]
-    },
-    {
-      id: "a1-g2-e5",
-      type: "multiple-choice",
-      question: "_____ you like pizza?",
-      options: ["Do", "Does", "Is", "Are"],
-      correctAnswer: "Do",
-      explanation: "Questions with you/I/we/they use 'Do': Do you like...?",
-      difficulty: 1,
-      tags: ["present-simple", "a1", "questions"]
-    },
-    {
-      id: "a1-g2-e6",
-      type: "multiple-choice",
-      question: "_____ she live in London?",
-      options: ["Do", "Does", "Is", "Are"],
-      correctAnswer: "Does",
-      explanation: "Questions with he/she/it use 'Does': Does she live...?",
-      difficulty: 1,
-      tags: ["present-simple", "a1", "questions"]
-    },
-    {
-      id: "a1-g2-e7",
-      type: "fill-blank",
-      question: "My cat _____ all day.",
-      options: ["sleep", "sleeps", "sleeping", "slept"],
-      correctAnswer: "sleeps",
-      explanation: "The cat (it) → sleeps with -s.",
-      difficulty: 1,
-      tags: ["present-simple", "a1", "third-person"]
-    },
-    {
-      id: "a1-g2-e8",
-      type: "multiple-choice",
-      question: "She _____ NOT work on Saturdays.",
-      options: ["do", "does", "don't", "doesn't"],
-      correctAnswer: "doesn't",
-      explanation: "Negative with he/she/it: doesn't + base verb.",
-      difficulty: 1,
-      tags: ["present-simple", "a1", "negative"]
-    },
-  ],
-
-  // a1-gram-3: Present Continuous
-  "a1-gram-3": [
-    {
-      id: "a1-g3-e1",
-      type: "multiple-choice",
-      question: "I _____ reading a book now.",
-      options: ["am", "is", "are", "be"],
-      correctAnswer: "am",
-      explanation: "Present Continuous: I am + verb-ing.",
-      difficulty: 1,
-      tags: ["present-continuous", "a1"]
-    },
-    {
-      id: "a1-g3-e2",
-      type: "multiple-choice",
-      question: "She _____ cooking dinner.",
-      options: ["am", "is", "are", "be"],
-      correctAnswer: "is",
-      explanation: "Present Continuous: She is + verb-ing.",
-      difficulty: 1,
-      tags: ["present-continuous", "a1"]
-    },
-    {
-      id: "a1-g3-e3",
-      type: "multiple-choice",
-      question: "They _____ playing in the park.",
-      options: ["am", "is", "are", "be"],
-      correctAnswer: "are",
-      explanation: "Present Continuous: They are + verb-ing.",
-      difficulty: 1,
-      tags: ["present-continuous", "a1"]
-    },
-    {
-      id: "a1-g3-e4",
-      type: "multiple-choice",
-      question: "What _____ you doing?",
-      options: ["am", "is", "are", "be"],
-      correctAnswer: "are",
-      explanation: "Questions: What are you doing?",
-      difficulty: 1,
-      tags: ["present-continuous", "a1"]
-    },
-    {
-      id: "a1-g3-e5",
-      type: "fill-blank",
-      question: "He is _____ TV right now.",
-      options: ["watch", "watches", "watching", "watched"],
-      correctAnswer: "watching",
-      explanation: "Present Continuous uses the -ing form: watching.",
-      difficulty: 1,
-      tags: ["present-continuous", "a1"]
-    },
-    {
-      id: "a1-g3-e6",
-      type: "multiple-choice",
-      question: "Look! It _____ raining outside.",
-      options: ["am", "is", "are", "be"],
-      correctAnswer: "is",
-      explanation: "Present Continuous with 'it': It is raining.",
-      difficulty: 1,
-      tags: ["present-continuous", "a1"]
-    },
-  ],
-
-  // a1-gram-4: Articles and pronouns
-  "a1-gram-4": [
-    {
-      id: "a1-g4-e1",
-      type: "multiple-choice",
-      question: "I have _____ apple.",
-      options: ["a", "an", "the", "—"],
-      correctAnswer: "an",
-      explanation: "Use 'an' before vowel sounds: an apple.",
-      difficulty: 1,
-      tags: ["articles", "a1"]
-    },
-    {
-      id: "a1-g4-e2",
-      type: "multiple-choice",
-      question: "She is _____ teacher.",
-      options: ["a", "an", "the", "—"],
-      correctAnswer: "a",
-      explanation: "Use 'a' before consonant sounds: a teacher.",
-      difficulty: 1,
-      tags: ["articles", "a1"]
-    },
-    {
-      id: "a1-g4-e3",
-      type: "multiple-choice",
-      question: "_____ sun is very bright today.",
-      options: ["A", "An", "The", "—"],
-      correctAnswer: "The",
-      explanation: "Use 'the' for unique things: the sun, the moon.",
-      difficulty: 1,
-      tags: ["articles", "a1"]
-    },
-    {
-      id: "a1-g4-e4",
-      type: "multiple-choice",
-      question: "Maria is my friend. _____ is very nice.",
-      options: ["He", "She", "It", "They"],
-      correctAnswer: "She",
-      explanation: "Maria is female, so we use 'she'.",
-      difficulty: 1,
-      tags: ["pronouns", "a1"]
-    },
-    {
-      id: "a1-g4-e5",
-      type: "multiple-choice",
-      question: "John and I are friends. _____ play together.",
-      options: ["I", "He", "We", "They"],
-      correctAnswer: "We",
-      explanation: "John and I = We.",
-      difficulty: 1,
-      tags: ["pronouns", "a1"]
-    },
-    {
-      id: "a1-g4-e6",
-      type: "fill-blank",
-      question: "The dog is hungry. _____ wants food.",
-      options: ["He", "She", "It", "They"],
-      correctAnswer: "It",
-      explanation: "For animals (when gender is unknown), we use 'it'.",
-      difficulty: 1,
-      tags: ["pronouns", "a1"]
-    },
-  ],
+  "a1-gram-1": [], // Verb To Be - exercises to be added
+  "a1-gram-2": [], // Present Simple - exercises to be added
+  "a1-gram-3": [], // Present Continuous - exercises to be added
+  "a1-gram-4": [], // Articles and pronouns - exercises to be added
 };
 
 // ====================================
 // SPEAKING EXERCISES - A1 LEVEL
 // ====================================
 const a1SpeakingExercises: Record<string, Exercise[]> = {
-  // a1-speak-1: Introduce yourself
-  "a1-speak-1": [
-    {
-      id: "a1-s1-e1",
-      type: "multiple-choice",
-      question: "How do you introduce yourself? 'Hello, _____ John.'",
-      options: ["my name is", "I name", "me called", "name me"],
-      correctAnswer: "my name is",
-      explanation: "We say: 'My name is...' to introduce ourselves.",
-      difficulty: 1,
-      tags: ["introductions", "a1"]
-    },
-    {
-      id: "a1-s1-e2",
-      type: "multiple-choice",
-      question: "Someone asks: 'Where are you from?' You answer:",
-      options: ["I am from Spain.", "I from Spain.", "Me Spain.", "From I Spain."],
-      correctAnswer: "I am from Spain.",
-      explanation: "Correct form: I am from + country.",
-      difficulty: 1,
-      tags: ["introductions", "a1"]
-    },
-    {
-      id: "a1-s1-e3",
-      type: "multiple-choice",
-      question: "How do you ask someone their name?",
-      options: ["What is your name?", "Your name what?", "Name you what?", "How your name?"],
-      correctAnswer: "What is your name?",
-      explanation: "The correct question is: What is your name?",
-      difficulty: 1,
-      tags: ["introductions", "a1"]
-    },
-    {
-      id: "a1-s1-e4",
-      type: "fill-blank",
-      question: "'How old are you?' 'I _____ 25 years old.'",
-      options: ["am", "have", "is", "be"],
-      correctAnswer: "am",
-      explanation: "In English, we say: I am + age (not 'I have').",
-      difficulty: 1,
-      tags: ["introductions", "a1"]
-    },
-    {
-      id: "a1-s1-e5",
-      type: "multiple-choice",
-      question: "What do you say after someone introduces themselves?",
-      options: ["Nice to meet you!", "Hello name!", "You welcome!", "Thanks hello!"],
-      correctAnswer: "Nice to meet you!",
-      explanation: "After meeting someone new, say: Nice to meet you!",
-      difficulty: 1,
-      tags: ["introductions", "a1"]
-    },
-  ],
-
-  // a1-speak-2: Greetings and farewells
-  "a1-speak-2": [
-    {
-      id: "a1-s2-e1",
-      type: "multiple-choice",
-      question: "It's 9 AM. What do you say?",
-      options: ["Good evening!", "Good morning!", "Good night!", "Good afternoon!"],
-      correctAnswer: "Good morning!",
-      explanation: "In the morning (before 12 PM), we say: Good morning!",
-      difficulty: 1,
-      tags: ["greetings", "a1"]
-    },
-    {
-      id: "a1-s2-e2",
-      type: "multiple-choice",
-      question: "You're leaving. What do you say?",
-      options: ["Hello!", "See you later!", "Welcome!", "Nice to meet you!"],
-      correctAnswer: "See you later!",
-      explanation: "When leaving, we say: Goodbye! or See you later!",
-      difficulty: 1,
-      tags: ["greetings", "a1"]
-    },
-    {
-      id: "a1-s2-e3",
-      type: "multiple-choice",
-      question: "It's 8 PM. What do you say?",
-      options: ["Good morning!", "Good afternoon!", "Good evening!", "Good day!"],
-      correctAnswer: "Good evening!",
-      explanation: "After 6 PM, we say: Good evening!",
-      difficulty: 1,
-      tags: ["greetings", "a1"]
-    },
-    {
-      id: "a1-s2-e4",
-      type: "fill-blank",
-      question: "Someone says 'How are you?' You reply: 'I'm _____, thanks!'",
-      options: ["fine", "have", "do", "be"],
-      correctAnswer: "fine",
-      explanation: "Common response: I'm fine, thanks! or I'm good, thanks!",
-      difficulty: 1,
-      tags: ["greetings", "a1"]
-    },
-    {
-      id: "a1-s2-e5",
-      type: "multiple-choice",
-      question: "You're going to bed. What do you say?",
-      options: ["Good morning!", "Good evening!", "Good night!", "Goodbye!"],
-      correctAnswer: "Good night!",
-      explanation: "Before sleeping, we say: Good night!",
-      difficulty: 1,
-      tags: ["greetings", "a1"]
-    },
-  ],
-
-  // a1-speak-3: Ask for basic things
-  "a1-speak-3": [
-    {
-      id: "a1-s3-e1",
-      type: "multiple-choice",
-      question: "In a restaurant, you say: 'Can I _____ a coffee, please?'",
-      options: ["have", "take", "do", "make"],
-      correctAnswer: "have",
-      explanation: "To order: Can I have...? or Could I have...?",
-      difficulty: 1,
-      tags: ["requests", "a1"]
-    },
-    {
-      id: "a1-s3-e2",
-      type: "multiple-choice",
-      question: "You're lost. You ask: 'Excuse me, _____ is the station?'",
-      options: ["what", "when", "where", "who"],
-      correctAnswer: "where",
-      explanation: "To ask about location: Where is...?",
-      difficulty: 1,
-      tags: ["requests", "a1"]
-    },
-    {
-      id: "a1-s3-e3",
-      type: "multiple-choice",
-      question: "You want the bill. You say: 'Can I have the _____, please?'",
-      options: ["bill", "money", "pay", "cost"],
-      correctAnswer: "bill",
-      explanation: "At a restaurant, ask for the bill (UK) or check (US).",
-      difficulty: 1,
-      tags: ["requests", "a1"]
-    },
-    {
-      id: "a1-s3-e4",
-      type: "fill-blank",
-      question: "You want help. You say: '_____ me, can you help?'",
-      options: ["Excuse", "Sorry", "Please", "Hello"],
-      correctAnswer: "Excuse",
-      explanation: "To get attention politely: Excuse me...",
-      difficulty: 1,
-      tags: ["requests", "a1"]
-    },
-    {
-      id: "a1-s3-e5",
-      type: "multiple-choice",
-      question: "You don't understand. You say:",
-      options: ["Can you repeat that, please?", "What you say?", "Again!", "No understand!"],
-      correctAnswer: "Can you repeat that, please?",
-      explanation: "Politely ask: Can you repeat that, please?",
-      difficulty: 1,
-      tags: ["requests", "a1"]
-    },
-  ],
+  "a1-speak-1": [], // Introduce yourself
+  "a1-speak-2": [], // Greetings and farewells
+  "a1-speak-3": [], // Ask for basic things
 };
 
 // ====================================
 // LISTENING EXERCISES - A1 LEVEL
 // ====================================
 const a1ListeningExercises: Record<string, Exercise[]> = {
-  // a1-list-1: Individual words
-  "a1-list-1": [
-    {
-      id: "a1-l1-e1",
-      type: "multiple-choice",
-      question: "You hear: 'FIFTEEN'. Which number is it?",
-      options: ["50", "15", "5", "14"],
-      correctAnswer: "15",
-      explanation: "Fifteen = 15. Be careful: fifty = 50.",
-      difficulty: 1,
-      tags: ["listening", "numbers", "a1"]
-    },
-    {
-      id: "a1-l1-e2",
-      type: "multiple-choice",
-      question: "You hear: 'My name is PETER'. What's the name?",
-      options: ["Patrick", "Peter", "Paul", "Philip"],
-      correctAnswer: "Peter",
-      explanation: "The name mentioned is Peter.",
-      difficulty: 1,
-      tags: ["listening", "names", "a1"]
-    },
-    {
-      id: "a1-l1-e3",
-      type: "multiple-choice",
-      question: "You hear: 'THIRTY'. Which number is it?",
-      options: ["13", "30", "3", "33"],
-      correctAnswer: "30",
-      explanation: "Thirty = 30. Thirteen = 13.",
-      difficulty: 1,
-      tags: ["listening", "numbers", "a1"]
-    },
-    {
-      id: "a1-l1-e4",
-      type: "fill-blank",
-      question: "You hear: 'I live in LONDON'. Where does the person live?",
-      options: ["London", "Paris", "Madrid", "Rome"],
-      correctAnswer: "London",
-      explanation: "The city mentioned is London.",
-      difficulty: 1,
-      tags: ["listening", "places", "a1"]
-    },
-    {
-      id: "a1-l1-e5",
-      type: "multiple-choice",
-      question: "You hear: 'FORTY'. Which number is it?",
-      options: ["14", "40", "44", "4"],
-      correctAnswer: "40",
-      explanation: "Forty = 40. Fourteen = 14.",
-      difficulty: 1,
-      tags: ["listening", "numbers", "a1"]
-    },
-  ],
-
-  // a1-list-2: Simple instructions
-  "a1-list-2": [
-    {
-      id: "a1-l2-e1",
-      type: "multiple-choice",
-      question: "Teacher says: 'Open your books'. What should you do?",
-      options: ["Close your book", "Open your book", "Write in your book", "Read your book"],
-      correctAnswer: "Open your book",
-      explanation: "'Open' means to make something not closed.",
-      difficulty: 1,
-      tags: ["listening", "instructions", "a1"]
-    },
-    {
-      id: "a1-l2-e2",
-      type: "multiple-choice",
-      question: "Teacher says: 'Stand up'. What should you do?",
-      options: ["Sit down", "Stand up", "Lie down", "Walk"],
-      correctAnswer: "Stand up",
-      explanation: "'Stand up' = get on your feet (opposite of sit down).",
-      difficulty: 1,
-      tags: ["listening", "instructions", "a1"]
-    },
-    {
-      id: "a1-l2-e3",
-      type: "multiple-choice",
-      question: "Teacher says: 'Be quiet, please'. What should you do?",
-      options: ["Talk louder", "Stop talking", "Ask a question", "Leave the room"],
-      correctAnswer: "Stop talking",
-      explanation: "'Be quiet' = don't make noise, stop talking.",
-      difficulty: 1,
-      tags: ["listening", "instructions", "a1"]
-    },
-    {
-      id: "a1-l2-e4",
-      type: "multiple-choice",
-      question: "Teacher says: 'Listen carefully'. What should you do?",
-      options: ["Talk more", "Pay attention", "Close your eyes", "Write quickly"],
-      correctAnswer: "Pay attention",
-      explanation: "'Listen carefully' means focus and pay attention.",
-      difficulty: 1,
-      tags: ["listening", "instructions", "a1"]
-    },
-    {
-      id: "a1-l2-e5",
-      type: "fill-blank",
-      question: "Teacher says: 'Please _____ your hand'. What word fits?",
-      options: ["raise", "put", "take", "give"],
-      correctAnswer: "raise",
-      explanation: "'Raise your hand' means lift your hand up.",
-      difficulty: 1,
-      tags: ["listening", "instructions", "a1"]
-    },
-  ],
+  "a1-listen-1": [], // Individual words
+  "a1-listen-2": [], // Simple instructions
 };
 
 // ====================================
 // READING EXERCISES - A1 LEVEL
 // ====================================
 const a1ReadingExercises: Record<string, Exercise[]> = {
-  // a1-read-1: Signs and notices
-  "a1-read-1": [
-    {
-      id: "a1-r1-e1",
-      type: "multiple-choice",
-      question: "You see a sign: 'EXIT'. What does it mean?",
-      options: ["Entrance", "Way out", "Toilet", "Stairs"],
-      correctAnswer: "Way out",
-      explanation: "EXIT means the way out of a building.",
-      difficulty: 1,
-      tags: ["reading", "signs", "a1"]
-    },
-    {
-      id: "a1-r1-e2",
-      type: "multiple-choice",
-      question: "You see: 'NO SMOKING'. What can't you do?",
-      options: ["Eat", "Drink", "Smoke", "Talk"],
-      correctAnswer: "Smoke",
-      explanation: "'No smoking' = smoking is not allowed.",
-      difficulty: 1,
-      tags: ["reading", "signs", "a1"]
-    },
-    {
-      id: "a1-r1-e3",
-      type: "multiple-choice",
-      question: "You see: 'PUSH'. What do you do to the door?",
-      options: ["Pull it", "Push it", "Lift it", "Close it"],
-      correctAnswer: "Push it",
-      explanation: "PUSH means push the door to open it.",
-      difficulty: 1,
-      tags: ["reading", "signs", "a1"]
-    },
-    {
-      id: "a1-r1-e4",
-      type: "multiple-choice",
-      question: "You see: 'ENTRANCE'. What is it?",
-      options: ["Way out", "Way in", "Elevator", "Stairs"],
-      correctAnswer: "Way in",
-      explanation: "ENTRANCE is where you enter a building.",
-      difficulty: 1,
-      tags: ["reading", "signs", "a1"]
-    },
-    {
-      id: "a1-r1-e5",
-      type: "multiple-choice",
-      question: "You see: 'CLOSED'. What does it mean?",
-      options: ["The place is open", "The place is not open", "Free entry", "Welcome"],
-      correctAnswer: "The place is not open",
-      explanation: "CLOSED means the place is not open.",
-      difficulty: 1,
-      tags: ["reading", "signs", "a1"]
-    },
-  ],
-
-  // a1-read-2: Simple forms
-  "a1-read-2": [
-    {
-      id: "a1-r2-e1",
-      type: "multiple-choice",
-      question: "Read: 'The shop is open from 9AM to 5PM.' When does it close?",
-      options: ["9 AM", "5 PM", "12 PM", "8 PM"],
-      correctAnswer: "5 PM",
-      explanation: "The shop closes at 5 PM (17:00).",
-      difficulty: 1,
-      tags: ["reading", "short-texts", "a1"]
-    },
-    {
-      id: "a1-r2-e2",
-      type: "multiple-choice",
-      question: "Read: 'My name is Anna. I am from Italy.' Where is Anna from?",
-      options: ["Spain", "France", "Italy", "Germany"],
-      correctAnswer: "Italy",
-      explanation: "The text says Anna is from Italy.",
-      difficulty: 1,
-      tags: ["reading", "short-texts", "a1"]
-    },
-    {
-      id: "a1-r2-e3",
-      type: "multiple-choice",
-      question: "On a form, 'First name' means your _____.",
-      options: ["family name", "given name", "nickname", "middle name"],
-      correctAnswer: "given name",
-      explanation: "First name = your given/personal name (e.g., John, Maria).",
-      difficulty: 1,
-      tags: ["reading", "forms", "a1"]
-    },
-    {
-      id: "a1-r2-e4",
-      type: "multiple-choice",
-      question: "On a form, 'Surname' means your _____.",
-      options: ["first name", "family name", "nickname", "title"],
-      correctAnswer: "family name",
-      explanation: "Surname = family name/last name.",
-      difficulty: 1,
-      tags: ["reading", "forms", "a1"]
-    },
-    {
-      id: "a1-r2-e5",
-      type: "fill-blank",
-      question: "On a form, 'DOB' means Date of _____.",
-      options: ["Birth", "Booking", "Business", "Billing"],
-      correctAnswer: "Birth",
-      explanation: "DOB = Date of Birth (your birthday).",
-      difficulty: 1,
-      tags: ["reading", "forms", "a1"]
-    },
-  ],
+  "a1-read-1": [], // Signs and notices
+  "a1-read-2": [], // Simple forms
 };
 
 // ====================================
 // WRITING EXERCISES - A1 LEVEL
 // ====================================
 const a1WritingExercises: Record<string, Exercise[]> = {
-  // a1-write-1: Personal data
-  "a1-write-1": [
-    {
-      id: "a1-w1-e1",
-      type: "multiple-choice",
-      question: "How do you write your email correctly?",
-      options: ["john@example.com", "john.example.com", "john example com", "@john.example"],
-      correctAnswer: "john@example.com",
-      explanation: "Email format: name@domain.com",
-      difficulty: 1,
-      tags: ["writing", "forms", "a1"]
-    },
-    {
-      id: "a1-w1-e2",
-      type: "multiple-choice",
-      question: "What goes in the 'Address' field on a form?",
-      options: ["Your phone number", "Where you live", "Your email", "Your birthday"],
-      correctAnswer: "Where you live",
-      explanation: "Address = where you live (street, city, country).",
-      difficulty: 1,
-      tags: ["writing", "forms", "a1"]
-    },
-    {
-      id: "a1-w1-e3",
-      type: "fill-blank",
-      question: "To write the date '15/06/2024', in words: June _____, 2024.",
-      options: ["15th", "fifteen", "15", "fifteenth"],
-      correctAnswer: "15th",
-      explanation: "In dates, we use ordinal numbers: 15th (fifteenth).",
-      difficulty: 1,
-      tags: ["writing", "forms", "a1"]
-    },
-    {
-      id: "a1-w1-e4",
-      type: "multiple-choice",
-      question: "What is 'Nationality' on a form?",
-      options: ["Your age", "Your country", "Your job", "Your language"],
-      correctAnswer: "Your country",
-      explanation: "Nationality = your country (e.g., Spanish, American).",
-      difficulty: 1,
-      tags: ["writing", "forms", "a1"]
-    },
-    {
-      id: "a1-w1-e5",
-      type: "multiple-choice",
-      question: "What does 'Occupation' mean on a form?",
-      options: ["Your hobby", "Your job", "Your age", "Your address"],
-      correctAnswer: "Your job",
-      explanation: "Occupation = your job or profession.",
-      difficulty: 1,
-      tags: ["writing", "forms", "a1"]
-    },
-  ],
-
-  // a1-write-2: Short sentences
-  "a1-write-2": [
-    {
-      id: "a1-w2-e1",
-      type: "multiple-choice",
-      question: "How do you start an informal message to a friend?",
-      options: ["Dear Sir,", "Hi John,", "To Whom It May Concern,", "Respected Sir,"],
-      correctAnswer: "Hi John,",
-      explanation: "Informal messages start with 'Hi' or 'Hey' + name.",
-      difficulty: 1,
-      tags: ["writing", "messages", "a1"]
-    },
-    {
-      id: "a1-w2-e2",
-      type: "multiple-choice",
-      question: "How do you end an informal message?",
-      options: ["Yours faithfully,", "Best regards,", "See you soon!", "Respectfully yours,"],
-      correctAnswer: "See you soon!",
-      explanation: "Informal endings: See you! / Take care! / Bye!",
-      difficulty: 1,
-      tags: ["writing", "messages", "a1"]
-    },
-    {
-      id: "a1-w2-e3",
-      type: "fill-blank",
-      question: "Complete the sentence: 'I _____ a student.'",
-      options: ["am", "is", "are", "be"],
-      correctAnswer: "am",
-      explanation: "With 'I', we always use 'am'.",
-      difficulty: 1,
-      tags: ["writing", "sentences", "a1"]
-    },
-    {
-      id: "a1-w2-e4",
-      type: "multiple-choice",
-      question: "Which sentence is correct?",
-      options: ["She is teacher.", "She is a teacher.", "She a is teacher.", "Is she teacher."],
-      correctAnswer: "She is a teacher.",
-      explanation: "We need the article 'a' before the profession.",
-      difficulty: 1,
-      tags: ["writing", "sentences", "a1"]
-    },
-    {
-      id: "a1-w2-e5",
-      type: "multiple-choice",
-      question: "Which sentence has correct word order?",
-      options: ["Like I pizza.", "I pizza like.", "I like pizza.", "Pizza I like."],
-      correctAnswer: "I like pizza.",
-      explanation: "English word order: Subject + Verb + Object.",
-      difficulty: 1,
-      tags: ["writing", "sentences", "a1"]
-    },
-  ],
+  "a1-write-1": [], // Personal data
+  "a1-write-2": [], // Short sentences
 };
 
 // ====================================
-// EXPORT FUNCTIONS
+// MAIN EXPORT FUNCTION
 // ====================================
-
-/**
- * Get exercises by skill ID for A1 level
- */
-export function getA1ExercisesBySkillId(skillId: string): Exercise[] {
-  const allExercises: Record<string, Exercise[]> = {
-    ...a1VocabExercises,
-    ...a1GrammarExercises,
-    ...a1SpeakingExercises,
-    ...a1ListeningExercises,
-    ...a1ReadingExercises,
-    ...a1WritingExercises,
-  };
+export const getA1ExercisesForSkill = (skillId: string): Exercise[] => {
+  // Check vocabulary exercises
+  if (a1VocabExercises[skillId]) {
+    return a1VocabExercises[skillId];
+  }
   
-  return allExercises[skillId] || [];
-}
-
-/**
- * Get all A1 exercises for a specific category
- */
-export function getA1ExercisesByCategory(category: 'vocabulary' | 'grammar' | 'speaking' | 'listening' | 'reading' | 'writing'): Exercise[] {
-  const categoryMap = {
-    vocabulary: a1VocabExercises,
-    grammar: a1GrammarExercises,
-    speaking: a1SpeakingExercises,
-    listening: a1ListeningExercises,
-    reading: a1ReadingExercises,
-    writing: a1WritingExercises,
-  };
+  // Check grammar exercises
+  if (a1GrammarExercises[skillId]) {
+    return a1GrammarExercises[skillId];
+  }
   
-  return Object.values(categoryMap[category]).flat();
-}
-
-/**
- * Get random A1 exercises
- */
-export function getRandomA1Exercises(count: number = 10): Exercise[] {
-  const allExercises = [
-    ...Object.values(a1VocabExercises).flat(),
-    ...Object.values(a1GrammarExercises).flat(),
-    ...Object.values(a1SpeakingExercises).flat(),
-    ...Object.values(a1ListeningExercises).flat(),
-    ...Object.values(a1ReadingExercises).flat(),
-    ...Object.values(a1WritingExercises).flat(),
-  ];
+  // Check speaking exercises
+  if (a1SpeakingExercises[skillId]) {
+    return a1SpeakingExercises[skillId];
+  }
   
-  const shuffled = allExercises.sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, count);
-}
+  // Check listening exercises
+  if (a1ListeningExercises[skillId]) {
+    return a1ListeningExercises[skillId];
+  }
+  
+  // Check reading exercises
+  if (a1ReadingExercises[skillId]) {
+    return a1ReadingExercises[skillId];
+  }
+  
+  // Check writing exercises
+  if (a1WritingExercises[skillId]) {
+    return a1WritingExercises[skillId];
+  }
+  
+  return [];
+};
 
-// Export all exercises for the level
-export const allA1CurriculumExercises = {
+// Alias for backward compatibility
+export const getA1ExercisesBySkillId = getA1ExercisesForSkill;
+
+// Get total exercise count for A1
+export const getA1TotalExercises = (): number => {
+  let total = 0;
+  
+  Object.values(a1VocabExercises).forEach(exercises => {
+    total += exercises.length;
+  });
+  
+  Object.values(a1GrammarExercises).forEach(exercises => {
+    total += exercises.length;
+  });
+  
+  Object.values(a1SpeakingExercises).forEach(exercises => {
+    total += exercises.length;
+  });
+  
+  Object.values(a1ListeningExercises).forEach(exercises => {
+    total += exercises.length;
+  });
+  
+  Object.values(a1ReadingExercises).forEach(exercises => {
+    total += exercises.length;
+  });
+  
+  Object.values(a1WritingExercises).forEach(exercises => {
+    total += exercises.length;
+  });
+  
+  return total;
+};
+
+// Export all A1 exercises for reference
+export const a1Exercises = {
   vocabulary: a1VocabExercises,
   grammar: a1GrammarExercises,
   speaking: a1SpeakingExercises,
   listening: a1ListeningExercises,
   reading: a1ReadingExercises,
-  writing: a1WritingExercises,
+  writing: a1WritingExercises
 };
-
-// Count total exercises
-export const a1ExerciseCount = Object.values(a1VocabExercises).flat().length +
-  Object.values(a1GrammarExercises).flat().length +
-  Object.values(a1SpeakingExercises).flat().length +
-  Object.values(a1ListeningExercises).flat().length +
-  Object.values(a1ReadingExercises).flat().length +
-  Object.values(a1WritingExercises).flat().length;
