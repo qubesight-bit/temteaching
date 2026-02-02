@@ -18,278 +18,246 @@ export interface VocabularyWord {
   partOfSpeech: string;
 }
 
-// ============= A1 VOCABULARY THEMES (20+) =============
+// ============= A1 VOCABULARY THEMES (20 Batches from CEFR Curriculum) =============
 export const a1VocabularyThemes: VocabularyTheme[] = [
   {
-    id: "a1-theme-numbers",
+    id: "a1-vocab-1",
     title: "Numbers & Counting",
     level: "A1",
-    description: "Numbers 1-100 and basic counting",
+    description: "Numbers 1-100, spelling, teen vs ty, sequences, math problems",
     words: [
       { word: "one", definition: "The number 1", example: "I have one apple.", partOfSpeech: "number" },
-      { word: "two", definition: "The number 2", example: "There are two cats.", partOfSpeech: "number" },
-      { word: "three", definition: "The number 3", example: "I see three birds.", partOfSpeech: "number" },
-      { word: "ten", definition: "The number 10", example: "Count to ten.", partOfSpeech: "number" },
+      { word: "twelve", definition: "The number 12", example: "There are twelve months.", partOfSpeech: "number" },
       { word: "twenty", definition: "The number 20", example: "She is twenty years old.", partOfSpeech: "number" },
       { word: "hundred", definition: "The number 100", example: "There are a hundred students.", partOfSpeech: "number" },
     ]
   },
   {
-    id: "a1-theme-colors",
+    id: "a1-vocab-2",
     title: "Colors",
     level: "A1",
-    description: "Basic and common colors",
+    description: "Red, Blue, Green, Yellow, Orange, Purple, Black, White, Brown, Pink",
     words: [
       { word: "red", definition: "The color of blood or strawberries", example: "The apple is red.", partOfSpeech: "adjective" },
       { word: "blue", definition: "The color of the sky", example: "The sky is blue.", partOfSpeech: "adjective" },
       { word: "green", definition: "The color of grass", example: "The leaves are green.", partOfSpeech: "adjective" },
       { word: "yellow", definition: "The color of the sun", example: "The banana is yellow.", partOfSpeech: "adjective" },
-      { word: "black", definition: "The darkest color", example: "My cat is black.", partOfSpeech: "adjective" },
-      { word: "white", definition: "The lightest color", example: "Snow is white.", partOfSpeech: "adjective" },
     ]
   },
   {
-    id: "a1-theme-family",
+    id: "a1-vocab-3",
     title: "Family Members",
     level: "A1",
-    description: "Immediate and extended family vocabulary",
+    description: "Mother, Father, Brother, Sister, Son, Daughter, Grandparents",
     words: [
       { word: "mother", definition: "A female parent", example: "My mother is kind.", partOfSpeech: "noun" },
       { word: "father", definition: "A male parent", example: "My father works hard.", partOfSpeech: "noun" },
-      { word: "sister", definition: "A female sibling", example: "I have one sister.", partOfSpeech: "noun" },
       { word: "brother", definition: "A male sibling", example: "My brother is tall.", partOfSpeech: "noun" },
       { word: "grandmother", definition: "The mother of your parent", example: "My grandmother bakes cookies.", partOfSpeech: "noun" },
-      { word: "grandfather", definition: "The father of your parent", example: "My grandfather tells stories.", partOfSpeech: "noun" },
     ]
   },
   {
-    id: "a1-theme-food",
+    id: "a1-vocab-4",
     title: "Basic Food",
     level: "A1",
-    description: "Common foods and meals",
+    description: "Bread, Milk, Apple, Rice, Egg, Cheese, Chicken, Fish, Banana, Tomato",
     words: [
       { word: "bread", definition: "A baked food made from flour", example: "I eat bread for breakfast.", partOfSpeech: "noun" },
-      { word: "milk", definition: "A white liquid from cows", example: "Children drink milk.", partOfSpeech: "noun" },
       { word: "apple", definition: "A round red or green fruit", example: "An apple a day keeps the doctor away.", partOfSpeech: "noun" },
       { word: "rice", definition: "Small white grains you cook", example: "Rice is popular in Asia.", partOfSpeech: "noun" },
       { word: "egg", definition: "An oval food from chickens", example: "I have eggs for breakfast.", partOfSpeech: "noun" },
-      { word: "water", definition: "A clear liquid you drink", example: "Drink eight glasses of water daily.", partOfSpeech: "noun" },
     ]
   },
   {
-    id: "a1-theme-drinks",
+    id: "a1-vocab-5",
     title: "Beverages",
     level: "A1",
-    description: "Common drinks and beverages",
+    description: "Water, Coffee, Tea, Juice, Soda, Milk, ordering at a cafe",
     words: [
+      { word: "water", definition: "A clear liquid you drink", example: "Drink eight glasses of water daily.", partOfSpeech: "noun" },
       { word: "coffee", definition: "A hot brown drink", example: "I drink coffee in the morning.", partOfSpeech: "noun" },
       { word: "tea", definition: "A hot drink made from leaves", example: "Would you like some tea?", partOfSpeech: "noun" },
       { word: "juice", definition: "A drink from fruits", example: "Orange juice is healthy.", partOfSpeech: "noun" },
-      { word: "soda", definition: "A sweet fizzy drink", example: "I don't drink much soda.", partOfSpeech: "noun" },
     ]
   },
   {
-    id: "a1-theme-animals",
+    id: "a1-vocab-6",
     title: "Common Animals",
     level: "A1",
-    description: "Pets and farm animals",
+    description: "Dog, Cat, Bird, Fish, Cow, Horse, Pig, Chicken, Lion, Elephant",
     words: [
       { word: "dog", definition: "A common pet that barks", example: "The dog is friendly.", partOfSpeech: "noun" },
       { word: "cat", definition: "A small pet that meows", example: "My cat sleeps a lot.", partOfSpeech: "noun" },
       { word: "bird", definition: "An animal with wings", example: "Birds can fly.", partOfSpeech: "noun" },
-      { word: "fish", definition: "An animal that lives in water", example: "I have a pet fish.", partOfSpeech: "noun" },
-      { word: "cow", definition: "A large farm animal", example: "Cows give us milk.", partOfSpeech: "noun" },
-      { word: "horse", definition: "A large animal you can ride", example: "She rides a horse.", partOfSpeech: "noun" },
+      { word: "elephant", definition: "A large gray animal with big ears", example: "The elephant is big.", partOfSpeech: "noun" },
     ]
   },
   {
-    id: "a1-theme-body",
+    id: "a1-vocab-7",
     title: "Body Parts",
     level: "A1",
-    description: "Parts of the human body",
+    description: "Head, Eye, Ear, Nose, Mouth, Hand, Arm, Leg, Foot, Finger",
     words: [
       { word: "head", definition: "The top part of your body", example: "I have a headache.", partOfSpeech: "noun" },
       { word: "eye", definition: "The part you see with", example: "She has blue eyes.", partOfSpeech: "noun" },
-      { word: "ear", definition: "The part you hear with", example: "I have two ears.", partOfSpeech: "noun" },
       { word: "hand", definition: "The part at the end of your arm", example: "Wash your hands.", partOfSpeech: "noun" },
       { word: "foot", definition: "The part you walk on", example: "My foot hurts.", partOfSpeech: "noun" },
-      { word: "nose", definition: "The part you smell with", example: "I have a runny nose.", partOfSpeech: "noun" },
     ]
   },
   {
-    id: "a1-theme-clothes",
+    id: "a1-vocab-8",
     title: "Basic Clothing",
     level: "A1",
-    description: "Common clothes and accessories",
+    description: "Shirt, Pants, Shoes, Hat, Dress, Coat, Socks, Skirt",
     words: [
       { word: "shirt", definition: "Clothing for your upper body", example: "He wears a blue shirt.", partOfSpeech: "noun" },
       { word: "pants", definition: "Clothing for your legs", example: "These pants are too long.", partOfSpeech: "noun" },
       { word: "shoes", definition: "Footwear for protection", example: "I need new shoes.", partOfSpeech: "noun" },
       { word: "hat", definition: "Something you wear on your head", example: "Wear a hat in the sun.", partOfSpeech: "noun" },
-      { word: "dress", definition: "A one-piece garment for women", example: "She wears a red dress.", partOfSpeech: "noun" },
-      { word: "jacket", definition: "A short coat", example: "Put on your jacket.", partOfSpeech: "noun" },
     ]
   },
   {
-    id: "a1-theme-house",
+    id: "a1-vocab-9",
     title: "Rooms & Home",
     level: "A1",
-    description: "Rooms in a house",
+    description: "Bedroom, Kitchen, Bathroom, Living room, Garden, Garage, Door, Window",
     words: [
       { word: "bedroom", definition: "A room for sleeping", example: "My bedroom is upstairs.", partOfSpeech: "noun" },
       { word: "kitchen", definition: "A room for cooking", example: "I cook in the kitchen.", partOfSpeech: "noun" },
       { word: "bathroom", definition: "A room with a toilet and shower", example: "The bathroom is clean.", partOfSpeech: "noun" },
       { word: "living room", definition: "A room for relaxing", example: "We watch TV in the living room.", partOfSpeech: "noun" },
-      { word: "door", definition: "You open it to enter a room", example: "Please close the door.", partOfSpeech: "noun" },
-      { word: "window", definition: "Glass in a wall you can see through", example: "Open the window.", partOfSpeech: "noun" },
     ]
   },
   {
-    id: "a1-theme-furniture",
+    id: "a1-vocab-10",
     title: "Basic Furniture",
     level: "A1",
-    description: "Common household furniture",
+    description: "Table, Chair, Bed, Sofa, Lamp, Desk, Shelf, Wardrobe",
     words: [
       { word: "table", definition: "Furniture with a flat top", example: "Put the book on the table.", partOfSpeech: "noun" },
       { word: "chair", definition: "Furniture for sitting", example: "Sit on the chair.", partOfSpeech: "noun" },
       { word: "bed", definition: "Furniture for sleeping", example: "The bed is comfortable.", partOfSpeech: "noun" },
       { word: "sofa", definition: "A long comfortable seat", example: "Let's sit on the sofa.", partOfSpeech: "noun" },
-      { word: "lamp", definition: "A device that gives light", example: "Turn on the lamp.", partOfSpeech: "noun" },
     ]
   },
   {
-    id: "a1-theme-days",
+    id: "a1-vocab-11",
     title: "Days of the Week",
     level: "A1",
-    description: "The seven days",
+    description: "The seven days of the week",
     words: [
       { word: "Monday", definition: "The first day of the work week", example: "I work on Monday.", partOfSpeech: "noun" },
-      { word: "Tuesday", definition: "The second day of the work week", example: "We have a meeting on Tuesday.", partOfSpeech: "noun" },
       { word: "Wednesday", definition: "The middle of the work week", example: "Wednesday is hump day.", partOfSpeech: "noun" },
-      { word: "Thursday", definition: "The fourth day of the work week", example: "Thursday comes before Friday.", partOfSpeech: "noun" },
       { word: "Friday", definition: "The last day of the work week", example: "Friday is my favorite day.", partOfSpeech: "noun" },
-      { word: "Saturday", definition: "The first weekend day", example: "I rest on Saturday.", partOfSpeech: "noun" },
       { word: "Sunday", definition: "The second weekend day", example: "Sunday is a day of rest.", partOfSpeech: "noun" },
     ]
   },
   {
-    id: "a1-theme-months",
+    id: "a1-vocab-12",
     title: "Months of the Year",
     level: "A1",
-    description: "The twelve months",
+    description: "The twelve months and seasons",
     words: [
       { word: "January", definition: "The first month of the year", example: "January is cold.", partOfSpeech: "noun" },
-      { word: "February", definition: "The second month", example: "February has 28 days.", partOfSpeech: "noun" },
-      { word: "March", definition: "The third month", example: "Spring starts in March.", partOfSpeech: "noun" },
+      { word: "April", definition: "The fourth month", example: "April showers bring May flowers.", partOfSpeech: "noun" },
+      { word: "July", definition: "The seventh month", example: "July is very hot.", partOfSpeech: "noun" },
       { word: "December", definition: "The last month of the year", example: "Christmas is in December.", partOfSpeech: "noun" },
     ]
   },
   {
-    id: "a1-theme-weather",
+    id: "a1-vocab-13",
     title: "Basic Weather",
     level: "A1",
-    description: "Weather conditions",
+    description: "Weather conditions: sunny, rainy, cloudy, hot, cold, windy",
     words: [
       { word: "sunny", definition: "Bright with sun", example: "It's a sunny day.", partOfSpeech: "adjective" },
       { word: "rainy", definition: "With rain falling", example: "Take an umbrella, it's rainy.", partOfSpeech: "adjective" },
-      { word: "cloudy", definition: "With many clouds", example: "The sky is cloudy today.", partOfSpeech: "adjective" },
       { word: "cold", definition: "Low temperature", example: "Winter is cold.", partOfSpeech: "adjective" },
       { word: "hot", definition: "High temperature", example: "Summer is hot.", partOfSpeech: "adjective" },
-      { word: "windy", definition: "With strong wind", example: "It's too windy to go out.", partOfSpeech: "adjective" },
     ]
   },
   {
-    id: "a1-theme-school",
+    id: "a1-vocab-14",
     title: "School & Classroom",
     level: "A1",
-    description: "School vocabulary",
+    description: "School vocabulary: teacher, student, book, pencil, desk, classroom",
     words: [
       { word: "teacher", definition: "A person who teaches", example: "The teacher is kind.", partOfSpeech: "noun" },
       { word: "student", definition: "A person who learns", example: "I am a student.", partOfSpeech: "noun" },
       { word: "book", definition: "Pages with information", example: "Read the book.", partOfSpeech: "noun" },
       { word: "pencil", definition: "A tool for writing", example: "I need a pencil.", partOfSpeech: "noun" },
-      { word: "desk", definition: "A table for working", example: "Sit at your desk.", partOfSpeech: "noun" },
-      { word: "classroom", definition: "A room for learning", example: "The classroom is big.", partOfSpeech: "noun" },
     ]
   },
   {
-    id: "a1-theme-professions",
+    id: "a1-vocab-15",
     title: "Basic Jobs",
     level: "A1",
-    description: "Common professions",
+    description: "Common professions: doctor, teacher, police, driver, nurse",
     words: [
       { word: "doctor", definition: "A person who helps sick people", example: "The doctor is helpful.", partOfSpeech: "noun" },
       { word: "teacher", definition: "A person who teaches", example: "My teacher is smart.", partOfSpeech: "noun" },
       { word: "police officer", definition: "A person who keeps order", example: "The police officer helps people.", partOfSpeech: "noun" },
-      { word: "driver", definition: "A person who drives", example: "The taxi driver is friendly.", partOfSpeech: "noun" },
       { word: "nurse", definition: "A person who cares for sick people", example: "The nurse is patient.", partOfSpeech: "noun" },
     ]
   },
   {
-    id: "a1-theme-transport",
+    id: "a1-vocab-16",
     title: "Basic Transportation",
     level: "A1",
-    description: "Ways to travel",
+    description: "Ways to travel: car, bus, train, bicycle, airplane",
     words: [
       { word: "car", definition: "A vehicle with four wheels", example: "I drive a car.", partOfSpeech: "noun" },
       { word: "bus", definition: "A large vehicle for many people", example: "Take the bus to school.", partOfSpeech: "noun" },
       { word: "train", definition: "A vehicle on rails", example: "The train is fast.", partOfSpeech: "noun" },
-      { word: "bicycle", definition: "A vehicle with two wheels", example: "I ride my bicycle.", partOfSpeech: "noun" },
       { word: "airplane", definition: "A vehicle that flies", example: "The airplane is in the sky.", partOfSpeech: "noun" },
     ]
   },
   {
-    id: "a1-theme-greetings",
+    id: "a1-vocab-17",
     title: "Greetings & Phrases",
     level: "A1",
-    description: "Common greetings",
+    description: "Common greetings: hello, goodbye, please, thank you, sorry",
     words: [
       { word: "hello", definition: "A greeting", example: "Hello, how are you?", partOfSpeech: "interjection" },
       { word: "goodbye", definition: "A farewell", example: "Goodbye, see you tomorrow!", partOfSpeech: "interjection" },
       { word: "please", definition: "Used to ask politely", example: "Please help me.", partOfSpeech: "adverb" },
       { word: "thank you", definition: "Expressing gratitude", example: "Thank you for your help.", partOfSpeech: "phrase" },
-      { word: "sorry", definition: "Expressing regret", example: "Sorry, I'm late.", partOfSpeech: "interjection" },
     ]
   },
   {
-    id: "a1-theme-places",
+    id: "a1-vocab-18",
     title: "Basic Places",
     level: "A1",
-    description: "Common locations",
+    description: "Common locations: school, hospital, store, park, restaurant",
     words: [
       { word: "school", definition: "A place for learning", example: "I go to school.", partOfSpeech: "noun" },
       { word: "hospital", definition: "A place for sick people", example: "The hospital is nearby.", partOfSpeech: "noun" },
       { word: "store", definition: "A place to buy things", example: "I shop at the store.", partOfSpeech: "noun" },
       { word: "park", definition: "A green outdoor area", example: "Let's go to the park.", partOfSpeech: "noun" },
-      { word: "restaurant", definition: "A place to eat food", example: "The restaurant is busy.", partOfSpeech: "noun" },
     ]
   },
   {
-    id: "a1-theme-verbs",
+    id: "a1-vocab-19",
     title: "Basic Action Verbs",
     level: "A1",
-    description: "Common action words",
+    description: "Common action words: eat, drink, sleep, walk, run, read",
     words: [
       { word: "eat", definition: "To consume food", example: "I eat breakfast at 7am.", partOfSpeech: "verb" },
       { word: "drink", definition: "To consume liquid", example: "Drink more water.", partOfSpeech: "verb" },
       { word: "sleep", definition: "To rest with eyes closed", example: "I sleep eight hours.", partOfSpeech: "verb" },
       { word: "walk", definition: "To move on foot", example: "I walk to school.", partOfSpeech: "verb" },
-      { word: "run", definition: "To move quickly on foot", example: "He can run fast.", partOfSpeech: "verb" },
-      { word: "read", definition: "To look at and understand text", example: "I read books.", partOfSpeech: "verb" },
     ]
   },
   {
-    id: "a1-theme-adjectives",
+    id: "a1-vocab-20",
     title: "Basic Adjectives",
     level: "A1",
-    description: "Simple describing words",
+    description: "Simple describing words: big, small, happy, sad, good, bad",
     words: [
       { word: "big", definition: "Large in size", example: "The elephant is big.", partOfSpeech: "adjective" },
       { word: "small", definition: "Little in size", example: "The mouse is small.", partOfSpeech: "adjective" },
       { word: "happy", definition: "Feeling joy", example: "She is happy today.", partOfSpeech: "adjective" },
-      { word: "sad", definition: "Feeling unhappy", example: "He looks sad.", partOfSpeech: "adjective" },
       { word: "good", definition: "Of high quality", example: "This is good food.", partOfSpeech: "adjective" },
-      { word: "bad", definition: "Of low quality", example: "The weather is bad.", partOfSpeech: "adjective" },
     ]
   },
 ];
