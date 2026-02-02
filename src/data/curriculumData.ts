@@ -585,6 +585,17 @@ export const curriculumData: LevelCurriculum[] = [
             ]
           },
           {
+            id: "a2-gram-10",
+            title: "Present Perfect vs Past Simple",
+            description: "Choose the right tense using time expressions and context",
+            completed: false,
+            subSkills: [
+              { id: "a2-g10-1", title: "Finished time vs unfinished time", completed: false },
+              { id: "a2-g10-2", title: "Ever/never vs yesterday/last week", completed: false },
+              { id: "a2-g10-3", title: "Questions: Have you ever...? / Did you...?", completed: false },
+            ]
+          },
+          {
             id: "a2-gram-3",
             title: "Future with 'going to'",
             description: "Future plans and intentions",
