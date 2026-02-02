@@ -47,43 +47,242 @@ export const curriculumData: LevelCurriculum[] = [
         skills: [
           {
             id: "a1-vocab-1",
-            title: "Numbers and colors",
-            description: "Numbers 1-100, basic colors",
+            title: "Numbers & Counting",
+            description: "Numbers 1-100, spelling, teen vs ty, sequences, math problems",
             completed: false,
             subSkills: [
-              { id: "a1-v1-1", title: "Numbers 1-20", completed: false },
-              { id: "a1-v1-2", title: "Numbers 20-100", completed: false },
-              { id: "a1-v1-3", title: "Primary colors", completed: false },
+              { id: "a1-v1-1", title: "one", completed: false },
+              { id: "a1-v1-2", title: "twelve", completed: false },
+              { id: "a1-v1-3", title: "twenty", completed: false },
+              { id: "a1-v1-4", title: "hundred", completed: false },
             ]
           },
           {
             id: "a1-vocab-2",
-            title: "Family and people",
-            description: "Family members, basic descriptions",
+            title: "Colors",
+            description: "Red, Blue, Green, Yellow, Orange, Purple, Black, White, Brown, Pink",
             completed: false,
             subSkills: [
-              { id: "a1-v2-1", title: "Immediate family", completed: false },
-              { id: "a1-v2-2", title: "Basic professions", completed: false },
+              { id: "a1-v2-1", title: "red", completed: false },
+              { id: "a1-v2-2", title: "blue", completed: false },
+              { id: "a1-v2-3", title: "green", completed: false },
+              { id: "a1-v2-4", title: "yellow", completed: false },
             ]
           },
           {
             id: "a1-vocab-3",
-            title: "Everyday objects",
-            description: "Home, school, office",
+            title: "Family Members",
+            description: "Mother, Father, Brother, Sister, Son, Daughter, Grandparents",
             completed: false,
             subSkills: [
-              { id: "a1-v3-1", title: "Home objects", completed: false },
-              { id: "a1-v3-2", title: "Classroom objects", completed: false },
+              { id: "a1-v3-1", title: "mother", completed: false },
+              { id: "a1-v3-2", title: "father", completed: false },
+              { id: "a1-v3-3", title: "brother", completed: false },
+              { id: "a1-v3-4", title: "grandmother", completed: false },
             ]
           },
           {
             id: "a1-vocab-4",
-            title: "Basic food and drink",
-            description: "Essential foods, common drinks",
+            title: "Basic Food",
+            description: "Bread, Milk, Apple, Rice, Egg, Cheese, Chicken, Fish, Banana, Tomato",
             completed: false,
             subSkills: [
-              { id: "a1-v4-1", title: "Fruits and vegetables", completed: false },
-              { id: "a1-v4-2", title: "Drinks", completed: false },
+              { id: "a1-v4-1", title: "bread", completed: false },
+              { id: "a1-v4-2", title: "apple", completed: false },
+              { id: "a1-v4-3", title: "rice", completed: false },
+              { id: "a1-v4-4", title: "egg", completed: false },
+            ]
+          },
+          {
+            id: "a1-vocab-5",
+            title: "Beverages",
+            description: "Water, Coffee, Tea, Juice, Soda, Milk, ordering at a cafe",
+            completed: false,
+            subSkills: [
+              { id: "a1-v5-1", title: "water", completed: false },
+              { id: "a1-v5-2", title: "coffee", completed: false },
+              { id: "a1-v5-3", title: "tea", completed: false },
+              { id: "a1-v5-4", title: "juice", completed: false },
+            ]
+          },
+          {
+            id: "a1-vocab-6",
+            title: "Common Animals",
+            description: "Dog, Cat, Bird, Fish, Cow, Horse, Pig, Chicken, Lion, Elephant",
+            completed: false,
+            subSkills: [
+              { id: "a1-v6-1", title: "dog", completed: false },
+              { id: "a1-v6-2", title: "cat", completed: false },
+              { id: "a1-v6-3", title: "bird", completed: false },
+              { id: "a1-v6-4", title: "elephant", completed: false },
+            ]
+          },
+          {
+            id: "a1-vocab-7",
+            title: "Body Parts",
+            description: "Head, Eye, Ear, Nose, Mouth, Hand, Arm, Leg, Foot, Finger",
+            completed: false,
+            subSkills: [
+              { id: "a1-v7-1", title: "head", completed: false },
+              { id: "a1-v7-2", title: "eye", completed: false },
+              { id: "a1-v7-3", title: "hand", completed: false },
+              { id: "a1-v7-4", title: "foot", completed: false },
+            ]
+          },
+          {
+            id: "a1-vocab-8",
+            title: "Basic Clothing",
+            description: "Shirt, Pants, Shoes, Hat, Dress, Coat, Socks, Skirt",
+            completed: false,
+            subSkills: [
+              { id: "a1-v8-1", title: "shirt", completed: false },
+              { id: "a1-v8-2", title: "pants", completed: false },
+              { id: "a1-v8-3", title: "shoes", completed: false },
+              { id: "a1-v8-4", title: "hat", completed: false },
+            ]
+          },
+          {
+            id: "a1-vocab-9",
+            title: "Rooms & Home",
+            description: "Bedroom, Kitchen, Bathroom, Living room, Garden, Garage, Door, Window",
+            completed: false,
+            subSkills: [
+              { id: "a1-v9-1", title: "bedroom", completed: false },
+              { id: "a1-v9-2", title: "kitchen", completed: false },
+              { id: "a1-v9-3", title: "bathroom", completed: false },
+              { id: "a1-v9-4", title: "living room", completed: false },
+            ]
+          },
+          {
+            id: "a1-vocab-10",
+            title: "Basic Furniture",
+            description: "Table, Chair, Bed, Sofa, Lamp, Desk, Shelf, Wardrobe",
+            completed: false,
+            subSkills: [
+              { id: "a1-v10-1", title: "table", completed: false },
+              { id: "a1-v10-2", title: "chair", completed: false },
+              { id: "a1-v10-3", title: "bed", completed: false },
+              { id: "a1-v10-4", title: "sofa", completed: false },
+            ]
+          },
+          {
+            id: "a1-vocab-11",
+            title: "Days of the Week",
+            description: "The seven days of the week",
+            completed: false,
+            subSkills: [
+              { id: "a1-v11-1", title: "Monday", completed: false },
+              { id: "a1-v11-2", title: "Wednesday", completed: false },
+              { id: "a1-v11-3", title: "Friday", completed: false },
+              { id: "a1-v11-4", title: "Sunday", completed: false },
+            ]
+          },
+          {
+            id: "a1-vocab-12",
+            title: "Months of the Year",
+            description: "The twelve months and seasons",
+            completed: false,
+            subSkills: [
+              { id: "a1-v12-1", title: "January", completed: false },
+              { id: "a1-v12-2", title: "April", completed: false },
+              { id: "a1-v12-3", title: "July", completed: false },
+              { id: "a1-v12-4", title: "December", completed: false },
+            ]
+          },
+          {
+            id: "a1-vocab-13",
+            title: "Basic Weather",
+            description: "Weather conditions: sunny, rainy, cloudy, hot, cold, windy",
+            completed: false,
+            subSkills: [
+              { id: "a1-v13-1", title: "sunny", completed: false },
+              { id: "a1-v13-2", title: "rainy", completed: false },
+              { id: "a1-v13-3", title: "cold", completed: false },
+              { id: "a1-v13-4", title: "hot", completed: false },
+            ]
+          },
+          {
+            id: "a1-vocab-14",
+            title: "School & Classroom",
+            description: "School vocabulary: teacher, student, book, pencil, desk, classroom",
+            completed: false,
+            subSkills: [
+              { id: "a1-v14-1", title: "teacher", completed: false },
+              { id: "a1-v14-2", title: "student", completed: false },
+              { id: "a1-v14-3", title: "book", completed: false },
+              { id: "a1-v14-4", title: "pencil", completed: false },
+            ]
+          },
+          {
+            id: "a1-vocab-15",
+            title: "Basic Jobs",
+            description: "Common professions: doctor, teacher, police, driver, nurse",
+            completed: false,
+            subSkills: [
+              { id: "a1-v15-1", title: "doctor", completed: false },
+              { id: "a1-v15-2", title: "teacher", completed: false },
+              { id: "a1-v15-3", title: "police officer", completed: false },
+              { id: "a1-v15-4", title: "nurse", completed: false },
+            ]
+          },
+          {
+            id: "a1-vocab-16",
+            title: "Basic Transportation",
+            description: "Ways to travel: car, bus, train, bicycle, airplane",
+            completed: false,
+            subSkills: [
+              { id: "a1-v16-1", title: "car", completed: false },
+              { id: "a1-v16-2", title: "bus", completed: false },
+              { id: "a1-v16-3", title: "train", completed: false },
+              { id: "a1-v16-4", title: "airplane", completed: false },
+            ]
+          },
+          {
+            id: "a1-vocab-17",
+            title: "Greetings & Phrases",
+            description: "Common greetings: hello, goodbye, please, thank you, sorry",
+            completed: false,
+            subSkills: [
+              { id: "a1-v17-1", title: "hello", completed: false },
+              { id: "a1-v17-2", title: "goodbye", completed: false },
+              { id: "a1-v17-3", title: "please", completed: false },
+              { id: "a1-v17-4", title: "thank you", completed: false },
+            ]
+          },
+          {
+            id: "a1-vocab-18",
+            title: "Basic Places",
+            description: "Common locations: school, hospital, store, park, restaurant",
+            completed: false,
+            subSkills: [
+              { id: "a1-v18-1", title: "school", completed: false },
+              { id: "a1-v18-2", title: "hospital", completed: false },
+              { id: "a1-v18-3", title: "store", completed: false },
+              { id: "a1-v18-4", title: "park", completed: false },
+            ]
+          },
+          {
+            id: "a1-vocab-19",
+            title: "Basic Action Verbs",
+            description: "Common action words: eat, drink, sleep, walk, run, read",
+            completed: false,
+            subSkills: [
+              { id: "a1-v19-1", title: "eat", completed: false },
+              { id: "a1-v19-2", title: "drink", completed: false },
+              { id: "a1-v19-3", title: "sleep", completed: false },
+              { id: "a1-v19-4", title: "walk", completed: false },
+            ]
+          },
+          {
+            id: "a1-vocab-20",
+            title: "Basic Adjectives",
+            description: "Simple describing words: big, small, happy, sad, good, bad",
+            completed: false,
+            subSkills: [
+              { id: "a1-v20-1", title: "big", completed: false },
+              { id: "a1-v20-2", title: "small", completed: false },
+              { id: "a1-v20-3", title: "happy", completed: false },
+              { id: "a1-v20-4", title: "good", completed: false },
             ]
           },
         ]
