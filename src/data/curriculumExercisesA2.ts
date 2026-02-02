@@ -247,6 +247,108 @@ const a2GrammarExercises: Record<string, Exercise[]> = {
       tags: ["past-simple", "irregular", "a2"]
     },
   ],
+  "a2-gram-10": [ // Present Perfect vs Past Simple
+    {
+      id: "a2-g10-e1",
+      type: "multiple-choice",
+      question: "I _____ my keys. I can't find them now.",
+      options: ["lost", "have lost", "lose", "have lose"],
+      correctAnswer: "have lost",
+      explanation: "Use Present Perfect when the past action has a result now (I still can't find them).",
+      difficulty: 1,
+      tags: ["present-perfect", "a2"]
+    },
+    {
+      id: "a2-g10-e2",
+      type: "multiple-choice",
+      question: "I _____ my keys yesterday.",
+      options: ["lost", "have lost", "lose", "have lose"],
+      correctAnswer: "lost",
+      explanation: "Use Past Simple with finished time expressions like 'yesterday'.",
+      difficulty: 1,
+      tags: ["past-simple", "a2"]
+    },
+    {
+      id: "a2-g10-e3",
+      type: "multiple-choice",
+      question: "Have you ever _____ sushi?",
+      options: ["eat", "ate", "eaten", "eating"],
+      correctAnswer: "eaten",
+      explanation: "Present Perfect questions: Have/Has + past participle (eat → eaten).",
+      difficulty: 1,
+      tags: ["present-perfect", "ever", "a2"]
+    },
+    {
+      id: "a2-g10-e4",
+      type: "multiple-choice",
+      question: "Did you _____ sushi last night?",
+      options: ["eat", "ate", "eaten", "eating"],
+      correctAnswer: "eat",
+      explanation: "Past Simple questions: Did + base verb (eat).",
+      difficulty: 1,
+      tags: ["past-simple", "questions", "a2"]
+    },
+    {
+      id: "a2-g10-e5",
+      type: "fill-blank",
+      question: "She has just _____ her homework.",
+      options: ["finish", "finished", "finishes", "finishing"],
+      correctAnswer: "finished",
+      explanation: "After 'has' we use the past participle: finish → finished.",
+      difficulty: 1,
+      tags: ["present-perfect", "just", "a2"]
+    },
+    {
+      id: "a2-g10-e6",
+      type: "multiple-choice",
+      question: "We _____ to the cinema last weekend.",
+      options: ["go", "went", "have gone", "gone"],
+      correctAnswer: "went",
+      explanation: "Use Past Simple with finished time expressions like 'last weekend'.",
+      difficulty: 1,
+      tags: ["past-simple", "a2"]
+    },
+    {
+      id: "a2-g10-e7",
+      type: "multiple-choice",
+      question: "I _____ to Spain three times.",
+      options: ["went", "have been", "have went", "was"],
+      correctAnswer: "have been",
+      explanation: "Use Present Perfect for life experience when the time is not finished or not mentioned.",
+      difficulty: 1,
+      tags: ["present-perfect", "experience", "a2"]
+    },
+    {
+      id: "a2-g10-e8",
+      type: "multiple-choice",
+      question: "I _____ to Spain in 2019.",
+      options: ["went", "have been", "have went", "was"],
+      correctAnswer: "went",
+      explanation: "Use Past Simple with a finished time in the past (2019).",
+      difficulty: 1,
+      tags: ["past-simple", "a2"]
+    },
+    {
+      id: "a2-g10-e9",
+      type: "multiple-choice",
+      question: "_____ you _____ your dinner yet?",
+      options: ["Have / finished", "Did / finished", "Have / finish", "Did / finish"],
+      correctAnswer: "Have / finished",
+      explanation: "Use Present Perfect with 'yet' for unfinished time up to now.",
+      difficulty: 1,
+      tags: ["present-perfect", "yet", "a2"]
+    },
+    {
+      id: "a2-g10-e10",
+      type: "multiple-choice",
+      question: "I _____ (not/see) him this week.",
+      options: ["didn't see", "haven't seen", "don't see", "wasn't see"],
+      correctAnswer: "haven't seen",
+      explanation: "Use Present Perfect for an unfinished time period like 'this week'.",
+      difficulty: 1,
+      tags: ["present-perfect", "a2"]
+    },
+  ],
   // Note: a2-gram-3 is "Future with going to" in curriculumData.ts
   // The "Future with Will" content has been moved to align with the curriculum
   "a2-gram-3": [ // Future with Going to (FIXED: matches curriculumData.ts a2-gram-3)

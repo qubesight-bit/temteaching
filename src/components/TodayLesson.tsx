@@ -7,7 +7,8 @@ export function TodayLesson() {
   const navigate = useNavigate();
 
   const handleStartLesson = () => {
-    navigate("/skill/A2/grammar/present-perfect-vs-past-simple");
+    // Must match route: /skill/:level/:categoryId/:skillId
+    navigate("/skill/A2/a2-grammar/a2-gram-10");
   };
   return (
     <Card variant="interactive" className="overflow-hidden group">
