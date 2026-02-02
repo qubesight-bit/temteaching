@@ -4,10 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { 
   Play, Pause, RotateCcw, Volume2, VolumeX, 
-  CheckCircle2, XCircle, Headphones, Trophy
+  CheckCircle2, XCircle, Headphones, Trophy, Loader2, Square
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
+import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
 
 interface ComprehensionQuestion {
   question: string;
@@ -25,7 +26,6 @@ interface ArticleAudioQuizProps {
 
 // Generate comprehension questions from article content
 const generateQuestionsFromContent = (title: string, content: string): ComprehensionQuestion[] => {
-  // Default questions based on general comprehension
   const defaultQuestions: ComprehensionQuestion[] = [
     {
       question: `What is the main topic of this article?`,
@@ -94,109 +94,40 @@ export function ArticleAudioQuiz({
   onComplete 
 }: ArticleAudioQuizProps) {
   const [phase, setPhase] = useState<"listen" | "quiz" | "results">("listen");
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [playbackRate, setPlaybackRate] = useState(0.85);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
   const [score, setScore] = useState(0);
   const [answers, setAnswers] = useState<Record<number, { answer: string; correct: boolean }>>({});
+  const [hasListened, setHasListened] = useState(false);
   
-  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
-  const contentLength = useRef(0);
-  const spokenLength = useRef(0);
+  // ElevenLabs TTS
+  const { speak, stopAudio, isLoading, isPlaying } = useElevenLabsTTS();
 
   // Get questions - either provided or generated
   const quizQuestions = questions || generateQuestionsFromContent(articleTitle, articleContent);
 
-  const startAudio = () => {
-    if (!('speechSynthesis' in window)) {
-      toast({
-        title: "Audio not supported",
-        description: "Your browser doesn't support text-to-speech.",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    window.speechSynthesis.cancel();
-    
+  const startAudio = async () => {
     const textToSpeak = `${articleTitle}. ${articleContent}`;
-    contentLength.current = textToSpeak.length;
     
-    const utterance = new SpeechSynthesisUtterance(textToSpeak);
-    utterance.lang = 'en-US';
-    utterance.rate = playbackRate;
-    
-    utterance.onboundary = (event) => {
-      spokenLength.current = event.charIndex;
-      const progressPercent = (event.charIndex / contentLength.current) * 100;
-      setProgress(progressPercent);
-    };
-    
-    utterance.onend = () => {
-      setIsPlaying(false);
-      setProgress(100);
-      toast({
-        title: "🎧 Listening Complete!",
-        description: "Now answer the comprehension questions.",
-      });
-    };
-    
-    utterance.onerror = () => {
-      setIsPlaying(false);
-    };
-
-    utteranceRef.current = utterance;
-    window.speechSynthesis.speak(utterance);
-    setIsPlaying(true);
+    // Start speaking
+    await speak(textToSpeak);
+    setHasListened(true);
+    setProgress(100);
   };
 
   const togglePlayPause = () => {
-    if (!('speechSynthesis' in window)) return;
-
     if (isPlaying) {
-      window.speechSynthesis.pause();
-      setIsPlaying(false);
-    } else if (window.speechSynthesis.paused) {
-      window.speechSynthesis.resume();
-      setIsPlaying(true);
+      stopAudio();
     } else {
       startAudio();
     }
   };
 
-  const stopAudio = () => {
-    window.speechSynthesis.cancel();
-    setIsPlaying(false);
+  const handleStopAudio = () => {
+    stopAudio();
     setProgress(0);
-  };
-
-  const toggleMute = () => {
-    setIsMuted(!isMuted);
-    // Note: Web Speech API doesn't support muting directly
-    // We simulate by pausing
-    if (!isMuted && isPlaying) {
-      window.speechSynthesis.pause();
-      setIsPlaying(false);
-    }
-  };
-
-  const changeSpeed = () => {
-    const speeds = [0.7, 0.85, 1, 1.15];
-    const currentIndex = speeds.indexOf(playbackRate);
-    const nextIndex = (currentIndex + 1) % speeds.length;
-    setPlaybackRate(speeds[nextIndex]);
-    
-    if (isPlaying) {
-      stopAudio();
-      toast({
-        title: "Speed changed",
-        description: `Playback speed: ${speeds[nextIndex]}x. Press play to continue.`,
-      });
-    }
   };
 
   const startQuiz = () => {
@@ -246,14 +177,15 @@ export function ArticleAudioQuiz({
     setShowExplanation(false);
     setScore(0);
     setAnswers({});
+    setHasListened(false);
   };
 
   // Cleanup on unmount
   useEffect(() => {
     return () => {
-      window.speechSynthesis.cancel();
+      stopAudio();
     };
-  }, []);
+  }, [stopAudio]);
 
   const currentQuestion = quizQuestions[currentQuestionIndex];
   const percentage = quizQuestions.length > 0 ? Math.round((score / quizQuestions.length) * 100) : 0;
@@ -280,10 +212,13 @@ export function ArticleAudioQuiz({
                   size="lg"
                   variant={isPlaying ? "secondary" : "default"}
                   onClick={togglePlayPause}
+                  disabled={isLoading}
                   className="h-14 w-14 rounded-full"
                 >
-                  {isPlaying ? (
-                    <Pause className="w-6 h-6" />
+                  {isLoading ? (
+                    <Loader2 className="w-6 h-6 animate-spin" />
+                  ) : isPlaying ? (
+                    <Square className="w-6 h-6" />
                   ) : (
                     <Play className="w-6 h-6 ml-1" />
                   )}
@@ -292,36 +227,20 @@ export function ArticleAudioQuiz({
                 <Button
                   variant="outline"
                   size="icon"
-                  onClick={stopAudio}
+                  onClick={handleStopAudio}
+                  disabled={!isPlaying}
                 >
                   <RotateCcw className="w-4 h-4" />
                 </Button>
                 
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={toggleMute}
-                >
-                  {isMuted ? (
-                    <VolumeX className="w-4 h-4" />
-                  ) : (
-                    <Volume2 className="w-4 h-4" />
-                  )}
-                </Button>
-                
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={changeSpeed}
-                  className="min-w-[60px]"
-                >
-                  {playbackRate}x
-                </Button>
+                <div className="flex-1 text-sm text-muted-foreground">
+                  {isLoading ? "Loading audio..." : isPlaying ? "Playing..." : hasListened ? "Ready for quiz" : "Press play to listen"}
+                </div>
               </div>
               
-              <Progress value={progress} className="h-2 mb-2" />
+              <Progress value={isPlaying ? 50 : progress} className="h-2 mb-2" />
               <p className="text-xs text-muted-foreground text-center">
-                {Math.round(progress)}% complete
+                {hasListened ? "Listening complete" : isPlaying ? "Listening..." : "Ready to listen"}
               </p>
             </div>
             
