@@ -3,12 +3,13 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Header } from '@/components/Header';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Volume2, MessageSquare, BarChart3, Sparkles, Loader2 } from 'lucide-react';
+import { ArrowLeft, Volume2, MessageSquare, BarChart3, Sparkles, Loader2, Square } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
 import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
+import { useElevenLabsTTS } from '@/hooks/useElevenLabsTTS';
 
 interface Message {
   id: string;
@@ -34,6 +35,9 @@ export default function ConversationDetail() {
   const [conversation, setConversation] = useState<ConversationData | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(true);
+  
+  // ElevenLabs TTS
+  const { speak, stopAudio, isLoading: isSpeaking, isPlaying } = useElevenLabsTTS();
 
   useEffect(() => {
     if (!user) {
@@ -98,9 +102,11 @@ export default function ConversationDetail() {
 
   const speakText = (text: string) => {
     const cleanText = text.replace(/\*\*.*?\*\*/g, '').replace(/💡.*$/gm, '');
-    const utterance = new SpeechSynthesisUtterance(cleanText);
-    utterance.lang = 'en-US';
-    speechSynthesis.speak(utterance);
+    if (isPlaying) {
+      stopAudio();
+    } else {
+      speak(cleanText);
+    }
   };
 
   const extractCorrections = (content: string) => {
@@ -327,11 +333,18 @@ export default function ConversationDetail() {
                       <Button
                         variant="ghost"
                         size="sm"
-                        className="mt-2 h-7 text-xs"
+                        className={cn("mt-2 h-7 text-xs", isPlaying && "text-primary")}
                         onClick={() => speakText(message.content)}
+                        disabled={isSpeaking}
                       >
-                        <Volume2 className="w-3 h-3 mr-1" />
-                        Listen
+                        {isSpeaking ? (
+                          <Loader2 className="w-3 h-3 mr-1 animate-spin" />
+                        ) : isPlaying ? (
+                          <Square className="w-3 h-3 mr-1" />
+                        ) : (
+                          <Volume2 className="w-3 h-3 mr-1" />
+                        )}
+                        {isPlaying ? "Stop" : "Listen"}
                       </Button>
                     )}
                   </div>

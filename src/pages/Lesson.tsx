@@ -6,10 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { ExerciseQuestion } from "@/components/ExerciseQuestion";
 import { grammarCategories } from "@/data/grammarData";
-import { ArrowLeft, ArrowRight, CheckCircle2, XCircle, Volume2, BookOpen, Dumbbell, Trophy, Home } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, XCircle, Volume2, BookOpen, Dumbbell, Trophy, Home, Loader2, Square } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
 import { cleanQuestionForTTS } from "@/lib/questionFormatter";
+import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
 
 type LessonStep = "explanation" | "exercises" | "complete";
 
@@ -67,11 +68,16 @@ export default function Lesson() {
     }
   };
 
+  // ElevenLabs TTS
+  const { speak, stopAudio, isLoading: isSpeaking, isPlaying } = useElevenLabsTTS();
+
   const speakText = (text: string) => {
     const cleanedText = cleanQuestionForTTS(text);
-    const utterance = new SpeechSynthesisUtterance(cleanedText);
-    utterance.lang = 'en-US';
-    speechSynthesis.speak(utterance);
+    if (isPlaying) {
+      stopAudio();
+    } else {
+      speak(cleanedText);
+    }
   };
 
   const getLevelColor = (level: string) => {
@@ -235,14 +241,21 @@ export default function Lesson() {
                       >
                         <div className="flex items-center justify-between">
                           <p className="font-medium text-foreground">{example.english}</p>
-                          <Button
-                            variant="ghost"
-                            size="icon"
-                            className="h-8 w-8"
-                            onClick={() => speakText(example.english)}
-                          >
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className={cn("h-8 w-8", isPlaying && "text-primary")}
+                          onClick={() => speakText(example.english)}
+                          disabled={isSpeaking}
+                        >
+                          {isSpeaking ? (
+                            <Loader2 className="w-4 h-4 animate-spin" />
+                          ) : isPlaying ? (
+                            <Square className="w-4 h-4" />
+                          ) : (
                             <Volume2 className="w-4 h-4" />
-                          </Button>
+                          )}
+                        </Button>
                         </div>
                         <p className="text-sm text-muted-foreground mt-1">{example.context}</p>
                       </div>

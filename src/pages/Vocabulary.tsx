@@ -5,8 +5,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { expandedVocabularyCategories, VocabularyCategory, getTotalWordCount, getCategoryCount } from "@/data/vocabularyDataExpanded";
-import { ArrowLeft, Play, RotateCcw, Volume2 } from "lucide-react";
+import { ArrowLeft, Play, RotateCcw, Volume2, Loader2, Square } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
 
 type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
@@ -75,10 +76,15 @@ export default function Vocabulary() {
     }
   };
 
+  // ElevenLabs TTS
+  const { speak, stopAudio, isLoading: isSpeaking, isPlaying } = useElevenLabsTTS();
+
   const speakWord = (text: string) => {
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'en-US';
-    speechSynthesis.speak(utterance);
+    if (isPlaying) {
+      stopAudio();
+    } else {
+      speak(text);
+    }
   };
 
   if (showingFlashcard && selectedCategory) {
@@ -129,13 +135,20 @@ export default function Vocabulary() {
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="absolute top-4 right-4"
+                    className={cn("absolute top-4 right-4", isPlaying && "text-primary")}
                     onClick={(e) => {
                       e.stopPropagation();
                       speakWord(currentWord.english);
                     }}
+                    disabled={isSpeaking}
                   >
-                    <Volume2 className="w-5 h-5" />
+                    {isSpeaking ? (
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                    ) : isPlaying ? (
+                      <Square className="w-5 h-5" />
+                    ) : (
+                      <Volume2 className="w-5 h-5" />
+                    )}
                   </Button>
                   
                   <span className="text-4xl font-display font-bold text-foreground mb-2">

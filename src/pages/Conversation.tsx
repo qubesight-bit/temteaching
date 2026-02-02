@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ArrowLeft, Send, Sparkles, Mic, MicOff, Volume2, Loader2, History } from "lucide-react";
+import { ArrowLeft, Send, Sparkles, Mic, MicOff, Volume2, Loader2, History, Square } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
 import { ChatFeedback, parseFeedback } from "@/components/ChatFeedback";
@@ -12,6 +12,7 @@ import { GrammarTips } from "@/components/GrammarTips";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import { useLearningErrors, NewLearningError } from "@/hooks/useLearningErrors";
+import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
 
 // Helper function to parse error reports from AI response
 function parseErrorReports(content: string, conversationId: string | null, userLevel: string): NewLearningError[] {
@@ -248,6 +249,9 @@ export default function Conversation() {
   const recognitionRef = useRef<SpeechRecognition | null>(null);
   const confidenceScoresRef = useRef<number[]>([]);
   const processedErrorsRef = useRef<Set<string>>(new Set());
+  
+  // ElevenLabs TTS
+  const { speak, stopAudio, isLoading: isSpeaking, isPlaying } = useElevenLabsTTS();
 
   const filteredScenarios = selectedLevel === "All" 
     ? scenarios 
@@ -537,30 +541,26 @@ export default function Conversation() {
     }
   };
 
-  const speakText = (text: string) => {
+  const speakMessage = (text: string) => {
     // Extract only the main content without feedback sections
     const { mainContent } = parseFeedback(text);
     
-    // Remove all feedback-related content for clean audio:
-    // - Remove markdown bold formatting (**text**)
-    // - Remove tip lines starting with 💡
-    // - Remove correction markers (✅, ❌, 🔴)
-    // - Remove explanation lines (📖)
-    // - Remove EMAIL_READY blocks
-    // - Remove any remaining emojis that are part of feedback
+    // Remove all feedback-related content for clean audio
     let cleanText = mainContent
-      .replace(/---EMAIL_READY---[\s\S]*?---END EMAIL_READY---/g, '') // Remove email blocks
-      .replace(/\*\*[^*]+\*\*/g, '') // Remove bold markdown
-      .replace(/💡[^\n]*/g, '') // Remove tip lines
-      .replace(/📖[^\n]*/g, '') // Remove explanation lines
-      .replace(/[✅❌🔴🌟👍👌💪🔄]/g, '') // Remove feedback emojis
-      .replace(/\n{3,}/g, '\n\n') // Clean up multiple newlines
+      .replace(/---EMAIL_READY---[\s\S]*?---END EMAIL_READY---/g, '')
+      .replace(/\*\*[^*]+\*\*/g, '')
+      .replace(/💡[^\n]*/g, '')
+      .replace(/📖[^\n]*/g, '')
+      .replace(/[✅❌🔴🌟👍👌💪🔄]/g, '')
+      .replace(/\n{3,}/g, '\n\n')
       .trim();
     
     if (cleanText) {
-      const utterance = new SpeechSynthesisUtterance(cleanText);
-      utterance.lang = 'en-US';
-      speechSynthesis.speak(utterance);
+      if (isPlaying) {
+        stopAudio();
+      } else {
+        speak(cleanText);
+      }
     }
   };
 
@@ -636,10 +636,17 @@ export default function Conversation() {
                           <Button
                             variant="ghost"
                             size="icon"
-                            className="h-6 w-6 mt-2 opacity-60 hover:opacity-100"
-                            onClick={() => speakText(message.content)}
+                            className={cn("h-6 w-6 mt-2 opacity-60 hover:opacity-100", isPlaying && "text-primary opacity-100")}
+                            onClick={() => speakMessage(message.content)}
+                            disabled={isSpeaking}
                           >
-                            <Volume2 className="w-4 h-4" />
+                            {isSpeaking ? (
+                              <Loader2 className="w-4 h-4 animate-spin" />
+                            ) : isPlaying ? (
+                              <Square className="w-4 h-4" />
+                            ) : (
+                              <Volume2 className="w-4 h-4" />
+                            )}
                           </Button>
                         )}
                       </div>
