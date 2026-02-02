@@ -2,6 +2,7 @@
 // At least 20 themes per level with exercises
 
 import { Exercise } from "./exercisesData";
+import { getA1VocabularyExercises, a1VocabularyBatches } from "./a1VocabularyExercises";
 
 export interface VocabularyTheme {
   id: string;
@@ -1664,6 +1665,15 @@ export const getVocabularyExercisesForSkill = (skillId: string): Exercise[] => {
   if (!levelMatch) return [];
   
   const level = levelMatch[1].toUpperCase();
+  
+  // For A1, use the new dedicated exercise file
+  if (level === "A1") {
+    const exercises = getA1VocabularyExercises(skillId);
+    if (exercises.length > 0) {
+      return exercises;
+    }
+  }
+  
   const themes = getThemesByLevel(level);
   
   // First try to find theme by matching ID directly
@@ -1673,7 +1683,6 @@ export const getVocabularyExercisesForSkill = (skillId: string): Exercise[] => {
   }
   
   // Get theme index from skill ID - subtract 1 for 0-based indexing
-  // a1-vocab-1 should map to index 0, a1-vocab-2 to index 1, etc.
   const indexMatch = skillId.match(/-(\d+)$/);
   if (indexMatch) {
     const themeIndex = (parseInt(indexMatch[1]) - 1) % themes.length;
