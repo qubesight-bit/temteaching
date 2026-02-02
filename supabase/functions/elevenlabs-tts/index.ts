@@ -22,7 +22,7 @@ serve(async (req) => {
       );
     }
 
-    const { text, voiceId = "JBFqnCBsd6RMkjVDRZzb" } = await req.json();
+    const { text, voiceId = "BAdH0bMfq6VleQGLXj38" } = await req.json();
     
     if (!text) {
       return new Response(
