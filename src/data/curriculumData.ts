@@ -348,36 +348,43 @@ export const curriculumData: LevelCurriculum[] = [
         id: "a1-speaking",
         title: "Speaking",
         icon: "🗣️",
-        description: "Communicate in simple situations",
+        description: "Communicate in simple situations with 50 exercises",
         skills: [
           {
             id: "a1-speak-1",
-            title: "Introduce yourself",
-            description: "Name, age, nationality, profession",
+            title: "Introduce Yourself",
+            description: "Name, age, nationality, profession (20 exercises)",
             completed: false,
             subSkills: [
-              { id: "a1-s1-1", title: "Say your name", completed: false },
-              { id: "a1-s1-2", title: "Say where you're from", completed: false },
+              { id: "a1-s1-1", title: "Personal information exchange", completed: false },
+              { id: "a1-s1-2", title: "Age expressions (I am X years old)", completed: false },
+              { id: "a1-s1-3", title: "Nationality vs Country", completed: false },
+              { id: "a1-s1-4", title: "Profession (I am a / I work as)", completed: false },
+              { id: "a1-s1-5", title: "Roleplay scenarios", completed: false },
             ]
           },
           {
             id: "a1-speak-2",
-            title: "Greetings and farewells",
-            description: "Hello, goodbye, nice to meet you",
+            title: "Greetings and Farewells",
+            description: "Hello, goodbye, nice to meet you (15 exercises)",
             completed: false,
             subSkills: [
-              { id: "a1-s2-1", title: "Formal greetings", completed: false },
-              { id: "a1-s2-2", title: "Informal greetings", completed: false },
+              { id: "a1-s2-1", title: "Time-based greetings (morning/afternoon/evening)", completed: false },
+              { id: "a1-s2-2", title: "Farewell expressions", completed: false },
+              { id: "a1-s2-3", title: "Formal vs informal greetings", completed: false },
+              { id: "a1-s2-4", title: "Response patterns (Nice to meet you too)", completed: false },
             ]
           },
           {
             id: "a1-speak-3",
-            title: "Ask for basic things",
-            description: "Can I have...? Where is...?",
+            title: "Ask for Basic Things",
+            description: "Can I have...? Where is...? (15 exercises)",
             completed: false,
             subSkills: [
-              { id: "a1-s3-1", title: "Order at a restaurant", completed: false },
-              { id: "a1-s3-2", title: "Ask for location", completed: false },
+              { id: "a1-s3-1", title: "Polite requests (Can I have...)", completed: false },
+              { id: "a1-s3-2", title: "Asking for location (Where is...)", completed: false },
+              { id: "a1-s3-3", title: "Politeness words (please, thank you)", completed: false },
+              { id: "a1-s3-4", title: "Context dialogues", completed: false },
             ]
           },
         ]
