@@ -4,6 +4,7 @@
 import { Exercise } from "./exercisesData";
 import { a1GrammarExercises as importedA1GrammarExercises } from "./a1GrammarExercises";
 import { a1SpeakingExercises as importedA1SpeakingExercises } from "./a1SpeakingExercises";
+import { a1ListeningExercises as importedA1ListeningExercises } from "./a1ListeningExercises";
 
 // ====================================
 // VOCABULARY EXERCISES - A1 LEVEL (20 themes)
@@ -3095,11 +3096,9 @@ const a1SpeakingExercises = importedA1SpeakingExercises;
 
 // ====================================
 // LISTENING EXERCISES - A1 LEVEL
+// Now imported from dedicated a1ListeningExercises.ts with 50 complete exercises
 // ====================================
-const a1ListeningExercises: Record<string, Exercise[]> = {
-  "a1-listen-1": [], // Individual words
-  "a1-listen-2": [], // Simple instructions
-};
+const a1ListeningExercises = importedA1ListeningExercises;
 
 // ====================================
 // READING EXERCISES - A1 LEVEL

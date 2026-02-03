@@ -396,22 +396,27 @@ export const curriculumData: LevelCurriculum[] = [
         description: "Understand simple, clear messages",
         skills: [
           {
-            id: "a1-list-1",
-            title: "Individual words",
-            description: "Recognize common words",
+            id: "a1-listen-1",
+            title: "Individual Words",
+            description: "Recognize numbers, names, places, and minimal pairs (25 exercises)",
             completed: false,
             subSkills: [
-              { id: "a1-l1-1", title: "Spoken numbers", completed: false },
-              { id: "a1-l1-2", title: "Names and places", completed: false },
+              { id: "a1-l1-1", title: "Numbers & Spelling (18 vs 80)", completed: false },
+              { id: "a1-l1-2", title: "Places & Common Nouns", completed: false },
+              { id: "a1-l1-3", title: "Minimal Pairs (ship/sheep, pen/pan)", completed: false },
+              { id: "a1-l1-4", title: "Names & Nationalities", completed: false },
             ]
           },
           {
-            id: "a1-list-2",
-            title: "Simple instructions",
-            description: "Open your book, sit down",
+            id: "a1-listen-2",
+            title: "Simple Instructions",
+            description: "Classroom commands and everyday requests (25 exercises)",
             completed: false,
             subSkills: [
-              { id: "a1-l2-1", title: "Classroom instructions", completed: false },
+              { id: "a1-l2-1", title: "Classroom Commands (open, close, sit)", completed: false },
+              { id: "a1-l2-2", title: "Directional Instructions (left, right, stop)", completed: false },
+              { id: "a1-l2-3", title: "Sequential Instructions (first/then)", completed: false },
+              { id: "a1-l2-4", title: "Everyday Requests (wait, help, come)", completed: false },
             ]
           },
         ]
