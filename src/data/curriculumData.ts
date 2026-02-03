@@ -429,21 +429,26 @@ export const curriculumData: LevelCurriculum[] = [
         skills: [
           {
             id: "a1-read-1",
-            title: "Signs and notices",
-            description: "Exit, Open, Closed, No smoking",
+            title: "Signs and Notices",
+            description: "Public safety, business status, and directions (25 exercises)",
             completed: false,
             subSkills: [
-              { id: "a1-r1-1", title: "Traffic signs", completed: false },
-              { id: "a1-r1-2", title: "Store signs", completed: false },
+              { id: "a1-r1-1", title: "Business & Safety Status (Open, Closed, Danger)", completed: false },
+              { id: "a1-r1-2", title: "Traffic & Directions (Stop, One Way)", completed: false },
+              { id: "a1-r1-3", title: "Store & Service Signs (Sale, Reserved)", completed: false },
+              { id: "a1-r1-4", title: "Contextual Matching", completed: false },
             ]
           },
           {
             id: "a1-read-2",
-            title: "Simple forms",
-            description: "Name, Age, Address, Phone",
+            title: "Simple Forms",
+            description: "Filling out personal data for apps, hotels, or clinics (25 exercises)",
             completed: false,
             subSkills: [
-              { id: "a1-r2-1", title: "Fill in forms", completed: false },
+              { id: "a1-r2-1", title: "Data Identification (First Name, DOB)", completed: false },
+              { id: "a1-r2-2", title: "Reading Completed Forms", completed: false },
+              { id: "a1-r2-3", title: "Categorization (Address vs City)", completed: false },
+              { id: "a1-r2-4", title: "Practical Application", completed: false },
             ]
           },
         ]
