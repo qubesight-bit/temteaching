@@ -461,20 +461,26 @@ export const curriculumData: LevelCurriculum[] = [
         skills: [
           {
             id: "a1-write-1",
-            title: "Personal data",
-            description: "Write name, address, email",
+            title: "Personal Data",
+            description: "Writing name, address, email, and contact details correctly (25 exercises)",
             completed: false,
             subSkills: [
-              { id: "a1-w1-1", title: "Complete forms", completed: false },
+              { id: "a1-w1-1", title: "Field Identification & Capitalization", completed: false },
+              { id: "a1-w1-2", title: "Form Completion Tasks", completed: false },
+              { id: "a1-w1-3", title: "Contextual Data (Hotel Forms)", completed: false },
+              { id: "a1-w1-4", title: "Error Correction", completed: false },
             ]
           },
           {
             id: "a1-write-2",
-            title: "Short sentences",
-            description: "Simple sentences with subject and verb",
+            title: "Short Sentences",
+            description: "Creating simple sentences using SVO structure (25 exercises)",
             completed: false,
             subSkills: [
-              { id: "a1-w2-1", title: "One-line descriptions", completed: false },
+              { id: "a1-w2-1", title: "Word Order (SVO)", completed: false },
+              { id: "a1-w2-2", title: "Fill in the Missing Piece", completed: false },
+              { id: "a1-w2-3", title: "Sentence Transformation", completed: false },
+              { id: "a1-w2-4", title: "Punctuation & Free Writing", completed: false },
             ]
           },
         ]
