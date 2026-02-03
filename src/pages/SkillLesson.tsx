@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { ExerciseQuestion } from "@/components/ExerciseQuestion";
+import { SpeakingExercise } from "@/components/SpeakingExercise";
 import { cleanQuestionForTTS } from "@/lib/questionFormatter";
 import { curriculumData, Skill, CEFRLevel } from "@/data/curriculumData";
 import { getExercisesBySkillId, Exercise } from "@/data/exercisesData";
@@ -769,6 +770,71 @@ export default function SkillLesson() {
                 />
               </div>
 
+              {/* Check if this is a speaking exercise */}
+              {categoryId?.includes('speak') || currentExerciseData.tags?.includes('speaking') ? (
+                // Speaking Exercise with TTS and Voice Practice
+                <div className="space-y-6">
+                  <SpeakingExercise
+                    question={currentExerciseData.question}
+                    options={currentExerciseData.options}
+                    correctAnswer={Array.isArray(currentExerciseData.correctAnswer) 
+                      ? currentExerciseData.correctAnswer[0] 
+                      : currentExerciseData.correctAnswer}
+                    explanation={currentExerciseData.explanation}
+                    onAnswer={(answer, correct) => {
+                      setSelectedAnswer(answer);
+                      setShowExplanation(true);
+                      if (correct) {
+                        setScore(prev => ({ ...prev, correct: prev.correct + 1 }));
+                        toast({
+                          title: "Correct! 🎉",
+                          description: "Excellent work!",
+                        });
+                        // Mark subskill as completed
+                        const subSkill = skill.subSkills[currentExercise % skill.subSkills.length];
+                        if (subSkill) {
+                          setCompletedSubSkills(prev => new Set([...prev, subSkill.id]));
+                        }
+                      } else {
+                        setScore(prev => ({ ...prev, incorrect: prev.incorrect + 1 }));
+                        // Track incorrect answer for teacher feedback
+                        const correctAnswerStr = Array.isArray(currentExerciseData.correctAnswer) 
+                          ? currentExerciseData.correctAnswer.join(', ')
+                          : currentExerciseData.correctAnswer;
+                        setIncorrectAnswers(prev => [...prev, {
+                          question: currentExerciseData.question,
+                          userAnswer: answer,
+                          correctAnswer: correctAnswerStr,
+                        }]);
+                      }
+                    }}
+                    showExplanation={showExplanation}
+                    selectedAnswer={selectedAnswer}
+                  />
+                  
+                  {/* Next Button for Speaking */}
+                  {showExplanation && (
+                    <Button
+                      variant="hero"
+                      size="lg"
+                      className="w-full"
+                      onClick={handleNextExercise}
+                    >
+                      {currentExercise < exercises.length - 1 ? (
+                        <>
+                          Next exercise
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </>
+                      ) : (
+                        <>
+                          View results
+                          <Trophy className="w-4 h-4 ml-2" />
+                        </>
+                      )}
+                    </Button>
+                  )}
+                </div>
+              ) : (
               <Card>
                 <CardContent className="p-8">
                   {/* Current SubSkill Context - find from exercise tags */}
@@ -1006,6 +1072,7 @@ export default function SkillLesson() {
                   )}
                 </CardContent>
               </Card>
+              )}
             </>
           )}
         </div>
