@@ -7,6 +7,7 @@ import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { ExerciseQuestion } from "@/components/ExerciseQuestion";
 import { SpeakingExercise } from "@/components/SpeakingExercise";
+import { WritingExercise } from "@/components/WritingExercise";
 import { cleanQuestionForTTS } from "@/lib/questionFormatter";
 import { curriculumData, Skill, CEFRLevel } from "@/data/curriculumData";
 import { getExercisesBySkillId, Exercise } from "@/data/exercisesData";
@@ -813,6 +814,69 @@ export default function SkillLesson() {
                   />
                   
                   {/* Next Button for Speaking */}
+                  {showExplanation && (
+                    <Button
+                      variant="hero"
+                      size="lg"
+                      className="w-full"
+                      onClick={handleNextExercise}
+                    >
+                      {currentExercise < exercises.length - 1 ? (
+                        <>
+                          Next exercise
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </>
+                      ) : (
+                        <>
+                          View results
+                          <Trophy className="w-4 h-4 ml-2" />
+                        </>
+                      )}
+                    </Button>
+                  )}
+                </div>
+              ) : categoryId?.includes('writ') || currentExerciseData.tags?.includes('writing') ? (
+                // Writing Exercise with text input and live feedback
+                <div className="space-y-6">
+                  <WritingExercise
+                    question={currentExerciseData.question}
+                    options={currentExerciseData.options}
+                    correctAnswer={Array.isArray(currentExerciseData.correctAnswer) 
+                      ? currentExerciseData.correctAnswer[0] 
+                      : currentExerciseData.correctAnswer}
+                    explanation={currentExerciseData.explanation}
+                    onAnswer={(answer, correct) => {
+                      setSelectedAnswer(answer);
+                      setShowExplanation(true);
+                      if (correct) {
+                        setScore(prev => ({ ...prev, correct: prev.correct + 1 }));
+                        toast({
+                          title: "Correct! 🎉",
+                          description: "Great writing!",
+                        });
+                        // Mark subskill as completed
+                        const subSkill = skill.subSkills[currentExercise % skill.subSkills.length];
+                        if (subSkill) {
+                          setCompletedSubSkills(prev => new Set([...prev, subSkill.id]));
+                        }
+                      } else {
+                        setScore(prev => ({ ...prev, incorrect: prev.incorrect + 1 }));
+                        // Track incorrect answer for teacher feedback
+                        const correctAnswerStr = Array.isArray(currentExerciseData.correctAnswer) 
+                          ? currentExerciseData.correctAnswer.join(', ')
+                          : currentExerciseData.correctAnswer;
+                        setIncorrectAnswers(prev => [...prev, {
+                          question: currentExerciseData.question,
+                          userAnswer: answer,
+                          correctAnswer: correctAnswerStr,
+                        }]);
+                      }
+                    }}
+                    showExplanation={showExplanation}
+                    selectedAnswer={selectedAnswer}
+                  />
+                  
+                  {/* Next Button for Writing */}
                   {showExplanation && (
                     <Button
                       variant="hero"
