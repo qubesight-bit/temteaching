@@ -6,6 +6,7 @@ import { a1GrammarExercises as importedA1GrammarExercises } from "./a1GrammarExe
 import { a1SpeakingExercises as importedA1SpeakingExercises } from "./a1SpeakingExercises";
 import { a1ListeningExercises as importedA1ListeningExercises } from "./a1ListeningExercises";
 import { a1ReadingExercises as importedA1ReadingExercises } from "./a1ReadingExercises";
+import { a1WritingExercises as importedA1WritingExercises } from "./a1WritingExercises";
 
 // ====================================
 // VOCABULARY EXERCISES - A1 LEVEL (20 themes)
@@ -3109,11 +3110,9 @@ const a1ReadingExercises = importedA1ReadingExercises;
 
 // ====================================
 // WRITING EXERCISES - A1 LEVEL
+// Now imported from dedicated a1WritingExercises.ts with 50 complete exercises
 // ====================================
-const a1WritingExercises: Record<string, Exercise[]> = {
-  "a1-write-1": [], // Personal data
-  "a1-write-2": [], // Short sentences
-};
+const a1WritingExercises = importedA1WritingExercises;
 
 // ====================================
 // MAIN EXPORT FUNCTION
