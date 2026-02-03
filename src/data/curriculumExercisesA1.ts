@@ -1,6 +1,8 @@
 // A1 Level Comprehensive Curriculum Exercises - Fully aligned with skill IDs
 // Based on CEFR A1 Vocabulary Curriculum with 17+ batches
+// Grammar exercises imported from dedicated file
 import { Exercise } from "./exercisesData";
+import { a1GrammarExercises as importedA1GrammarExercises } from "./a1GrammarExercises";
 
 // ====================================
 // VOCABULARY EXERCISES - A1 LEVEL (20 themes)
@@ -3080,13 +3082,9 @@ const a1VocabExercises: Record<string, Exercise[]> = {
 
 // ====================================
 // GRAMMAR EXERCISES - A1 LEVEL
+// Now imported from dedicated a1GrammarExercises.ts with 100 complete exercises
 // ====================================
-const a1GrammarExercises: Record<string, Exercise[]> = {
-  "a1-gram-1": [], // Verb To Be - exercises to be added
-  "a1-gram-2": [], // Present Simple - exercises to be added
-  "a1-gram-3": [], // Present Continuous - exercises to be added
-  "a1-gram-4": [], // Articles and pronouns - exercises to be added
-};
+const a1GrammarExercises = importedA1GrammarExercises;
 
 // ====================================
 // SPEAKING EXERCISES - A1 LEVEL
