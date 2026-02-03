@@ -291,49 +291,55 @@ export const curriculumData: LevelCurriculum[] = [
         id: "a1-grammar",
         title: "Grammar",
         icon: "🧩",
-        description: "Basic English structures",
+        description: "Core English structures with 100 exercises",
         skills: [
           {
             id: "a1-gram-1",
             title: "Verb To Be",
-            description: "Affirmative, negative, interrogative",
+            description: "Affirmative, negative, and interrogative forms (20 exercises)",
             completed: false,
             subSkills: [
-              { id: "a1-g1-1", title: "Affirmative forms", completed: false },
-              { id: "a1-g1-2", title: "Negative forms", completed: false },
-              { id: "a1-g1-3", title: "Questions with To Be", completed: false },
+              { id: "a1-g1-1", title: "Affirmative: am/is/are", completed: false },
+              { id: "a1-g1-2", title: "Negative: am not/is not/are not", completed: false },
+              { id: "a1-g1-3", title: "Interrogative: questions & short answers", completed: false },
+              { id: "a1-g1-4", title: "Wh-questions: Where/What/Who", completed: false },
             ]
           },
           {
             id: "a1-gram-2",
             title: "Present Simple",
-            description: "Daily routines and habits",
+            description: "Routines, habits, and the 3rd person -s rule (15 exercises)",
             completed: false,
             subSkills: [
-              { id: "a1-g2-1", title: "Verbs in present", completed: false },
-              { id: "a1-g2-2", title: "Third person -s/-es", completed: false },
-              { id: "a1-g2-3", title: "Do/Does in questions", completed: false },
+              { id: "a1-g2-1", title: "Base form with I/you/we/they", completed: false },
+              { id: "a1-g2-2", title: "Third person -s/-es/-ies", completed: false },
+              { id: "a1-g2-3", title: "Negative: don't/doesn't", completed: false },
+              { id: "a1-g2-4", title: "Questions: Do/Does", completed: false },
             ]
           },
           {
             id: "a1-gram-3",
             title: "Present Continuous",
-            description: "Actions in progress now",
+            description: "Actions happening right now (15 exercises)",
             completed: false,
             subSkills: [
-              { id: "a1-g3-1", title: "Forming -ing", completed: false },
-              { id: "a1-g3-2", title: "Am/Is/Are + -ing", completed: false },
+              { id: "a1-g3-1", title: "Forming: am/is/are + verb-ing", completed: false },
+              { id: "a1-g3-2", title: "Negative: am not/is not/are not + -ing", completed: false },
+              { id: "a1-g3-3", title: "Questions: Is/Are + subject + -ing", completed: false },
+              { id: "a1-g3-4", title: "Time markers: now, at the moment, Look!", completed: false },
             ]
           },
           {
             id: "a1-gram-4",
-            title: "Articles and pronouns",
-            description: "A/An, The, personal pronouns",
+            title: "Articles and Pronouns",
+            description: "A/An, The, and personal pronouns I/You/He/She/It/We/They (50 exercises)",
             completed: false,
             subSkills: [
-              { id: "a1-g4-1", title: "A vs An", completed: false },
-              { id: "a1-g4-2", title: "Using The", completed: false },
-              { id: "a1-g4-3", title: "I, You, He, She, It, We, They", completed: false },
+              { id: "a1-g4-1", title: "A vs An (vowel sounds)", completed: false },
+              { id: "a1-g4-2", title: "Using The (specific/unique)", completed: false },
+              { id: "a1-g4-3", title: "Subject pronouns: I, You, He, She, It, We, They", completed: false },
+              { id: "a1-g4-4", title: "Pronoun-noun matching", completed: false },
+              { id: "a1-g4-5", title: "Sentence construction", completed: false },
             ]
           },
         ]
