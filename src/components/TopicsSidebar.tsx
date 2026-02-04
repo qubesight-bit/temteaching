@@ -2,7 +2,8 @@ import { useState, useMemo } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Book, ChevronDown, Sparkles, Trophy, Swords, Shield, Crown } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { curriculumData, CEFRLevel } from "@/data/curriculumData";
+import { CEFRLevel } from "@/data/curriculumData";
+import { enhancedCurriculumData } from "@/data/enhancedCurriculumData";
 import {
   Sidebar,
   SidebarContent,
@@ -54,12 +55,12 @@ export function TopicsSidebar() {
   const [selectedLevel, setSelectedLevel] = useState<SupportedLevel | "ALL">("ALL");
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
 
-  // Filter curriculum data based on selected level
+  // Filter enhanced curriculum data based on selected level
   const filteredData = useMemo(() => {
     if (selectedLevel === "ALL") {
-      return curriculumData;
+      return enhancedCurriculumData;
     }
-    return curriculumData.filter(level => level.level === selectedLevel);
+    return enhancedCurriculumData.filter(level => level.level === selectedLevel);
   }, [selectedLevel]);
 
   // Get all topics grouped by category for all filtered levels

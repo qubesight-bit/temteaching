@@ -12,11 +12,10 @@ import {
   LevelCurriculum,
   SkillCategory,
   Skill,
-  getLevelProgress,
   getCategoryProgress,
   getSkillProgress
 } from "@/data/curriculumData";
-import { enhancedCurriculumData } from "@/data/enhancedCurriculumData";
+import { enhancedCurriculumData, getEnhancedLevelProgress } from "@/data/enhancedCurriculumData";
 
 const levelColors: Record<CEFRLevel, string> = {
   A1: "level-a1",
@@ -65,7 +64,7 @@ export default function Curriculum() {
   }, [completedSkills]);
 
   const currentLevelData = enhancedCurriculumData.find(l => l.level === selectedLevel)!;
-  const levelProgress = getLevelProgress(selectedLevel, completedSkills);
+  const levelProgress = getEnhancedLevelProgress(selectedLevel, completedSkills);
 
   const toggleCategory = (categoryId: string) => {
     setExpandedCategories(prev =>
@@ -119,7 +118,7 @@ export default function Curriculum() {
         <div className="flex gap-2 overflow-x-auto pb-2">
           {enhancedCurriculumData.map((level) => {
             const unlocked = isLevelUnlocked(level.level);
-            const progress = getLevelProgress(level.level, completedSkills);
+            const progress = getEnhancedLevelProgress(level.level, completedSkills);
             
             return (
               <button

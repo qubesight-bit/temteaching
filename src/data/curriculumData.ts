@@ -969,40 +969,57 @@ export const curriculumData: LevelCurriculum[] = [
         id: "b1-vocabulary",
         title: "Vocabulary",
         icon: "📚",
-        description: "Education & Learning, Business & Commerce, Politics & Government",
+        description: "Education, Business, Politics, Environment, Media",
         skills: [
           {
             id: "b1-vocab-1",
             title: "Education & Learning",
-            description: "Curriculum, assignment, research, graduate, scholarship, tuition, thesis",
+            description: "Curriculum, assignment, research, graduate, scholarship, tuition, thesis, deadline",
             completed: false,
             subSkills: [
-              { id: "b1-v1-1", title: "Definitions & context", completed: false },
-              { id: "b1-v1-2", title: "Collocations", completed: false },
-              { id: "b1-v1-3", title: "Sentence completion", completed: false },
-              { id: "b1-v1-4", title: "Academic phrasal verbs", completed: false },
+              { id: "b1-v1-1", title: "Definitions & collocations", completed: false },
+              { id: "b1-v1-2", title: "Academic phrasal verbs", completed: false },
+              { id: "b1-v1-3", title: "Logic & degrees", completed: false },
             ]
           },
           {
             id: "b1-vocab-2",
             title: "Business & Commerce",
-            description: "Negotiate, contract, profit, investment, headquarters, merger, revenue",
+            description: "Negotiate, contract, profit, investment, budget, strategy, revenue",
             completed: false,
             subSkills: [
-              { id: "b1-v2-1", title: "Professional terms", completed: false },
-              { id: "b1-v2-2", title: "Workplace logic & idioms", completed: false },
-              { id: "b1-v2-3", title: "Formality", completed: false },
+              { id: "b1-v2-1", title: "Professional terms & logic", completed: false },
+              { id: "b1-v2-2", title: "Business idioms", completed: false },
             ]
           },
           {
             id: "b1-vocab-3",
             title: "Politics & Government",
-            description: "Election, democracy, vote, policy, legislation, citizen, candidate",
+            description: "Election, democracy, vote, policy, candidate, citizen, government",
             completed: false,
             subSkills: [
-              { id: "b1-v3-1", title: "Civic vocabulary", completed: false },
-              { id: "b1-v3-2", title: "Political systems & headlines", completed: false },
-              { id: "b1-v3-3", title: "Policy matching & debate", completed: false },
+              { id: "b1-v3-1", title: "Civic vocabulary & systems", completed: false },
+              { id: "b1-v3-2", title: "Collocations & debate", completed: false },
+            ]
+          },
+          {
+            id: "b1-vocab-4",
+            title: "Environment & Ecology",
+            description: "Pollution, recycle, climate change, renewable, sustainable, waste, habitat",
+            completed: false,
+            subSkills: [
+              { id: "b1-v4-1", title: "Environmental terms", completed: false },
+              { id: "b1-v4-2", title: "Cause, effect & eco-logic", completed: false },
+            ]
+          },
+          {
+            id: "b1-vocab-5",
+            title: "Media & Journalism",
+            description: "Headline, broadcast, journalist, article, source, fake news, interview",
+            completed: false,
+            subSkills: [
+              { id: "b1-v5-1", title: "Newsroom vocabulary", completed: false },
+              { id: "b1-v5-2", title: "Media literacy & verbs", completed: false },
             ]
           },
         ]
@@ -1071,72 +1088,8 @@ export const curriculumData: LevelCurriculum[] = [
         id: "b1-speaking",
         title: "Speaking",
         icon: "🗣️",
-        description: "From short answers to paragraphs with reasons",
-        skills: [
-          {
-            id: "b1-speak-1",
-            title: "Describe experiences",
-            description: "Describe experiences, events, goals",
-            completed: false,
-            subSkills: [
-              { id: "b1-s1-1", title: "Describe a past event", completed: false },
-              { id: "b1-s1-2", title: "Talk about future plans", completed: false },
-              { id: "b1-s1-3", title: "Share personal goals", completed: false },
-            ]
-          },
-          {
-            id: "b1-speak-2",
-            title: "Explain opinions with reasons",
-            description: "I think... because...",
-            completed: false,
-            subSkills: [
-              { id: "b1-s2-1", title: "Express your opinion", completed: false },
-              { id: "b1-s2-2", title: "Support with reasons", completed: false },
-              { id: "b1-s2-3", title: "Give examples", completed: false },
-            ]
-          },
-          {
-            id: "b1-speak-3",
-            title: "Narrate stories",
-            description: "Tell a story with sequence",
-            completed: false,
-            subSkills: [
-              { id: "b1-s3-1", title: "Use sequencing words", completed: false },
-              { id: "b1-s3-2", title: "Add details and emotions", completed: false },
-            ]
-          },
-          {
-            id: "b1-speak-4",
-            title: "Compare and choose",
-            description: "Compare options and make choices",
-            completed: false,
-            subSkills: [
-              { id: "b1-s4-1", title: "Compare two options", completed: false },
-              { id: "b1-s4-2", title: "Explain preferences", completed: false },
-            ]
-          },
-          {
-            id: "b1-speak-5",
-            title: "Handle unexpected situations",
-            description: "Handle unexpected situations while traveling",
-            completed: false,
-            subSkills: [
-              { id: "b1-s5-1", title: "Travel problems", completed: false },
-              { id: "b1-s5-2", title: "Complaints and solutions", completed: false },
-            ]
-          },
-          {
-            id: "b1-speak-6",
-            title: "Participate in discussions",
-            description: "Participate in discussions (slow but clear)",
-            completed: false,
-            subSkills: [
-              { id: "b1-s6-1", title: "Take turns naturally", completed: false },
-              { id: "b1-s6-2", title: "Ask follow-up questions", completed: false },
-              { id: "b1-s6-3", title: "Self-correct when needed", completed: false },
-            ]
-          },
-        ]
+        description: "Replaced by enhanced curriculum (6 themes, 300 exercises)",
+        skills: [] // Overridden by enhancedCurriculumData from speakingCurriculumComplete.ts
       },
       {
         id: "b1-listening",
@@ -1212,92 +1165,85 @@ export const curriculumData: LevelCurriculum[] = [
             subSkills: [
               { id: "b1-l6-1", title: "Economic Fundamentals", completed: false },
               { id: "b1-l6-2", title: "Personal Finance", completed: false },
-              { id: "b1-l6-3", title: "Global Economics", completed: false },
+              { id: "b1-l6-3", title: "Supply & Demand", completed: false },
               { id: "b1-l6-4", title: "Financial Idioms", completed: false },
             ]
           },
           {
             id: "b1-list-7",
             title: "Health & Wellness",
-            description: "Symptom, diagnosis, treatment, prescription, chronic, immune, nutrition",
+            description: "Doctor consultations, medical advice, fitness instructions, prescriptions",
             completed: false,
             subSkills: [
-              { id: "b1-l7-1", title: "Medical Basics", completed: false },
-              { id: "b1-l7-2", title: "Healthy Living", completed: false },
-              { id: "b1-l7-3", title: "At the Doctor's", completed: false },
-              { id: "b1-l7-4", title: "Medical Specialists", completed: false },
+              { id: "b1-l7-1", title: "At the Doctor's", completed: false },
+              { id: "b1-l7-2", title: "Wellness & Lifestyle", completed: false },
+              { id: "b1-l7-3", title: "Medical Vocabulary", completed: false },
             ]
           },
           {
             id: "b1-list-8",
             title: "Sports & Competition",
-            description: "Tournament, championship, athlete, referee, opponent, strategy, stamina",
+            description: "Sports commentary, rules, post-game interviews, results",
             completed: false,
             subSkills: [
-              { id: "b1-l8-1", title: "The Game", completed: false },
-              { id: "b1-l8-2", title: "Actions & Verbs", completed: false },
-              { id: "b1-l8-3", title: "Sportsmanship", completed: false },
-              { id: "b1-l8-4", title: "Sports Categories", completed: false },
+              { id: "b1-l8-1", title: "Commentary & Results", completed: false },
+              { id: "b1-l8-2", title: "The Interview", completed: false },
+              { id: "b1-l8-3", title: "Sports Vocabulary", completed: false },
             ]
           },
           {
             id: "b1-list-9",
             title: "Cuisine & Gastronomy",
-            description: "Gourmet, cuisine, appetizer, delicacy, nutrition, texture, recipe, dietary",
+            description: "Restaurant reviews, cooking shows, recipes, food descriptions",
             completed: false,
             subSkills: [
-              { id: "b1-l9-1", title: "Dining Vocabulary", completed: false },
-              { id: "b1-l9-2", title: "Tastes & Textures", completed: false },
-              { id: "b1-l9-3", title: "Cooking Methods", completed: false },
-              { id: "b1-l9-4", title: "Menu Comprehension", completed: false },
+              { id: "b1-l9-1", title: "Restaurant Experiences", completed: false },
+              { id: "b1-l9-2", title: "Cooking Instructions", completed: false },
+              { id: "b1-l9-3", title: "Food Vocabulary", completed: false },
             ]
           },
           {
             id: "b1-list-10",
             title: "Architecture & Buildings",
-            description: "Skyscraper, monument, cathedral, renovation, facade, interior, residential",
+            description: "Guided tours, describing structures, renovation, real estate",
             completed: false,
             subSkills: [
-              { id: "b1-l10-1", title: "Structural Terms", completed: false },
-              { id: "b1-l10-2", title: "Building Materials & Styles", completed: false },
-              { id: "b1-l10-3", title: "Describing Spaces", completed: false },
-              { id: "b1-l10-4", title: "Famous Landmarks", completed: false },
+              { id: "b1-l10-1", title: "Guided Tour", completed: false },
+              { id: "b1-l10-2", title: "Renovation & Real Estate", completed: false },
+              { id: "b1-l10-3", title: "Building Vocabulary", completed: false },
             ]
           },
           {
             id: "b1-list-11",
             title: "Literature & Writing",
-            description: "Novel, poetry, plot, character, genre, biography, metaphor",
+            description: "Book reviews, author interviews, plot summaries, literary events",
             completed: false,
             subSkills: [
-              { id: "b1-l11-1", title: "Literary Elements", completed: false },
-              { id: "b1-l11-2", title: "Genres & Types", completed: false },
-              { id: "b1-l11-3", title: "Publishing Terms", completed: false },
-              { id: "b1-l11-4", title: "Literary Devices", completed: false },
+              { id: "b1-l11-1", title: "Book Reviews", completed: false },
+              { id: "b1-l11-2", title: "Literary Events", completed: false },
+              { id: "b1-l11-3", title: "Literary Vocabulary", completed: false },
             ]
           },
           {
             id: "b1-list-12",
             title: "Music & Performance",
-            description: "Melody, rhythm, composer, orchestra, lyrics, rehearsal, audience",
+            description: "Concert announcements, instrument descriptions, music genres",
             completed: false,
             subSkills: [
-              { id: "b1-l12-1", title: "Musical Vocabulary", completed: false },
-              { id: "b1-l12-2", title: "Instruments & Genres", completed: false },
-              { id: "b1-l12-3", title: "Music Industry", completed: false },
-              { id: "b1-l12-4", title: "Song Structure", completed: false },
+              { id: "b1-l12-1", title: "Musical Styles", completed: false },
+              { id: "b1-l12-2", title: "Concert Logistics", completed: false },
+              { id: "b1-l12-3", title: "Music Vocabulary", completed: false },
             ]
           },
           {
             id: "b1-list-13",
             title: "Fashion & Style",
-            description: "Designer, trend, accessory, collection, fabric, tailor, vintage",
+            description: "Shopping conversations, describing trends, dress codes",
             completed: false,
             subSkills: [
-              { id: "b1-l13-1", title: "Industry Terms", completed: false },
-              { id: "b1-l13-2", title: "Clothing & Materials", completed: false },
-              { id: "b1-l13-3", title: "Describing Style", completed: false },
-              { id: "b1-l13-4", title: "Accessories", completed: false },
+              { id: "b1-l13-1", title: "Shopping", completed: false },
+              { id: "b1-l13-2", title: "Dress Codes", completed: false },
+              { id: "b1-l13-3", title: "Fashion Vocabulary", completed: false },
             ]
           },
         ]

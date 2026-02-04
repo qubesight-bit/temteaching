@@ -17,7 +17,7 @@ import {
   Sparkles
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { curriculumData } from "@/data/curriculumData";
+import { enhancedCurriculumData } from "@/data/enhancedCurriculumData";
 import { getGrammarExercisesByLevel, grammarExerciseStats } from "@/data/grammarExercisesExpanded";
 import { getVocabularyByLevel } from "@/data/vocabularyDataExpanded";
 
@@ -52,8 +52,8 @@ export function LevelTopicsPreview({ level }: LevelTopicsPreviewProps) {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("overview");
   
-  // Get curriculum data for this level
-  const levelCurriculum = curriculumData.find(c => c.level === level);
+  // Get enhanced curriculum data for this level
+  const levelCurriculum = enhancedCurriculumData.find(c => c.level === level);
   
   // Get grammar exercises count
   const grammarCount = grammarExerciseStats[level] || 0;

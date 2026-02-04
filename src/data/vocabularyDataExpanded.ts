@@ -1,3 +1,5 @@
+import { b1VocabularyThemes } from "./vocabularyCurriculumComplete";
+
 export interface VocabularyCategory {
   id: string;
   title: string;
@@ -17,6 +19,43 @@ export interface Word {
   context: string;
   mastered: boolean;
 }
+
+// B1 categories generated from curriculum themes (15 themes with exercises)
+const b1ThemeIcons: Record<string, string> = {
+  "b1-theme-education": "📚",
+  "b1-theme-business": "💼",
+  "b1-theme-politics": "🏛️",
+  "b1-theme-environment": "🌍",
+  "b1-theme-media": "📰",
+  "b1-theme-law": "⚖️",
+  "b1-theme-science": "🔬",
+  "b1-theme-art": "🎨",
+  "b1-theme-relationships": "🤝",
+  "b1-theme-travel": "✈️",
+  "b1-theme-cuisine": "🍽️",
+  "b1-theme-architecture": "🏗️",
+  "b1-theme-literature": "📖",
+  "b1-theme-music": "🎵",
+  "b1-theme-fashion": "👗",
+};
+
+const b1VocabularyCategories: VocabularyCategory[] = b1VocabularyThemes.map((theme, tIdx) => ({
+  id: theme.id,
+  title: theme.title,
+  icon: b1ThemeIcons[theme.id] || "📚",
+  wordCount: theme.words.length,
+  learned: 0,
+  level: "B1",
+  words: theme.words.map((w, wIdx) => ({
+    id: `${theme.id}-w${wIdx + 1}`,
+    english: w.word,
+    definition: w.definition,
+    pronunciation: `/${w.word.replace(/\s/g, "-")}/`,
+    example: w.example,
+    context: w.partOfSpeech,
+    mastered: false,
+  })),
+}));
 
 // Helper functions for vocabulary data
 export const getVocabularyByLevel = (level: string): VocabularyCategory[] => {
@@ -194,47 +233,8 @@ export const expandedVocabularyCategories: VocabularyCategory[] = [
       { id: "w10", english: "Project", definition: "Planned work with goals", pronunciation: "/ˈprɒdʒekt/", example: "I'm working on a new project.", context: "Has specific objectives", mastered: false },
     ]
   },
-  // B1 Categories
-  {
-    id: "emotions",
-    title: "Emotions & Feelings",
-    icon: "😊",
-    wordCount: 20,
-    learned: 0,
-    level: "B1",
-    words: [
-      { id: "e1", english: "Excited", definition: "Eagerly enthusiastic", pronunciation: "/ɪkˈsaɪtɪd/", example: "I'm so excited about the trip!", context: "Positive anticipation", mastered: false },
-      { id: "e2", english: "Disappointed", definition: "Let down by unmet expectations", pronunciation: "/ˌdɪsəˈpɔɪntɪd/", example: "I was disappointed with the result.", context: "Feeling of sadness", mastered: false },
-      { id: "e3", english: "Anxious", definition: "Worried and uneasy", pronunciation: "/ˈæŋkʃəs/", example: "She feels anxious before exams.", context: "Related to stress", mastered: false },
-      { id: "e4", english: "Grateful", definition: "Feeling thankful", pronunciation: "/ˈɡreɪtfl/", example: "I'm grateful for your help.", context: "Expressing appreciation", mastered: false },
-      { id: "e5", english: "Frustrated", definition: "Upset due to obstacles", pronunciation: "/frʌˈstreɪtɪd/", example: "He's frustrated with his job.", context: "When things don't work", mastered: false },
-      { id: "e6", english: "Overwhelmed", definition: "Feeling too much pressure", pronunciation: "/ˌoʊvərˈwelmd/", example: "I'm overwhelmed with work.", context: "Too much to handle", mastered: false },
-      { id: "e7", english: "Relieved", definition: "Feeling worry is gone", pronunciation: "/rɪˈliːvd/", example: "I'm so relieved the test is over.", context: "After stress ends", mastered: false },
-      { id: "e8", english: "Confused", definition: "Unable to understand", pronunciation: "/kənˈfjuːzd/", example: "I'm confused by these instructions.", context: "Lacking clarity", mastered: false },
-      { id: "e9", english: "Proud", definition: "Feeling satisfaction in achievement", pronunciation: "/praʊd/", example: "I'm proud of my daughter.", context: "Positive self-esteem", mastered: false },
-      { id: "e10", english: "Jealous", definition: "Envious of others", pronunciation: "/ˈdʒeləs/", example: "He was jealous of her success.", context: "Wanting what others have", mastered: false },
-    ]
-  },
-  {
-    id: "technology",
-    title: "Technology",
-    icon: "💻",
-    wordCount: 20,
-    learned: 0,
-    level: "B1",
-    words: [
-      { id: "tech1", english: "Software", definition: "Computer programs", pronunciation: "/ˈsɒftweər/", example: "I need to update my software.", context: "Distinct from hardware", mastered: false },
-      { id: "tech2", english: "Download", definition: "Transfer data to device", pronunciation: "/ˌdaʊnˈloʊd/", example: "You can download the app for free.", context: "Opposite of upload", mastered: false },
-      { id: "tech3", english: "Password", definition: "Secret access code", pronunciation: "/ˈpæswɜːrd/", example: "I forgot my password.", context: "Keep it secure", mastered: false },
-      { id: "tech4", english: "Browser", definition: "Program for websites", pronunciation: "/ˈbraʊzər/", example: "Which browser do you use?", context: "Chrome, Firefox, Safari", mastered: false },
-      { id: "tech5", english: "Wireless", definition: "Without physical cables", pronunciation: "/ˈwaɪərləs/", example: "Do you have wireless internet?", context: "Also known as Wi-Fi", mastered: false },
-      { id: "tech6", english: "App", definition: "Application software", pronunciation: "/æp/", example: "I downloaded a new fitness app.", context: "Short for application", mastered: false },
-      { id: "tech7", english: "Update", definition: "New version of software", pronunciation: "/ʌpˈdeɪt/", example: "Install the latest update.", context: "Improves functionality", mastered: false },
-      { id: "tech8", english: "Cloud", definition: "Online data storage", pronunciation: "/klaʊd/", example: "Save your files to the cloud.", context: "Remote server storage", mastered: false },
-      { id: "tech9", english: "Stream", definition: "Watch content online", pronunciation: "/striːm/", example: "I stream movies on my TV.", context: "No download needed", mastered: false },
-      { id: "tech10", english: "Backup", definition: "Copy of important data", pronunciation: "/ˈbækʌp/", example: "Always keep a backup of your files.", context: "Safety measure", mastered: false },
-    ]
-  },
+  // B1 Categories (15 themes - aligned with curriculum exercises)
+  ...b1VocabularyCategories,
   // B2 Categories
   {
     id: "environment",

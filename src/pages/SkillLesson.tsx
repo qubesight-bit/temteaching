@@ -9,7 +9,8 @@ import { ExerciseQuestion } from "@/components/ExerciseQuestion";
 import { SpeakingExercise } from "@/components/SpeakingExercise";
 import { WritingExercise } from "@/components/WritingExercise";
 import { cleanQuestionForTTS } from "@/lib/questionFormatter";
-import { curriculumData, Skill, CEFRLevel } from "@/data/curriculumData";
+import { Skill, CEFRLevel } from "@/data/curriculumData";
+import { enhancedCurriculumData } from "@/data/enhancedCurriculumData";
 import { getExercisesBySkillId, Exercise } from "@/data/exercisesData";
 import { getAdvancedExercisesBySkillId } from "@/data/exercisesDataAdvanced";
 import { getB1ExercisesCompleteBySkillId } from "@/data/b1ExercisesComplete";
@@ -420,9 +421,9 @@ export default function SkillLesson() {
   
   const { sendFeedbackToTeacher } = useExerciseFeedback();
 
-  // Find the skill from curriculum data
+  // Find the skill from enhanced curriculum data (includes dynamic B1 speaking/vocabulary)
   const { skill, category, levelData } = useMemo(() => {
-    const lvlData = curriculumData.find(l => l.level === level);
+    const lvlData = enhancedCurriculumData.find(l => l.level === level);
     if (!lvlData) return { skill: null, category: null, levelData: null };
     
     const cat = lvlData.categories.find(c => c.id === categoryId);
