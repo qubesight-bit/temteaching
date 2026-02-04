@@ -5,6 +5,33 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version',
 };
 
+/**
+ * Sanitize text to ensure valid UTF-8 encoding for ElevenLabs API.
+ * Removes unpaired surrogates, control characters, and problematic Unicode.
+ */
+function sanitizeTextForTTS(text: string): string {
+  // Remove unpaired surrogates (cause "invalid Unicode" errors)
+  // Surrogate pairs: high surrogates (0xD800-0xDBFF) must be followed by low surrogates (0xDC00-0xDFFF)
+  let sanitized = text.replace(/[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?<![\uD800-\uDBFF])[\uDC00-\uDFFF]/g, '');
+  
+  // Remove control characters except newlines and tabs
+  sanitized = sanitized.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '');
+  
+  // Remove zero-width characters that can cause issues
+  sanitized = sanitized.replace(/[\u200B-\u200D\uFEFF\u2060]/g, '');
+  
+  // Replace common problematic characters with safe alternatives
+  sanitized = sanitized
+    .replace(/[""]/g, '"')  // Smart quotes to regular
+    .replace(/['']/g, "'")  // Smart apostrophes to regular
+    .replace(/[…]/g, '...') // Ellipsis to dots
+    .replace(/[–—]/g, '-')  // Dashes to hyphen
+    .replace(/\s+/g, ' ')   // Normalize whitespace
+    .trim();
+  
+  return sanitized;
+}
+
 serve(async (req) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
@@ -32,7 +59,17 @@ serve(async (req) => {
       );
     }
 
-    console.log(`Generating TTS for text: "${text.substring(0, 50)}..." with voice: ${voiceId}`);
+    // Sanitize text to prevent Unicode encoding errors
+    const sanitizedText = sanitizeTextForTTS(text);
+    
+    if (!sanitizedText) {
+      return new Response(
+        JSON.stringify({ error: "Text contains no speakable content after sanitization" }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    console.log(`Generating TTS for text: "${sanitizedText.substring(0, 50)}..." with voice: ${voiceId}`);
 
     const response = await fetch(
       `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}?output_format=mp3_44100_128`,
@@ -43,7 +80,7 @@ serve(async (req) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          text,
+          text: sanitizedText,
           model_id: "eleven_turbo_v2_5",
           voice_settings: {
             stability: 0.5,
