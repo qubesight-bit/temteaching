@@ -98,7 +98,7 @@ export default function Curriculum() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-gradient-hero text-white p-6">
+      <div className="gradient-hero text-white p-6">
         <div className="flex items-center gap-4 mb-4">
           <Button
             variant="ghost"
