@@ -577,33 +577,10 @@ const b1SpeakingExercises: Record<string, Exercise[]> = {
   ],
 };
 
-// Listening Exercises
-const b1ListeningExercises: Record<string, Exercise[]> = {
-  "b1-list-1": [ // Ideas principales de conversaciones
-    {
-      id: "b1-l1-e1",
-      type: "multiple-choice",
-      question: "You hear: 'The main thing is...' This signals:",
-      options: ["The most important point", "An example", "A question", "The end"],
-      correctAnswer: "The most important point",
-      explanation: "'The main thing is' introduces the key point.",
-      difficulty: 2,
-      tags: ["listening", "main-ideas", "b1"]
-    },
-  ],
-  "b1-list-2": [ // Radio y podcasts
-    {
-      id: "b1-l2-e1",
-      type: "multiple-choice",
-      question: "In podcasts, 'to wrap up' means:",
-      options: ["To finish/conclude", "To start", "To pause", "To repeat"],
-      correctAnswer: "To finish/conclude",
-      explanation: "'Wrap up' = to bring to a close, finish.",
-      difficulty: 2,
-      tags: ["listening", "podcasts", "b1"]
-    },
-  ],
-};
+// Listening Exercises - Import from new thematic file
+import { b1ListeningExercisesNew } from "./b1ListeningExercises";
+
+const b1ListeningExercises: Record<string, Exercise[]> = b1ListeningExercisesNew;
 
 // Reading Exercises
 const b1ReadingExercises: Record<string, Exercise[]> = {

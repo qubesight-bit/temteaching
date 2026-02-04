@@ -1273,52 +1273,50 @@ export const curriculumData: LevelCurriculum[] = [
         skills: [
           {
             id: "b1-list-1",
-            title: "Main ideas of conversations",
-            description: "Understand main ideas of conversations",
+            title: "Art & Culture",
+            description: "Exhibition, sculpture, masterpiece, gallery, abstract, heritage, contemporary",
             completed: false,
             subSkills: [
-              { id: "b1-l1-1", title: "Get the general topic", completed: false },
-              { id: "b1-l1-2", title: "Identify key points", completed: false },
+              { id: "b1-l1-1", title: "Artistic Vocabulary", completed: false },
+              { id: "b1-l1-2", title: "Cultural Heritage", completed: false },
+              { id: "b1-l1-3", title: "Describing Art (Adjectives)", completed: false },
+              { id: "b1-l1-4", title: "Art Movements", completed: false },
             ]
           },
           {
             id: "b1-list-2",
-            title: "Radio and podcasts",
-            description: "Radio programs and podcasts (slow, clear)",
+            title: "Relationships & Social",
+            description: "Acquaintance, compromise, conflict, trust, bond, colleague, upbringing",
             completed: false,
             subSkills: [
-              { id: "b1-l2-1", title: "Learner podcasts", completed: false },
-              { id: "b1-l2-2", title: "Clear radio programs", completed: false },
+              { id: "b1-l2-1", title: "Types of Connections", completed: false },
+              { id: "b1-l2-2", title: "Social Dynamics", completed: false },
+              { id: "b1-l2-3", title: "Phrasal Verbs for Relationships", completed: false },
+              { id: "b1-l2-4", title: "Idioms about Friendship", completed: false },
             ]
           },
           {
             id: "b1-list-3",
-            title: "TV programs",
-            description: "TV shows with familiar topics",
+            title: "Travel & Adventure",
+            description: "Itinerary, destination, accommodation, excursion, jet lag, visa, customs",
             completed: false,
             subSkills: [
-              { id: "b1-l3-1", title: "Series with everyday topics", completed: false },
-              { id: "b1-l3-2", title: "Simple documentaries", completed: false },
+              { id: "b1-l3-1", title: "Travel Logistics", completed: false },
+              { id: "b1-l3-2", title: "Adventure Vocabulary", completed: false },
+              { id: "b1-l3-3", title: "Situational Roleplay", completed: false },
+              { id: "b1-l3-4", title: "Travel Idioms", completed: false },
             ]
           },
           {
             id: "b1-list-4",
-            title: "Instructions and explanations",
-            description: "Understand instructions and explanations",
+            title: "Digital Technology",
+            description: "Software, hardware, algorithm, database, encryption, interface, cloud",
             completed: false,
             subSkills: [
-              { id: "b1-l4-1", title: "Step-by-step instructions", completed: false },
-              { id: "b1-l4-2", title: "Simple technical explanations", completed: false },
-            ]
-          },
-          {
-            id: "b1-list-5",
-            title: "Different accents",
-            description: "Basic exposure to different accents",
-            completed: false,
-            subSkills: [
-              { id: "b1-l5-1", title: "American vs British", completed: false },
-              { id: "b1-l5-2", title: "Other accents (basic)", completed: false },
+              { id: "b1-l4-1", title: "Tech Fundamentals", completed: false },
+              { id: "b1-l4-2", title: "Advanced Tech Concepts", completed: false },
+              { id: "b1-l4-3", title: "Cybersecurity Terms", completed: false },
+              { id: "b1-l4-4", title: "Tech Collocations", completed: false },
             ]
           },
         ]
