@@ -217,9 +217,11 @@
 .level-b1 { background: hsl(var(--level-b1)); }
 .level-b2 { background: hsl(var(--level-b2)); }
 .level-c1 { background: hsl(var(--level-c1)); }
+.level-c2 { background: hsl(var(--level-c2)); }
 
 .level-a1-text { color: hsl(var(--level-a1)); }
 .level-a2-text { color: hsl(var(--level-a2)); }
 .level-b1-text { color: hsl(var(--level-b1)); }
 .level-b2-text { color: hsl(var(--level-b2)); }
 .level-c1-text { color: hsl(var(--level-c1)); }
+.level-c2-text { color: hsl(var(--level-c2)); }

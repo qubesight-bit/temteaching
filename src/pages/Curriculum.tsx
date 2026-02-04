@@ -130,8 +130,8 @@ export default function Curriculum() {
                   selectedLevel === level.level
                     ? `${levelColors[level.level]} text-white shadow-lg scale-105`
                     : unlocked
-                    ? "bg-white/20 text-white hover:bg-white/30"
-                    : "bg-white/10 text-white/50 cursor-not-allowed"
+                    ? "bg-white text-foreground hover:bg-white/90"
+                    : "bg-muted text-muted-foreground cursor-not-allowed"
                 )}
               >
                 <div className="text-sm">{level.level}</div>
