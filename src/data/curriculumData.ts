@@ -969,105 +969,40 @@ export const curriculumData: LevelCurriculum[] = [
         id: "b1-vocabulary",
         title: "Vocabulary",
         icon: "📚",
-        description: "From everyday words to abstract and thematic vocabulary",
+        description: "Education & Learning, Business & Commerce, Politics & Government",
         skills: [
           {
             id: "b1-vocab-1",
-            title: "Work and studies",
-            description: "Work, studies, career vocabulary",
+            title: "Education & Learning",
+            description: "Curriculum, assignment, research, graduate, scholarship, tuition, thesis",
             completed: false,
             subSkills: [
-              { id: "b1-v1-1", title: "Office vocabulary", completed: false },
-              { id: "b1-v1-2", title: "Educational system", completed: false },
-              { id: "b1-v1-3", title: "Job interviews", completed: false },
-              { id: "b1-v1-4", title: "Professions and careers", completed: false },
+              { id: "b1-v1-1", title: "Definitions & context", completed: false },
+              { id: "b1-v1-2", title: "Collocations", completed: false },
+              { id: "b1-v1-3", title: "Sentence completion", completed: false },
+              { id: "b1-v1-4", title: "Academic phrasal verbs", completed: false },
             ]
           },
           {
             id: "b1-vocab-2",
-            title: "Education and learning",
-            description: "Education, learning, academic vocabulary",
+            title: "Business & Commerce",
+            description: "Negotiate, contract, profit, investment, headquarters, merger, revenue",
             completed: false,
             subSkills: [
-              { id: "b1-v2-1", title: "Subjects and courses", completed: false },
-              { id: "b1-v2-2", title: "Exams and assessments", completed: false },
-              { id: "b1-v2-3", title: "Study skills", completed: false },
+              { id: "b1-v2-1", title: "Professional terms", completed: false },
+              { id: "b1-v2-2", title: "Workplace logic & idioms", completed: false },
+              { id: "b1-v2-3", title: "Formality", completed: false },
             ]
           },
           {
             id: "b1-vocab-3",
-            title: "Technology and media",
-            description: "Technology, media, internet vocabulary",
+            title: "Politics & Government",
+            description: "Election, democracy, vote, policy, legislation, citizen, candidate",
             completed: false,
             subSkills: [
-              { id: "b1-v3-1", title: "Tech devices", completed: false },
-              { id: "b1-v3-2", title: "Social media", completed: false },
-              { id: "b1-v3-3", title: "Internet vocabulary", completed: false },
-            ]
-          },
-          {
-            id: "b1-vocab-4",
-            title: "Culture and traditions",
-            description: "Culture, traditions, customs",
-            completed: false,
-            subSkills: [
-              { id: "b1-v4-1", title: "Holidays", completed: false },
-              { id: "b1-v4-2", title: "Cultural customs", completed: false },
-            ]
-          },
-          {
-            id: "b1-vocab-5",
-            title: "Health and lifestyle",
-            description: "Health, lifestyle, wellbeing",
-            completed: false,
-            subSkills: [
-              { id: "b1-v5-1", title: "Healthy habits", completed: false },
-              { id: "b1-v5-2", title: "Exercise and diet", completed: false },
-              { id: "b1-v5-3", title: "Mental wellbeing", completed: false },
-            ]
-          },
-          {
-            id: "b1-vocab-6",
-            title: "Environment",
-            description: "Environment, nature, climate",
-            completed: false,
-            subSkills: [
-              { id: "b1-v6-1", title: "Environmental problems", completed: false },
-              { id: "b1-v6-2", title: "Eco-friendly solutions", completed: false },
-              { id: "b1-v6-3", title: "Recycling and sustainability", completed: false },
-            ]
-          },
-          {
-            id: "b1-vocab-7",
-            title: "Feelings and opinions",
-            description: "Feelings, opinions, reasons",
-            completed: false,
-            subSkills: [
-              { id: "b1-v7-1", title: "Complex emotions", completed: false },
-              { id: "b1-v7-2", title: "Express reasons", completed: false },
-              { id: "b1-v7-3", title: "Opinion nuances", completed: false },
-            ]
-          },
-          {
-            id: "b1-vocab-8",
-            title: "Common phrasal verbs",
-            description: "Common phrasal verbs",
-            completed: false,
-            subSkills: [
-              { id: "b1-v8-1", title: "Get up, turn on, look for", completed: false },
-              { id: "b1-v8-2", title: "Put off, give up, take up", completed: false },
-              { id: "b1-v8-3", title: "Find out, work out, figure out", completed: false },
-            ]
-          },
-          {
-            id: "b1-vocab-9",
-            title: "Collocations",
-            description: "Common collocations",
-            completed: false,
-            subSkills: [
-              { id: "b1-v9-1", title: "Make a decision, take a break", completed: false },
-              { id: "b1-v9-2", title: "Do homework, make progress", completed: false },
-              { id: "b1-v9-3", title: "Have a meeting, give advice", completed: false },
+              { id: "b1-v3-1", title: "Civic vocabulary", completed: false },
+              { id: "b1-v3-2", title: "Political systems & headlines", completed: false },
+              { id: "b1-v3-3", title: "Policy matching & debate", completed: false },
             ]
           },
         ]

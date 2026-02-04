@@ -530,266 +530,51 @@ export const a2VocabularyThemes: VocabularyTheme[] = [
   },
 ];
 
-// ============= B1 VOCABULARY THEMES (20+) =============
+// ============= B1 VOCABULARY THEMES (3 batches) =============
 export const b1VocabularyThemes: VocabularyTheme[] = [
   {
     id: "b1-theme-education",
     title: "Education & Learning",
     level: "B1",
-    description: "Academic vocabulary",
+    description: "Curriculum, assignment, research, graduate, scholarship, tuition, thesis",
     words: [
-      { word: "curriculum", definition: "Course of study", example: "The curriculum is challenging.", partOfSpeech: "noun" },
-      { word: "assignment", definition: "Task given to complete", example: "Submit your assignment.", partOfSpeech: "noun" },
-      { word: "research", definition: "Study to find information", example: "Do your research.", partOfSpeech: "noun/verb" },
-      { word: "graduate", definition: "Complete education", example: "I will graduate next year.", partOfSpeech: "verb" },
-      { word: "semester", definition: "Half of academic year", example: "The semester is ending.", partOfSpeech: "noun" },
+      { word: "curriculum", definition: "A detailed plan of what is taught in a school or university", example: "The curriculum is challenging.", partOfSpeech: "noun" },
+      { word: "assignment", definition: "A specific task given to a student as part of a course", example: "Submit your assignment.", partOfSpeech: "noun" },
+      { word: "research", definition: "Study to find new information", example: "Do your research.", partOfSpeech: "noun/verb" },
+      { word: "graduate", definition: "To complete a degree and receive a diploma", example: "I will graduate next year.", partOfSpeech: "verb" },
+      { word: "scholarship", definition: "Money given to support a student's education", example: "She won a scholarship.", partOfSpeech: "noun" },
+      { word: "tuition", definition: "Money paid for instruction at a college or university", example: "Tuition fees are high.", partOfSpeech: "noun" },
+      { word: "thesis", definition: "A long essay involving personal research, written for a degree", example: "I'm writing my thesis.", partOfSpeech: "noun" },
     ]
   },
   {
     id: "b1-theme-business",
     title: "Business & Commerce",
     level: "B1",
-    description: "Professional vocabulary",
+    description: "Negotiate, contract, profit, investment, headquarters, merger, revenue",
     words: [
-      { word: "negotiate", definition: "Discuss to reach agreement", example: "Let's negotiate the terms.", partOfSpeech: "verb" },
-      { word: "contract", definition: "Formal agreement", example: "Sign the contract.", partOfSpeech: "noun" },
-      { word: "profit", definition: "Money earned", example: "The company made a profit.", partOfSpeech: "noun" },
-      { word: "investment", definition: "Money put into something", example: "It's a good investment.", partOfSpeech: "noun" },
-      { word: "entrepreneur", definition: "Business starter", example: "She's a successful entrepreneur.", partOfSpeech: "noun" },
+      { word: "negotiate", definition: "To discuss something in order to reach an agreement", example: "Let's negotiate the terms.", partOfSpeech: "verb" },
+      { word: "contract", definition: "A formal legal agreement between two parties", example: "Sign the contract.", partOfSpeech: "noun" },
+      { word: "profit", definition: "Money earned after paying all costs", example: "The company made a profit.", partOfSpeech: "noun" },
+      { word: "investment", definition: "Money put into something to earn more", example: "It's a good investment.", partOfSpeech: "noun" },
+      { word: "headquarters", definition: "The main office of a company", example: "Our headquarters is in London.", partOfSpeech: "noun" },
+      { word: "merger", definition: "When two companies join together", example: "The merger was announced.", partOfSpeech: "noun" },
+      { word: "revenue", definition: "The total amount of money a company receives from sales", example: "Revenue increased this year.", partOfSpeech: "noun" },
     ]
   },
   {
     id: "b1-theme-politics",
     title: "Politics & Government",
     level: "B1",
-    description: "Civic vocabulary",
+    description: "Election, democracy, vote, policy, legislation, citizen, candidate",
     words: [
-      { word: "election", definition: "Voting for leaders", example: "The election is next month.", partOfSpeech: "noun" },
-      { word: "democracy", definition: "Rule by the people", example: "Democracy is important.", partOfSpeech: "noun" },
-      { word: "vote", definition: "Choose by ballot", example: "Everyone should vote.", partOfSpeech: "verb/noun" },
-      { word: "policy", definition: "Official plan", example: "The new policy is effective.", partOfSpeech: "noun" },
-      { word: "citizen", definition: "Member of a country", example: "I'm a citizen of Canada.", partOfSpeech: "noun" },
-    ]
-  },
-  {
-    id: "b1-theme-environment",
-    title: "Environment & Ecology",
-    level: "B1",
-    description: "Environmental issues",
-    words: [
-      { word: "pollution", definition: "Contamination of environment", example: "Pollution is increasing.", partOfSpeech: "noun" },
-      { word: "recycle", definition: "Reuse materials", example: "Please recycle your bottles.", partOfSpeech: "verb" },
-      { word: "climate change", definition: "Global temperature shifts", example: "Climate change is real.", partOfSpeech: "noun" },
-      { word: "renewable", definition: "Can be replenished", example: "Use renewable energy.", partOfSpeech: "adjective" },
-      { word: "ecosystem", definition: "Community of organisms", example: "Protect the ecosystem.", partOfSpeech: "noun" },
-    ]
-  },
-  {
-    id: "b1-theme-media",
-    title: "Media & Journalism",
-    level: "B1",
-    description: "News and information",
-    words: [
-      { word: "headline", definition: "News title", example: "Read the headline.", partOfSpeech: "noun" },
-      { word: "broadcast", definition: "Transmit on TV/radio", example: "The broadcast starts at 8.", partOfSpeech: "verb/noun" },
-      { word: "journalist", definition: "News reporter", example: "The journalist investigated.", partOfSpeech: "noun" },
-      { word: "article", definition: "Written piece", example: "I read an interesting article.", partOfSpeech: "noun" },
-      { word: "source", definition: "Origin of information", example: "Check your sources.", partOfSpeech: "noun" },
-    ]
-  },
-  {
-    id: "b1-theme-law",
-    title: "Law & Justice",
-    level: "B1",
-    description: "Legal vocabulary",
-    words: [
-      { word: "court", definition: "Place of legal judgment", example: "The case goes to court.", partOfSpeech: "noun" },
-      { word: "lawyer", definition: "Legal professional", example: "Hire a good lawyer.", partOfSpeech: "noun" },
-      { word: "evidence", definition: "Proof in a case", example: "There's no evidence.", partOfSpeech: "noun" },
-      { word: "guilty", definition: "Responsible for crime", example: "He was found guilty.", partOfSpeech: "adjective" },
-      { word: "trial", definition: "Court examination", example: "The trial begins Monday.", partOfSpeech: "noun" },
-    ]
-  },
-  {
-    id: "b1-theme-science",
-    title: "Science & Discovery",
-    level: "B1",
-    description: "Scientific vocabulary",
-    words: [
-      { word: "experiment", definition: "Scientific test", example: "Conduct an experiment.", partOfSpeech: "noun" },
-      { word: "hypothesis", definition: "Proposed explanation", example: "Test the hypothesis.", partOfSpeech: "noun" },
-      { word: "data", definition: "Collected information", example: "Analyze the data.", partOfSpeech: "noun" },
-      { word: "laboratory", definition: "Research room", example: "Work in the laboratory.", partOfSpeech: "noun" },
-      { word: "discovery", definition: "Something found", example: "It was a major discovery.", partOfSpeech: "noun" },
-    ]
-  },
-  {
-    id: "b1-theme-art",
-    title: "Art & Culture",
-    level: "B1",
-    description: "Artistic expression",
-    words: [
-      { word: "exhibition", definition: "Art display", example: "Visit the exhibition.", partOfSpeech: "noun" },
-      { word: "sculpture", definition: "3D artwork", example: "The sculpture is impressive.", partOfSpeech: "noun" },
-      { word: "masterpiece", definition: "Great work of art", example: "This is a masterpiece.", partOfSpeech: "noun" },
-      { word: "gallery", definition: "Art display place", example: "The gallery is open.", partOfSpeech: "noun" },
-      { word: "contemporary", definition: "Modern, current", example: "I like contemporary art.", partOfSpeech: "adjective" },
-    ]
-  },
-  {
-    id: "b1-theme-relationships",
-    title: "Relationships & Social",
-    level: "B1",
-    description: "Human connections",
-    words: [
-      { word: "acquaintance", definition: "Person you know slightly", example: "He's just an acquaintance.", partOfSpeech: "noun" },
-      { word: "compromise", definition: "Find middle ground", example: "We need to compromise.", partOfSpeech: "verb/noun" },
-      { word: "conflict", definition: "Disagreement", example: "Avoid conflict when possible.", partOfSpeech: "noun" },
-      { word: "trust", definition: "Belief in someone", example: "Trust is essential.", partOfSpeech: "noun/verb" },
-      { word: "commitment", definition: "Dedication", example: "Show your commitment.", partOfSpeech: "noun" },
-    ]
-  },
-  {
-    id: "b1-theme-travel-advanced",
-    title: "Travel & Adventure",
-    level: "B1",
-    description: "Extended travel vocabulary",
-    words: [
-      { word: "itinerary", definition: "Travel plan", example: "Check the itinerary.", partOfSpeech: "noun" },
-      { word: "destination", definition: "Place you're going", example: "What's your destination?", partOfSpeech: "noun" },
-      { word: "accommodation", definition: "Place to stay", example: "Book accommodation early.", partOfSpeech: "noun" },
-      { word: "excursion", definition: "Short trip", example: "Join the excursion.", partOfSpeech: "noun" },
-      { word: "souvenir", definition: "Memory keepsake", example: "Buy a souvenir.", partOfSpeech: "noun" },
-    ]
-  },
-  {
-    id: "b1-theme-technology-advanced",
-    title: "Digital Technology",
-    level: "B1",
-    description: "Advanced tech vocabulary",
-    words: [
-      { word: "software", definition: "Computer programs", example: "Update the software.", partOfSpeech: "noun" },
-      { word: "hardware", definition: "Physical computer parts", example: "The hardware is outdated.", partOfSpeech: "noun" },
-      { word: "algorithm", definition: "Step-by-step procedure", example: "The algorithm works well.", partOfSpeech: "noun" },
-      { word: "database", definition: "Organized data collection", example: "Search the database.", partOfSpeech: "noun" },
-      { word: "network", definition: "Connected systems", example: "Join the network.", partOfSpeech: "noun" },
-    ]
-  },
-  {
-    id: "b1-theme-psychology",
-    title: "Psychology & Mind",
-    level: "B1",
-    description: "Mental processes",
-    words: [
-      { word: "behavior", definition: "Way of acting", example: "Study human behavior.", partOfSpeech: "noun" },
-      { word: "motivation", definition: "Reason to act", example: "Find your motivation.", partOfSpeech: "noun" },
-      { word: "perception", definition: "How you see things", example: "Perception affects reality.", partOfSpeech: "noun" },
-      { word: "anxiety", definition: "Feeling of worry", example: "Manage your anxiety.", partOfSpeech: "noun" },
-      { word: "memory", definition: "Ability to remember", example: "My memory is good.", partOfSpeech: "noun" },
-    ]
-  },
-  {
-    id: "b1-theme-economics",
-    title: "Economics & Finance",
-    level: "B1",
-    description: "Economic concepts",
-    words: [
-      { word: "inflation", definition: "Rising prices", example: "Inflation is high.", partOfSpeech: "noun" },
-      { word: "recession", definition: "Economic decline", example: "The recession affected many.", partOfSpeech: "noun" },
-      { word: "budget", definition: "Financial plan", example: "Stick to your budget.", partOfSpeech: "noun" },
-      { word: "income", definition: "Money earned", example: "Calculate your income.", partOfSpeech: "noun" },
-      { word: "expense", definition: "Money spent", example: "Track your expenses.", partOfSpeech: "noun" },
-    ]
-  },
-  {
-    id: "b1-theme-health-advanced",
-    title: "Health & Wellness",
-    level: "B1",
-    description: "Medical vocabulary",
-    words: [
-      { word: "symptom", definition: "Sign of illness", example: "What are your symptoms?", partOfSpeech: "noun" },
-      { word: "diagnosis", definition: "Identifying illness", example: "Wait for the diagnosis.", partOfSpeech: "noun" },
-      { word: "treatment", definition: "Medical care", example: "Start the treatment.", partOfSpeech: "noun" },
-      { word: "prescription", definition: "Doctor's medicine order", example: "Fill the prescription.", partOfSpeech: "noun" },
-      { word: "recovery", definition: "Getting better", example: "Have a quick recovery.", partOfSpeech: "noun" },
-    ]
-  },
-  {
-    id: "b1-theme-sports-advanced",
-    title: "Sports & Competition",
-    level: "B1",
-    description: "Athletic vocabulary",
-    words: [
-      { word: "tournament", definition: "Series of contests", example: "Enter the tournament.", partOfSpeech: "noun" },
-      { word: "championship", definition: "Top competition", example: "Win the championship.", partOfSpeech: "noun" },
-      { word: "athlete", definition: "Sports person", example: "She's a professional athlete.", partOfSpeech: "noun" },
-      { word: "referee", definition: "Game official", example: "The referee made a call.", partOfSpeech: "noun" },
-      { word: "score", definition: "Points in a game", example: "What's the score?", partOfSpeech: "noun" },
-    ]
-  },
-  {
-    id: "b1-theme-food-advanced",
-    title: "Cuisine & Gastronomy",
-    level: "B1",
-    description: "Food culture",
-    words: [
-      { word: "gourmet", definition: "High-quality food", example: "Try the gourmet menu.", partOfSpeech: "adjective" },
-      { word: "cuisine", definition: "Style of cooking", example: "I love Italian cuisine.", partOfSpeech: "noun" },
-      { word: "appetizer", definition: "First course", example: "Order an appetizer.", partOfSpeech: "noun" },
-      { word: "delicacy", definition: "Special food item", example: "It's a local delicacy.", partOfSpeech: "noun" },
-      { word: "vegetarian", definition: "No meat diet", example: "I'm vegetarian.", partOfSpeech: "adjective/noun" },
-    ]
-  },
-  {
-    id: "b1-theme-architecture",
-    title: "Architecture & Buildings",
-    level: "B1",
-    description: "Structural vocabulary",
-    words: [
-      { word: "skyscraper", definition: "Very tall building", example: "The skyscraper is impressive.", partOfSpeech: "noun" },
-      { word: "monument", definition: "Memorial structure", example: "Visit the monument.", partOfSpeech: "noun" },
-      { word: "cathedral", definition: "Large church", example: "The cathedral is beautiful.", partOfSpeech: "noun" },
-      { word: "renovation", definition: "Building improvement", example: "The renovation took months.", partOfSpeech: "noun" },
-      { word: "foundation", definition: "Building base", example: "Lay the foundation.", partOfSpeech: "noun" },
-    ]
-  },
-  {
-    id: "b1-theme-literature",
-    title: "Literature & Writing",
-    level: "B1",
-    description: "Literary vocabulary",
-    words: [
-      { word: "novel", definition: "Long fiction book", example: "I'm reading a novel.", partOfSpeech: "noun" },
-      { word: "poetry", definition: "Verse writing", example: "She writes poetry.", partOfSpeech: "noun" },
-      { word: "plot", definition: "Story sequence", example: "The plot is complex.", partOfSpeech: "noun" },
-      { word: "character", definition: "Story person", example: "The main character is brave.", partOfSpeech: "noun" },
-      { word: "author", definition: "Book writer", example: "Who is the author?", partOfSpeech: "noun" },
-    ]
-  },
-  {
-    id: "b1-theme-music",
-    title: "Music & Performance",
-    level: "B1",
-    description: "Musical vocabulary",
-    words: [
-      { word: "melody", definition: "Tune sequence", example: "The melody is catchy.", partOfSpeech: "noun" },
-      { word: "rhythm", definition: "Beat pattern", example: "Feel the rhythm.", partOfSpeech: "noun" },
-      { word: "composer", definition: "Music writer", example: "Beethoven was a great composer.", partOfSpeech: "noun" },
-      { word: "orchestra", definition: "Large music group", example: "The orchestra played beautifully.", partOfSpeech: "noun" },
-      { word: "genre", definition: "Type of music", example: "What genre do you like?", partOfSpeech: "noun" },
-    ]
-  },
-  {
-    id: "b1-theme-fashion",
-    title: "Fashion & Style",
-    level: "B1",
-    description: "Clothing and trends",
-    words: [
-      { word: "designer", definition: "Fashion creator", example: "She's a famous designer.", partOfSpeech: "noun" },
-      { word: "trend", definition: "Popular style", example: "Follow the latest trends.", partOfSpeech: "noun" },
-      { word: "accessory", definition: "Extra item worn", example: "Nice accessories!", partOfSpeech: "noun" },
-      { word: "collection", definition: "Designer's line", example: "The new collection is out.", partOfSpeech: "noun" },
-      { word: "fabric", definition: "Cloth material", example: "The fabric is soft.", partOfSpeech: "noun" },
+      { word: "election", definition: "Process of choosing leaders by voting", example: "The election is next month.", partOfSpeech: "noun" },
+      { word: "democracy", definition: "System of government where people choose leaders by voting", example: "Democracy is important.", partOfSpeech: "noun" },
+      { word: "vote", definition: "To cast a ballot in an election", example: "Everyone should vote.", partOfSpeech: "verb/noun" },
+      { word: "policy", definition: "The set of rules or ideas a government follows", example: "The new policy is effective.", partOfSpeech: "noun" },
+      { word: "legislation", definition: "Laws made by a government", example: "New legislation was passed.", partOfSpeech: "noun" },
+      { word: "citizen", definition: "A member of a country with rights and duties", example: "I'm a citizen of Canada.", partOfSpeech: "noun" },
+      { word: "candidate", definition: "A person who is running for a political position", example: "She is a strong candidate.", partOfSpeech: "noun" },
     ]
   },
 ];
