@@ -1076,120 +1076,58 @@ export const curriculumData: LevelCurriculum[] = [
         id: "b1-grammar",
         title: "Grammar",
         icon: "🧩",
-        description: "From simple accuracy to flexibility and tense control",
+        description: "Past Simple, Present Perfect, and Future with Going to for storytelling and planning",
         skills: [
           {
             id: "b1-gram-1",
-            title: "Present Simple vs Present Continuous",
-            description: "Distinguishing habitual vs current actions",
+            title: "Past Simple",
+            description: "Regular verbs (-ed), irregular verbs, negatives (didn't), and questions (did)",
             completed: false,
             subSkills: [
-              { id: "b1-g1-1", title: "Habits vs actions now", completed: false },
-              { id: "b1-g1-2", title: "Stative verbs", completed: false },
-              { id: "b1-g1-3", title: "Always + continuous (complaint)", completed: false },
+              { id: "b1-g1-1", title: "Regular verbs (-ed)", completed: false },
+              { id: "b1-g1-2", title: "Irregular verbs (memorization)", completed: false },
+              { id: "b1-g1-3", title: "Negatives (did not / didn't)", completed: false },
+              { id: "b1-g1-4", title: "Questions (Did...?)", completed: false },
+              { id: "b1-g1-5", title: "Transformation and contextual narrative", completed: false },
             ]
           },
           {
             id: "b1-gram-2",
-            title: "Past Simple vs Present Perfect",
-            description: "Finished past vs connection to present",
+            title: "Present Perfect (Basic)",
+            description: "Have/Has + Past Participle, Experiences, Ever/Never",
             completed: false,
             subSkills: [
-              { id: "b1-g2-1", title: "Specific vs non-specific time", completed: false },
-              { id: "b1-g2-2", title: "Just, already, yet", completed: false },
-              { id: "b1-g2-3", title: "For and Since", completed: false },
-              { id: "b1-g2-4", title: "Ever and Never", completed: false },
+              { id: "b1-g2-1", title: "Form (Have/Has + Participle)", completed: false },
+              { id: "b1-g2-2", title: "Ever and Never (Experiences)", completed: false },
+              { id: "b1-g2-3", title: "Just (Recent Actions)", completed: false },
+              { id: "b1-g2-4", title: "Negatives and Questions", completed: false },
+              { id: "b1-g2-5", title: "Sentence Building and Conjugation", completed: false },
             ]
           },
           {
             id: "b1-gram-3",
-            title: "Future forms",
-            description: "Will, going to, present continuous for future",
+            title: "Present Perfect vs Past Simple",
+            description: "Choosing the right tense based on time context (Finished vs Unfinished time)",
             completed: false,
             subSkills: [
-              { id: "b1-g3-1", title: "Will for spontaneous decisions", completed: false },
-              { id: "b1-g3-2", title: "Going to for plans", completed: false },
-              { id: "b1-g3-3", title: "Present continuous for arrangements", completed: false },
-              { id: "b1-g3-4", title: "Predictions with will vs going to", completed: false },
+              { id: "b1-g3-1", title: "Time expressions (the clues)", completed: false },
+              { id: "b1-g3-2", title: "Choose the correct verb", completed: false },
+              { id: "b1-g3-3", title: "Dialogue context", completed: false },
+              { id: "b1-g3-4", title: "Error correction", completed: false },
+              { id: "b1-g3-5", title: "Mixed drill", completed: false },
             ]
           },
           {
             id: "b1-gram-4",
-            title: "First Conditional",
-            description: "Real future possibilities",
+            title: "Future with 'Going to'",
+            description: "Plans, intentions, and predictions based on evidence",
             completed: false,
             subSkills: [
-              { id: "b1-g4-1", title: "If + present, will + base", completed: false },
-              { id: "b1-g4-2", title: "Unless, as long as, provided", completed: false },
-              { id: "b1-g4-3", title: "Variations: might, can, should", completed: false },
-            ]
-          },
-          {
-            id: "b1-gram-5",
-            title: "Second Conditional (basic)",
-            description: "Hypothetical present/future",
-            completed: false,
-            subSkills: [
-              { id: "b1-g5-1", title: "If + past simple, would + base", completed: false },
-              { id: "b1-g5-2", title: "If I were you...", completed: false },
-              { id: "b1-g5-3", title: "Imaginary situations", completed: false },
-            ]
-          },
-          {
-            id: "b1-gram-6",
-            title: "Passive Voice (basic)",
-            description: "Passive voice in present and past",
-            completed: false,
-            subSkills: [
-              { id: "b1-g6-1", title: "Passive in present simple", completed: false },
-              { id: "b1-g6-2", title: "Passive in past simple", completed: false },
-              { id: "b1-g6-3", title: "By + agent", completed: false },
-            ]
-          },
-          {
-            id: "b1-gram-7",
-            title: "Relative Clauses",
-            description: "Who, which, that, where, when",
-            completed: false,
-            subSkills: [
-              { id: "b1-g7-1", title: "Who for people", completed: false },
-              { id: "b1-g7-2", title: "Which for things", completed: false },
-              { id: "b1-g7-3", title: "That (defining clauses)", completed: false },
-              { id: "b1-g7-4", title: "Where, when, whose", completed: false },
-            ]
-          },
-          {
-            id: "b1-gram-8",
-            title: "Comparatives and modifiers",
-            description: "Advanced comparisons",
-            completed: false,
-            subSkills: [
-              { id: "b1-g8-1", title: "Much better, a bit harder", completed: false },
-              { id: "b1-g8-2", title: "As...as comparisons", completed: false },
-              { id: "b1-g8-3", title: "The more...the more", completed: false },
-            ]
-          },
-          {
-            id: "b1-gram-9",
-            title: "Modal Verbs",
-            description: "Might, should, have to, must",
-            completed: false,
-            subSkills: [
-              { id: "b1-g9-1", title: "Might for possibility", completed: false },
-              { id: "b1-g9-2", title: "Should for advice", completed: false },
-              { id: "b1-g9-3", title: "Have to vs Must", completed: false },
-              { id: "b1-g9-4", title: "Don't have to vs Mustn't", completed: false },
-            ]
-          },
-          {
-            id: "b1-gram-10",
-            title: "Connectors",
-            description: "Linking words and discourse markers",
-            completed: false,
-            subSkills: [
-              { id: "b1-g10-1", title: "However, although, despite", completed: false },
-              { id: "b1-g10-2", title: "Therefore, as a result, because of", completed: false },
-              { id: "b1-g10-3", title: "In addition, moreover, furthermore", completed: false },
+              { id: "b1-g4-1", title: "Form (Be + Going to + Verb)", completed: false },
+              { id: "b1-g4-2", title: "Plans vs Random Future", completed: false },
+              { id: "b1-g4-3", title: "Predictions with evidence", completed: false },
+              { id: "b1-g4-4", title: "Scrambled sentences", completed: false },
+              { id: "b1-g4-5", title: "Personal plans", completed: false },
             ]
           },
         ]
