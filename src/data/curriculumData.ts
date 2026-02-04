@@ -1367,6 +1367,66 @@ export const curriculumData: LevelCurriculum[] = [
               { id: "b1-l8-4", title: "Sports Categories", completed: false },
             ]
           },
+          {
+            id: "b1-list-9",
+            title: "Cuisine & Gastronomy",
+            description: "Gourmet, cuisine, appetizer, delicacy, nutrition, texture, recipe, dietary",
+            completed: false,
+            subSkills: [
+              { id: "b1-l9-1", title: "Dining Vocabulary", completed: false },
+              { id: "b1-l9-2", title: "Tastes & Textures", completed: false },
+              { id: "b1-l9-3", title: "Cooking Methods", completed: false },
+              { id: "b1-l9-4", title: "Menu Comprehension", completed: false },
+            ]
+          },
+          {
+            id: "b1-list-10",
+            title: "Architecture & Buildings",
+            description: "Skyscraper, monument, cathedral, renovation, facade, interior, residential",
+            completed: false,
+            subSkills: [
+              { id: "b1-l10-1", title: "Structural Terms", completed: false },
+              { id: "b1-l10-2", title: "Building Materials & Styles", completed: false },
+              { id: "b1-l10-3", title: "Describing Spaces", completed: false },
+              { id: "b1-l10-4", title: "Famous Landmarks", completed: false },
+            ]
+          },
+          {
+            id: "b1-list-11",
+            title: "Literature & Writing",
+            description: "Novel, poetry, plot, character, genre, biography, metaphor",
+            completed: false,
+            subSkills: [
+              { id: "b1-l11-1", title: "Literary Elements", completed: false },
+              { id: "b1-l11-2", title: "Genres & Types", completed: false },
+              { id: "b1-l11-3", title: "Publishing Terms", completed: false },
+              { id: "b1-l11-4", title: "Literary Devices", completed: false },
+            ]
+          },
+          {
+            id: "b1-list-12",
+            title: "Music & Performance",
+            description: "Melody, rhythm, composer, orchestra, lyrics, rehearsal, audience",
+            completed: false,
+            subSkills: [
+              { id: "b1-l12-1", title: "Musical Vocabulary", completed: false },
+              { id: "b1-l12-2", title: "Instruments & Genres", completed: false },
+              { id: "b1-l12-3", title: "Music Industry", completed: false },
+              { id: "b1-l12-4", title: "Song Structure", completed: false },
+            ]
+          },
+          {
+            id: "b1-list-13",
+            title: "Fashion & Style",
+            description: "Designer, trend, accessory, collection, fabric, tailor, vintage",
+            completed: false,
+            subSkills: [
+              { id: "b1-l13-1", title: "Industry Terms", completed: false },
+              { id: "b1-l13-2", title: "Clothing & Materials", completed: false },
+              { id: "b1-l13-3", title: "Describing Style", completed: false },
+              { id: "b1-l13-4", title: "Accessories", completed: false },
+            ]
+          },
         ]
       },
       {

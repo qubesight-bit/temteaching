@@ -4059,6 +4059,2546 @@ const sportsCompetitionExercises: Exercise[] = [
   },
 ];
 
+// Theme 9: Cuisine & Gastronomy (50 Exercises)
+const cuisineGastronomyExercises: Exercise[] = [
+  // Part 1: Dining Vocabulary
+  {
+    id: "b1-cuisine-1",
+    type: "fill-blank",
+    question: "A style or method of cooking, especially as characteristic of a particular country: (______)",
+    options: ["cuisine", "kitchen", "recipe", "menu"],
+    correctAnswer: "cuisine",
+    explanation: "Cuisine refers to a style or method of cooking characteristic of a particular country or region.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-2",
+    type: "fill-blank",
+    question: "A small dish of food or a drink taken before a meal to stimulate one's appetite: (______)",
+    options: ["appetizer", "dessert", "main course", "snack"],
+    correctAnswer: "appetizer",
+    explanation: "An appetizer is a small dish served before the main course.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-3",
+    type: "fill-blank",
+    question: "A person who cultivates a discriminating palate for the enjoyment of good food and drink: (______)",
+    options: ["gourmet", "chef", "waiter", "critic"],
+    correctAnswer: "gourmet",
+    explanation: "A gourmet is someone with refined taste in food and drink.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-4",
+    type: "fill-blank",
+    question: "A rare or expensive food item that is considered highly desirable: (______)",
+    options: ["delicacy", "snack", "staple", "basic"],
+    correctAnswer: "delicacy",
+    explanation: "A delicacy is a rare or expensive food considered highly desirable.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-5",
+    type: "fill-blank",
+    question: "Unscramble: A-P-P-E-T-I-Z-E-R (______)",
+    options: ["appetizer", "appitizer", "appetiser", "appetizor"],
+    correctAnswer: "appetizer",
+    explanation: "APPETIZER - a small dish before the main meal.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "spelling", "b1"]
+  },
+  {
+    id: "b1-cuisine-6",
+    type: "fill-blank",
+    question: "Unscramble: G-O-U-R-M-E-T (______)",
+    options: ["gourmet", "gormet", "gourmat", "gourmay"],
+    correctAnswer: "gourmet",
+    explanation: "GOURMET - a connoisseur of fine food.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "spelling", "b1"]
+  },
+  {
+    id: "b1-cuisine-7",
+    type: "multiple-choice",
+    question: "Relating to diet or the kinds of food that a person, animal, or community eats:",
+    options: ["Dietary", "Delicious", "Digestive", "Decorative"],
+    correctAnswer: "Dietary",
+    explanation: "Dietary relates to diet and the kinds of food consumed.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-8",
+    type: "multiple-choice",
+    question: "The feel, appearance, or consistency of a surface or a substance:",
+    options: ["Texture", "Flavor", "Aroma", "Taste"],
+    correctAnswer: "Texture",
+    explanation: "Texture refers to the feel or consistency of food.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-9",
+    type: "multiple-choice",
+    question: "A set of instructions for preparing a particular dish:",
+    options: ["Recipe", "Menu", "Order", "Bill"],
+    correctAnswer: "Recipe",
+    explanation: "A recipe is a set of instructions for preparing a dish.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-10",
+    type: "multiple-choice",
+    question: "A 'vegan' does not eat:",
+    options: ["Meat or dairy", "Just meat", "Vegetables", "Grains"],
+    correctAnswer: "Meat or dairy",
+    explanation: "Vegans avoid all animal products including meat and dairy.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  // Part 2: Tastes & Textures
+  {
+    id: "b1-cuisine-11",
+    type: "multiple-choice",
+    question: "Savory means:",
+    options: ["Salty or spicy, not sweet", "Very sweet", "Sour", "Bitter"],
+    correctAnswer: "Salty or spicy, not sweet",
+    explanation: "Savory describes food that is salty or spicy rather than sweet.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-12",
+    type: "multiple-choice",
+    question: "Bitter is like:",
+    options: ["Coffee or dark chocolate", "Sugar", "Lemon", "Salt"],
+    correctAnswer: "Coffee or dark chocolate",
+    explanation: "Bitter taste is found in coffee and dark chocolate.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-13",
+    type: "multiple-choice",
+    question: "Sour is like:",
+    options: ["Lemon", "Bread", "Honey", "Cheese"],
+    correctAnswer: "Lemon",
+    explanation: "Sour taste is like lemon or vinegar.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-14",
+    type: "multiple-choice",
+    question: "Crunchy means:",
+    options: ["Making a loud noise when eaten", "Soft", "Chewy", "Smooth"],
+    correctAnswer: "Making a loud noise when eaten",
+    explanation: "Crunchy food makes a crisp sound when bitten.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-15",
+    type: "multiple-choice",
+    question: "Bland means:",
+    options: ["Lacking strong flavor", "Very spicy", "Very sweet", "Very sour"],
+    correctAnswer: "Lacking strong flavor",
+    explanation: "Bland food has little or no distinctive taste.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-16",
+    type: "multiple-choice",
+    question: "True or False: 'Cuisine' refers to a kitchen appliance.",
+    options: ["False", "True"],
+    correctAnswer: "False",
+    explanation: "Cuisine refers to a style of cooking, not an appliance.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-17",
+    type: "multiple-choice",
+    question: "True or False: To 'marinate' means to soak food in seasoned liquid before cooking.",
+    options: ["True", "False"],
+    correctAnswer: "True",
+    explanation: "Marinating involves soaking food in seasoned liquid to add flavor.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-18",
+    type: "multiple-choice",
+    question: "Synonym: 'Beverage' means:",
+    options: ["Drink", "Snack", "Meal", "Dessert"],
+    correctAnswer: "Drink",
+    explanation: "A beverage is any type of drink.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-19",
+    type: "multiple-choice",
+    question: "Antonym: 'Raw' is the opposite of:",
+    options: ["Cooked", "Fresh", "Cold", "Hot"],
+    correctAnswer: "Cooked",
+    explanation: "Raw means uncooked, so the opposite is cooked.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-20",
+    type: "multiple-choice",
+    question: "Collocation: A balanced ______",
+    options: ["diet", "food", "eating", "cooking"],
+    correctAnswer: "diet",
+    explanation: "We say 'a balanced diet' to mean healthy eating habits.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "collocations", "b1"]
+  },
+  // Part 3: Cooking Methods
+  {
+    id: "b1-cuisine-21",
+    type: "multiple-choice",
+    question: "To roast a chicken means to:",
+    options: ["Cook in an oven", "Cook in water", "Cook in a pan", "Eat raw"],
+    correctAnswer: "Cook in an oven",
+    explanation: "Roasting involves cooking food in an oven with dry heat.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-22",
+    type: "multiple-choice",
+    question: "To steam vegetables means to:",
+    options: ["Cook with vapor", "Cook in oil", "Cook on fire", "Freeze them"],
+    correctAnswer: "Cook with vapor",
+    explanation: "Steaming uses the vapor from boiling water to cook food.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-23",
+    type: "multiple-choice",
+    question: "To fry an egg means to:",
+    options: ["Cook in hot oil", "Cook in ice", "Boil in water", "Bake in oven"],
+    correctAnswer: "Cook in hot oil",
+    explanation: "Frying involves cooking in hot oil or fat.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-24",
+    type: "multiple-choice",
+    question: "To grill a steak means to:",
+    options: ["Cook over an open fire", "Boil in a pot", "Steam it", "Freeze it"],
+    correctAnswer: "Cook over an open fire",
+    explanation: "Grilling involves cooking food over direct heat from a fire or grill.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-25",
+    type: "multiple-choice",
+    question: "To chop onions means to:",
+    options: ["Cut into small pieces", "Mash them", "Blend them", "Peel them"],
+    correctAnswer: "Cut into small pieces",
+    explanation: "Chopping means cutting food into smaller pieces.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  // Additional exercises (26-50)
+  {
+    id: "b1-cuisine-26",
+    type: "fill-blank",
+    question: "A ______ is the list of dishes available at a restaurant.",
+    options: ["menu", "recipe", "bill", "order"],
+    correctAnswer: "menu",
+    explanation: "A menu lists the dishes available at a restaurant.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-27",
+    type: "multiple-choice",
+    question: "An 'entrée' in American English refers to:",
+    options: ["The main course", "The appetizer", "The dessert", "The drink"],
+    correctAnswer: "The main course",
+    explanation: "In American English, entrée refers to the main dish.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-28",
+    type: "multiple-choice",
+    question: "A 'sommelier' is an expert in:",
+    options: ["Wine", "Cooking", "Baking", "Coffee"],
+    correctAnswer: "Wine",
+    explanation: "A sommelier is a trained wine professional.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-29",
+    type: "multiple-choice",
+    question: "To 'simmer' means to cook at:",
+    options: ["Just below boiling point", "Very high heat", "Freezing temperature", "Room temperature"],
+    correctAnswer: "Just below boiling point",
+    explanation: "Simmering is cooking liquid just below boiling point.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-30",
+    type: "fill-blank",
+    question: "A person who prepares food professionally is called a ______.",
+    options: ["chef", "waiter", "host", "guest"],
+    correctAnswer: "chef",
+    explanation: "A chef is a professional cook.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-31",
+    type: "multiple-choice",
+    question: "'Organic' food is:",
+    options: ["Grown without synthetic chemicals", "Processed food", "Frozen food", "Fast food"],
+    correctAnswer: "Grown without synthetic chemicals",
+    explanation: "Organic food is produced without artificial chemicals.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-32",
+    type: "multiple-choice",
+    question: "A 'vegetarian' does not eat:",
+    options: ["Meat", "Vegetables", "Dairy", "Grains"],
+    correctAnswer: "Meat",
+    explanation: "Vegetarians avoid meat but may eat dairy and eggs.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-33",
+    type: "multiple-choice",
+    question: "To 'garnish' a dish means to:",
+    options: ["Decorate it before serving", "Cook it slowly", "Freeze it", "Blend it"],
+    correctAnswer: "Decorate it before serving",
+    explanation: "Garnishing adds decorative touches to a dish.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-34",
+    type: "fill-blank",
+    question: "The sweet course at the end of a meal is called ______.",
+    options: ["dessert", "appetizer", "entrée", "salad"],
+    correctAnswer: "dessert",
+    explanation: "Dessert is the sweet course served at the end of a meal.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-35",
+    type: "multiple-choice",
+    question: "'Gluten-free' food is for people who:",
+    options: ["Cannot digest gluten", "Are vegetarian", "Are vegan", "Like spicy food"],
+    correctAnswer: "Cannot digest gluten",
+    explanation: "Gluten-free food is for people with celiac disease or gluten sensitivity.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-36",
+    type: "multiple-choice",
+    question: "To 'season' food means to:",
+    options: ["Add salt, pepper, or spices", "Freeze it", "Defrost it", "Wash it"],
+    correctAnswer: "Add salt, pepper, or spices",
+    explanation: "Seasoning means adding flavor with salt, pepper, or spices.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-37",
+    type: "multiple-choice",
+    question: "A 'cuisine' is characterized by:",
+    options: ["Regional ingredients and cooking methods", "Kitchen equipment", "Restaurant size", "Chef's name"],
+    correctAnswer: "Regional ingredients and cooking methods",
+    explanation: "Cuisine is defined by the ingredients and methods of a region.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-38",
+    type: "fill-blank",
+    question: "Food that is not cooked is called ______.",
+    options: ["raw", "fried", "baked", "boiled"],
+    correctAnswer: "raw",
+    explanation: "Raw food has not been cooked.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-39",
+    type: "multiple-choice",
+    question: "A 'portion' refers to:",
+    options: ["The amount of food served", "The type of food", "The cooking method", "The restaurant"],
+    correctAnswer: "The amount of food served",
+    explanation: "A portion is the amount of food served to one person.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-40",
+    type: "multiple-choice",
+    question: "To 'dice' vegetables means to:",
+    options: ["Cut into small cubes", "Slice thinly", "Mash them", "Blend them"],
+    correctAnswer: "Cut into small cubes",
+    explanation: "Dicing means cutting food into small cube-shaped pieces.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-41",
+    type: "multiple-choice",
+    question: "'Al dente' describes pasta that is:",
+    options: ["Firm to the bite", "Very soft", "Overcooked", "Raw"],
+    correctAnswer: "Firm to the bite",
+    explanation: "Al dente pasta is cooked to be firm when bitten.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-42",
+    type: "fill-blank",
+    question: "The ______ is where food is prepared in a restaurant.",
+    options: ["kitchen", "dining room", "patio", "lobby"],
+    correctAnswer: "kitchen",
+    explanation: "The kitchen is where food is prepared.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-43",
+    type: "multiple-choice",
+    question: "A 'foodie' is someone who:",
+    options: ["Loves exploring different foods", "Works in a restaurant", "Grows vegetables", "Sells groceries"],
+    correctAnswer: "Loves exploring different foods",
+    explanation: "A foodie is an enthusiast of food and culinary experiences.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-44",
+    type: "multiple-choice",
+    question: "To 'whisk' means to:",
+    options: ["Beat with a quick, light movement", "Chop finely", "Boil slowly", "Freeze quickly"],
+    correctAnswer: "Beat with a quick, light movement",
+    explanation: "Whisking involves beating ingredients quickly.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-45",
+    type: "multiple-choice",
+    question: "'Farm-to-table' means food that is:",
+    options: ["Sourced directly from local farms", "Imported from far away", "Processed in factories", "Frozen for long periods"],
+    correctAnswer: "Sourced directly from local farms",
+    explanation: "Farm-to-table emphasizes locally sourced, fresh ingredients.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-46",
+    type: "fill-blank",
+    question: "A ______ allergy can be life-threatening and requires avoiding certain foods.",
+    options: ["food", "skin", "dust", "plant"],
+    correctAnswer: "food",
+    explanation: "Food allergies can cause severe reactions.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-47",
+    type: "multiple-choice",
+    question: "The 'aroma' of food refers to its:",
+    options: ["Smell", "Taste", "Color", "Texture"],
+    correctAnswer: "Smell",
+    explanation: "Aroma is the pleasant smell of food.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-48",
+    type: "multiple-choice",
+    question: "To 'sauté' means to:",
+    options: ["Fry quickly in a little oil", "Boil for a long time", "Freeze overnight", "Eat raw"],
+    correctAnswer: "Fry quickly in a little oil",
+    explanation: "Sautéing is quick frying in a small amount of oil.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-49",
+    type: "multiple-choice",
+    question: "A 'staple food' is:",
+    options: ["A food eaten regularly as a main part of the diet", "A rare delicacy", "An appetizer", "A dessert"],
+    correctAnswer: "A food eaten regularly as a main part of the diet",
+    explanation: "Staple foods form the basis of a traditional diet.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+  {
+    id: "b1-cuisine-50",
+    type: "multiple-choice",
+    question: "'Fusion cuisine' combines:",
+    options: ["Elements from different culinary traditions", "Only traditional recipes", "Only raw ingredients", "Only desserts"],
+    correctAnswer: "Elements from different culinary traditions",
+    explanation: "Fusion cuisine blends elements from different food cultures.",
+    difficulty: 2,
+    tags: ["listening", "cuisine", "b1"]
+  },
+];
+
+// Theme 10: Architecture & Buildings (50 Exercises)
+const architectureBuildingsExercises: Exercise[] = [
+  // Part 1: Structural Terms
+  {
+    id: "b1-arch-1",
+    type: "fill-blank",
+    question: "A very tall building of many stories: (______)",
+    options: ["skyscraper", "bungalow", "cottage", "warehouse"],
+    correctAnswer: "skyscraper",
+    explanation: "A skyscraper is a very tall building with many floors.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-2",
+    type: "fill-blank",
+    question: "A statue, building, or other structure erected to commemorate a famous person or event: (______)",
+    options: ["monument", "apartment", "office", "factory"],
+    correctAnswer: "monument",
+    explanation: "A monument commemorates a person or event.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-3",
+    type: "fill-blank",
+    question: "The principal Christian church of a diocese: (______)",
+    options: ["cathedral", "chapel", "mosque", "temple"],
+    correctAnswer: "cathedral",
+    explanation: "A cathedral is the main church of a diocese.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-4",
+    type: "fill-blank",
+    question: "The process of improving a broken, damaged, or outdated structure: (______)",
+    options: ["renovation", "demolition", "construction", "inspection"],
+    correctAnswer: "renovation",
+    explanation: "Renovation involves improving or restoring a building.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-5",
+    type: "fill-blank",
+    question: "Unscramble: S-K-Y-S-C-R-A-P-E-R (______)",
+    options: ["skyscraper", "skyscrapper", "skiscraper", "skyscaper"],
+    correctAnswer: "skyscraper",
+    explanation: "SKYSCRAPER - a very tall building.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "spelling", "b1"]
+  },
+  {
+    id: "b1-arch-6",
+    type: "fill-blank",
+    question: "Unscramble: M-O-N-U-M-E-N-T (______)",
+    options: ["monument", "monumant", "monement", "monumentt"],
+    correctAnswer: "monument",
+    explanation: "MONUMENT - a structure commemorating a person or event.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "spelling", "b1"]
+  },
+  {
+    id: "b1-arch-7",
+    type: "multiple-choice",
+    question: "The face of a building, especially the principal front that looks onto a street:",
+    options: ["Facade", "Roof", "Foundation", "Basement"],
+    correctAnswer: "Facade",
+    explanation: "The facade is the front face of a building.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-8",
+    type: "multiple-choice",
+    question: "Designed for people to live in:",
+    options: ["Residential", "Commercial", "Industrial", "Agricultural"],
+    correctAnswer: "Residential",
+    explanation: "Residential buildings are designed for living.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-9",
+    type: "multiple-choice",
+    question: "The inside part of a building:",
+    options: ["Interior", "Exterior", "Perimeter", "Foundation"],
+    correctAnswer: "Interior",
+    explanation: "The interior is the inside of a building.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-10",
+    type: "fill-blank",
+    question: "An 'architect' designs ______ while an 'engineer' ensures they stand up.",
+    options: ["buildings", "gardens", "furniture", "clothes"],
+    correctAnswer: "buildings",
+    explanation: "Architects design buildings; engineers ensure structural integrity.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  // Part 2: Building Materials & Styles
+  {
+    id: "b1-arch-11",
+    type: "multiple-choice",
+    question: "Concrete is:",
+    options: ["A hard building material", "A soft fabric", "A type of wood", "A metal"],
+    correctAnswer: "A hard building material",
+    explanation: "Concrete is a hard construction material made from cement.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-12",
+    type: "multiple-choice",
+    question: "Steel is:",
+    options: ["A strong metal", "A type of wood", "A soft fabric", "A type of glass"],
+    correctAnswer: "A strong metal",
+    explanation: "Steel is a strong metal alloy used in construction.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-13",
+    type: "multiple-choice",
+    question: "Brick is:",
+    options: ["A block of baked clay", "A piece of glass", "A metal bar", "A wooden plank"],
+    correctAnswer: "A block of baked clay",
+    explanation: "Bricks are rectangular blocks of baked clay.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-14",
+    type: "multiple-choice",
+    question: "Sustainable architecture uses:",
+    options: ["Eco-friendly materials", "Plastic only", "Only wood", "Only steel"],
+    correctAnswer: "Eco-friendly materials",
+    explanation: "Sustainable architecture prioritizes environmentally friendly materials.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-15",
+    type: "multiple-choice",
+    question: "Gothic style is known for:",
+    options: ["Pointed arches", "Round domes", "Flat roofs", "Glass walls"],
+    correctAnswer: "Pointed arches",
+    explanation: "Gothic architecture features pointed arches and flying buttresses.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-16",
+    type: "multiple-choice",
+    question: "True or False: A 'blueprint' is a technical drawing of a building.",
+    options: ["True", "False"],
+    correctAnswer: "True",
+    explanation: "A blueprint is a detailed technical drawing of a building.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-17",
+    type: "multiple-choice",
+    question: "True or False: 'Demolition' is the act of building something new.",
+    options: ["False", "True"],
+    correctAnswer: "False",
+    explanation: "Demolition is the act of destroying or tearing down a building.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-18",
+    type: "multiple-choice",
+    question: "Synonym: 'Construct' means:",
+    options: ["Build", "Destroy", "Paint", "Clean"],
+    correctAnswer: "Build",
+    explanation: "Construct means to build or make something.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-19",
+    type: "multiple-choice",
+    question: "Antonym: 'Urban' is the opposite of:",
+    options: ["Rural", "Modern", "Old", "Large"],
+    correctAnswer: "Rural",
+    explanation: "Urban (city) is the opposite of rural (countryside).",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-20",
+    type: "multiple-choice",
+    question: "Collocation: To lay the ______",
+    options: ["foundation", "roof", "walls", "windows"],
+    correctAnswer: "foundation",
+    explanation: "We say 'lay the foundation' for a building.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "collocations", "b1"]
+  },
+  // Part 3: Describing Spaces
+  {
+    id: "b1-arch-21",
+    type: "multiple-choice",
+    question: "'The room is very spacious.' Spacious means:",
+    options: ["Big", "Small", "Dark", "Cold"],
+    correctAnswer: "Big",
+    explanation: "Spacious means having a lot of space or room.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-22",
+    type: "multiple-choice",
+    question: "'The ceiling is vaulted.' Vaulted means:",
+    options: ["Arched", "Flat", "Low", "Square"],
+    correctAnswer: "Arched",
+    explanation: "A vaulted ceiling has an arched or domed shape.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-23",
+    type: "multiple-choice",
+    question: "'The building is dilapidated.' Dilapidated means:",
+    options: ["Ruined/Old", "Brand new", "Modern", "Colorful"],
+    correctAnswer: "Ruined/Old",
+    explanation: "Dilapidated means in a state of disrepair or ruin.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-24",
+    type: "multiple-choice",
+    question: "'It has a panoramic view.' Panoramic means:",
+    options: ["Wide view", "No view", "Blocked view", "Small view"],
+    correctAnswer: "Wide view",
+    explanation: "Panoramic means an unobstructed wide view.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-25",
+    type: "multiple-choice",
+    question: "'The structure is sound.' Sound means:",
+    options: ["Safe/Strong", "Noisy", "Weak", "Old"],
+    correctAnswer: "Safe/Strong",
+    explanation: "A sound structure is safe and structurally stable.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  // Additional exercises (26-50) - Famous landmarks
+  {
+    id: "b1-arch-26",
+    type: "multiple-choice",
+    question: "The Eiffel Tower is located in:",
+    options: ["Paris, France", "London, UK", "Rome, Italy", "Berlin, Germany"],
+    correctAnswer: "Paris, France",
+    explanation: "The Eiffel Tower is an iconic landmark in Paris.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "landmarks", "b1"]
+  },
+  {
+    id: "b1-arch-27",
+    type: "multiple-choice",
+    question: "The Taj Mahal is a:",
+    options: ["Mausoleum", "Palace", "Temple", "Fort"],
+    correctAnswer: "Mausoleum",
+    explanation: "The Taj Mahal is a mausoleum in India.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "landmarks", "b1"]
+  },
+  {
+    id: "b1-arch-28",
+    type: "multiple-choice",
+    question: "The Colosseum in Rome was used for:",
+    options: ["Gladiator fights", "Religious ceremonies", "Royal weddings", "Trading goods"],
+    correctAnswer: "Gladiator fights",
+    explanation: "The Colosseum hosted gladiator battles and public spectacles.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "landmarks", "b1"]
+  },
+  {
+    id: "b1-arch-29",
+    type: "fill-blank",
+    question: "The ______ of Liberty is a famous monument in New York.",
+    options: ["Statue", "Tower", "Bridge", "Museum"],
+    correctAnswer: "Statue",
+    explanation: "The Statue of Liberty is an iconic New York landmark.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "landmarks", "b1"]
+  },
+  {
+    id: "b1-arch-30",
+    type: "multiple-choice",
+    question: "Big Ben is the name of:",
+    options: ["A clock tower bell in London", "A bridge in Paris", "A palace in Rome", "A museum in Berlin"],
+    correctAnswer: "A clock tower bell in London",
+    explanation: "Big Ben is the nickname for the Great Bell of the clock tower in London.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "landmarks", "b1"]
+  },
+  {
+    id: "b1-arch-31",
+    type: "fill-blank",
+    question: "A ______ is a structure built over a river to allow crossing.",
+    options: ["bridge", "tunnel", "tower", "pier"],
+    correctAnswer: "bridge",
+    explanation: "A bridge is built to cross over water or other obstacles.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-32",
+    type: "multiple-choice",
+    question: "An 'atrium' is:",
+    options: ["An open central area in a building", "A basement", "A rooftop", "A garage"],
+    correctAnswer: "An open central area in a building",
+    explanation: "An atrium is a large open space, often with a glass roof.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-33",
+    type: "multiple-choice",
+    question: "'Art Deco' architecture is known for:",
+    options: ["Geometric shapes and bold colors", "Gothic arches", "Simple wooden structures", "Underground design"],
+    correctAnswer: "Geometric shapes and bold colors",
+    explanation: "Art Deco features geometric patterns and vibrant colors.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-34",
+    type: "fill-blank",
+    question: "The lowest part of a building that supports it is called the ______.",
+    options: ["foundation", "roof", "wall", "window"],
+    correctAnswer: "foundation",
+    explanation: "The foundation is the base that supports the building.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-35",
+    type: "multiple-choice",
+    question: "A 'penthouse' is located:",
+    options: ["On the top floor", "In the basement", "On the ground floor", "Underground"],
+    correctAnswer: "On the top floor",
+    explanation: "A penthouse is a luxury apartment on the top floor.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-36",
+    type: "multiple-choice",
+    question: "'Prefabricated' buildings are:",
+    options: ["Made from parts manufactured off-site", "Built from scratch on-site", "Made only of wood", "Always temporary"],
+    correctAnswer: "Made from parts manufactured off-site",
+    explanation: "Prefabricated buildings use pre-made components.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-37",
+    type: "fill-blank",
+    question: "A ______ is a tall tower attached to a mosque.",
+    options: ["minaret", "steeple", "dome", "spire"],
+    correctAnswer: "minaret",
+    explanation: "A minaret is a tall tower of a mosque.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-38",
+    type: "multiple-choice",
+    question: "A 'balcony' is:",
+    options: ["A platform projecting from a building", "A underground room", "A parking area", "A kitchen extension"],
+    correctAnswer: "A platform projecting from a building",
+    explanation: "A balcony is an outdoor platform attached to a building.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-39",
+    type: "multiple-choice",
+    question: "'Minimalist' architecture emphasizes:",
+    options: ["Simplicity and clean lines", "Complex decorations", "Many colors", "Heavy ornamentation"],
+    correctAnswer: "Simplicity and clean lines",
+    explanation: "Minimalist design focuses on simplicity and functionality.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-40",
+    type: "fill-blank",
+    question: "An ______ is a professional who designs buildings.",
+    options: ["architect", "engineer", "builder", "carpenter"],
+    correctAnswer: "architect",
+    explanation: "An architect designs buildings and structures.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-41",
+    type: "multiple-choice",
+    question: "A 'skylight' is:",
+    options: ["A window in the roof", "A tall building", "A basement", "A garage door"],
+    correctAnswer: "A window in the roof",
+    explanation: "A skylight is a window installed in the roof.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-42",
+    type: "multiple-choice",
+    question: "'Load-bearing walls' are:",
+    options: ["Walls that support the structure above", "Decorative walls", "Temporary walls", "Glass walls"],
+    correctAnswer: "Walls that support the structure above",
+    explanation: "Load-bearing walls carry the weight of the structure.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-43",
+    type: "fill-blank",
+    question: "The Sydney Opera House is famous for its sail-shaped ______.",
+    options: ["roof", "windows", "doors", "walls"],
+    correctAnswer: "roof",
+    explanation: "The Sydney Opera House has distinctive sail-shaped roof shells.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "landmarks", "b1"]
+  },
+  {
+    id: "b1-arch-44",
+    type: "multiple-choice",
+    question: "'Heritage buildings' are:",
+    options: ["Historic structures worth preserving", "New constructions", "Temporary buildings", "Underground structures"],
+    correctAnswer: "Historic structures worth preserving",
+    explanation: "Heritage buildings have historical or cultural significance.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-45",
+    type: "multiple-choice",
+    question: "A 'terrace' is:",
+    options: ["An outdoor paved area", "An indoor bathroom", "A kitchen counter", "A bedroom closet"],
+    correctAnswer: "An outdoor paved area",
+    explanation: "A terrace is an outdoor area, often on a rooftop or garden.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-46",
+    type: "fill-blank",
+    question: "The Great Wall of ______ is one of the world's most famous structures.",
+    options: ["China", "Japan", "Korea", "India"],
+    correctAnswer: "China",
+    explanation: "The Great Wall of China is an ancient fortification.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "landmarks", "b1"]
+  },
+  {
+    id: "b1-arch-47",
+    type: "multiple-choice",
+    question: "'Eco-friendly' buildings:",
+    options: ["Minimize environmental impact", "Use only concrete", "Have no windows", "Are always small"],
+    correctAnswer: "Minimize environmental impact",
+    explanation: "Eco-friendly buildings are designed to be environmentally sustainable.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-48",
+    type: "multiple-choice",
+    question: "A 'corridor' is:",
+    options: ["A long passage in a building", "A type of window", "A rooftop garden", "A basement storage"],
+    correctAnswer: "A long passage in a building",
+    explanation: "A corridor is a hallway or passage connecting rooms.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-49",
+    type: "fill-blank",
+    question: "The ______ is the part of a building below ground level.",
+    options: ["basement", "attic", "balcony", "terrace"],
+    correctAnswer: "basement",
+    explanation: "The basement is the lowest floor, below ground level.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+  {
+    id: "b1-arch-50",
+    type: "multiple-choice",
+    question: "'Zoning laws' determine:",
+    options: ["How land in an area can be used", "Building colors", "Window sizes", "Furniture placement"],
+    correctAnswer: "How land in an area can be used",
+    explanation: "Zoning laws regulate land use in different areas.",
+    difficulty: 2,
+    tags: ["listening", "architecture", "b1"]
+  },
+];
+
+// Theme 11: Literature & Writing (50 Exercises)
+const literatureWritingExercises: Exercise[] = [
+  // Part 1: Literary Elements
+  {
+    id: "b1-lit-1",
+    type: "fill-blank",
+    question: "A fictitious prose narrative of book length: (______)",
+    options: ["novel", "poem", "essay", "article"],
+    correctAnswer: "novel",
+    explanation: "A novel is a long fictional story in prose form.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-2",
+    type: "fill-blank",
+    question: "Literary work in which special intensity is given to the expression of feelings and ideas: (______)",
+    options: ["poetry", "prose", "drama", "essay"],
+    correctAnswer: "poetry",
+    explanation: "Poetry uses rhythm and imagery to express emotions.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-3",
+    type: "fill-blank",
+    question: "The main events of a play, novel, movie, or similar work: (______)",
+    options: ["plot", "theme", "setting", "mood"],
+    correctAnswer: "plot",
+    explanation: "The plot is the sequence of events in a story.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-4",
+    type: "fill-blank",
+    question: "A person in a novel, play, or movie: (______)",
+    options: ["character", "author", "reader", "editor"],
+    correctAnswer: "character",
+    explanation: "A character is a person or figure in a story.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-5",
+    type: "fill-blank",
+    question: "Unscramble: C-H-A-R-A-C-T-E-R (______)",
+    options: ["character", "charater", "charactor", "caracter"],
+    correctAnswer: "character",
+    explanation: "CHARACTER - a person in a story.",
+    difficulty: 2,
+    tags: ["listening", "literature", "spelling", "b1"]
+  },
+  {
+    id: "b1-lit-6",
+    type: "fill-blank",
+    question: "Unscramble: P-O-E-T-R-Y (______)",
+    options: ["poetry", "poetrey", "poerty", "poetri"],
+    correctAnswer: "poetry",
+    explanation: "POETRY - literary work with rhythm and imagery.",
+    difficulty: 2,
+    tags: ["listening", "literature", "spelling", "b1"]
+  },
+  {
+    id: "b1-lit-7",
+    type: "multiple-choice",
+    question: "A category of artistic composition, as in music or literature:",
+    options: ["Genre", "Title", "Chapter", "Paragraph"],
+    correctAnswer: "Genre",
+    explanation: "A genre is a category or type of artistic work.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-8",
+    type: "multiple-choice",
+    question: "An account of someone's life written by someone else:",
+    options: ["Biography", "Autobiography", "Memoir", "Diary"],
+    correctAnswer: "Biography",
+    explanation: "A biography is written about someone by another person.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-9",
+    type: "multiple-choice",
+    question: "A figure of speech in which a word or phrase is applied to an object or action to which it is not literally applicable:",
+    options: ["Metaphor", "Fact", "Definition", "Quote"],
+    correctAnswer: "Metaphor",
+    explanation: "A metaphor makes a comparison without using 'like' or 'as'.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-10",
+    type: "multiple-choice",
+    question: "'Non-fiction' is based on:",
+    options: ["Real facts", "Imagination", "Fantasy", "Dreams"],
+    correctAnswer: "Real facts",
+    explanation: "Non-fiction is based on real events and facts.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  // Part 2: Genres & Types
+  {
+    id: "b1-lit-11",
+    type: "multiple-choice",
+    question: "Mystery novels involve:",
+    options: ["Solving a crime", "Aliens", "Love stories", "Historical events"],
+    correctAnswer: "Solving a crime",
+    explanation: "Mystery novels focus on solving crimes or puzzles.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-12",
+    type: "multiple-choice",
+    question: "Sci-Fi involves:",
+    options: ["Future technology", "Historical events", "Cooking", "Sports"],
+    correctAnswer: "Future technology",
+    explanation: "Science fiction explores futuristic technology and concepts.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-13",
+    type: "multiple-choice",
+    question: "Romance focuses on:",
+    options: ["Love relationships", "War", "Technology", "Crime"],
+    correctAnswer: "Love relationships",
+    explanation: "Romance novels center on love and relationships.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-14",
+    type: "multiple-choice",
+    question: "Thriller is designed to:",
+    options: ["Excite and scare", "Make you laugh", "Teach history", "Explain science"],
+    correctAnswer: "Excite and scare",
+    explanation: "Thrillers are meant to create suspense and excitement.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-15",
+    type: "multiple-choice",
+    question: "Fantasy involves:",
+    options: ["Magic and dragons", "Real life", "Scientific facts", "News events"],
+    correctAnswer: "Magic and dragons",
+    explanation: "Fantasy includes magical elements and mythical creatures.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-16",
+    type: "multiple-choice",
+    question: "True or False: An 'author' is the person who reads the book.",
+    options: ["False", "True"],
+    correctAnswer: "False",
+    explanation: "An author writes the book; a reader reads it.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-17",
+    type: "multiple-choice",
+    question: "True or False: A 'draft' is the final version of a book.",
+    options: ["False", "True"],
+    correctAnswer: "False",
+    explanation: "A draft is an early version, not the final one.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-18",
+    type: "multiple-choice",
+    question: "Synonym: 'Narrator' means:",
+    options: ["Storyteller", "Listener", "Reader", "Publisher"],
+    correctAnswer: "Storyteller",
+    explanation: "The narrator tells the story.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-19",
+    type: "multiple-choice",
+    question: "Antonym: 'Protagonist' (Hero) is the opposite of:",
+    options: ["Antagonist/Villain", "Author", "Reader", "Editor"],
+    correctAnswer: "Antagonist/Villain",
+    explanation: "The antagonist opposes the protagonist (hero).",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-20",
+    type: "multiple-choice",
+    question: "Idiom: 'To read between the lines' means:",
+    options: ["Find hidden meaning", "Read slowly", "Skip pages", "Read loudly"],
+    correctAnswer: "Find hidden meaning",
+    explanation: "Reading between the lines means understanding implied meaning.",
+    difficulty: 2,
+    tags: ["listening", "literature", "idioms", "b1"]
+  },
+  // Part 3: Publishing Terms
+  {
+    id: "b1-lit-21",
+    type: "multiple-choice",
+    question: "Best-seller means:",
+    options: ["A very popular book", "A bad book", "A free book", "A short book"],
+    correctAnswer: "A very popular book",
+    explanation: "A best-seller is a book that sells many copies.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-22",
+    type: "multiple-choice",
+    question: "An editor:",
+    options: ["Corrects the writing", "Prints the book", "Writes the book", "Sells the book"],
+    correctAnswer: "Corrects the writing",
+    explanation: "An editor reviews and corrects written content.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-23",
+    type: "multiple-choice",
+    question: "A publisher:",
+    options: ["Produces and sells the book", "Writes the book", "Reads the book", "Translates the book"],
+    correctAnswer: "Produces and sells the book",
+    explanation: "A publisher produces and distributes books.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-24",
+    type: "multiple-choice",
+    question: "Manuscript is:",
+    options: ["The author's original text", "The cover", "The index", "The glossary"],
+    correctAnswer: "The author's original text",
+    explanation: "A manuscript is the original handwritten or typed text.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-25",
+    type: "multiple-choice",
+    question: "Copyright is:",
+    options: ["Legal right to the work", "Copying the work", "Selling the work", "Reading the work"],
+    correctAnswer: "Legal right to the work",
+    explanation: "Copyright protects the creator's legal rights to their work.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  // Additional exercises (26-50)
+  {
+    id: "b1-lit-26",
+    type: "fill-blank",
+    question: "The main idea or message of a story is called the ______.",
+    options: ["theme", "plot", "character", "setting"],
+    correctAnswer: "theme",
+    explanation: "The theme is the central message of a literary work.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-27",
+    type: "multiple-choice",
+    question: "The 'setting' of a story refers to:",
+    options: ["Time and place", "Main character", "Ending", "Author"],
+    correctAnswer: "Time and place",
+    explanation: "Setting is where and when the story takes place.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-28",
+    type: "multiple-choice",
+    question: "A 'sequel' is:",
+    options: ["A continuation of a story", "A prequel", "An unrelated book", "A short story"],
+    correctAnswer: "A continuation of a story",
+    explanation: "A sequel continues a story after the original.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-29",
+    type: "fill-blank",
+    question: "A ______ is a comparison using 'like' or 'as'.",
+    options: ["simile", "metaphor", "hyperbole", "irony"],
+    correctAnswer: "simile",
+    explanation: "A simile compares two things using 'like' or 'as'.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-30",
+    type: "multiple-choice",
+    question: "'Foreshadowing' is:",
+    options: ["Hinting at future events", "Describing the past", "Analyzing characters", "Writing dialogue"],
+    correctAnswer: "Hinting at future events",
+    explanation: "Foreshadowing gives clues about what will happen later.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-31",
+    type: "multiple-choice",
+    question: "A 'memoir' is:",
+    options: ["A personal account of one's life", "A fictional story", "A news article", "A recipe book"],
+    correctAnswer: "A personal account of one's life",
+    explanation: "A memoir is a personal account of the author's experiences.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-32",
+    type: "fill-blank",
+    question: "The ______ is the most exciting part of a story.",
+    options: ["climax", "introduction", "conclusion", "preface"],
+    correctAnswer: "climax",
+    explanation: "The climax is the peak of tension in the story.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-33",
+    type: "multiple-choice",
+    question: "'First person' narration uses:",
+    options: ["'I' and 'we'", "'He' and 'she'", "'You'", "No pronouns"],
+    correctAnswer: "'I' and 'we'",
+    explanation: "First person narration uses 'I' from the narrator's perspective.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-34",
+    type: "multiple-choice",
+    question: "An 'anthology' is:",
+    options: ["A collection of works by various authors", "A single long novel", "A biography", "A dictionary"],
+    correctAnswer: "A collection of works by various authors",
+    explanation: "An anthology compiles works from multiple authors.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-35",
+    type: "fill-blank",
+    question: "The ______ is the ending part of a story that resolves the plot.",
+    options: ["resolution", "climax", "conflict", "exposition"],
+    correctAnswer: "resolution",
+    explanation: "The resolution ties up loose ends in the story.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-36",
+    type: "multiple-choice",
+    question: "'Irony' is when:",
+    options: ["The opposite of what's expected happens", "Everything goes as planned", "The hero wins", "The story ends happily"],
+    correctAnswer: "The opposite of what's expected happens",
+    explanation: "Irony involves a contrast between expectation and reality.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-37",
+    type: "multiple-choice",
+    question: "A 'prologue' comes:",
+    options: ["Before the main story", "At the end", "In the middle", "After the epilogue"],
+    correctAnswer: "Before the main story",
+    explanation: "A prologue introduces the story before the first chapter.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-38",
+    type: "fill-blank",
+    question: "An ______ comes after the main story ends.",
+    options: ["epilogue", "prologue", "chapter", "index"],
+    correctAnswer: "epilogue",
+    explanation: "An epilogue concludes or follows up on the main story.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-39",
+    type: "multiple-choice",
+    question: "'Suspense' makes readers feel:",
+    options: ["Eager to know what happens next", "Bored", "Sleepy", "Confused"],
+    correctAnswer: "Eager to know what happens next",
+    explanation: "Suspense creates anticipation and tension.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-40",
+    type: "multiple-choice",
+    question: "A 'prequel' takes place:",
+    options: ["Before the original story", "After the original story", "During the original story", "In a different world"],
+    correctAnswer: "Before the original story",
+    explanation: "A prequel tells events that happened before the original.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-41",
+    type: "fill-blank",
+    question: "The conversation between characters is called ______.",
+    options: ["dialogue", "monologue", "narrative", "description"],
+    correctAnswer: "dialogue",
+    explanation: "Dialogue is the written conversation between characters.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-42",
+    type: "multiple-choice",
+    question: "A 'monologue' is:",
+    options: ["A long speech by one person", "A conversation between two people", "A short poem", "A chapter heading"],
+    correctAnswer: "A long speech by one person",
+    explanation: "A monologue is an extended speech by one character.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-43",
+    type: "multiple-choice",
+    question: "'Imagery' in writing appeals to:",
+    options: ["The five senses", "Logic only", "Numbers", "Dates"],
+    correctAnswer: "The five senses",
+    explanation: "Imagery uses descriptive language to create sensory experiences.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-44",
+    type: "fill-blank",
+    question: "A ______ is a short story teaching a moral lesson, often with animals.",
+    options: ["fable", "novel", "essay", "biography"],
+    correctAnswer: "fable",
+    explanation: "A fable is a short tale with a moral, often featuring animals.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-45",
+    type: "multiple-choice",
+    question: "'Hyperbole' is:",
+    options: ["Extreme exaggeration", "Understatement", "Literal description", "Factual writing"],
+    correctAnswer: "Extreme exaggeration",
+    explanation: "Hyperbole uses exaggeration for emphasis or effect.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-46",
+    type: "multiple-choice",
+    question: "A 'trilogy' consists of:",
+    options: ["Three related works", "Two books", "Five books", "One book"],
+    correctAnswer: "Three related works",
+    explanation: "A trilogy is a series of three connected works.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-47",
+    type: "fill-blank",
+    question: "The ______ introduces the characters and setting at the start.",
+    options: ["exposition", "climax", "resolution", "conflict"],
+    correctAnswer: "exposition",
+    explanation: "The exposition provides background information.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-48",
+    type: "multiple-choice",
+    question: "'Conflict' in a story is:",
+    options: ["A struggle or problem", "The ending", "The setting", "The author"],
+    correctAnswer: "A struggle or problem",
+    explanation: "Conflict is the central struggle that drives the plot.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-49",
+    type: "multiple-choice",
+    question: "A 'cliffhanger' is:",
+    options: ["An unresolved ending that creates suspense", "A happy ending", "A sad ending", "A predictable ending"],
+    correctAnswer: "An unresolved ending that creates suspense",
+    explanation: "A cliffhanger leaves the audience in suspense.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+  {
+    id: "b1-lit-50",
+    type: "multiple-choice",
+    question: "'Symbolism' uses objects to represent:",
+    options: ["Abstract ideas", "Literal meanings", "Numbers", "Dates"],
+    correctAnswer: "Abstract ideas",
+    explanation: "Symbolism uses concrete objects to represent abstract concepts.",
+    difficulty: 2,
+    tags: ["listening", "literature", "b1"]
+  },
+];
+
+// Theme 12: Music & Performance (50 Exercises)
+const musicPerformanceExercises: Exercise[] = [
+  // Part 1: Musical Vocabulary
+  {
+    id: "b1-music-1",
+    type: "fill-blank",
+    question: "A sequence of single notes that is musically satisfying: (______)",
+    options: ["melody", "rhythm", "harmony", "beat"],
+    correctAnswer: "melody",
+    explanation: "A melody is a sequence of notes forming a tune.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-2",
+    type: "fill-blank",
+    question: "A strong, regular, repeated pattern of movement or sound: (______)",
+    options: ["rhythm", "melody", "harmony", "pitch"],
+    correctAnswer: "rhythm",
+    explanation: "Rhythm is the pattern of beats in music.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-3",
+    type: "fill-blank",
+    question: "A person who writes music: (______)",
+    options: ["composer", "conductor", "performer", "producer"],
+    correctAnswer: "composer",
+    explanation: "A composer writes musical compositions.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-4",
+    type: "fill-blank",
+    question: "A large group of musicians playing together: (______)",
+    options: ["orchestra", "choir", "band", "duo"],
+    correctAnswer: "orchestra",
+    explanation: "An orchestra is a large ensemble of musicians.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-5",
+    type: "fill-blank",
+    question: "Unscramble: R-H-Y-T-H-M (______)",
+    options: ["rhythm", "rythm", "rhythem", "rhytm"],
+    correctAnswer: "rhythm",
+    explanation: "RHYTHM - the pattern of beats in music.",
+    difficulty: 2,
+    tags: ["listening", "music", "spelling", "b1"]
+  },
+  {
+    id: "b1-music-6",
+    type: "fill-blank",
+    question: "Unscramble: O-R-C-H-E-S-T-R-A (______)",
+    options: ["orchestra", "orchastra", "orkestra", "orchestar"],
+    correctAnswer: "orchestra",
+    explanation: "ORCHESTRA - a large group of musicians.",
+    difficulty: 2,
+    tags: ["listening", "music", "spelling", "b1"]
+  },
+  {
+    id: "b1-music-7",
+    type: "multiple-choice",
+    question: "The words of a song:",
+    options: ["Lyrics", "Script", "Dialogue", "Prose"],
+    correctAnswer: "Lyrics",
+    explanation: "Lyrics are the words to a song.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-8",
+    type: "multiple-choice",
+    question: "A practice or trial performance of a play or other work:",
+    options: ["Rehearsal", "Concert", "Show", "Premiere"],
+    correctAnswer: "Rehearsal",
+    explanation: "A rehearsal is a practice session before a performance.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-9",
+    type: "multiple-choice",
+    question: "The assembled spectators or listeners at a public event:",
+    options: ["Audience", "Performers", "Musicians", "Crew"],
+    correctAnswer: "Audience",
+    explanation: "The audience watches or listens to a performance.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-10",
+    type: "fill-blank",
+    question: "A 'conductor' directs the ______.",
+    options: ["orchestra", "bus", "traffic", "movie"],
+    correctAnswer: "orchestra",
+    explanation: "A conductor leads and directs an orchestra.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  // Part 2: Instruments & Genres
+  {
+    id: "b1-music-11",
+    type: "multiple-choice",
+    question: "Jazz is known for:",
+    options: ["Improvisation", "Computers", "Classical structure", "Silence"],
+    correctAnswer: "Improvisation",
+    explanation: "Jazz features spontaneous musical creativity.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-12",
+    type: "multiple-choice",
+    question: "Classical music often uses:",
+    options: ["Violins and piano", "Electric guitars", "Drum machines", "Synthesizers only"],
+    correctAnswer: "Violins and piano",
+    explanation: "Classical music features traditional orchestral instruments.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-13",
+    type: "multiple-choice",
+    question: "Percussion instruments are:",
+    options: ["Hit or shaken", "Blown", "Strummed", "Bowed"],
+    correctAnswer: "Hit or shaken",
+    explanation: "Percussion instruments produce sound by being struck or shaken.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-14",
+    type: "multiple-choice",
+    question: "Vocals refers to:",
+    options: ["Singing", "Drumming", "Playing guitar", "Dancing"],
+    correctAnswer: "Singing",
+    explanation: "Vocals are the singing parts of music.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-15",
+    type: "multiple-choice",
+    question: "Acoustic means:",
+    options: ["Non-electric", "Digital", "Electronic", "Synthetic"],
+    correctAnswer: "Non-electric",
+    explanation: "Acoustic instruments don't use electronic amplification.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-16",
+    type: "multiple-choice",
+    question: "True or False: A 'gig' is a slang term for a live performance.",
+    options: ["True", "False"],
+    correctAnswer: "True",
+    explanation: "Gig is informal slang for a musical performance.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-17",
+    type: "multiple-choice",
+    question: "True or False: 'Tempo' refers to the speed of the music.",
+    options: ["True", "False"],
+    correctAnswer: "True",
+    explanation: "Tempo is the speed or pace of the music.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-18",
+    type: "multiple-choice",
+    question: "Synonym: 'Tune' means:",
+    options: ["Melody", "Noise", "Silence", "Speech"],
+    correctAnswer: "Melody",
+    explanation: "A tune is another word for melody.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-19",
+    type: "multiple-choice",
+    question: "Antonym: 'Sharp' (High pitch) is the opposite of:",
+    options: ["Flat", "Loud", "Quiet", "Fast"],
+    correctAnswer: "Flat",
+    explanation: "In music, sharp (raised pitch) is opposite to flat (lowered pitch).",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-20",
+    type: "multiple-choice",
+    question: "Collocation: You play ______",
+    options: ["an instrument", "a song loudly", "a CD player", "music download"],
+    correctAnswer: "an instrument",
+    explanation: "We say 'play an instrument' or 'play a song'.",
+    difficulty: 2,
+    tags: ["listening", "music", "collocations", "b1"]
+  },
+  // Part 3: The Music Industry
+  {
+    id: "b1-music-21",
+    type: "multiple-choice",
+    question: "Album means:",
+    options: ["A collection of songs", "One song", "A music video", "A concert"],
+    correctAnswer: "A collection of songs",
+    explanation: "An album is a collection of songs released together.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-22",
+    type: "multiple-choice",
+    question: "Single means:",
+    options: ["One song released alone", "A married singer", "An album", "A concert"],
+    correctAnswer: "One song released alone",
+    explanation: "A single is one song released separately.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-23",
+    type: "multiple-choice",
+    question: "Chart refers to:",
+    options: ["List of most popular songs", "A map", "A recipe", "A schedule"],
+    correctAnswer: "List of most popular songs",
+    explanation: "Music charts rank the most popular songs.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-24",
+    type: "multiple-choice",
+    question: "Tour means:",
+    options: ["Traveling to perform in many places", "A vacation", "A museum visit", "A bus ride"],
+    correctAnswer: "Traveling to perform in many places",
+    explanation: "A tour involves performing in multiple locations.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-25",
+    type: "multiple-choice",
+    question: "Record Label is:",
+    options: ["A company that manages artists", "A sticker", "A type of vinyl", "A music store"],
+    correctAnswer: "A company that manages artists",
+    explanation: "A record label produces and markets music.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  // Additional exercises (26-50) - Instruments categorization
+  {
+    id: "b1-music-26",
+    type: "multiple-choice",
+    question: "A violin is a ______ instrument.",
+    options: ["String", "Wind", "Brass", "Percussion"],
+    correctAnswer: "String",
+    explanation: "The violin is played by bowing or plucking strings.",
+    difficulty: 2,
+    tags: ["listening", "music", "instruments", "b1"]
+  },
+  {
+    id: "b1-music-27",
+    type: "multiple-choice",
+    question: "A trumpet is a ______ instrument.",
+    options: ["Brass", "String", "Wind", "Percussion"],
+    correctAnswer: "Brass",
+    explanation: "The trumpet is a brass instrument.",
+    difficulty: 2,
+    tags: ["listening", "music", "instruments", "b1"]
+  },
+  {
+    id: "b1-music-28",
+    type: "multiple-choice",
+    question: "A flute is a ______ instrument.",
+    options: ["Wind", "String", "Brass", "Percussion"],
+    correctAnswer: "Wind",
+    explanation: "The flute is a woodwind instrument.",
+    difficulty: 2,
+    tags: ["listening", "music", "instruments", "b1"]
+  },
+  {
+    id: "b1-music-29",
+    type: "multiple-choice",
+    question: "Drums are ______ instruments.",
+    options: ["Percussion", "String", "Wind", "Brass"],
+    correctAnswer: "Percussion",
+    explanation: "Drums are played by hitting them.",
+    difficulty: 2,
+    tags: ["listening", "music", "instruments", "b1"]
+  },
+  {
+    id: "b1-music-30",
+    type: "fill-blank",
+    question: "A ______ is a keyboard instrument with strings inside.",
+    options: ["piano", "guitar", "violin", "flute"],
+    correctAnswer: "piano",
+    explanation: "A piano has strings that are struck by hammers.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-31",
+    type: "multiple-choice",
+    question: "A saxophone is a ______ instrument.",
+    options: ["Wind", "String", "Brass", "Percussion"],
+    correctAnswer: "Wind",
+    explanation: "The saxophone is a woodwind instrument, despite being made of brass.",
+    difficulty: 2,
+    tags: ["listening", "music", "instruments", "b1"]
+  },
+  {
+    id: "b1-music-32",
+    type: "fill-blank",
+    question: "The ______ is often called the 'king of instruments'.",
+    options: ["organ", "guitar", "drum", "flute"],
+    correctAnswer: "organ",
+    explanation: "The pipe organ is called the 'king of instruments' for its size and sound.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-33",
+    type: "multiple-choice",
+    question: "A 'duet' is performed by:",
+    options: ["Two people", "One person", "Three people", "A group"],
+    correctAnswer: "Two people",
+    explanation: "A duet is a performance by two musicians.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-34",
+    type: "multiple-choice",
+    question: "A 'solo' is performed by:",
+    options: ["One person", "Two people", "A group", "An orchestra"],
+    correctAnswer: "One person",
+    explanation: "A solo is a performance by one musician.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-35",
+    type: "fill-blank",
+    question: "A ______ is a group of singers.",
+    options: ["choir", "band", "orchestra", "ensemble"],
+    correctAnswer: "choir",
+    explanation: "A choir is a group of singers performing together.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-36",
+    type: "multiple-choice",
+    question: "'A cappella' means singing:",
+    options: ["Without instrumental accompaniment", "With a full orchestra", "Very quietly", "Very loudly"],
+    correctAnswer: "Without instrumental accompaniment",
+    explanation: "A cappella is vocal music without instruments.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-37",
+    type: "multiple-choice",
+    question: "An 'encore' is:",
+    options: ["An extra performance after the main show", "The opening act", "The intermission", "The ticket price"],
+    correctAnswer: "An extra performance after the main show",
+    explanation: "An encore is an additional performance requested by the audience.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-38",
+    type: "fill-blank",
+    question: "The ______ is the background music in a song.",
+    options: ["accompaniment", "lyrics", "title", "chorus"],
+    correctAnswer: "accompaniment",
+    explanation: "Accompaniment is the musical support for a main melody.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-39",
+    type: "multiple-choice",
+    question: "A 'verse' in a song is:",
+    options: ["A section that tells the story", "The repeating part", "The ending", "The introduction"],
+    correctAnswer: "A section that tells the story",
+    explanation: "Verses are the storytelling sections of a song.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-40",
+    type: "multiple-choice",
+    question: "A 'chorus' in a song is:",
+    options: ["The repeating part", "The verse", "The bridge", "The outro"],
+    correctAnswer: "The repeating part",
+    explanation: "The chorus is the section that repeats throughout a song.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-41",
+    type: "fill-blank",
+    question: "A ______ is a song that is very popular.",
+    options: ["hit", "flop", "demo", "cover"],
+    correctAnswer: "hit",
+    explanation: "A hit is a very successful and popular song.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-42",
+    type: "multiple-choice",
+    question: "To 'lip-sync' means to:",
+    options: ["Pretend to sing", "Sing live", "Write lyrics", "Compose music"],
+    correctAnswer: "Pretend to sing",
+    explanation: "Lip-syncing is mouthing words to pre-recorded music.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-43",
+    type: "multiple-choice",
+    question: "A 'cover' version is:",
+    options: ["A new recording of someone else's song", "An original song", "An instrumental", "A remix"],
+    correctAnswer: "A new recording of someone else's song",
+    explanation: "A cover is a new performance of a previously recorded song.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-44",
+    type: "fill-blank",
+    question: "A ______ is music played between acts of a show.",
+    options: ["intermission", "encore", "finale", "overture"],
+    correctAnswer: "intermission",
+    explanation: "Intermission is a break between parts of a performance.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-45",
+    type: "multiple-choice",
+    question: "The 'bridge' in a song:",
+    options: ["Connects verses and provides contrast", "Is the first verse", "Is the chorus", "Is the ending"],
+    correctAnswer: "Connects verses and provides contrast",
+    explanation: "A bridge provides variety between song sections.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-46",
+    type: "multiple-choice",
+    question: "'Streaming' music means:",
+    options: ["Listening online without downloading", "Buying CDs", "Recording live", "Playing instruments"],
+    correctAnswer: "Listening online without downloading",
+    explanation: "Streaming allows instant online music playback.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-47",
+    type: "fill-blank",
+    question: "A ______ is an introductory piece of music.",
+    options: ["prelude", "finale", "chorus", "verse"],
+    correctAnswer: "prelude",
+    explanation: "A prelude is an introductory piece of music.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-48",
+    type: "multiple-choice",
+    question: "A 'symphony' is:",
+    options: ["A long orchestral composition", "A short song", "A music video", "A dance"],
+    correctAnswer: "A long orchestral composition",
+    explanation: "A symphony is a complex orchestral work.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-49",
+    type: "multiple-choice",
+    question: "'Harmony' in music is:",
+    options: ["Multiple notes played together", "One note", "Silence", "Rhythm only"],
+    correctAnswer: "Multiple notes played together",
+    explanation: "Harmony is the combination of different musical notes.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+  {
+    id: "b1-music-50",
+    type: "multiple-choice",
+    question: "A 'soundtrack' is:",
+    options: ["Music for a film or show", "A music video", "A live concert", "A radio station"],
+    correctAnswer: "Music for a film or show",
+    explanation: "A soundtrack is the music accompanying a movie or TV show.",
+    difficulty: 2,
+    tags: ["listening", "music", "b1"]
+  },
+];
+
+// Theme 13: Fashion & Style (50 Exercises)
+const fashionStyleExercises: Exercise[] = [
+  // Part 1: Industry Terms
+  {
+    id: "b1-fashion-1",
+    type: "fill-blank",
+    question: "A person who plans the form, look, or workings of a garment: (______)",
+    options: ["designer", "model", "tailor", "seamstress"],
+    correctAnswer: "designer",
+    explanation: "A designer creates the concept and look of clothing.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-2",
+    type: "fill-blank",
+    question: "A general direction in which something is developing or changing: (______)",
+    options: ["trend", "style", "fashion", "look"],
+    correctAnswer: "trend",
+    explanation: "A trend is a general direction of change in fashion.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-3",
+    type: "fill-blank",
+    question: "A thing which can be added to something else in order to make it more useful, versatile, or attractive: (______)",
+    options: ["accessory", "garment", "outfit", "ensemble"],
+    correctAnswer: "accessory",
+    explanation: "An accessory complements clothing, like bags or jewelry.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-4",
+    type: "fill-blank",
+    question: "A range of new clothes produced by a fashion house: (______)",
+    options: ["collection", "wardrobe", "closet", "inventory"],
+    correctAnswer: "collection",
+    explanation: "A collection is a fashion house's seasonal clothing line.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-5",
+    type: "fill-blank",
+    question: "Unscramble: A-C-C-E-S-S-O-R-Y (______)",
+    options: ["accessory", "accesory", "acessory", "accessery"],
+    correctAnswer: "accessory",
+    explanation: "ACCESSORY - an item that complements clothing.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "spelling", "b1"]
+  },
+  {
+    id: "b1-fashion-6",
+    type: "fill-blank",
+    question: "Unscramble: D-E-S-I-G-N-E-R (______)",
+    options: ["designer", "desiner", "designor", "dezigner"],
+    correctAnswer: "designer",
+    explanation: "DESIGNER - a person who creates fashion.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "spelling", "b1"]
+  },
+  {
+    id: "b1-fashion-7",
+    type: "multiple-choice",
+    question: "Cloth or other material produced by weaving or knitting fibers:",
+    options: ["Fabric", "Leather", "Plastic", "Metal"],
+    correctAnswer: "Fabric",
+    explanation: "Fabric is material made from woven or knitted fibers.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-8",
+    type: "multiple-choice",
+    question: "A person whose occupation is making fitted clothes:",
+    options: ["Tailor", "Model", "Designer", "Photographer"],
+    correctAnswer: "Tailor",
+    explanation: "A tailor makes and alters fitted clothing.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-9",
+    type: "multiple-choice",
+    question: "Clothing representing a previous era or time period:",
+    options: ["Vintage", "Modern", "Contemporary", "Futuristic"],
+    correctAnswer: "Vintage",
+    explanation: "Vintage clothing is from a previous era.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-10",
+    type: "multiple-choice",
+    question: "'Haute Couture' refers to:",
+    options: ["High-end custom fashion", "Cheap fashion", "Sports wear", "Casual wear"],
+    correctAnswer: "High-end custom fashion",
+    explanation: "Haute couture is high fashion custom-made clothing.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  // Part 2: Clothing & Materials
+  {
+    id: "b1-fashion-11",
+    type: "multiple-choice",
+    question: "Denim is used for:",
+    options: ["Jeans", "Suits", "Formal wear", "Swimwear"],
+    correctAnswer: "Jeans",
+    explanation: "Denim is the sturdy cotton fabric used for jeans.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-12",
+    type: "multiple-choice",
+    question: "Silk is:",
+    options: ["Soft and expensive", "Rough and cheap", "Heavy", "Waterproof"],
+    correctAnswer: "Soft and expensive",
+    explanation: "Silk is a luxurious, soft fabric.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-13",
+    type: "multiple-choice",
+    question: "Cotton comes from:",
+    options: ["A plant", "An animal", "A laboratory", "Oil"],
+    correctAnswer: "A plant",
+    explanation: "Cotton is a natural fiber from the cotton plant.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-14",
+    type: "multiple-choice",
+    question: "Wool comes from:",
+    options: ["Sheep", "Trees", "Silkworms", "Plastic"],
+    correctAnswer: "Sheep",
+    explanation: "Wool is a natural fiber from sheep.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-15",
+    type: "multiple-choice",
+    question: "Leather comes from:",
+    options: ["Animal skin", "Plastic", "Plants", "Minerals"],
+    correctAnswer: "Animal skin",
+    explanation: "Leather is made from treated animal hides.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-16",
+    type: "multiple-choice",
+    question: "True or False: A 'catwalk' or 'runway' is where models walk.",
+    options: ["True", "False"],
+    correctAnswer: "True",
+    explanation: "Models display fashion by walking the catwalk.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-17",
+    type: "multiple-choice",
+    question: "True or False: 'Casual' means very formal clothing.",
+    options: ["False", "True"],
+    correctAnswer: "False",
+    explanation: "Casual means relaxed, informal clothing.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-18",
+    type: "multiple-choice",
+    question: "Synonym: 'Garment' means:",
+    options: ["Piece of clothing", "Jewelry", "Shoe", "Bag"],
+    correctAnswer: "Piece of clothing",
+    explanation: "A garment is an item of clothing.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-19",
+    type: "multiple-choice",
+    question: "Antonym: 'Tight' is the opposite of:",
+    options: ["Loose", "Short", "Long", "Dark"],
+    correctAnswer: "Loose",
+    explanation: "Tight clothing fits closely; loose clothing is relaxed.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-20",
+    type: "multiple-choice",
+    question: "Idiom: 'Dressed to kill' means:",
+    options: ["Wearing very stylish clothes", "Wearing armor", "Dressed for work", "Wearing pajamas"],
+    correctAnswer: "Wearing very stylish clothes",
+    explanation: "Dressed to kill means wearing impressive, attractive clothing.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "idioms", "b1"]
+  },
+  // Part 3: Describing Style
+  {
+    id: "b1-fashion-21",
+    type: "multiple-choice",
+    question: "'That dress is very chic.' Chic means:",
+    options: ["Stylish", "Ugly", "Old", "Cheap"],
+    correctAnswer: "Stylish",
+    explanation: "Chic means elegantly and stylishly fashionable.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-22",
+    type: "multiple-choice",
+    question: "'His style is eccentric.' Eccentric means:",
+    options: ["Unusual/Unique", "Boring", "Traditional", "Plain"],
+    correctAnswer: "Unusual/Unique",
+    explanation: "Eccentric style is unconventional and unique.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-23",
+    type: "multiple-choice",
+    question: "'I prefer classic clothes.' Classic means:",
+    options: ["Timeless", "Trendy", "Cheap", "Colorful"],
+    correctAnswer: "Timeless",
+    explanation: "Classic style is enduring and elegant.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-24",
+    type: "multiple-choice",
+    question: "'That pattern is bold.' Bold means:",
+    options: ["Strong/Bright", "Invisible", "Faded", "Small"],
+    correctAnswer: "Strong/Bright",
+    explanation: "Bold patterns are striking and eye-catching.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-25",
+    type: "multiple-choice",
+    question: "'Her look is sophisticated.' Sophisticated means:",
+    options: ["Elegant", "Childish", "Simple", "Messy"],
+    correctAnswer: "Elegant",
+    explanation: "Sophisticated means refined and elegant.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  // Additional exercises (26-50) - Accessories matching
+  {
+    id: "b1-fashion-26",
+    type: "multiple-choice",
+    question: "A scarf is worn around the:",
+    options: ["Neck", "Waist", "Ankle", "Wrist"],
+    correctAnswer: "Neck",
+    explanation: "Scarves are worn around the neck for warmth or style.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "accessories", "b1"]
+  },
+  {
+    id: "b1-fashion-27",
+    type: "multiple-choice",
+    question: "Gloves are worn on the:",
+    options: ["Hands", "Feet", "Head", "Neck"],
+    correctAnswer: "Hands",
+    explanation: "Gloves protect and cover the hands.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "accessories", "b1"]
+  },
+  {
+    id: "b1-fashion-28",
+    type: "multiple-choice",
+    question: "A belt is worn around the:",
+    options: ["Waist", "Neck", "Wrist", "Ankle"],
+    correctAnswer: "Waist",
+    explanation: "Belts are worn around the waist to hold up pants.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "accessories", "b1"]
+  },
+  {
+    id: "b1-fashion-29",
+    type: "multiple-choice",
+    question: "Earrings are worn on the:",
+    options: ["Ears", "Nose", "Fingers", "Wrist"],
+    correctAnswer: "Ears",
+    explanation: "Earrings are jewelry worn on the ears.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "accessories", "b1"]
+  },
+  {
+    id: "b1-fashion-30",
+    type: "multiple-choice",
+    question: "A bracelet is worn on the:",
+    options: ["Wrist", "Ankle", "Neck", "Finger"],
+    correctAnswer: "Wrist",
+    explanation: "Bracelets are worn around the wrist.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "accessories", "b1"]
+  },
+  {
+    id: "b1-fashion-31",
+    type: "fill-blank",
+    question: "A ______ is worn on the finger.",
+    options: ["ring", "bracelet", "necklace", "earring"],
+    correctAnswer: "ring",
+    explanation: "Rings are jewelry worn on fingers.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "accessories", "b1"]
+  },
+  {
+    id: "b1-fashion-32",
+    type: "multiple-choice",
+    question: "A necklace is worn around the:",
+    options: ["Neck", "Wrist", "Ankle", "Waist"],
+    correctAnswer: "Neck",
+    explanation: "Necklaces are worn around the neck.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "accessories", "b1"]
+  },
+  {
+    id: "b1-fashion-33",
+    type: "multiple-choice",
+    question: "A hat is worn on the:",
+    options: ["Head", "Hands", "Feet", "Neck"],
+    correctAnswer: "Head",
+    explanation: "Hats are worn on the head.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "accessories", "b1"]
+  },
+  {
+    id: "b1-fashion-34",
+    type: "fill-blank",
+    question: "An ______ is worn on the ankle.",
+    options: ["anklet", "bracelet", "necklace", "ring"],
+    correctAnswer: "anklet",
+    explanation: "An anklet is jewelry worn around the ankle.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "accessories", "b1"]
+  },
+  {
+    id: "b1-fashion-35",
+    type: "multiple-choice",
+    question: "A tie is worn around the:",
+    options: ["Neck", "Waist", "Wrist", "Head"],
+    correctAnswer: "Neck",
+    explanation: "Ties are formal neckwear, usually for men.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "accessories", "b1"]
+  },
+  {
+    id: "b1-fashion-36",
+    type: "multiple-choice",
+    question: "'Off-the-rack' clothing is:",
+    options: ["Ready-made", "Custom-made", "Handmade", "Vintage"],
+    correctAnswer: "Ready-made",
+    explanation: "Off-the-rack means ready to buy in standard sizes.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-37",
+    type: "fill-blank",
+    question: "A ______ is a sleeveless garment worn over a shirt.",
+    options: ["vest", "coat", "jacket", "sweater"],
+    correctAnswer: "vest",
+    explanation: "A vest is a sleeveless garment.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-38",
+    type: "multiple-choice",
+    question: "'Sustainable fashion' prioritizes:",
+    options: ["Environmental responsibility", "Low prices only", "Fast trends", "Synthetic materials"],
+    correctAnswer: "Environmental responsibility",
+    explanation: "Sustainable fashion considers environmental impact.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-39",
+    type: "multiple-choice",
+    question: "'Fast fashion' is characterized by:",
+    options: ["Quick production of trendy, cheap clothes", "High quality", "Custom made", "Slow production"],
+    correctAnswer: "Quick production of trendy, cheap clothes",
+    explanation: "Fast fashion produces cheap, trendy clothing quickly.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-40",
+    type: "fill-blank",
+    question: "A ______ shows new fashion collections.",
+    options: ["fashion show", "movie", "concert", "exhibition"],
+    correctAnswer: "fashion show",
+    explanation: "Fashion shows display new clothing collections.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-41",
+    type: "multiple-choice",
+    question: "A 'capsule wardrobe' contains:",
+    options: ["A small collection of versatile pieces", "Many different items", "Only formal wear", "Only casual wear"],
+    correctAnswer: "A small collection of versatile pieces",
+    explanation: "A capsule wardrobe has essential, versatile items.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-42",
+    type: "multiple-choice",
+    question: "'Athleisure' combines:",
+    options: ["Athletic and leisure wear", "Formal and casual", "Vintage and modern", "Work and party"],
+    correctAnswer: "Athletic and leisure wear",
+    explanation: "Athleisure is comfortable clothing for sports and casual wear.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-43",
+    type: "fill-blank",
+    question: "A ______ is a person who displays clothes in fashion shows.",
+    options: ["model", "designer", "tailor", "stylist"],
+    correctAnswer: "model",
+    explanation: "Models showcase clothing on the runway.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-44",
+    type: "multiple-choice",
+    question: "'Monochrome' means wearing:",
+    options: ["One color or shades of one color", "Many bright colors", "Patterns only", "No clothes"],
+    correctAnswer: "One color or shades of one color",
+    explanation: "Monochrome style uses variations of a single color.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-45",
+    type: "multiple-choice",
+    question: "A 'stylist' helps with:",
+    options: ["Choosing outfits and looks", "Sewing clothes", "Selling clothes", "Designing clothes"],
+    correctAnswer: "Choosing outfits and looks",
+    explanation: "A stylist selects clothing and accessories for clients.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-46",
+    type: "fill-blank",
+    question: "A ______ is the hem at the bottom of a garment.",
+    options: ["hemline", "neckline", "waistline", "headline"],
+    correctAnswer: "hemline",
+    explanation: "The hemline is the bottom edge of a garment.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-47",
+    type: "multiple-choice",
+    question: "'Wardrobe malfunction' means:",
+    options: ["Clothing accidentally revealing too much", "A broken closet", "Buying wrong size", "Fashion mistake"],
+    correctAnswer: "Clothing accidentally revealing too much",
+    explanation: "A wardrobe malfunction is an accidental clothing failure.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-48",
+    type: "multiple-choice",
+    question: "'Bespoke' clothing is:",
+    options: ["Custom-made for an individual", "Mass-produced", "Second-hand", "Rental only"],
+    correctAnswer: "Custom-made for an individual",
+    explanation: "Bespoke means made to order for a specific person.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-49",
+    type: "fill-blank",
+    question: "The ______ is the opening for the head on a garment.",
+    options: ["neckline", "hemline", "waistline", "sleeve"],
+    correctAnswer: "neckline",
+    explanation: "The neckline is the edge around the neck opening.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+  {
+    id: "b1-fashion-50",
+    type: "multiple-choice",
+    question: "'Upcycling' in fashion means:",
+    options: ["Transforming old items into new pieces", "Throwing away clothes", "Buying new clothes", "Wearing the same outfit"],
+    correctAnswer: "Transforming old items into new pieces",
+    explanation: "Upcycling creates new items from old materials.",
+    difficulty: 2,
+    tags: ["listening", "fashion", "b1"]
+  },
+];
+
 // Export all B1 Listening exercises organized by skill ID
 export const b1ListeningExercisesNew: Record<string, Exercise[]> = {
   "b1-list-1": artCultureExercises,           // Art & Culture
@@ -4069,6 +6609,11 @@ export const b1ListeningExercisesNew: Record<string, Exercise[]> = {
   "b1-list-6": economicsFinanceExercises,     // Economics & Finance
   "b1-list-7": healthWellnessExercises,       // Health & Wellness
   "b1-list-8": sportsCompetitionExercises,    // Sports & Competition
+  "b1-list-9": cuisineGastronomyExercises,    // Cuisine & Gastronomy
+  "b1-list-10": architectureBuildingsExercises, // Architecture & Buildings
+  "b1-list-11": literatureWritingExercises,   // Literature & Writing
+  "b1-list-12": musicPerformanceExercises,    // Music & Performance
+  "b1-list-13": fashionStyleExercises,        // Fashion & Style
 };
 
 // Function to get exercises by skill ID
@@ -4086,4 +6631,9 @@ export const allB1ListeningExercises: Exercise[] = [
   ...economicsFinanceExercises,
   ...healthWellnessExercises,
   ...sportsCompetitionExercises,
+  ...cuisineGastronomyExercises,
+  ...architectureBuildingsExercises,
+  ...literatureWritingExercises,
+  ...musicPerformanceExercises,
+  ...fashionStyleExercises,
 ];
