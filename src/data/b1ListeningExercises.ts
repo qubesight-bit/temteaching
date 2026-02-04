@@ -2031,12 +2031,2044 @@ const digitalTechnologyExercises: Exercise[] = [
   },
 ];
 
+// Theme 5: Psychology & Mind (50 Exercises)
+const psychologyMindExercises: Exercise[] = [
+  // Part 1: Mental Processes
+  {
+    id: "b1-psych-1",
+    type: "fill-blank",
+    question: "The way in which one acts or conducts oneself: (______)",
+    options: ["behavior", "behaviour", "behave", "behaving"],
+    correctAnswer: "behavior",
+    explanation: "Behavior is the way a person acts or conducts themselves.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-2",
+    type: "fill-blank",
+    question: "The reason or reasons one has for acting in a particular way: (______)",
+    options: ["motivation", "motion", "motive", "motivate"],
+    correctAnswer: "motivation",
+    explanation: "Motivation is the reason for acting or behaving in a particular way.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-3",
+    type: "fill-blank",
+    question: "A feeling of worry, nervousness, or unease: (______)",
+    options: ["anxiety", "anxious", "anger", "anguish"],
+    correctAnswer: "anxiety",
+    explanation: "Anxiety is a feeling of worry, nervousness, or unease.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-4",
+    type: "fill-blank",
+    question: "The ability to see, hear, or become aware of something through the senses: (______)",
+    options: ["perception", "perspective", "perceive", "perceptive"],
+    correctAnswer: "perception",
+    explanation: "Perception is the ability to become aware of something through the senses.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-5",
+    type: "fill-blank",
+    question: "Unscramble: P-E-R-C-E-P-T-I-O-N (______)",
+    options: ["perception", "perceptoin", "percepton", "percpetion"],
+    correctAnswer: "perception",
+    explanation: "PERCEPTION - the way you understand or interpret something.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "spelling", "b1"]
+  },
+  {
+    id: "b1-psych-6",
+    type: "fill-blank",
+    question: "Unscramble: B-E-H-A-V-I-O-R (______)",
+    options: ["behavior", "behavoir", "behaviur", "behaviar"],
+    correctAnswer: "behavior",
+    explanation: "BEHAVIOR - the way a person conducts themselves.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "spelling", "b1"]
+  },
+  {
+    id: "b1-psych-7",
+    type: "multiple-choice",
+    question: "The part of the mind of which one is not fully aware but which influences actions:",
+    options: ["Subconscious", "Conscious", "Conscience", "Consciousness"],
+    correctAnswer: "Subconscious",
+    explanation: "The subconscious is the part of the mind not fully aware but influencing behavior.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-8",
+    type: "multiple-choice",
+    question: "Treatment intended to relieve or heal a disorder:",
+    options: ["Therapy", "Diagnosis", "Symptom", "Prognosis"],
+    correctAnswer: "Therapy",
+    explanation: "Therapy is treatment intended to relieve or heal a disorder.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-9",
+    type: "multiple-choice",
+    question: "Relating to the process of acquiring knowledge and understanding:",
+    options: ["Cognitive", "Physical", "Emotional", "Spiritual"],
+    correctAnswer: "Cognitive",
+    explanation: "Cognitive relates to the mental processes of acquiring knowledge.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-10",
+    type: "fill-blank",
+    question: "A 'phobia' is an irrational ______ of something.",
+    options: ["fear", "love", "interest", "curiosity"],
+    correctAnswer: "fear",
+    explanation: "A phobia is an extreme, irrational fear of something.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  // Part 2: Emotions vs. Traits
+  {
+    id: "b1-psych-11",
+    type: "multiple-choice",
+    question: "Optimistic means:",
+    options: ["Hopeful about the future", "Sad about the past", "Worried about everything", "Angry at others"],
+    correctAnswer: "Hopeful about the future",
+    explanation: "Optimistic means having a positive outlook and hopeful about the future.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-12",
+    type: "multiple-choice",
+    question: "Introvert describes someone who:",
+    options: ["Recharges alone", "Loves crowds", "Talks constantly", "Never thinks"],
+    correctAnswer: "Recharges alone",
+    explanation: "An introvert prefers solitude and recharges by being alone.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-13",
+    type: "multiple-choice",
+    question: "Resilience is:",
+    options: ["Recovering quickly from difficulties", "Giving up easily", "Avoiding challenges", "Ignoring problems"],
+    correctAnswer: "Recovering quickly from difficulties",
+    explanation: "Resilience is the ability to recover quickly from difficulties.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-14",
+    type: "multiple-choice",
+    question: "Trauma is:",
+    options: ["A deeply distressing experience", "A happy memory", "A small problem", "A physical injury only"],
+    correctAnswer: "A deeply distressing experience",
+    explanation: "Trauma is a deeply distressing or disturbing experience.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-15",
+    type: "multiple-choice",
+    question: "Narcissist describes someone who:",
+    options: ["Has excessive interest in themselves", "Is very humble", "Helps everyone", "Never thinks about self"],
+    correctAnswer: "Has excessive interest in themselves",
+    explanation: "A narcissist has an excessive interest in themselves.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-16",
+    type: "multiple-choice",
+    question: "True or False: 'Body language' is a form of non-verbal communication.",
+    options: ["True", "False"],
+    correctAnswer: "True",
+    explanation: "Body language is indeed a form of non-verbal communication.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-17",
+    type: "multiple-choice",
+    question: "True or False: 'Insomnia' is the ability to sleep very well.",
+    options: ["False", "True"],
+    correctAnswer: "False",
+    explanation: "Insomnia is the inability to sleep, not the ability to sleep well.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-18",
+    type: "multiple-choice",
+    question: "Synonym: 'Rational' means:",
+    options: ["Logical", "Emotional", "Crazy", "Random"],
+    correctAnswer: "Logical",
+    explanation: "Rational means based on logic and reason.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-19",
+    type: "multiple-choice",
+    question: "Antonym: The opposite of 'Stable' is:",
+    options: ["Unstable", "Stable", "Steady", "Balanced"],
+    correctAnswer: "Unstable",
+    explanation: "Unstable is the opposite of stable.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-20",
+    type: "multiple-choice",
+    question: "Collocation: To cope ______ stress.",
+    options: ["with", "on", "at", "for"],
+    correctAnswer: "with",
+    explanation: "The correct collocation is 'cope with stress'.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  // Part 3: Applied Psychology
+  {
+    id: "b1-psych-21",
+    type: "multiple-choice",
+    question: "'She has a lot of empathy; she understands how I feel.' This statement is:",
+    options: ["True", "False"],
+    correctAnswer: "True",
+    explanation: "Empathy is the ability to understand others' feelings.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-22",
+    type: "multiple-choice",
+    question: "'His ego is too big' means:",
+    options: ["He is arrogant", "He is shy", "He is humble", "He is quiet"],
+    correctAnswer: "He is arrogant",
+    explanation: "Having a big ego means being arrogant or self-important.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-23",
+    type: "multiple-choice",
+    question: "'I had a panic attack' means:",
+    options: ["Sudden intense fear", "A long sleep", "A good meal", "A happy moment"],
+    correctAnswer: "Sudden intense fear",
+    explanation: "A panic attack is a sudden episode of intense fear.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-24",
+    type: "multiple-choice",
+    question: "'He is in denial' means:",
+    options: ["Refusing to accept the truth", "Agreeing with everyone", "Being very honest", "Accepting reality"],
+    correctAnswer: "Refusing to accept the truth",
+    explanation: "Being in denial means refusing to accept reality.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-25",
+    type: "multiple-choice",
+    question: "'Positive reinforcement helps learning' uses:",
+    options: ["Rewards", "Punishments", "Ignoring", "Criticism"],
+    correctAnswer: "Rewards",
+    explanation: "Positive reinforcement uses rewards to encourage behavior.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-26",
+    type: "fill-blank",
+    question: "A ______ is a mental health professional who provides talk therapy.",
+    options: ["therapist", "therapy", "therapeutic", "therapize"],
+    correctAnswer: "therapist",
+    explanation: "A therapist is a professional who provides therapy.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-27",
+    type: "multiple-choice",
+    question: "An extrovert typically:",
+    options: ["Gains energy from social interaction", "Prefers solitude", "Avoids people", "Dislikes talking"],
+    correctAnswer: "Gains energy from social interaction",
+    explanation: "Extroverts gain energy from being around others.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-28",
+    type: "multiple-choice",
+    question: "Stress can be:",
+    options: ["Both positive and negative", "Only negative", "Only positive", "Neither"],
+    correctAnswer: "Both positive and negative",
+    explanation: "Stress can be positive (eustress) or negative (distress).",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-29",
+    type: "fill-blank",
+    question: "Someone who studies the mind and behavior is a ______.",
+    options: ["psychologist", "psychology", "psychological", "psycho"],
+    correctAnswer: "psychologist",
+    explanation: "A psychologist studies the mind and behavior.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-30",
+    type: "multiple-choice",
+    question: "A 'mood swing' refers to:",
+    options: ["Rapid changes in emotional state", "A type of dance", "A swing set", "A musical instrument"],
+    correctAnswer: "Rapid changes in emotional state",
+    explanation: "A mood swing is a rapid change in mood.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-31",
+    type: "multiple-choice",
+    question: "Self-esteem refers to:",
+    options: ["How you value yourself", "How others value you", "Your salary", "Your appearance"],
+    correctAnswer: "How you value yourself",
+    explanation: "Self-esteem is your overall sense of self-worth.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-32",
+    type: "fill-blank",
+    question: "Being ______ means having a deep awareness of yourself.",
+    options: ["self-aware", "self-fish", "self-less", "self-made"],
+    correctAnswer: "self-aware",
+    explanation: "Self-aware means having conscious knowledge of your own character.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-33",
+    type: "multiple-choice",
+    question: "Depression is characterized by:",
+    options: ["Persistent sadness and loss of interest", "Constant happiness", "High energy", "Increased appetite"],
+    correctAnswer: "Persistent sadness and loss of interest",
+    explanation: "Depression involves persistent feelings of sadness.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-34",
+    type: "multiple-choice",
+    question: "Mindfulness means:",
+    options: ["Being fully present in the moment", "Thinking about the past", "Planning the future", "Ignoring everything"],
+    correctAnswer: "Being fully present in the moment",
+    explanation: "Mindfulness is focusing on the present moment.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-35",
+    type: "fill-blank",
+    question: "The ______ effect is when people remember beginnings and endings better.",
+    options: ["serial position", "butterfly", "domino", "halo"],
+    correctAnswer: "serial position",
+    explanation: "The serial position effect describes better recall of first and last items.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-36",
+    type: "multiple-choice",
+    question: "IQ stands for:",
+    options: ["Intelligence Quotient", "Internal Quality", "Immediate Question", "Individual Quest"],
+    correctAnswer: "Intelligence Quotient",
+    explanation: "IQ stands for Intelligence Quotient, a measure of intelligence.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-37",
+    type: "multiple-choice",
+    question: "Emotional intelligence (EQ) involves:",
+    options: ["Understanding and managing emotions", "Being very smart academically", "Having a high IQ", "Ignoring feelings"],
+    correctAnswer: "Understanding and managing emotions",
+    explanation: "EQ is the ability to understand and manage emotions.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-38",
+    type: "fill-blank",
+    question: "______ memory stores information for immediate use.",
+    options: ["Short-term", "Long-term", "Permanent", "Eternal"],
+    correctAnswer: "Short-term",
+    explanation: "Short-term memory holds information briefly.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-39",
+    type: "multiple-choice",
+    question: "A 'placebo' is:",
+    options: ["An inactive treatment that can have real effects", "A real medicine", "A type of surgery", "A disease"],
+    correctAnswer: "An inactive treatment that can have real effects",
+    explanation: "A placebo is an inactive treatment that may produce real effects.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-40",
+    type: "multiple-choice",
+    question: "Procrastination means:",
+    options: ["Delaying or postponing tasks", "Doing tasks immediately", "Working hard", "Being organized"],
+    correctAnswer: "Delaying or postponing tasks",
+    explanation: "Procrastination is the act of delaying tasks.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-41",
+    type: "fill-blank",
+    question: "A person who is easily influenced by others is described as ______.",
+    options: ["impressionable", "impressive", "impressed", "impression"],
+    correctAnswer: "impressionable",
+    explanation: "Impressionable means easily influenced or affected.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-42",
+    type: "multiple-choice",
+    question: "An 'inferiority complex' means:",
+    options: ["Feeling less worthy than others", "Feeling superior", "Feeling equal", "Feeling indifferent"],
+    correctAnswer: "Feeling less worthy than others",
+    explanation: "An inferiority complex involves feeling less worthy than others.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-43",
+    type: "multiple-choice",
+    question: "Peer pressure is:",
+    options: ["Influence from people of similar age", "Pressure from parents", "Academic stress", "Work deadlines"],
+    correctAnswer: "Influence from people of similar age",
+    explanation: "Peer pressure is influence from one's social group.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-44",
+    type: "fill-blank",
+    question: "The fight-or-flight response is activated by ______.",
+    options: ["stress", "sleep", "relaxation", "meditation"],
+    correctAnswer: "stress",
+    explanation: "The fight-or-flight response is triggered by stress or danger.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-45",
+    type: "multiple-choice",
+    question: "Attention span refers to:",
+    options: ["How long you can focus", "How smart you are", "How fast you think", "How much you remember"],
+    correctAnswer: "How long you can focus",
+    explanation: "Attention span is the length of time you can concentrate.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-46",
+    type: "multiple-choice",
+    question: "An 'obsession' is:",
+    options: ["An idea that dominates one's thoughts", "A casual interest", "A hobby", "A profession"],
+    correctAnswer: "An idea that dominates one's thoughts",
+    explanation: "An obsession is a preoccupying thought or idea.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-47",
+    type: "fill-blank",
+    question: "A person's overall outlook on life is called their ______.",
+    options: ["attitude", "altitude", "aptitude", "attribute"],
+    correctAnswer: "attitude",
+    explanation: "Attitude is a settled way of thinking or feeling.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-48",
+    type: "multiple-choice",
+    question: "Being 'impulsive' means:",
+    options: ["Acting without thinking", "Planning carefully", "Being patient", "Thinking deeply"],
+    correctAnswer: "Acting without thinking",
+    explanation: "Impulsive means acting without forethought.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-49",
+    type: "multiple-choice",
+    question: "Conditioning in psychology refers to:",
+    options: ["Learning through association", "Hair treatment", "Exercise routine", "Air conditioning"],
+    correctAnswer: "Learning through association",
+    explanation: "Conditioning is a learning process through association.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+  {
+    id: "b1-psych-50",
+    type: "fill-blank",
+    question: "______ is the study of how people think, feel, and behave.",
+    options: ["Psychology", "Biology", "Sociology", "Philosophy"],
+    correctAnswer: "Psychology",
+    explanation: "Psychology is the scientific study of the mind and behavior.",
+    difficulty: 2,
+    tags: ["listening", "psychology", "b1"]
+  },
+];
+
+// Theme 6: Economics & Finance (50 Exercises)
+const economicsFinanceExercises: Exercise[] = [
+  // Part 1: Economic Fundamentals
+  {
+    id: "b1-econ-1",
+    type: "fill-blank",
+    question: "A general increase in prices and fall in the purchasing value of money: (______)",
+    options: ["inflation", "deflation", "recession", "depression"],
+    correctAnswer: "inflation",
+    explanation: "Inflation is a general increase in prices and fall in purchasing power.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-2",
+    type: "fill-blank",
+    question: "A period of temporary economic decline: (______)",
+    options: ["recession", "progression", "succession", "regression"],
+    correctAnswer: "recession",
+    explanation: "A recession is a period of temporary economic decline.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-3",
+    type: "fill-blank",
+    question: "Money received, especially on a regular basis, for work or through investments: (______)",
+    options: ["income", "outcome", "inflow", "outflow"],
+    correctAnswer: "income",
+    explanation: "Income is money received regularly for work or investments.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-4",
+    type: "fill-blank",
+    question: "An estimate of income and expenditure for a set period of time: (______)",
+    options: ["budget", "balance", "account", "ledger"],
+    correctAnswer: "budget",
+    explanation: "A budget is an estimate of income and spending for a period.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-5",
+    type: "fill-blank",
+    question: "Unscramble: I-N-F-L-A-T-I-O-N (______)",
+    options: ["inflation", "inflaton", "inflatoin", "infaltion"],
+    correctAnswer: "inflation",
+    explanation: "INFLATION - the rate at which prices rise.",
+    difficulty: 2,
+    tags: ["listening", "economics", "spelling", "b1"]
+  },
+  {
+    id: "b1-econ-6",
+    type: "fill-blank",
+    question: "Unscramble: R-E-C-E-S-S-I-O-N (______)",
+    options: ["recession", "reccesion", "recesion", "recessoin"],
+    correctAnswer: "recession",
+    explanation: "RECESSION - a period of economic decline.",
+    difficulty: 2,
+    tags: ["listening", "economics", "spelling", "b1"]
+  },
+  {
+    id: "b1-econ-7",
+    type: "multiple-choice",
+    question: "A system of money in general use in a particular country:",
+    options: ["Currency", "Coin", "Cash", "Credit"],
+    correctAnswer: "Currency",
+    explanation: "Currency is the system of money used in a country.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-8",
+    type: "multiple-choice",
+    question: "The amount of a good or service available for use:",
+    options: ["Supply", "Demand", "Stock", "Reserve"],
+    correctAnswer: "Supply",
+    explanation: "Supply is the amount of something available.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-9",
+    type: "multiple-choice",
+    question: "The desire of purchasers for a good or service:",
+    options: ["Demand", "Supply", "Need", "Want"],
+    correctAnswer: "Demand",
+    explanation: "Demand is the desire to purchase goods or services.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-10",
+    type: "multiple-choice",
+    question: "If supply is low and demand is high, prices usually:",
+    options: ["Go up", "Go down", "Stay the same", "Disappear"],
+    correctAnswer: "Go up",
+    explanation: "When supply is low and demand is high, prices rise.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  // Part 2: Personal Finance
+  {
+    id: "b1-econ-11",
+    type: "multiple-choice",
+    question: "Debt is:",
+    options: ["Money you owe", "Money you have", "Money you save", "Money you earn"],
+    correctAnswer: "Money you owe",
+    explanation: "Debt is money that you owe to someone else.",
+    difficulty: 2,
+    tags: ["listening", "finance", "b1"]
+  },
+  {
+    id: "b1-econ-12",
+    type: "multiple-choice",
+    question: "Asset is:",
+    options: ["Something valuable you own", "Something you owe", "A type of tax", "A bank fee"],
+    correctAnswer: "Something valuable you own",
+    explanation: "An asset is something valuable that you own.",
+    difficulty: 2,
+    tags: ["listening", "finance", "b1"]
+  },
+  {
+    id: "b1-econ-13",
+    type: "multiple-choice",
+    question: "Mortgage is:",
+    options: ["A loan to buy a house", "A loan for a car", "A credit card", "A savings account"],
+    correctAnswer: "A loan to buy a house",
+    explanation: "A mortgage is a loan used to buy property.",
+    difficulty: 2,
+    tags: ["listening", "finance", "b1"]
+  },
+  {
+    id: "b1-econ-14",
+    type: "multiple-choice",
+    question: "Interest is:",
+    options: ["The cost of borrowing money", "A hobby", "Free money", "A type of bank"],
+    correctAnswer: "The cost of borrowing money",
+    explanation: "Interest is the cost paid for borrowing money.",
+    difficulty: 2,
+    tags: ["listening", "finance", "b1"]
+  },
+  {
+    id: "b1-econ-15",
+    type: "multiple-choice",
+    question: "Tax is:",
+    options: ["Money paid to the government", "Money from the government", "Bank fees", "Loan payments"],
+    correctAnswer: "Money paid to the government",
+    explanation: "Tax is money paid to the government for public services.",
+    difficulty: 2,
+    tags: ["listening", "finance", "b1"]
+  },
+  {
+    id: "b1-econ-16",
+    type: "multiple-choice",
+    question: "True or False: 'Net income' is what you take home after taxes.",
+    options: ["True", "False"],
+    correctAnswer: "True",
+    explanation: "Net income is your income after all deductions including taxes.",
+    difficulty: 2,
+    tags: ["listening", "finance", "b1"]
+  },
+  {
+    id: "b1-econ-17",
+    type: "multiple-choice",
+    question: "True or False: A 'bull market' means the economy is doing badly.",
+    options: ["False", "True"],
+    correctAnswer: "False",
+    explanation: "A bull market means the economy is doing well with rising prices.",
+    difficulty: 2,
+    tags: ["listening", "finance", "b1"]
+  },
+  {
+    id: "b1-econ-18",
+    type: "multiple-choice",
+    question: "Synonym: 'Wealth' means:",
+    options: ["Riches", "Poverty", "Debt", "Loss"],
+    correctAnswer: "Riches",
+    explanation: "Wealth is synonymous with riches or affluence.",
+    difficulty: 2,
+    tags: ["listening", "finance", "b1"]
+  },
+  {
+    id: "b1-econ-19",
+    type: "multiple-choice",
+    question: "Antonym: The opposite of 'Liability' is:",
+    options: ["Asset", "Debt", "Loss", "Expense"],
+    correctAnswer: "Asset",
+    explanation: "An asset is the opposite of a liability.",
+    difficulty: 2,
+    tags: ["listening", "finance", "b1"]
+  },
+  {
+    id: "b1-econ-20",
+    type: "multiple-choice",
+    question: "Idiom: 'To save for a rainy day' means:",
+    options: ["To save money for emergencies", "To buy an umbrella", "To wait for rain", "To spend freely"],
+    correctAnswer: "To save money for emergencies",
+    explanation: "This idiom means saving money for future emergencies.",
+    difficulty: 2,
+    tags: ["listening", "finance", "idiom", "b1"]
+  },
+  // Part 3: Global Economics
+  {
+    id: "b1-econ-21",
+    type: "multiple-choice",
+    question: "GDP stands for:",
+    options: ["Gross Domestic Product", "General Dollar Price", "Government Data Plan", "Global Development Program"],
+    correctAnswer: "Gross Domestic Product",
+    explanation: "GDP stands for Gross Domestic Product, a measure of economic output.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-22",
+    type: "multiple-choice",
+    question: "Trade means:",
+    options: ["Buying and selling goods", "Keeping goods", "Destroying goods", "Hiding goods"],
+    correctAnswer: "Buying and selling goods",
+    explanation: "Trade is the buying and selling of goods and services.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-23",
+    type: "multiple-choice",
+    question: "Stock Market is:",
+    options: ["Where shares of companies are bought/sold", "A grocery store", "A warehouse", "A factory"],
+    correctAnswer: "Where shares of companies are bought/sold",
+    explanation: "The stock market is where company shares are traded.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-24",
+    type: "multiple-choice",
+    question: "Bankruptcy is:",
+    options: ["Legal status of being unable to pay debts", "Making a lot of profit", "Opening a bank", "Getting a loan"],
+    correctAnswer: "Legal status of being unable to pay debts",
+    explanation: "Bankruptcy is the legal status when unable to pay debts.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-25",
+    type: "multiple-choice",
+    question: "Capitalism is:",
+    options: ["An economic system based on private ownership", "Government control of everything", "No ownership", "Sharing everything"],
+    correctAnswer: "An economic system based on private ownership",
+    explanation: "Capitalism is based on private ownership and free markets.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-26",
+    type: "fill-blank",
+    question: "A ______ market means prices are falling.",
+    options: ["bear", "bull", "cow", "horse"],
+    correctAnswer: "bear",
+    explanation: "A bear market is characterized by falling prices.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-27",
+    type: "multiple-choice",
+    question: "'Dividend' is:",
+    options: ["Payment to shareholders from company profits", "A type of debt", "A tax payment", "A bank fee"],
+    correctAnswer: "Payment to shareholders from company profits",
+    explanation: "A dividend is a payment to shareholders from profits.",
+    difficulty: 2,
+    tags: ["listening", "finance", "b1"]
+  },
+  {
+    id: "b1-econ-28",
+    type: "fill-blank",
+    question: "The rate at which one currency can be exchanged for another is the ______ rate.",
+    options: ["exchange", "interest", "inflation", "unemployment"],
+    correctAnswer: "exchange",
+    explanation: "The exchange rate determines currency conversion values.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-29",
+    type: "multiple-choice",
+    question: "An 'entrepreneur' is:",
+    options: ["Someone who starts a business", "A bank employee", "A government worker", "A factory worker"],
+    correctAnswer: "Someone who starts a business",
+    explanation: "An entrepreneur is someone who starts and runs a business.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-30",
+    type: "multiple-choice",
+    question: "'Monopoly' in economics means:",
+    options: ["One company controls the entire market", "Many companies compete", "No companies exist", "A board game only"],
+    correctAnswer: "One company controls the entire market",
+    explanation: "A monopoly is when one company dominates a market.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-31",
+    type: "fill-blank",
+    question: "The total amount of money in circulation is called the money ______.",
+    options: ["supply", "demand", "flow", "stream"],
+    correctAnswer: "supply",
+    explanation: "Money supply is the total amount of money in circulation.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-32",
+    type: "multiple-choice",
+    question: "A 'bond' is:",
+    options: ["A loan to a government or company", "A type of glue", "A family connection", "A spy movie"],
+    correctAnswer: "A loan to a government or company",
+    explanation: "A bond is a debt instrument issued by governments or corporations.",
+    difficulty: 2,
+    tags: ["listening", "finance", "b1"]
+  },
+  {
+    id: "b1-econ-33",
+    type: "multiple-choice",
+    question: "'Subsidy' means:",
+    options: ["Government financial support", "A tax increase", "A fine", "A penalty"],
+    correctAnswer: "Government financial support",
+    explanation: "A subsidy is financial assistance from the government.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-34",
+    type: "fill-blank",
+    question: "The percentage of people without jobs is called the ______ rate.",
+    options: ["unemployment", "employment", "interest", "inflation"],
+    correctAnswer: "unemployment",
+    explanation: "The unemployment rate measures joblessness.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-35",
+    type: "multiple-choice",
+    question: "'Import' means:",
+    options: ["Bring goods into a country", "Send goods out of a country", "Make goods locally", "Destroy goods"],
+    correctAnswer: "Bring goods into a country",
+    explanation: "Import means to bring goods into a country from abroad.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-36",
+    type: "multiple-choice",
+    question: "'Export' means:",
+    options: ["Send goods out of a country", "Bring goods into a country", "Store goods", "Buy goods"],
+    correctAnswer: "Send goods out of a country",
+    explanation: "Export means to send goods to another country.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-37",
+    type: "fill-blank",
+    question: "A ______ is a fee charged on imported goods.",
+    options: ["tariff", "tax", "toll", "tip"],
+    correctAnswer: "tariff",
+    explanation: "A tariff is a tax on imported goods.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-38",
+    type: "multiple-choice",
+    question: "'Profit' is:",
+    options: ["Money gained after expenses", "Money spent", "Money borrowed", "Money lost"],
+    correctAnswer: "Money gained after expenses",
+    explanation: "Profit is the financial gain after subtracting expenses.",
+    difficulty: 2,
+    tags: ["listening", "finance", "b1"]
+  },
+  {
+    id: "b1-econ-39",
+    type: "multiple-choice",
+    question: "'Revenue' refers to:",
+    options: ["Total income before expenses", "Total expenses", "Profit only", "Losses only"],
+    correctAnswer: "Total income before expenses",
+    explanation: "Revenue is total income before any deductions.",
+    difficulty: 2,
+    tags: ["listening", "finance", "b1"]
+  },
+  {
+    id: "b1-econ-40",
+    type: "fill-blank",
+    question: "The central bank of the US is called the Federal ______.",
+    options: ["Reserve", "Bank", "Treasury", "Mint"],
+    correctAnswer: "Reserve",
+    explanation: "The Federal Reserve is the US central bank.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-41",
+    type: "multiple-choice",
+    question: "An 'investment' is:",
+    options: ["Money put into something to earn a return", "Money spent on food", "Money given away", "Money wasted"],
+    correctAnswer: "Money put into something to earn a return",
+    explanation: "An investment is money allocated to earn future returns.",
+    difficulty: 2,
+    tags: ["listening", "finance", "b1"]
+  },
+  {
+    id: "b1-econ-42",
+    type: "multiple-choice",
+    question: "'Inflation rate' of 3% means:",
+    options: ["Prices rose 3% on average", "Prices fell 3%", "3% of products disappeared", "3% more products were made"],
+    correctAnswer: "Prices rose 3% on average",
+    explanation: "A 3% inflation rate means average prices increased by 3%.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-43",
+    type: "fill-blank",
+    question: "The price of borrowing money is called the ______ rate.",
+    options: ["interest", "exchange", "tax", "inflation"],
+    correctAnswer: "interest",
+    explanation: "The interest rate is the cost of borrowing money.",
+    difficulty: 2,
+    tags: ["listening", "finance", "b1"]
+  },
+  {
+    id: "b1-econ-44",
+    type: "multiple-choice",
+    question: "'Shares' represent:",
+    options: ["Ownership in a company", "Company debts", "Employee wages", "Product prices"],
+    correctAnswer: "Ownership in a company",
+    explanation: "Shares represent partial ownership in a company.",
+    difficulty: 2,
+    tags: ["listening", "finance", "b1"]
+  },
+  {
+    id: "b1-econ-45",
+    type: "multiple-choice",
+    question: "A 'recession' typically lasts:",
+    options: ["Two or more consecutive quarters of decline", "One day", "One week", "One hour"],
+    correctAnswer: "Two or more consecutive quarters of decline",
+    explanation: "A recession is typically defined as two consecutive quarters of economic decline.",
+    difficulty: 2,
+    tags: ["listening", "economics", "b1"]
+  },
+  {
+    id: "b1-econ-46",
+    type: "fill-blank",
+    question: "A company's value on the stock market is called its market ______.",
+    options: ["capitalization", "price", "rate", "value"],
+    correctAnswer: "capitalization",
+    explanation: "Market capitalization is the total market value of a company's shares.",
+    difficulty: 2,
+    tags: ["listening", "finance", "b1"]
+  },
+  {
+    id: "b1-econ-47",
+    type: "multiple-choice",
+    question: "'Credit score' affects your ability to:",
+    options: ["Borrow money", "Vote", "Drive", "Travel"],
+    correctAnswer: "Borrow money",
+    explanation: "Credit score affects your ability to get loans.",
+    difficulty: 2,
+    tags: ["listening", "finance", "b1"]
+  },
+  {
+    id: "b1-econ-48",
+    type: "multiple-choice",
+    question: "A 'hedge fund' is:",
+    options: ["An investment fund for wealthy investors", "A garden center", "A bank branch", "A savings account"],
+    correctAnswer: "An investment fund for wealthy investors",
+    explanation: "A hedge fund is a pooled investment fund for accredited investors.",
+    difficulty: 2,
+    tags: ["listening", "finance", "b1"]
+  },
+  {
+    id: "b1-econ-49",
+    type: "fill-blank",
+    question: "______ is the process of spreading investments to reduce risk.",
+    options: ["Diversification", "Concentration", "Speculation", "Elimination"],
+    correctAnswer: "Diversification",
+    explanation: "Diversification spreads investments to minimize risk.",
+    difficulty: 2,
+    tags: ["listening", "finance", "b1"]
+  },
+  {
+    id: "b1-econ-50",
+    type: "multiple-choice",
+    question: "'Liquidity' refers to:",
+    options: ["How easily an asset can be converted to cash", "How wet something is", "How popular a product is", "How old a company is"],
+    correctAnswer: "How easily an asset can be converted to cash",
+    explanation: "Liquidity is how quickly an asset can become cash.",
+    difficulty: 2,
+    tags: ["listening", "finance", "b1"]
+  },
+];
+
+// Theme 7: Health & Wellness (50 Exercises)
+const healthWellnessExercises: Exercise[] = [
+  // Part 1: Medical Basics
+  {
+    id: "b1-health-1",
+    type: "fill-blank",
+    question: "A physical or mental feature regarded as indicating a condition of disease: (______)",
+    options: ["symptom", "syndrome", "system", "symbol"],
+    correctAnswer: "symptom",
+    explanation: "A symptom is a sign indicating a condition or disease.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-2",
+    type: "fill-blank",
+    question: "The identification of the nature of an illness: (______)",
+    options: ["diagnosis", "prognosis", "dialysis", "analysis"],
+    correctAnswer: "diagnosis",
+    explanation: "Diagnosis is identifying the nature of an illness.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-3",
+    type: "fill-blank",
+    question: "Medical care given to a patient for an illness or injury: (______)",
+    options: ["treatment", "treaty", "treat", "treating"],
+    correctAnswer: "treatment",
+    explanation: "Treatment is medical care for illness or injury.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-4",
+    type: "fill-blank",
+    question: "An instruction written by a doctor that authorizes medicine: (______)",
+    options: ["prescription", "description", "inscription", "subscription"],
+    correctAnswer: "prescription",
+    explanation: "A prescription is a doctor's written order for medicine.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-5",
+    type: "fill-blank",
+    question: "Unscramble: D-I-A-G-N-O-S-I-S (______)",
+    options: ["diagnosis", "diagnosos", "diagnosys", "diagnisis"],
+    correctAnswer: "diagnosis",
+    explanation: "DIAGNOSIS - identifying an illness.",
+    difficulty: 2,
+    tags: ["listening", "health", "spelling", "b1"]
+  },
+  {
+    id: "b1-health-6",
+    type: "fill-blank",
+    question: "Unscramble: P-R-E-S-C-R-I-P-T-I-O-N (______)",
+    options: ["prescription", "perscription", "prescripton", "presciption"],
+    correctAnswer: "prescription",
+    explanation: "PRESCRIPTION - a doctor's order for medicine.",
+    difficulty: 2,
+    tags: ["listening", "health", "spelling", "b1"]
+  },
+  {
+    id: "b1-health-7",
+    type: "multiple-choice",
+    question: "Persisting for a long time or constantly recurring:",
+    options: ["Chronic", "Acute", "Brief", "Temporary"],
+    correctAnswer: "Chronic",
+    explanation: "Chronic conditions persist for a long time.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-8",
+    type: "multiple-choice",
+    question: "Resistant to a particular infection or toxin:",
+    options: ["Immune", "Sick", "Vulnerable", "Exposed"],
+    correctAnswer: "Immune",
+    explanation: "Being immune means resistant to infection.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-9",
+    type: "multiple-choice",
+    question: "The process of providing food necessary for health:",
+    options: ["Nutrition", "Exercise", "Sleep", "Medication"],
+    correctAnswer: "Nutrition",
+    explanation: "Nutrition is providing the body with necessary food.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-10",
+    type: "fill-blank",
+    question: "A 'surgeon' performs ______ on patients.",
+    options: ["operations", "interviews", "lectures", "meetings"],
+    correctAnswer: "operations",
+    explanation: "Surgeons perform surgical operations on patients.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  // Part 2: Healthy Living
+  {
+    id: "b1-health-11",
+    type: "multiple-choice",
+    question: "Sedentary means:",
+    options: ["Spending much time seated/inactive", "Very active", "Athletic", "Energetic"],
+    correctAnswer: "Spending much time seated/inactive",
+    explanation: "Sedentary means spending a lot of time sitting.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-12",
+    type: "multiple-choice",
+    question: "Hydrated means:",
+    options: ["Drinking enough water", "Being hungry", "Being tired", "Being cold"],
+    correctAnswer: "Drinking enough water",
+    explanation: "Being hydrated means having enough water in your body.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-13",
+    type: "multiple-choice",
+    question: "Obesity is:",
+    options: ["Being significantly overweight", "Being fit", "Being underweight", "Being athletic"],
+    correctAnswer: "Being significantly overweight",
+    explanation: "Obesity is a condition of being very overweight.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-14",
+    type: "multiple-choice",
+    question: "Fatigue is:",
+    options: ["Extreme tiredness", "Energy", "Excitement", "Strength"],
+    correctAnswer: "Extreme tiredness",
+    explanation: "Fatigue is a state of extreme tiredness.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-15",
+    type: "multiple-choice",
+    question: "Prevention is:",
+    options: ["Stopping something from happening", "Curing it later", "Ignoring it", "Waiting for it"],
+    correctAnswer: "Stopping something from happening",
+    explanation: "Prevention means stopping something before it happens.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-16",
+    type: "multiple-choice",
+    question: "True or False: 'Mental health' is as important as physical health.",
+    options: ["True", "False"],
+    correctAnswer: "True",
+    explanation: "Mental health is equally important as physical health.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-17",
+    type: "multiple-choice",
+    question: "True or False: An 'epidemic' is a disease affecting many people at once.",
+    options: ["True", "False"],
+    correctAnswer: "True",
+    explanation: "An epidemic is a widespread occurrence of disease.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-18",
+    type: "multiple-choice",
+    question: "Synonym: 'Ailment' means:",
+    options: ["Minor illness", "Cure", "Medicine", "Treatment"],
+    correctAnswer: "Minor illness",
+    explanation: "An ailment is a minor illness.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-19",
+    type: "multiple-choice",
+    question: "Antonym: The opposite of 'Healthy' is:",
+    options: ["Ill/Sick", "Strong", "Fit", "Athletic"],
+    correctAnswer: "Ill/Sick",
+    explanation: "Ill or sick is the opposite of healthy.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-20",
+    type: "multiple-choice",
+    question: "Collocation: To undergo ______.",
+    options: ["surgery", "a pill", "a bandage", "rest"],
+    correctAnswer: "surgery",
+    explanation: "The correct collocation is 'undergo surgery'.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  // Part 3: At the Doctor's
+  {
+    id: "b1-health-21",
+    type: "multiple-choice",
+    question: "'I have a splitting headache' means:",
+    options: ["My head hurts badly", "My foot hurts", "I'm happy", "I'm hungry"],
+    correctAnswer: "My head hurts badly",
+    explanation: "A splitting headache is a very painful headache.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-22",
+    type: "multiple-choice",
+    question: "'I feel nauseous' means:",
+    options: ["I want to vomit", "I am hungry", "I am tired", "I am happy"],
+    correctAnswer: "I want to vomit",
+    explanation: "Feeling nauseous means feeling like you might vomit.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-23",
+    type: "multiple-choice",
+    question: "'My arm is swollen' means:",
+    options: ["It is bigger than usual", "It is broken", "It is healthy", "It is small"],
+    correctAnswer: "It is bigger than usual",
+    explanation: "Swollen means enlarged, bigger than normal.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-24",
+    type: "multiple-choice",
+    question: "'Take this medicine on an empty stomach' means:",
+    options: ["Before eating", "After eating", "With food", "Never"],
+    correctAnswer: "Before eating",
+    explanation: "On an empty stomach means before eating food.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-25",
+    type: "multiple-choice",
+    question: "'You need a vaccine' means you need:",
+    options: ["A shot to prevent disease", "A bandage", "A surgery", "Rest"],
+    correctAnswer: "A shot to prevent disease",
+    explanation: "A vaccine is an injection to prevent disease.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-26",
+    type: "fill-blank",
+    question: "A medical professional who provides mental health support is a ______.",
+    options: ["therapist", "surgeon", "dentist", "optician"],
+    correctAnswer: "therapist",
+    explanation: "A therapist provides mental health support.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-27",
+    type: "multiple-choice",
+    question: "An 'allergy' is:",
+    options: ["A reaction to a substance", "A type of food", "A medicine", "An exercise"],
+    correctAnswer: "A reaction to a substance",
+    explanation: "An allergy is a damaging immune response to a substance.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-28",
+    type: "fill-blank",
+    question: "The organ that pumps blood through your body is the ______.",
+    options: ["heart", "brain", "liver", "kidney"],
+    correctAnswer: "heart",
+    explanation: "The heart pumps blood throughout the body.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-29",
+    type: "multiple-choice",
+    question: "A 'pandemic' is:",
+    options: ["A disease spread worldwide", "A local illness", "A mild cold", "A seasonal flu"],
+    correctAnswer: "A disease spread worldwide",
+    explanation: "A pandemic is a disease prevalent over a whole country or world.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-30",
+    type: "multiple-choice",
+    question: "'Contagious' means:",
+    options: ["Able to spread from person to person", "Not spreadable", "Curable", "Harmless"],
+    correctAnswer: "Able to spread from person to person",
+    explanation: "Contagious means capable of being transmitted.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-31",
+    type: "fill-blank",
+    question: "A ______ is a medical professional who performs operations.",
+    options: ["surgeon", "nurse", "receptionist", "pharmacist"],
+    correctAnswer: "surgeon",
+    explanation: "A surgeon performs surgical operations.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-32",
+    type: "multiple-choice",
+    question: "'Side effects' of medicine are:",
+    options: ["Unintended reactions", "Main effects", "Benefits", "Flavors"],
+    correctAnswer: "Unintended reactions",
+    explanation: "Side effects are secondary, often unwanted effects of a medicine.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-33",
+    type: "fill-blank",
+    question: "A ______ checks your vision and prescribes glasses.",
+    options: ["optician", "surgeon", "dentist", "cardiologist"],
+    correctAnswer: "optician",
+    explanation: "An optician specializes in eye care and glasses.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-34",
+    type: "multiple-choice",
+    question: "A 'dose' refers to:",
+    options: ["Amount of medicine to take", "Type of illness", "Name of a doctor", "Hospital room"],
+    correctAnswer: "Amount of medicine to take",
+    explanation: "A dose is the quantity of medicine taken at one time.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-35",
+    type: "multiple-choice",
+    question: "'Recovery' means:",
+    options: ["Getting better after illness", "Getting sick", "Staying ill", "Spreading disease"],
+    correctAnswer: "Getting better after illness",
+    explanation: "Recovery is the process of returning to health.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-36",
+    type: "fill-blank",
+    question: "A person who stays in a hospital is called a ______.",
+    options: ["patient", "patient", "visitor", "doctor"],
+    correctAnswer: "patient",
+    explanation: "A patient is someone receiving medical treatment.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-37",
+    type: "multiple-choice",
+    question: "'Vital signs' include:",
+    options: ["Heart rate, blood pressure, temperature", "Age, weight, height", "Name, address, phone", "Allergies, medications, history"],
+    correctAnswer: "Heart rate, blood pressure, temperature",
+    explanation: "Vital signs are measurements of basic body functions.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-38",
+    type: "fill-blank",
+    question: "An ______ is used to see inside the body using sound waves.",
+    options: ["ultrasound", "X-ray", "MRI", "CT scan"],
+    correctAnswer: "ultrasound",
+    explanation: "Ultrasound uses sound waves to create images of the body.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-39",
+    type: "multiple-choice",
+    question: "A 'pharmacy' is where you:",
+    options: ["Get prescribed medicines", "Have surgery", "See a dentist", "Get X-rays"],
+    correctAnswer: "Get prescribed medicines",
+    explanation: "A pharmacy dispenses prescribed medicines.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-40",
+    type: "multiple-choice",
+    question: "'Antibiotics' are used to:",
+    options: ["Fight bacterial infections", "Cure viruses", "Treat pain", "Improve vision"],
+    correctAnswer: "Fight bacterial infections",
+    explanation: "Antibiotics treat bacterial infections.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-41",
+    type: "fill-blank",
+    question: "A ______ is a medical specialist who treats heart conditions.",
+    options: ["cardiologist", "dermatologist", "neurologist", "pediatrician"],
+    correctAnswer: "cardiologist",
+    explanation: "A cardiologist specializes in heart conditions.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-42",
+    type: "multiple-choice",
+    question: "'Rehabilitation' is:",
+    options: ["Treatment to restore abilities after injury", "Initial diagnosis", "Emergency care", "Preventive medicine"],
+    correctAnswer: "Treatment to restore abilities after injury",
+    explanation: "Rehabilitation helps restore function after illness or injury.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-43",
+    type: "multiple-choice",
+    question: "A 'checkup' is:",
+    options: ["A routine medical examination", "Emergency surgery", "A serious diagnosis", "A hospital stay"],
+    correctAnswer: "A routine medical examination",
+    explanation: "A checkup is a routine health examination.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-44",
+    type: "fill-blank",
+    question: "______ is the medical term for high blood pressure.",
+    options: ["Hypertension", "Hypotension", "Hyperglycemia", "Hypothermia"],
+    correctAnswer: "Hypertension",
+    explanation: "Hypertension is the medical term for high blood pressure.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-45",
+    type: "multiple-choice",
+    question: "A 'dietitian' helps with:",
+    options: ["Nutrition and diet planning", "Surgery", "Mental health", "Eye care"],
+    correctAnswer: "Nutrition and diet planning",
+    explanation: "A dietitian is an expert in nutrition and diet.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-46",
+    type: "multiple-choice",
+    question: "'First aid' is:",
+    options: ["Immediate care before professional help", "Surgery", "Long-term treatment", "Specialist care"],
+    correctAnswer: "Immediate care before professional help",
+    explanation: "First aid is emergency care given before medical help arrives.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-47",
+    type: "fill-blank",
+    question: "A ______ monitors your blood sugar levels if you have diabetes.",
+    options: ["glucose monitor", "heart monitor", "blood pressure cuff", "thermometer"],
+    correctAnswer: "glucose monitor",
+    explanation: "A glucose monitor measures blood sugar levels.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-48",
+    type: "multiple-choice",
+    question: "'Wellness' encompasses:",
+    options: ["Overall physical and mental health", "Just physical fitness", "Only diet", "Just sleep"],
+    correctAnswer: "Overall physical and mental health",
+    explanation: "Wellness is the state of overall good health.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-49",
+    type: "multiple-choice",
+    question: "An 'ER' or 'A&E' is:",
+    options: ["Emergency department", "Pharmacy", "Doctor's office", "Waiting room"],
+    correctAnswer: "Emergency department",
+    explanation: "ER (Emergency Room) or A&E handles urgent cases.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+  {
+    id: "b1-health-50",
+    type: "fill-blank",
+    question: "______ is the study of diseases and how they spread.",
+    options: ["Epidemiology", "Cardiology", "Dermatology", "Radiology"],
+    correctAnswer: "Epidemiology",
+    explanation: "Epidemiology studies disease patterns and spread.",
+    difficulty: 2,
+    tags: ["listening", "health", "b1"]
+  },
+];
+
+// Theme 8: Sports & Competition (50 Exercises)
+const sportsCompetitionExercises: Exercise[] = [
+  // Part 1: The Game
+  {
+    id: "b1-sport-1",
+    type: "fill-blank",
+    question: "A series of contests between competitors for an overall prize: (______)",
+    options: ["tournament", "practice", "training", "warmup"],
+    correctAnswer: "tournament",
+    explanation: "A tournament is a series of competitive matches.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-2",
+    type: "fill-blank",
+    question: "A person who is proficient in sports and physical exercise: (______)",
+    options: ["athlete", "spectator", "referee", "coach"],
+    correctAnswer: "athlete",
+    explanation: "An athlete is someone skilled in sports.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-3",
+    type: "fill-blank",
+    question: "An official who watches a game to ensure rules are followed: (______)",
+    options: ["referee", "player", "coach", "manager"],
+    correctAnswer: "referee",
+    explanation: "A referee enforces the rules in a game.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-4",
+    type: "fill-blank",
+    question: "Someone who competes against another in a contest: (______)",
+    options: ["opponent", "teammate", "partner", "coach"],
+    correctAnswer: "opponent",
+    explanation: "An opponent is someone you compete against.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-5",
+    type: "fill-blank",
+    question: "Unscramble: T-O-U-R-N-A-M-E-N-T (______)",
+    options: ["tournament", "tornament", "tournamnt", "tournement"],
+    correctAnswer: "tournament",
+    explanation: "TOURNAMENT - a series of competitive games.",
+    difficulty: 2,
+    tags: ["listening", "sports", "spelling", "b1"]
+  },
+  {
+    id: "b1-sport-6",
+    type: "fill-blank",
+    question: "Unscramble: A-T-H-L-E-T-E (______)",
+    options: ["athlete", "athelete", "atlete", "athlette"],
+    correctAnswer: "athlete",
+    explanation: "ATHLETE - a person skilled in sports.",
+    difficulty: 2,
+    tags: ["listening", "sports", "spelling", "b1"]
+  },
+  {
+    id: "b1-sport-7",
+    type: "multiple-choice",
+    question: "A plan of action designed to achieve a major aim:",
+    options: ["Strategy", "Luck", "Chance", "Hope"],
+    correctAnswer: "Strategy",
+    explanation: "A strategy is a planned approach to achieve a goal.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-8",
+    type: "multiple-choice",
+    question: "The ability to sustain prolonged physical effort:",
+    options: ["Stamina/Endurance", "Speed", "Strength", "Flexibility"],
+    correctAnswer: "Stamina/Endurance",
+    explanation: "Stamina is the ability to sustain prolonged effort.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-9",
+    type: "multiple-choice",
+    question: "A contest for the position of champion in a sport:",
+    options: ["Championship", "Practice", "Tryout", "Rehearsal"],
+    correctAnswer: "Championship",
+    explanation: "A championship determines the champion.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-10",
+    type: "fill-blank",
+    question: "If the score is 2-2, it is a ______.",
+    options: ["draw", "win", "loss", "forfeit"],
+    correctAnswer: "draw",
+    explanation: "A draw or tie means equal scores.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  // Part 2: Actions & Verbs
+  {
+    id: "b1-sport-11",
+    type: "multiple-choice",
+    question: "To score a goal means:",
+    options: ["Get a point", "Lose a point", "Miss", "Fail"],
+    correctAnswer: "Get a point",
+    explanation: "Scoring a goal means getting a point.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-12",
+    type: "multiple-choice",
+    question: "To defeat an opponent means:",
+    options: ["Win against them", "Help them", "Join them", "Avoid them"],
+    correctAnswer: "Win against them",
+    explanation: "To defeat means to win against someone.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-13",
+    type: "multiple-choice",
+    question: "To compete in a race means:",
+    options: ["Take part", "Watch", "Leave", "Ignore"],
+    correctAnswer: "Take part",
+    explanation: "To compete means to participate.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-14",
+    type: "multiple-choice",
+    question: "To tackle a player means:",
+    options: ["Stop them physically", "Talk to them", "Congratulate them", "Avoid them"],
+    correctAnswer: "Stop them physically",
+    explanation: "A tackle is a physical challenge to stop a player.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-15",
+    type: "multiple-choice",
+    question: "To qualify for the finals means:",
+    options: ["Be allowed to enter", "Be rejected", "Be banned", "Be disqualified"],
+    correctAnswer: "Be allowed to enter",
+    explanation: "To qualify means to meet the requirements to enter.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-16",
+    type: "multiple-choice",
+    question: "True or False: An 'amateur' plays for money.",
+    options: ["False", "True"],
+    correctAnswer: "False",
+    explanation: "An amateur plays without being paid, unlike a professional.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-17",
+    type: "multiple-choice",
+    question: "True or False: 'Doping' is using banned substances to improve performance.",
+    options: ["True", "False"],
+    correctAnswer: "True",
+    explanation: "Doping is the use of prohibited performance-enhancing drugs.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-18",
+    type: "multiple-choice",
+    question: "Synonym: 'Victor' means:",
+    options: ["Winner", "Loser", "Referee", "Coach"],
+    correctAnswer: "Winner",
+    explanation: "Victor is another word for winner.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-19",
+    type: "multiple-choice",
+    question: "Antonym: The opposite of 'Defense' is:",
+    options: ["Offense/Attack", "Goal", "Save", "Block"],
+    correctAnswer: "Offense/Attack",
+    explanation: "Offense or attack is the opposite of defense.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-20",
+    type: "multiple-choice",
+    question: "Idiom: 'To throw in the towel' means:",
+    options: ["To give up", "To clean up", "To celebrate", "To warm up"],
+    correctAnswer: "To give up",
+    explanation: "Throwing in the towel means admitting defeat.",
+    difficulty: 2,
+    tags: ["listening", "sports", "idiom", "b1"]
+  },
+  // Part 3: Sportsmanship
+  {
+    id: "b1-sport-21",
+    type: "multiple-choice",
+    question: "Fair play means:",
+    options: ["Respecting the rules", "Cheating", "Arguing", "Fighting"],
+    correctAnswer: "Respecting the rules",
+    explanation: "Fair play is about respecting rules and opponents.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-22",
+    type: "multiple-choice",
+    question: "Teamwork is:",
+    options: ["Working together", "Working alone", "Competing", "Arguing"],
+    correctAnswer: "Working together",
+    explanation: "Teamwork is the combined effort of a team.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-23",
+    type: "multiple-choice",
+    question: "In sports, a 'coach' is:",
+    options: ["The trainer", "The bus", "The stadium", "The ball"],
+    correctAnswer: "The trainer",
+    explanation: "A coach trains and instructs athletes.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-24",
+    type: "multiple-choice",
+    question: "A spectator is:",
+    options: ["A person watching", "A person playing", "A referee", "A coach"],
+    correctAnswer: "A person watching",
+    explanation: "A spectator is someone who watches an event.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-25",
+    type: "multiple-choice",
+    question: "An underdog is:",
+    options: ["The person expected to lose", "The favorite to win", "The referee", "The coach"],
+    correctAnswer: "The person expected to lose",
+    explanation: "An underdog is expected to lose against a stronger opponent.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-26",
+    type: "fill-blank",
+    question: "Football, basketball, and volleyball are examples of ______ sports.",
+    options: ["team", "individual", "solo", "single"],
+    correctAnswer: "team",
+    explanation: "These are team sports requiring multiple players.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-27",
+    type: "fill-blank",
+    question: "Tennis and golf are examples of ______ sports.",
+    options: ["individual", "team", "group", "collective"],
+    correctAnswer: "individual",
+    explanation: "These can be played individually.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-28",
+    type: "multiple-choice",
+    question: "Swimming and basketball are examples of:",
+    options: ["Indoor sports", "Only outdoor sports", "Winter sports", "Extreme sports"],
+    correctAnswer: "Indoor sports",
+    explanation: "These sports can be played indoors.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-29",
+    type: "multiple-choice",
+    question: "Skiing and soccer are typically:",
+    options: ["Outdoor sports", "Only indoor sports", "Table sports", "Board games"],
+    correctAnswer: "Outdoor sports",
+    explanation: "These are typically played outdoors.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-30",
+    type: "fill-blank",
+    question: "The ______ is where fans watch games in person.",
+    options: ["stadium", "studio", "stage", "studio"],
+    correctAnswer: "stadium",
+    explanation: "A stadium is a venue for sports events.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-31",
+    type: "multiple-choice",
+    question: "A 'match' is:",
+    options: ["A competitive game", "A practice session", "A warm-up", "An interview"],
+    correctAnswer: "A competitive game",
+    explanation: "A match is a competitive game or contest.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-32",
+    type: "fill-blank",
+    question: "A ______ is a period of time for rest during a game.",
+    options: ["halftime", "fulltime", "overtime", "anytime"],
+    correctAnswer: "halftime",
+    explanation: "Halftime is the break between two halves of a game.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-33",
+    type: "multiple-choice",
+    question: "To 'warm up' before exercise means:",
+    options: ["Prepare your body with light exercise", "Take a hot shower", "Sit in the sun", "Wear warm clothes"],
+    correctAnswer: "Prepare your body with light exercise",
+    explanation: "Warming up prepares muscles for intense activity.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-34",
+    type: "multiple-choice",
+    question: "A 'penalty' in sports is:",
+    options: ["Punishment for breaking rules", "A reward", "A type of goal", "A celebration"],
+    correctAnswer: "Punishment for breaking rules",
+    explanation: "A penalty is a punishment for rule violations.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-35",
+    type: "fill-blank",
+    question: "The person who leads a team is called the ______.",
+    options: ["captain", "prisoner", "soldier", "student"],
+    correctAnswer: "captain",
+    explanation: "A captain is the leader of a sports team.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-36",
+    type: "multiple-choice",
+    question: "'Extra time' or 'overtime' happens when:",
+    options: ["The game is tied and needs more time", "Players are tired", "It's raining", "Fans leave early"],
+    correctAnswer: "The game is tied and needs more time",
+    explanation: "Extra time is added when a game ends in a tie.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-37",
+    type: "fill-blank",
+    question: "A ______ is a prize given to the winner.",
+    options: ["trophy", "penalty", "foul", "bench"],
+    correctAnswer: "trophy",
+    explanation: "A trophy is an award for winning.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-38",
+    type: "multiple-choice",
+    question: "A 'foul' in sports is:",
+    options: ["An action against the rules", "A type of goal", "A good play", "A celebration"],
+    correctAnswer: "An action against the rules",
+    explanation: "A foul is an unfair or invalid action in a game.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-39",
+    type: "fill-blank",
+    question: "Players who are not playing sit on the ______.",
+    options: ["bench", "field", "court", "pool"],
+    correctAnswer: "bench",
+    explanation: "The bench is where substitute players sit.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-40",
+    type: "multiple-choice",
+    question: "To 'train' for a sport means:",
+    options: ["Practice to improve skills", "Take a train ride", "Watch TV", "Sleep more"],
+    correctAnswer: "Practice to improve skills",
+    explanation: "Training is practicing to improve athletic performance.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-41",
+    type: "multiple-choice",
+    question: "The Olympic Games occur every:",
+    options: ["Four years", "One year", "Two years", "Ten years"],
+    correctAnswer: "Four years",
+    explanation: "The Olympics are held every four years.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-42",
+    type: "fill-blank",
+    question: "A ______ medal is given for second place.",
+    options: ["silver", "gold", "bronze", "platinum"],
+    correctAnswer: "silver",
+    explanation: "Silver medals are for second place finishes.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-43",
+    type: "multiple-choice",
+    question: "A 'record' in sports is:",
+    options: ["The best achievement in a category", "A music album", "A type of ball", "A penalty"],
+    correctAnswer: "The best achievement in a category",
+    explanation: "A record is the best performance ever recorded.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-44",
+    type: "multiple-choice",
+    question: "To 'retire' from sports means:",
+    options: ["Stop playing professionally", "Start a new sport", "Join a team", "Win a trophy"],
+    correctAnswer: "Stop playing professionally",
+    explanation: "Retiring means ending one's professional sports career.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-45",
+    type: "fill-blank",
+    question: "A ______ kick in football is taken from the edge of the box after a foul.",
+    options: ["penalty", "corner", "free", "goal"],
+    correctAnswer: "penalty",
+    explanation: "A penalty kick is awarded for fouls in the penalty area.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-46",
+    type: "multiple-choice",
+    question: "A 'league' is:",
+    options: ["A group of teams that compete regularly", "A single game", "A training session", "A type of ball"],
+    correctAnswer: "A group of teams that compete regularly",
+    explanation: "A league is an organized group of sports teams.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-47",
+    type: "fill-blank",
+    question: "The person who scores the most goals is called the top ______.",
+    options: ["scorer", "keeper", "defender", "manager"],
+    correctAnswer: "scorer",
+    explanation: "The top scorer has the most goals.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-48",
+    type: "multiple-choice",
+    question: "A 'season' in sports refers to:",
+    options: ["The period when games are played", "Winter only", "Summer only", "One day"],
+    correctAnswer: "The period when games are played",
+    explanation: "A season is the scheduled period for competitive games.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-49",
+    type: "fill-blank",
+    question: "An athlete who runs long distances is called a ______ runner.",
+    options: ["marathon", "sprint", "relay", "hurdle"],
+    correctAnswer: "marathon",
+    explanation: "Marathon runners compete in long-distance races.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+  {
+    id: "b1-sport-50",
+    type: "multiple-choice",
+    question: "Sportsmanship involves:",
+    options: ["Respect, fairness, and grace in competition", "Only winning", "Cheating to win", "Fighting opponents"],
+    correctAnswer: "Respect, fairness, and grace in competition",
+    explanation: "Sportsmanship is ethical and respectful behavior in sports.",
+    difficulty: 2,
+    tags: ["listening", "sports", "b1"]
+  },
+];
+
 // Export all B1 Listening exercises organized by skill ID
 export const b1ListeningExercisesNew: Record<string, Exercise[]> = {
   "b1-list-1": artCultureExercises,           // Art & Culture
   "b1-list-2": relationshipsSocialExercises,  // Relationships & Social
   "b1-list-3": travelAdventureExercises,      // Travel & Adventure
   "b1-list-4": digitalTechnologyExercises,    // Digital Technology
+  "b1-list-5": psychologyMindExercises,       // Psychology & Mind
+  "b1-list-6": economicsFinanceExercises,     // Economics & Finance
+  "b1-list-7": healthWellnessExercises,       // Health & Wellness
+  "b1-list-8": sportsCompetitionExercises,    // Sports & Competition
 };
 
 // Function to get exercises by skill ID
@@ -2050,4 +4082,8 @@ export const allB1ListeningExercises: Exercise[] = [
   ...relationshipsSocialExercises,
   ...travelAdventureExercises,
   ...digitalTechnologyExercises,
+  ...psychologyMindExercises,
+  ...economicsFinanceExercises,
+  ...healthWellnessExercises,
+  ...sportsCompetitionExercises,
 ];
