@@ -1319,6 +1319,54 @@ export const curriculumData: LevelCurriculum[] = [
               { id: "b1-l4-4", title: "Tech Collocations", completed: false },
             ]
           },
+          {
+            id: "b1-list-5",
+            title: "Psychology & Mind",
+            description: "Behavior, motivation, perception, anxiety, subconscious, therapy, cognitive",
+            completed: false,
+            subSkills: [
+              { id: "b1-l5-1", title: "Mental Processes", completed: false },
+              { id: "b1-l5-2", title: "Emotions vs. Traits", completed: false },
+              { id: "b1-l5-3", title: "Applied Psychology", completed: false },
+              { id: "b1-l5-4", title: "Personality Types", completed: false },
+            ]
+          },
+          {
+            id: "b1-list-6",
+            title: "Economics & Finance",
+            description: "Inflation, recession, budget, income, currency, supply, demand",
+            completed: false,
+            subSkills: [
+              { id: "b1-l6-1", title: "Economic Fundamentals", completed: false },
+              { id: "b1-l6-2", title: "Personal Finance", completed: false },
+              { id: "b1-l6-3", title: "Global Economics", completed: false },
+              { id: "b1-l6-4", title: "Financial Idioms", completed: false },
+            ]
+          },
+          {
+            id: "b1-list-7",
+            title: "Health & Wellness",
+            description: "Symptom, diagnosis, treatment, prescription, chronic, immune, nutrition",
+            completed: false,
+            subSkills: [
+              { id: "b1-l7-1", title: "Medical Basics", completed: false },
+              { id: "b1-l7-2", title: "Healthy Living", completed: false },
+              { id: "b1-l7-3", title: "At the Doctor's", completed: false },
+              { id: "b1-l7-4", title: "Medical Specialists", completed: false },
+            ]
+          },
+          {
+            id: "b1-list-8",
+            title: "Sports & Competition",
+            description: "Tournament, championship, athlete, referee, opponent, strategy, stamina",
+            completed: false,
+            subSkills: [
+              { id: "b1-l8-1", title: "The Game", completed: false },
+              { id: "b1-l8-2", title: "Actions & Verbs", completed: false },
+              { id: "b1-l8-3", title: "Sportsmanship", completed: false },
+              { id: "b1-l8-4", title: "Sports Categories", completed: false },
+            ]
+          },
         ]
       },
       {
