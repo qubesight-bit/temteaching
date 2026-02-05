@@ -63,6 +63,11 @@ export default {
           DEFAULT: "hsl(var(--info))",
           foreground: "hsl(var(--info-foreground))",
         },
+        action: {
+          DEFAULT: "hsl(var(--action))",
+          hover: "hsl(var(--action-hover))",
+          foreground: "hsl(var(--action-foreground))",
+        },
         level: {
           a1: "hsl(var(--level-a1))",
           a2: "hsl(var(--level-a2))",

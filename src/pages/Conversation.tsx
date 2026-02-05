@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ArrowLeft, Send, Sparkles, Mic, MicOff, Volume2, Loader2, History, Square } from "lucide-react";
+import { ArrowLeft, Send, Sparkles, Mic, MicOff, Volume2, Loader2, History, Square, RefreshCw } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
 import { ChatFeedback, parseFeedback } from "@/components/ChatFeedback";
@@ -13,6 +13,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import { useLearningErrors, NewLearningError } from "@/hooks/useLearningErrors";
 import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
+import { TerminologyBox } from "@/components/conversation/TerminologyBox";
 
 // Helper function to parse error reports from AI response
 function parseErrorReports(content: string, conversationId: string | null, userLevel: string): NewLearningError[] {
@@ -122,6 +123,8 @@ const scenarios = [
   { id: "debate", title: "Academic Debate", description: "Advanced argumentation", icon: "🎓", level: "B2" },
   { id: "networking", title: "Networking Event", description: "Informal professional conversation", icon: "🤝", level: "B2" },
   { id: "negotiation", title: "Business Negotiation", description: "Closing deals and negotiating terms", icon: "📊", level: "C1" },
+  { id: "health_insurance_sales", title: "KHARPA TRAINING", description: "Practice selling health insurance plans to customers", icon: "🏥💼", level: "B2" },
+  { id: "bioscientific", title: "BIOSCIENTIFIC", description: "Practice explaining medical equipment usage and handling", icon: "🔬🏥", level: "B2" },
 ];
 
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/conversation-chat`;
@@ -586,7 +589,7 @@ export default function Conversation() {
             <Button variant="ghost" size="icon" onClick={handleBack}>
               <ArrowLeft className="w-5 h-5" />
             </Button>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 flex-1">
               <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-info flex items-center justify-center">
                 <Sparkles className="w-6 h-6 text-white" />
               </div>
@@ -595,7 +598,20 @@ export default function Conversation() {
                 <p className="text-sm text-muted-foreground">AI Tutor · {scenario?.level} · Powered by AI</p>
               </div>
             </div>
+            <Button
+              size="sm"
+              onClick={() => handleStartScenario(selectedScenario)}
+              disabled={isLoading}
+              className="gap-2 bg-action hover:bg-action-hover text-action-foreground shadow-md hover:shadow-lg"
+              title="Start a new conversation with a different topic"
+            >
+              <RefreshCw className={cn("w-4 h-4", isLoading && "animate-spin")} />
+              New Topic
+            </Button>
           </div>
+
+          {/* Terminology Box for specialized trainings */}
+          <TerminologyBox scenarioId={selectedScenario} />
 
           {/* Messages */}
           <Card className="flex-1 overflow-hidden">
