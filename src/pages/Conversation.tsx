@@ -13,6 +13,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import { useLearningErrors, NewLearningError } from "@/hooks/useLearningErrors";
 import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
+import { TerminologyBox } from "@/components/conversation/TerminologyBox";
 
 // Helper function to parse error reports from AI response
 function parseErrorReports(content: string, conversationId: string | null, userLevel: string): NewLearningError[] {
@@ -608,6 +609,9 @@ export default function Conversation() {
               New Topic
             </Button>
           </div>
+
+          {/* Terminology Box for specialized trainings */}
+          <TerminologyBox scenarioId={selectedScenario} />
 
           {/* Messages */}
           <Card className="flex-1 overflow-hidden">
