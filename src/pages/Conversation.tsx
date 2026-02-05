@@ -122,6 +122,7 @@ const scenarios = [
   { id: "debate", title: "Academic Debate", description: "Advanced argumentation", icon: "🎓", level: "B2" },
   { id: "networking", title: "Networking Event", description: "Informal professional conversation", icon: "🤝", level: "B2" },
   { id: "negotiation", title: "Business Negotiation", description: "Closing deals and negotiating terms", icon: "📊", level: "C1" },
+  { id: "health_insurance_sales", title: "US Health Insurance Sales", description: "Practice selling health insurance plans to customers", icon: "🏥💼", level: "B2" },
 ];
 
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/conversation-chat`;
