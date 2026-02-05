@@ -601,7 +601,7 @@ export default function Conversation() {
               size="sm"
               onClick={() => handleStartScenario(selectedScenario)}
               disabled={isLoading}
-              className="gap-2 bg-sky-500 hover:bg-sky-600 text-white shadow-md hover:shadow-lg"
+              className="gap-2 bg-action hover:bg-action-hover text-action-foreground shadow-md hover:shadow-lg"
               title="Start a new conversation with a different topic"
             >
               <RefreshCw className={cn("w-4 h-4", isLoading && "animate-spin")} />
