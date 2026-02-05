@@ -56,6 +56,11 @@
     --info: 200 85% 50%;
     --info-foreground: 0 0% 100%;
 
+    /* Action - Sky blue for special actions */
+    --action: 199 89% 48%;
+    --action-hover: 199 89% 42%;
+    --action-foreground: 0 0% 100%;
+
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(175 84% 32%), hsl(190 90% 40%));
     --gradient-hero: linear-gradient(135deg, hsl(210 35% 15%) 0%, hsl(200 40% 25%) 50%, hsl(175 50% 30%) 100%);
