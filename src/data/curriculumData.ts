@@ -1454,106 +1454,61 @@ export const curriculumData: LevelCurriculum[] = [
         id: "b2-vocabulary",
         title: "Advanced Vocabulary",
         icon: "📚",
-        description: "Precise and nuanced expression",
+        description: "Academic and professional themes: globalization, ethics, innovation, diplomacy, sustainability",
         skills: [
           {
             id: "b2-vocab-1",
-            title: "Abstract concepts",
-            description: "Freedom, responsibility, impact, justice",
+            title: "Globalization & Trade",
+            description: "Outsourcing, tariff, export, import, supply chain, multinational, currency, logistics",
             completed: false,
             subSkills: [
-              { id: "b2-v1-1", title: "Freedom and rights", completed: false },
-              { id: "b2-v1-2", title: "Responsibility and consequences", completed: false },
-              { id: "b2-v1-3", title: "Impact and effects", completed: false },
+              { id: "b2-v1-1", title: "Definitions & Business Terms", completed: false },
+              { id: "b2-v1-2", title: "Economic Concepts", completed: false },
+              { id: "b2-v1-3", title: "Collocations & Global Logic", completed: false },
             ]
           },
           {
             id: "b2-vocab-2",
-            title: "Work and business",
-            description: "Business, corporate, professional vocabulary",
+            title: "Ethics & Morality",
+            description: "Integrity, dilemma, principle, accountability, corruption, whistleblower, values",
             completed: false,
             subSkills: [
-              { id: "b2-v2-1", title: "Corporate terminology", completed: false },
-              { id: "b2-v2-2", title: "Meetings and negotiations", completed: false },
-              { id: "b2-v2-3", title: "Human resources", completed: false },
+              { id: "b2-v2-1", title: "Moral Vocabulary", completed: false },
+              { id: "b2-v2-2", title: "Ethical Concepts", completed: false },
+              { id: "b2-v2-3", title: "Situational Ethics", completed: false },
             ]
           },
           {
             id: "b2-vocab-3",
-            title: "Academic topics",
-            description: "Academic vocabulary for study and research",
+            title: "Innovation & Disruption",
+            description: "Breakthrough, disruption, patent, prototype, obsolete, cutting-edge, automation",
             completed: false,
             subSkills: [
-              { id: "b2-v3-1", title: "Research and methodology", completed: false },
-              { id: "b2-v3-2", title: "Analysis and evaluation", completed: false },
-              { id: "b2-v3-3", title: "Hypotheses and theories", completed: false },
+              { id: "b2-v3-1", title: "Tech Evolution", completed: false },
+              { id: "b2-v3-2", title: "Startup Culture", completed: false },
+              { id: "b2-v3-3", title: "The Future", completed: false },
             ]
           },
           {
             id: "b2-vocab-4",
-            title: "Social and cultural topics",
-            description: "Social issues, culture, media",
+            title: "Diplomacy & Relations",
+            description: "Treaty, alliance, sanction, ambassador, summit, negotiation, conflict",
             completed: false,
             subSkills: [
-              { id: "b2-v4-1", title: "Current social issues", completed: false },
-              { id: "b2-v4-2", title: "Cultural diversity", completed: false },
-              { id: "b2-v4-3", title: "Mass media", completed: false },
+              { id: "b2-v4-1", title: "International Terms", completed: false },
+              { id: "b2-v4-2", title: "Political Actions", completed: false },
+              { id: "b2-v4-3", title: "World Map & Scenarios", completed: false },
             ]
           },
           {
             id: "b2-vocab-5",
-            title: "Emotions and attitudes",
-            description: "Frustrated vs annoyed, nuanced emotions",
+            title: "Sustainability & Green",
+            description: "Carbon footprint, biodegradable, conservation, sustainable, emissions, renewable",
             completed: false,
             subSkills: [
-              { id: "b2-v5-1", title: "Subtle emotions (frustrated vs annoyed)", completed: false },
-              { id: "b2-v5-2", title: "Attitudes and perspectives", completed: false },
-              { id: "b2-v5-3", title: "Complex moods", completed: false },
-            ]
-          },
-          {
-            id: "b2-vocab-6",
-            title: "Idiomatic language",
-            description: "Common idioms and expressions",
-            completed: false,
-            subSkills: [
-              { id: "b2-v6-1", title: "Business idioms", completed: false },
-              { id: "b2-v6-2", title: "Daily life idioms", completed: false },
-              { id: "b2-v6-3", title: "Colloquial expressions", completed: false },
-            ]
-          },
-          {
-            id: "b2-vocab-7",
-            title: "Advanced phrasal verbs",
-            description: "Carry out, put off, bring up, come across",
-            completed: false,
-            subSkills: [
-              { id: "b2-v7-1", title: "Business phrasal verbs", completed: false },
-              { id: "b2-v7-2", title: "Separable phrasal verbs", completed: false },
-              { id: "b2-v7-3", title: "Inseparable phrasal verbs", completed: false },
-              { id: "b2-v7-4", title: "Phrasal verbs with multiple meanings", completed: false },
-            ]
-          },
-          {
-            id: "b2-vocab-8",
-            title: "Advanced collocations",
-            description: "Highly recommended, strong argument, make a decision",
-            completed: false,
-            subSkills: [
-              { id: "b2-v8-1", title: "Adverb collocations", completed: false },
-              { id: "b2-v8-2", title: "Adjective collocations", completed: false },
-              { id: "b2-v8-3", title: "Verb + noun collocations", completed: false },
-            ]
-          },
-          {
-            id: "b2-vocab-9",
-            title: "Word formation",
-            description: "Word families: noun-verb-adjective",
-            completed: false,
-            subSkills: [
-              { id: "b2-v9-1", title: "Common prefixes", completed: false },
-              { id: "b2-v9-2", title: "Common suffixes", completed: false },
-              { id: "b2-v9-3", title: "Word families", completed: false },
+              { id: "b2-v5-1", title: "Eco-Vocabulary", completed: false },
+              { id: "b2-v5-2", title: "Environmental Issues", completed: false },
+              { id: "b2-v5-3", title: "Collocations & Solutions", completed: false },
             ]
           },
         ]
@@ -1788,60 +1743,61 @@ export const curriculumData: LevelCurriculum[] = [
         id: "b2-listening",
         title: "Listening Comprehension",
         icon: "👂",
-        description: "Understand natural English at normal speed",
+        description: "Academic and professional listening: globalization, ethics, innovation, diplomacy, sustainability",
         skills: [
           {
             id: "b2-list-1",
-            title: "TV series and films",
-            description: "TV shows and films with limited subtitles",
+            title: "Globalization & Trade",
+            description: "Outsourcing, tariff, export, import, supply chain, multinational, currency, logistics",
             completed: false,
             subSkills: [
-              { id: "b2-l1-1", title: "Films without subtitles", completed: false },
-              { id: "b2-l1-2", title: "Complex TV series", completed: false },
-              { id: "b2-l1-3", title: "Documentaries", completed: false },
+              { id: "b2-l1-1", title: "Definitions & Business Terms", completed: false },
+              { id: "b2-l1-2", title: "Economic Concepts", completed: false },
+              { id: "b2-l1-3", title: "Collocations & Sentence Completion", completed: false },
             ]
           },
           {
             id: "b2-list-2",
-            title: "Podcasts and interviews",
-            description: "Podcasts and interviews on various topics",
+            title: "Ethics & Morality",
+            description: "Integrity, dilemma, principle, accountability, corruption, whistleblower, values",
             completed: false,
             subSkills: [
-              { id: "b2-l2-1", title: "News podcasts", completed: false },
-              { id: "b2-l2-2", title: "Interviews with native speakers", completed: false },
-              { id: "b2-l2-3", title: "Debates and discussions", completed: false },
+              { id: "b2-l2-1", title: "Moral Vocabulary", completed: false },
+              { id: "b2-l2-2", title: "Ethical Concepts", completed: false },
+              { id: "b2-l2-3", title: "Situational Ethics", completed: false },
             ]
           },
           {
             id: "b2-list-3",
-            title: "Group discussions",
-            description: "Understanding group discussions",
+            title: "Innovation & Disruption",
+            description: "Breakthrough, disruption, patent, prototype, obsolete, cutting-edge, automation",
             completed: false,
             subSkills: [
-              { id: "b2-l3-1", title: "Follow multiple speakers", completed: false },
-              { id: "b2-l3-2", title: "Identify different opinions", completed: false },
+              { id: "b2-l3-1", title: "Tech Evolution", completed: false },
+              { id: "b2-l3-2", title: "Startup Culture", completed: false },
+              { id: "b2-l3-3", title: "The Future", completed: false },
             ]
           },
           {
             id: "b2-list-4",
-            title: "Various accents",
-            description: "Different accents (US, UK, Australian, etc.)",
+            title: "Diplomacy & Relations",
+            description: "Treaty, alliance, sanction, ambassador, summit, negotiation, conflict",
             completed: false,
             subSkills: [
-              { id: "b2-l4-1", title: "American accent", completed: false },
-              { id: "b2-l4-2", title: "British accent", completed: false },
-              { id: "b2-l4-3", title: "Other accents (Australian, Irish)", completed: false },
+              { id: "b2-l4-1", title: "International Terms", completed: false },
+              { id: "b2-l4-2", title: "Political Actions", completed: false },
+              { id: "b2-l4-3", title: "World Map & Scenarios", completed: false },
             ]
           },
           {
             id: "b2-list-5",
-            title: "Implied meaning",
-            description: "Understanding implied meaning and attitude",
+            title: "Sustainability & Green",
+            description: "Carbon footprint, biodegradable, conservation, sustainable, emissions, renewable",
             completed: false,
             subSkills: [
-              { id: "b2-l5-1", title: "Detect sarcasm and irony", completed: false },
-              { id: "b2-l5-2", title: "Understand speaker attitudes", completed: false },
-              { id: "b2-l5-3", title: "Infer the unsaid", completed: false },
+              { id: "b2-l5-1", title: "Eco-Vocabulary", completed: false },
+              { id: "b2-l5-2", title: "Environmental Issues", completed: false },
+              { id: "b2-l5-3", title: "Collocations & Solutions", completed: false },
             ]
           },
         ]

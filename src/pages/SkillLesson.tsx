@@ -9,7 +9,7 @@ import { ExerciseQuestion } from "@/components/ExerciseQuestion";
 import { SpeakingExercise } from "@/components/SpeakingExercise";
 import { WritingExercise } from "@/components/WritingExercise";
 import { cleanQuestionForTTS } from "@/lib/questionFormatter";
-import { Skill, CEFRLevel } from "@/data/curriculumData";
+import { Skill, CEFRLevel, curriculumData as baseCurriculumData } from "@/data/curriculumData";
 import { enhancedCurriculumData } from "@/data/enhancedCurriculumData";
 import { getExercisesBySkillId, Exercise } from "@/data/exercisesData";
 import { getAdvancedExercisesBySkillId } from "@/data/exercisesDataAdvanced";
@@ -422,15 +422,26 @@ export default function SkillLesson() {
   const { sendFeedbackToTeacher } = useExerciseFeedback();
 
   // Find the skill from enhanced curriculum data (includes dynamic B1 speaking/vocabulary)
+  // Fall back to base curriculum if skill not found (e.g. b1-vocab-1)
   const { skill, category, levelData } = useMemo(() => {
     const lvlData = enhancedCurriculumData.find(l => l.level === level);
     if (!lvlData) return { skill: null, category: null, levelData: null };
     
-    const cat = lvlData.categories.find(c => c.id === categoryId);
-    if (!cat) return { skill: null, category: null, levelData: lvlData };
+    let cat = lvlData.categories.find(c => c.id === categoryId);
+    let sk = cat?.skills.find(s => s.id === skillId) ?? null;
     
-    const sk = cat.skills.find(s => s.id === skillId);
-    return { skill: sk, category: cat, levelData: lvlData };
+    // Fallback: try base curriculum when skill not found in enhanced (fixes white screen for b1-vocab-1 etc.)
+    if (!sk && baseCurriculumData) {
+      const baseLvl = baseCurriculumData.find(l => l.level === level);
+      const baseCat = baseLvl?.categories.find(c => c.id === categoryId);
+      const baseSkill = baseCat?.skills.find(s => s.id === skillId);
+      if (baseSkill && baseCat) {
+        sk = baseSkill;
+        cat = baseCat;
+      }
+    }
+    
+    return { skill: sk, category: cat ?? null, levelData: lvlData };
   }, [level, categoryId, skillId]);
 
   // Generate exercises based on the skill
@@ -449,7 +460,20 @@ export default function SkillLesson() {
   }, [skill, navigate]);
 
   if (!skill || !category || !levelData) {
-    return null;
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main className="container py-8">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-muted-foreground mb-4">Topic not found. Redirecting...</p>
+            <Button variant="outline" onClick={() => navigate("/curriculum")}>
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Curriculum
+            </Button>
+          </div>
+        </main>
+      </div>
+    );
   }
 
   const handleSelectAnswer = (answer: string) => {

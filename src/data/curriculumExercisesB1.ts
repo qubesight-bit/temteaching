@@ -1,5 +1,6 @@
 // B1 Level Comprehensive Curriculum Exercises - All Categories
 import { Exercise } from "./exercisesData";
+import { b1StrategyExercisesNew } from "./b1StrategyExercises";
 
 // Vocabulary Exercises - 5 Batches: Education, Business, Politics, Environment, Media
 const b1VocabExercises: Record<string, Exercise[]> = {
@@ -1313,36 +1314,11 @@ const b1SpeakingExercises: Record<string, Exercise[]> = {
 
 // Listening Exercises - Import from new thematic file
 import { b1ListeningExercisesNew } from "./b1ListeningExercises";
+// Reading Exercises - Import from new thematic file (50 per topic)
+import { b1ReadingExercisesNew } from "./b1ReadingExercises";
 
 const b1ListeningExercises: Record<string, Exercise[]> = b1ListeningExercisesNew;
-
-// Reading Exercises
-const b1ReadingExercises: Record<string, Exercise[]> = {
-  "b1-read-1": [ // Artículos y blogs
-    {
-      id: "b1-r1-e1",
-      type: "multiple-choice",
-      question: "'According to the article' means:",
-      options: ["As stated in the text", "In my opinion", "Generally speaking", "For example"],
-      correctAnswer: "As stated in the text",
-      explanation: "'According to' refers to information from a source.",
-      difficulty: 2,
-      tags: ["reading", "articles", "b1"]
-    },
-  ],
-  "b1-read-2": [ // Noticias simplificadas
-    {
-      id: "b1-r2-e1",
-      type: "multiple-choice",
-      question: "'Breaking news' means:",
-      options: ["Very recent, important news", "Old news", "Fake news", "Local news"],
-      correctAnswer: "Very recent, important news",
-      explanation: "Breaking news = just happened, important.",
-      difficulty: 2,
-      tags: ["reading", "news", "b1"]
-    },
-  ],
-};
+const b1ReadingExercises: Record<string, Exercise[]> = b1ReadingExercisesNew;
 
 // Writing Exercises
 const b1WritingExercises: Record<string, Exercise[]> = {
@@ -1382,33 +1358,8 @@ const b1WritingExercises: Record<string, Exercise[]> = {
   ],
 };
 
-// Communication Strategies
-const b1StrategiesExercises: Record<string, Exercise[]> = {
-  "b1-strat-1": [ // Parafrasear
-    {
-      id: "b1-st1-e1",
-      type: "multiple-choice",
-      question: "If you don't know 'umbrella', you can say: 'The thing you use when...'",
-      options: ["it rains", "you eat", "you sleep", "you drive"],
-      correctAnswer: "it rains",
-      explanation: "Describe function when you don't know the word.",
-      difficulty: 2,
-      tags: ["strategies", "paraphrasing", "b1"]
-    },
-  ],
-  "b1-strat-2": [ // Pedir clarificación
-    {
-      id: "b1-st2-e1",
-      type: "multiple-choice",
-      question: "Polite way to ask for repetition: 'Could you _____ that, please?'",
-      options: ["repeat", "say again", "tell again", "speak again"],
-      correctAnswer: "repeat",
-      explanation: "'Could you repeat that?' is polite and clear.",
-      difficulty: 2,
-      tags: ["strategies", "clarification", "b1"]
-    },
-  ],
-};
+// Communication Strategies - 6 topics, 50 exercises each (300 total)
+const b1StrategiesExercises = b1StrategyExercisesNew;
 
 // Export function
 export function getB1CurriculumExercisesBySkillId(skillId: string): Exercise[] {
