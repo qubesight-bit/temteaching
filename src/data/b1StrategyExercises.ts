@@ -330,8 +330,8 @@ const selfManagement: Exercise[] = [
 // Export: 6 topics, 50 exercises each (300 total)
 export const b1StrategyExercisesNew: Record<string, Exercise[]> = {
   "b1-strat-1": paraphrasing,
-  "b1-strat-2": askClarification,
-  "b1-strat-3": manageConversations,
+  "b1-strat-2": clarification,
+  "b1-strat-3": managingConversations,
   "b1-strat-4": repairMisunderstandings,
   "b1-strat-5": useContext,
   "b1-strat-6": selfManagement,
