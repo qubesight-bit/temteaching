@@ -4,6 +4,7 @@
 // ================================================================
 
 import { Exercise } from "./exercisesData";
+import { c2StrategyExercisesNew } from "./c2StrategyExercises";
 
 // ================================================================
 // C2 VOCABULARY EXERCISES
@@ -2274,9 +2275,12 @@ export function getC2ExercisesCompleteBySkillId(skillId: string): Exercise[] {
     ...c2ReadingExercises,
     ...c2WritingExercises,
     ...c2SocioculturalExercises,
+    ...c2StrategyExercisesNew,
   };
   return allExercises[skillId] || [];
 }
+
+export const c2StrategyExercisesComplete = c2StrategyExercisesNew;
 
 export const allC2CompleteExercises = {
   vocabulary: c2VocabExercises,
@@ -2286,6 +2290,7 @@ export const allC2CompleteExercises = {
   reading: c2ReadingExercises,
   writing: c2WritingExercises,
   sociocultural: c2SocioculturalExercises,
+  strategy: c2StrategyExercisesComplete,
 };
 
 // Count of all C2 exercises
@@ -2297,4 +2302,5 @@ export const c2ExerciseCount = Object.values({
   ...c2ReadingExercises,
   ...c2WritingExercises,
   ...c2SocioculturalExercises,
+  ...c2StrategyExercisesNew,
 }).reduce((acc, exercises) => acc + exercises.length, 0);

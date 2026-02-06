@@ -1,9 +1,13 @@
 // B2 Level Comprehensive Curriculum Exercises
 import { Exercise } from "./exercisesData";
 import { b2VocabularyExercisesNew } from "./b2VocabularyExercises";
+import { b2StrategyExercisesNew } from "./b2StrategyExercises";
 
 // Vocabulary Exercises (5 batches: Globalization & Trade, Ethics & Morality, Innovation & Disruption, Diplomacy & Relations, Sustainability & Green)
 const b2VocabExercises: Record<string, Exercise[]> = b2VocabularyExercisesNew;
+
+// Strategy Exercises (Discourse and Pragmatic Competence)
+const b2StrategyExercises: Record<string, Exercise[]> = b2StrategyExercisesNew;
 
 // Grammar Exercises
 const b2GrammarExercises: Record<string, Exercise[]> = {
@@ -302,6 +306,7 @@ export function getB2CurriculumExercisesBySkillId(skillId: string): Exercise[] {
     ...b2ListeningExercises,
     ...b2ReadingExercises,
     ...b2WritingExercises,
+    ...b2StrategyExercises,
   };
   
   return allExercises[skillId] || [];
@@ -314,4 +319,5 @@ export const allB2CurriculumExercises = {
   listening: b2ListeningExercises,
   reading: b2ReadingExercises,
   writing: b2WritingExercises,
+  strategy: b2StrategyExercises,
 };

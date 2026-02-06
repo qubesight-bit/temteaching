@@ -1,5 +1,13 @@
 // C1 & C2 Level Comprehensive Curriculum Exercises
 import { Exercise } from "./exercisesData";
+import { c1StrategyExercisesNew } from "./c1StrategyExercises";
+import { c2StrategyExercisesNew } from "./c2StrategyExercises";
+
+// C1 Strategy Exercises (Pragmatic and Metacognitive Skills)
+const c1StrategyExercises: Record<string, Exercise[]> = c1StrategyExercisesNew;
+
+// C2 Strategy Exercises (Sociocultural and Metacognitive Competence)
+const c2StrategyExercises: Record<string, Exercise[]> = c2StrategyExercisesNew;
 
 // C1 Vocabulary Exercises
 const c1VocabExercises: Record<string, Exercise[]> = {
@@ -444,6 +452,7 @@ export function getC1CurriculumExercisesBySkillId(skillId: string): Exercise[] {
     ...c1GrammarExercises,
     ...c1SpeakingExercises,
     ...c1WritingExercises,
+    ...c1StrategyExercises,
   };
   return allExercises[skillId] || [];
 }
@@ -452,6 +461,7 @@ export function getC2CurriculumExercisesBySkillId(skillId: string): Exercise[] {
   const allExercises: Record<string, Exercise[]> = {
     ...c2VocabExercises,
     ...c2GrammarExercises,
+    ...c2StrategyExercises,
   };
   return allExercises[skillId] || [];
 }
@@ -461,9 +471,11 @@ export const allC1CurriculumExercises = {
   grammar: c1GrammarExercises,
   speaking: c1SpeakingExercises,
   writing: c1WritingExercises,
+  strategy: c1StrategyExercises,
 };
 
 export const allC2CurriculumExercises = {
   vocabulary: c2VocabExercises,
   grammar: c2GrammarExercises,
+  strategy: c2StrategyExercises,
 };

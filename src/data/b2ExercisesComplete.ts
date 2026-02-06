@@ -1,6 +1,7 @@
 // B2 Upper-Intermediate Level Exercises - Complete Database for ALL skills
 import { Exercise } from "./exercisesData";
 import { b2VocabularyExercisesNew } from "./b2VocabularyExercises";
+import { b2StrategyExercisesNew } from "./b2StrategyExercises";
 
 // =====================================================
 // B2 GRAMMAR EXERCISES (All 10 categories)
@@ -175,6 +176,12 @@ export const b2GrammarExercisesComplete: Record<string, Exercise[]> = {
 export const b2VocabularyExercisesComplete: Record<string, Exercise[]> = b2VocabularyExercisesNew;
 
 // =====================================================
+// B2 STRATEGY EXERCISES (Discourse and Pragmatic Competence)
+// =====================================================
+
+export const b2StrategyExercisesComplete: Record<string, Exercise[]> = b2StrategyExercisesNew;
+
+// =====================================================
 // B2 SPEAKING EXERCISES
 // =====================================================
 
@@ -293,6 +300,11 @@ export function getB2ExercisesCompleteBySkillId(skillId: string, categoryType: s
     return b2WritingExercisesComplete["b2-writ-1"] || [];
   }
   
+  // Check strategy (b2-strat-*)
+  if (categoryType.includes('strat') || categoryType.includes('strategy')) {
+    return b2StrategyExercisesComplete[skillId] || [];
+  }
+  
   return [];
 }
 
@@ -304,4 +316,5 @@ export const allB2ExercisesComplete = {
   listening: b2ListeningExercisesComplete,
   reading: b2ReadingExercisesComplete,
   writing: b2WritingExercisesComplete,
+  strategy: b2StrategyExercisesComplete,
 };

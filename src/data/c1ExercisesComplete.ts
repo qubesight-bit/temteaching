@@ -1,5 +1,6 @@
 // C1 Level - Complete Exercises for All Curriculum Skills
 import { Exercise } from "./exercisesData";
+import { c1StrategyExercisesNew } from "./c1StrategyExercises";
 
 // ============= VOCABULARY EXERCISES =============
 
@@ -1536,9 +1537,12 @@ export function getC1CompleteExercisesBySkillId(skillId: string): Exercise[] {
     ...c1ReadingExercises,
     ...c1WritingExercises,
     ...c1PragmaticExercises,
+    ...c1StrategyExercisesNew,
   };
   return allExercises[skillId] || [];
 }
+
+export const c1StrategyExercisesComplete = c1StrategyExercisesNew;
 
 export const allC1CompleteExercises = {
   vocabulary: c1VocabExercises,
@@ -1548,4 +1552,5 @@ export const allC1CompleteExercises = {
   reading: c1ReadingExercises,
   writing: c1WritingExercises,
   pragmatics: c1PragmaticExercises,
+  strategy: c1StrategyExercisesComplete,
 };
