@@ -29,7 +29,7 @@ import { getCurriculumArticleById, searchCurriculumArticles } from "@/data/curri
 import { getThemesByLevel, generateVocabularyExercises } from "@/data/vocabularyCurriculumComplete";
 import { 
   ArrowLeft, ArrowRight, CheckCircle2, XCircle, Volume2, 
-  BookOpen, Dumbbell, Trophy, Target, Lightbulb, Star, Image, FileText, ExternalLink, Home, Loader2, Square
+  BookOpen, Dumbbell, Trophy, Target, Lightbulb, Star, Image, FileText, ExternalLink, Home, Loader2, Square, Headphones
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
@@ -441,6 +441,7 @@ export default function SkillLesson() {
 
   const currentExerciseData = exercises[currentExercise];
   const isCorrect = selectedAnswer === currentExerciseData?.correctAnswer;
+  const isListeningExercise = categoryId?.includes('listen') || currentExerciseData?.tags?.includes('listening');
 
   useEffect(() => {
     if (!skill) {
@@ -965,22 +966,34 @@ export default function SkillLesson() {
                         </Badge>
                       </div>
                     )}
-                    <ExerciseQuestion 
-                      question={currentExerciseData.question}
-                      className="text-center"
-                    />
+                    {/* Hide question text for listening exercises - only allow audio */}
+                    {isListeningExercise ? (
+                      <div className="flex flex-col items-center gap-3">
+                        <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                          <Headphones className="w-8 h-8 text-primary" />
+                        </div>
+                        <p className="text-sm text-muted-foreground text-center">
+                          Listen carefully and choose the correct answer
+                        </p>
+                      </div>
+                    ) : (
+                      <ExerciseQuestion 
+                        question={currentExerciseData.question}
+                        className="text-center"
+                      />
+                    )}
                   </div>
 
                   {/* Audio button and Article link */}
                   <div className="flex flex-wrap justify-center gap-2 mb-4">
                     <Button
-                      variant="outline"
-                      size="sm"
+                      variant={isListeningExercise ? "default" : "outline"}
+                      size={isListeningExercise ? "default" : "sm"}
                       onClick={() => speakText(cleanQuestionForTTS(currentExerciseData.question))}
-                      className="text-xs"
+                      className={isListeningExercise ? "text-sm px-6" : "text-xs"}
                     >
                       <Volume2 className="w-4 h-4 mr-1" />
-                      Listen to question
+                      {isListeningExercise ? "🎧 Listen to Question" : "Listen to question"}
                     </Button>
                     {(() => {
                       const relatedArticle = getArticleForExercise(currentExerciseData.tags || []);
