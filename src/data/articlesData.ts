@@ -2,6 +2,11 @@
 // Written in a formal, textbook-like style for thorough understanding
 // Covers ALL CEFR levels from A1 to C2
 
+import { a2GrammarArticles } from "./a2GrammarArticles";
+import { b2GrammarArticles } from "./b2GrammarArticles";
+import { c1GrammarArticles } from "./c1GrammarArticles";
+import { c2GrammarArticles } from "./c2GrammarArticles";
+
 export interface ArticleSection {
   title: string;
   content: string;
@@ -3051,7 +3056,27 @@ Expresses that someone does something for us (service):
     ],
     summary: `Discourse markers organize speech: addition (moreover, furthermore), contrast (however, nevertheless), cause (due to, given that), result (therefore, consequently), sequence (firstly, finally), opinion (in my view), hedging (to some extent). Correct use marks native-like fluency.`,
     relatedArticles: ['academic-writing', 'formal-english', 'cohesion']
-  }
+  },
+
+  // =====================================================================
+  // A2 GRAMMAR - supplementary articles
+  // =====================================================================
+  ...a2GrammarArticles,
+
+  // =====================================================================
+  // B2 GRAMMAR - 11 articles
+  // =====================================================================
+  ...b2GrammarArticles,
+
+  // =====================================================================
+  // C1 ADVANCED GRAMMAR - 9 articles
+  // =====================================================================
+  ...c1GrammarArticles,
+
+  // =====================================================================
+  // C2 GRAMMAR: NATIVE PRECISION AND STYLE - 6 articles
+  // =====================================================================
+  ...c2GrammarArticles,
 ];
 
 // Helper function to get articles by level
@@ -3134,6 +3159,77 @@ export const getArticleForExercise = (exerciseTags: string[]): Article | null =>
     'weather': 'vocabulary',
     'professions': 'vocabulary',
     'sports': 'vocabulary',
+    'there-is': 'a2-gram-there-is',
+    'there-are': 'a2-gram-there-is',
+    'questions': 'a2-gram-questions',
+    // B2 Grammar
+    'tenses': 'b2-gram-all-tenses',
+    'b2-gram-1': 'b2-gram-all-tenses',
+    'b2-gram-2': 'b2-gram-perfect-vs-past',
+    'b2-gram-3': 'b2-gram-future',
+    'b2-gram-4': 'b2-gram-conditionals',
+    'b2-gram-5': 'b2-gram-mixed-conditionals',
+    'b2-gram-6': 'b2-gram-passive',
+    'b2-gram-7': 'b2-gram-relative',
+    'b2-gram-8': 'b2-gram-reported',
+    'deduction': 'b2-gram-modals-deduction',
+    'b2-gram-9': 'b2-gram-modals-deduction',
+    'complex-sentences': 'b2-gram-complex',
+    'compound': 'b2-gram-complex',
+    'b2-gram-10': 'b2-gram-complex',
+    'b2-gram-11': 'b2-gram-inversions',
+    // C1 Advanced Grammar - skill and topic tags
+    'clauses': 'c1-gram-complex-clauses',
+    'participles': 'c1-gram-complex-clauses',
+    'complex-clauses': 'c1-gram-complex-clauses',
+    'c1-gram-1': 'c1-gram-complex-clauses',
+    'noun-clauses': 'c1-gram-subordination',
+    'embedding': 'c1-gram-subordination',
+    'subordination': 'c1-gram-subordination',
+    'c1-gram-2': 'c1-gram-subordination',
+    'conditionals': 'c1-gram-conditionals',
+    'c1-gram-3': 'c1-gram-conditionals',
+    'reporting-verbs': 'c1-gram-advanced-passive',
+    'causative': 'c1-gram-advanced-passive',
+    'impersonal': 'c1-gram-advanced-passive',
+    'c1-gram-4': 'c1-gram-advanced-passive',
+    'nominalization': 'c1-gram-nominalization',
+    'c1-gram-5': 'c1-gram-nominalization',
+    'inversion': 'c1-gram-inversion',
+    'emphasis': 'c1-gram-inversion',
+    'cleft-sentences': 'c1-gram-inversion',
+    'c1-gram-6': 'c1-gram-inversion',
+    'ellipsis': 'c1-gram-ellipsis',
+    'substitution': 'c1-gram-ellipsis',
+    'c1-gram-7': 'c1-gram-ellipsis',
+    'discourse': 'c1-gram-discourse',
+    'cohesion': 'c1-gram-discourse',
+    'c1-gram-8': 'c1-gram-discourse',
+    'punctuation': 'c1-gram-punctuation',
+    'c1-gram-9': 'c1-gram-punctuation',
+    // C2 Grammar: Native Precision and Style
+    'subjunctive': 'c2-gram-literary',
+    'literary': 'c2-gram-literary',
+    'archaic': 'c2-gram-literary',
+    'parenthetical': 'c2-gram-literary',
+    'c2-gram-1': 'c2-gram-literary',
+    'narrative': 'c2-gram-narrative-time',
+    'historical-present': 'c2-gram-narrative-time',
+    'c2-gram-2': 'c2-gram-narrative-time',
+    'modality': 'c2-gram-modality',
+    'certainty': 'c2-gram-modality',
+    'probability': 'c2-gram-modality',
+    'c2-gram-3': 'c2-gram-modality',
+    'theme-rheme': 'c2-gram-cohesion',
+    'c2-gram-4': 'c2-gram-cohesion',
+    'periodic': 'c2-gram-syntax',
+    'parallelism': 'c2-gram-syntax',
+    'antithesis': 'c2-gram-syntax',
+    'fragments': 'c2-gram-syntax',
+    'c2-gram-5': 'c2-gram-syntax',
+    'formal-writing': 'c2-gram-formal',
+    'agreement': 'c2-gram-formal',
+    'c2-gram-6': 'c2-gram-formal',
   };
   
   // Find matching article
@@ -3154,4 +3250,58 @@ export const getArticleForExercise = (exerciseTags: string[]): Article | null =>
   }
   
   return null;
+};
+
+// Map C1/C2 grammar skill IDs to article IDs for overview "Read article" links
+const skillIdToArticleMap: Record<string, string> = {
+  "c1-gram-1": "c1-gram-complex-clauses",
+  "c1-gram-2": "c1-gram-subordination",
+  "c1-gram-3": "c1-gram-conditionals",
+  "c1-gram-4": "c1-gram-advanced-passive",
+  "c1-gram-5": "c1-gram-nominalization",
+  "c1-gram-6": "c1-gram-inversion",
+  "c1-gram-7": "c1-gram-ellipsis",
+  "c1-gram-8": "c1-gram-discourse",
+  "c1-gram-9": "c1-gram-punctuation",
+  "a1-gram-1": "verb-to-be",
+  "a1-gram-2": "present-simple",
+  "a1-gram-3": "present-continuous",
+  "a1-gram-4": "articles-a-an-the",
+  "a2-gram-1": "past-simple",
+  "a2-gram-2": "present-perfect-basic",
+  "a2-gram-3": "future-going-to",
+  "a2-gram-4": "a2-gram-there-is",
+  "a2-gram-5": "countable-uncountable",
+  "a2-gram-6": "comparatives-superlatives",
+  "a2-gram-7": "modals-basic",
+  "a2-gram-8": "prepositions",
+  "a2-gram-9": "a2-gram-questions",
+  "a2-gram-10": "past-simple-vs-present-perfect",
+  "b1-gram-1": "past-simple",
+  "b1-gram-2": "present-perfect-basic",
+  "b1-gram-3": "past-simple-vs-present-perfect",
+  "b1-gram-4": "future-going-to",
+  "b2-gram-1": "b2-gram-all-tenses",
+  "b2-gram-2": "b2-gram-perfect-vs-past",
+  "b2-gram-3": "b2-gram-future",
+  "b2-gram-4": "b2-gram-conditionals",
+  "b2-gram-5": "b2-gram-mixed-conditionals",
+  "b2-gram-6": "b2-gram-passive",
+  "b2-gram-7": "b2-gram-relative",
+  "b2-gram-8": "b2-gram-reported",
+  "b2-gram-9": "b2-gram-modals-deduction",
+  "b2-gram-10": "b2-gram-complex",
+  "b2-gram-11": "b2-gram-inversions",
+  "c2-gram-1": "c2-gram-literary",
+  "c2-gram-2": "c2-gram-narrative-time",
+  "c2-gram-3": "c2-gram-modality",
+  "c2-gram-4": "c2-gram-cohesion",
+  "c2-gram-5": "c2-gram-syntax",
+  "c2-gram-6": "c2-gram-formal",
+};
+
+export const getArticleForSkillId = (skillId: string): Article | null => {
+  const articleId = skillIdToArticleMap[skillId];
+  if (!articleId) return null;
+  return getArticleById(articleId) ?? null;
 };

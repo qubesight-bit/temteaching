@@ -24,7 +24,7 @@ import { getB2CurriculumExercisesBySkillId } from "@/data/curriculumExercisesB2"
 import { getC1CurriculumExercisesBySkillId, getC2CurriculumExercisesBySkillId } from "@/data/curriculumExercisesC1C2";
 import { getC2ExercisesCompleteBySkillId } from "@/data/c2ExercisesComplete";
 import { getImageExercisesForSkill } from "@/data/imageVocabularyData";
-import { getArticleForExercise } from "@/data/articlesData";
+import { getArticleForExercise, getArticleForSkillId } from "@/data/articlesData";
 import { getCurriculumArticleById, searchCurriculumArticles } from "@/data/curriculumArticles";
 import { getThemesByLevel, generateVocabularyExercises } from "@/data/vocabularyCurriculumComplete";
 import { 
@@ -697,6 +697,24 @@ export default function SkillLesson() {
                     Upon completing this lesson, you will master {skill.subSkills.length} key sub-skills.
                   </p>
                 </div>
+
+                {/* Related article link (for C1 grammar, etc.) */}
+                {skill && (() => {
+                  const overviewArticle = getArticleForSkillId(skill.id);
+                  if (!overviewArticle) return null;
+                  return (
+                    <div className="mb-8">
+                      <Button
+                        variant="outline"
+                        className="w-full border-primary/30 text-primary hover:bg-primary/10"
+                        onClick={() => navigate(`/articles/${overviewArticle.id}`)}
+                      >
+                        <FileText className="w-4 h-4 mr-2" />
+                        Read full article: {overviewArticle.title}
+                      </Button>
+                    </div>
+                  );
+                })()}
 
                 {/* SubSkills */}
                 <div className="mb-8">
