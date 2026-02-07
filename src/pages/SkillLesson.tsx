@@ -1100,7 +1100,7 @@ export default function SkillLesson() {
                         </div>
                         <div className="flex-1">
                           <p className="font-semibold mb-2">
-                            {isCorrect ? "Excellent! 🎉" : `The correct answer is: "${currentExerciseData.correctAnswer}"`}
+                            {isCorrect ? "Excellent! 🎉" : isListeningExercise ? "That's not quite right. Listen again to practice! 🎧" : `The correct answer is: "${currentExerciseData.correctAnswer}"`}
                           </p>
                           
                           {/* English explanation */}
