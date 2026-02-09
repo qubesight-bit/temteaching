@@ -14,6 +14,7 @@ import { useAppState } from "@/hooks/useAppState";
 import { useAuth } from "@/contexts/AuthContext";
 import { usePlacementExam } from "@/hooks/usePlacementExam";
 import { supabase } from "@/integrations/supabase/client";
+import { DemoBanner } from "@/components/DemoBanner";
 
 type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
@@ -145,14 +146,15 @@ const Index = () => {
 
   return (
     <AppLayout>
-      {/* Placement Exam Modal - Mandatory for new users */}
+      {/* Placement Exam Modal - Mandatory for new users, skip for demo */}
       <PlacementExamModal 
-        open={needsPlacementExam && !placementLoading && !!user} 
+        open={needsPlacementExam && !placementLoading && !!user && user.email !== 'qubetest@tutamail.com'} 
         onComplete={handlePlacementComplete}
         onSkip={handleSkipPlacement}
       />
       
       <div className="container py-8">
+        <DemoBanner />
         {/* Welcome Section */}
         <div className="mb-8 animate-fade-in">
           <h1 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-2">

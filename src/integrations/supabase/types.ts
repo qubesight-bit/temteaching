@@ -255,6 +255,7 @@ export type Database = {
         }
         Returns: boolean
       }
+      is_demo_user: { Args: { _user_id: string }; Returns: boolean }
       is_user_approved: { Args: { _user_id: string }; Returns: boolean }
     }
     Enums: {

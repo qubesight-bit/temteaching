@@ -10,6 +10,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { Check, X, Users, Shield, Loader2, ArrowLeft, Monitor } from 'lucide-react';
 import { UserSessionsPanel } from '@/components/admin/UserSessionsPanel';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useDemoMode } from '@/hooks/useDemoMode';
 
 interface UserProfile {
   id: string;
@@ -24,14 +25,34 @@ export default function AdminUsers() {
   const { user } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
+  const { isDemoUser } = useDemoMode();
   const [users, setUsers] = useState<UserProfile[]>([]);
   const [loading, setLoading] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
   const [actionLoading, setActionLoading] = useState<string | null>(null);
 
   useEffect(() => {
-    checkAdminAndFetchUsers();
-  }, [user]);
+    if (!isDemoUser) {
+      checkAdminAndFetchUsers();
+    }
+  }, [user, isDemoUser]);
+
+  if (isDemoUser) {
+    return (
+      <AppLayout>
+        <div className="flex items-center justify-center min-h-[60vh]">
+          <Card className="max-w-md">
+            <CardContent className="p-8 text-center">
+              <Shield className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+              <h2 className="text-xl font-semibold mb-2">Access Restricted</h2>
+              <p className="text-muted-foreground">The admin panel is not available in demo mode to protect user privacy.</p>
+              <Button className="mt-4" onClick={() => navigate('/')}>Back to Dashboard</Button>
+            </CardContent>
+          </Card>
+        </div>
+      </AppLayout>
+    );
+  }
 
   const checkAdminAndFetchUsers = async () => {
     if (!user) return;
