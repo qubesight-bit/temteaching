@@ -10,10 +10,12 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { ArrowLeft, User, Bell, Clock, Volume2, Palette, RotateCcw, AlertCircle, ChevronRight } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { useAppState, UserProgress } from "@/hooks/useAppState";
+import { useDemoMode } from "@/hooks/useDemoMode";
 
 export default function Settings() {
   const navigate = useNavigate();
   const { userProgress, setUserProgress } = useAppState();
+  const { isDemoUser } = useDemoMode();
   
   const [settings, setSettings] = useState(() => {
     const saved = localStorage.getItem('settings');
@@ -29,6 +31,14 @@ export default function Settings() {
   const [selectedLevel, setSelectedLevel] = useState<UserProgress['currentLevel']>(userProgress.currentLevel);
 
   const handleSave = () => {
+    if (isDemoUser) {
+      toast({
+        title: "Demo mode",
+        description: "Settings cannot be changed in demo mode.",
+        variant: "destructive",
+      });
+      return;
+    }
     // Save settings to localStorage
     localStorage.setItem('settings', JSON.stringify(settings));
     
