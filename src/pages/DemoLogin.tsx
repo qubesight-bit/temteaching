@@ -9,14 +9,34 @@ const DemoLogin = () => {
 
   useEffect(() => {
     const autoLogin = async () => {
-      const { error } = await supabase.auth.signInWithPassword({
-        email: "qubetest@tutamail.com",
-        password: "@0ver$t0p2025",
-      });
-      if (error) {
-        setError("Error al cargar la demo");
-      } else {
+      try {
+        // Call edge function to get demo session tokens
+        const { data, error: fnError } = await supabase.functions.invoke('demo-login', {
+          method: 'POST',
+        });
+
+        if (fnError || !data?.access_token) {
+          console.error('Demo login error:', fnError);
+          setError("Error al cargar la demo");
+          return;
+        }
+
+        // Set the session using the tokens from the edge function
+        const { error: sessionError } = await supabase.auth.setSession({
+          access_token: data.access_token,
+          refresh_token: data.refresh_token,
+        });
+
+        if (sessionError) {
+          console.error('Session error:', sessionError);
+          setError("Error al cargar la demo");
+          return;
+        }
+
         navigate("/");
+      } catch (err) {
+        console.error('Demo login failed:', err);
+        setError("Error al cargar la demo");
       }
     };
     autoLogin();
