@@ -30,6 +30,7 @@ import Karaoke from "./pages/Karaoke";
 import CustomExam from "./pages/CustomExam";
 import SessionExpired from "./pages/SessionExpired";
 import AdminUsers from "./pages/AdminUsers";
+import DemoLogin from "./pages/DemoLogin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -47,6 +48,7 @@ const App = () => (
                 <Routes>
                   {/* Public route - Auth page */}
                   <Route path="/auth" element={<Auth />} />
+                  <Route path="/demo-login" element={<DemoLogin />} />
                   
                   {/* Legacy route: approval gate removed */}
                   <Route path="/pending-approval" element={<Navigate to="/" replace />} />
