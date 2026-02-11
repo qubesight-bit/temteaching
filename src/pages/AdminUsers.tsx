@@ -16,6 +16,7 @@ interface UserProfile {
   id: string;
   user_id: string;
   display_name: string | null;
+  email: string | null;
   is_approved: boolean;
   created_at: string;
   current_level: string | null;
@@ -218,7 +219,10 @@ export default function AdminUsers() {
                           <p className="font-medium">
                             {profile.display_name || 'No name'}
                           </p>
-                          <p className="text-sm text-muted-foreground">
+                          {profile.email && (
+                            <p className="text-sm text-muted-foreground">{profile.email}</p>
+                          )}
+                          <p className="text-xs text-muted-foreground">
                             Registered: {new Date(profile.created_at).toLocaleDateString()}
                           </p>
                         </div>
@@ -292,7 +296,10 @@ export default function AdminUsers() {
                               </Badge>
                             )}
                           </p>
-                          <p className="text-sm text-muted-foreground">
+                          {profile.email && (
+                            <p className="text-sm text-muted-foreground">{profile.email}</p>
+                          )}
+                          <p className="text-xs text-muted-foreground">
                             Approved • Registered {new Date(profile.created_at).toLocaleDateString()}
                           </p>
                         </div>
