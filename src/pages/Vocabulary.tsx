@@ -132,6 +132,30 @@ export default function Vocabulary() {
                 )}
               >
                 <CardContent className="h-full flex flex-col items-center justify-center p-8">
+                  <span className="text-xl font-display font-bold text-primary mb-4">
+                    {currentWord.definition}
+                  </span>
+                  <div className="text-center space-y-2 mt-4">
+                    <p className="text-sm italic text-foreground">
+                      "{currentWord.example}"
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {currentWord.context}
+                    </p>
+                  </div>
+                  <p className="text-sm text-center text-muted-foreground mt-8">
+                    Tap to see the word
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card 
+                className={cn(
+                  "absolute inset-0 transition-all duration-500 backface-hidden",
+                  isFlipped ? "" : "-rotate-y-180 opacity-0"
+                )}
+              >
+                <CardContent className="h-full flex flex-col items-center justify-center p-8">
                   <Button
                     variant="ghost"
                     size="icon"
@@ -157,30 +181,6 @@ export default function Vocabulary() {
                   <span className="text-sm text-muted-foreground">
                     {currentWord.pronunciation}
                   </span>
-                  <p className="text-sm text-center text-muted-foreground mt-8">
-                    Tap to see definition
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card 
-                className={cn(
-                  "absolute inset-0 transition-all duration-500 backface-hidden",
-                  isFlipped ? "" : "-rotate-y-180 opacity-0"
-                )}
-              >
-                <CardContent className="h-full flex flex-col items-center justify-center p-8">
-                  <span className="text-xl font-display font-bold text-primary mb-4">
-                    {currentWord.definition}
-                  </span>
-                  <div className="text-center space-y-2 mt-4">
-                    <p className="text-sm italic text-foreground">
-                      "{currentWord.example}"
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      {currentWord.context}
-                    </p>
-                  </div>
                 </CardContent>
               </Card>
             </div>
