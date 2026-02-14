@@ -115,6 +115,25 @@ const Index = () => {
         .from('profiles')
         .update({ current_level: 'A1' })
         .eq('user_id', user.id);
+
+      // Notify teacher that student skipped placement exam
+      supabase.functions.invoke('send-placement-results', {
+        body: {
+          studentName: displayName || user.email?.split('@')[0] || 'Unknown',
+          studentEmail: user.email || 'No email',
+          assignedLevel: 'A1',
+          score: 0,
+          totalQuestions: 0,
+          percentage: 0,
+          timeSpent: '0:00',
+          completedAt: new Date().toISOString(),
+          sectionBreakdown: [],
+          incorrectAnswers: [],
+          skipped: true,
+        },
+      }).catch((err) => {
+        console.error('Failed to send skip notification:', err);
+      });
     }
     markPlacementComplete();
     setSelectedLevel('A1');

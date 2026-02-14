@@ -20,6 +20,7 @@ interface PlacementResultRequest {
   completedAt: string;
   sectionBreakdown: { section: string; correct: number; total: number }[];
   incorrectAnswers: { question: string; userAnswer: string; correctAnswer: string; category: string }[];
+  skipped?: boolean;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -47,6 +48,7 @@ const handler = async (req: Request): Promise<Response> => {
       completedAt,
       sectionBreakdown,
       incorrectAnswers,
+      skipped,
     } = data;
 
     // Build section breakdown table
@@ -112,8 +114,8 @@ const handler = async (req: Request): Promise<Response> => {
           
           <div style="background: white; padding: 30px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
             <div style="text-align: center; margin-bottom: 30px;">
-              <h2 style="color: #1f2937; margin: 0 0 10px 0;">New Student Placement</h2>
-              <p style="color: #6b7280; margin: 0;">A new student has completed their placement exam</p>
+              <h2 style="color: #1f2937; margin: 0 0 10px 0;">${skipped ? '⚠️ Student Skipped Placement Exam' : 'New Student Placement'}</h2>
+              <p style="color: #6b7280; margin: 0;">${skipped ? 'This student chose to skip the placement exam and was assigned to A1 by default' : 'A new student has completed their placement exam'}</p>
             </div>
             
             <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
@@ -169,7 +171,7 @@ const handler = async (req: Request): Promise<Response> => {
       body: JSON.stringify({
         from: "Tem Teaching <onboarding@resend.dev>",
         to: [TEACHER_EMAIL],
-        subject: `🎓 New Placement: ${studentName} → Level ${assignedLevel} (${percentage}%)`,
+        subject: `${skipped ? '⚠️ Skipped Exam' : '🎓 New Placement'}: ${studentName} → Level ${assignedLevel}${skipped ? ' (default)' : ` (${percentage}%)`}`,
         html: emailHtml,
       }),
     });
