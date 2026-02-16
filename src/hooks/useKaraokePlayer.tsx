@@ -46,6 +46,11 @@ export function useKaraokePlayer() {
     isRecordingRef.current = isRecording;
   }, [isRecording]);
 
+  // Derive sessionScore from lineScores to avoid React batching issues
+  useEffect(() => {
+    setSessionScore(calculateSessionScore(lineScores));
+  }, [lineScores]);
+
   // Cleanup on unmount
   useEffect(() => {
     return () => {
@@ -142,10 +147,16 @@ export function useKaraokePlayer() {
       const player = (window as any).__karaokePlayer;
       const currentLyrics = lyricsRef.current;
       
-      if (player && currentLyrics) {
-        const currentTime = player.getCurrentTime();
+      if (!player || !currentLyrics || !currentLyrics.lyrics?.length) return;
 
-        const newLineIndex = currentLyrics.lyrics.findIndex((line, index) => {
+      let currentTime = 0;
+      try {
+        currentTime = player.getCurrentTime?.() ?? 0;
+      } catch {
+        return;
+      }
+
+      const newLineIndex = currentLyrics.lyrics.findIndex((line, index) => {
           const nextLine = currentLyrics.lyrics[index + 1];
           return line.startTime <= currentTime && (!nextLine || nextLine.startTime > currentTime);
         });
@@ -162,13 +173,8 @@ export function useKaraokePlayer() {
             isRecordingRef.current
           );
 
-          setLineScores((prev) => {
-            const newScores = [...prev, lineScore];
-            setSessionScore(calculateSessionScore(newScores));
-            return newScores;
-          });
+          setLineScores((prev) => [...prev, lineScore]);
         }
-      }
     }, 100);
   }, []);
 

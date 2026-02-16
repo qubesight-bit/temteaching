@@ -132,8 +132,22 @@ export function KaraokeVideoPlayer({
             origin: window.location.origin,
           },
           events: {
-            onReady: () => {
+            onReady: (event: { target: YouTubePlayer }) => {
               console.log('YouTube player ready');
+              const player = event.target;
+              (window as any).__karaokePlayer = {
+                play: () => player.playVideo(),
+                pause: () => player.pauseVideo(),
+                stop: () => player.stopVideo(),
+                seekTo: (seconds: number) => player.seekTo(seconds, true),
+                getCurrentTime: () => {
+                  try {
+                    return player.getCurrentTime?.() ?? 0;
+                  } catch {
+                    return 0;
+                  }
+                },
+              };
               onPlayerReady();
             },
             onStateChange: (event) => {
@@ -169,6 +183,7 @@ export function KaraokeVideoPlayer({
     initPlayer();
 
     return () => {
+      delete (window as any).__karaokePlayer;
       if (playerRef.current) {
         try {
           playerRef.current.destroy();
@@ -179,26 +194,6 @@ export function KaraokeVideoPlayer({
       }
     };
   }, [videoId, onPlayerReady, onPlayerStateChange, onPlayerError]);
-
-  // Expose player controls
-  useEffect(() => {
-    const handlePlay = () => playerRef.current?.playVideo();
-    const handlePause = () => playerRef.current?.pauseVideo();
-    const handleStop = () => playerRef.current?.stopVideo();
-
-    // Store references to the player methods on window for the hook to access
-    (window as any).__karaokePlayer = {
-      play: handlePlay,
-      pause: handlePause,
-      stop: handleStop,
-      seekTo: (seconds: number) => playerRef.current?.seekTo(seconds, true),
-      getCurrentTime: () => playerRef.current?.getCurrentTime() || 0,
-    };
-
-    return () => {
-      delete (window as any).__karaokePlayer;
-    };
-  }, []);
 
   return (
     <div className="space-y-4">

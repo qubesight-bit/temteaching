@@ -56,7 +56,7 @@ export default function Practice() {
 
   // Load questions for selected level
   useEffect(() => {
-    const exercises = getRandomGrammarExercises(selectedLevel, 15);
+    const exercises = getRandomGrammarExercises(selectedLevel, 50);
     setPracticeQuestions(convertToQuestions(exercises));
     // Reset state when level changes
     setCurrentQuestionIndex(0);
@@ -112,7 +112,7 @@ export default function Practice() {
   };
 
   const handleRestart = () => {
-    const exercises = getRandomGrammarExercises(selectedLevel, 15);
+    const exercises = getRandomGrammarExercises(selectedLevel, 50);
     setPracticeQuestions(convertToQuestions(exercises));
     setCurrentQuestionIndex(0);
     setSelectedAnswer(null);
