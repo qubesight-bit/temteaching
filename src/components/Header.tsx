@@ -1,9 +1,10 @@
 import { ReactNode, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Bell, Menu, Settings, LogOut, Shield } from "lucide-react";
+import { Bell, Menu, Settings, LogOut, Shield, Eye } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
+import { useDemoMode } from "@/hooks/useDemoMode";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,6 +21,7 @@ export function Header({ children }: HeaderProps) {
   const navigate = useNavigate();
   const location = useLocation();
   const { user, signOut } = useAuth();
+  const { isDemoUser } = useDemoMode();
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
@@ -117,10 +119,16 @@ export function Header({ children }: HeaderProps) {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-56 bg-popover">
                 <div className="px-2 py-1.5">
-                  <p className="text-sm font-medium">{user.email}</p>
+                  <p className="text-sm font-medium">{isDemoUser ? 'Demo User' : user.email}</p>
+                  {isDemoUser && (
+                    <div className="flex items-center gap-1 mt-1">
+                      <Eye className="w-3 h-3 text-muted-foreground" />
+                      <span className="text-xs text-muted-foreground">Read-only mode</span>
+                    </div>
+                  )}
                 </div>
                 <DropdownMenuSeparator />
-                {isAdmin && (
+                {isAdmin && !isDemoUser && (
                   <DropdownMenuItem onClick={() => navigate('/admin/users')}>
                     <Shield className="w-4 h-4 mr-2" />
                     Admin Panel
@@ -129,9 +137,11 @@ export function Header({ children }: HeaderProps) {
                 <DropdownMenuItem onClick={() => navigate('/conversation/history')}>
                   Conversation History
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => navigate('/settings')}>
-                  Settings
-                </DropdownMenuItem>
+                {!isDemoUser && (
+                  <DropdownMenuItem onClick={() => navigate('/settings')}>
+                    Settings
+                  </DropdownMenuItem>
+                )}
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={handleSignOut} className="text-destructive">
                   <LogOut className="w-4 h-4 mr-2" />

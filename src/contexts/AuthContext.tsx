@@ -47,9 +47,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return () => subscription.unsubscribe();
   }, []);
 
-  // Register session when user changes (after sign in)
+  // Register session when user changes (after sign in) - skip for demo user
   useEffect(() => {
-    if (user) {
+    if (user && user.email !== 'qubetest@tutamail.com') {
       registerSession();
     }
   }, [user, registerSession]);

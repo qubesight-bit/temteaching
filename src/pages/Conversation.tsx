@@ -14,6 +14,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { useLearningErrors, NewLearningError } from "@/hooks/useLearningErrors";
 import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
 import { TerminologyBox } from "@/components/conversation/TerminologyBox";
+import { useDemoMode } from "@/hooks/useDemoMode";
+import { DemoBanner } from "@/components/DemoBanner";
 
 // Helper function to parse error reports from AI response
 function parseErrorReports(content: string, conversationId: string | null, userLevel: string): NewLearningError[] {
@@ -239,6 +241,7 @@ type LevelFilter = typeof levels[number];
 export default function Conversation() {
   const navigate = useNavigate();
   const { user } = useAuth();
+  const { isDemoUser } = useDemoMode();
   const { addError } = useLearningErrors();
   const [selectedScenario, setSelectedScenario] = useState<string | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<LevelFilter>("All");
@@ -350,6 +353,14 @@ export default function Conversation() {
   };
 
   const handleStartScenario = async (scenarioId: string) => {
+    if (isDemoUser) {
+      toast({
+        title: "Demo mode",
+        description: "Conversations cannot be started in demo mode.",
+        variant: "destructive",
+      });
+      return;
+    }
     setSelectedScenario(scenarioId);
     setIsLoading(true);
     setCurrentConversationId(null);
@@ -759,6 +770,7 @@ export default function Conversation() {
       <Header />
       
       <main className="container py-8">
+        <DemoBanner />
         {/* Back Button & Title */}
         <div className="mb-8">
           <Button

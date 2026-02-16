@@ -137,6 +137,7 @@ export type Database = {
           created_at: string
           current_level: string | null
           display_name: string | null
+          email: string | null
           id: string
           is_approved: boolean
           updated_at: string
@@ -146,6 +147,7 @@ export type Database = {
           created_at?: string
           current_level?: string | null
           display_name?: string | null
+          email?: string | null
           id?: string
           is_approved?: boolean
           updated_at?: string
@@ -155,6 +157,7 @@ export type Database = {
           created_at?: string
           current_level?: string | null
           display_name?: string | null
+          email?: string | null
           id?: string
           is_approved?: boolean
           updated_at?: string
@@ -255,6 +258,7 @@ export type Database = {
         }
         Returns: boolean
       }
+      is_demo_user: { Args: { _user_id: string }; Returns: boolean }
       is_user_approved: { Args: { _user_id: string }; Returns: boolean }
     }
     Enums: {
