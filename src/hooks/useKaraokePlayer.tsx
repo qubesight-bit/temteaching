@@ -23,7 +23,7 @@ export function useKaraokePlayer() {
   const audioRecorderRef = useRef<AudioRecorder | null>(null);
   const syncIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const lyricsRef = useRef<SynchronizedLyrics | null>(null);
-  const currentLineIndexRef = useRef(0);
+  const currentLineIndexRef = useRef(-1);
   const isRecordingRef = useRef(false);
 
   // Keep refs in sync with state
@@ -34,6 +34,13 @@ export function useKaraokePlayer() {
   useEffect(() => {
     currentLineIndexRef.current = currentLineIndex;
   }, [currentLineIndex]);
+
+  // Reset line index ref when lyrics change (new song)
+  useEffect(() => {
+    if (lyrics) {
+      currentLineIndexRef.current = -1;
+    }
+  }, [lyrics?.songId]);
 
   useEffect(() => {
     isRecordingRef.current = isRecording;
@@ -86,6 +93,7 @@ export function useKaraokePlayer() {
 
   const selectVideo = useCallback(async (video: YouTubeSearchResult) => {
     setCurrentVideo(video);
+    currentLineIndexRef.current = -1;
     setCurrentLineIndex(0);
     setLineScores([]);
     setSessionScore({ timing: 0, pronunciation: 0, completeness: 0, total: 0 });
@@ -143,6 +151,7 @@ export function useKaraokePlayer() {
         });
 
         if (newLineIndex !== -1 && newLineIndex !== currentLineIndexRef.current) {
+          currentLineIndexRef.current = newLineIndex;
           setCurrentLineIndex(newLineIndex);
 
           // Calculate score for this line
@@ -197,6 +206,7 @@ export function useKaraokePlayer() {
   const stop = useCallback(() => {
     const player = (window as any).__karaokePlayer;
     player?.stop();
+    currentLineIndexRef.current = -1;
     setCurrentLineIndex(0);
     stopLyricsSync();
   }, [stopLyricsSync]);
@@ -247,6 +257,7 @@ export function useKaraokePlayer() {
   const resetSession = useCallback(() => {
     setCurrentVideo(null);
     setLyrics(null);
+    currentLineIndexRef.current = -1;
     setCurrentLineIndex(0);
     setLineScores([]);
     setSessionScore({ timing: 0, pronunciation: 0, completeness: 0, total: 0 });

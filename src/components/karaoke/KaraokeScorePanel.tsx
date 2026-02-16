@@ -70,7 +70,12 @@ export function KaraokeScorePanel({
           <span>Progress</span>
           <span>{linesCompleted} / {totalLines} lines</span>
         </div>
-        <Progress value={(linesCompleted / totalLines) * 100} className="h-2" />
+        <Progress value={totalLines > 0 ? (linesCompleted / totalLines) * 100 : 0} className="h-2" />
+        {totalLines === 0 && (
+          <p className="text-xs text-muted-foreground mt-2">
+            Choose a song from the <strong>Library</strong> tab for synchronized lyrics and scoring.
+          </p>
+        )}
       </div>
 
       {/* Recording Controls */}
