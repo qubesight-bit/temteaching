@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppLayout } from "@/components/AppLayout";
 import { InteractiveLevelSelector } from "@/components/InteractiveLevelSelector";
@@ -99,6 +99,7 @@ const Index = () => {
   const { user } = useAuth();
   const { needsPlacementExam, loading: placementLoading, markPlacementComplete } = usePlacementExam();
   const [displayName, setDisplayName] = useState<string | null>(null);
+  const [learningErrors, setLearningErrors] = useState<{ error_type: string; count: number }[]>([]);
   const [selectedLevel, setSelectedLevel] = useState<CEFRLevel>(
     (userProgress.currentLevel as CEFRLevel) || "A1"
   );
@@ -153,7 +154,30 @@ const Index = () => {
         }
       }
     };
+
+    const fetchErrors = async () => {
+      if (user) {
+        const { data } = await supabase
+          .from('learning_errors')
+          .select('error_type')
+          .eq('user_id', user.id);
+
+        if (data && data.length > 0) {
+          const counts: Record<string, number> = {};
+          data.forEach((e) => {
+            counts[e.error_type] = (counts[e.error_type] || 0) + 1;
+          });
+          const sorted = Object.entries(counts)
+            .map(([error_type, count]) => ({ error_type, count }))
+            .sort((a, b) => b.count - a.count)
+            .slice(0, 5);
+          setLearningErrors(sorted);
+        }
+      }
+    };
+
     fetchProfile();
+    fetchErrors();
   }, [user]);
 
   // Get greeting name: profile name > email username > "learner"
@@ -273,18 +297,19 @@ const Index = () => {
                 <span className="text-xl">🎯</span>
                 Areas to Improve
               </h3>
-              <div className="space-y-2">
-                {[
-                  { topic: "Phrasal verbs", count: 5 },
-                  { topic: "Articles (a/an/the)", count: 3 },
-                  { topic: "Time prepositions", count: 2 },
-                ].map((item) => (
-                  <div key={item.topic} className="flex items-center justify-between py-2 px-3 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors cursor-pointer">
-                    <span className="text-sm font-medium">{item.topic}</span>
-                    <span className="text-xs text-muted-foreground">{item.count} errors</span>
-                  </div>
-                ))}
-              </div>
+              {learningErrors.length > 0 ? (
+                <div className="space-y-2">
+                  {learningErrors.map((item) => (
+                    <div key={item.error_type} className="flex items-center justify-between py-2 px-3 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors cursor-pointer"
+                      onClick={() => navigate('/error-history')}>
+                      <span className="text-sm font-medium">{item.error_type}</span>
+                      <span className="text-xs text-muted-foreground">{item.count} {item.count === 1 ? 'error' : 'errors'}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-sm text-muted-foreground">No errors recorded yet. Start practicing!</p>
+              )}
             </section>
           </div>
         </div>
