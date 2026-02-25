@@ -247,11 +247,11 @@ const Index = () => {
             <section>
               <h2 className="font-display font-semibold text-lg mb-4">Your Activity</h2>
             <DailyGoalWidget
-                currentStreak={0}
-                bestStreak={0}
-                todayMinutes={0}
-                goalMinutes={20}
-                weeklyProgress={[0, 0, 0, 0, 0, 0, 0]}
+                currentStreak={userProgress.currentStreak}
+                bestStreak={userProgress.bestStreak}
+                todayMinutes={userProgress.todayMinutes}
+                goalMinutes={userProgress.goalMinutes}
+                weeklyProgress={userProgress.weeklyProgress}
               />
             </section>
 
