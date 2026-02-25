@@ -157,10 +157,14 @@ const Index = () => {
 
     const fetchErrors = async () => {
       if (user) {
+        const sevenDaysAgo = new Date();
+        sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+
         const { data } = await supabase
           .from('learning_errors')
           .select('error_type')
-          .eq('user_id', user.id);
+          .eq('user_id', user.id)
+          .gte('created_at', sevenDaysAgo.toISOString());
 
         if (data && data.length > 0) {
           const counts: Record<string, number> = {};
@@ -296,6 +300,7 @@ const Index = () => {
               <h3 className="font-display font-semibold mb-3 flex items-center gap-2">
                 <span className="text-xl">🎯</span>
                 Areas to Improve
+                <span className="text-xs font-normal text-muted-foreground ml-auto">Last 7 days</span>
               </h3>
               {learningErrors.length > 0 ? (
                 <div className="space-y-2">
