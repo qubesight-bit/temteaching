@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { useRealProgress } from '@/hooks/useRealProgress';
 
 export interface UserProgress {
   currentLevel: "A1" | "A2" | "B1" | "B2" | "C1";
@@ -84,15 +85,15 @@ interface Notification {
 const initialProgress: UserProgress = {
   currentLevel: "A2",
   levelProgress: 45,
-  currentStreak: 7,
-  bestStreak: 14,
-  todayMinutes: 18,
+  currentStreak: 0,
+  bestStreak: 0,
+  todayMinutes: 0,
   goalMinutes: 20,
-  weeklyProgress: [100, 100, 75, 100, 90, 50, 0],
-  totalLessons: 156,
-  wordsLearned: 847,
-  averageAccuracy: 89,
-  weeklyHours: 12.5,
+  weeklyProgress: [0, 0, 0, 0, 0, 0, 0],
+  totalLessons: 0,
+  wordsLearned: 0,
+  averageAccuracy: 0,
+  weeklyHours: 0,
 };
 
 const AppStateContext = createContext<AppState | undefined>(undefined);
@@ -100,11 +101,30 @@ const AppStateContext = createContext<AppState | undefined>(undefined);
 export function AppStateProvider({ children }: { children: ReactNode }) {
   const [userProgress, setUserProgressState] = useState<UserProgress>(() => {
     const saved = localStorage.getItem('userProgress');
-    return saved ? JSON.parse(saved) : initialProgress;
+    return saved ? { ...initialProgress, ...JSON.parse(saved) } : initialProgress;
   });
   
   const [activeNav, setActiveNav] = useState('Dashboard');
   const [notifications, setNotifications] = useState<Notification[]>([]);
+  const { progress: realProgress, loading: realLoading } = useRealProgress();
+
+  // Sync real progress from DB into userProgress
+  useEffect(() => {
+    if (!realLoading) {
+      setUserProgressState(prev => ({
+        ...prev,
+        currentStreak: realProgress.currentStreak,
+        bestStreak: realProgress.bestStreak,
+        todayMinutes: realProgress.todayMinutes,
+        goalMinutes: realProgress.goalMinutes,
+        weeklyProgress: realProgress.weeklyMinutes.map(m => Math.min(Math.round((m / (realProgress.goalMinutes || 20)) * 100), 100)),
+        totalLessons: realProgress.totalLessonsCompleted,
+        wordsLearned: realProgress.wordsLearned,
+        averageAccuracy: realProgress.averageAccuracy,
+        weeklyHours: realProgress.weeklyHours,
+      }));
+    }
+  }, [realProgress, realLoading]);
 
   useEffect(() => {
     localStorage.setItem('userProgress', JSON.stringify(userProgress));

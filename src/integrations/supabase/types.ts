@@ -198,6 +198,57 @@ export type Database = {
         }
         Relationships: []
       }
+      user_progress: {
+        Row: {
+          best_streak: number
+          created_at: string
+          current_streak: number
+          goal_minutes: number
+          id: string
+          last_active_date: string | null
+          today_minutes: number
+          total_exercises_attempted: number
+          total_exercises_correct: number
+          total_lessons_completed: number
+          updated_at: string
+          user_id: string
+          weekly_minutes: Json
+          words_learned: number
+        }
+        Insert: {
+          best_streak?: number
+          created_at?: string
+          current_streak?: number
+          goal_minutes?: number
+          id?: string
+          last_active_date?: string | null
+          today_minutes?: number
+          total_exercises_attempted?: number
+          total_exercises_correct?: number
+          total_lessons_completed?: number
+          updated_at?: string
+          user_id: string
+          weekly_minutes?: Json
+          words_learned?: number
+        }
+        Update: {
+          best_streak?: number
+          created_at?: string
+          current_streak?: number
+          goal_minutes?: number
+          id?: string
+          last_active_date?: string | null
+          today_minutes?: number
+          total_exercises_attempted?: number
+          total_exercises_correct?: number
+          total_lessons_completed?: number
+          updated_at?: string
+          user_id?: string
+          weekly_minutes?: Json
+          words_learned?: number
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string

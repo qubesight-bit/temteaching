@@ -1,4 +1,5 @@
 import { BookOpen, Brain, Clock, Zap } from "lucide-react";
+import { useAppState } from "@/hooks/useAppState";
 
 interface StatItemProps {
   icon: React.ReactNode;
@@ -27,26 +28,28 @@ function StatItem({ icon, value, label, trend }: StatItemProps) {
 }
 
 export function QuickStats() {
+  const { userProgress } = useAppState();
+
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
       <StatItem
         icon={<Clock className="w-5 h-5 text-info" />}
-        value="0h"
+        value={`${userProgress.weeklyHours}h`}
         label="This week"
       />
       <StatItem
         icon={<BookOpen className="w-5 h-5 text-success" />}
-        value="0"
+        value={String(userProgress.totalLessons)}
         label="Lessons completed"
       />
       <StatItem
         icon={<Brain className="w-5 h-5 text-primary" />}
-        value="0"
+        value={String(userProgress.wordsLearned)}
         label="Words learned"
       />
       <StatItem
         icon={<Zap className="w-5 h-5 text-warning" />}
-        value="0%"
+        value={`${userProgress.averageAccuracy}%`}
         label="Average accuracy"
       />
     </div>
