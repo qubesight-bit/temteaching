@@ -11,7 +11,7 @@ export const a1SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a1-s1-1",
       type: "multiple-choice",
-      question: "¿Cómo dices 'Mi nombre es Juan' en inglés?",
+      question: "How do you say 'My name is Juan' in English?",
       options: ["My name is Juan.", "I am name Juan.", "Me name Juan.", "Name is my Juan."],
       correctAnswer: "My name is Juan.",
       explanation: "The correct structure is: My name is + [name].",
@@ -33,7 +33,7 @@ export const a1SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a1-s1-3",
       type: "multiple-choice",
-      question: "¿Cómo preguntas la edad de alguien?",
+      question: "How do you ask someone's age?",
       options: ["How old are you?", "What years are you?", "How many old you?", "What is your old?"],
       correctAnswer: "How old are you?",
       explanation: "We ask 'How old are you?' to know someone's age.",
@@ -55,7 +55,7 @@ export const a1SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a1-s1-5",
       type: "multiple-choice",
-      question: "¿Cómo presentas a tu amigo Pedro?",
+      question: "How do you introduce your friend Pedro?",
       options: ["This is my friend Pedro.", "He friend Pedro is.", "Pedro is my this friend.", "Friend my Pedro this."],
       correctAnswer: "This is my friend Pedro.",
       explanation: "To introduce someone: This is my friend + [name].",
@@ -88,7 +88,7 @@ export const a1SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a1-s1-8",
       type: "multiple-choice",
-      question: "¿Cómo dices 'Soy estudiante' en inglés?",
+      question: "How do you say 'I am a student' in English?",
       options: ["I am a student.", "I am student.", "Me student.", "Student I am a."],
       correctAnswer: "I am a student.",
       explanation: "For professions/occupations: I am a + [profession]. Don't forget the article 'a'.",
@@ -121,7 +121,7 @@ export const a1SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a1-s1-11",
       type: "multiple-choice",
-      question: "¿Cómo describes tu trabajo en inglés? 'Soy doctor.'",
+      question: "How do you describe your job in English? 'I am a doctor.'",
       options: ["I am a doctor.", "I work doctor.", "My job doctor.", "Doctor is my."],
       correctAnswer: "I am a doctor.",
       explanation: "Use 'I am a + [profession]' to describe your job.",
@@ -154,7 +154,7 @@ export const a1SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a1-s1-14",
       type: "multiple-choice",
-      question: "¿Cómo dices 'Mucho gusto' en inglés?",
+      question: "How do you say 'Nice to meet you' in English?",
       options: ["Nice to meet you.", "Very gusto.", "Much pleasure.", "Pleased nice."],
       correctAnswer: "Nice to meet you.",
       explanation: "'Mucho gusto' = 'Nice to meet you' or 'Pleased to meet you'.",
@@ -202,7 +202,7 @@ export const a1SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a1-s2-3",
       type: "multiple-choice",
-      question: "¿Cómo respondes a 'How are you?'",
+      question: "How do you respond to 'How are you?'",
       options: ["I'm fine, thank you. And you?", "Good morning!", "Goodbye!", "Nice to meet you."],
       correctAnswer: "I'm fine, thank you. And you?",
       explanation: "Standard response: I'm fine, thank you. And you? / I'm good, thanks!",
@@ -257,7 +257,7 @@ export const a1SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a1-s2-8",
       type: "multiple-choice",
-      question: "¿Cómo dices 'Nos vemos' en inglés?",
+      question: "How do you say 'See you' in English?",
       options: ["See you!", "Look you!", "View you!", "Watch you!"],
       correctAnswer: "See you!",
       explanation: "'See you!' or 'See you later!' = Nos vemos.",
@@ -301,7 +301,7 @@ export const a1SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a1-s2-12",
       type: "multiple-choice",
-      question: "¿Cómo dices 'Cuídate' al despedirte?",
+      question: "How do you say 'Take care' when saying goodbye?",
       options: ["Take care!", "Take you!", "Care yourself!", "Be careful you!"],
       correctAnswer: "Take care!",
       explanation: "'Take care!' = ¡Cuídate! (informal goodbye).",
@@ -349,7 +349,7 @@ export const a1SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a1-s3-1",
       type: "multiple-choice",
-      question: "En un restaurante, ¿cómo pides agua?",
+      question: "At a restaurant, how do you ask for water?",
       options: ["Can I have some water, please?", "Give me water!", "Water I want!", "Want water me!"],
       correctAnswer: "Can I have some water, please?",
       explanation: "Polite request: Can I have + [item] + please?",
@@ -371,7 +371,7 @@ export const a1SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a1-s3-3",
       type: "multiple-choice",
-      question: "¿Cómo preguntas dónde está el baño?",
+      question: "How do you ask where the bathroom is?",
       options: ["Where is the bathroom?", "Bathroom where?", "Is where bathroom?", "Where bathroom is?"],
       correctAnswer: "Where is the bathroom?",
       explanation: "Question structure: Where is + [place]?",
@@ -404,7 +404,7 @@ export const a1SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a1-s3-6",
       type: "multiple-choice",
-      question: "¿Cómo preguntas el precio de algo?",
+      question: "How do you ask the price of something?",
       options: ["How much is this?", "What money this?", "This cost what?", "Price is what?"],
       correctAnswer: "How much is this?",
       explanation: "'How much is this?' or 'How much does this cost?'",
@@ -437,7 +437,7 @@ export const a1SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a1-s3-9",
       type: "multiple-choice",
-      question: "¿Cómo pides una mesa para dos en un restaurante?",
+      question: "How do you ask for a table for two at a restaurant?",
       options: ["A table for two, please.", "Two table want!", "Give table two!", "Table two me!"],
       correctAnswer: "A table for two, please.",
       explanation: "'A table for + [number] + please.'",
@@ -470,7 +470,7 @@ export const a1SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a1-s3-12",
       type: "multiple-choice",
-      question: "¿Cómo preguntas si tienen algo disponible?",
+      question: "How do you ask if they have something available?",
       options: ["Do you have any vegetarian options?", "Vegetarian you have?", "Have vegetarian?", "Vegetarian exist?"],
       correctAnswer: "Do you have any vegetarian options?",
       explanation: "'Do you have + [item]?' is the question structure.",
@@ -503,7 +503,7 @@ export const a1SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a1-s3-15",
       type: "multiple-choice",
-      question: "¿Cómo pides la cuenta en inglés americano?",
+      question: "How do you ask for the check in American English?",
       options: ["Check, please.", "Bill give!", "Money paper!", "Account please!"],
       correctAnswer: "Check, please.",
       explanation: "In American English: 'Check, please.' In British English: 'Bill, please.'",
@@ -524,7 +524,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s1-1",
       type: "multiple-choice",
-      question: "¿Cómo presentas a tu amigo Carlos a tu jefe?",
+      question: "How do you introduce your friend Carlos to your boss?",
       options: ["This is Carlos, my colleague.", "Carlos he is.", "Meet Carlos him.", "Carlos, this my boss."],
       correctAnswer: "This is Carlos, my colleague.",
       explanation: "Formal introduction: 'This is + [name], my + [relationship].'",
@@ -568,7 +568,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s1-5",
       type: "multiple-choice",
-      question: "¿Cómo describes a tu hermano?",
+      question: "How do you describe your brother?",
       options: ["My brother is tall with brown hair.", "Tall brother brown hair.", "Brother he tall brown.", "Is my brother tall hair."],
       correctAnswer: "My brother is tall with brown hair.",
       explanation: "Description: Subject + be + adjective + with + physical feature.",
@@ -601,7 +601,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s1-8",
       type: "multiple-choice",
-      question: "¿Cómo dices que alguien trabaja contigo?",
+      question: "How do you say that someone works with you?",
       options: ["He's a colleague of mine.", "Work together him.", "Colleague he me.", "Mine is colleague."],
       correctAnswer: "He's a colleague of mine.",
       explanation: "'A colleague of mine' = un colega mío. Structure: a + noun + of mine/yours/his...",
@@ -634,7 +634,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s1-11",
       type: "multiple-choice",
-      question: "¿Cómo describes dónde conociste a alguien?",
+      question: "How do you describe where you met someone?",
       options: ["We met at university.", "Meet university we.", "University meet us.", "At university meeting."],
       correctAnswer: "We met at university.",
       explanation: "'We met at + [place]' describes where you met someone.",
@@ -678,7 +678,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s1-15",
       type: "multiple-choice",
-      question: "¿Cómo describes la ocupación de alguien en detalle?",
+      question: "How do you describe someone's occupation in detail?",
       options: ["He's a chef and he specializes in Italian cuisine.", "Chef he Italian special.", "Italian chef special.", "Specializes Italian chef."],
       correctAnswer: "He's a chef and he specializes in Italian cuisine.",
       explanation: "Add details: profession + 'and he/she specializes in + [specialty].'",
@@ -693,7 +693,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s2-1",
       type: "multiple-choice",
-      question: "¿Cómo describes tu rutina matutina?",
+      question: "How do you describe your morning routine?",
       options: ["I usually wake up at 7 and have breakfast.", "Wake 7 breakfast I.", "Usually 7 wake breakfast.", "Morning I 7 breakfast."],
       correctAnswer: "I usually wake up at 7 and have breakfast.",
       explanation: "Use adverbs of frequency: usually, always, sometimes, never.",
@@ -726,7 +726,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s2-4",
       type: "multiple-choice",
-      question: "¿Cómo describes tu fin de semana típico?",
+      question: "How do you describe your typical weekend?",
       options: ["On weekends, I usually sleep in and meet friends.", "Weekend sleep friends.", "Usually weekend sleep meet.", "Sleep friends weekend I."],
       correctAnswer: "On weekends, I usually sleep in and meet friends.",
       explanation: "'On weekends' + typical activities. 'Sleep in' = dormir hasta tarde.",
@@ -759,7 +759,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s2-7",
       type: "multiple-choice",
-      question: "¿Cómo describes tu hora de almuerzo?",
+      question: "How do you describe your lunch hour?",
       options: ["I usually have lunch around noon.", "Lunch noon I usually.", "Around noon lunch I.", "Usually noon lunch have."],
       correctAnswer: "I usually have lunch around noon.",
       explanation: "'Around + time' for approximate times: around noon, around 2 PM.",
@@ -792,7 +792,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s2-10",
       type: "multiple-choice",
-      question: "¿Cómo describes que haces ejercicio regularmente?",
+      question: "How do you describe that you exercise regularly?",
       options: ["I work out three times a week at the gym.", "Three times gym week.", "Work out gym three times.", "Gym I three times."],
       correctAnswer: "I work out three times a week at the gym.",
       explanation: "'Work out' = hacer ejercicio. Frequency + at + place.",
@@ -825,7 +825,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s2-13",
       type: "multiple-choice",
-      question: "¿Cómo describes tu rutina de domingo?",
+      question: "How do you describe your Sunday routine?",
       options: ["On Sundays, I like to relax and spend time with family.", "Sunday relax family.", "Relax Sunday family I.", "Family Sunday relax like."],
       correctAnswer: "On Sundays, I like to relax and spend time with family.",
       explanation: "'On Sundays' (plural) for regular Sunday activities.",
@@ -862,7 +862,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s3-1",
       type: "multiple-choice",
-      question: "¿Cómo describes tus últimas vacaciones?",
+      question: "How do you describe your last vacation?",
       options: ["Last summer, I went to Italy. It was amazing!", "Italy summer last amazing.", "Went Italy amazing summer.", "Amazing Italy last I went."],
       correctAnswer: "Last summer, I went to Italy. It was amazing!",
       explanation: "Past narrative: Time + subject + past verb + opinion.",
@@ -895,7 +895,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s3-4",
       type: "multiple-choice",
-      question: "¿Cómo describes un evento memorable?",
+      question: "How do you describe a memorable event?",
       options: ["One of the best experiences was when I saw the Eiffel Tower.", "Best experience Eiffel Tower.", "Eiffel Tower best saw.", "Saw Eiffel Tower experience."],
       correctAnswer: "One of the best experiences was when I saw the Eiffel Tower.",
       explanation: "'One of the best + noun + was when + past event.'",
@@ -928,7 +928,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s3-7",
       type: "multiple-choice",
-      question: "¿Cómo describes algo negativo de un viaje?",
+      question: "How do you describe something negative about a trip?",
       options: ["The only problem was the flight was delayed.", "Problem flight delayed only.", "Delayed flight problem only.", "Only delayed problem flight."],
       correctAnswer: "The only problem was the flight was delayed.",
       explanation: "'The only problem was + negative aspect.' Softer way to complain.",
@@ -961,7 +961,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s3-10",
       type: "multiple-choice",
-      question: "¿Cómo describes cómo viajaste?",
+      question: "How do you describe how you traveled?",
       options: ["We flew to Paris and then took a train to Nice.", "Flew Paris train Nice.", "Paris flew Nice train.", "Train Nice Paris flew."],
       correctAnswer: "We flew to Paris and then took a train to Nice.",
       explanation: "Transport verbs in past: flew, took, drove, walked.",
@@ -994,7 +994,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s3-13",
       type: "multiple-choice",
-      question: "¿Cómo describes la comida que probaste?",
+      question: "How do you describe the food you tried?",
       options: ["I tried paella for the first time and it was delicious.", "Tried paella first delicious.", "Paella first time delicious tried.", "Delicious paella first tried."],
       correctAnswer: "I tried paella for the first time and it was delicious.",
       explanation: "'For the first time' = por primera vez. Great for describing new experiences.",
@@ -1031,7 +1031,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s4-1",
       type: "multiple-choice",
-      question: "¿Cómo haces el check-in en un hotel?",
+      question: "How do you check in at a hotel?",
       options: ["Hi, I have a reservation under the name Smith.", "Reservation Smith I have.", "Smith reservation hi.", "Have reservation under Smith."],
       correctAnswer: "Hi, I have a reservation under the name Smith.",
       explanation: "'I have a reservation under the name [surname].'",
@@ -1064,7 +1064,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s4-4",
       type: "multiple-choice",
-      question: "¿Cómo preguntas si el desayuno está incluido?",
+      question: "How do you ask if breakfast is included?",
       options: ["Is breakfast included in the price?", "Breakfast included price?", "Price breakfast included?", "Included breakfast is?"],
       correctAnswer: "Is breakfast included in the price?",
       explanation: "'Is [service] included in the price?' for checking inclusions.",
@@ -1097,7 +1097,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s4-7",
       type: "multiple-choice",
-      question: "¿Cómo preguntas por la contraseña del WiFi?",
+      question: "How do you ask for the WiFi password?",
       options: ["What's the WiFi password?", "WiFi password what?", "Password WiFi is?", "What password WiFi?"],
       correctAnswer: "What's the WiFi password?",
       explanation: "'What's the WiFi password?' - common hotel question.",
@@ -1130,7 +1130,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s4-10",
       type: "multiple-choice",
-      question: "¿Cómo pides que limpien tu habitación?",
+      question: "How do you ask to have your room cleaned?",
       options: ["Could you send housekeeping to my room, please?", "Housekeeping room send!", "Room clean send!", "Send room clean now!"],
       correctAnswer: "Could you send housekeeping to my room, please?",
       explanation: "'Housekeeping' = servicio de limpieza. Polite request format.",
@@ -1163,7 +1163,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s4-13",
       type: "multiple-choice",
-      question: "¿Cómo preguntas sobre el transporte al aeropuerto?",
+      question: "How do you ask about transport to the airport?",
       options: ["Do you have airport shuttle service?", "Airport shuttle have you?", "Shuttle airport service?", "Have shuttle airport?"],
       correctAnswer: "Do you have airport shuttle service?",
       explanation: "'Do you have + service?' to ask about hotel services.",
@@ -1200,7 +1200,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s5-1",
       type: "multiple-choice",
-      question: "¿Cómo pides una mesa para cuatro personas?",
+      question: "How do you ask for a table for four?",
       options: ["A table for four, please.", "Table four please.", "Four people table!", "Want table four."],
       correctAnswer: "A table for four, please.",
       explanation: "'A table for + number + please.' Standard restaurant request.",
@@ -1233,7 +1233,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s5-4",
       type: "multiple-choice",
-      question: "¿Cómo preguntas sobre ingredientes por alergia?",
+      question: "How do you ask about ingredients due to an allergy?",
       options: ["Does this dish contain nuts? I'm allergic.", "Nuts dish contain? Allergic.", "Contain nuts allergic?", "Allergic nuts contain?"],
       correctAnswer: "Does this dish contain nuts? I'm allergic.",
       explanation: "'Does this contain + allergen? I'm allergic.' Important for safety.",
@@ -1266,7 +1266,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s5-7",
       type: "multiple-choice",
-      question: "¿Cómo preguntas si pueden hacer el plato menos picante?",
+      question: "How do you ask if they can make the dish less spicy?",
       options: ["Could you make it less spicy, please?", "Less spicy make!", "Make less spicy!", "Spicy less could?"],
       correctAnswer: "Could you make it less spicy, please?",
       explanation: "'Could you make it + adjective-er?' for modifications.",
@@ -1299,7 +1299,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s5-10",
       type: "multiple-choice",
-      question: "¿Cómo pides que empaquen las sobras?",
+      question: "How do you ask to have the leftovers packed?",
       options: ["Could I get a doggy bag, please?", "Doggy bag please!", "Bag food take!", "Take food home bag!"],
       correctAnswer: "Could I get a doggy bag, please?",
       explanation: "'Doggy bag' or 'to-go box' = para llevar las sobras.",
@@ -1332,7 +1332,7 @@ export const a2SpeakingExercises: Record<string, Exercise[]> = {
     {
       id: "a2-s5-13",
       type: "multiple-choice",
-      question: "¿Cómo preguntas si aceptan tarjeta de crédito?",
+      question: "How do you ask if they accept credit cards?",
       options: ["Do you accept credit cards?", "Credit cards accept?", "Accept cards credit?", "Cards credit accept you?"],
       correctAnswer: "Do you accept credit cards?",
       explanation: "'Do you accept + payment method?' for payment questions.",

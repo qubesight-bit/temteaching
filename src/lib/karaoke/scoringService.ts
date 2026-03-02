@@ -125,9 +125,9 @@ export const getScoreEmoji = (score: number): string => {
 export const getScoreMessage = (score: number): string => {
   // Handle edge cases: NaN, undefined, null - return empty string to avoid TTS issues
   if (score == null || isNaN(score)) return '';
-  if (score >= 95) return '¡Increíble! ¡Eres una estrella!';
-  if (score >= 85) return '¡Excelente trabajo!';
-  if (score >= 75) return '¡Muy bien! Sigue practicando';
-  if (score >= 60) return '¡Buen intento! Puedes mejorar';
-  return '¡No te rindas! La práctica hace al maestro';
+  if (score >= 95) return 'Incredible! You are a star!';
+  if (score >= 85) return 'Excellent work!';
+  if (score >= 75) return 'Very good! Keep practicing';
+  if (score >= 60) return 'Good try! You can improve';
+  return "Don't give up! Practice makes perfect";
 };

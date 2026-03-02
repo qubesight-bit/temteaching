@@ -140,7 +140,7 @@ export const generateImageMatchExercises = (category: string, level: string): Ex
     return {
       id: `img-${category}-${index}`,
       type: "image-match" as const,
-      question: `¿Qué palabra corresponde a esta imagen?`,
+      question: `What word corresponds to this image?`,
       imageUrl: item.emoji,
       options: allOptions,
       correctAnswer: item.word,
@@ -169,7 +169,7 @@ export const generateWordToImageExercises = (category: string, level: string): E
     return {
       id: `word-img-${category}-${index}`,
       type: "image-match" as const,
-      question: `Selecciona la imagen que representa: "${item.word}"`,
+      question: `Select the image that represents: "${item.word}"`,
       options: allOptions,
       correctAnswer: item.emoji,
       explanation: `The ${item.emoji} represents "${item.word}".`,
@@ -197,7 +197,7 @@ export const generateTranslationExercises = (category: string, level: string): E
     return {
       id: `trans-${category}-${index}`,
       type: "multiple-choice" as const,
-      question: `¿Cómo se dice "${item.spanishWord}" en inglés?`,
+      question: `What is "${item.spanishWord}" in English?`,
       options: allOptions,
       correctAnswer: item.word,
       explanation: `"${item.spanishWord}" in English is "${item.word}".`,
@@ -227,7 +227,7 @@ export const generateSpellingExercises = (category: string, level: string): Exer
     return {
       id: `spell-${category}-${index}`,
       type: "multiple-choice" as const,
-      question: `${item.emoji} ¿Cuál es la ortografía correcta?`,
+      question: `${item.emoji} What is the correct spelling?`,
       imageUrl: item.emoji,
       options: allOptions,
       correctAnswer: item.word,

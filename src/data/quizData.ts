@@ -66,7 +66,7 @@ const a2Questions: QuizQuestion[] = [
   { id: "a2-past-5", question: "We ___ a great movie last weekend.", options: ["see", "saw", "seen", "seeing"], correctAnswer: "saw", explanation: "'Saw' es el pasado de 'see'.", category: "Past Simple", level: "A2", difficulty: 2 },
   { id: "a2-past-6", question: "She ___ breakfast at 7 AM.", options: ["have", "has", "had", "having"], correctAnswer: "had", explanation: "'Had' es el pasado de 'have'.", category: "Past Simple", level: "A2", difficulty: 1 },
   { id: "a2-past-7", question: "I ___ you at the concert.", options: ["don't see", "didn't see", "not saw", "didn't saw"], correctAnswer: "didn't see", explanation: "Negativo: didn't + verbo base.", category: "Past Simple", level: "A2", difficulty: 2 },
-  { id: "a2-past-8", question: "___ you go to school yesterday?", options: ["Do", "Does", "Did", "Was"], correctAnswer: "Did", explanation: "Pregunta en pasado: Did + sujeto + verbo base.", category: "Past Simple", level: "A2", difficulty: 2 },
+  { id: "a2-past-8", question: "___ you go to school yesterday?", options: ["Do", "Does", "Did", "Was"], correctAnswer: "Did", explanation: "Past tense question: Did + subject + base verb.", category: "Past Simple", level: "A2", difficulty: 2 },
   
   // Present Continuous - 50 questions
   { id: "a2-pc-1", question: "I ___ a book right now.", options: ["read", "reads", "am reading", "reading"], correctAnswer: "am reading", explanation: "Present Continuous: am/is/are + verbo-ing.", category: "Present Continuous", level: "A2", difficulty: 1 },
