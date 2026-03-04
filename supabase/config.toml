@@ -21,5 +21,8 @@ verify_jwt = false
 [functions.elevenlabs-tts]
 verify_jwt = false
 
+[functions.spanish-grammar-coach]
+verify_jwt = false
+
 [functions.demo-login]
 verify_jwt = false
