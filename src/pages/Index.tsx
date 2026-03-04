@@ -9,7 +9,7 @@ import { ModuleCard } from "@/components/ModuleCard";
 import { DailyGoalWidget } from "@/components/DailyGoalWidget";
 import { AITutorPreview } from "@/components/AITutorPreview";
 import { PlacementExamModal } from "@/components/PlacementExamModal";
-import { BookOpen, MessageSquare, PenTool, GraduationCap, Lightbulb, Map, Library, Music, Sparkles } from "lucide-react";
+import { BookOpen, MessageSquare, PenTool, GraduationCap, Lightbulb, Map, Library, Music, Sparkles, Languages } from "lucide-react";
 import { useAppState } from "@/hooks/useAppState";
 import { useAuth } from "@/contexts/AuthContext";
 import { usePlacementExam } from "@/hooks/usePlacementExam";
@@ -90,6 +90,14 @@ const modules = [
     progress: 0,
     color: "bg-primary",
     path: "/custom-exam",
+  },
+  {
+    title: "Spanish → English Coach",
+    description: "Write in Spanish and get English translation, pronunciation, and grammar explained step by step",
+    icon: Languages,
+    progress: 0,
+    color: "bg-level-a1",
+    path: "/spanish-coach",
   },
 ];
 
