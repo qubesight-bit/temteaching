@@ -5,9 +5,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { ArrowLeft, Languages, Loader2, BookOpen, Sparkles, Mic, MicOff } from "lucide-react";
+import { ArrowLeft, Languages, Loader2, BookOpen, Sparkles, Mic, MicOff, Volume2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
 
 type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
@@ -35,6 +36,7 @@ export default function SpanishCoach() {
   const [error, setError] = useState<string | null>(null);
   const [isListening, setIsListening] = useState(false);
   const recognitionRef = useRef<any>(null);
+  const tts = useElevenLabsTTS();
 
   const toggleMicrophone = useCallback(() => {
     if (isListening) {
@@ -236,15 +238,37 @@ export default function SpanishCoach() {
                   <p className="text-sm text-muted-foreground mb-1">
                     Spanish:
                   </p>
-                  <p className="text-sm font-medium mb-3">
-                    {result.spanish}
-                  </p>
+                  <div className="flex items-center gap-2 mb-3">
+                    <p className="text-sm font-medium">{result.spanish}</p>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="icon"
+                      className="h-7 w-7 shrink-0"
+                      onClick={() => tts.speak(result.spanish)}
+                      disabled={tts.isLoading}
+                      title="Escuchar en español"
+                    >
+                      {tts.isLoading ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Volume2 className="w-3.5 h-3.5" />}
+                    </Button>
+                  </div>
                   <p className="text-sm text-muted-foreground mb-1">
                     English:
                   </p>
-                  <p className="text-lg font-semibold text-foreground">
-                    {result.english}
-                  </p>
+                  <div className="flex items-center gap-2">
+                    <p className="text-lg font-semibold text-foreground">{result.english}</p>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="icon"
+                      className="h-7 w-7 shrink-0"
+                      onClick={() => tts.speak(result.english)}
+                      disabled={tts.isLoading}
+                      title="Listen in English"
+                    >
+                      {tts.isLoading ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Volume2 className="w-3.5 h-3.5" />}
+                    </Button>
+                  </div>
                 </div>
 
                 <div className="rounded-xl border bg-muted/40 p-4">
