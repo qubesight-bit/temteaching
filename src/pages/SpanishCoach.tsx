@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { ArrowLeft, Languages, Loader2, BookOpen, Sparkles } from "lucide-react";
+import { ArrowLeft, Languages, Loader2, BookOpen, Sparkles, Mic, MicOff } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
@@ -32,6 +33,49 @@ export default function SpanishCoach() {
   const [result, setResult] = useState<GrammarResponse | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [isListening, setIsListening] = useState(false);
+  const recognitionRef = useRef<any>(null);
+
+  const toggleMicrophone = useCallback(() => {
+    if (isListening) {
+      recognitionRef.current?.stop();
+      setIsListening(false);
+      return;
+    }
+
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      toast.error("Tu navegador no soporta reconocimiento de voz. Usa Chrome o Edge.");
+      return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = "es-ES";
+    recognition.interimResults = true;
+    recognition.continuous = true;
+    recognitionRef.current = recognition;
+
+    recognition.onresult = (event: any) => {
+      let transcript = "";
+      for (let i = 0; i < event.results.length; i++) {
+        transcript += event.results[i][0].transcript;
+      }
+      setSpanishText(transcript);
+    };
+
+    recognition.onerror = (event: any) => {
+      console.error("Speech recognition error:", event.error);
+      setIsListening(false);
+      if (event.error === "not-allowed") {
+        toast.error("Permiso de micrófono denegado. Habilítalo en la configuración del navegador.");
+      }
+    };
+
+    recognition.onend = () => setIsListening(false);
+
+    recognition.start();
+    setIsListening(true);
+  }, [isListening]);
 
   const handleAnalyze = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -108,15 +152,30 @@ export default function SpanishCoach() {
                 <label className="block text-sm font-medium mb-2">
                   Spanish sentence
                 </label>
-                <Textarea
-                  placeholder="Escribe aquí tu frase en español..."
-                  value={spanishText}
-                  onChange={(e) => setSpanishText(e.target.value)}
-                  rows={3}
-                />
-                <p className="mt-1 text-xs text-muted-foreground">
-                  Example: <span className="italic">"Yo trabajo todos los días."</span>
-                </p>
+                <div className="relative">
+                  <Textarea
+                    placeholder="Escribe aquí tu frase en español o usa el micrófono..."
+                    value={spanishText}
+                    onChange={(e) => setSpanishText(e.target.value)}
+                    rows={3}
+                    className="pr-14"
+                  />
+                  <Button
+                    type="button"
+                    variant={isListening ? "destructive" : "outline"}
+                    size="icon"
+                    className="absolute right-2 top-2"
+                    onClick={toggleMicrophone}
+                    title={isListening ? "Detener micrófono" : "Hablar en español"}
+                  >
+                    {isListening ? <MicOff className="w-4 h-4" /> : <Mic className="w-4 h-4" />}
+                  </Button>
+                </div>
+                {isListening && (
+                  <p className="mt-1 text-xs text-primary animate-pulse">
+                    🎙️ Escuchando... habla en español
+                  </p>
+                )}
               </div>
 
               <div className="flex flex-wrap items-center gap-4 justify-between">
