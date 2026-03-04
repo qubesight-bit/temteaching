@@ -88,24 +88,38 @@ export default function SpanishCoach() {
     setResult(null);
 
     try {
-      const { data, error } = await supabase.functions.invoke<GrammarResponse>(
-        "spanish-grammar-coach",
+      const response = await fetch(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/spanish-grammar-coach`,
         {
-          body: {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
+            "Authorization": `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
+          },
+          body: JSON.stringify({
             text: spanishText.trim(),
             level,
-          },
-        },
+          }),
+        }
       );
 
-      if (error) {
-        console.error("Spanish grammar coach error:", error);
-        setError("There was a problem analyzing the sentence. Please try again.");
+      const data = await response.json();
+
+      if (!response.ok) {
+        console.error("Spanish grammar coach error:", response.status, data);
+        if (response.status === 429) {
+          setError("Too many requests. Please wait a moment and try again.");
+        } else if (response.status === 402) {
+          setError("AI service quota exceeded. Please try again later.");
+        } else {
+          setError(data?.error || "There was a problem analyzing the sentence. Please try again.");
+        }
         return;
       }
 
-      if (!data) {
-        setError("Empty response from grammar coach.");
+      if (!data || !data.english) {
+        setError("Invalid response from grammar coach. Please try again.");
         return;
       }
 
