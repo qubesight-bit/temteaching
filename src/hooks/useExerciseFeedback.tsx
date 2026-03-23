@@ -44,7 +44,7 @@ export function useExerciseFeedback() {
         }
       }
 
-      console.log("Sending exercise feedback to teacher...");
+      console.log("Sending exercise results email...");
 
       const { data: responseData, error } = await supabase.functions.invoke('send-exercise-feedback', {
         body: {
@@ -63,16 +63,32 @@ export function useExerciseFeedback() {
 
       if (error) {
         console.error("Error sending feedback:", error);
+        toast({
+          title: "Results email could not be sent",
+          description: "We could not send your results email this time.",
+          variant: "destructive",
+        });
         return { success: false, error };
       }
 
-      console.log("Feedback sent successfully:", responseData);
+      console.log("Exercise results email sent successfully:", responseData);
+      toast({
+        title: "Results email sent",
+        description: "We sent your results to your registered email.",
+      });
       return { success: true, data: responseData };
     } catch (error) {
       console.error("Error in sendFeedbackToTeacher:", error);
+      toast({
+        title: "Results email could not be sent",
+        description: "Please try again in your next session.",
+        variant: "destructive",
+      });
       return { success: false, error };
     }
   };
 
-  return { sendFeedbackToTeacher };
+  const sendExerciseResultEmail = sendFeedbackToTeacher;
+
+  return { sendFeedbackToTeacher, sendExerciseResultEmail };
 }

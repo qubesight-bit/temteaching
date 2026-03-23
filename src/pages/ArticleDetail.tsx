@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils";
 import { getArticleById, Article, getArticlesByTag } from "@/data/articlesData";
 import { ArticleAudioQuiz } from "@/components/articles/ArticleAudioQuiz";
 import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
+import { useExerciseFeedback } from "@/hooks/useExerciseFeedback";
 const levelColors: Record<string, string> = {
   A1: "bg-level-a1",
   A2: "bg-level-a2",
@@ -42,6 +43,7 @@ export default function ArticleDetail() {
   const [relatedArticles, setRelatedArticles] = useState<Article[]>([]);
   const [activeSection, setActiveSection] = useState<string>("");
   const [showPracticeAnswers, setShowPracticeAnswers] = useState<Record<number, boolean>>({});
+  const { sendExerciseResultEmail } = useExerciseFeedback();
   
   // ElevenLabs TTS for natural voice
   const { speak, stopAudio, isLoading: isSpeaking, isPlaying } = useElevenLabsTTS();
@@ -143,6 +145,16 @@ export default function ArticleDetail() {
               articleContent={`${article.introduction}\n\n${article.sections.map(s => `${s.title}\n${s.content}`).join('\n\n')}`}
               onComplete={(score, total) => {
                 console.log(`Quiz completed: ${score}/${total}`);
+                const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
+                sendExerciseResultEmail({
+                  exerciseType: "Article Audio Quiz",
+                  exerciseTitle: article.title,
+                  level: article.level,
+                  score: percentage,
+                  totalQuestions: total,
+                  correctAnswers: score,
+                  incorrectAnswers: [],
+                });
               }}
             />
 

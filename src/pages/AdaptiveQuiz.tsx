@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,6 +10,7 @@ import { toast } from "@/hooks/use-toast";
 import { getAdaptiveQuestions, QuizQuestion } from "@/data/quizData";
 import { useGamification } from "@/hooks/useGamification";
 import { useAdaptiveLearning } from "@/hooks/useAdaptiveLearning";
+import { useExerciseFeedback } from "@/hooks/useExerciseFeedback";
 
 export default function AdaptiveQuiz() {
   const navigate = useNavigate();
@@ -24,6 +25,9 @@ export default function AdaptiveQuiz() {
   const [score, setScore] = useState({ correct: 0, incorrect: 0 });
   const [isComplete, setIsComplete] = useState(false);
   const [sessionPerformance, setSessionPerformance] = useState(75);
+  const [answerHistory, setAnswerHistory] = useState<Record<string, string>>({});
+  const feedbackSentRef = useRef(false);
+  const { sendExerciseResultEmail } = useExerciseFeedback();
 
   const startQuiz = (level: "A1" | "A2" | "B1" | "B2" | "C1") => {
     setSelectedLevel(level);
@@ -40,6 +44,8 @@ export default function AdaptiveQuiz() {
     setSelectedAnswer(answer);
     setShowExplanation(true);
     
+    setAnswerHistory(prev => ({ ...prev, [currentQuestion.id]: answer }));
+
     if (answer === currentQuestion.correctAnswer) {
       setScore(prev => ({ ...prev, correct: prev.correct + 1 }));
       setSessionPerformance(prev => Math.min(100, prev + 5));
@@ -71,7 +77,33 @@ export default function AdaptiveQuiz() {
     setScore({ correct: 0, incorrect: 0 });
     setIsComplete(false);
     setSelectedLevel(null);
+    setAnswerHistory({});
+    feedbackSentRef.current = false;
   };
+
+  useEffect(() => {
+    if (!isComplete || feedbackSentRef.current || !selectedLevel || questions.length === 0) return;
+
+    feedbackSentRef.current = true;
+    const percentage = Math.round((score.correct / questions.length) * 100);
+    const incorrectAnswers = questions
+      .filter((q) => answerHistory[q.id] && answerHistory[q.id] !== q.correctAnswer)
+      .map((q) => ({
+        question: q.question,
+        userAnswer: answerHistory[q.id],
+        correctAnswer: q.correctAnswer,
+      }));
+
+    sendExerciseResultEmail({
+      exerciseType: "Adaptive Quiz",
+      exerciseTitle: `Adaptive Quiz ${selectedLevel}`,
+      level: selectedLevel,
+      score: percentage,
+      totalQuestions: questions.length,
+      correctAnswers: score.correct,
+      incorrectAnswers,
+    });
+  }, [isComplete, selectedLevel, questions, score.correct, answerHistory, sendExerciseResultEmail]);
 
   if (!selectedLevel) {
     return (

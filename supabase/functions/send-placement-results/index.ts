@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 const TEACHER_EMAIL = "temkhawk@gmail.com";
+const FROM_EMAIL = "tem@temteaching.com";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -169,7 +170,7 @@ const handler = async (req: Request): Promise<Response> => {
         "Authorization": `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Tem Teaching <onboarding@resend.dev>",
+        from: `Tem Teaching <${FROM_EMAIL}>`,
         to: [TEACHER_EMAIL],
         subject: `${skipped ? '⚠️ Skipped Exam' : '🎓 New Placement'}: ${studentName} → Level ${assignedLevel}${skipped ? ' (default)' : ` (${percentage}%)`}`,
         html: emailHtml,

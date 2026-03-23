@@ -10,6 +10,7 @@ const corsHeaders = {
 };
 
 const ADMIN_EMAIL = "temkhawk@gmail.com";
+const FROM_EMAIL = "tem@temteaching.com";
 
 interface SignupNotificationRequest {
   userEmail: string;
@@ -43,7 +44,7 @@ const handler = async (req: Request): Promise<Response> => {
     });
 
     const emailResponse = await resend.emails.send({
-      from: "Tem Teaching <onboarding@resend.dev>",
+      from: `Tem Teaching <${FROM_EMAIL}>`,
       to: [ADMIN_EMAIL],
       subject: `🆕 New Signup: ${displayName || userEmail}`,
       html: `

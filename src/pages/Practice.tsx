@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,6 +8,7 @@ import { ArrowLeft, CheckCircle2, XCircle, ArrowRight, RotateCcw, Trophy, Shuffl
 import { cn } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
 import { getRandomGrammarExercises, GrammarExercise } from "@/data/grammarExercisesExpanded";
+import { useExerciseFeedback } from "@/hooks/useExerciseFeedback";
 
 type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
@@ -43,6 +44,9 @@ export default function Practice() {
   const [showExplanation, setShowExplanation] = useState(false);
   const [score, setScore] = useState({ correct: 0, incorrect: 0 });
   const [isComplete, setIsComplete] = useState(false);
+  const [answerHistory, setAnswerHistory] = useState<Record<string, string>>({});
+  const feedbackSentRef = useRef(false);
+  const { sendExerciseResultEmail } = useExerciseFeedback();
   const [practiceQuestions, setPracticeQuestions] = useState<Question[]>([]);
 
   const levels: CEFRLevel[] = ["A1", "A2", "B1", "B2", "C1", "C2"];
@@ -90,6 +94,8 @@ export default function Practice() {
     setSelectedAnswer(answer);
     setShowExplanation(true);
     
+    setAnswerHistory(prev => ({ ...prev, [currentQuestion.id]: answer }));
+
     if (answer === currentQuestion.correctAnswer) {
       setScore(prev => ({ ...prev, correct: prev.correct + 1 }));
       toast({
@@ -119,12 +125,39 @@ export default function Practice() {
     setShowExplanation(false);
     setScore({ correct: 0, incorrect: 0 });
     setIsComplete(false);
+    setAnswerHistory({});
+    feedbackSentRef.current = false;
   };
 
   const handleLevelChange = (level: CEFRLevel) => {
     setSelectedLevel(level);
     navigate(`/practice?level=${level}`, { replace: true });
+    feedbackSentRef.current = false;
   };
+
+  useEffect(() => {
+    if (!isComplete || feedbackSentRef.current || practiceQuestions.length === 0) return;
+
+    feedbackSentRef.current = true;
+    const percentage = Math.round((score.correct / practiceQuestions.length) * 100);
+    const incorrectAnswers = practiceQuestions
+      .filter((q) => answerHistory[q.id] && answerHistory[q.id] !== q.correctAnswer)
+      .map((q) => ({
+        question: q.question,
+        userAnswer: answerHistory[q.id],
+        correctAnswer: q.correctAnswer,
+      }));
+
+    sendExerciseResultEmail({
+      exerciseType: "Practice",
+      exerciseTitle: `Practice Session (${selectedLevel})`,
+      level: selectedLevel,
+      score: percentage,
+      totalQuestions: practiceQuestions.length,
+      correctAnswers: score.correct,
+      incorrectAnswers,
+    });
+  }, [isComplete, practiceQuestions, score.correct, answerHistory, selectedLevel, sendExerciseResultEmail]);
 
   if (practiceQuestions.length === 0) {
     return (

@@ -12,6 +12,7 @@ import { GrammarExercise, VocabularyExercise } from "@/data/newsData";
 import { useGamification } from "@/hooks/useGamification";
 import { toast } from "@/hooks/use-toast";
 import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
+import { useExerciseFeedback } from "@/hooks/useExerciseFeedback";
 
 interface NewsExercisesProps {
   grammarExercises?: GrammarExercise[];
@@ -35,6 +36,11 @@ export function NewsExercises({
     grammar: {},
     vocabulary: {}
   });
+  const [selectedOptions, setSelectedOptions] = useState<Record<string, Record<number, string>>>({
+    grammar: {},
+    vocabulary: {}
+  });
+  const { sendExerciseResultEmail } = useExerciseFeedback();
 
   const currentExercises = activeTab === "grammar" ? grammarExercises : vocabularyExercises;
   const currentExercise = currentExercises[currentIndex];
@@ -61,6 +67,10 @@ export function NewsExercises({
       ...prev,
       [activeTab]: { ...prev[activeTab], [currentIndex]: isCorrect }
     }));
+    setSelectedOptions(prev => ({
+      ...prev,
+      [activeTab]: { ...prev[activeTab], [currentIndex]: answer }
+    }));
     
     if (isCorrect) {
       setScore(prev => ({ ...prev, [activeTab]: prev[activeTab] + 1 }));
@@ -81,6 +91,26 @@ export function NewsExercises({
       addXP(xpEarned, activeTab === "grammar" ? "grammar" : "vocabulary");
       
       setCompleted(prev => ({ ...prev, [activeTab]: true }));
+
+      const incorrectAnswers = currentExercises
+        .map((exercise, idx) => ({
+          question: "sentence" in exercise ? exercise.sentence : exercise.question,
+          userAnswer: selectedOptions[activeTab][idx] || "(no answer)",
+          correctAnswer: exercise.correctAnswer,
+          isCorrect: answers[activeTab][idx] === true,
+        }))
+        .filter(item => !item.isCorrect)
+        .map(({ question, userAnswer, correctAnswer }) => ({ question, userAnswer, correctAnswer }));
+
+      sendExerciseResultEmail({
+        exerciseType: activeTab === "grammar" ? "News Grammar Exercises" : "News Vocabulary Exercises",
+        exerciseTitle: `${articleTitle} - ${activeTab === "grammar" ? "Grammar" : "Vocabulary"}`,
+        level: "Mixed",
+        score: totalExercises > 0 ? Math.round((score[activeTab] / totalExercises) * 100) : 0,
+        totalQuestions: totalExercises,
+        correctAnswers: score[activeTab],
+        incorrectAnswers,
+      });
       
       toast({
         title: `${activeTab === "grammar" ? "Grammar" : "Vocabulary"} Complete!`,
@@ -96,6 +126,7 @@ export function NewsExercises({
     setScore(prev => ({ ...prev, [activeTab]: 0 }));
     setCompleted(prev => ({ ...prev, [activeTab]: false }));
     setAnswers(prev => ({ ...prev, [activeTab]: {} }));
+    setSelectedOptions(prev => ({ ...prev, [activeTab]: {} }));
   };
 
   const switchTab = (tab: "grammar" | "vocabulary") => {

@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 const TEACHER_EMAIL = "temkhawk@gmail.com";
+const FROM_EMAIL = "tem@temteaching.com";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -134,7 +135,11 @@ const handler = async (req: Request): Promise<Response> => {
       </html>
     `;
 
-    // Send email using Resend API directly
+    if (!studentEmail || !studentEmail.includes("@")) {
+      throw new Error("Student email is missing or invalid");
+    }
+
+    // Send email directly to the registered student email
     const emailResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -142,9 +147,9 @@ const handler = async (req: Request): Promise<Response> => {
         "Authorization": `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Tem Teaching <onboarding@resend.dev>",
-        to: [TEACHER_EMAIL],
-        subject: `${performanceEmoji} ${studentName} completed ${exerciseTitle} (${score}%) - ${level}`,
+        from: `Tem Teaching <${FROM_EMAIL}>`,
+        to: [studentEmail],
+        subject: `${performanceEmoji} Your results: ${exerciseTitle} (${score}%) - ${level}`,
         html: emailHtml,
       }),
     });

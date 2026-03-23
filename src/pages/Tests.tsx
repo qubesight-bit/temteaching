@@ -7,6 +7,7 @@ import { Progress } from "@/components/ui/progress";
 import { ArrowLeft, Clock, Trophy, Target, ChevronRight, CheckCircle2, XCircle, ArrowRight, BookOpen, Languages } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { testDefinitions, TestDefinition, TestQuestion } from "@/data/testsData";
+import { useExerciseFeedback } from "@/hooks/useExerciseFeedback";
 
 export default function Tests() {
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ export default function Tests() {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResults, setShowResults] = useState(false);
   const [completedTests, setCompletedTests] = useState<Record<string, number>>({});
+  const { sendExerciseResultEmail } = useExerciseFeedback();
 
   // Get shuffled questions for current test
   const currentQuestions = useMemo(() => {
@@ -66,6 +68,24 @@ export default function Tests() {
           ...prev,
           [selectedTest.id]: score
         }));
+
+        const incorrectAnswers = currentQuestions
+          .filter((q) => answers[q.id] !== q.correctAnswer)
+          .map((q) => ({
+            question: q.question,
+            userAnswer: answers[q.id] || "(no answer)",
+            correctAnswer: q.correctAnswer,
+          }));
+
+        sendExerciseResultEmail({
+          exerciseType: selectedTest.type === "grammar" ? "Grammar Test" : "Vocabulary Test",
+          exerciseTitle: selectedTest.title,
+          level: selectedTest.level,
+          score,
+          totalQuestions: currentQuestions.length,
+          correctAnswers: currentQuestions.length - incorrectAnswers.length,
+          incorrectAnswers,
+        });
       }
       setShowResults(true);
     }

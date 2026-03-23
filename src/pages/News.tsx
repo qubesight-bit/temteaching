@@ -11,6 +11,7 @@ import { useGamification } from "@/hooks/useGamification";
 import { toast } from "@/hooks/use-toast";
 import { NewsExercises } from "@/components/news/NewsExercises";
 import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
+import { useExerciseFeedback } from "@/hooks/useExerciseFeedback";
 
 export default function News() {
   const navigate = useNavigate();
@@ -20,6 +21,7 @@ export default function News() {
   const [activeSection, setActiveSection] = useState<"read" | "comprehension" | "exercises">("read");
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [showResults, setShowResults] = useState(false);
+  const { sendExerciseResultEmail } = useExerciseFeedback();
   
   // ElevenLabs TTS
   const { speak, stopAudio, isLoading: isSpeaking, isPlaying } = useElevenLabsTTS();
@@ -37,9 +39,26 @@ export default function News() {
   const handleCheckAnswers = () => {
     if (!selectedArticle) return;
     const correct = selectedArticle.questions.filter((q, i) => answers[i] === q.correctAnswer).length;
+    const incorrectAnswers = selectedArticle.questions
+      .filter((q, i) => answers[i] !== q.correctAnswer)
+      .map((q, i) => ({
+        question: q.question,
+        userAnswer: answers[i] || "(no answer)",
+        correctAnswer: q.correctAnswer,
+      }));
+    const score = Math.round((correct / selectedArticle.questions.length) * 100);
     const xp = correct * 15;
     addXP(xp, 'news');
     setShowResults(true);
+    sendExerciseResultEmail({
+      exerciseType: "Reading Comprehension",
+      exerciseTitle: selectedArticle.title,
+      level: selectedArticle.level,
+      score,
+      totalQuestions: selectedArticle.questions.length,
+      correctAnswers: correct,
+      incorrectAnswers,
+    });
     toast({ title: `${correct}/${selectedArticle.questions.length} correct`, description: `+${xp} XP earned` });
   };
 
