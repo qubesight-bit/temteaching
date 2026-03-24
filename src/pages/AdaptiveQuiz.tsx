@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { ArrowLeft, CheckCircle2, XCircle, ArrowRight, RotateCcw, Trophy, Brain, Zap } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, shuffleArray } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
 import { getAdaptiveQuestions, QuizQuestion } from "@/data/quizData";
 import { useGamification } from "@/hooks/useGamification";
@@ -217,7 +217,7 @@ export default function AdaptiveQuiz() {
               <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-4">{currentQuestion?.category}</span>
               <h2 className="font-display font-bold text-2xl mb-8">{currentQuestion?.question}</h2>
               <div className="space-y-3">
-                {currentQuestion?.options.map((option) => {
+                {shuffledOptions.map((option) => {
                   const isSelected = selectedAnswer === option;
                   const isCorrectOption = option === currentQuestion.correctAnswer;
                   return (

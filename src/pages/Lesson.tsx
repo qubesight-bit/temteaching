@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
@@ -7,7 +7,7 @@ import { Progress } from "@/components/ui/progress";
 import { ExerciseQuestion } from "@/components/ExerciseQuestion";
 import { grammarCategories } from "@/data/grammarData";
 import { ArrowLeft, ArrowRight, CheckCircle2, XCircle, Volume2, BookOpen, Dumbbell, Trophy, Home, Loader2, Square } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, shuffleArray } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
 import { cleanQuestionForTTS } from "@/lib/questionFormatter";
 import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
@@ -39,6 +39,12 @@ export default function Lesson() {
 
   const exercises = topic.exercises;
   const currentExerciseData = exercises[currentExercise];
+
+  const displayOptions = useMemo(() => {
+    if (!currentExerciseData?.options?.length) return [];
+    return shuffleArray(currentExerciseData.options);
+  }, [currentExercise, currentExerciseData?.question]);
+
   const isCorrect = selectedAnswer === currentExerciseData?.correctAnswer;
 
   const handleSelectAnswer = (answer: string) => {
@@ -310,7 +316,7 @@ export default function Lesson() {
 
                   {/* Options */}
                   <div className="space-y-3">
-                    {currentExerciseData.options?.map((option) => {
+                    {displayOptions.map((option) => {
                       const isSelected = selectedAnswer === option;
                       const isCorrectOption = option === currentExerciseData.correctAnswer;
                       

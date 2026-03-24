@@ -31,7 +31,7 @@ import {
   ArrowLeft, ArrowRight, CheckCircle2, XCircle, Volume2, 
   BookOpen, Dumbbell, Trophy, Target, Lightbulb, Star, Image, FileText, ExternalLink, Home, Loader2, Square, Headphones
 } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, shuffleArray } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
 import { useExerciseFeedback } from "@/hooks/useExerciseFeedback";
 import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
@@ -440,6 +440,12 @@ export default function SkillLesson() {
   }, [skill, level, categoryId]);
 
   const currentExerciseData = exercises[currentExercise];
+
+  const shuffledOptions = useMemo(() => {
+    if (!currentExerciseData?.options?.length) return [];
+    return shuffleArray(currentExerciseData.options);
+  }, [currentExercise, currentExerciseData?.id, currentExerciseData?.question]);
+
   const isCorrect = selectedAnswer === currentExerciseData?.correctAnswer;
   const isListeningExercise = categoryId?.includes('listen') || currentExerciseData?.tags?.includes('listening');
 
@@ -1036,7 +1042,7 @@ export default function SkillLesson() {
                   {currentExerciseData.type === 'image-match' && currentExerciseData.tags?.includes('word-to-image') ? (
                     // Emoji grid for word-to-image exercises
                     <div className="grid grid-cols-2 gap-3">
-                      {currentExerciseData.options.map((option) => {
+                      {shuffledOptions.map((option) => {
                         const isSelected = selectedAnswer === option;
                         const isCorrectOption = option === currentExerciseData.correctAnswer;
                         
@@ -1067,7 +1073,7 @@ export default function SkillLesson() {
                   ) : (
                     // Standard list for other exercises
                     <div className="space-y-3">
-                      {currentExerciseData.options.map((option) => {
+                      {shuffledOptions.map((option) => {
                         const isSelected = selectedAnswer === option;
                         const isCorrectOption = option === currentExerciseData.correctAnswer;
                         

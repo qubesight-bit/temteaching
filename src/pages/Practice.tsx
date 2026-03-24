@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { ArrowLeft, CheckCircle2, XCircle, ArrowRight, RotateCcw, Trophy, Shuffle } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, shuffleArray } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
 import { getRandomGrammarExercises, GrammarExercise } from "@/data/grammarExercisesExpanded";
 import { useExerciseFeedback } from "@/hooks/useExerciseFeedback";
@@ -71,6 +71,12 @@ export default function Practice() {
   }, [selectedLevel]);
 
   const currentQuestion = practiceQuestions[currentQuestionIndex];
+
+  const shuffledOptions = useMemo(() => {
+    if (!currentQuestion?.options?.length) return [];
+    return shuffleArray(currentQuestion.options);
+  }, [currentQuestionIndex, currentQuestion?.id]);
+
   const isCorrect = selectedAnswer === currentQuestion?.correctAnswer;
   const progress = practiceQuestions.length > 0 
     ? ((currentQuestionIndex + 1) / practiceQuestions.length) * 100 
@@ -281,7 +287,7 @@ export default function Practice() {
               <h3 className="text-xl font-semibold mb-6">{currentQuestion.question}</h3>
 
               <div className="space-y-3">
-                {currentQuestion.options.map((option) => {
+                {shuffledOptions.map((option) => {
                   const isSelected = selectedAnswer === option;
                   const isCorrectOption = option === currentQuestion.correctAnswer;
                   

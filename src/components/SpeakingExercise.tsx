@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef, useEffect, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -6,7 +6,7 @@ import {
   Volume2, Mic, MicOff, Square, Loader2, 
   CheckCircle2, XCircle, RotateCcw
 } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, shuffleArray } from "@/lib/utils";
 import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
 import { toast } from "@/hooks/use-toast";
 
@@ -29,6 +29,11 @@ export function SpeakingExercise({
   showExplanation,
   selectedAnswer,
 }: SpeakingExerciseProps) {
+  const displayOptions = useMemo(() => {
+    if (!options.length) return [];
+    return shuffleArray(options);
+  }, [question, JSON.stringify(options)]);
+
   const [isRecording, setIsRecording] = useState(false);
   const [transcript, setTranscript] = useState("");
   const [recordingStatus, setRecordingStatus] = useState<"idle" | "recording" | "processing">("idle");
@@ -326,7 +331,7 @@ export function SpeakingExercise({
 
       {/* Options - Still available for selection */}
       <div className="grid gap-3">
-        {options.map((option) => {
+        {displayOptions.map((option) => {
           const isSelected = selectedAnswer === option;
           const isCorrectOption = option === correctAnswer;
           
