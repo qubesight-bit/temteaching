@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -6,7 +6,7 @@ import {
   Play, Pause, RotateCcw, Volume2, VolumeX, 
   CheckCircle2, XCircle, Headphones, Trophy, Loader2, Square
 } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, shuffleArray } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
 import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
 
@@ -286,7 +286,7 @@ export function ArticleAudioQuiz({
             
             {/* Options */}
             <div className="space-y-3">
-              {currentQuestion.options.map((option, index) => {
+              {displayQuizOptions.map((option, index) => {
                 const isSelected = selectedAnswer === option;
                 const isCorrect = option === currentQuestion.correctAnswer;
                 const showCorrect = showExplanation && isCorrect;

@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, XCircle, ArrowRight, Trophy, RotateCcw, Volume2, Loader2, Square } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, shuffleArray } from "@/lib/utils";
 import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
 import { 
   GrammarExercise, 
@@ -58,6 +58,11 @@ export function GrammarPracticeModal({
   };
 
   const currentExercise = exercises[currentIndex];
+  const displayGrammarOptions = useMemo(() => {
+    if (!currentExercise?.options?.length) return [];
+    return shuffleArray([...currentExercise.options]);
+  }, [currentIndex, currentExercise?.id]);
+
   const isCorrect = selectedAnswer === currentExercise?.correctAnswer;
   const progress = exercises.length > 0 ? ((currentIndex + 1) / exercises.length) * 100 : 0;
 
@@ -247,7 +252,7 @@ export function GrammarPracticeModal({
 
             {/* Options */}
             <div className="grid gap-3">
-              {currentExercise.options?.map((option, idx) => {
+              {displayGrammarOptions.map((option, idx) => {
                 const isSelected = selectedAnswer === option;
                 const isCorrectOption = option === currentExercise.correctAnswer;
                 

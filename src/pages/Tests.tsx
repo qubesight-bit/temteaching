@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { ArrowLeft, Clock, Trophy, Target, ChevronRight, CheckCircle2, XCircle, ArrowRight, BookOpen, Languages } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, shuffleArray } from "@/lib/utils";
 import { testDefinitions, TestDefinition, TestQuestion } from "@/data/testsData";
 import { useExerciseFeedback } from "@/hooks/useExerciseFeedback";
 
@@ -25,6 +25,14 @@ export default function Tests() {
     const shuffled = [...selectedTest.questions].sort(() => Math.random() - 0.5);
     return shuffled.slice(0, selectedTest.questionsCount);
   }, [selectedTest]);
+
+  const activeTestQuestion =
+    selectedTest && currentQuestions.length > 0 ? currentQuestions[currentQuestion] : null;
+
+  const shuffledTestOptions = useMemo(() => {
+    if (!activeTestQuestion?.options?.length) return [];
+    return shuffleArray([...activeTestQuestion.options]);
+  }, [activeTestQuestion?.id, currentQuestion, selectedTest?.id]);
 
   const getLevelColor = (level: string) => {
     const colors: Record<string, string> = {
@@ -208,8 +216,8 @@ export default function Tests() {
   }
 
   // Active test view
-  if (selectedTest && currentQuestions.length > 0) {
-    const question = currentQuestions[currentQuestion];
+  if (selectedTest && currentQuestions.length > 0 && activeTestQuestion) {
+    const question = activeTestQuestion;
     const progress = ((currentQuestion + 1) / currentQuestions.length) * 100;
     
     return (
@@ -259,7 +267,7 @@ export default function Tests() {
                 </h2>
                 
                 <div className="space-y-3">
-                  {question.options.map((option) => (
+                  {shuffledTestOptions.map((option) => (
                     <button
                       key={option}
                       className={cn(

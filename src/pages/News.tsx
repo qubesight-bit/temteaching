@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeft, Clock, BookOpen, Volume2, CheckCircle2, MessageSquare, Headphones, Loader2, Square } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, shuffleArray } from "@/lib/utils";
 import { newsArticles, NewsArticle } from "@/data/newsData";
 import { useGamification } from "@/hooks/useGamification";
 import { toast } from "@/hooks/use-toast";
@@ -27,6 +27,11 @@ export default function News() {
   const { speak, stopAudio, isLoading: isSpeaking, isPlaying } = useElevenLabsTTS();
 
   const filteredArticles = selectedLevel ? newsArticles.filter(a => a.level === selectedLevel) : newsArticles;
+
+  const shuffledComprehensionOptions = useMemo(() => {
+    if (!selectedArticle) return [];
+    return selectedArticle.questions.map((q) => shuffleArray([...q.options]));
+  }, [selectedArticle?.id]);
 
   const speakText = (text: string) => {
     if (isPlaying) {
@@ -193,7 +198,7 @@ export default function News() {
                       <div key={i}>
                         <p className="font-medium mb-3">{i + 1}. {q.question}</p>
                         <div className="space-y-2">
-                          {q.options.map((opt) => (
+                          {(shuffledComprehensionOptions[i] ?? q.options).map((opt) => (
                             <button 
                               key={opt} 
                               className={cn(

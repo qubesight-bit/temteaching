@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -7,7 +7,7 @@ import {
   CheckCircle2, XCircle, BookOpen, MessageSquare, 
   RotateCcw, Trophy, ArrowRight, Volume2, Loader2, Square
 } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, shuffleArray } from "@/lib/utils";
 import { GrammarExercise, VocabularyExercise } from "@/data/newsData";
 import { useGamification } from "@/hooks/useGamification";
 import { toast } from "@/hooks/use-toast";
@@ -45,6 +45,22 @@ export function NewsExercises({
   const currentExercises = activeTab === "grammar" ? grammarExercises : vocabularyExercises;
   const currentExercise = currentExercises[currentIndex];
   const totalExercises = currentExercises.length;
+
+  const newsExerciseStableKey =
+    currentExercise == null
+      ? ""
+      : "sentence" in currentExercise
+        ? (currentExercise as GrammarExercise).sentence
+        : (currentExercise as VocabularyExercise).question;
+
+  const shuffledNewsExerciseOptions = useMemo(() => {
+    if (!currentExercise || !("options" in currentExercise)) return [];
+    const opts =
+      (currentExercise as GrammarExercise).options ??
+      (currentExercise as VocabularyExercise).options;
+    if (!opts?.length) return [];
+    return shuffleArray([...opts]);
+  }, [activeTab, currentIndex, newsExerciseStableKey]);
 
   // ElevenLabs TTS
   const { speak, stopAudio, isLoading: isSpeaking, isPlaying } = useElevenLabsTTS();
@@ -185,8 +201,6 @@ export function NewsExercises({
       );
     }
 
-    const options = 'options' in currentExercise ? currentExercise.options : [];
-
     return (
       <div className="space-y-6">
         {/* Progress */}
@@ -248,7 +262,7 @@ export function NewsExercises({
 
         {/* Options */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {options?.map((option, index) => {
+          {shuffledNewsExerciseOptions.map((option, index) => {
             const isSelected = selectedAnswer === option;
             const isCorrect = option === currentExercise.correctAnswer;
             const showCorrect = showResult && isCorrect;

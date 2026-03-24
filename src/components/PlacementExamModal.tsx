@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import {
   Dialog,
   DialogContent,
@@ -25,6 +25,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useAppState } from "@/hooks/useAppState";
 import { CheckCircle2, ArrowRight, ArrowLeft, GraduationCap, Trophy, Clock, AlertTriangle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { shuffleArray } from "@/lib/utils";
 
 interface PlacementExamModalProps {
   open: boolean;
@@ -64,6 +65,11 @@ export function PlacementExamModal({ open, onComplete, onSkip }: PlacementExamMo
   const allQuestions = getAllPlacementQuestions();
   const currentSection = placementExamSections[currentSectionIndex];
   const currentQuestion = currentSection?.questions[currentQuestionIndex];
+
+  const displayPlacementOptions = useMemo(() => {
+    if (!currentQuestion?.options?.length) return [];
+    return shuffleArray([...currentQuestion.options]);
+  }, [currentSectionIndex, currentQuestionIndex, currentQuestion?.id]);
   
   // Calculate overall progress
   const questionsBeforeCurrentSection = placementExamSections
@@ -386,9 +392,9 @@ export function PlacementExamModal({ open, onComplete, onSkip }: PlacementExamMo
                 onValueChange={handleAnswer}
                 className="space-y-3"
               >
-                {currentQuestion?.options.map((option, index) => (
+                {displayPlacementOptions.map((option, index) => (
                   <div
-                    key={index}
+                    key={`${currentQuestion.id}-${option}-${index}`}
                     className={`flex items-center space-x-3 p-3 rounded-lg border transition-colors cursor-pointer ${
                       answers[currentQuestion.id] === option
                         ? "border-primary bg-primary/5"
@@ -396,9 +402,9 @@ export function PlacementExamModal({ open, onComplete, onSkip }: PlacementExamMo
                     }`}
                     onClick={() => handleAnswer(option)}
                   >
-                    <RadioGroupItem value={option} id={`option-${index}`} />
+                    <RadioGroupItem value={option} id={`${currentQuestion.id}-opt-${index}`} />
                     <Label 
-                      htmlFor={`option-${index}`} 
+                      htmlFor={`${currentQuestion.id}-opt-${index}`} 
                       className="flex-1 cursor-pointer font-normal"
                     >
                       {option}

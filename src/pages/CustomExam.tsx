@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Checkbox } from "@/components/ui/checkbox";
 import { ArrowLeft, BookOpen, CheckCircle2, XCircle, RotateCcw, Sparkles, ChevronRight, Trophy, Target, X } from "lucide-react";
+import { shuffleArray } from "@/lib/utils";
 import { grammarCategories } from "@/data/grammarData";
 import { getGrammarExercisesByCategory, getGrammarExercisesByLevel, GrammarExercise } from "@/data/grammarExercisesExpanded";
 import { useAppState } from "@/hooks/useAppState";
@@ -152,6 +153,11 @@ const CustomExam = () => {
   };
 
   const currentExercise = exercises[currentIndex];
+  const shuffledCustomExamOptions = useMemo(() => {
+    if (!currentExercise?.options?.length) return [];
+    return shuffleArray([...currentExercise.options]);
+  }, [currentIndex, currentExercise?.id]);
+
   const progressPercent = exercises.length > 0 ? ((currentIndex + 1) / exercises.length) * 100 : 0;
   const scorePercent = score.correct + score.incorrect > 0 
     ? Math.round((score.correct / (score.correct + score.incorrect)) * 100) 
@@ -245,7 +251,7 @@ const CustomExam = () => {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                {currentExercise.options?.map((option, idx) => {
+                {shuffledCustomExamOptions.map((option, idx) => {
                   const isSelected = selectedAnswer === option;
                   const isCorrect = option === currentExercise.correctAnswer;
                   const showResult = showExplanation;

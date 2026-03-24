@@ -417,6 +417,7 @@ export default function SkillLesson() {
   const [score, setScore] = useState({ correct: 0, incorrect: 0 });
   const [completedSubSkills, setCompletedSubSkills] = useState<Set<string>>(new Set());
   const [incorrectAnswers, setIncorrectAnswers] = useState<{ question: string; userAnswer: string; correctAnswer: string }[]>([]);
+  const [practiceSessionId, setPracticeSessionId] = useState(0);
   const feedbackSentRef = useRef(false);
   
   const { sendFeedbackToTeacher } = useExerciseFeedback();
@@ -433,18 +434,16 @@ export default function SkillLesson() {
     return { skill: sk ?? null, category: cat, levelData: lvlData };
   }, [level, categoryId, skillId]);
 
-  // Generate exercises based on the skill
+  // Generate exercises based on the skill; shuffle options once per session so position is never a signal
   const exercises = useMemo(() => {
     if (!skill || !categoryId) return [];
-    return generateExercises(skill, level as CEFRLevel, categoryId);
-  }, [skill, level, categoryId]);
+    const raw = generateExercises(skill, level as CEFRLevel, categoryId);
+    return raw.map((ex) =>
+      ex.options?.length ? { ...ex, options: shuffleArray([...ex.options]) } : ex
+    );
+  }, [skill, level, categoryId, practiceSessionId]);
 
   const currentExerciseData = exercises[currentExercise];
-
-  const shuffledOptions = useMemo(() => {
-    if (!currentExerciseData?.options?.length) return [];
-    return shuffleArray(currentExerciseData.options);
-  }, [currentExercise, currentExerciseData?.id, currentExerciseData?.question]);
 
   const isCorrect = selectedAnswer === currentExerciseData?.correctAnswer;
   const isListeningExercise = categoryId?.includes('listen') || currentExerciseData?.tags?.includes('listening');
@@ -764,6 +763,7 @@ export default function SkillLesson() {
                   size="lg"
                   className="w-full"
                   onClick={() => {
+                    setPracticeSessionId((s) => s + 1);
                     setCurrentStep("exercises");
                     setCurrentExercise(0);
                     setScore({ correct: 0, incorrect: 0 });
@@ -1042,7 +1042,7 @@ export default function SkillLesson() {
                   {currentExerciseData.type === 'image-match' && currentExerciseData.tags?.includes('word-to-image') ? (
                     // Emoji grid for word-to-image exercises
                     <div className="grid grid-cols-2 gap-3">
-                      {shuffledOptions.map((option) => {
+                      {currentExerciseData.options.map((option) => {
                         const isSelected = selectedAnswer === option;
                         const isCorrectOption = option === currentExerciseData.correctAnswer;
                         
@@ -1073,7 +1073,7 @@ export default function SkillLesson() {
                   ) : (
                     // Standard list for other exercises
                     <div className="space-y-3">
-                      {shuffledOptions.map((option) => {
+                      {currentExerciseData.options.map((option) => {
                         const isSelected = selectedAnswer === option;
                         const isCorrectOption = option === currentExerciseData.correctAnswer;
                         
