@@ -107,6 +107,12 @@ export function ArticleAudioQuiz({
 
   // Get questions - either provided or generated
   const quizQuestions = questions || generateQuestionsFromContent(articleTitle, articleContent);
+  const currentQuestion = quizQuestions[currentQuestionIndex];
+
+  const displayQuizOptions = useMemo(() => {
+    if (!currentQuestion?.options?.length) return [];
+    return shuffleArray([...currentQuestion.options]);
+  }, [currentQuestionIndex, currentQuestion?.question]);
 
   const startAudio = async () => {
     const textToSpeak = `${articleTitle}. ${articleContent}`;
