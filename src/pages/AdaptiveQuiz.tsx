@@ -39,6 +39,11 @@ export default function AdaptiveQuiz() {
   const isCorrect = selectedAnswer === currentQuestion?.correctAnswer;
   const progress = questions.length > 0 ? ((currentQuestionIndex + 1) / questions.length) * 100 : 0;
 
+  const shuffledOptions = useMemo(() => {
+    if (!currentQuestion?.options?.length) return [];
+    return shuffleArray([...currentQuestion.options]);
+  }, [currentQuestionIndex, currentQuestion?.id]);
+
   const handleSelectAnswer = (answer: string) => {
     if (showExplanation) return;
     setSelectedAnswer(answer);
