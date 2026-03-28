@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Card, CardContent } from "@/components/ui/card";
@@ -11,6 +11,7 @@ import { cn, shuffleArray } from "@/lib/utils";
 import { toast } from "@/hooks/use-toast";
 import { cleanQuestionForTTS } from "@/lib/questionFormatter";
 import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
+import { useExerciseFeedback } from "@/hooks/useExerciseFeedback";
 
 type LessonStep = "explanation" | "exercises" | "complete";
 
@@ -22,6 +23,9 @@ export default function Lesson() {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
   const [score, setScore] = useState({ correct: 0, incorrect: 0 });
+  const [answerHistory, setAnswerHistory] = useState<Record<number, string>>({});
+  const feedbackSentRef = useRef(false);
+  const { sendExerciseResultEmail } = useExerciseFeedback();
 
   // Find the topic
   const category = grammarCategories.find(c => c.id === categoryId);
@@ -52,6 +56,7 @@ export default function Lesson() {
     
     setSelectedAnswer(answer);
     setShowExplanation(true);
+    setAnswerHistory(prev => ({ ...prev, [currentExercise]: answer }));
     
     if (answer === currentExerciseData.correctAnswer) {
       setScore(prev => ({ ...prev, correct: prev.correct + 1 }));
@@ -71,6 +76,24 @@ export default function Lesson() {
       setShowExplanation(false);
     } else {
       setCurrentStep("complete");
+      // Send email feedback
+      if (!feedbackSentRef.current) {
+        feedbackSentRef.current = true;
+        const finalCorrect = score.correct + (selectedAnswer === currentExerciseData?.correctAnswer ? 1 : 0);
+        const percentage = Math.round((finalCorrect / exercises.length) * 100);
+        const incorrectAnswers = exercises
+          .map((ex, i) => ({ question: ex.question, userAnswer: answerHistory[i] || selectedAnswer || "", correctAnswer: ex.correctAnswer }))
+          .filter(item => item.userAnswer !== item.correctAnswer);
+        sendExerciseResultEmail({
+          exerciseType: "Grammar Lesson",
+          exerciseTitle: `${topic.title} (${topic.level})`,
+          level: topic.level,
+          score: percentage,
+          totalQuestions: exercises.length,
+          correctAnswers: finalCorrect,
+          incorrectAnswers,
+        });
+      }
     }
   };
 
