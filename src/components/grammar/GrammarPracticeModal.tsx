@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, XCircle, ArrowRight, Trophy, RotateCcw, Volume2, Loader2, Square } from "lucide-react";
 import { cn, shuffleArray } from "@/lib/utils";
 import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
+import { useExerciseFeedback } from "@/hooks/useExerciseFeedback";
 import { 
   GrammarExercise, 
   getGrammarExercisesByLevel, 
@@ -36,6 +37,9 @@ export function GrammarPracticeModal({
   const [score, setScore] = useState({ correct: 0, incorrect: 0 });
   const [isCompleted, setIsCompleted] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
+  const [answerHistory, setAnswerHistory] = useState<Record<number, string>>({});
+  const feedbackSentRef = useRef(false);
+  const { sendExerciseResultEmail } = useExerciseFeedback();
 
   // ElevenLabs TTS hook for natural voice
   const { speak, stopAudio, isLoading: isSpeaking, isPlaying } = useElevenLabsTTS();
@@ -70,6 +74,7 @@ export function GrammarPracticeModal({
     if (selectedAnswer) return; // Already answered
     setSelectedAnswer(answer);
     setShowExplanation(true);
+    setAnswerHistory(prev => ({ ...prev, [currentIndex]: answer }));
     if (answer === currentExercise.correctAnswer) {
       setScore(prev => ({ ...prev, correct: prev.correct + 1 }));
     } else {
@@ -84,6 +89,23 @@ export function GrammarPracticeModal({
       setShowExplanation(false);
     } else {
       setIsCompleted(true);
+      if (!feedbackSentRef.current) {
+        feedbackSentRef.current = true;
+        const finalCorrect = score.correct + (selectedAnswer === currentExercise?.correctAnswer ? 1 : 0);
+        const percentage = Math.round((finalCorrect / exercises.length) * 100);
+        const incorrectAnswers = exercises
+          .map((ex, i) => ({ question: ex.question, userAnswer: answerHistory[i] || selectedAnswer || "", correctAnswer: ex.correctAnswer }))
+          .filter(item => item.userAnswer !== item.correctAnswer);
+        sendExerciseResultEmail({
+          exerciseType: "Grammar Practice",
+          exerciseTitle: `Grammar Practice (${level}${category ? ` - ${category}` : ""})`,
+          level,
+          score: percentage,
+          totalQuestions: exercises.length,
+          correctAnswers: finalCorrect,
+          incorrectAnswers,
+        });
+      }
     }
   };
 
@@ -92,7 +114,7 @@ export function GrammarPracticeModal({
   };
 
   const handleClose = () => {
-    stopAudio(); // Stop any playing audio
+    stopAudio();
     setHasStarted(false);
     setIsCompleted(false);
     setExercises([]);
@@ -100,6 +122,8 @@ export function GrammarPracticeModal({
     setSelectedAnswer(null);
     setShowExplanation(false);
     setScore({ correct: 0, incorrect: 0 });
+    setAnswerHistory({});
+    feedbackSentRef.current = false;
     onClose();
   };
 

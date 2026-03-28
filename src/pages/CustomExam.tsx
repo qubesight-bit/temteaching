@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppLayout } from "@/components/AppLayout";
 import { Button } from "@/components/ui/button";
@@ -12,6 +12,7 @@ import { shuffleArray } from "@/lib/utils";
 import { grammarCategories } from "@/data/grammarData";
 import { getGrammarExercisesByCategory, getGrammarExercisesByLevel, GrammarExercise } from "@/data/grammarExercisesExpanded";
 import { useAppState } from "@/hooks/useAppState";
+import { useExerciseFeedback } from "@/hooks/useExerciseFeedback";
 
 type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1";
 
@@ -48,6 +49,9 @@ const CustomExam = () => {
   const [score, setScore] = useState({ correct: 0, incorrect: 0 });
   const [examCompleted, setExamCompleted] = useState(false);
   const [exercises, setExercises] = useState<GrammarExercise[]>([]);
+  const [answerHistory, setAnswerHistory] = useState<Record<number, string>>({});
+  const feedbackSentRef = useRef(false);
+  const { sendExerciseResultEmail } = useExerciseFeedback();
 
   const MAX_TOPICS = 4;
 
@@ -123,6 +127,7 @@ const CustomExam = () => {
     if (showExplanation) return;
     setSelectedAnswer(answer);
     setShowExplanation(true);
+    setAnswerHistory(prev => ({ ...prev, [currentIndex]: answer }));
     
     const isCorrect = answer === exercises[currentIndex].correctAnswer;
     if (isCorrect) {
@@ -139,6 +144,23 @@ const CustomExam = () => {
       setShowExplanation(false);
     } else {
       setExamCompleted(true);
+      if (!feedbackSentRef.current) {
+        feedbackSentRef.current = true;
+        const finalCorrect = score.correct + (selectedAnswer === exercises[currentIndex]?.correctAnswer ? 1 : 0);
+        const percentage = Math.round((finalCorrect / exercises.length) * 100);
+        const incorrectAnswers = exercises
+          .map((ex, i) => ({ question: ex.question, userAnswer: answerHistory[i] || selectedAnswer || "", correctAnswer: ex.correctAnswer }))
+          .filter(item => item.userAnswer !== item.correctAnswer);
+        sendExerciseResultEmail({
+          exerciseType: "Custom Exam",
+          exerciseTitle: `Custom Exam (${selectedLevel}) - ${selectedTopics.join(", ")}`,
+          level: selectedLevel,
+          score: percentage,
+          totalQuestions: exercises.length,
+          correctAnswers: finalCorrect,
+          incorrectAnswers,
+        });
+      }
     }
   };
 
@@ -150,6 +172,8 @@ const CustomExam = () => {
     setExamCompleted(false);
     setSelectedAnswer(null);
     setShowExplanation(false);
+    setAnswerHistory({});
+    feedbackSentRef.current = false;
   };
 
   const currentExercise = exercises[currentIndex];
