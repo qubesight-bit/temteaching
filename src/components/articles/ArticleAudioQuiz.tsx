@@ -193,7 +193,6 @@ export function ArticleAudioQuiz({
     };
   }, [stopAudio]);
 
-  const currentQuestion = quizQuestions[currentQuestionIndex];
   const percentage = quizQuestions.length > 0 ? Math.round((score / quizQuestions.length) * 100) : 0;
 
   return (
