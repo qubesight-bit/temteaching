@@ -86,8 +86,8 @@ export default function Lesson() {
           .filter(item => item.userAnswer !== item.correctAnswer);
         sendExerciseResultEmail({
           exerciseType: "Grammar Lesson",
-          exerciseTitle: `${topic.title} (${category.level})`,
-          level: category.level,
+          exerciseTitle: `${topic.title} (${topic.level})`,
+          level: topic.level,
           score: percentage,
           totalQuestions: exercises.length,
           correctAnswers: finalCorrect,
