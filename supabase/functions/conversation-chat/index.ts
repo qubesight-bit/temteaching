@@ -1,4 +1,4 @@
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -326,18 +326,83 @@ Ready to continue? 🔄
 Remember: ALWAYS include feedback, ALWAYS offer options, maintain a supportive RPG-style learning adventure!`
 };
 
-serve(async (req) => {
+const VALID_SCENARIOS = ['cafe', 'restaurant', 'shopping', 'travel', 'hotel', 'doctor', 'work', 'interview', 'bank', 'debate', 'networking', 'negotiation', 'health_insurance_sales', 'bioscientific'];
+const VALID_LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+
+Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    const { messages, scenario, userLevel }: RequestBody = await req.json();
-    
-    // Calculate turn count (1 turn = user message + assistant response)
+    // --- Authentication ---
+    const authHeader = req.headers.get('Authorization');
+    if (!authHeader?.startsWith('Bearer ')) {
+      return new Response(
+        JSON.stringify({ error: 'Unauthorized' }),
+        { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    const supabase = createClient(
+      Deno.env.get('SUPABASE_URL')!,
+      Deno.env.get('SUPABASE_ANON_KEY')!,
+      { global: { headers: { Authorization: authHeader } } }
+    );
+
+    const token = authHeader.replace('Bearer ', '');
+    const { data: claimsData, error: claimsError } = await supabase.auth.getClaims(token);
+    if (claimsError || !claimsData?.claims) {
+      return new Response(
+        JSON.stringify({ error: 'Unauthorized - invalid session' }),
+        { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    // --- Input Validation ---
+    const body = await req.json();
+    const { messages, scenario, userLevel } = body as RequestBody;
+
+    if (!Array.isArray(messages) || messages.length === 0 || messages.length > 100) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid messages array' }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    for (const msg of messages) {
+      if (!msg.role || !msg.content || typeof msg.content !== 'string') {
+        return new Response(
+          JSON.stringify({ error: 'Invalid message format' }),
+          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
+      if (msg.content.length > 10000) {
+        return new Response(
+          JSON.stringify({ error: 'Message too long' }),
+          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+        );
+      }
+    }
+
+    if (typeof scenario !== 'string' || !VALID_SCENARIOS.includes(scenario)) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid scenario' }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    if (typeof userLevel !== 'string' || !VALID_LEVELS.includes(userLevel)) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid user level' }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    // --- Process Request ---
     const turnCount = Math.floor(messages.filter(m => m.role === "user").length);
     
-    console.log("Conversation chat request:", { scenario, userLevel, messageCount: messages.length, turnCount });
+    console.log("Conversation chat request:", { scenario, userLevel, messageCount: messages.length, turnCount, userId: claimsData.claims.sub });
     
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     if (!LOVABLE_API_KEY) {
@@ -367,30 +432,21 @@ serve(async (req) => {
         console.error("Rate limit exceeded");
         return new Response(
           JSON.stringify({ error: "Rate limit exceeded. Please try again later." }), 
-          {
-            status: 429,
-            headers: { ...corsHeaders, "Content-Type": "application/json" },
-          }
+          { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
         );
       }
       if (response.status === 402) {
         console.error("Payment required");
         return new Response(
           JSON.stringify({ error: "Payment required. Please add funds to continue." }), 
-          {
-            status: 402,
-            headers: { ...corsHeaders, "Content-Type": "application/json" },
-          }
+          { status: 402, headers: { ...corsHeaders, "Content-Type": "application/json" } }
         );
       }
       const errorText = await response.text();
       console.error("AI gateway error:", response.status, errorText);
       return new Response(
         JSON.stringify({ error: "AI service error" }), 
-        {
-          status: 500,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        }
+        { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
 
@@ -403,10 +459,7 @@ serve(async (req) => {
     console.error("Conversation chat error:", error);
     return new Response(
       JSON.stringify({ error: error instanceof Error ? error.message : "Unknown error" }), 
-      {
-        status: 500,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      }
+      { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }
 });
