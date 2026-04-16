@@ -12,6 +12,7 @@ import { KaraokeScorePanel } from '@/components/karaoke/KaraokeScorePanel';
 import { KaraokeSongLibrary } from '@/components/karaoke/KaraokeSongLibrary';
 import { KaraokeStats } from '@/components/karaoke/KaraokeStats';
 import { useKaraokePlayer } from '@/hooks/useKaraokePlayer';
+import { useExerciseFeedback } from '@/hooks/useExerciseFeedback';
 
 export default function Karaoke() {
   const [activeTab, setActiveTab] = useState('search');
