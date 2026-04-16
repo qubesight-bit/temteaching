@@ -155,10 +155,7 @@ export default function Karaoke() {
                 <Button
                   variant="outline"
                   className="w-full"
-                  onClick={() => {
-                    resetSession();
-                    setActiveTab('search');
-                  }}
+                  onClick={handleEndSession}
                 >
                   Choose Another Song
                 </Button>
