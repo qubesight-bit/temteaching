@@ -8,6 +8,7 @@ import { expandedVocabularyCategories, VocabularyCategory, getTotalWordCount, ge
 import { ArrowLeft, Play, RotateCcw, Volume2, Loader2, Square } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
+import { useExerciseFeedback } from "@/hooks/useExerciseFeedback";
 
 type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
