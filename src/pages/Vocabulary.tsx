@@ -22,6 +22,7 @@ export default function Vocabulary() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [showingFlashcard, setShowingFlashcard] = useState(false);
+  const { sendExerciseResultEmail } = useExerciseFeedback();
 
   // Update level when URL param changes
   useEffect(() => {
