@@ -12,6 +12,7 @@ import { GrammarTips } from "@/components/GrammarTips";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import { useLearningErrors, NewLearningError } from "@/hooks/useLearningErrors";
+import { useExerciseFeedback } from "@/hooks/useExerciseFeedback";
 import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
 import { TerminologyBox } from "@/components/conversation/TerminologyBox";
 import { useDemoMode } from "@/hooks/useDemoMode";
