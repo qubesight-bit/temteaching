@@ -582,6 +582,24 @@ export default function Conversation() {
 
   const handleBack = () => {
     if (selectedScenario) {
+      // Send email with conversation summary
+      const scenario = scenarios.find(s => s.id === selectedScenario);
+      const userMessages = messages.filter(m => m.role === "user");
+      if (userMessages.length > 0) {
+        const avgPronunciation = userMessages
+          .filter(m => m.pronunciationScore !== undefined)
+          .reduce((sum, m, _, arr) => sum + (m.pronunciationScore || 0) / arr.length, 0);
+        const score = avgPronunciation > 0 ? Math.round(avgPronunciation * 100) : 100;
+        sendExerciseResultEmail({
+          exerciseType: "AI Conversation Practice",
+          exerciseTitle: scenario?.title || "Conversation",
+          level: getUserLevel(),
+          score,
+          totalQuestions: userMessages.length,
+          correctAnswers: userMessages.length,
+          incorrectAnswers: [],
+        });
+      }
       setSelectedScenario(null);
       setMessages([]);
     } else {
