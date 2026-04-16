@@ -223,7 +223,18 @@ export default function Vocabulary() {
                 variant="hero"
                 size="lg"
                 className="w-full mt-6"
-                onClick={handleBack}
+                onClick={() => {
+                  sendExerciseResultEmail({
+                    exerciseType: "Vocabulary Flashcards",
+                    exerciseTitle: `${selectedCategory.title} (${selectedLevel})`,
+                    level: selectedLevel,
+                    score: 100,
+                    totalQuestions: selectedCategory.words.length,
+                    correctAnswers: selectedCategory.words.length,
+                    incorrectAnswers: [],
+                  });
+                  handleBack();
+                }}
               >
                 Complete session!
               </Button>
