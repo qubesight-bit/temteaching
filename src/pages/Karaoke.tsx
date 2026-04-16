@@ -50,7 +50,7 @@ export default function Karaoke() {
     if (currentVideo && lineScores.length > 0) {
       const songTitle = currentVideo.snippet?.title || "Karaoke Song";
       const totalLines = lyrics?.lyrics?.length || lineScores.length;
-      const score = sessionScore > 0 ? Math.round(sessionScore) : Math.round((lineScores.length / totalLines) * 100);
+      const score = sessionScore.total > 0 ? Math.round(sessionScore.total) : Math.round((lineScores.length / totalLines) * 100);
       sendExerciseResultEmail({
         exerciseType: "Karaoke Singing",
         exerciseTitle: songTitle,
