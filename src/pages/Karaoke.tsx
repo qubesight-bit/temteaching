@@ -16,6 +16,7 @@ import { useExerciseFeedback } from '@/hooks/useExerciseFeedback';
 
 export default function Karaoke() {
   const [activeTab, setActiveTab] = useState('search');
+  const { sendExerciseResultEmail } = useExerciseFeedback();
   const {
     isLoading,
     error,
@@ -44,6 +45,25 @@ export default function Karaoke() {
     handlePlayerStateChange,
     handlePlayerError,
   } = useKaraokePlayer();
+
+  const handleEndSession = () => {
+    if (currentVideo && lineScores.length > 0) {
+      const songTitle = currentVideo.snippet?.title || "Karaoke Song";
+      const totalLines = lyrics?.lyrics?.length || lineScores.length;
+      const score = sessionScore > 0 ? Math.round(sessionScore) : Math.round((lineScores.length / totalLines) * 100);
+      sendExerciseResultEmail({
+        exerciseType: "Karaoke Singing",
+        exerciseTitle: songTitle,
+        level: "All",
+        score,
+        totalQuestions: totalLines,
+        correctAnswers: lineScores.length,
+        incorrectAnswers: [],
+      });
+    }
+    resetSession();
+    setActiveTab('search');
+  };
 
   const handleSearchFromLibrary = (title: string, artist: string) => {
     searchSongs(title, artist);
