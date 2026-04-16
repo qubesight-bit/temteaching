@@ -244,6 +244,7 @@ export default function Conversation() {
   const { user } = useAuth();
   const { isDemoUser } = useDemoMode();
   const { addError } = useLearningErrors();
+  const { sendExerciseResultEmail } = useExerciseFeedback();
   const [selectedScenario, setSelectedScenario] = useState<string | null>(null);
   const [selectedLevel, setSelectedLevel] = useState<LevelFilter>("All");
   const [messages, setMessages] = useState<Message[]>([]);
