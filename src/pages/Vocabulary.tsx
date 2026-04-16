@@ -8,6 +8,7 @@ import { expandedVocabularyCategories, VocabularyCategory, getTotalWordCount, ge
 import { ArrowLeft, Play, RotateCcw, Volume2, Loader2, Square } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
+import { useExerciseFeedback } from "@/hooks/useExerciseFeedback";
 
 type CEFRLevel = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
 
@@ -21,6 +22,7 @@ export default function Vocabulary() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [showingFlashcard, setShowingFlashcard] = useState(false);
+  const { sendExerciseResultEmail } = useExerciseFeedback();
 
   // Update level when URL param changes
   useEffect(() => {
@@ -221,7 +223,18 @@ export default function Vocabulary() {
                 variant="hero"
                 size="lg"
                 className="w-full mt-6"
-                onClick={handleBack}
+                onClick={() => {
+                  sendExerciseResultEmail({
+                    exerciseType: "Vocabulary Flashcards",
+                    exerciseTitle: `${selectedCategory.title} (${selectedLevel})`,
+                    level: selectedLevel,
+                    score: 100,
+                    totalQuestions: selectedCategory.words.length,
+                    correctAnswers: selectedCategory.words.length,
+                    incorrectAnswers: [],
+                  });
+                  handleBack();
+                }}
               >
                 Complete session!
               </Button>
