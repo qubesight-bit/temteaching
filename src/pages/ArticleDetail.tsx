@@ -139,25 +139,6 @@ export default function ArticleDetail() {
               </CardContent>
             </Card>
 
-            {/* Audio Listening Quiz - NEW FEATURE */}
-            <ArticleAudioQuiz 
-              articleTitle={article.title}
-              articleContent={`${article.introduction}\n\n${article.sections.map(s => `${s.title}\n${s.content}`).join('\n\n')}`}
-              onComplete={(score, total) => {
-                console.log(`Quiz completed: ${score}/${total}`);
-                const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
-                sendExerciseResultEmail({
-                  exerciseType: "Article Audio Quiz",
-                  exerciseTitle: article.title,
-                  level: article.level,
-                  score: percentage,
-                  totalQuestions: total,
-                  correctAnswers: score,
-                  incorrectAnswers: [],
-                });
-              }}
-            />
-
             {/* Introduction */}
             <Card className="mb-8">
               <CardHeader>
@@ -196,7 +177,6 @@ export default function ArticleDetail() {
                         );
                       }
                       if (paragraph.startsWith('| ')) {
-                        // Skip table rows for now, we'll handle them specially
                         return null;
                       }
                       if (paragraph.startsWith('- ')) {
@@ -219,6 +199,26 @@ export default function ArticleDetail() {
                 </CardContent>
               </Card>
             ))}
+
+            {/* Audio Listening Quiz - placed AFTER reading content */}
+            <ArticleAudioQuiz 
+              articleTitle={article.title}
+              articleContent={`${article.introduction}\n\n${article.sections.map(s => `${s.title}\n${s.content}`).join('\n\n')}`}
+              onComplete={(score, total) => {
+                console.log(`Quiz completed: ${score}/${total}`);
+                const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
+                sendExerciseResultEmail({
+                  exerciseType: "Article Audio Quiz",
+                  exerciseTitle: article.title,
+                  level: article.level,
+                  score: percentage,
+                  totalQuestions: total,
+                  correctAnswers: score,
+                  incorrectAnswers: [],
+                });
+              }}
+            />
+
 
             {/* Examples */}
             <Card className="mb-8">
