@@ -484,10 +484,25 @@ export default function SkillLesson() {
     }
   };
 
+  const persistCompletedSubSkill = (id: string) => {
+    try {
+      const saved = localStorage.getItem("curriculum-progress");
+      const arr: string[] = saved ? JSON.parse(saved) : [];
+      if (!arr.includes(id)) {
+        arr.push(id);
+        localStorage.setItem("curriculum-progress", JSON.stringify(arr));
+      }
+    } catch (e) {
+      console.error("Failed to persist curriculum progress", e);
+    }
+  };
+
   const handleNextExercise = async () => {
-    // Mark subSkill as completed
+    // Mark subSkill as completed (local + persisted for Curriculum view)
     if (skill.subSkills[currentExercise]) {
-      setCompletedSubSkills(prev => new Set([...prev, skill.subSkills[currentExercise].id]));
+      const subSkillId = skill.subSkills[currentExercise].id;
+      setCompletedSubSkills(prev => new Set([...prev, subSkillId]));
+      persistCompletedSubSkill(subSkillId);
     }
 
     if (currentExercise < exercises.length - 1) {
