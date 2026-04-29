@@ -832,10 +832,11 @@ export default function SkillLesson() {
                           title: "Correct! 🎉",
                           description: "Excellent work!",
                         });
-                        // Mark subskill as completed
+                        // Mark subskill as completed (local + persisted)
                         const subSkill = skill.subSkills[currentExercise % skill.subSkills.length];
                         if (subSkill) {
                           setCompletedSubSkills(prev => new Set([...prev, subSkill.id]));
+                          persistCompletedSubSkill(subSkill.id);
                         }
                       } else {
                         setScore(prev => ({ ...prev, incorrect: prev.incorrect + 1 }));
