@@ -139,7 +139,9 @@ const handler = async (req: Request): Promise<Response> => {
       throw new Error("Student email is missing or invalid");
     }
 
-    // Send email directly to the registered student email
+    const recipients = Array.from(new Set([studentEmail, TEACHER_EMAIL].filter(Boolean)));
+
+    // Send email directly to the registered student email and the teacher/admin email
     const emailResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -148,7 +150,7 @@ const handler = async (req: Request): Promise<Response> => {
       },
       body: JSON.stringify({
         from: `Tem Teaching <${FROM_EMAIL}>`,
-        to: [studentEmail],
+        to: recipients,
         subject: `${performanceEmoji} Your results: ${exerciseTitle} (${score}%) - ${level}`,
         html: emailHtml,
       }),
@@ -161,9 +163,9 @@ const handler = async (req: Request): Promise<Response> => {
       throw new Error(`Failed to send email: ${JSON.stringify(emailResult)}`);
     }
 
-    console.log("Email sent successfully:", emailResult);
+    console.log("Email sent successfully:", { emailResult, recipients });
 
-    return new Response(JSON.stringify({ success: true, emailResult }), {
+    return new Response(JSON.stringify({ success: true, emailResult, recipients }), {
       status: 200,
       headers: { "Content-Type": "application/json", ...corsHeaders },
     });
