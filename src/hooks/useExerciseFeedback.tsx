@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/contexts/AuthContext";
 import { toast } from "@/hooks/use-toast";
@@ -21,27 +22,37 @@ interface ExerciseFeedbackData {
 export function useExerciseFeedback() {
   const { user } = useAuth();
 
-  const sendFeedbackToTeacher = async (data: ExerciseFeedbackData) => {
+  const sendFeedbackToTeacher = useCallback(async (data: ExerciseFeedbackData) => {
     try {
       // Get student info
       let studentName = "Anonymous Student";
       let studentEmail = "unknown@email.com";
+      let currentUser = user;
 
-      if (user) {
-        studentEmail = user.email || "unknown@email.com";
+      if (!currentUser) {
+        const { data: authData } = await supabase.auth.getUser();
+        currentUser = authData.user;
+      }
+
+      if (currentUser) {
+        studentEmail = currentUser.email || "unknown@email.com";
         
         // Try to get display name from profiles
         const { data: profile } = await supabase
           .from('profiles')
           .select('display_name')
-          .eq('user_id', user.id)
+          .eq('user_id', currentUser.id)
           .single();
         
         if (profile?.display_name) {
           studentName = profile.display_name;
         } else {
-          studentName = user.email?.split('@')[0] || "Student";
+          studentName = currentUser.email?.split('@')[0] || "Student";
         }
+      }
+
+      if (!studentEmail || !studentEmail.includes("@")) {
+        throw new Error("No registered student email found for this session");
       }
 
       console.log("Sending exercise results email...");
@@ -86,7 +97,7 @@ export function useExerciseFeedback() {
       });
       return { success: false, error };
     }
-  };
+  }, [user]);
 
   const sendExerciseResultEmail = sendFeedbackToTeacher;
 
