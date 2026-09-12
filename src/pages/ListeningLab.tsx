@@ -31,7 +31,7 @@ interface Episode {
   difficulty: Difficulty;
   script: string;
   questions: Question[];
-  keyVocabulary: { word: string; definition: string }[];
+  
 }
 
 const difficultyOptions: { value: Difficulty; label: string; hint: string; level: string }[] = [
