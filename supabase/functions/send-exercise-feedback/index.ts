@@ -10,6 +10,14 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
+interface CurriculumProgress {
+  overallPercent: number;
+  completedSubSkills: number;
+  totalSubSkills: number;
+  currentLevelPercent: number | null;
+  levels: { level: string; percent: number }[];
+}
+
 interface ExerciseFeedbackRequest {
   studentName: string;
   studentEmail: string;
@@ -21,6 +29,7 @@ interface ExerciseFeedbackRequest {
   correctAnswers: number;
   incorrectAnswers: { question: string; userAnswer: string; correctAnswer: string }[];
   completedAt: string;
+  curriculumProgress?: CurriculumProgress | null;
 }
 
 const handler = async (req: Request): Promise<Response> => {
