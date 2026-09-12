@@ -175,6 +175,8 @@ const handler = async (req: Request): Promise<Response> => {
               </p>
             </div>
             
+            ${curriculumSection}
+
             ${incorrectSection}
             
             <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
