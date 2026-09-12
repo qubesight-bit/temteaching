@@ -10,6 +10,14 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
 };
 
+interface CurriculumProgress {
+  overallPercent: number;
+  completedSubSkills: number;
+  totalSubSkills: number;
+  currentLevelPercent: number | null;
+  levels: { level: string; percent: number }[];
+}
+
 interface ExerciseFeedbackRequest {
   studentName: string;
   studentEmail: string;
@@ -21,6 +29,7 @@ interface ExerciseFeedbackRequest {
   correctAnswers: number;
   incorrectAnswers: { question: string; userAnswer: string; correctAnswer: string }[];
   completedAt: string;
+  curriculumProgress?: CurriculumProgress | null;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -48,7 +57,50 @@ const handler = async (req: Request): Promise<Response> => {
       correctAnswers,
       incorrectAnswers,
       completedAt,
+      curriculumProgress,
     } = data;
+
+    // Build the curriculum progress section
+    let curriculumSection = "";
+    if (curriculumProgress && typeof curriculumProgress.overallPercent === "number") {
+      const levelRows = (curriculumProgress.levels || [])
+        .map(
+          (l) => `
+            <tr>
+              <td style="padding: 8px; border: 1px solid #e5e7eb;"><strong>${l.level}</strong></td>
+              <td style="padding: 8px; border: 1px solid #e5e7eb;">${l.percent}%</td>
+            </tr>`
+        )
+        .join("");
+
+      curriculumSection = `
+        <div style="background-color: #eff6ff; padding: 20px; border-radius: 8px; border-left: 4px solid #0ea5e9; margin-bottom: 20px;">
+          <h3 style="margin: 0 0 15px 0; color: #0369a1;">📈 Curriculum Progress</h3>
+          <p style="font-size: 28px; font-weight: bold; color: #0369a1; margin: 0;">${curriculumProgress.overallPercent}% overall</p>
+          <p style="margin: 8px 0 0 0; color: #6b7280;">
+            ${curriculumProgress.completedSubSkills} of ${curriculumProgress.totalSubSkills} sub-skills completed
+            ${
+              curriculumProgress.currentLevelPercent !== null && curriculumProgress.currentLevelPercent !== undefined
+                ? ` &nbsp;•&nbsp; ${level}: ${curriculumProgress.currentLevelPercent}%`
+                : ""
+            }
+          </p>
+          ${
+            levelRows
+              ? `<table style="width: 100%; border-collapse: collapse; margin-top: 15px; background: white;">
+                   <thead>
+                     <tr style="background-color: #f3f4f6;">
+                       <th style="padding: 8px; border: 1px solid #e5e7eb; text-align: left;">Level</th>
+                       <th style="padding: 8px; border: 1px solid #e5e7eb; text-align: left;">Completed</th>
+                     </tr>
+                   </thead>
+                   <tbody>${levelRows}</tbody>
+                 </table>`
+              : ""
+          }
+        </div>
+      `;
+    }
 
     // Build the incorrect answers section
     let incorrectSection = "";
@@ -123,6 +175,8 @@ const handler = async (req: Request): Promise<Response> => {
               </p>
             </div>
             
+            ${curriculumSection}
+
             ${incorrectSection}
             
             <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">

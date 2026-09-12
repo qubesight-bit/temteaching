@@ -2,6 +2,8 @@ import { useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/contexts/AuthContext";
 import { toast } from "@/hooks/use-toast";
+import { enhancedCurriculumData, getEnhancedLevelProgress } from "@/data/enhancedCurriculumData";
+import type { CEFRLevel } from "@/data/curriculumData";
 
 interface IncorrectAnswer {
   question: string;
@@ -17,6 +19,44 @@ interface ExerciseFeedbackData {
   totalQuestions: number;
   correctAnswers: number;
   incorrectAnswers: IncorrectAnswer[];
+}
+
+function getCurriculumProgress(currentLevel?: string) {
+  try {
+    const saved = localStorage.getItem("curriculum-progress");
+    const completedSkills: string[] = saved ? JSON.parse(saved) : [];
+
+    const levels = enhancedCurriculumData.map((l) => ({
+      level: l.level as string,
+      percent: getEnhancedLevelProgress(l.level as CEFRLevel, completedSkills),
+    }));
+
+    let total = 0;
+    let done = 0;
+    enhancedCurriculumData.forEach((l) => {
+      l.categories.forEach((c) =>
+        c.skills.forEach((s) =>
+          s.subSkills.forEach((sub) => {
+            total++;
+            if (completedSkills.includes(sub.id)) done++;
+          })
+        )
+      );
+    });
+
+    const match = currentLevel ? levels.find((l) => l.level === currentLevel) : undefined;
+
+    return {
+      overallPercent: total > 0 ? Math.round((done / total) * 100) : 0,
+      completedSubSkills: done,
+      totalSubSkills: total,
+      currentLevelPercent: match ? match.percent : null,
+      levels,
+    };
+  } catch (e) {
+    console.error("Failed to read curriculum progress", e);
+    return null;
+  }
 }
 
 export function useExerciseFeedback() {
@@ -69,6 +109,7 @@ export function useExerciseFeedback() {
           correctAnswers: data.correctAnswers,
           incorrectAnswers: data.incorrectAnswers,
           completedAt: new Date().toISOString(),
+          curriculumProgress: getCurriculumProgress(data.level),
         },
       });
 
