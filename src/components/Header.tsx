@@ -51,6 +51,7 @@ export function Header({ children }: HeaderProps) {
     { label: 'Grammar', path: '/grammar' },
     { label: 'Vocabulary', path: '/vocabulary' },
     { label: 'Practice', path: '/practice' },
+    { label: 'Listening Lab', path: '/listening-lab' },
     { label: 'Tests', path: '/tests' },
   ];
 
