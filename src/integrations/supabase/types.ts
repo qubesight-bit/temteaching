@@ -82,6 +82,60 @@ export type Database = {
         }
         Relationships: []
       }
+      exercise_completions: {
+        Row: {
+          completed_subskills: number | null
+          correct_answers: number
+          created_at: string
+          curriculum_level_percent: number | null
+          curriculum_overall_percent: number | null
+          exercise_title: string
+          exercise_type: string
+          id: string
+          level: string | null
+          score: number
+          student_email: string | null
+          student_name: string | null
+          total_questions: number
+          total_subskills: number | null
+          user_id: string
+        }
+        Insert: {
+          completed_subskills?: number | null
+          correct_answers?: number
+          created_at?: string
+          curriculum_level_percent?: number | null
+          curriculum_overall_percent?: number | null
+          exercise_title: string
+          exercise_type: string
+          id?: string
+          level?: string | null
+          score?: number
+          student_email?: string | null
+          student_name?: string | null
+          total_questions?: number
+          total_subskills?: number | null
+          user_id: string
+        }
+        Update: {
+          completed_subskills?: number | null
+          correct_answers?: number
+          created_at?: string
+          curriculum_level_percent?: number | null
+          curriculum_overall_percent?: number | null
+          exercise_title?: string
+          exercise_type?: string
+          id?: string
+          level?: string | null
+          score?: number
+          student_email?: string | null
+          student_name?: string | null
+          total_questions?: number
+          total_subskills?: number | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       learning_errors: {
         Row: {
           conversation_id: string | null
