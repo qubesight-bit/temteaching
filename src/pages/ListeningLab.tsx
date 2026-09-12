@@ -31,7 +31,7 @@ interface Episode {
   difficulty: Difficulty;
   script: string;
   questions: Question[];
-  keyVocabulary: { word: string; definition: string }[];
+  
 }
 
 const difficultyOptions: { value: Difficulty; label: string; hint: string; level: string }[] = [
@@ -162,9 +162,6 @@ export default function ListeningLab() {
     } else {
       areas.push(`Detail catching: you missed ${wrong.length} of ${episode.questions.length} details. Listen again and pause after each idea.`);
       if (wrong.length >= 4) areas.push("Try the same topic at an easier level first, then come back.");
-      if (episode.keyVocabulary.length > 0) {
-        areas.push(`Review the key vocabulary of this episode: ${episode.keyVocabulary.map((v) => v.word).join(", ")}.`);
-      }
       areas.push("Shadow the audio: replay it and repeat aloud to train your ear and pronunciation.");
     }
     return areas;
@@ -289,19 +286,6 @@ export default function ListeningLab() {
                   {isAudioLoading ? "Preparing the audio..." : isPlaying ? "Playing the episode..." : "Press play to listen"}
                 </div>
               </div>
-
-              {episode.keyVocabulary.length > 0 && (
-                <div className="p-4 rounded-xl border">
-                  <p className="text-sm font-semibold mb-2 flex items-center gap-2">
-                    <Lightbulb className="w-4 h-4 text-primary" /> Key vocabulary
-                  </p>
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    {episode.keyVocabulary.map((v) => (
-                      <li key={v.word}><span className="font-medium text-foreground">{v.word}</span> — {v.definition}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
 
               <div className="flex gap-3">
                 <Button variant="outline" className="flex-1" onClick={reset}>
