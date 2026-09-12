@@ -95,6 +95,30 @@ export function useExerciseFeedback() {
         throw new Error("No registered student email found for this session");
       }
 
+      const curriculumProgress = getCurriculumProgress(data.level);
+
+      // Persist the completion so it shows up in the progress pages
+      if (currentUser) {
+        const { error: insertError } = await supabase.from("exercise_completions").insert({
+          user_id: currentUser.id,
+          student_name: studentName,
+          student_email: studentEmail,
+          exercise_type: data.exerciseType,
+          exercise_title: data.exerciseTitle,
+          level: data.level,
+          score: data.score,
+          total_questions: data.totalQuestions,
+          correct_answers: data.correctAnswers,
+          curriculum_overall_percent: curriculumProgress?.overallPercent ?? null,
+          curriculum_level_percent: curriculumProgress?.currentLevelPercent ?? null,
+          completed_subskills: curriculumProgress?.completedSubSkills ?? null,
+          total_subskills: curriculumProgress?.totalSubSkills ?? null,
+        });
+        if (insertError) {
+          console.error("Could not save completion record", insertError);
+        }
+      }
+
       console.log("Sending exercise results email...");
 
       const { data: responseData, error } = await supabase.functions.invoke('send-exercise-feedback', {
