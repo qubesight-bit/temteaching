@@ -34,6 +34,8 @@ import DemoLogin from "./pages/DemoLogin";
 import NotFound from "./pages/NotFound";
 import SpanishCoach from "./pages/SpanishCoach";
 import ListeningLab from "./pages/ListeningLab";
+import MyProgress from "./pages/MyProgress";
+import AdminProgress from "./pages/AdminProgress";
 
 const queryClient = new QueryClient();
 
@@ -81,6 +83,8 @@ const App = () => (
                   <Route path="/custom-exam" element={<ProtectedRoute><CustomExam /></ProtectedRoute>} />
                   <Route path="/spanish-coach" element={<ProtectedRoute><SpanishCoach /></ProtectedRoute>} />
                   <Route path="/listening-lab" element={<ProtectedRoute><ListeningLab /></ProtectedRoute>} />
+                  <Route path="/my-progress" element={<ProtectedRoute><MyProgress /></ProtectedRoute>} />
+                  <Route path="/admin/progress" element={<ProtectedRoute><AdminProgress /></ProtectedRoute>} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </BrowserRouter>
