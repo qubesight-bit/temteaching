@@ -2,7 +2,8 @@ import { useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/contexts/AuthContext";
 import { toast } from "@/hooks/use-toast";
-import { enhancedCurriculumData, getEnhancedLevelProgress, type CEFRLevel } from "@/data/enhancedCurriculumData";
+import { enhancedCurriculumData, getEnhancedLevelProgress } from "@/data/enhancedCurriculumData";
+import type { CEFRLevel } from "@/data/curriculumData";
 
 interface IncorrectAnswer {
   question: string;
