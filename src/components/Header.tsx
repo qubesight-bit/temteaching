@@ -135,6 +135,15 @@ export function Header({ children }: HeaderProps) {
                     Admin Panel
                   </DropdownMenuItem>
                 )}
+                {isAdmin && !isDemoUser && (
+                  <DropdownMenuItem onClick={() => navigate('/admin/progress')}>
+                    <Shield className="w-4 h-4 mr-2" />
+                    Teacher Dashboard
+                  </DropdownMenuItem>
+                )}
+                <DropdownMenuItem onClick={() => navigate('/my-progress')}>
+                  My Progress
+                </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => navigate('/conversation/history')}>
                   Conversation History
                 </DropdownMenuItem>
