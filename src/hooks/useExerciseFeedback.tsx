@@ -133,7 +133,7 @@ export function useExerciseFeedback() {
           correctAnswers: data.correctAnswers,
           incorrectAnswers: data.incorrectAnswers,
           completedAt: new Date().toISOString(),
-          curriculumProgress: getCurriculumProgress(data.level),
+          curriculumProgress,
         },
       });
 
