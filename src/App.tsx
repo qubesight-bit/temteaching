@@ -33,6 +33,7 @@ import AdminUsers from "./pages/AdminUsers";
 import DemoLogin from "./pages/DemoLogin";
 import NotFound from "./pages/NotFound";
 import SpanishCoach from "./pages/SpanishCoach";
+import ListeningLab from "./pages/ListeningLab";
 
 const queryClient = new QueryClient();
 
@@ -79,6 +80,7 @@ const App = () => (
                   <Route path="/karaoke" element={<ProtectedRoute><Karaoke /></ProtectedRoute>} />
                   <Route path="/custom-exam" element={<ProtectedRoute><CustomExam /></ProtectedRoute>} />
                   <Route path="/spanish-coach" element={<ProtectedRoute><SpanishCoach /></ProtectedRoute>} />
+                  <Route path="/listening-lab" element={<ProtectedRoute><ListeningLab /></ProtectedRoute>} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </BrowserRouter>
