@@ -44,11 +44,10 @@ Requirements:
 - "script": a single-narrator monologue in ENGLISH ONLY, between 430 and 520 words (about 3 minutes when read aloud). Plain prose, no headings, no markdown, no stage directions, no speaker labels. Informative, engaging, factual where possible. Do not mention that this is an exercise.
 - "title": short episode title in English.
 - "questions": exactly 10 multiple-choice comprehension questions about the script, in order of appearance. Each has 4 distinct options, one correct answer copied exactly from the options, and a one-sentence explanation.
-- "keyVocabulary": 5 useful words/phrases from the script, each with a short English definition.
 - Everything in English only.
 
 Return ONLY JSON with this shape:
-{"title":"","script":"","questions":[{"question":"","options":["","","",""],"correctAnswer":"","explanation":""}],"keyVocabulary":[{"word":"","definition":""}]}`;
+{"title":"","script":"","questions":[{"question":"","options":["","","",""],"correctAnswer":"","explanation":""}]}`;
 
     const aiRes = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",
@@ -109,12 +108,6 @@ Return ONLY JSON with this shape:
       difficulty,
       script: String(parsed.script),
       questions,
-      keyVocabulary: Array.isArray(parsed.keyVocabulary)
-        ? parsed.keyVocabulary.slice(0, 8).map((v: any) => ({
-            word: String(v?.word ?? ""),
-            definition: String(v?.definition ?? ""),
-          }))
-        : [],
     }), { headers: { ...corsHeaders, "Content-Type": "application/json" } });
   } catch (error: unknown) {
     console.error("listening-lab error:", error);
