@@ -1,9 +1,5 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
-};
+import { corsHeaders } from 'npm:@supabase/supabase-js@2/cors';
 
 interface Message {
   role: "user" | "assistant" | "system";
@@ -344,15 +340,18 @@ Deno.serve(async (req) => {
       );
     }
 
+    const supabaseUrl = Deno.env.get('SUPABASE_URL');
+    const supabaseKey = Deno.env.get('SUPABASE_ANON_KEY');
+    if (!supabaseUrl || !supabaseKey) throw new Error('Authentication is not configured');
     const supabase = createClient(
-      Deno.env.get('SUPABASE_URL')!,
-      Deno.env.get('SUPABASE_ANON_KEY')!,
+      supabaseUrl,
+      supabaseKey,
       { global: { headers: { Authorization: authHeader } } }
     );
 
     const token = authHeader.replace('Bearer ', '');
     const { data: claimsData, error: claimsError } = await supabase.auth.getClaims(token);
-    if (claimsError || !claimsData?.claims) {
+    if (claimsError || !claimsData?.claims?.sub) {
       return new Response(
         JSON.stringify({ error: 'Unauthorized - invalid session' }),
         { status: 401, headers: { ...corsHeaders, "Content-Type": "application/json" } }
@@ -363,7 +362,7 @@ Deno.serve(async (req) => {
     const body = await req.json();
     const { messages, scenario, userLevel } = body as RequestBody;
 
-    if (!Array.isArray(messages) || messages.length === 0 || messages.length > 100) {
+    if (!Array.isArray(messages) || messages.length > 100) {
       return new Response(
         JSON.stringify({ error: 'Invalid messages array' }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
@@ -371,7 +370,7 @@ Deno.serve(async (req) => {
     }
 
     for (const msg of messages) {
-      if (!msg.role || !msg.content || typeof msg.content !== 'string') {
+      if (!msg || !['user', 'assistant'].includes(msg.role) || !msg.content || typeof msg.content !== 'string') {
         return new Response(
           JSON.stringify({ error: 'Invalid message format' }),
           { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }

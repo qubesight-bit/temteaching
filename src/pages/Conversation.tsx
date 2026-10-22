@@ -17,6 +17,7 @@ import { useElevenLabsTTS } from "@/hooks/useElevenLabsTTS";
 import { TerminologyBox } from "@/components/conversation/TerminologyBox";
 import { useDemoMode } from "@/hooks/useDemoMode";
 import { DemoBanner } from "@/components/DemoBanner";
+import { authenticatedFetch } from "@/lib/authenticatedFetch";
 
 // Helper function to parse error reports from AI response
 function parseErrorReports(content: string, conversationId: string | null, userLevel: string): NewLearningError[] {
@@ -148,11 +149,10 @@ async function streamChat({
   onError: (error: string) => void;
 }) {
   try {
-    const resp = await fetch(CHAT_URL, {
+    const resp = await authenticatedFetch(CHAT_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
       },
       body: JSON.stringify({ messages, scenario, userLevel }),
     });
