@@ -19,6 +19,13 @@ const Footer = () => (
     >
       QubeSight
     </a>
+    {" · "}
+    <Link
+      to="/privacy"
+      className="text-muted-foreground hover:text-foreground hover:underline"
+    >
+      Política de privacidad
+    </Link>
   </footer>
 );
 
