@@ -36,6 +36,7 @@ import SpanishCoach from "./pages/SpanishCoach";
 import ListeningLab from "./pages/ListeningLab";
 import MyProgress from "./pages/MyProgress";
 import AdminProgress from "./pages/AdminProgress";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const queryClient = new QueryClient();
 
@@ -57,6 +58,7 @@ const App = () => (
                   {/* Legacy route: approval gate removed */}
                   <Route path="/pending-approval" element={<Navigate to="/" replace />} />
                   <Route path="/session-expired" element={<SessionExpired />} />
+                  <Route path="/privacy" element={<PrivacyPolicy />} />
                   
                   {/* Admin routes */}
                   <Route path="/admin/users" element={<ProtectedRoute><AdminUsers /></ProtectedRoute>} />
