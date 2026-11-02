@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Link } from "react-router-dom";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { TopicsSidebar } from "@/components/TopicsSidebar";
 import { Header } from "@/components/Header";
